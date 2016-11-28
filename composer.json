@@ -1,0 +1,9 @@
+{
+    "name": "goettingen-state-and-university-library-germany/typo3-tmpl-fidaac",
+    "type": "typo3-cms-extension",
+    "description": "Base extension for project typo3_tmpl_fidaac",
+    "homepage": "https://www.sub.uni-goettingen.de",
+    "license": ["GPL-2.0+"],
+    "keywords": ["TYPO3 CMS"],
+    "version": "1.0.0"
+}

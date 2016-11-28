@@ -1,0 +1,6 @@
+################################################
+#### RTE BASICS                             ####
+################################################
+RTE.default {
+    contentCSS = typo3conf/ext/typo3_tmpl_fidaac/Resources/Public/Css/rte.css
+}
