@@ -1,6 +1,13 @@
 ################################################
 #### RTE BASICS                             ####
 ################################################
-RTE.default {
-    contentCSS = typo3conf/ext/typo3_tmpl_fidaac/Resources/Public/Css/rte.css
+RTE.default{
+  showButtons = formatblock, table, image, bold, italic, subscript, superscript, left, center, right, orderedlist, unorderedlist, outdent, indent, insertcharacter, link, abbreviation, findreplace, chMode, removeformat, copy, cut, paste, undo, redo, showhelp
+  toolbarOrder = formatblock, orderedlist, unorderedlist, bar,  outdent, indent, bar, bold, italic, subscript, superscript, bar, left, center, right, bar, insertcharacter, linebreak, undo, redo, bar, link, abbreviation, image, table, bar, findreplace, chMode, removeformat, bar, showhelp
+  showButtons := addToList(abbreviation)
+  buttons.formatblock.removeItems = h1,h2,div
+  removeTrailingBR = 1
+  removeTags = center, font, o:p, sdfield, strike, u
+  rmTagIfNoAttrib = div, font, span
 }
+RTE.default.FE < RTE.default

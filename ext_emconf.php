@@ -1,10 +1,10 @@
 <?php
 /************************************************************************
- * Extension Manager/Repository config file for ext "typo3_tmpl_fidaac".
+ * Extension Manager/Repository config file for ext "tmpl_fidaac".
  ************************************************************************/
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'typo3 tmpl fidaac',
-    'description' => 'Base extension for project "typo3_tmpl_fidaac"',
+    'description' => 'Base extension for project "tmpl_fidaac"',
     'category' => 'extension',
     'constraints' => array(
         'depends' => array(

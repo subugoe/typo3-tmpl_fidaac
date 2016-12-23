@@ -1,56 +1,21 @@
-######################
-#### DEPENDENCIES ####
-######################
+### Dependencies ###
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Static/constants.txt">
 
+#################
+### Variables ###
+#################
 
-##############################
-#### FLUID STYLED CONTENT ####
-##############################
-styles {
-    templates {
-        layoutRootPath = EXT:typo3_tmpl_fidaac/Resources/Private/Layouts/ContentElements/
-        partialRootPath = EXT:typo3_tmpl_fidaac/Resources/Private/Partials/ContentElements/
-        templateRootPath = EXT:typo3_tmpl_fidaac/Resources/Private/Templates/ContentElements/
-    }
-}
+### Directories ###
 
+resDir = EXT:tmpl_fidaac/Resources
 
-############
-### PAGE ###
-############
-page {
-     fluidtemplate {
-        layoutRootPath = EXT:typo3_tmpl_fidaac/Resources/Private/Layouts/Page/
-        partialRootPath = EXT:typo3_tmpl_fidaac/Resources/Private/Partials/Page/
-        templateRootPath = EXT:typo3_tmpl_fidaac/Resources/Private/Templates/Page/
-    }
-    meta {
-        description =
-        author =
-        keywords =
-        viewport = width=device-width, initial-scale=1
-        robots = index,follow
-        apple-mobile-web-app-capable = no
-        compatible = IE=edge
-    }
-    tracking {
-        google {
-            trackingID =
-            anonymizeIp = 1
-        }
-    }
-}
+### IDs ###
+
+my_menu_root = 12
+my_head_pid = 15
+my_foot_pid = 14
 
 
-##############
-### CONFIG ###
-##############
-config {
-    no_cache = 0
-    removeDefaultJS = 0
-    admPanel = 1
-    prefixLocalAnchors = all
-    headerComment = build by sitepackagebuilder.com
-    sendCacheHeaders = 1
-}
+
+styles.content.links.allowTags := addToList(abbr, acronym)
+

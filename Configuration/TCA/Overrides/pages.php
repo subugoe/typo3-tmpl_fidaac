@@ -3,7 +3,7 @@
 /***************
  * Temporary variables
  */
-$extensionKey = 'typo3_tmpl_fidaac';
+$extensionKey = 'tmpl_fidaac';
 
 /***************
  * Register PageTS

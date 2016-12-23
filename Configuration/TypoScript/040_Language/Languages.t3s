@@ -1,0 +1,37 @@
+/* LANGUAGES
+
+* German: language_uid = 0, default
+* English: language_uid = 2
+
+*/
+
+// English
+[globalVar = GP:L = 2]
+    config {
+        sys_language_uid = 2
+        language = en
+        locale_all = en_GB.UTF-8
+        htmlTag_langKey = en
+    }
+[global]
+
+/*
+CREATE LANGUAGE SWITCHER
+Store menu in lib.language
+*/
+
+lib.language = TEXT
+lib.language.value = English
+lib.language.typolink {
+    parameter.data = page:uid
+    additionalParams = &L=2
+    ATagParams = hreflang="en" lang="en" class="languageSwitcher"
+    addQueryString = 1
+    addQueryString.exclude = id
+}
+
+[globalVar = GP:L = 2]
+    lib.language.value = Deutsch
+    lib.language.typolink.additionalParams = &L=0
+    lib.language.typolink.ATagParams = hreflang="de" lang="de" class="languageSwitcher"
+[global]

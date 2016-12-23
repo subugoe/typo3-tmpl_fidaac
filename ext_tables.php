@@ -9,5 +9,5 @@ if (!defined('TYPO3_MODE')) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
     $_EXTKEY,
     'Configuration/TypoScript',
-    'typo3 tmpl fidaac'
+    'SUB tmpl fidaac'
 );

@@ -1,4 +1,4 @@
 ########################
 #### BACKENDLAYOUTS ####
 ########################
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:typo3_tmpl_fidaac/Configuration/PageTS/Mod/WebLayout/BackendLayouts" extensions="txt">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tmpl_fidaac/Configuration/PageTS/Mod/WebLayout/BackendLayouts" extensions="txt">

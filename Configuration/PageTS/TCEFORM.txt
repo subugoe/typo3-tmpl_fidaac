@@ -1,11 +1,5 @@
 #################
 #### TCEFORM ####
 #################
-TCEFORM {
-    pages {
 
-    }
-    tt_content {
-
-    }
-}
+TCEFORM.tt_content.colPos.removeItems = 1,2,3
