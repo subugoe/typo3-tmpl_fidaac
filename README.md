@@ -1,4 +1,4 @@
 Base Sitepackage for the project Typo3TmplFidaac
 ==============================================================
 
-Add some explanation here.
+Here, all configuration for Typo3 is combined, frontend and backend.
