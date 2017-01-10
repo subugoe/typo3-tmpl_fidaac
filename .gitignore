@@ -3,5 +3,6 @@ node_modules
 tests/images
 
 # Ignore others
+.history
 .idea
 npm-debug.log
