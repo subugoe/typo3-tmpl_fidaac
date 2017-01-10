@@ -1,0 +1,12 @@
+{
+    "globals": {
+        "casper": true
+    },
+    "extends": "airbnb-base/legacy",
+    "rules": {
+        "comma-dangle": ["error", "always-multiline"],
+        "func-names": 0,
+        "indent": ["error", 4],
+        "max-len": ["warn"]
+    }
+}
