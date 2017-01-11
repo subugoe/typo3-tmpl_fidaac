@@ -1,6 +1,6 @@
 # Ignore results from testing
 node_modules
-tests/images
+tests/images/
 
 # Ignore others
 .history

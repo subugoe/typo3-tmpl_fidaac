@@ -1,6 +1,12 @@
 // This test is to test the general availability of the website
 casper.options.viewportSize = { width: 1024, height: 768 };
 
+casper.on("resource.error", function(resourceError){
+    casper.echo('Unable to load resource (#' + resourceError.id + ' URL:' + resourceError.url + ')');
+    casper.echo('Error code: ' + resourceError.errorCode + '. Description: ' + resourceError.errorString);
+    this.exit();
+});
+
 casper.test.begin('Test for dev server', 1, function suite(test) {
     casper.start('http://aac7.dev', function () {
         casper.echo('Opened page with title "' + this.getTitle() + '"');
