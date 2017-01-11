@@ -3,7 +3,8 @@ Base Sitepackage for the project Typo3TmplFidaac
 
 Here, all configuration for Typo3 is combined, frontend and backend.
 
-== Testing ==
+
+### Testing
 
 There are tests for 3 instances of the website:
 * Local installation
@@ -12,7 +13,7 @@ There are tests for 3 instances of the website:
 
 Each instance can be tested seperately, or all can be tested
 in one chunk.
-* Local installation: "run npm testLocal"
+* Local installation: "npm run testLocal"
 * Old Live server: "npm run testOldLive"
 * Development server: "npm run testDev"
 
