@@ -6,7 +6,6 @@ config {
 	index_external = 1
 
 	removeDefaultJS = 1
-	admPanel = 1
 
 	pageTitleFirst = 1
 	pageTitleSeparator = –
