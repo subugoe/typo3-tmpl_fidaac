@@ -2,7 +2,6 @@
 
 <INCLUDE_TYPOSCRIPT: source="FILE:./001_Config/Config.t3s">
 <INCLUDE_TYPOSCRIPT: source="DIR:./010_Libs/" extensions="t3s">
+<INCLUDE_TYPOSCRIPT: source="DIR:./020_Extensions/" extensions="t3s">
 <INCLUDE_TYPOSCRIPT: source="FILE:./030_Page/Page.t3s">
 <INCLUDE_TYPOSCRIPT: source="DIR:./040_Language/" extensions="t3s">
-
-
