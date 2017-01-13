@@ -3,7 +3,7 @@
 [globalString =_SERVER|HTTPS=on]
     config.absRefPrefix = https://{$config.absRefPrefix}
 [else]
-    config.absRefPrefix = http://{$config.absRefPrefix}
+    config.absRefPrefix = https://{$config.absRefPrefix}
 [global]
 
 config {
