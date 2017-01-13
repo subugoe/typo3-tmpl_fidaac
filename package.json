@@ -4,10 +4,10 @@
   "description": "Template for FID AAC",
   "private": true,
   "scripts": {
-    "testOldLive": "node_modules/.bin/casperjs test tests/test-oldLive/test-oldLive*",
-    "testDev": "node_modules/.bin/casperjs test tests/test-dev/test-dev*",
-    "testLocal": "node_modules/.bin/casperjs test tests/test-local/test-local*",
-    "testAll": "node_modules/.bin/casperjs test tests/test-*/*"
+    "testOldLive": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test tests/test-oldLive/test-oldLive*",
+    "testDev": "node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test tests/test-dev/test-dev*",
+    "testLocal": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test tests/test-local/test-local*",
+    "testAll": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test tests/test-*/*"
   },
   "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
   "author": "",
