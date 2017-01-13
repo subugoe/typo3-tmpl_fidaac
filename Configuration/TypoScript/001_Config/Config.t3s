@@ -1,11 +1,3 @@
-// Global Settings
-# set base URL
-[globalString =_SERVER|HTTPS=on]
-    config.absRefPrefix = https://{$config.absRefPrefix}
-[else]
-    config.absRefPrefix = http://{$config.absRefPrefix}
-[global]
-
 config {
 	doctype = html5
 	renderCharset = utf-8
@@ -28,6 +20,8 @@ config {
 	language = de
 	locale_all = de_DE.UTF-8
 	linkVars = L(1-2)
+
+	absRefPrefix = /
 
 	tx_realurl_enable = 1
 	prefixLocalAnchors = all
