@@ -4,10 +4,7 @@
   "description": "Template for FID AAC",
   "private": true,
   "scripts": {
-    "testOldLive": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test tests/test-oldLive/test-oldLive*",
-    "testDev": "node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test tests/test-dev/test-dev*",
-    "testLocal": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test tests/test-local/test-local*",
-    "testAll": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test tests/test-*/*"
+    "testLocal": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test tests/test-local/test-local*"
   },
   "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
   "author": "",
@@ -17,7 +14,7 @@
     "eslint": "^3.13.1",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
-    "phantomjs": "^2.1.7"
+    "phantomjs-prebuilt": "^2.1.7"
   },
   "dependencies": {
     "jquery": "^3.1.1"
