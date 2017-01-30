@@ -7,6 +7,11 @@ page {
     headerData.10 = TEXT
     headerData.10.value = <link rel="search" type="application/opensearchdescription+xml" title="Lib AAC" href="http://aac.sub.uni-goettingen.de/?type=9004">
     shortcutIcon = {$resDir}/Public/Icons/favicon.ico
+    includeJS {
+        jquery = https://code.jquery.com/jquery-3.1.1.min.js
+        jquery.external = 1
+        jquery.integrity = sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=
+    }
 }
 
 lib.content < styles.content.get
