@@ -4,7 +4,8 @@
   "description": "Template for FID AAC",
   "private": true,
   "scripts": {
-    "testLocal": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test tests/test-local/test-local*"
+    "testLocal": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test tests/test-*.js --url='http://aac7.dev'",
+    "testDev": "node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test tests/test-*.js --url='http://aacdev.sub.uni-goettingen.de'"
   },
   "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
   "author": "",
