@@ -8,21 +8,27 @@
 		<body>
             <trans-unit id="Jump to main content">
                 <source>Jump to main content</source>
+                <target>Zum Seiteninhalt springen</target>
             </trans-unit>
             <trans-unit id="Menu">
                 <source>Menu</source>
+                <target>Menü</target>
             </trans-unit>
             <trans-unit id="Skip">
                 <source>Skip</source>
+                <target>Menü überspringen</target>
             </trans-unit>
             <trans-unit id="Switch language">
                 <source>Switch language</source>
+                <target>Sprachwechsel</target>
             </trans-unit>
             <trans-unit id="Information about Lib AAC">
                 <source>Information about Lib AAC</source>
+                <target>Informationen zur Lib AAC</target>
             </trans-unit>
             <trans-unit id="Specialised Information Service Anglo-American Culture">
                 <source>Specialised Information Service Anglo-American Culture</source>
+                <target>Fachinformationsdienst Anglo-American Culture</target>
             </trans-unit>
 		</body>
 	</file>

@@ -9,13 +9,6 @@
 
 resDir = EXT:tmpl_fidaac/Resources
 
-### IDs ###
-
-my_menu_root = 12
-my_head_pid = 15
-my_foot_pid = 14
-
-
 
 styles.content.links.allowTags := addToList(abbr, acronym)
 
