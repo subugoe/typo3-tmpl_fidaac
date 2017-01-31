@@ -1,0 +1,7 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/find/Projects/jfk-institut-zeitungen/jfk-institut-zeitungen.ts">
+
+plugin.tx_find.settings.connections.default.options {
+    host = {$tx_findHost}
+    port = {$tx_findPort}
+    path = {$tx_findPath}
+}
