@@ -9,33 +9,29 @@ casper.on("resource.error", function(resourceError){
 });
 
 var baseurl = casper.cli.get("url");
-var url = baseurl+'/zeitungen';
+var url = baseurl+'/zeitschriften';
 
-casper.test.begin('Test find', 5, function(test) {
+casper.test.begin('Test ezbrequest', 5, function(test) {
     casper.start(url, function () {
         casper.echo('Opened page with title "' + this.getTitle() + '"');
         casper.echo('Capture screenshot');
-        casper.capture('./tests/images/find.png');
+        casper.capture('./tests/images/ezbrequest.png');
     }).
 
     then(function() {
         casper.echo('Check availability of all elements');
-        test.assertTextExists('Zeitungen', 'Page title "Zeitungen" visible');
-        test.assertVisible('#tx_find', 'find visible');
-        test.assertVisible('.inputContainer', 'inputContainer visible');
-        test.assertVisible('.resultCount', 'recordCount visible');
-        resultCount = this.getHTML('.resultCount', false);
-        casper.echo('Search before: ' + resultCount.trim());
+        test.assertTextExists('Zeitschriften: Literatur, Sprachwissenschaft und Geschichte', 'Page title "Zeitschriften: ..." visible');
+        test.assertVisible('.tx-ezbrequest-pi1', 'ezbrequest visible');
+        test.assertVisible('#ezb_search_form', 'search form visible');
+        test.assertVisible('#ezb_search_form form input', 'input field visible');
+        test.assertVisible('#journalList', 'journalList visible');
     }).
 
     then(function() {
-        var details =  this.getHTML('.details');
-        this.clickLabel(details);
-    }).
-
-    then(function() {
-        casper.echo('Clicked ok, new location is ' + this.getCurrentUrl());
-        test.assertVisible('.detail', 'Details visible');
+        var institution =  this.getHTML('#journalList+div :nth-child(2)');
+        casper.echo('Institution: ' + institution);
+        var ip =  this.getHTML('#journalList+div :nth-child(3)');
+        casper.echo('IP: ' + ip);
     }).
 
     run(function() {
