@@ -1,5 +1,6 @@
 // This test is to test the general availability of the website
 casper.options.viewportSize = { width: 1024, height: 768 };
+casper.options.waitTimeout = 20000;
 
 casper.on("resource.error", function(resourceError){
     casper.echo('Unable to load resource (#' + resourceError.id + ' URL:' + resourceError.url + ')');
@@ -7,15 +8,19 @@ casper.on("resource.error", function(resourceError){
     this.exit();
 });
 
-casper.test.begin('Test nkwgok', 4, function(test) {
-    casper.start('http://aac7.dev/geschichte/guide', function () {
+var baseurl = casper.cli.get("url");
+var url = baseurl+'/geschichte/guide';
+
+casper.test.begin('Test nkwgok', 5, function(test) {
+    casper.start(url, function () {
         casper.echo('Opened page with title "' + this.getTitle() + '"');
         casper.echo('Capture screenshot');
-        casper.capture('./tests/images/aac-nkwgok.png');
+        casper.capture('./tests/images/nkwgok.png');
     }).
 
     then(function() {
         casper.echo('Check availability of all elements');
+        test.assertTextExists('History Guide', 'Page title "History Guide" visible');
         test.assertVisible('.gokContainer', 'gokContainer visible');
         test.assertVisible('.gokMenuForm', 'gokMenuForm visible');
         recordCount = this.getHTML('.pz2-recordCount', false);
