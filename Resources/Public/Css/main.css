@@ -699,7 +699,7 @@ a.languageSwitcher:hover {
   position: relative;
   top: -1px;
   height: 24px;
-  background: url(../../typo3conf/ext/pazpar2-neu/Resources/Public/button_shade_small.png) repeat-x scroll 0 100% #f3f6fb;
+  background: url(../../../../pazpar2/Resources/Public/pz2-client/button_shade_small.png) repeat-x scroll 0 100% #f3f6fb;
   border-style: solid;
   border-width: 1px;
   border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
@@ -716,7 +716,7 @@ a.languageSwitcher:hover {
 }
 
 .tx-ezbrequest-pi1 input.submStartSmall:active {
-  background-image: url(../../typo3conf/ext/pazpar2-neu/Resources/Public/button_shade_small_click.png);
+  background-image: url(../../../../pazpar2/Resources/Public/pz2-client/button_shade_small_click.png);
 }
 
 
