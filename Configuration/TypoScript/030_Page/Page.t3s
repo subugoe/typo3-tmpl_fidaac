@@ -40,5 +40,7 @@ page.10 {
     variables {
         headline = TEXT
         headline.field = subtitle // title
+        IDS_HOME = TEXT
+        IDS_HOME.value = {$ids.home}
     }
 }
