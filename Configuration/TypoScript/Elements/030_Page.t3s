@@ -1,0 +1,20 @@
+page = PAGE
+page {
+    typeNum = 0
+}
+
+lib.content < styles.content.get
+
+page.10 = FLUIDTEMPLATE
+page.10 {
+    file = EXT:tmpl_fidaac/Resources/Private/Templates/Default.html
+    partialRootPaths.0 = EXT:tmpl_fidaac/Resources/Private/Partials/
+    layoutRootPaths.0 = EXT:tmpl_fidaac/Resources/Private/Layouts/
+
+    variables {
+        CONTENT < styles.content.get
+        ISSO = TEXT
+        ISSO.value = {$ids.home}
+    }
+}
+
