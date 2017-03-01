@@ -4,10 +4,7 @@ if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-
-// Default TypoScript for Typo3TmplFidaac
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    $_EXTKEY,
-    'Configuration/TypoScript',
-    'SUB tmpl fidaac'
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TSConfig/Sitepackage.txt">'
 );
+?>
