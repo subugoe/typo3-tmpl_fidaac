@@ -1,10 +1,10 @@
 <?php
 /************************************************************************
- * Extension Manager/Repository config file for ext "tmpl_ssgaac".
+ * Extension Manager/Repository config file for ext "tmpl_fidaac".
  ************************************************************************/
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'typo3 tmpl fidaac',
-    'description' => 'Template and Configuration for FID AAC',
+    'description' => 'Base extension for project "tmpl_fidaac"',
     'category' => 'extension',
     'constraints' => array(
         'depends' => array(
@@ -14,12 +14,17 @@ $EM_CONF[$_EXTKEY] = array(
         'conflicts' => array(
         ),
     ),
-    'state' => 'alpha',
+    'autoload' => array(
+        'psr-4' => array(
+            'GoettingenStateAndUniversityLibraryGermany\\Typo3TmplFidaac\\' => 'Classes'
+        ),
+    ),
+    'state' => 'stable',
     'uploadfolder' => 0,
     'createDirs' => '',
     'clearCacheOnLoad' => 1,
     'author' => 'Joëlle Blache',
     'author_email' => 'blache@sub.uni-goettingen.de',
     'author_company' => 'Goettingen State and University Library Germany',
-    'version' => '0.0.1',
+    'version' => '1.0.0',
 );

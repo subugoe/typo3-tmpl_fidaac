@@ -1,0 +1,23 @@
+{
+  "name": "fid-aac",
+  "version": "0.0.1",
+  "description": "Template for FID AAC",
+  "private": true,
+  "scripts": {
+    "testLocal": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test tests/test-*.js --url='http://aac7.dev'",
+    "testDev": "node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test tests/test-*.js --url='http://aacdev.sub.uni-goettingen.de'"
+  },
+  "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
+  "author": "",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "casperjs": "^1.1.3",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "phantomjs-prebuilt": "^2.1.7"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}

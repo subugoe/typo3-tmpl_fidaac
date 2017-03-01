@@ -1,5 +1,7 @@
-#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Static/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Static/setup.txt">
 
-
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tmpl_fidaac/Configuration/TypoScript/Elements" extensions="t3s">
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tmpl_fidaac/Configuration/TypoScript/Extensions" extensions="t3s">
+<INCLUDE_TYPOSCRIPT: source="FILE:./001_Config/Config.t3s">
+<INCLUDE_TYPOSCRIPT: source="DIR:./010_Libs/" extensions="t3s">
+<INCLUDE_TYPOSCRIPT: source="DIR:./020_Extensions/" extensions="t3s">
+<INCLUDE_TYPOSCRIPT: source="FILE:./030_Page/Page.t3s">
+<INCLUDE_TYPOSCRIPT: source="DIR:./040_Language/" extensions="t3s">
