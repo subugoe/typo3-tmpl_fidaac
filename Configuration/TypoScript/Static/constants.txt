@@ -1,0 +1,8 @@
+### Dependencies ###
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Static/constants.txt">
+
+#################
+### Variables ###
+#################
+
+styles.content.links.allowTags := addToList(abbr, acronym)

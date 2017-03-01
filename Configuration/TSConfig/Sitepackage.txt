@@ -1,0 +1,7 @@
+###
+### PageTS for typo3 tmpl ssgaac
+###
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_ssgaac/Configuration/PageTS/RTE.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_ssgaac/Configuration/PageTS/TCEFORM.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_ssgaac/Configuration/PageTS/TCEMAIN.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_ssgaac/Configuration/PageTS/mod/WebLayout/RTE/BackendLayouts.txt">
