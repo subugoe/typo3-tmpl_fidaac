@@ -6,3 +6,4 @@
 #################
 
 styles.content.links.allowTags := addToList(abbr, acronym)
+lib.fluidContent.data.date = 0
