@@ -1,4 +1,4 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Static/setup.txt">
+# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Static/setup.txt">
 
 
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:tmpl_fidaac/Configuration/TypoScript/Elements" extensions="t3s">
