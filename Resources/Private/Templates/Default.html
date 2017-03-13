@@ -1,9 +1,5 @@
-<div id="page">
+<div class="page">
     <f:render partial="Header.html" arguments="{_all}"/>
-    <div class="main">
-        <h1>{PAGE_TITLE}</h1>
-        <div class="content">
-            {CONTENT -> f:format.raw()}
-        </div>
-    </div>
+    <f:render partial="Navigation.html" arguments="{_all}"/>
+    <f:render partial="Main.html" arguments="{_all}"/>
 </div>

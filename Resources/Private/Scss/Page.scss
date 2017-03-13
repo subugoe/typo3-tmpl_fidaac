@@ -1,32 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-* {
-    color: #191919;
-    font-size: 22px;
-    font-family: Open Sans;
-}
-
-h1 {
-    font-size: 40px;
-}
-h2 {
-    font-size: 32px;
-}
-h3 {
-    font-size: 28px;
-}
-h4 {
-    font-size: 24px;
-}
-h5 {
-
-}
-#page {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-.main {
-    padding-left: 160px;
+// TODO: find a better way to define this
+.page >* {
+    padding-left: 130px;
 }

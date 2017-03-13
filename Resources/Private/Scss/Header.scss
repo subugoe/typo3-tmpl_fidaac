@@ -1,31 +1,6 @@
 .header {
-
-    .header_logo {
-        background-color: #183267;
-        color: #fff;
-        height: 80px;
-        width: 100%;
-
-        &.-image {
-            position: absolute;
-            left: 130px;
-            top: 16px;
-            height: 48px;
-            width: 220px;
-            img {
-                position: inherit;
-                height: 48px;
-                width: 220px;
-            }
-        }
-        &.-text {
-            position: absolute;
-            top: 23px;
-            left: 370px;
-            display: inline;
-            font-size: 24px;
-            height: 23px;
-            width: 26em;
-        }
-    }
+    background-color: $brand;
+    color: $white;
+    font-size: 24px;
+    width: 100%;
 }

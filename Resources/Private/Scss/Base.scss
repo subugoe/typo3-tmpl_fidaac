@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    color: $shadeDarkest;
+    font-size: 22px;
+    margin: 0px;
+    padding: 0px;
+}
+* {
+    font-family: Open Sans;
+    float: left;
+}
+
+h1 {font-size: 40px;}
+h2 {font-size: 32px;}
+h3 {font-size: 28px;}
+h4 {font-size: 24px;}
+
+img {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+a {
+    color: $shadeDarkest;
+}
+
+// Media-size dependent configurations
+// column- and gutter-width
+$c: 64;
+$g: 16;
+@for $i from 1 through 12 {
+    .-span#{$i} {width: #{$i*$c + ($i - 1)*$g}px;}
+    .-col {margin: #{$g}px;}
+}
+
+@media only screen and (max-width: 320px) {
+    $c: 64px;
+    $g: 8px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    $c: 64px;
+    $g: 16px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+    $c: 64px;
+    $g: 16px;
+}
+
+@media only screen and (min-width: 961px) {
+    $c: 64px;
+    $g: 16px;
+}
