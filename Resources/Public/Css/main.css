@@ -1,35 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-.content header p time {
-  display: none; }
-
-.header .header_logo {
-  background-color: #183267;
-  color: #fff;
-  height: 80px;
-  width: 100%; }
-  .header .header_logo.-image {
-    position: absolute;
-    left: 130px;
-    top: 16px;
-    height: 48px;
-    width: 220px; }
-    .header .header_logo.-image img {
-      position: inherit;
-      height: 48px;
-      width: 220px; }
-  .header .header_logo.-text {
-    position: absolute;
-    top: 23px;
-    left: 370px;
-    display: inline;
-    font-size: 24px;
-    height: 23px;
-    width: 26em; }
-
-* {
+body {
   color: #191919;
   font-size: 22px;
-  font-family: Open Sans; }
+  margin: 0px;
+  padding: 0px; }
+
+* {
+  font-family: Open Sans;
+  float: left; }
 
 h1 {
   font-size: 40px; }
@@ -43,10 +21,122 @@ h3 {
 h4 {
   font-size: 24px; }
 
-#page {
-  position: absolute;
-  top: 0px;
-  left: 0px; }
+img {
+  padding: 0px !important;
+  margin: 0px !important; }
+
+a {
+  color: #191919; }
+
+.-span1 {
+  width: 64px; }
+
+.-col {
+  margin: 16px; }
+
+.-span2 {
+  width: 144px; }
+
+.-col {
+  margin: 16px; }
+
+.-span3 {
+  width: 224px; }
+
+.-col {
+  margin: 16px; }
+
+.-span4 {
+  width: 304px; }
+
+.-col {
+  margin: 16px; }
+
+.-span5 {
+  width: 384px; }
+
+.-col {
+  margin: 16px; }
+
+.-span6 {
+  width: 464px; }
+
+.-col {
+  margin: 16px; }
+
+.-span7 {
+  width: 544px; }
+
+.-col {
+  margin: 16px; }
+
+.-span8 {
+  width: 624px; }
+
+.-col {
+  margin: 16px; }
+
+.-span9 {
+  width: 704px; }
+
+.-col {
+  margin: 16px; }
+
+.-span10 {
+  width: 784px; }
+
+.-col {
+  margin: 16px; }
+
+.-span11 {
+  width: 864px; }
+
+.-col {
+  margin: 16px; }
+
+.-span12 {
+  width: 944px; }
+
+.-col {
+  margin: 16px; }
+
+.page > * {
+  padding-left: 130px; }
+
+.content header p time {
+  display: none; }
+
+.header {
+  background-color: #183267;
+  color: #FFFFFF;
+  font-size: 24px;
+  width: 100%; }
+
+.main * {
+  clear: both;
+  float: none !important; }
 
 .main {
-  padding-left: 160px; }
+  margin-left: 160px;
+  width: 100%; }
+
+.navigation {
+  background-color: #F2F2F2;
+  list-style-type: none;
+  width: 100%; }
+  .navigation a {
+    text-decoration: none; }
+  .navigation .strong {
+    font-weight: bold; }
+  .navigation .navigation_firstLevel {
+    font-size: 24px;
+    margin: 24px 16px 8px 24px;
+    width: 100%; }
+  .navigation .navigation_secondLevel {
+    font-size: 16px;
+    margin: 0px 16px 32px 24px; }
+  .navigation .-item {
+    padding: 0 16px 0 16px; }
+
+i.fa {
+  padding: 4px; }

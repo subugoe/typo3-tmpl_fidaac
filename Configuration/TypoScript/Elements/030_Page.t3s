@@ -3,6 +3,8 @@ page {
     typeNum = 0
 
     includeCSS.file100 = EXT:tmpl_fidaac/Resources/Public/Css/main.css
+    includeCSS.file200 = EXT:tmpl_fidaac/Resources/Public/Fonts/FontAwesome/fonts/font-awesome.min.css
+
 
 }
 
@@ -18,5 +20,7 @@ page.10 {
         CONTENT < styles.content.get
         PAGE_TITLE = TEXT
         PAGE_TITLE.data = page:title
+        MENU1 < lib.menu1
+        MENU2 < lib.menu2
     }
 }
