@@ -1,6 +1,16 @@
-.header {
-    background-color: $brand;
-    color: $white;
-    font-size: 24px;
+header {
     width: 100%;
+    background-color: $brand;
+    float: left;
+    margin: 0 auto;
+
+    :after {
+        clear: both;
+    }
+
+    .header {
+        color: $white;
+        font-size: 24px;
+        margin: 0 auto;
+    }
 }

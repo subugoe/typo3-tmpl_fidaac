@@ -1,8 +1,10 @@
-<div class="main -row">
-    <div class="title -col -span8">
-        <h1>{PAGE_TITLE}</h1>
+<main>
+    <div class="main -span8">
+        <div class="title -span8">
+            <h1>{PAGE_TITLE}</h1>
+        </div>
+        <div class="content -span8">
+            {CONTENT -> f:format.raw()}
+        </div>
     </div>
-    <div class="content -col -span8">
-        {CONTENT -> f:format.raw()}
-    </div>
-</div>
+</main>

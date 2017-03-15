@@ -1,20 +1,33 @@
-.navigation {
+navigation {
     background-color: $shadeLightest;
     list-style-type: none;
     width: 100%;
+    float: left;
 
+    :after {
+        clear: both;
+    }
 
-    a {text-decoration: none;}
-    .strong {font-weight: bold;}
+    .navigation {
+        margin: 0 auto;
+    }
+
+    .strong {
+        font-weight: bold;
+    }
+
     .navigation_firstLevel {
         font-size: 24px;
         margin: 24px 16px 8px 24px;
         width: 100%;
     }
+
     .navigation_secondLevel {
         font-size: 16px;
         margin: 0px 16px 32px 24px;
     }
 
-    .-item {padding: 0 16px 0 16px;}
+    .-item {
+        padding: 0 16px 0 16px;
+    }
 }
