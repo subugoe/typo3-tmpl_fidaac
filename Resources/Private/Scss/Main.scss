@@ -1,8 +1,12 @@
-.main * {
-    clear: both;
-    float: none !important;
-}
-.main {
-    margin-left: 160px;
+main {
     width: 100%;
+
+    :after {
+        clear: both;
+        float: none;
+    }
+
+    .main {
+        margin: 0 auto;
+    }
 }

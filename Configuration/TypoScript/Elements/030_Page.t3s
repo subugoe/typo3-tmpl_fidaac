@@ -5,6 +5,8 @@ page {
     includeCSS.file100 = EXT:tmpl_fidaac/Resources/Public/Css/main.css
     includeCSS.file200 = EXT:tmpl_fidaac/Resources/Public/Fonts/FontAwesome/fonts/font-awesome.min.css
 
+    includeJS.file100 = EXT:tmpl_fidaac/Resources/Public/JavaScript/main.js
+
 
 }
 
