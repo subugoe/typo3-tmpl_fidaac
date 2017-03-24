@@ -1,15 +1,15 @@
 {
-  "name": "ssg-aac",
+  "name": "fid-aac",
   "version": "0.0.1",
-  "description": "Template for SSG AAC",
+  "description": "Template for FID AAC",
   "private": true,
   "scripts": {
       "testLocal": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://fidaac.dev'",
       "testDev": "node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://aacdev.sub.uni-goettingen.de'",
-      "buildCss": "node_modules/node-sass/bin/node-sass Resources/Private/Scss/App.scss Resources/Public/Css/main.css",
+      "buildCss": "node_modules/.bin/node-sass Resources/Private/Scss/App.scss Resources/Public/Css/main.css",
       "watchCss": "nodemon -e scss -x \"npm run buildCss\""
   },
-  "repository": "http://github.com/subugoe/typo3-tmpl_ssgaac",
+  "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
   "author": "",
   "license": "AGPL-3.0",
   "devDependencies": {

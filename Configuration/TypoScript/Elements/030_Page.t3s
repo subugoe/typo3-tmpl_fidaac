@@ -12,6 +12,59 @@ page {
 
 lib.content < styles.content.get
 
+lib.contentcategorylistOfContent = TEXT
+lib.contentcategorylistOfContent {
+    cObject = CONTENT
+    cObject {
+        table = tt_content
+        select {
+            uidInList.field = root
+            join = sys_category_record_mm ON tt_content.uid = sys_category_record_mm.uid_foreign JOIN sys_category ON sys_category.uid = sys_category_record_mm.uid_local
+            where = sys_category_record_mm.tablenames = 'tt_content'
+            orderBy = sys_category.sorting
+        }
+
+        renderObj = TEXT
+        renderObj {
+            field = title
+            noTrimWrap = | <span class="categories_link">|</span> |
+        }
+    }
+}
+
+
+lib.contentcategorylistOfPages = TEXT
+lib.contentcategorylistOfPages {
+    cObject = CONTENT
+    cObject {
+        table = pages
+        select {
+            uidInList = this
+            pidInList = 0
+            selectFields = sys_category.title
+            join = sys_category_record_mm ON pages.uid = sys_category_record_mm.uid_foreign JOIN sys_category ON sys_category.uid = sys_category_record_mm.uid_local
+            where = sys_category_record_mm.tablenames = 'pages'
+            orderBy = sys_category.sorting
+        }
+
+        renderObj = TEXT
+        renderObj {
+            field = title
+            noTrimWrap = | <span class="categories_link">|</span> |
+        }
+    }
+}
+
+orderBy = sys_category.sorting
+    }
+    renderObj = TEXT
+    renderObj {
+        field = title
+        noTrimWrap =| <span class="categories_link">|</span>|
+    }
+    stdWrap.substring = 1
+}
+
 page.10 = FLUIDTEMPLATE
 page.10 {
     file = EXT:tmpl_fidaac/Resources/Private/Templates/Default.html
@@ -19,10 +72,5 @@ page.10 {
     layoutRootPaths = EXT:tmpl_fidaac/Resources/Private/Layouts/
 
     variables {
-        CONTENT < styles.content.get
-        PAGE_TITLE = TEXT
-        PAGE_TITLE.data = page:title
-        MENU1 < lib.menu1
-        MENU2 < lib.menu2
     }
 }

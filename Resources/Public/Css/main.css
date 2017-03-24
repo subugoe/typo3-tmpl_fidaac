@@ -12,16 +12,32 @@ body {
   overflow: scroll; }
 
 h1 {
-  font-size: 40px; }
+  font-size: 40px;
+  line-height: 60px;
+  margin: 0px;
+  padding-top: 11px;
+  padding-bottom: 7px; }
 
 h2 {
-  font-size: 32px; }
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px; }
 
 h3 {
-  font-size: 28px; }
+  font-size: 28px;
+  line-height: 40px;
+  margin: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px; }
 
 h4 {
-  font-size: 24px; }
+  font-size: 24px;
+  line-height: 40px;
+  margin: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px; }
 
 img {
   padding: 0px !important;
@@ -30,6 +46,10 @@ img {
 a {
   color: #191919;
   text-decoration: none; }
+
+p {
+  margin-top: 0px;
+  margin-bottom: 8px; }
 
 .-col {
   float: left; }
@@ -158,3 +178,10 @@ navigation {
 
 i.fa {
   padding: 4px; }
+
+.categories {
+  padding-bottom: 2px; }
+  .categories .categories_link {
+    background: #F4D64A;
+    border-radius: 4px;
+    padding: 1.88235px 8px; }
