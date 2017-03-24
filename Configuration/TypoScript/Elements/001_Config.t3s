@@ -9,15 +9,18 @@ config {
     # maybe removed later, because it removes encryption of email adresses
     removeDefaultJS = 1
 
-    sys_language_mode = strict
+    uniqueLinkVars = 1
+
+    sys_language_mode = content_fallback
+    sys_language_overlay = 1
     sys_language_uid = 0
     htmlTag_langKey = en
     language = en
     locale_all = en_EN.UTF-8
-    linkVars = L(2-3)
+    linkVars = L(0-1)
 
     prefixLocalAnchors = all
-    absRelPath = /
+    #absRelPath = /
     # RealURL is incompatible with simulateStaticDocuments
     #tx_realurl_enable = 1
     #simulateStaticDocuments = 0
