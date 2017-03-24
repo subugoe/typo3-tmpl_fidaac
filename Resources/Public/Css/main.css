@@ -126,6 +126,8 @@ header {
     color: #FFFFFF;
     font-size: 24px;
     margin: 0 auto; }
+    header .header a {
+      color: #FFFFFF; }
 
 main {
   width: 100%; }
