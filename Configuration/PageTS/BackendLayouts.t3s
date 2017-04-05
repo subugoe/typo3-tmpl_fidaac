@@ -1,0 +1,92 @@
+mod {
+	web_layout {
+		BackendLayouts {
+			Default {
+				title = Content
+				config {
+					backend_layout {
+						colCount = 1
+						rowCount = 1
+						rows {
+							1 {
+								columns {
+									1 {
+										name = Content
+										colPos = 0
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+
+#			Homepage {
+#				title = Home Page TO DO
+#				config {
+#					backend_layout {
+#						colCount = 1
+#						rowCount = 3
+#						rows {
+#							1 {
+#								columns {
+#									1 {
+#										name = Inhalt
+#										colPos = 0
+#										colspan = 1
+#									}
+#								}
+#							}
+#
+#							2 {
+#								columns {
+#									1 {
+#										name = Footer
+#										colPos = 6
+#										colspan = 1
+#									}
+#								}
+#							}
+#
+#							3 {
+#								columns {
+#									1 {
+#										name = Ablage
+#										colPos = 100
+#										colspan = 1
+#									}
+#								}
+#							}
+#						}
+#					}
+#				}
+#			}
+
+			News {
+				title = News Archive
+				config {
+					backend_layout {
+						colCount = 2
+						rowCount = 1
+						rows {
+							1 {
+								columns {
+									1 {
+										name = News
+										colPos = 0
+									}
+									2 {
+										name = Date List
+										colPos = 2
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
