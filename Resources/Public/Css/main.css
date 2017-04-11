@@ -13,6 +13,7 @@ body {
 
 h1 {
   font-size: 40px;
+  font-weight: 600;
   line-height: 60px;
   margin: 0px;
   padding-top: 11px;
@@ -20,6 +21,7 @@ h1 {
 
 h2 {
   font-size: 32px;
+  font-weight: 600;
   line-height: 40px;
   margin: 0px;
   padding-top: 8px;
@@ -44,12 +46,19 @@ img {
   margin: 0px !important; }
 
 a {
-  color: #191919;
+  color: #183267;
   text-decoration: none; }
 
 p {
+  font-weight: 300;
   margin-top: 0px;
   margin-bottom: 8px; }
+  p a {
+    font-weight: bold; }
+    p a:after {
+      content: "+";
+      position: relative;
+      top: -10px; }
 
 .-col {
   float: left; }
