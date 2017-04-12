@@ -1,0 +1,60 @@
+.news {
+    .article {
+
+        a {
+            color: $shadeDarkest;
+        }
+
+        .header {
+            float: left;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 32px;
+        }
+
+        .meta {
+            float: left;
+            color: $shadeDarkest;
+            font-size: 16px;
+            line-height: 24px;
+
+            .-list-category {
+                font-size: 12px;
+
+                .-item {
+                    background: $accent;
+                    border-radius: 4px;
+                    padding: 0.1*$g 0.5*$g;
+                    margin-right: 0.5*$g;
+                }
+
+                .-by {
+                    font-style: italic;
+                }
+            }
+
+            .-list-dateNAuthor {
+            }
+        }
+    }
+
+        .-img-wrap {
+            float: left;
+            display: block;
+
+            a {
+                border: none;
+                padding: 0;
+            }
+
+            img {
+                box-sizing: border-box;
+                height: 81.5px;
+                width: auto;
+                border: 0.5px solid $shadeLight;
+            }
+        }
+}
+.clear {
+    clear: both;
+}

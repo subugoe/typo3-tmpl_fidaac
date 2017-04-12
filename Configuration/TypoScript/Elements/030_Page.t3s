@@ -55,16 +55,6 @@ lib.contentcategorylistOfPages {
     }
 }
 
-orderBy = sys_category.sorting
-    }
-    renderObj = TEXT
-    renderObj {
-        field = title
-        noTrimWrap =| <span class="categories_link">|</span>|
-    }
-    stdWrap.substring = 1
-}
-
 page.10 = FLUIDTEMPLATE
 page.10 {
     file = EXT:tmpl_fidaac/Resources/Private/Templates/Default.html

@@ -1,0 +1,20 @@
+plugin {
+    tx_news {
+        view {
+            templateRootPaths = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Templates
+            partialRootPaths = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Partials
+            layoutRootPaths = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Layouts
+        }
+    }
+
+    # Modify the translation
+    _LOCAL_LANG {
+        default {
+            author = by
+        }
+        en {
+            author = by
+        }
+    }
+
+}

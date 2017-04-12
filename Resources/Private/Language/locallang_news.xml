@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+
+  <meta type="array">
+    <type>module</type>
+    <description>Language labels</description>
+  </meta>
+
+    <data type="array">
+
+        <languageKey index="en" type="array">
+            <label index="by">by</label>
+            <label index="dateFormat">Y-m-d</label>
+        </languageKey>
+
+        <languageKey index="de" type="array">
+            <label index="by">von</label>
+            <label index="dateFormat">d.m.Y</label>
+        </languageKey>
+
+    </data>
+</T3locallang>
