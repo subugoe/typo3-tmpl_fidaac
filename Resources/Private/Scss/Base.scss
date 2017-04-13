@@ -82,7 +82,9 @@ p {
 // Media-size dependent configurations
 // column- and gutter-width
 @for $i from 1 through 12 {
-    .-span#{$i} {width: ($i * $c + ($i - 1) * $g);}
+    .-span_l#{$i} {
+        width: ($i * $c + ($i - 1) * $g);
+    }
     .-col {margin: $g 0;}
 }
 
@@ -104,4 +106,8 @@ p {
 @media only screen and (min-width: 961px) {
     $c: 64px;
     $g: 16px;
+}
+
+.-space {
+    margin-right: $g;
 }
