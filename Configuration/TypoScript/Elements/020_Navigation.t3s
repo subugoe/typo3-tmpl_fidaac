@@ -34,6 +34,24 @@ lib.menu2 {
         ACT.ATagParams = class="strong"
     }
 }
+lib.menu3 = HMENU
+lib.menu3 {
+    entryLevel = 2
 
+    1 = TMENU
+    1 {
+        expAll = 0
+        special = rootline
+        NO = 1
+        NO.allWrap = <div class="-item">|</div>
+
+        CUR < .NO
+        CUR.ATagParams = class="strong"
+
+        ACT < .NO
+        ACT.ATagParams = class="strong"
+    }
+    2 < .1
+}
 
 
