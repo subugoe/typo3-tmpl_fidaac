@@ -4,8 +4,12 @@ page {
 
     includeCSS.file100 = EXT:tmpl_fidaac/Resources/Public/Css/main.css
     includeCSS.file200 = EXT:tmpl_fidaac/Resources/Public/Fonts/FontAwesome/fonts/font-awesome.min.css
+    includeCss.file300 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css
 
     includeJS.file100 = EXT:tmpl_fidaac/Resources/Public/JavaScript/main.js
+    includeJS.file200 = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+    includeJS.file300 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
+
 
 
 }
