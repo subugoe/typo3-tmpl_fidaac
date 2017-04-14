@@ -10,7 +10,7 @@
 
 	<f:if condition="{newsItem.falMedia}">
 		<!-- fal media preview element -->
-		<div class="-img-wrap -span_l2 -space">
+		<div class="-img-wrap span-2">
             <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
                 <f:if condition="{newsItem.falMediaPreviews}">
                     <f:then>
@@ -51,8 +51,8 @@
     </f:if>
 
     <!-- header -->
-    <div class="header -span_l6">
-        <div class="title">
+    <div class="header">
+        <div class="title span-6 noPad">
             <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
                 <span itemprop="headline">{newsItem.title}</span>
             </n:link>
@@ -60,8 +60,8 @@
     </div>
 
     <!-- footer information -->
-    <div class="meta -span_l6">
-        <div class="-list-dateNAuthor -span_l6">
+    <div class="meta">
+        <div class="-list-dateNAuthor span-6 noPad">
             <!-- date -->
 				<time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
                     <f:format.date format="{f:translate(key:'LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang_news.xml:dateFormat')}">{newsItem.datetime}</f:format.date>
@@ -76,7 +76,7 @@
                 {newsItem.author}
             </f:if>
         </div>
-        <div class="-list-category -span_l6">
+        <div class="-list-category span-6 noPad">
             <f:if condition="{newsItem.firstCategory}">
                 <!-- first category -->
                 <f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}" />
@@ -92,10 +92,10 @@
             </f:if>
         </div>
     </div>
-    <div class="clear"></div>
+
 
 	<!-- teaser -->
-	<div class="teaser-text">
+	<div class="teaser-text span-8 noPad">
         <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
         <f:if condition="{newsItem.teaser}">
 			<f:then>

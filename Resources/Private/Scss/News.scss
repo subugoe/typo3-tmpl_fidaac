@@ -6,14 +6,12 @@
         }
 
         .header {
-            float: left;
             font-size: 24px;
             font-weight: 600;
             line-height: 32px;
         }
 
         .meta {
-            float: left;
             color: $shadeDarkest;
             font-size: 16px;
             line-height: 24px;
@@ -32,29 +30,23 @@
                     font-style: italic;
                 }
             }
-
-            .-list-dateNAuthor {
-            }
         }
     }
 
-        .-img-wrap {
-            float: left;
-            display: block;
+    .-img-wrap {
+        float: left;
+        display: block;
 
-            a {
-                border: none;
-                padding: 0;
-            }
-
-            img {
-                box-sizing: border-box;
-                height: 81.5px;
-                width: auto;
-                border: 0.5px solid $shadeLight;
-            }
+        a {
+            border: none;
+            padding: 0;
         }
-}
-.clear {
-    clear: both;
+
+        img {
+            box-sizing: border-box;
+            width: (2 * $c);
+            height: auto;
+            border: 0.5px solid $shadeLight;
+        }
+    }
 }

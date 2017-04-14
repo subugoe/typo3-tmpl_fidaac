@@ -1,20 +1,51 @@
 header {
-    width: 100%;
     background-color: $brand;
-    float: left;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    color: $white;
+    font-size: 24px;
 
-    :after {
-        clear: both;
+    a {
+        color: $white;
     }
 
-    .header {
-        color: $white;
-        font-size: 24px;
-        margin: 0 auto;
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
 
-        a {
-            color: $white;
+    .-search,
+    .-language {
+        float: left;
+        padding-right: $g;
+    }
+}
+@media (min-width: 768px) {
+    header {
+
+        .-text::after {
+            content: "Library AAC";
+        }
+    }
+
+    .-image img {
+        width: 174px;
+        height: 40px;
+    }
+}
+@media (max-width: 768px) {
+    header {
+        font-size: 20px;
+
+        .-image img {
+            width: 144px;
+            height: 32px;
+        }
+
+        .-text::after {
+            content: "FID AAC";
+            line-height: 38px;
         }
     }
 }
