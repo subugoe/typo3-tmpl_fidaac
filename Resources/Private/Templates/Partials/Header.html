@@ -1,7 +1,7 @@
 <header>
-    <div class="header -span_l12">
-        <div class="header_logo -span_l8">
-            <div class="header_logo -image -col -span_l3">
+    <div class="container">
+        <div class="row">
+            <div class="-image span-3">
                 <f:image src="EXT:tmpl_fidaac/Resources/Public/Images/logo_fidaac.svg"
                          alt="FID AAC Logo"
                          title="FID AAC Logo"
@@ -9,15 +9,19 @@
                          height="41px">
                 </f:image>
             </div>
-            <div class="header_logo -text -col -span_l5">
-                FID Anglo-American Culture
+            <div class="-text span-3"></div>
+            <div class="-space span-1"></div>
+            <div class="-buttons span-5">
+            <div class="-search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                Search
             </div>
-        </div>
-        <div class="header_buttonArea -search -col -span_l2">
-            <i class="fa fa-search" aria-hidden="true"></i> Search
-        </div>
-        <div class="header_buttonArea -language -col -span_l2">
-            <i class="fa fa-globe" aria-hidden="true"></i> <f:cObject typoscriptObjectPath="lib.language"/>
+            <div class="-language">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <f:cObject typoscriptObjectPath="lib.language"/>
+            </div>
+            </div>
         </div>
     </div>
 </header>
+

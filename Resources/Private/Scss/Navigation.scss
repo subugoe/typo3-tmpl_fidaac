@@ -2,37 +2,33 @@ navigation {
     background-color: $shadeLightest;
     list-style-type: none;
     width: 100%;
-    float: left;
+    display: flex;
 
-    :after {
+    &:after {
+        content: "";
         clear: both;
+        display: table;
     }
+    padding-bottom: 16px;
+    margin: auto;
 
-    .navigation {
-        margin: 0 auto;
-    }
-
-    .strong {
-        font-weight: bold;
-    }
-
-    .navigation_firstLevel {
+    .-firstLevel {
         font-size: 24px;
-        margin: 24px 16px 8px 24px;
-        width: 100%;
+        margin: 0 16px 0 24px;
     }
 
-    .navigation_secondLevel {
+    .-secondLevel {
         font-size: 18px;
-        margin: 0px 16px 8px 24px;
+        margin: 0px 16px 0 24px;
     }
 
-    .navigation_thirdLevel {
+    .-thirdLevel {
         font-size: 14px;
-        margin: 0px 16px 8px 24px;
+        margin: 0px 16px 0 24px;
     }
 
     .-item {
         padding: 0 16px 0 16px;
+        float: left;
     }
 }

@@ -1,12 +1,17 @@
 main {
     width: 100%;
+    display: flex;
 
-    :after {
+    &:after {
+        content: "";
         clear: both;
-        float: none;
+        display: table;
     }
 
     .main {
-        margin: 0 auto;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }

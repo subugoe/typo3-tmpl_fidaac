@@ -1,17 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-* {
-    box-sizing: border-box;
-}
-
 body {
     color: $shadeDarkest;
     font-size: 22px;
-    margin: 0px auto;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-family: Open Sans;
-    margin: 0 auto;
-    overflow:scroll
 }
 
 h1 {
@@ -71,43 +65,6 @@ p {
     }
 }
 
-.-col {
-    float: left;
-}
-
-.-item {
-    float: left;
-}
-
-// Media-size dependent configurations
-// column- and gutter-width
-@for $i from 1 through 12 {
-    .-span_l#{$i} {
-        width: ($i * $c + ($i - 1) * $g);
-    }
-    .-col {margin: $g 0;}
-}
-
-@media only screen and (max-width: 320px) {
-    $c: 64px;
-    $g: 8px;
-}
-
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-    $c: 64px;
-    $g: 16px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 960px) {
-    $c: 64px;
-    $g: 16px;
-}
-
-@media only screen and (min-width: 961px) {
-    $c: 64px;
-    $g: 16px;
-}
-
-.-space {
-    margin-right: $g;
+.strong {
+    font-weight: bold;
 }

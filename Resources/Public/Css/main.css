@@ -1,15 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-* {
-  box-sizing: border-box; }
-
 body {
   color: #191919;
   font-size: 22px;
-  margin: 0px auto;
-  padding: 0px;
-  font-family: Open Sans;
-  margin: 0 auto;
-  overflow: scroll; }
+  margin: 0;
+  padding: 0;
+  font-family: Open Sans; }
 
 h1 {
   font-size: 40px;
@@ -60,138 +55,187 @@ p {
       position: relative;
       top: -10px; }
 
-.-col {
-  float: left; }
+.strong {
+  font-weight: bold; }
 
-.-item {
-  float: left; }
+@media (min-width: 320px) {
+  .container {
+    width: 304px; }
+  [class*="span-"] {
+    width: 304px;
+    float: none;
+    padding: 4px; }
+  .span-1 {
+    width: 50.67px; }
+  .span-2 {
+    width: 101.33px; }
+  .span-3 {
+    width: 152px; }
+  .span-4 {
+    width: 202.67px; }
+  .span-5 {
+    width: 253.33px; }
+  .-space {
+    display: none; } }
 
-.-span_l1 {
-  width: 64px; }
+@media (min-width: 768px) {
+  .container {
+    width: 736px; }
+  [class*="span-"] {
+    padding: 8px; }
+  .span-1 {
+    width: 61.33px; }
+  .span-2 {
+    width: 123px; }
+  .span-3 {
+    width: 184px; }
+  .span-4 {
+    width: 245.33px; }
+  .span-5 {
+    width: 306.67px; }
+  .span-6 {
+    width: 368px; }
+  .span-7 {
+    width: 429.33px; }
+  .span-8 {
+    width: 490.67px; }
+  .span-9 {
+    width: 552px; }
+  .span-10 {
+    width: 613.33px; }
+  .span-11 {
+    width: 674.67px; }
+  .span-12 {
+    width: 736px; }
+  .-space {
+    display: block; } }
 
-.-col {
-  margin: 16px 0; }
+@media (min-width: 960px) {
+  .container {
+    width: 928px; }
+  [class*="span-"] {
+    padding: 8px; }
+  .span-1 {
+    width: 77.33px; }
+  .span-2 {
+    width: 154.67px; }
+  .span-3 {
+    width: 232px; }
+  .span-4 {
+    width: 309.33px; }
+  .span-5 {
+    width: 386.67px; }
+  .span-6 {
+    width: 464px; }
+  .span-7 {
+    width: 541.33px; }
+  .span-8 {
+    width: 618.67px; }
+  .span-9 {
+    width: 696px; }
+  .span-10 {
+    width: 773.33px; }
+  .span-11 {
+    width: 850.67px; }
+  .span-12 {
+    width: 928px; } }
 
-.-span_l2 {
-  width: 144px; }
+@media (max-width: 320px) {
+  .container {
+    width: 304px; }
+  [class*="span-"] {
+    width: 304px;
+    float: none;
+    padding: 4px; }
+  .-space {
+    display: none; } }
 
-.-col {
-  margin: 16px 0; }
-
-.-span_l3 {
-  width: 224px; }
-
-.-col {
-  margin: 16px 0; }
-
-.-span_l4 {
-  width: 304px; }
-
-.-col {
-  margin: 16px 0; }
-
-.-span_l5 {
-  width: 384px; }
-
-.-col {
-  margin: 16px 0; }
-
-.-span_l6 {
-  width: 464px; }
-
-.-col {
-  margin: 16px 0; }
-
-.-span_l7 {
-  width: 544px; }
-
-.-col {
-  margin: 16px 0; }
-
-.-span_l8 {
-  width: 624px; }
-
-.-col {
-  margin: 16px 0; }
-
-.-span_l9 {
-  width: 704px; }
-
-.-col {
-  margin: 16px 0; }
-
-.-span_l10 {
-  width: 784px; }
-
-.-col {
-  margin: 16px 0; }
-
-.-span_l11 {
-  width: 864px; }
-
-.-col {
-  margin: 16px 0; }
-
-.-span_l12 {
-  width: 944px; }
-
-.-col {
-  margin: 16px 0; }
-
-.-space {
-  margin-right: 16px; }
-
-.page {
-  float: left; }
+.container {
+  display: block;
+  overflow: hidden;
+  margin: 0 auto; }
+  .container .row {
+    display: block;
+    overflow: hidden; }
+    .container .row [class*="span-"] {
+      float: left;
+      box-sizing: border-box; }
+  .container .noPad {
+    padding: 0 !important; }
 
 .content header p time {
   display: none; }
 
 header {
-  width: 100%;
   background-color: #183267;
-  float: left;
-  margin: 0 auto; }
-  header :after {
-    clear: both; }
-  header .header {
-    color: #FFFFFF;
-    font-size: 24px;
-    margin: 0 auto; }
-    header .header a {
-      color: #FFFFFF; }
+  width: 100%;
+  display: flex;
+  color: #FFFFFF;
+  font-size: 24px; }
+  header a {
+    color: #FFFFFF; }
+  header:after {
+    content: "";
+    clear: both;
+    display: table; }
+  header .-search,
+  header .-language {
+    float: left;
+    padding-right: 16px; }
+
+@media (min-width: 768px) {
+  header .-text::after {
+    content: "Library AAC"; }
+  .-image img {
+    width: 174px;
+    height: 40px; } }
+
+@media (max-width: 768px) {
+  header {
+    font-size: 20px; }
+    header .-image img {
+      width: 144px;
+      height: 32px; }
+    header .-text::after {
+      content: "FID AAC";
+      line-height: 38px; } }
 
 main {
-  width: 100%; }
-  main :after {
+  width: 100%;
+  display: flex; }
+  main:after {
+    content: "";
     clear: both;
-    float: none; }
+    display: table; }
   main .main {
-    margin: 0 auto; }
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 10%;
+    padding-right: 10%; }
 
 navigation {
   background-color: #F2F2F2;
   list-style-type: none;
   width: 100%;
-  float: left; }
-  navigation :after {
-    clear: both; }
-  navigation .navigation {
-    margin: 0 auto; }
-  navigation .strong {
-    font-weight: bold; }
-  navigation .navigation_firstLevel {
+  display: flex;
+  padding-bottom: 16px;
+  margin: auto; }
+  navigation:after {
+    content: "";
+    clear: both;
+    display: table; }
+  navigation .-firstLevel {
     font-size: 24px;
-    margin: 24px 16px 8px 24px;
-    width: 100%; }
-  navigation .navigation_secondLevel {
+    margin: 0 16px 0 24px; }
+  navigation .-secondLevel {
     font-size: 18px;
-    margin: 0px 16px 8px 24px; }
-  navigation .navigation_thirdLevel {
+    margin: 0px 16px 0 24px; }
+  navigation .-thirdLevel {
     font-size: 14px;
-    margin: 0px 16px 8px 24px; }
+    margin: 0px 16px 0 24px; }
   navigation .-item {
-    padding: 0 16px 0 16px; }
+    padding: 0 16px 0 16px;
+    float: left; }
 
 i.fa {
   padding: 4px; }
@@ -207,13 +251,11 @@ i.fa {
   color: #191919; }
 
 .news .article .header {
-  float: left;
   font-size: 24px;
   font-weight: 600;
   line-height: 32px; }
 
 .news .article .meta {
-  float: left;
   color: #191919;
   font-size: 16px;
   line-height: 24px; }
@@ -235,9 +277,6 @@ i.fa {
     padding: 0; }
   .news .-img-wrap img {
     box-sizing: border-box;
-    height: 81.5px;
-    width: auto;
+    width: 128px;
+    height: auto;
     border: 0.5px solid #A8A8A8; }
-
-.clear {
-  clear: both; }
