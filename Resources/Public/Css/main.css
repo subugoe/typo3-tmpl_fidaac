@@ -58,13 +58,28 @@ p {
 .strong {
   font-weight: bold; }
 
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 auto;
+  margin: auto;
+  flex-wrap: wrap;
+  align-content: stretch;
+  align-items: center; }
+  .container .center {
+    align-self: center;
+    margin: auto; }
+  .container .right {
+    margin-left: auto; }
+  .container .stretchItems {
+    display: flex;
+    justify-content: space-between; }
+
 @media (min-width: 320px) {
   .container {
-    width: 304px; }
+    max-width: 304px; }
   [class*="span-"] {
-    width: 304px;
-    float: none;
-    padding: 4px; }
+    width: 304px; }
   .span-1 {
     width: 50.67px; }
   .span-2 {
@@ -74,15 +89,11 @@ p {
   .span-4 {
     width: 202.67px; }
   .span-5 {
-    width: 253.33px; }
-  .-space {
-    display: none; } }
+    width: 253.33px; } }
 
 @media (min-width: 768px) {
   .container {
-    width: 736px; }
-  [class*="span-"] {
-    padding: 8px; }
+    max-width: 736px; }
   .span-1 {
     width: 61.33px; }
   .span-2 {
@@ -112,9 +123,7 @@ p {
 
 @media (min-width: 960px) {
   .container {
-    width: 928px; }
-  [class*="span-"] {
-    padding: 8px; }
+    max-width: 928px; }
   .span-1 {
     width: 77.33px; }
   .span-2 {
@@ -142,26 +151,7 @@ p {
 
 @media (max-width: 320px) {
   .container {
-    width: 304px; }
-  [class*="span-"] {
-    width: 304px;
-    float: none;
-    padding: 4px; }
-  .-space {
-    display: none; } }
-
-.container {
-  display: block;
-  overflow: hidden;
-  margin: 0 auto; }
-  .container .row {
-    display: block;
-    overflow: hidden; }
-    .container .row [class*="span-"] {
-      float: left;
-      box-sizing: border-box; }
-  .container .noPad {
-    padding: 0 !important; }
+    max-width: 304px; } }
 
 .content header p time {
   display: none; }
@@ -169,30 +159,41 @@ p {
 header {
   background-color: #183267;
   width: 100%;
-  display: flex;
   color: #FFFFFF;
   font-size: 24px; }
   header a {
     color: #FFFFFF; }
-  header:after {
-    content: "";
-    clear: both;
-    display: table; }
   header .-search,
   header .-language {
-    float: left;
-    padding-right: 16px; }
+    text-align: right; }
+  header .-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: auto; }
+  header .-image {
+    display: flex;
+    align-items: center; }
 
 @media (min-width: 768px) {
+  header > * {
+    padding: 8px 0px; }
   header .-text::after {
     content: "Library AAC"; }
-  .-image img {
+  header .-image img {
     width: 174px;
     height: 40px; } }
+
+@media (min-width: 960px) {
+  header .-image img {
+    width: 188px;
+    height: 41px; } }
 
 @media (max-width: 768px) {
   header {
     font-size: 20px; }
+    header > * {
+      padding: 8px 0px; }
     header .-image img {
       width: 144px;
       height: 32px; }
@@ -207,35 +208,52 @@ main {
     content: "";
     clear: both;
     display: table; }
-  main .main {
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 10%;
-    padding-right: 10%; }
 
 navigation {
   background-color: #F2F2F2;
   list-style-type: none;
   width: 100%;
-  display: flex;
-  padding-bottom: 16px;
-  margin: auto; }
-  navigation:after {
-    content: "";
-    clear: both;
-    display: table; }
+  display: flex; }
+  navigation .container {
+    flex-direction: row;
+    align-items: stretch;
+    padding-bottom: 16px;
+    margin: auto; }
+    navigation .container:after {
+      content: "";
+      clear: both;
+      display: table; }
+    navigation .container .-firstLevel,
+    navigation .container .-secondLevel,
+    navigation .container .-thirdLevel {
+      display: flex;
+      flex-flow: row wrap; }
+    navigation .container .-firstLevel {
+      font-size: 24px;
+      flex-direction: row;
+      align-content: center; }
+    navigation .container .-secondLevel {
+      font-size: 18px; }
+    navigation .container .-thirdLevel {
+      font-size: 14px; }
+    navigation .container .-item {
+      padding-right: 16px; }
+
+@media (min-width: 768px) {
   navigation .-firstLevel {
-    font-size: 24px;
-    margin: 0 16px 0 24px; }
+    padding-top: 10.66667px; }
   navigation .-secondLevel {
-    font-size: 18px;
-    margin: 0px 16px 0 24px; }
+    padding-top: 4px; }
   navigation .-thirdLevel {
-    font-size: 14px;
-    margin: 0px 16px 0 24px; }
-  navigation .-item {
-    padding: 0 16px 0 16px;
-    float: left; }
+    padding-top: 4px; } }
+
+@media (max-width: 768px) {
+  navigation .-firstLevel {
+    padding-top: 10.66667px; }
+  navigation .-secondLevel {
+    padding-top: 4px; }
+  navigation .-thirdLevel {
+    padding-top: 4px; } }
 
 i.fa {
   padding: 4px; }

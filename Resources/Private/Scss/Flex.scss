@@ -1,3 +1,30 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 auto;
+    margin: auto;
+    flex-wrap: wrap; // Todo: isn't optimal
+    align-content: stretch;
+    align-items: center;
+
+    [class*="span-"] {
+        //padding: $g/2 $g/2 $g/2 0;
+    }
+
+    .center {
+        align-self: center;
+        margin: auto;
+    }
+
+    .right {
+        margin-left: auto;
+    }
+
+    .stretchItems {
+        display: flex;
+        justify-content: space-between;
+    }
+}
 
 // M
 @media (min-width: 320px) {
@@ -5,13 +32,12 @@
     $g: 8px; // gutter-width
 
     .container {
-        width: 304px;
+        max-width: 304px;
     }
 
     [class*="span-"] {
         width: 304px;
-        float: none;
-        padding: $g/2;
+        //padding: $g/2 $g/2 $g/2 0 !important;
     }
     // double size of all spans
     .span-1 { width: 50.67px; }
@@ -19,10 +45,6 @@
     .span-3 { width: 152px; }
     .span-4 { width: 202.67px; }
     .span-5 { width: 253.33px; }
-
-    .-space {
-        display: none;
-    }
 }
 // L
 @media (min-width: 768px) {
@@ -30,14 +52,13 @@
     $g: 16px;
 
     .container {
-        width: 736px;
+        max-width: 736px;
     }
 
     [class*="span-"] {
-        padding: $g/2;
+       // padding: $g/2 $g/2 $g/2 0 !important;
     }
 
-    //according to: https://www.youtube.com/watch?v=dwxtjbYNF_8
     .span-1 { width: 61.33px; } // 8.33%
     .span-2 { width: 123px; } // 16.67%
     .span-3 { width: 184px; } // 25%
@@ -61,13 +82,12 @@
     $g: 16px;
 
     .container {
-        width: 928px;
+        max-width: 928px;
     }
 
     [class*="span-"] {
-        padding: $g/2;
+        //padding: $g/2 $g/2 $g/2 0 !important;
     }
-
 
     .span-1 { width: 77.33px; }
     .span-2 { width: 154.67px; }
@@ -88,16 +108,10 @@
     $g: 8px;
 
     .container {
-        width: 304px;
+        max-width: 304px;
     }
 
     [class*="span-"] {
-        width: 304px;
-        float: none;
-        padding: $g/2;
-    }
-
-    .-space {
-        display: none;
+        //padding: $g/2 $g/2 $g/2 0 !important;
     }
 }
