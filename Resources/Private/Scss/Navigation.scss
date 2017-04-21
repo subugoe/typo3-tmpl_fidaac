@@ -4,31 +4,68 @@ navigation {
     width: 100%;
     display: flex;
 
-    &:after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-    padding-bottom: 16px;
-    margin: auto;
+    .container {
+        flex-direction: row;
+        align-items: stretch;
 
-    .-firstLevel {
-        font-size: 24px;
-        margin: 0 16px 0 24px;
-    }
+        &:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        padding-bottom: 16px;
+        margin: auto;
 
-    .-secondLevel {
-        font-size: 18px;
-        margin: 0px 16px 0 24px;
-    }
+        .-firstLevel,
+        .-secondLevel,
+        .-thirdLevel {
+            display: flex;
+            flex-flow: row wrap;
+        }
 
-    .-thirdLevel {
-        font-size: 14px;
-        margin: 0px 16px 0 24px;
-    }
+        .-firstLevel {
+            font-size: 24px;
+            flex-direction: row;
+            align-content: center;
+        }
 
-    .-item {
-        padding: 0 16px 0 16px;
-        float: left;
+        .-secondLevel {
+            font-size: 18px;
+        }
+
+        .-thirdLevel {
+            font-size: 14px;
+        }
+
+        .-item {
+            padding-right: 16px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    navigation {
+        .-firstLevel {
+            padding-top: ($g * 2 / 3);
+        }
+        .-secondLevel {
+            padding-top: ($g / 4);
+        }
+        .-thirdLevel {
+            padding-top: ($g / 4);
+        }
+    }
+}
+@media (max-width: 768px) {
+    navigation {
+        .-firstLevel {
+            padding-top: ($g * 2 / 3);
+        }
+        .-secondLevel {
+            padding-top: ($g / 4);
+        }
+        .-thirdLevel {
+            padding-top: ($g / 4);
+        }
     }
 }
