@@ -7,12 +7,6 @@ navigation {
     .container {
         flex-direction: row;
         align-items: stretch;
-
-        &:after {
-            content: "";
-            clear: both;
-            display: table;
-        }
         padding-bottom: 16px;
         margin: auto;
 
@@ -40,25 +34,35 @@ navigation {
         .-item {
             padding-right: 16px;
         }
+
+        .moreButton {
+            background: $brand;
+            color: $white;
+            align-self: center;
+            text-align: center;
+            cursor: pointer;
+        }
     }
 }
 
 @media (min-width: 768px) {
     navigation {
-        .-firstLevel {
-            padding-top: ($g * 2 / 3);
+        .-firstLevel,
+        .moreButton {
+            margin-top: ($g * 2 / 3);
         }
         .-secondLevel {
-            padding-top: ($g / 4);
+            margin-top: ($g / 4);
         }
         .-thirdLevel {
-            padding-top: ($g / 4);
+            margin-top: ($g / 4);
         }
     }
 }
 @media (max-width: 768px) {
     navigation {
-        .-firstLevel {
+        .-firstLevel,
+        .moreButton {
             padding-top: ($g * 2 / 3);
         }
         .-secondLevel {

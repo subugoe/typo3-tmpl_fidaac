@@ -58,6 +58,9 @@ p {
 .strong {
   font-weight: bold; }
 
+.hidden {
+  display: none; }
+
 .container {
   display: flex;
   flex-flow: row wrap;
@@ -81,43 +84,43 @@ p {
   [class*="span-"] {
     width: 304px; }
   .span-1 {
-    width: 50.67px; }
+    flex-basis: 50.67px; }
   .span-2 {
-    width: 101.33px; }
+    flex-basis: 101.33px; }
   .span-3 {
-    width: 152px; }
+    flex-basis: 152px; }
   .span-4 {
-    width: 202.67px; }
+    flex-basis: 202.67px; }
   .span-5 {
-    width: 253.33px; } }
+    flex-basis: 253.33px; } }
 
 @media (min-width: 768px) {
   .container {
     max-width: 736px; }
   .span-1 {
-    width: 61.33px; }
+    flex-basis: 61.33px; }
   .span-2 {
-    width: 123px; }
+    flex-basis: 123px; }
   .span-3 {
-    width: 184px; }
+    flex-basis: 184px; }
   .span-4 {
-    width: 245.33px; }
+    flex-basis: 245.33px; }
   .span-5 {
-    width: 306.67px; }
+    flex-basis: 306.67px; }
   .span-6 {
-    width: 368px; }
+    flex-basis: 368px; }
   .span-7 {
-    width: 429.33px; }
+    flex-basis: 429.33px; }
   .span-8 {
-    width: 490.67px; }
+    flex-basis: 490.67px; }
   .span-9 {
-    width: 552px; }
+    flex-basis: 552px; }
   .span-10 {
-    width: 613.33px; }
+    flex-basis: 613.33px; }
   .span-11 {
-    width: 674.67px; }
+    flex-basis: 674.67px; }
   .span-12 {
-    width: 736px; }
+    flex-basis: 736px; }
   .-space {
     display: block; } }
 
@@ -125,29 +128,29 @@ p {
   .container {
     max-width: 928px; }
   .span-1 {
-    width: 77.33px; }
+    flex-basis: 77.33px; }
   .span-2 {
-    width: 154.67px; }
+    flex-basis: 154.67px; }
   .span-3 {
-    width: 232px; }
+    flex-basis: 232px; }
   .span-4 {
-    width: 309.33px; }
+    flex-basis: 309.33px; }
   .span-5 {
-    width: 386.67px; }
+    flex-basis: 386.67px; }
   .span-6 {
-    width: 464px; }
+    flex-basis: 464px; }
   .span-7 {
-    width: 541.33px; }
+    flex-basis: 541.33px; }
   .span-8 {
-    width: 618.67px; }
+    flex-basis: 618.67px; }
   .span-9 {
-    width: 696px; }
+    flex-basis: 696px; }
   .span-10 {
-    width: 773.33px; }
+    flex-basis: 773.33px; }
   .span-11 {
-    width: 850.67px; }
+    flex-basis: 850.67px; }
   .span-12 {
-    width: 928px; } }
+    flex-basis: 928px; } }
 
 @media (max-width: 320px) {
   .container {
@@ -219,10 +222,6 @@ navigation {
     align-items: stretch;
     padding-bottom: 16px;
     margin: auto; }
-    navigation .container:after {
-      content: "";
-      clear: both;
-      display: table; }
     navigation .container .-firstLevel,
     navigation .container .-secondLevel,
     navigation .container .-thirdLevel {
@@ -238,17 +237,25 @@ navigation {
       font-size: 14px; }
     navigation .container .-item {
       padding-right: 16px; }
+    navigation .container .moreButton {
+      background: #183267;
+      color: #FFFFFF;
+      align-self: center;
+      text-align: center;
+      cursor: pointer; }
 
 @media (min-width: 768px) {
-  navigation .-firstLevel {
-    padding-top: 10.66667px; }
+  navigation .-firstLevel,
+  navigation .moreButton {
+    margin-top: 10.66667px; }
   navigation .-secondLevel {
-    padding-top: 4px; }
+    margin-top: 4px; }
   navigation .-thirdLevel {
-    padding-top: 4px; } }
+    margin-top: 4px; } }
 
 @media (max-width: 768px) {
-  navigation .-firstLevel {
+  navigation .-firstLevel,
+  navigation .moreButton {
     padding-top: 10.66667px; }
   navigation .-secondLevel {
     padding-top: 4px; }
