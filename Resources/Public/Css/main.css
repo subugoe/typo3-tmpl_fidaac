@@ -188,21 +188,25 @@ header {
     height: 40px; } }
 
 @media (min-width: 960px) {
-  header .-image img {
-    width: 188px;
-    height: 41px; } }
+  header {
+    font-size: 24px; }
+    header .header {
+      padding: 16px 0; }
+      header .header .-image img {
+        width: 188px;
+        height: 41px; } }
 
 @media (max-width: 768px) {
   header {
     font-size: 20px; }
-    header > * {
-      padding: 8px 0px; }
-    header .-image img {
-      width: 144px;
-      height: 32px; }
-    header .-text::after {
-      content: "FID AAC";
-      line-height: 38px; } }
+    header .header {
+      padding: 16px 0px; }
+      header .header .-image img {
+        width: 144px;
+        height: 32px; }
+      header .header .-text::after {
+        content: "FID AAC";
+        line-height: 38px; } }
 
 main {
   width: 100%;

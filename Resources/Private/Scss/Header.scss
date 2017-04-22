@@ -29,7 +29,7 @@ header {
 @media (min-width: 768px) {
     header {
 
-        &>* {
+        & > * {
             padding: $g/2 0px;
         }
         .-text::after {
@@ -48,9 +48,15 @@ header {
 
 @media (min-width: 960px) {
     header {
-        .-image img {
-            width: 188px;
-            height: 41px;
+        font-size: 24px;
+
+        .header {
+            padding: $g 0;
+
+            .-image img {
+                width: 188px;
+                height: 41px;
+            }
         }
     }
 }
@@ -59,21 +65,18 @@ header {
     header {
         font-size: 20px;
 
-        &>* {
-            padding: $g/2 0px;
-        }
+        .header {
+            padding: $g 0px;
 
-        .-image img {
-            width: 144px;
-            height: 32px;
-        }
+            .-image img {
+                width: 144px;
+                height: 32px;
+            }
 
-        .-text::after {
-            content: "FID AAC";
-            line-height: 38px;
-        }
-
-        .-search {
+            .-text::after {
+                content: "FID AAC";
+                line-height: 38px;
+            }
         }
     }
 }
