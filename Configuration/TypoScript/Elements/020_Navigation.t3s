@@ -53,5 +53,18 @@ lib.menu3 {
     }
     2 < .1
 }
+lib.breadCrumbs = HMENU
+lib.breadCrumbs {
+    special = rootline
+    special.range = 1|-1
+
+    1 = TMENU
+    1.NO {
+        linkWrap = ||*| <i class="fa fa-caret-right" aria-hidden="true"></i>|
+    }
+}
+
+
+
 
 

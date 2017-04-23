@@ -1,5 +1,6 @@
 <navigation>
-    <div class="container">
+    <div class="container ">
+        <div class="default span-12 inserted">
             <div class="-firstLevel span-12">
                 <f:cObject typoscriptObjectPath="lib.menu1"/>
             </div>
@@ -9,5 +10,13 @@
             <div class="-thirdLevel span-12">
                 <f:cObject typoscriptObjectPath="lib.menu3"/>
             </div>
+        </div>
+
+        <div class="breadCrumbs span-12 removed">
+            <div class="menuButton span-2"><i class="fa fa-bars" aria-hidden="true"></i>Menu</div>
+            <div class="crumbs span-10 right">
+                <f:cObject typoscriptObjectPath="lib.breadCrumbs"/>
+            </div>
+        </div>
     </div>
 </navigation>

@@ -1,5 +1,7 @@
 .news {
     .article {
+        display: flex;
+        flex-flow: row wrap;
 
         a {
             color: $shadeDarkest;
@@ -34,8 +36,6 @@
     }
 
     .-img-wrap {
-        float: left;
-        display: block;
 
         a {
             border: none;

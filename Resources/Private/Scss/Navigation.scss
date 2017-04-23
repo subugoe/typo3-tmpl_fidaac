@@ -3,12 +3,30 @@ navigation {
     list-style-type: none;
     width: 100%;
     display: flex;
+    flex: 0 0 auto;
+
+    a {
+        color: $shadeDarkest;
+    }
 
     .container {
-        flex-direction: row;
-        align-items: stretch;
-        padding-bottom: 16px;
         margin: auto;
+
+        .default {
+            flex-flow: row wrap;
+        }
+
+        .breadCrumbs {
+            flex-flow: row wrap;
+            font-size: 16px;
+            line-height: 24px;
+            align-self: center;
+            align-items: center;
+
+            i {
+                padding: 0 $g/2;
+            }
+        }
 
         .-firstLevel,
         .-secondLevel,
@@ -35,12 +53,14 @@ navigation {
             padding-right: 16px;
         }
 
-        .moreButton {
+        .moreButton,
+        .menuButton {
             background: $brand;
+            cursor: pointer;
             color: $white;
+            align-items: center;
             align-self: center;
             text-align: center;
-            cursor: pointer;
         }
     }
 }
@@ -50,6 +70,10 @@ navigation {
         .-firstLevel,
         .moreButton {
             margin-top: ($g * 2 / 3);
+        }
+        .menuButton {
+            margin: ($g / 2) 0;
+            max-width: 144px;
         }
         .-secondLevel {
             margin-top: ($g / 4);
@@ -63,13 +87,16 @@ navigation {
     navigation {
         .-firstLevel,
         .moreButton {
-            padding-top: ($g * 2 / 3);
+            margin-top: ($g * 2 / 3);
+        }
+        .menuButton {
+            margin: ($g / 2) 0;
         }
         .-secondLevel {
-            padding-top: ($g / 4);
+            margin-top: ($g / 4);
         }
         .-thirdLevel {
-            padding-top: ($g / 4);
+            margin-top: ($g / 4);
         }
     }
 }
