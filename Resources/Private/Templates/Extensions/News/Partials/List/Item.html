@@ -52,7 +52,7 @@
 
     <!-- header -->
     <div class="header">
-        <div class="title span-6 noPad">
+        <div class="title span-6">
             <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
                 <span itemprop="headline">{newsItem.title}</span>
             </n:link>
@@ -61,7 +61,7 @@
 
     <!-- footer information -->
     <div class="meta">
-        <div class="-list-dateNAuthor span-6 noPad">
+        <div class="-list-dateNAuthor span-6">
             <!-- date -->
 				<time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
                     <f:format.date format="{f:translate(key:'LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang_news.xml:dateFormat')}">{newsItem.datetime}</f:format.date>
@@ -76,7 +76,7 @@
                 {newsItem.author}
             </f:if>
         </div>
-        <div class="-list-category span-6 noPad">
+        <div class="-list-category span-6">
             <f:if condition="{newsItem.firstCategory}">
                 <!-- first category -->
                 <f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}" />
@@ -95,7 +95,7 @@
 
 
 	<!-- teaser -->
-	<div class="teaser-text span-8 noPad">
+	<div class="teaser-text span-8">
         <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
         <f:if condition="{newsItem.teaser}">
 			<f:then>

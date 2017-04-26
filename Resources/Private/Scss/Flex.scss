@@ -33,7 +33,6 @@
 
     [class*="span-"] {
         width: 304px;
-        //padding: $g/2 $g/2 $g/2 0 !important;
     }
     // double size of all spans
     .span-1 {
@@ -59,10 +58,6 @@
 
     .container {
         max-width: 736px;
-    }
-
-    [class*="span-"] {
-       // padding: $g/2 $g/2 $g/2 0 !important;
     }
 
     .span-1 {
@@ -115,10 +110,6 @@
         max-width: 928px;
     }
 
-    [class*="span-"] {
-        //padding: $g/2 $g/2 $g/2 0 !important;
-    }
-
     .span-1 {
         flex-basis: 77.33px;
     }
@@ -163,9 +154,5 @@
 
     .container {
         max-width: 304px;
-    }
-
-    [class*="span-"] {
-        //padding: $g/2 $g/2 $g/2 0 !important;
     }
 }
