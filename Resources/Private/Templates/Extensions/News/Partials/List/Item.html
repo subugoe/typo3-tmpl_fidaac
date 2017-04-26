@@ -50,49 +50,50 @@
         </div>
     </f:if>
 
+    <div>
     <!-- header -->
-    <div class="header">
-        <div class="title span-6">
-            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-                <span itemprop="headline">{newsItem.title}</span>
-            </n:link>
+        <div class="header">
+            <div class="title span-6">
+                <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                    <span itemprop="headline">{newsItem.title}</span>
+                </n:link>
+            </div>
         </div>
-    </div>
 
-    <!-- footer information -->
-    <div class="meta">
-        <div class="-list-dateNAuthor span-6">
-            <!-- date -->
-				<time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+        <!-- footer information -->
+        <div class="meta">
+            <div class="-list-dateNAuthor span-6">
+                <!-- date -->
+                <time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
                     <f:format.date format="{f:translate(key:'LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang_news.xml:dateFormat')}">{newsItem.datetime}</f:format.date>
-					<meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}" />
-				</time>
+					<meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}"/>
+                </time>
 
-            <!-- author -->
-            <f:if condition="{newsItem.author}">
+                <!-- author -->
+                <f:if condition="{newsItem.author}">
 				<span class="-by">
                     <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang_news.xml:by"/>
                 </span>
-                {newsItem.author}
-            </f:if>
-        </div>
-        <div class="-list-category span-6">
-            <f:if condition="{newsItem.firstCategory}">
-                <!-- first category -->
-                <f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}" />
-            </f:if>
+                    {newsItem.author}
+                </f:if>
+            </div>
+            <div class="-list-category span-6">
+                <f:if condition="{newsItem.firstCategory}">
+                    <!-- first category -->
+                    <f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}"/>
+                </f:if>
 
-            <f:if condition="{newsItem.tags}">
-                <!-- Tags -->
-                <span class="news-list-tags" itemprop="keywords">
+                <f:if condition="{newsItem.tags}">
+                    <!-- Tags -->
+                    <span class="news-list-tags" itemprop="keywords">
 					<f:for each="{newsItem.tags}" as="tag">
 						{tag.title}
 					</f:for>
 				</span>
-            </f:if>
+                </f:if>
+            </div>
         </div>
     </div>
-
 
 	<!-- teaser -->
 	<div class="teaser-text span-8">
