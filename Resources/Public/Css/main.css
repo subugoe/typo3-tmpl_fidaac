@@ -13,7 +13,7 @@ body {
 
 h1 {
   font-size: 40px;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 60px;
   margin: 0px;
   padding-top: 11px;
@@ -21,7 +21,7 @@ h1 {
 
 h2 {
   font-size: 32px;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 40px;
   margin: 0px;
   padding-top: 8px;
@@ -50,7 +50,7 @@ a {
   text-decoration: none; }
 
 p {
-  font-weight: 300;
+  font-weight: lighter;
   margin-top: 0px;
   margin-bottom: 8px; }
   p a {
@@ -73,31 +73,32 @@ p {
   font-weight: bold; }
 
 .removed {
-  display: none; }
+  display: none !important; }
 
 .inserted {
-  display: flex; }
+  display: flex !important; }
 
-.container {
-  display: flex;
-  flex-flow: row wrap;
-  flex: 1 1 auto;
+.center {
+  align-self: center;
   margin: auto;
-  flex-wrap: wrap;
-  align-content: stretch;
-  align-items: center; }
-  .container .center {
-    align-self: center;
-    margin: auto; }
-  .container .right {
-    margin-left: auto; }
-  .container .stretchItems {
-    display: flex;
-    justify-content: space-between; }
+  justify-content: center; }
+
+.right {
+  justify-content: flex-end !important; }
+
+.left {
+  justify-content: flex-start !important;
+  margin-right: auto; }
+
+.stretchItems {
+  display: flex;
+  justify-content: space-between; }
+
+[class*="span-"] {
+  display: flex;
+  flex-flow: row wrap; }
 
 @media (min-width: 320px) {
-  .container {
-    max-width: 304px; }
   [class*="span-"] {
     width: 304px; }
   .span-1 {
@@ -112,8 +113,6 @@ p {
     flex-basis: 253.33px; } }
 
 @media (min-width: 768px) {
-  .container {
-    max-width: 736px; }
   .span-1 {
     flex-basis: 61.33px; }
   .span-2 {
@@ -142,8 +141,6 @@ p {
     display: block; } }
 
 @media (min-width: 960px) {
-  .container {
-    max-width: 928px; }
   .span-1 {
     flex-basis: 77.33px; }
   .span-2 {
@@ -170,8 +167,8 @@ p {
     flex-basis: 928px; } }
 
 @media (max-width: 320px) {
-  .container {
-    max-width: 304px; } }
+  [class*="span-"] {
+    width: 304px; } }
 
 .content header p time {
   display: none; }
@@ -181,17 +178,21 @@ header {
   width: 100%;
   color: #FFFFFF;
   font-size: 24px;
-  flex: 0 0 auto; }
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center; }
   header a {
     color: #FFFFFF; }
+  header .container {
+    align-items: center; }
+  header .bildText {
+    align-items: center; }
+  header .buttons {
+    justify-content: space-between !important; }
   header .-search,
   header .-language {
-    text-align: right; }
-  header .-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-left: auto; }
+    text-align: right;
+    align-items: center; }
   header .-image {
     display: flex;
     align-items: center; }
@@ -199,11 +200,8 @@ header {
 @media (min-width: 768px) {
   header > * {
     padding: 8px 0px; }
-  header .-text::after {
-    content: "Library AAC"; }
   header .-image img {
-    width: 174px;
-    height: 40px; } }
+    width: 174px; } }
 
 @media (min-width: 960px) {
   header {
@@ -221,74 +219,53 @@ header {
       padding: 16px 0px; }
       header .header .-image img {
         width: 144px;
-        height: 32px; }
-      header .header .-text::after {
-        content: "FID AAC";
-        line-height: 38px; } }
-
-main {
-  width: 100%;
-  display: flex;
-  flex: 0 auto;
-  position: relative;
-  overflow-y: auto; }
-  main:after {
-    content: "";
-    clear: both;
-    display: table; }
-  main .overlay {
-    flex: 1 100%;
-    height: 50px;
-    position: fixed;
-    right: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
-    z-index: 1; }
+        height: 32px; } }
 
 navigation {
   background-color: #F2F2F2;
   list-style-type: none;
   width: 100%;
   display: flex;
-  flex: 0 0 auto; }
+  flex: 0 0 auto;
+  justify-content: center; }
   navigation a {
     color: #191919; }
-  navigation .container {
-    margin: auto; }
-    navigation .container .default {
-      flex-flow: row wrap; }
-    navigation .container .breadCrumbs {
-      flex-flow: row wrap;
-      font-size: 16px;
-      line-height: 24px;
-      align-self: center;
+  navigation .default {
+    flex-flow: row wrap; }
+  navigation .breadCrumbs {
+    flex-flow: row wrap;
+    font-size: 16px;
+    line-height: 24px;
+    align-self: center;
+    align-items: center; }
+    navigation .breadCrumbs i {
+      padding: 0 8px; }
+    navigation .breadCrumbs .crumbs {
+      padding-left: 16px;
       align-items: center; }
-      navigation .container .breadCrumbs i {
-        padding: 0 8px; }
-    navigation .container .-firstLevel,
-    navigation .container .-secondLevel,
-    navigation .container .-thirdLevel {
-      display: flex;
-      flex-flow: row wrap; }
-    navigation .container .-firstLevel {
-      font-size: 24px;
-      flex-direction: row;
-      align-content: center; }
-    navigation .container .-secondLevel {
-      font-size: 18px; }
-    navigation .container .-thirdLevel {
-      font-size: 14px; }
-    navigation .container .-item {
-      padding-right: 16px; }
-    navigation .container .moreButton,
-    navigation .container .menuButton {
-      background: #183267;
-      cursor: pointer;
-      color: #FFFFFF;
-      align-items: center;
-      align-self: center;
-      text-align: center; }
+  navigation .-firstLevel,
+  navigation .-secondLevel,
+  navigation .-thirdLevel {
+    display: flex;
+    flex-flow: row wrap; }
+  navigation .-firstLevel {
+    font-size: 24px;
+    flex-direction: row;
+    align-content: center; }
+  navigation .-secondLevel {
+    font-size: 18px; }
+  navigation .-thirdLevel {
+    font-size: 14px; }
+  navigation .-item {
+    padding-right: 16px; }
+  navigation .moreButton,
+  navigation .menuButton {
+    background: #183267;
+    cursor: pointer;
+    color: #FFFFFF;
+    align-items: center;
+    align-self: center;
+    text-align: center; }
 
 @media (min-width: 768px) {
   navigation .-firstLevel,
@@ -313,6 +290,69 @@ navigation {
   navigation .-thirdLevel {
     margin-top: 4px; } }
 
+.scrolled {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-y: auto;
+  flex-flow: column; }
+
+main {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  min-height: 1em; }
+  main .overlay {
+    flex: 1 100%;
+    height: 50px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+    z-index: 1; }
+
+.sitemap {
+  background-color: #F2F2F2;
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: lighter;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  flex-wrap: wrap; }
+  .sitemap a {
+    padding-right: 8px;
+    color: #191919; }
+  .sitemap .-firstLevel {
+    text-align: right;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    font-weight: normal; }
+  .sitemap .-secondlevel {
+    flex-wrap: wrap; }
+
+@media (min-width: 768px) {
+  .sitemap .-firstLevel {
+    text-align: right;
+    margin-top: 8px; }
+  .sitemap .-secondLevel {
+    margin-top: 8px; }
+    .sitemap .-secondLevel:last-child {
+      margin-bottom: 16px; } }
+
+@media (max-width: 768px) {
+  .sitemap .-firstLevel {
+    text-align: left;
+    margin-top: 13px; }
+  .sitemap .-secondLevel {
+    margin-top: 4px; }
+    .sitemap .-secondLevel:last-child {
+      margin-bottom: 13px; } }
+
 i.fa {
   padding: 4px; }
 
@@ -330,7 +370,7 @@ i.fa {
     color: #191919; }
   .news .article .header {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: bold;
     line-height: 32px; }
   .news .article .meta {
     color: #191919;

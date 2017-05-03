@@ -10,6 +10,7 @@ page {
     includeJS.file100 = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
     includeJS.file200 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
     includeJS.file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/main.js
+    includeJS.file400 = EXT:tmpl_fidaac/Resources/Public/JavaScript/mediaChanges.js
 
     meta.viewport  = width=device-width, initial-scale=1.0
 }

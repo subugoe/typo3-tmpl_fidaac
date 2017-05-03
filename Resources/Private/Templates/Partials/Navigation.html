@@ -1,20 +1,19 @@
-<navigation>
-    <div class="container ">
-        <div class="default span-12 inserted">
-            <div class="-firstLevel span-12">
-                <f:cObject typoscriptObjectPath="lib.menu1"/>
+<navigation class="navigation">
+        <div class="span-12 default center inserted">
+            <div class="span-12 -firstLevel">
+                <f:cObject typoscriptObjectPath="lib.navLevel1"/>
             </div>
-            <div class="-secondLevel span-12">
-                <f:cObject typoscriptObjectPath="lib.menu2"/>
+            <div class="span-12 -secondLevel">
+                <f:cObject typoscriptObjectPath="lib.navLevel2"/>
             </div>
-            <div class="-thirdLevel span-12">
-                <f:cObject typoscriptObjectPath="lib.menu3"/>
+            <div class="span-12 -thirdLevel">
+                <f:cObject typoscriptObjectPath="lib.navLevel3"/>
             </div>
         </div>
 
-        <div class="breadCrumbs span-12 removed">
-            <div class="menuButton span-2"><i class="fa fa-bars" aria-hidden="true"></i>Menu</div>
-            <div class="crumbs span-10 right">
+        <div class="span-12 breadCrumbs center removed">
+            <div class="span-2 menuButton"><i class="fa fa-bars" aria-hidden="true"></i>Menu</div>
+            <div class="span-9 crumbs">
                 <f:cObject typoscriptObjectPath="lib.breadCrumbs"/>
             </div>
         </div>
