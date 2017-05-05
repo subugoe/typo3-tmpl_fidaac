@@ -1,16 +1,9 @@
 main {
-    width: 100%;
     display: flex;
-    flex: 0 auto;
-    position: relative;
-    overflow-y: auto;
-
-    &:after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    min-height: 1em;
 
     .overlay {
         flex: 1 100%;

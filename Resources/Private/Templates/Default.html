@@ -1,5 +1,9 @@
-<div class="page">
+<page class="page">
     <f:render partial="Header.html" arguments="{_all}"/>
     <f:render partial="Navigation.html" arguments="{_all}"/>
-    <f:render partial="Main.html" arguments="{_all}"/>
-</div>
+
+    <div class="scrolled">
+        <f:render partial="Main.html" arguments="{_all}"/>
+        <f:render partial="Sitemap.html" arguments="{_all}"/>
+    </div>
+</page>

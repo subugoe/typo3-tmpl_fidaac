@@ -3,22 +3,31 @@ header {
     width: 100%;
     color: $white;
     font-size: 24px;
+
+    display: flex;
     flex: 0 0 auto;
+    justify-content: center;
 
     a {
         color: $white;
     }
 
+    .container {
+        align-items: center;
+    }
+
+    .bildText {
+        align-items: center;
+    }
+
+    .buttons {
+        justify-content: space-between !important;
+    }
+
     .-search,
     .-language {
         text-align: right;
-    }
-
-    .-buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        margin-left: auto;
+        align-items: center;
     }
 
     .-image {
@@ -33,13 +42,9 @@ header {
         & > * {
             padding: $g/2 0px;
         }
-        .-text::after {
-            content: "Library AAC";
-        }
 
         .-image img {
             width: 174px;
-            height: 40px;
         }
 
         .-search {
@@ -72,11 +77,6 @@ header {
             .-image img {
                 width: 144px;
                 height: 32px;
-            }
-
-            .-text::after {
-                content: "FID AAC";
-                line-height: 38px;
             }
         }
     }

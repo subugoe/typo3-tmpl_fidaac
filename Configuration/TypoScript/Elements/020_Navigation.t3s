@@ -1,9 +1,5 @@
-lib.menu = HMENU
-lib.menu.excludeUIdList = {$ids.menuExcluded}
-lib.menu.special = directory
-lib.menu.special.value = {$ids.home}
-lib.menu1 = HMENU
-lib.menu1 {
+lib.navLevel1 = HMENU
+lib.navLevel1 {
 
     1 = TMENU
     1 {
@@ -17,8 +13,9 @@ lib.menu1 {
         ACT.ATagParams = class="strong"
     }
 }
-lib.menu2 = HMENU
-lib.menu2 {
+
+lib.navLevel2 = HMENU
+lib.navLevel2 {
     entryLevel = 1
 
     1 = TMENU
@@ -34,8 +31,9 @@ lib.menu2 {
         ACT.ATagParams = class="strong"
     }
 }
-lib.menu3 = HMENU
-lib.menu3 {
+
+lib.navLevel3 = HMENU
+lib.navLevel3 {
     entryLevel = 2
 
     1 = TMENU
@@ -53,6 +51,7 @@ lib.menu3 {
     }
     2 < .1
 }
+
 lib.breadCrumbs = HMENU
 lib.breadCrumbs {
     special = rootline
@@ -64,7 +63,55 @@ lib.breadCrumbs {
     }
 }
 
+lib.sitemap = HMENU
+lib.sitemap {
+    1 = TMENU
+    1 {
+        expAll = 1
 
+        NO = 1
+        NO {
+            beforeWrap = <div class="span-12"><div class="span-2 -firstLevel">
+            afterWrap = </div></div>
+            stdWrap.htmlSpecialChars = 1
+        }
 
+        IFSUB = 1
+        IFSUB {
+            beforeWrap = <div class="span-2 -firstLevel">
+            afterWrap = </div>
+        }
+
+        ACTIFSUB < .IFSUB
+        ACTIFSUB.ATagParams = class="strong"
+        CURIFSUB < .IFSUB
+        CURIFSUB.ATagParams = class="strong"
+        CUR < .NO
+        CUR.ATagParams = class="strong"
+        ACT < .NO
+        ACT.ATagParams = class="strong"
+    }
+
+    2 < .1
+    2 {
+        wrap = <div class="span-10 -secondLevel">|</div>
+
+        NO {
+            beforeWrap =
+            afterWrap =
+        }
+
+        IFSUB {
+            beforeWrap =
+            afterWrap =
+        }
+        ACTIFSUB < .IFSUB
+        CURIFSUB < .IFSUB
+        CUR < .CURIFSUB
+        ACT < .ACTIFSUB
+        CUR.ATagParams = class="strong"
+        ACT.ATagParams = class="strong"
+    }
+}
 
 

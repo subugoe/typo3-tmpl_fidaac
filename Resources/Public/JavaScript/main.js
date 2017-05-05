@@ -1,12 +1,12 @@
 $(function() {
     // create a botton as replacement for more nav items
-    createMoreButton = function () {
-        mbt = '<div class="moreButton span-3 right">' +
+    var createMoreButton = function () {
+        mbt = '<div class="moreButton span-3 center">' +
             '<i class="fa fa-bars" aria-hidden="true"></i>' +
-            'Weitere' +
+            'More' +
             '</div>';
 
-        $(mbt).insertAfter('.-firstLevel');
+        $(mbt).insertAfter('.navigation .-firstLevel');
 
         $('.moreButton').on('click', function () {
             var firstLevel = $('navigation .-firstLevel');
@@ -17,7 +17,7 @@ $(function() {
     };
 
     // hide the last items of a list, as long as hight differs from aimed height
-    removeListItems = function(_list, _height) {
+    var removeListItems = function(_list, _height) {
         if ($(_list).height() > _height) {
             $(_list).children(":not(.removed)").last().addClass('removed');
             removeListItems(_list, _height);
@@ -31,29 +31,31 @@ $(function() {
      * + add button and
      * + one by one add class "hidden" until length navigation < container length
      */
-    addButtonToNavigation = function () {
-        var firstLevel = $('navigation .-firstLevel');
-
-        if (firstLevel.height() > 40) {
+    var addButtonToNavigation = function () {
+        var firstLevel = $('.navigation .-firstLevel');
+        if ($('.navigation .-firstLevel').height() > 40) {
             // add Button if necessary
-            firstLevel.removeClass('span-12').addClass('span-9');
+            $('.navigation .-firstLevel').attr('class',$('.navigation .-firstLevel').attr('class').replace(/span-[0-9]+/,'span-9'));
+
             if ($('.moreButton').length == 0) {
-                console.log("Keiner da")
                 createMoreButton();
-                removeListItems(firstLevel, 40);
             } else {
-                console.log("DA")
                 $('.moreButton').removeClass('removed').addClass('inserted');
             }
+            removeListItems(firstLevel, 40);
         }
     };
-    window.onresize = addButtonToNavigation();
+
+    $(window).resize(function() {
+        addButtonToNavigation();
+    });
+    addButtonToNavigation();
 
     /**
      * For scrolled content:
      * Reduce header and add transparent gradient to text
      */
-    $('main').on('scroll', function() {
+    $('.scrolled').on('scroll', function() {
         $('.overlay').removeClass('removed').addClass('inserted');
         $('navigation .default').removeClass('inserted').addClass('removed');
         $('navigation .breadCrumbs').removeClass('removed').addClass('inserted');
@@ -67,7 +69,7 @@ $(function() {
     });
 
     /**
-     * Wen menuButton is clicked, switch back to full menu
+     * When menuButton is clicked, switch back to full menu
      */
     $('.menuButton').on('click',function() {
         $(".default").addClass("inserted").removeClass("removed");
