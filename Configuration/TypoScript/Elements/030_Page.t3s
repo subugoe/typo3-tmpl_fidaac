@@ -46,7 +46,7 @@ lib.contentcategorylistOfPages {
         select {
             uidInList = this
             pidInList = 0
-            selectFields = sys_category.title
+            selectFields = *
             join = sys_category_record_mm ON pages.uid = sys_category_record_mm.uid_foreign JOIN sys_category ON sys_category.uid = sys_category_record_mm.uid_local
             where = sys_category_record_mm.tablenames = 'pages'
             orderBy = sys_category.sorting
