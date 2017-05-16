@@ -69,6 +69,24 @@ p {
     }
 }
 
+ul {
+    font-weight: lighter;
+    list-style: none;
+    padding: 0.25em 0 0.45em 0;
+    margin: 0;
+
+    li {
+
+        &:before {
+            content: ".";
+            padding-right: 8px;
+            bottom: 0.25em;
+            position: relative;
+            font-weight: 600;
+        }
+    }
+}
+
 .page {
     display: flex;
     flex-direction: column;
