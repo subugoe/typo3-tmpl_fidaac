@@ -390,10 +390,14 @@ i.fa {
     background: white; }
 
 .doubleColumn-col1 {
-  padding-right: 8px; }
+  padding-right: 8px;
+  align-items: flex-start;
+  align-content: flex-start; }
 
 .doubleColumn-col2 {
-  padding-left: 8px; }
+  padding-left: 8px;
+  align-items: flex-start;
+  align-content: flex-start; }
 
 .news .article {
   display: flex;
