@@ -2,7 +2,7 @@
 #### TCEFORM ####
 #################
 
-// Remove Layouts (Header Type) and call them heading. Default is Heading 1
+// Remove layouts (header type) and call them heading. Default is heading 1
 TCEFORM {
     tt_content {
         header_layout {
@@ -16,3 +16,14 @@ TCEFORM {
         }
     }
 }
+
+// Layout for content elements
+TCEFORM.tt_content {
+        layout {
+            altLabels {
+                0 = Default
+                1 = Doppelspaltig
+            }
+            removeItems = 2,3,4,5,6,7,8,9,10
+        }
+    }

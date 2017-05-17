@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+* {
+  box-sizing: border-box; }
+
 html {
   height: 100%; }
 
@@ -374,6 +377,23 @@ i.fa {
     background: #F4D64A;
     border-radius: 4px;
     padding: 1.88235px 8px; }
+
+.doubleColumn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-basis: 100%;
+  font-size: 16px;
+  line-height: 24px; }
+  .doubleColumn > h1 {
+    flex-basis: 100%;
+    background: white; }
+
+.doubleColumn-col1 {
+  padding-right: 8px; }
+
+.doubleColumn-col2 {
+  padding-left: 8px; }
 
 .news .article {
   display: flex;

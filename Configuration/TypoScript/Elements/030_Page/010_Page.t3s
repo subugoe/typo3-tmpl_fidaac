@@ -1,0 +1,29 @@
+page = PAGE
+page {
+    typeNum = 0
+
+    includeCSS.file100 = EXT:tmpl_fidaac/Resources/Public/Css/main.css
+    includeCSS.file200 = EXT:tmpl_fidaac/Resources/Public/Fonts/FontAwesome/fonts/font-awesome.min.css
+    includeCss.file300 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css
+    includeCSS.file400 = https://fonts.googleapis.com/css?family=Open+Sans:300
+
+    includeJS.file100 = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+    includeJS.file200 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
+    includeJS.file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/main.js
+    includeJS.file500 = EXT:tmpl_fidaac/Resources/Public/JavaScript/content.js
+
+
+    meta.viewport  = width=device-width, initial-scale=1.0
+}
+
+lib.content < styles.content.get
+
+page.10 = FLUIDTEMPLATE
+page.10 {
+    file = EXT:tmpl_fidaac/Resources/Private/Templates/Default.html
+    partialRootPaths = EXT:tmpl_fidaac/Resources/Private/Partials/
+    layoutRootPaths = EXT:tmpl_fidaac/Resources/Private/Layouts/
+
+    variables {
+    }
+}
