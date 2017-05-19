@@ -58,16 +58,13 @@ img {
 }
 
 a {
-    color: $brand;
     text-decoration: none;
 }
 
-p {
-    font-weight: lighter;
-    margin-top: 0px;
-    margin-bottom: 8px;
+p, ul {
 
     a {
+        color: $brand;
         font-weight: bold;
 
         &:after {
@@ -76,6 +73,12 @@ p {
             top: -10px;
         }
     }
+}
+
+p {
+    font-weight: lighter;
+    margin-top: 0px;
+    margin-bottom: 8px;
 }
 
 ul {
