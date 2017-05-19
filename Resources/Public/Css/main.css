@@ -49,19 +49,20 @@ img {
   margin: 0px !important; }
 
 a {
-  color: #183267;
   text-decoration: none; }
+
+p a, ul a {
+  color: #183267;
+  font-weight: bold; }
+  p a:after, ul a:after {
+    content: "+";
+    position: relative;
+    top: -10px; }
 
 p {
   font-weight: lighter;
   margin-top: 0px;
   margin-bottom: 8px; }
-  p a {
-    font-weight: bold; }
-    p a:after {
-      content: "+";
-      position: relative;
-      top: -10px; }
 
 ul {
   font-weight: lighter;
