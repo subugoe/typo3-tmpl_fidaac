@@ -25,5 +25,7 @@ page.10 {
     layoutRootPaths = EXT:tmpl_fidaac/Resources/Private/Layouts/
 
     variables {
+        IDS_HOME = TEXT
+        IDS_HOME.value = {$ids.home}
     }
 }
