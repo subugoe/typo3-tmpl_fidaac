@@ -86,19 +86,21 @@ ul {
     list-style: none;
     padding: 0.25em 0 0.45em 0;
     margin: 0;
-
-    li {
-
-        &:before {
-            content: ".";
-            padding-right: 8px;
-            bottom: 0.25em;
-            position: relative;
-            font-weight: 600;
-        }
-    }
 }
 
+li {
+    display: table-row;
+
+    &:before {
+        content: ".";
+        bottom: 0.25em;
+        position: relative;
+        font-weight: 600;
+        display: table-cell;
+        padding-right: 9px;
+        padding-left: 9px;
+    }
+}
 .page {
     display: flex;
     flex-direction: column;
