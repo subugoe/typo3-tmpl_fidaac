@@ -4,7 +4,8 @@ tt_content.stdWrap.innerWrap.cObject {
     key.field = layout
 
     0 = TEXT
-    0.value = <div class="span-8 center">|</div>
+    0.value = <div class="span-8 singleColumn">|</div>
+
     1 = TEXT
     1.value = <div class="span-12 doubleColumn">|</div>
 }
