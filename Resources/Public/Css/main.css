@@ -334,6 +334,27 @@ main {
     background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
     z-index: 1; }
 
+.doubleColumn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-basis: 100%;
+  font-size: 16px;
+  line-height: 24px; }
+  .doubleColumn > h1 {
+    flex-basis: 100%;
+    background: white; }
+
+.doubleColumn-col1 {
+  padding-right: 8px;
+  align-items: flex-start;
+  align-content: flex-start; }
+
+.doubleColumn-col2 {
+  padding-left: 8px;
+  align-items: flex-start;
+  align-content: flex-start; }
+
 .sitemap {
   background-color: #F2F2F2;
   list-style-type: none;
@@ -383,27 +404,6 @@ i.fa {
     background: #F4D64A;
     border-radius: 4px;
     padding: 1.88235px 8px; }
-
-.doubleColumn {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex-basis: 100%;
-  font-size: 16px;
-  line-height: 24px; }
-  .doubleColumn > h1 {
-    flex-basis: 100%;
-    background: white; }
-
-.doubleColumn-col1 {
-  padding-right: 8px;
-  align-items: flex-start;
-  align-content: flex-start; }
-
-.doubleColumn-col2 {
-  padding-left: 8px;
-  align-items: flex-start;
-  align-content: flex-start; }
 
 .news .article {
   display: flex;

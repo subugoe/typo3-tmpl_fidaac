@@ -16,3 +16,33 @@ main {
         z-index: 1;
     }
 }
+
+.doubleColumn {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-basis: 100%;
+    font-size: 16px;
+    line-height: 24px;
+
+    & > h1 {
+        flex-basis: 100%;
+        background: white;
+    }
+}
+
+.doubleColumn-col1 {
+    padding-right: 8px;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.doubleColumn-col2 {
+    padding-left: 8px;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.singleColumn {
+
+}
