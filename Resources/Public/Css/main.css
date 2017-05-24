@@ -64,21 +64,22 @@ p {
   margin-top: 0px;
   margin-bottom: 8px; }
 
-li {
-  text-indent: -24px;
-  margin-left: 24px; }
-  li:before {
-    content: ".";
-    bottom: 0.25em;
-    position: relative;
-    padding-left: 9px;
-    padding-right: 9px; }
-
 ul {
   font-weight: lighter;
   list-style: none;
   padding: 0.25em 0 0.45em 0;
   margin: 0; }
+
+li {
+  display: table-row; }
+  li:before {
+    content: ".";
+    bottom: 0.25em;
+    position: relative;
+    font-weight: 600;
+    display: table-cell;
+    padding-right: 9px;
+    padding-left: 9px; }
 
 .page {
   display: flex;
