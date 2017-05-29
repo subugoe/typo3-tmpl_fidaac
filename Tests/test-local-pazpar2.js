@@ -9,9 +9,9 @@ casper.on("resource.error", function(resourceError){
 });
 
 var baseurl = casper.cli.get("url");
-var url = baseurl;
+var url = baseurl+'/index.php?id=9';
 
-casper.test.begin('Test pazpar2', 8, function(test) {
+casper.test.begin('Test pazpar2', 6, function(test) {
     casper.start(url, function () {
         casper.echo('Opened page with title "' + this.getTitle() + '"');
         casper.echo('Capture screenshot');
@@ -20,7 +20,6 @@ casper.test.begin('Test pazpar2', 8, function(test) {
 
     then(function() {
         casper.echo('Check availability of all elements');
-        test.assertTextExists('Alle Kataloge', 'Page title "Alle Kataloge" visible');
         test.assertVisible('#pazpar2');
         test.assertVisible('.pz2-searchField', 'SearchField visible');
         test.assertVisible('.pz2-submitButton', 'SubmitButton visible');
@@ -29,7 +28,6 @@ casper.test.begin('Test pazpar2', 8, function(test) {
 
     then(function() {
         this.waitForSelector('.pz2-accessNote', function () {
-            test.assertSelectorHasText('h2', 'Alle Kataloge');
             casper.echo('Check Access: ' + this.getHTML('.pz2-accessNote', false));
         })
     }).
