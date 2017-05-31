@@ -204,43 +204,203 @@ header {
   justify-content: center; }
   header a {
     color: #FFFFFF; }
-  header .container {
-    align-items: center; }
-  header .bildText {
-    align-items: center; }
-  header .buttons {
-    justify-content: space-between !important; }
-  header .-search,
-  header .-language {
-    text-align: right;
-    align-items: center; }
-  header .-image {
-    display: flex;
-    align-items: center; }
+  header svg {
+    height: 32px;
+    width: 24px; }
+  header path {
+    fill: #FFFFFF; }
 
-@media (min-width: 768px) {
-  header > * {
-    padding: 8px 0px; }
-  header .-image img {
-    width: 174px; } }
+.header {
+  padding: 16px 0; }
+  @media (min-width: 960px) {
+    .header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 928px;
+      padding: 16px 0; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    .header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 736px; } }
+  @media (max-width: 768px) {
+    .header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 304px;
+      font-size: 20px; } }
 
-@media (min-width: 960px) {
-  header {
-    font-size: 24px; }
-    header .header {
-      padding: 16px 0; }
-      header .header .-image img {
+.header_bildText {
+  align-items: center; }
+  @media (min-width: 960px) {
+    .header_bildText {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 464px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    .header_bildText {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 368px; } }
+  @media (max-width: 768px) {
+    .header_bildText {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 304px; } }
+
+.header_image {
+  justify-content: flex-start !important;
+  margin-right: auto; }
+  @media (min-width: 960px) {
+    .header_image {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 232px; }
+      .header_image img {
         width: 188px;
         height: 41px; } }
-
-@media (max-width: 768px) {
-  header {
-    font-size: 20px; }
-    header .header {
-      padding: 16px 0px; }
-      header .header .-image img {
-        width: 144px;
+  @media (min-width: 768px) and (max-width: 960px) {
+    .header_image {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 184px; }
+      .header_image img {
+        width: 174px !important;
         height: 32px; } }
+  @media (max-width: 768px) {
+    .header_image {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 304px; }
+      .header_image img {
+        width: 144px !important; } }
+
+.header_text {
+  justify-content: flex-start !important;
+  margin-right: auto; }
+  @media (min-width: 960px) {
+    .header_text {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 232px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    .header_text {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 184px; } }
+  @media (max-width: 768px) {
+    .header_text {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 304px; } }
+
+.header_buttons {
+  justify-content: flex-end !important;
+  justify-content: flex-end !important; }
+  .header_buttons svg {
+    margin-right: 6px; }
+  @media (min-width: 960px) {
+    .header_buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 464px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    .header_buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 368px; } }
+  @media (max-width: 768px) {
+    .header_buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 304px;
+      justify-content: flex-start !important;
+      margin-right: auto; } }
+
+.header_home {
+  display: flex; }
+  @media (min-width: 960px) {
+    .header_home {
+      padding-right: 0px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    .header_home {
+      padding-right: 40px; } }
+  @media (max-width: 768px) {
+    .header_home {
+      padding-right: 40px; } }
+  .header_home.-text {
+    padding-right: 16px; }
+
+.header_search {
+  display: flex; }
+  @media (min-width: 960px) {
+    .header_search {
+      padding-right: 0px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    .header_search {
+      padding-right: 40px; } }
+  @media (max-width: 768px) {
+    .header_search {
+      padding-right: 40px; } }
+  .header_search.-text {
+    margin-right: 16px; }
+
+.header_language {
+  display: flex; }
+  @media (min-width: 960px) {
+    .header_language {
+      padding-right: 0px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    .header_language {
+      padding-right: 40px; } }
+  @media (max-width: 768px) {
+    .header_language {
+      padding-right: 40px; } }
 
 navigation {
   background-color: #F2F2F2;

@@ -1,0 +1,204 @@
+@mixin span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin span-l-12 {
+    @include span;
+    flex-basis: 928px;
+}
+@mixin span-l-11 {
+    @include span;
+    flex-basis: 859.67px;
+}
+@mixin span-l-10 {
+    @include span;
+    flex-basis: 733.33px;
+}
+@mixin span-l-9 {
+    @include span;
+    flex-basis: 696px;
+}
+@mixin span-l-8 {
+    @include span;
+    flex-basis: 618.67px;
+}
+@mixin span-l-7 {
+    @include span;
+    flex-basis: 541.33px;
+}
+@mixin span-l-6 {
+    @include span;
+    flex-basis: 464px;
+}
+@mixin span-l-5 {
+    @include span;
+    flex-basis: 368.67px;
+}
+@mixin span-l-4 {
+    @include span;
+    flex-basis: 309.33px;
+}
+@mixin span-l-3 {
+    @include span;
+    flex-basis: 232px;
+}
+@mixin span-l-2 {
+    @include span;
+    flex-basis: 154.67px;
+}
+@mixin span-l-1 {
+    @include span;
+    flex-basis: 77.33px;
+}
+
+@mixin span-m-12 {
+    @include span;
+    flex-basis: 736px;
+}
+@mixin span-m-11 {
+    @include span;
+    flex-basis: 674.67px;
+}
+@mixin span-m-10 {
+    @include span;
+    flex-basis: 674.67px;
+}
+@mixin span-m-9 {
+    @include span;
+    flex-basis: 552px;
+}
+@mixin span-m-8 {
+    @include span;
+    flex-basis: 490.67px;
+}
+@mixin span-m-7 {
+    @include span;
+    flex-basis: 429.33px;
+}
+@mixin span-m-6 {
+    @include span;
+    flex-basis: 368px;
+}
+@mixin span-m-5 {
+    @include span;
+    flex-basis: 306.67px;
+}
+@mixin span-m-4 {
+    @include span;
+    flex-basis: 245.33px;
+}
+@mixin span-m-3 {
+    @include span;
+    flex-basis: 184px;
+}
+@mixin span-m-2 {
+    @include span;
+    flex-basis: 123px;
+}
+@mixin span-m-1 {
+    @include span;
+    flex-basis: 61.33px;
+}
+
+@mixin span-s-12 {
+    @include span;
+    flex-basis: 304px;
+}
+@mixin span-s-11 {
+    @include span;
+    flex-basis: 304px;
+
+}
+@mixin span-s-10 {
+    @include span;
+    flex-basis: 304px;
+
+}
+@mixin span-s-9 {
+    @include span;
+    flex-basis: 304px;
+
+}
+@mixin span-s-8 {
+    @include span;
+    flex-basis: 304px;
+
+}
+@mixin span-s-7 {
+    @include span;
+    flex-basis: 304px;
+
+}
+@mixin span-s-6 {
+    @include span;
+    flex-basis: 304px;
+
+}
+@mixin span-s-5 {
+    @include span;
+    flex-basis: 304px;
+
+}
+@mixin span-s-4 {
+    @include span;
+    flex-basis: 304px;
+
+}
+@mixin span-s-3 {
+    @include span;
+    flex-basis: 304px;
+
+}
+@mixin span-s-2 {
+    @include span;
+    flex-basis: 304px;
+
+}
+@mixin span-s-1 {
+    @include span;
+    flex-basis: 304px;
+
+}
+
+@mixin media-l {
+    @media (min-width: 960px) {
+        $c: 64px;
+        $g: 16px;
+        @content;
+    }
+}
+
+@mixin media-m {
+    @media (min-width: 768px) and (max-width: 960px){
+        $c: 48px;
+        $g: 16px;
+        @content;
+    }
+}
+
+@mixin media-s {
+    @media (max-width: 768px) {
+        $c: 45px;
+        $g: 8px;
+        @content;
+    }
+}
+
+@mixin flex-center {
+    align-self: center;
+    justify-content: center;
+    margin: auto;
+}
+
+@mixin flex-left {
+    justify-content: flex-start !important;
+    margin-right: auto;
+}
+
+@mixin flex-right {
+    justify-content: flex-end !important;
+}
