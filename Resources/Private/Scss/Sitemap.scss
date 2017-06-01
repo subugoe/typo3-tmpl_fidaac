@@ -1,60 +1,99 @@
-.sitemap {
+sitemap {
     background-color: $shadeLightest;
-    list-style-type: none;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: lighter;
-
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: auto;
-    flex-wrap: wrap;
+    min-height: 1em;
+    justify-content: center;
+}
+
+.sitemap {
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: lighter;
 
     a {
         padding-right: 8px;
         color: $shadeDarkest;
     }
 
-    .-firstLevel {
-        text-align: right;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        font-weight: normal;
+    @include media-l {
+        @include span-l-12;
+        margin-top: 16px;
+        margin-bottom: 23px;
     }
-    .-secondlevel {
-        flex-wrap: wrap;
+    @include media-m {
+        @include span-m-12;
     }
-}
-
-@media (min-width: 768px) {
-    .sitemap {
-        .-firstLevel {
-            text-align: right;
-            margin-top: 8px;
-        }
-        .-secondLevel {
-            margin-top: 8px;
-
-            &:last-child {
-                margin-bottom: 16px;
-            }
-        }
+    @include media-s {
+        @include span-s-6;
     }
 }
 
-@media (max-width: 768px) {
-    .sitemap {
-        .-firstLevel {
-            text-align: left;
-            margin-top: 13px;
-        }
-        .-secondLevel {
-            margin-top: 4px;
+.sitemap_level {
+    @include media-l {
+        @include span-l-12;
+        margin-top: 7px;
+    }
+    @include media-m {
+        @include span-m-12;
+        margin-top: 7px;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+}
 
-            &:last-child {
-                margin-bottom: 13px;
-            }
+.sitemap_firstLevel {
+    text-align: right;
+    justify-content: flex-end;
+    font-weight: normal;
+
+    &.-noChild {
+        @include media-l {
+            @include span-l-2;
+            margin-right: 8px;
         }
+        @include media-m {
+            @include span-m-2;
+            margin-right: 8px;
+        }
+        @include media-s {
+            @include span-s-6;
+        }
+    }
+
+    &.-withChild {
+        @include media-l {
+            @include span-l-2;
+        }
+        @include media-m {
+            @include span-m-2;
+        }
+        @include media-s {
+            @include span-s-6;
+        }
+    }
+}
+
+.sitemap_secondLevel {
+    @include media-l {
+        @include span-l-10;
+
+        a {
+            margin-left: 8px;
+        }
+    }
+    @include media-m {
+        @include span-m-10;
+
+        a {
+            margin-left: 8px;
+        }
+    }
+    @include media-s {
+        @include span-s-6;
     }
 }

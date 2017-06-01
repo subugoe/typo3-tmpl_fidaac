@@ -1,6 +1,5 @@
 header {
     background-color: $brand;
-    width: 100%;
     color: $white;
     font-size: 24px;
 
@@ -27,13 +26,12 @@ header {
 
     @include media-l {
         @include span-l-12;
-        padding: $g 0;
     }
     @include media-m {
         @include span-m-12;
     }
     @include media-s {
-        @include span-s-12;
+        @include span-s-6;
         font-size: 20px;
     }
 }
@@ -96,6 +94,7 @@ header {
 
 .header_buttons {
     @include flex-right;
+    align-items: center;
 
     svg {
         margin-right: 6px;
