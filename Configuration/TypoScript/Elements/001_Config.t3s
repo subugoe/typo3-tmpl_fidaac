@@ -20,8 +20,5 @@ config {
     linkVars = L(0-1)
 
     prefixLocalAnchors = all
-    #absRelPath = /
-    # RealURL is incompatible with simulateStaticDocuments
-    #tx_realurl_enable = 1
-    #simulateStaticDocuments = 0
+    tx_realurl_enable = 1
 }
