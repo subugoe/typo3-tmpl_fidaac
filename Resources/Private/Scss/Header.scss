@@ -12,72 +12,155 @@ header {
         color: $white;
     }
 
-    .container {
-        align-items: center;
+    svg {
+        height: 32px;
+        width: 24px;
     }
 
-    .bildText {
-        align-items: center;
-    }
-
-    .buttons {
-        justify-content: space-between !important;
-    }
-
-    .-search,
-    .-language {
-        text-align: right;
-        align-items: center;
-    }
-
-    .-image {
-        display: flex;
-        align-items: center;
+    path {
+        fill: $white;
     }
 }
 
-@media (min-width: 768px) {
-    header {
+.header {
+    padding: $g 0;
 
-        & > * {
-            padding: $g/2 0px;
-        }
-
-        .-image img {
-            width: 174px;
-        }
-
-        .-search {
-        }
+    @include media-l {
+        @include span-l-12;
+        padding: $g 0;
     }
-}
-
-@media (min-width: 960px) {
-    header {
-        font-size: 24px;
-
-        .header {
-            padding: $g 0;
-
-            .-image img {
-                width: 188px;
-                height: 41px;
-            }
-        }
+    @include media-m {
+        @include span-m-12;
     }
-}
-
-@media (max-width: 768px) {
-    header {
+    @include media-s {
+        @include span-s-12;
         font-size: 20px;
+    }
+}
 
-        .header {
-            padding: $g 0px;
+.header_bildText {
+    align-items: center;
 
-            .-image img {
-                width: 144px;
-                height: 32px;
-            }
+    @include media-l {
+        @include span-l-6;
+    }
+    @include media-m {
+        @include span-m-6;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+}
+
+.header_image {
+    @include flex-left;
+
+    @include media-l {
+        @include span-l-3;
+
+        img {
+            width: 188px;
+            height: 41px;
         }
+    }
+    @include media-m {
+        @include span-m-3;
+
+        img {
+            width: 174px !important;
+            height: 32px;
+        }
+    }
+    @include media-s {
+        @include span-s-3;
+
+        img {
+            width: 144px !important;
+        }
+    }
+}
+
+.header_text {
+    @include flex-left;
+
+    @include media-l {
+        @include span-l-3;
+    }
+    @include media-m {
+        @include span-m-3;
+    }
+    @include media-s {
+        @include span-s-3;
+    }
+}
+
+.header_buttons {
+    @include flex-right;
+
+    svg {
+        margin-right: 6px;
+    }
+
+    @include flex-right;
+
+    @include media-l {
+        @include span-l-6;
+    }
+    @include media-m {
+        @include span-m-6;
+    }
+    @include media-s {
+        @include span-s-6;
+        @include flex-left;
+    }
+}
+
+.header_home {
+    display: flex;
+
+    @include media-l {
+        padding-right: 0px;
+    }
+    @include media-m {
+        padding-right: 40px;
+    }
+    @include media-s {
+        padding-right: 40px;
+    }
+
+    &.-text {
+        padding-right: 16px;
+    }
+}
+
+.header_search {
+    display: flex;
+
+    @include media-l {
+        padding-right: 0px;
+    }
+    @include media-m {
+        padding-right: 40px;
+    }
+    @include media-s {
+        padding-right: 40px;
+    }
+
+    &.-text {
+        margin-right: 16px;
+    }
+}
+
+.header_language {
+    display: flex;
+
+    @include media-l {
+        padding-right: 0px;
+    }
+    @include media-m {
+        padding-right: 40px;
+    }
+    @include media-s {
+        padding-right: 40px;
     }
 }

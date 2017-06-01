@@ -6,16 +6,20 @@ $(function() {
      */
     changeHeader = function() {
         if (window.innerWidth > 960) {
-            $('.header .buttons').attr('class',$('.header .buttons').attr('class').replace(/span-[0-9]+/,'span-4'));
+            ['home','search','language'].forEach(function(el) {
+                $('.header_'+el+'.-text').removeClass('removed');
+            });
             return;
         }
-        if (window.innerWidth <= 960 && window.innerWidth > 768) {
-            $('.header .buttons').attr('class',$('.header .buttons').attr('class').replace(/span-[0-9]+/,'span-4'));
+        if (window.innerWidth < 960 && window.innerWidth > 768) {
+            ['home','search','language'].forEach(function(el) {
+                $('.header_'+el+'.-text').addClass('removed');
+            });
             return;
         }
         if (window.innerWidth <= 768) {
         }
-    };
+    }
 
     changeNavigation = function() {
     };
