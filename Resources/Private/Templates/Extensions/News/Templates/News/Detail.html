@@ -59,7 +59,7 @@
 					<!-- date -->
 					<span class="news-list-date">
 						<time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
-							<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+							<f:format.date format="{f:translate(key:'LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:dateFormat')}">{newsItem.datetime}</f:format.date>
 							<meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}" />
 						</time>
 					</span>
@@ -80,7 +80,7 @@
 					<f:if condition="{newsItem.author}">
 						<!-- author -->
 						<span class="news-list-author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-							<f:translate key="author_simple" /> <span itemprop="name">{newsItem.author}</span>
+							<f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:author_simple"/> <span itemprop="name">{newsItem.author}</span>
 						</span>
 					</f:if>
 				</p>
@@ -109,7 +109,7 @@
 				<!-- Link Back -->
 				<div class="news-backlink-wrap">
 					<f:link.page pageUid="{settings.backPid}">
-						<f:translate key="back-link" />
+						<f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:back-link" />
 					</f:link.page>
 				</div>
 			</f:if>
@@ -121,7 +121,7 @@
 					<!-- Related news records -->
 					<div class="news-related news-related-news">
 						<h4>
-							<f:translate key="related-news" />
+							<f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:related-news" />
 						</h4>
 						<ul>
 							<f:for each="{newsItem.allRelatedSorted}" as="related">
@@ -141,7 +141,7 @@
 					<!-- FAL related files -->
 					<div class="news-related news-related-files">
 						<h4>
-							<f:translate key="related-files" />
+							<f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:related-files" />
 						</h4>
 						<ul>
 							<f:for each="{newsItem.falRelatedFiles}" as="relatedFile">
@@ -164,7 +164,7 @@
 					<!-- Related links -->
 					<div class="news-related news-related-links">
 						<h4>
-							<f:translate key="related-links" />
+							<f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:related-links" />
 						</h4>
 						<ul>
 							<f:for each="{newsItem.relatedLinks}" as="relatedLink">

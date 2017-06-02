@@ -65,14 +65,14 @@
             <div class="-list-dateNAuthor span-6">
                 <!-- date -->
                 <time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
-                    <f:format.date format="{f:translate(key:'LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang_news.xml:dateFormat')}">{newsItem.datetime}</f:format.date>
+                    <f:format.date format="{f:translate(key:'LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:dateFormat')}">{newsItem.datetime}</f:format.date>
 					<meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}"/>
                 </time>
 
                 <!-- author -->
                 <f:if condition="{newsItem.author}">
 				<span class="-by">
-                    <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang_news.xml:by"/>
+                    <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:author_simple" />
                 </span>
                     {newsItem.author}
                 </f:if>
