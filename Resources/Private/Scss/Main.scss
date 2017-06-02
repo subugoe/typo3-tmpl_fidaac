@@ -45,13 +45,15 @@ main {
 .doubleColumn {
     @include flex-left;
     align-items: flex-start;
-    flex-basis: 100%;
     font-size: 16px;
     line-height: 24px;
+    display: block !important;
 
-    & > h1 {
-        flex-basis: 100%;
-        background: white;
+    column-count: 2;
+    column-gap: 16px;
+
+    h1 {
+        column-span: all !important;
     }
 
     @include media-l {
