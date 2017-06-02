@@ -66,6 +66,12 @@ navigation {
             align-self: center;
             text-align: center;
         }
+
+    svg {
+        height: 32px;
+        width: 24px;
+        fill: $white;
+    }
 }
 
 @media (min-width: 768px) {

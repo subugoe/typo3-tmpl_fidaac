@@ -7,14 +7,24 @@ $(function() {
     changeHeader = function() {
         if (window.innerWidth > 960) {
             ['home','search','language'].forEach(function(el) {
-                $('.header_'+el+'.-text').removeClass('removed');
+                //$('.header_'+el+'.-text').removeClass('removed');
+                // TODO: remove scripts!
             });
             return;
         }
         if (window.innerWidth < 960 && window.innerWidth > 768) {
-            ['home','search','language'].forEach(function(el) {
-                $('.header_'+el+'.-text').addClass('removed');
+            ['home', 'search', 'language'].forEach(function (el) {
+                console.log($('.header_' + el + '.-text'));
+                $('.header_' + el + '.-text').addClass('removed');
+                $('.header_' + el).mouseenter(function () {
+                    //$(this).children('.-text').removeClass('removed');
+                    // TODO: die Abstände sind zu groß. Kein Text -> 40px, Mit Text: 30px
+                });
+                $('.header_' + el).mouseleave(function () {
+                    $(this).children('.-text').addClass('removed');
+                });
             });
+            homeScriptAdded = true;
             return;
         }
         if (window.innerWidth <= 768) {

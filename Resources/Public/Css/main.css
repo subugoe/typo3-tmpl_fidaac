@@ -245,8 +245,7 @@ header {
     color: #FFFFFF; }
   header svg {
     height: 32px;
-    width: 24px; }
-  header path {
+    width: 24px;
     fill: #FFFFFF; }
 
 .header {
@@ -347,9 +346,10 @@ header {
 .header_buttons {
   justify-content: flex-end !important;
   align-items: center;
-  justify-content: flex-end !important; }
+  justify-items: center; }
   .header_buttons svg {
-    margin-right: 6px; }
+    margin-right: 6px;
+    height: 24px; }
   @media (min-width: 960px) {
     .header_buttons {
       display: flex;
@@ -372,34 +372,43 @@ header {
       margin-right: auto; } }
 
 .header_home {
+  align-self: center;
+  justify-content: center;
+  margin: auto;
   display: flex; }
   @media (min-width: 960px) {
     .header_home {
-      padding-right: 0px; } }
+      padding-right: 0px; }
+      .header_home.-text {
+        padding-right: 60px; } }
   @media (min-width: 768px) and (max-width: 960px) {
     .header_home {
       padding-right: 40px; } }
   @media (max-width: 768px) {
     .header_home {
       padding-right: 40px; } }
-  .header_home.-text {
-    padding-right: 16px; }
 
 .header_search {
+  align-self: center;
+  justify-content: center;
+  margin: auto;
   display: flex; }
   @media (min-width: 960px) {
     .header_search {
-      padding-right: 0px; } }
+      padding-right: 0px; }
+      .header_search.-text {
+        padding-right: 60px; } }
   @media (min-width: 768px) and (max-width: 960px) {
     .header_search {
       padding-right: 40px; } }
   @media (max-width: 768px) {
     .header_search {
       padding-right: 40px; } }
-  .header_search.-text {
-    margin-right: 16px; }
 
 .header_language {
+  align-self: center;
+  justify-content: center;
+  margin: auto;
   display: flex; }
   @media (min-width: 960px) {
     .header_language {
@@ -456,6 +465,10 @@ navigation {
     align-items: center;
     align-self: center;
     text-align: center; }
+  navigation svg {
+    height: 32px;
+    width: 24px;
+    fill: #FFFFFF; }
 
 @media (min-width: 768px) {
   navigation .-firstLevel,
