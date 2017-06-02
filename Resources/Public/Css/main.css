@@ -15,34 +15,74 @@ body {
   height: 100%; }
 
 h1 {
-  font-size: 40px;
   font-weight: bold;
-  line-height: 60px;
   margin: 0px;
   padding-top: 11px;
   padding-bottom: 7px; }
+  @media (min-width: 960px) {
+    h1 {
+      line-height: 50px;
+      font-size: 40px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    h1 {
+      line-height: 50px;
+      font-size: 40px; } }
+  @media (max-width: 768px) {
+    h1 {
+      line-height: 34px;
+      font-size: 32px; } }
 
 h2 {
-  font-size: 32px;
   font-weight: bold;
-  line-height: 40px;
   margin: 0px;
   padding-top: 8px;
   padding-bottom: 8px; }
+  @media (min-width: 960px) {
+    h2 {
+      line-height: 40px;
+      font-size: 32px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    h2 {
+      line-height: 40px;
+      font-size: 32px; } }
+  @media (max-width: 768px) {
+    h2 {
+      line-height: 30px;
+      font-size: 28px; } }
 
 h3 {
-  font-size: 28px;
-  line-height: 40px;
   margin: 0px;
   padding-top: 8px;
   padding-bottom: 8px; }
+  @media (min-width: 960px) {
+    h3 {
+      line-height: 36px;
+      font-size: 28px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    h3 {
+      line-height: 36px;
+      font-size: 28px; } }
+  @media (max-width: 768px) {
+    h3 {
+      line-height: 28px;
+      font-size: 24px; } }
 
 h4 {
-  font-size: 24px;
-  line-height: 40px;
   margin: 0px;
   padding-top: 8px;
   padding-bottom: 8px; }
+  @media (min-width: 960px) {
+    h4 {
+      line-height: 32px;
+      font-size: 24px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    h4 {
+      line-height: 32px;
+      font-size: 24px; } }
+  @media (max-width: 768px) {
+    h4 {
+      line-height: 24px;
+      font-size: 20px; } }
 
 img {
   padding: 0px !important;
