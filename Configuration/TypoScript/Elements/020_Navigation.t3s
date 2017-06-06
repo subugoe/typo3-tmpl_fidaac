@@ -71,14 +71,14 @@ lib.sitemap {
 
         NO = 1
         NO {
-            beforeWrap = <div class="span-12"><div class="span-2 -firstLevel">
+            beforeWrap = <div class="sitemap_level"><div class="sitemap_firstLevel -noChild">
             afterWrap = </div></div>
             stdWrap.htmlSpecialChars = 1
         }
 
         IFSUB = 1
         IFSUB {
-            beforeWrap = <div class="span-2 -firstLevel">
+            beforeWrap = <div class="sitemap_level"><div class="sitemap_firstLevel -withChild">
             afterWrap = </div>
         }
 
@@ -94,7 +94,7 @@ lib.sitemap {
 
     2 < .1
     2 {
-        wrap = <div class="span-10 -secondLevel">|</div>
+        wrap = <div class="sitemap_secondLevel">|</div></div>
 
         NO {
             beforeWrap =
