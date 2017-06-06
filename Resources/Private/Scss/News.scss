@@ -49,4 +49,8 @@
             border: 0.5px solid $shadeLight;
         }
     }
+
+    .page-navigation a:after {
+                content: "";
+    }
 }
