@@ -13,11 +13,6 @@ header {
     }
 
     svg {
-        height: 32px;
-        width: 24px;
-    }
-
-    path {
         fill: $white;
     }
 }
@@ -28,13 +23,28 @@ header {
     @include media-l {
         @include span-l-12;
         padding: $g 0;
+
+        svg {
+            height: 24px;
+            width: 24px;
+        }
     }
     @include media-m {
         @include span-m-12;
+
+        svg {
+            height: 24px;
+            width: 24px;
+        }
     }
     @include media-s {
         @include span-s-12;
         font-size: 20px;
+
+        svg {
+            height: 20px;
+            width: 20px;
+        }
     }
 }
 
@@ -117,50 +127,47 @@ header {
 
 .header_home {
     display: flex;
+}
 
-    @include media-l {
-        padding-right: 0px;
-    }
-    @include media-m {
-        padding-right: 40px;
-    }
-    @include media-s {
-        padding-right: 40px;
-    }
-
-    &.-text {
-        padding-right: 16px;
-    }
+.header_home-icon {
+    display: flex;
+    align-items: center;
 }
 
 .header_search {
     display: flex;
 
     @include media-l {
-        padding-right: 0px;
+        padding-left: 60px;
     }
     @include media-m {
-        padding-right: 40px;
+        padding-left: 40px;
     }
     @include media-s {
-        padding-right: 40px;
+        padding-left: 40px;
     }
+}
 
-    &.-text {
-        margin-right: 16px;
-    }
+.header_search-icon {
+    display: flex;
+    align-items: center;
 }
 
 .header_language {
     display: flex;
 
     @include media-l {
-        padding-right: 0px;
+        padding-left: 60px;
     }
     @include media-m {
-        padding-right: 40px;
+        padding-left: 40px;
     }
     @include media-s {
-        padding-right: 40px;
+        padding-left: 40px;
     }
+}
+
+.header_language-icon {
+    display: flex;
+    align-items: center;
 }
