@@ -26,8 +26,11 @@ $(function() {
             return;
         }
         if (window.innerWidth <= 768) {
-            $('.header_' + el).unbind('mouseenter');
-            $('.header_' + el).unbind('mouseleave');
+            ['home', 'search', 'language'].forEach(function (el) {
+                $('.header_' + el).unbind('mouseenter');
+                $('.header_' + el).unbind('mouseleave');
+            });
+            return;
         }
     }
 
