@@ -6,15 +6,4 @@ plugin {
             layoutRootPaths = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Layouts
         }
     }
-
-    # Modify the translation
-    _LOCAL_LANG {
-        default {
-            author = by
-        }
-        en {
-            author = by
-        }
-    }
-
 }
