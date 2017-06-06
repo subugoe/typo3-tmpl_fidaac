@@ -1,0 +1,173 @@
+header {
+    background-color: $brand;
+    width: 100%;
+    color: $white;
+    font-size: 24px;
+
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+
+    a {
+        color: $white;
+    }
+
+    svg {
+        fill: $white;
+    }
+}
+
+.header {
+    padding: $g 0;
+
+    @include media-l {
+        @include span-l-12;
+        padding: $g 0;
+
+        svg {
+            height: 24px;
+            width: 24px;
+        }
+    }
+    @include media-m {
+        @include span-m-12;
+
+        svg {
+            height: 24px;
+            width: 24px;
+        }
+    }
+    @include media-s {
+        @include span-s-12;
+        font-size: 20px;
+
+        svg {
+            height: 20px;
+            width: 20px;
+        }
+    }
+}
+
+.header_bildText {
+    align-items: center;
+
+    @include media-l {
+        @include span-l-6;
+    }
+    @include media-m {
+        @include span-m-6;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+}
+
+.header_image {
+    @include flex-left;
+
+    @include media-l {
+        @include span-l-3;
+
+        img {
+            width: 188px;
+            height: 41px;
+        }
+    }
+    @include media-m {
+        @include span-m-3;
+
+        img {
+            width: 174px !important;
+            height: 32px;
+        }
+    }
+    @include media-s {
+        @include span-s-3;
+
+        img {
+            width: 144px !important;
+        }
+    }
+}
+
+.header_text {
+    @include flex-left;
+
+    @include media-l {
+        @include span-l-3;
+    }
+    @include media-m {
+        @include span-m-3;
+    }
+    @include media-s {
+        @include span-s-3;
+    }
+}
+
+.header_buttons {
+    @include flex-right;
+
+    svg {
+        margin-right: 6px;
+    }
+
+    @include flex-right;
+
+    @include media-l {
+        @include span-l-6;
+    }
+    @include media-m {
+        @include span-m-6;
+    }
+    @include media-s {
+        @include span-s-6;
+        @include flex-left;
+    }
+}
+
+.header_home {
+    display: flex;
+}
+
+.header_home-icon {
+    display: flex;
+    align-items: center;
+}
+
+.header_search {
+    display: flex;
+
+    @include media-l {
+        padding-left: 60px;
+    }
+    @include media-m {
+        padding-left: 40px;
+    }
+    @include media-s {
+        padding-left: 40px;
+    }
+}
+
+.header_search-icon {
+    display: flex;
+    align-items: center;
+}
+
+.header_language {
+    display: flex;
+
+    @include media-l {
+        padding-left: 60px;
+    }
+    @include media-m {
+        padding-left: 40px;
+    }
+    @include media-s {
+        padding-left: 40px;
+    }
+}
+
+.header_language-icon {
+    display: flex;
+    align-items: center;
+}

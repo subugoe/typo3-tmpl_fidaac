@@ -1,0 +1,26 @@
+<navigation class="navigation">
+        <div class="span-12 default center inserted">
+            <div class="span-12 -firstLevel">
+                <f:cObject typoscriptObjectPath="lib.navLevel1"/>
+            </div>
+            <div class="span-12 -secondLevel">
+                <f:cObject typoscriptObjectPath="lib.navLevel2"/>
+            </div>
+            <div class="span-12 -thirdLevel">
+                <f:cObject typoscriptObjectPath="lib.navLevel3"/>
+            </div>
+        </div>
+
+        <div class="span-12 breadCrumbs center removed">
+            <div class="span-2 menuButton">
+                <svg>
+                    <use
+                        xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-bars', extensionName:'tmpl_fidaac')}"/>
+                </svg>
+                Menu</div>
+            <div class="span-10 crumbs">
+                <f:cObject typoscriptObjectPath="lib.breadCrumbs"/>
+            </div>
+        </div>
+    </div>
+</navigation>

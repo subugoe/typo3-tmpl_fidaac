@@ -1,0 +1,52 @@
+.news {
+    .article {
+        display: flex;
+        flex-flow: row wrap;
+
+        a {
+            color: $shadeDarkest;
+        }
+
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 32px;
+        }
+
+        .meta {
+            color: $shadeDarkest;
+            font-size: 16px;
+            line-height: 24px;
+
+            .-list-category {
+                font-size: 12px;
+
+                .-item {
+                    background: $accent;
+                    border-radius: 4px;
+                    padding: 0.1*$g 0.5*$g;
+                    margin-right: 0.5*$g;
+                }
+
+                .-by {
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
+    .-img-wrap {
+
+        a {
+            border: none;
+            padding: 0;
+        }
+
+        img {
+            box-sizing: border-box;
+            width: (2 * $c);
+            height: auto;
+            border: 0.5px solid $shadeLight;
+        }
+    }
+}
