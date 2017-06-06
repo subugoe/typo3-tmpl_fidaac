@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
 }
 
 @mixin span-l-12 {
@@ -65,7 +63,7 @@
 }
 @mixin span-m-10 {
     @include span;
-    flex-basis: 674.67px;
+    flex-basis: 613px;
 }
 @mixin span-m-9 {
     @include span;

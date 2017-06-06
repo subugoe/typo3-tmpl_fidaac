@@ -1,6 +1,5 @@
 header {
     background-color: $brand;
-    width: 100%;
     color: $white;
     font-size: 24px;
 
@@ -15,9 +14,6 @@ header {
     svg {
         height: 32px;
         width: 24px;
-    }
-
-    path {
         fill: $white;
     }
 }
@@ -27,13 +23,12 @@ header {
 
     @include media-l {
         @include span-l-12;
-        padding: $g 0;
     }
     @include media-m {
         @include span-m-12;
     }
     @include media-s {
-        @include span-s-12;
+        @include span-s-6;
         font-size: 20px;
     }
 }
@@ -96,12 +91,13 @@ header {
 
 .header_buttons {
     @include flex-right;
+    align-items: center;
+    justify-items: center;
 
     svg {
         margin-right: 6px;
+        height: 24px;
     }
-
-    @include flex-right;
 
     @include media-l {
         @include span-l-6;
@@ -116,28 +112,34 @@ header {
 }
 
 .header_home {
+    @include flex-center;
     display: flex;
 
     @include media-l {
         padding-right: 0px;
+
+        &.-text {
+            padding-right: 60px;
+        }
     }
     @include media-m {
         padding-right: 40px;
     }
     @include media-s {
         padding-right: 40px;
-    }
-
-    &.-text {
-        padding-right: 16px;
     }
 }
 
 .header_search {
+    @include flex-center;
     display: flex;
 
     @include media-l {
         padding-right: 0px;
+
+        &.-text {
+            padding-right: 60px;
+        }
     }
     @include media-m {
         padding-right: 40px;
@@ -145,13 +147,10 @@ header {
     @include media-s {
         padding-right: 40px;
     }
-
-    &.-text {
-        margin-right: 16px;
-    }
 }
 
 .header_language {
+    @include flex-center;
     display: flex;
 
     @include media-l {

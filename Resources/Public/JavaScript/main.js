@@ -1,8 +1,8 @@
 $(function() {
     // create a botton as replacement for more nav items
     var createMoreButton = function () {
-        mbt = '<div class="moreButton span-3 center">' +
-            '<i class="fa fa-bars" aria-hidden="true"></i>' +
+        mbt = '<div class="moreButton span-2 center">' +
+            '<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-bars"/></svg>' +
             'More' +
             '</div>';
 

@@ -4,30 +4,67 @@ main {
     flex-shrink: 0;
     flex-basis: auto;
     min-height: 1em;
+    justify-content: center;
+}
 
-    .overlay {
-        flex: 1 100%;
-        height: 50px;
-        position: fixed;
-        right: 0;
-        left: 0;
-        width: 100%;
-        background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
-        z-index: 1;
+.main {
+    @include flex-center;
+
+    @include media-l {
+        @include span-l-12;
+    }
+    @include media-m {
+        @include span-m-12;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+}
+
+.overlay {
+    flex: 1 100%;
+    height: 50px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    z-index: 1;
+
+    @include media-l {
+        @include span-l-12;
+    }
+    @include media-m {
+        @include span-m-12;
+    }
+    @include media-s {
+        @include span-s-6;
     }
 }
 
 .doubleColumn {
-    display: flex;
-    flex-direction: row;
+    @include flex-left;
     align-items: flex-start;
-    flex-basis: 100%;
     font-size: 16px;
     line-height: 24px;
+    display: block !important;
 
-    & > h1 {
-        flex-basis: 100%;
-        background: white;
+    column-count: 2;
+    column-gap: 16px;
+
+    h1 {
+        -webkit-column-span: all !important;
+        column-span: all !important;
+    }
+
+    @include media-l {
+        @include span-l-12;
+    }
+    @include media-m {
+        @include span-m-12;
+    }
+    @include media-s {
+        @include span-s-6;
     }
 }
 
@@ -45,4 +82,16 @@ main {
 
 .singleColumn {
 
+    @include media-l {
+        @include span-l-8;
+        font-size: 22px;
+    }
+    @include media-m {
+        @include span-m-8;
+        font-size: 22px;
+    }
+    @include media-s {
+        @include span-s-6;
+        font-size: 16px;
+    }
 }
