@@ -459,16 +459,19 @@ navigation {
     padding-right: 16px; }
   navigation .moreButton,
   navigation .menuButton {
+    align-self: center;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    justify-items: center;
     background: #183267;
     cursor: pointer;
-    color: #FFFFFF;
-    align-items: center;
-    align-self: center;
-    text-align: center; }
+    color: #FFFFFF; }
   navigation svg {
-    height: 32px;
-    width: 24px;
-    fill: #FFFFFF; }
+    fill: #FFFFFF;
+    height: 1em;
+    width: 1em;
+    padding-right: 4px; }
 
 @media (min-width: 768px) {
   navigation .-firstLevel,
@@ -569,6 +572,7 @@ main {
   column-count: 2;
   column-gap: 16px; }
   .doubleColumn h1 {
+    -webkit-column-span: all !important;
     column-span: all !important; }
   @media (min-width: 960px) {
     .doubleColumn {

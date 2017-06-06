@@ -59,18 +59,19 @@ navigation {
 
         .moreButton,
         .menuButton {
+            @include flex-center;
+            align-items: center;
+            justify-items: center;
             background: $brand;
             cursor: pointer;
             color: $white;
-            align-items: center;
-            align-self: center;
-            text-align: center;
         }
 
     svg {
-        height: 32px;
-        width: 24px;
         fill: $white;
+        height: 1em;
+        width: 1em;
+        padding-right: 4px;
     }
 }
 

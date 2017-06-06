@@ -53,6 +53,7 @@ main {
     column-gap: 16px;
 
     h1 {
+        -webkit-column-span: all !important;
         column-span: all !important;
     }
 
