@@ -44,5 +44,18 @@ main {
 }
 
 .singleColumn {
+    justify-content: flex-start !important;
 
+    @include media-l {
+        @include span-l-10;
+        font-size: 22px;
+    }
+    @include media-m {
+        @include span-m-10;
+        font-size: 22px;
+    }
+    @include media-s {
+        @include span-s-6;
+        font-size: 16px;
+    }
 }

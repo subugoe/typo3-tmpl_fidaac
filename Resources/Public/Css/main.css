@@ -529,6 +529,36 @@ main {
   align-items: flex-start;
   align-content: flex-start; }
 
+.singleColumn {
+  justify-content: flex-start !important; }
+  @media (min-width: 960px) {
+    .singleColumn {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 733.33px;
+      font-size: 22px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    .singleColumn {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 674.67px;
+      font-size: 22px; } }
+  @media (max-width: 768px) {
+    .singleColumn {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 304px;
+      font-size: 16px; } }
+
 .sitemap {
   background-color: #F2F2F2;
   list-style-type: none;
