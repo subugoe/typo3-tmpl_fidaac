@@ -7,17 +7,27 @@ $(function() {
     changeHeader = function() {
         if (window.innerWidth > 960) {
             ['home','search','language'].forEach(function(el) {
-                $('.header_'+el+'.-text').removeClass('removed');
+                $('.header_' + el + '-text').removeClass('removed');
+                $('.header_' + el).unbind('mouseenter');
+                $('.header_' + el).unbind('mouseleave');
             });
             return;
         }
-        if (window.innerWidth < 960 && window.innerWidth > 768) {
-            ['home','search','language'].forEach(function(el) {
-                $('.header_'+el+'.-text').addClass('removed');
+        if (window.innerWidth <= 960 && window.innerWidth > 768) {
+            ['home', 'search', 'language'].forEach(function (el) {
+                $('.header_' + el + '-text').addClass('removed');
+                $('.header_' + el).mouseenter(function () {
+                    $('.header_' + el + '-text').removeClass('removed');
+                });
+                $('.header_' + el).mouseleave(function () {
+                    $('.header_' + el + '-text').addClass('removed');
+                });
             });
             return;
         }
         if (window.innerWidth <= 768) {
+            $('.header_' + el).unbind('mouseenter');
+            $('.header_' + el).unbind('mouseleave');
         }
     }
 

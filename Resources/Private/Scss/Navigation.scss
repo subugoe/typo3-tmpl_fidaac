@@ -11,61 +11,69 @@ navigation {
         color: $shadeDarkest;
     }
 
-        .default {
-            flex-flow: row wrap;
+    svg {
+        fill: $white;
+        height: 1em;
+        width: 1em;
+    }
+
+    .default {
+        flex-flow: row wrap;
+    }
+
+    .breadCrumbs {
+        flex-flow: row wrap;
+        font-size: 16px;
+        line-height: 24px;
+        align-self: center;
+        align-items: center;
+
+        i {
+            padding: 0 $g/2;
         }
 
-        .breadCrumbs {
-            flex-flow: row wrap;
-            font-size: 16px;
-            line-height: 24px;
-            align-self: center;
+        .crumbs {
+            padding-left: 16px;
             align-items: center;
-
-            i {
-                padding: 0 $g/2;
-            }
-
-            .crumbs {
-                padding-left: 16px;
-                align-items: center;
-            }
         }
+    }
 
-        .-firstLevel,
-        .-secondLevel,
-        .-thirdLevel {
-            display: flex;
-            flex-flow: row wrap;
-        }
+    .-firstLevel,
+    .-secondLevel,
+    .-thirdLevel {
+        display: flex;
+        flex-flow: row wrap;
+    }
 
-        .-firstLevel {
-            font-size: 24px;
-            flex-direction: row;
-            align-content: center;
-        }
+    .-firstLevel {
+        font-size: 24px;
+        flex-direction: row;
+        align-content: center;
+    }
 
-        .-secondLevel {
-            font-size: 18px;
-        }
+    .-secondLevel {
+        font-size: 18px;
+    }
 
-        .-thirdLevel {
-            font-size: 14px;
-        }
+    .-thirdLevel {
+        font-size: 14px;
+    }
 
-        .-item {
-            padding-right: 16px;
-        }
+    .-item {
+        padding-right: 16px;
+    }
+}
 
-        .moreButton,
-        .menuButton {
-            background: $brand;
-            cursor: pointer;
-            color: $white;
-            align-items: center;
-            align-self: center;
-            text-align: center;
-        }
+.moreButton,
+.menuButton {
+    @include flex-center;
+    background: $brand;
+    cursor: pointer;
+    color: $white;
+
+    svg {
+        padding-right: 4px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -86,6 +94,7 @@ navigation {
         }
     }
 }
+
 @media (max-width: 768px) {
     navigation {
         .-firstLevel,
