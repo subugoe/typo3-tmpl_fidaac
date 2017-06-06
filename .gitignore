@@ -6,3 +6,5 @@ tests/images/
 .history
 .idea
 npm-debug.log
+
+Resources/Public/Css/main.css
