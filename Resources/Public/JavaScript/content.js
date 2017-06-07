@@ -80,6 +80,6 @@ $(function() {
             $(this).html(newDiv);
         });
     }
-    changeContentToDoubleRows();
+    //changeContentToDoubleRows();
 
 });
