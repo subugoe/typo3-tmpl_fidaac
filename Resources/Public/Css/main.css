@@ -341,7 +341,7 @@ header {
       align-items: center;
       justify-content: center;
       flex-basis: 232px; }
-      .header_image img {
+      .header_image svg {
         width: 188px;
         height: 41px; } }
   @media (min-width: 768px) and (max-width: 960px) {

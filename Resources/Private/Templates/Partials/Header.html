@@ -3,9 +3,10 @@
         <div class="header_bildText">
             <div class="header_image">
                 <f:link.page pageUid="{IDS_HOME}">
-                    <f:image src="EXT:tmpl_fidaac/Resources/Public/Images/logo_fidaac.svg"
-                             alt="FID AAC Logo">
-                    </f:image>
+                    <svg>
+                        <use
+                            xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#logo-wave', extensionName:'tmpl_fidaac')}"/>
+                    </svg>
                 </f:link.page>
             </div>
             <div class="header_text">
