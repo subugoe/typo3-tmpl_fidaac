@@ -68,7 +68,7 @@ header {
     @include media-l {
         @include span-l-3;
 
-        img {
+        svg {
             width: 188px;
             height: 41px;
         }
