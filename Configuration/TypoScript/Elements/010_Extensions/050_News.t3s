@@ -10,6 +10,7 @@ plugin {
             link {
                 skipControllerAndAction = 1
             }
+
             list.rss.channel {
                 title = Library AAC
                 description = RSS Feed Library AAC
@@ -22,39 +23,44 @@ plugin {
     }
 }
 
+pageNewsRSS = PAGE
+pageNewsRSS {
+    typeNum = 6890
+    10 < tt_content.list.20.news_pi1
+    10.select {
+        where = colPos=0 AND list_type = "news_pi1"
+        orderBy = sorting ASC
+        max = 1
+    }
+}
+
 [globalVar = TSFE:type = 6890]
-	# set the format
-	plugin.tx_news.settings.format = xml
-
-    config {
-    	# deactivate Standard-Header
-    	disableAllHeaderCode = 1
-    	# no xhtml tags
-    	xhtml_cleaning = none
-    	admPanel = 0
-    	metaCharset = utf-8
-    	# you need an english locale to get correct rfc values for <lastBuildDate>, ...
-    	locale_all = en_EN
-    	disablePrefixComment = 1
-    	baseURL = {$rssLink}
-    	absRefPrefix = {$absRefPrefix}
+    # set the format
+    plugin.tx_news.settings.format = xml
+q
+    pageNewsRSS.config {
+        # deactivate Standard-Header
+        disableAllHeaderCode = 1
+        # no xhtml tags
+        xhtml_cleaning = none
+        admPanel = 0
+        metaCharset = utf-8
+        # you need an english locale to get correct rfc values for <lastBuildDate>, ...
+        locale_all = en_EN
+        disablePrefixComment = 1
+        baseURL = {$rssLink}
+        absRefPrefix = {$absRefPrefix}
+        # before CMS 8 (adjust if using ATOM)
+        additionalHeaders = Content-Type:application/rss+xml;charset=utf-8
+        # CMS 8 (adjust if using ATOM)
+        additionalHeaders.10.header = Content-Type:application/rss+xml;charset=utf-8
     }
 
-	lib.stdheader >
-	tt_content.stdWrap.innerWrap >
-	tt_content.stdWrap.wrap >
-	# get away <div class="feEditAdvanced-firstWrapper" ...> if your logged into the backend
-	styles.content.get.stdWrap >
-
-	pageNewsRSS = PAGE
-	pageNewsRSS {
-        typeNum = 6890
-        10 < styles.content.get
-        10.select {
-            where = colPos=0 AND list_type = "news_pi1"
-            orderBy = sorting ASC
-            max = 1
-        }
-    }
-
+    lib.stdheader >
+    tt_content.stdWrap >
+    tt_content.stdWrap = |
+    tt_content.stdWrap.innerWrap >
+    tt_content.stdWrap.wrap >
+    # get away <div class="feEditAdvanced-firstWrapper" ...> if your logged into the backend
+    styles.content.get.stdWrap >
 [global]
