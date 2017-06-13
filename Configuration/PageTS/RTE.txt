@@ -49,5 +49,9 @@ RTE.default {
             section
         )
     }
+
+    # allow definition lists
+    showButtons := addToList(definitionlist)
+    proc.allowTags := addToList(dl,dt,dd)
 }
 
