@@ -12,11 +12,13 @@ page {
     includeJS.file400 = EXT:tmpl_fidaac/Resources/Public/JavaScript/mediaChanges.js
     includeJS.file500 = EXT:tmpl_fidaac/Resources/Public/JavaScript/content.js
 
-
     meta.viewport  = width=device-width, initial-scale=1.0
 }
 
 lib.content < styles.content.get
+
+lib.pageid = TEXT
+lib.pageid.data = page:uid
 
 page.10 = FLUIDTEMPLATE
 page.10 {
