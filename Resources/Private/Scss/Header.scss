@@ -48,7 +48,7 @@ header {
     }
 }
 
-.header_bildText {
+.header_bildText-content {
     align-items: center;
 
     @include media-l {
@@ -62,7 +62,7 @@ header {
     }
 }
 
-.header_image {
+.header_image-content {
     @include flex-left;
 
     @include media-l {
@@ -90,7 +90,7 @@ header {
     }
 }
 
-.header_text {
+.header_text-content {
     @include flex-left;
 
     @include media-l {
@@ -102,6 +102,66 @@ header {
     @include media-s {
         @include span-s-3;
     }
+}
+
+.header_bildText-home {
+    display: flex;
+
+    @include media-l {
+        @include span-l-6;
+    }
+    @include media-m {
+        @include span-m-6;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.header_image-home {
+    margin-right: 16px;
+
+    svg {
+        width: 188px;
+        height: 41px;
+    }
+}
+
+.header_text-homeLong {
+    @include flex-left;
+    padding-bottom: 8px;
+
+    @include media-l {
+        @include span-l-6;
+        font-size: 20px;
+    }
+    @include media-m {
+        @include span-m-6;
+        font-size: 20px;
+    }
+    @include media-s {
+        @include span-s-3;
+    }
+}
+
+.header_text-homeShort {
+    @include flex-left;
+
+    @include media-l {
+        font-size: 24px;
+    }
+    @include media-m {
+        font-size: 24px;
+    }
+    @include media-s {
+        @include span-s-2;
+    }
+}
+
+.header_text-strong {
+    font-weight: 600;
 }
 
 .header_buttons {
