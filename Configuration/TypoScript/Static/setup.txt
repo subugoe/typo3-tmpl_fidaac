@@ -1,0 +1,2 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tmpl_fidaac/Configuration/TypoScript/Elements" extensions="t3s">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tmpl_fidaac/Configuration/TypoScript/Extensions" extensions="t3s">

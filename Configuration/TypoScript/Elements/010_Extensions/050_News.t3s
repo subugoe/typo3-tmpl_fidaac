@@ -1,0 +1,209 @@
+plugin {
+    tx_news {
+        view {
+            templateRootPaths = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Templates
+            partialRootPaths = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Partials
+            layoutRootPaths = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Layouts
+        }
+
+        settings {
+            link {
+                skipControllerAndAction = 1
+            }
+            list.rss.channel {
+                title = Library AAC
+                description = RSS Feed Library AAC
+                link = {$plugin.tx_news.rss.channel.link}
+                language = en_EN
+                copyright = SUB Göttingen
+                generator = TYPO3 EXT:news
+            }
+        }
+    }
+}
+
+[globalVar = TSFE:type = 6890]
+config {
+    # deactivate Standard-Header
+    disableAllHeaderCode = 1
+    # no xhtml tags
+    xhtml_cleaning = none
+    admPanel = 0
+    metaCharset = utf-8
+    # you need an english locale to get correct rfc values for <lastBuildDate>, ...
+    locale_all = en_EN
+    # define charset
+    additionalHeaders = Content-Type:application/xml;charset=utf-8
+    disablePrefixComment = 1
+    baseURL = {$plugin.tx_news.rss.channel.link}
+    absRefPrefix = {$plugin.tx_news.rss.channel.link}
+}
+
+pageNewsRSS = PAGE
+pageNewsRSS {
+    typeNum = 6890
+    10 < tt_content.list.20.news_pi1
+    10 {
+        switchableControllerActions {
+            News {
+                    1 = list
+            }
+        }
+        settings < plugin.tx_news.settings
+        settings {
+            limit = 30
+            detailPid = 30
+            startingpoint = 34
+            format = xml
+        }
+    }
+}
+[global]
+
+[globalVar = TSFE:type = 6891]
+# RSS American Collection
+config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = none
+    admPanel = 0
+    metaCharset = utf-8
+    locale_all = en_EN
+    additionalHeaders = Content-Type:application/xml;charset=utf-8
+    disablePrefixComment = 1
+    baseURL = {$plugin.tx_news.rss.channel.link}
+    absRefPrefix = {$plugin.tx_news.rss.channel.link}
+}
+
+pageNewsRSS = PAGE
+pageNewsRSS {
+    typeNum = 6891
+    10 < tt_content.list.20.news_pi1
+    10 {
+        switchableControllerActions {
+            News {
+                    1 = list
+            }
+        }
+        settings < plugin.tx_news.settings
+        settings {
+            categories = {$ids.categoryAmerica}
+            categoryConjunction = and
+            limit = 30
+            detailPid = 30
+            startingpoint = 34
+            format = xml
+        }
+    }
+}
+[global]
+
+[globalVar = TSFE:type = 6892]
+# RSS Canada Collection
+config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = none
+    admPanel = 0
+    metaCharset = utf-8
+    locale_all = en_EN
+    additionalHeaders = Content-Type:application/xml;charset=utf-8
+    disablePrefixComment = 1
+    baseURL = {$plugin.tx_news.rss.channel.link}
+    absRefPrefix = {$plugin.tx_news.rss.channel.link}
+}
+
+pageNewsRSS = PAGE
+pageNewsRSS {
+    typeNum = 6892
+    10 < tt_content.list.20.news_pi1
+    10 {
+        switchableControllerActions {
+            News {
+                    1 = list
+            }
+        }
+        settings < plugin.tx_news.settings
+        settings {
+            categories = {$ids.categoryCanada}
+            categoryConjunction = and
+            limit = 30
+            detailPid = 30
+            startingpoint = 34
+            format = xml
+        }
+    }
+}
+[global]
+
+[globalVar = TSFE:type = 6893]
+# RSS Australia Collection
+config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = none
+    admPanel = 0
+    metaCharset = utf-8
+    locale_all = en_EN
+    additionalHeaders = Content-Type:application/xml;charset=utf-8
+    disablePrefixComment = 1
+    baseURL = {$plugin.tx_news.rss.channel.link}
+    absRefPrefix = {$plugin.tx_news.rss.channel.link}
+}
+
+pageNewsRSS = PAGE
+pageNewsRSS {
+    typeNum = 6893
+    10 < tt_content.list.20.news_pi1
+    10 {
+        switchableControllerActions {
+            News {
+                    1 = list
+            }
+        }
+        settings < plugin.tx_news.settings
+        settings {
+            categories = {$ids.categoryAustralia}
+            categoryConjunction = and
+            limit = 30
+            detailPid = 30
+            startingpoint = 34
+            format = xml
+        }
+    }
+}
+[global]
+
+[globalVar = TSFE:type = 6894]
+# RSS Britain Collection
+config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = none
+    admPanel = 0
+    metaCharset = utf-8
+    locale_all = en_EN
+    additionalHeaders = Content-Type:application/xml;charset=utf-8
+    disablePrefixComment = 1
+    baseURL = {$plugin.tx_news.rss.channel.link}
+    absRefPrefix = {$plugin.tx_news.rss.channel.link}
+}
+
+pageNewsRSS = PAGE
+pageNewsRSS {
+    typeNum = 6894
+    10 < tt_content.list.20.news_pi1
+    10 {
+        switchableControllerActions {
+            News {
+                    1 = list
+            }
+        }
+        settings < plugin.tx_news.settings
+        settings {
+            categories = {$ids.categoryBritain}
+            categoryConjunction = and
+            limit = 30
+            detailPid = 30
+            startingpoint = 34
+            format = xml
+        }
+    }
+}
+[global]

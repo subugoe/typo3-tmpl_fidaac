@@ -1,0 +1,54 @@
+<header>
+    <div class="header">
+        <div class="header_bildText">
+            <div class="header_image">
+                <f:link.page pageUid="{IDS_HOME}">
+                    <svg>
+                        <use
+                            xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#logo-wave', extensionName:'tmpl_fidaac')}"/>
+                    </svg>
+                </f:link.page>
+            </div>
+            <div class="header_text">
+                <f:link.page pageUid="{IDS_HOME}">Library AAC</f:link.page>
+            </div>
+        </div>
+        <div class="header_buttons">
+            <f:link.page pageUid="{IDS_HOME}">
+                <div class="header_home">
+                    <span class="header_home-icon">
+                        <svg>
+                            <use
+                                xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-home', extensionName:'tmpl_fidaac')}"/>
+                        </svg>
+                    </span>
+                    <span class="header_home-text">
+                        Home
+                    </span>
+                </div>
+            </f:link.page>
+            <div class="header_search">
+                <span class="header_search-icon">
+                    <svg>
+                        <use
+                            xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-search', extensionName:'tmpl_fidaac')}"/>
+                    </svg>
+                </span>
+                <span class="header_search-text">
+                    Search
+                </span>
+            </div>
+            <div class="header_language">
+                <span class="header_language-icon">
+                    <svg>
+                        <use
+                            xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-globe', extensionName:'tmpl_fidaac')}"/>
+                    </svg>
+                </span>
+                <span class="header_language-text">
+                    <f:cObject typoscriptObjectPath="lib.language"/>
+                </span>
+            </div>
+        </div>
+    </div>
+</header>

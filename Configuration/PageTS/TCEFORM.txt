@@ -2,4 +2,28 @@
 #### TCEFORM ####
 #################
 
-TCEFORM.tt_content.colPos.removeItems = 1,2,3
+// Remove layouts (header type) and call them heading. Default is heading 1
+TCEFORM {
+    tt_content {
+        header_layout {
+            removeItems = 0,5,6
+            altLabels {
+                1 = Heading 1
+                2 = Heading 2
+                3 = Heading 3
+                4 = Heading 4
+            }
+        }
+    }
+}
+
+// Layout for content elements
+TCEFORM.tt_content {
+        layout {
+            altLabels {
+                0 = Default
+                1 = Doppelspaltig
+            }
+            removeItems = 2,3,4,5,6,7,8,9,10
+        }
+    }

@@ -1,0 +1,35 @@
+<f:comment>
+<!-- categories -->
+<span class="news-list-category" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+	<f:for each="{categories}" as="category">
+        CAT: {category}
+		<f:if condition="{category.shortcut}">
+			<f:then>
+				<f:link.page pageUid="{category.shortcut}">
+					{category.title}
+				</f:link.page>
+			</f:then>
+			<f:else>
+				{category.title}
+			</f:else>
+		</f:if>
+	</f:for>
+</span>
+</f:comment>
+<!-- categories -->
+<span class="news_list-category">
+	<f:for each="{categories}" as="category">
+        <span class="-item">
+		<f:if condition="{category.shortcut}">
+			<f:then>
+				<f:link.page pageUid="{category.shortcut}" additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.uid}}}">
+					{category.title}
+                </f:link.page>
+			</f:then>
+			<f:else>
+				{category.title}
+			</f:else>
+		</f:if>
+        </span>
+	</f:for>
+</span>

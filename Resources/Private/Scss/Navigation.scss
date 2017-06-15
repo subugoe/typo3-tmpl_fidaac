@@ -1,0 +1,114 @@
+navigation {
+    background-color: $shadeLightest;
+    list-style-type: none;
+    width: 100%;
+
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+
+    a {
+        color: $shadeDarkest;
+    }
+
+    svg {
+        fill: $white;
+        height: 1em;
+        width: 1em;
+    }
+
+    .default {
+        flex-flow: row wrap;
+    }
+
+    .breadCrumbs {
+        flex-flow: row wrap;
+        font-size: 16px;
+        line-height: 24px;
+        align-self: center;
+        align-items: center;
+
+        i {
+            padding: 0 $g/2;
+        }
+
+        .crumbs {
+            padding-left: 16px;
+            align-items: center;
+        }
+    }
+
+    .-firstLevel,
+    .-secondLevel,
+    .-thirdLevel {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .-firstLevel {
+        font-size: 24px;
+        flex-direction: row;
+        align-content: center;
+    }
+
+    .-secondLevel {
+        font-size: 18px;
+    }
+
+    .-thirdLevel {
+        font-size: 14px;
+    }
+
+    .-item {
+        padding-right: 16px;
+    }
+}
+
+.moreButton,
+.menuButton {
+    @include flex-center;
+    background: $brand;
+    cursor: pointer;
+    color: $white;
+
+    svg {
+        padding-right: 4px;
+    }
+}
+
+@media (min-width: 768px) {
+    navigation {
+        .-firstLevel,
+        .moreButton {
+            margin-top: ($g * 2 / 3);
+        }
+        .menuButton {
+            margin: ($g / 2) 0;
+            max-width: 144px;
+        }
+        .-secondLevel {
+            margin-top: ($g / 4);
+        }
+        .-thirdLevel {
+            margin-top: ($g / 4);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    navigation {
+        .-firstLevel,
+        .moreButton {
+            margin-top: ($g * 2 / 3);
+        }
+        .menuButton {
+            margin: ($g / 2) 0;
+        }
+        .-secondLevel {
+            margin-top: ($g / 4);
+        }
+        .-thirdLevel {
+            margin-top: ($g / 4);
+        }
+    }
+}
