@@ -1,0 +1,93 @@
+footer {
+    background-color: $shadeLightest;
+    width: 100%;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: lighter;
+
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    padding-top: 23px;
+    padding-bottom: 16px;
+
+    @include media-l {
+        @include span-l-12;
+    }
+    @include media-m {
+        @include span-m-12;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+
+    a {
+        color: $shadeDarkest;
+    }
+}
+
+.footer_fullLevel {
+    @include flex-left;
+    padding-bottom: 7px;
+
+    @include media-l {
+        @include span-l-12;
+    }
+    @include media-m {
+        @include span-m-12;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+}
+
+.footer_firstLevel {
+    @include flex-right;
+    display: flex;
+    font-weight: normal;
+    text-align: right;
+    padding-bottom: 7px;
+    padding-right: 16px;
+
+    @include media-l {
+        @include span-l-2;
+    }
+    @include media-m {
+        @include span-m-3;
+    }
+    @include media-s {
+        @include span-s-6;
+        @include flex-left;
+    }
+}
+
+.footer_secondLevel {
+    @include flex-left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-bottom: 7px;
+
+    @include media-l {
+        @include span-l-10;
+    }
+    @include media-m {
+        @include span-m-9;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+
+    a {
+        padding-right: 16px;
+    }
+}

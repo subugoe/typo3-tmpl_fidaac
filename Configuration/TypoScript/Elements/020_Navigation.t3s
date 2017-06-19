@@ -63,22 +63,22 @@ lib.breadCrumbs {
     }
 }
 
-lib.sitemap = HMENU
-lib.sitemap {
+lib.footer = HMENU
+lib.footer {
     1 = TMENU
     1 {
         expAll = 1
 
         NO = 1
         NO {
-            beforeWrap = <div class="span-12"><div class="span-2 -firstLevel">
+            beforeWrap = <div class="footer_fullLevel"><div class="footer_firstLevel">
             afterWrap = </div></div>
             stdWrap.htmlSpecialChars = 1
         }
 
-        IFSUB = 1
+        IFSUB < .NO
         IFSUB {
-            beforeWrap = <div class="span-2 -firstLevel">
+            beforeWrap = <div class="footer_firstLevel">
             afterWrap = </div>
         }
 
@@ -94,7 +94,7 @@ lib.sitemap {
 
     2 < .1
     2 {
-        wrap = <div class="span-10 -secondLevel">|</div>
+        wrap = <div class="footer_secondLevel">|</div>
 
         NO {
             beforeWrap =
