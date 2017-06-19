@@ -57,14 +57,14 @@ $(function() {
      */
     $('.scrolled').on('scroll', function() {
         $('.overlay').removeClass('removed').addClass('inserted');
-        $('navigation .default').removeClass('inserted').addClass('removed');
-        $('navigation .breadCrumbs').removeClass('removed').addClass('inserted');
+        $('.navigation_default').removeClass('inserted').addClass('removed');
+        $('.navigation_breadCrumbs').removeClass('removed').addClass('inserted');
 
         // when scrolled up show default header
         if ( $(this).scrollTop() == 0) {
             $('.overlay').removeClass('inserted').addClass('removed');
-            $('navigation .default').removeClass('removed').addClass('inserted');
-            $('navigation .breadCrumbs').removeClass('inserted').addClass('removed');
+            $('.navigation_default').removeClass('removed').addClass('inserted');
+            $('.navigation_breadCrumbs').removeClass('inserted').addClass('removed');
         }
     });
 
@@ -72,7 +72,13 @@ $(function() {
      * When menuButton is clicked, switch back to full menu
      */
     $('.menuButton').on('click',function() {
-        $(".default").addClass("inserted").removeClass("removed");
-        $(".breadCrumbs").addClass("removed").removeClass("inserted");
-    })
+        $(".navigation_breadCrumbs").addClass("removed").removeClass("inserted");
+    });
+
+
+    /**
+     * The body is not displayed by default, only after javascript is done it is finally displayed
+     * This removes jumping elements
+     */
+    $("body").show();
 });

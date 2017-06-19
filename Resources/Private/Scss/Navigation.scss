@@ -17,27 +17,6 @@ navigation {
         width: 1em;
     }
 
-    .default {
-        flex-flow: row wrap;
-    }
-
-    .breadCrumbs {
-        flex-flow: row wrap;
-        font-size: 16px;
-        line-height: 24px;
-        align-self: center;
-        align-items: center;
-
-        i {
-            padding: 0 $g/2;
-        }
-
-        .crumbs {
-            padding-left: 16px;
-            align-items: center;
-        }
-    }
-
     .-firstLevel,
     .-secondLevel,
     .-thirdLevel {
@@ -61,6 +40,49 @@ navigation {
 
     .-item {
         padding-right: 16px;
+    }
+}
+
+.navigation_default {
+    @include flex-center;
+    flex-flow: row wrap;
+
+    @include media-l {
+        @include span-l-12;
+    }
+    @include media-m {
+        @include span-m-12;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+}
+
+.navigation_breadCrumbs {
+    @include flex-center;
+    flex-flow: row wrap;
+    font-size: 16px;
+    line-height: 24px;
+    align-self: center;
+    align-items: center;
+
+    @include media-l {
+        @include span-l-6;
+    }
+    @include media-m {
+        @include span-m-6;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+
+    i {
+        padding: 0 $g/2;
+    }
+
+    .crumbs {
+        padding-left: 16px;
+        align-items: center;
     }
 }
 

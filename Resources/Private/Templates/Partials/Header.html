@@ -1,18 +1,42 @@
 <header>
     <div class="header">
-        <div class="header_bildText">
-            <div class="header_image">
-                <f:link.page pageUid="{IDS_HOME}">
-                    <svg>
-                        <use
-                            xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#logo-wave', extensionName:'tmpl_fidaac')}"/>
-                    </svg>
-                </f:link.page>
-            </div>
-            <div class="header_text">
-                <f:link.page pageUid="{IDS_HOME}">Library AAC</f:link.page>
-            </div>
-        </div>
+        <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {IDS_HOME}">
+            <f:then>
+                <div class="header_bildText-home">
+                    <div class="header_text-homeLong">
+                        <f:link.page pageUid="{IDS_HOME}">Library of <br/><span class="header_text-strong">Anglo-American</span>
+                            Culture & History
+                        </f:link.page>
+                    </div>
+                    <div class="header_image-home">
+                        <f:link.page pageUid="{IDS_HOME}">
+                            <svg>
+                                <use
+                                    xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#logo-wave', extensionName:'tmpl_fidaac')}"/>
+                            </svg>
+                        </f:link.page>
+                    </div>
+                    <div class="header_text-homeShort">
+                        <f:link.page pageUid="{IDS_HOME}">FID AAC</f:link.page>
+                    </div>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="header_bildText-content">
+                    <div class="header_image-content">
+                        <f:link.page pageUid="{IDS_HOME}">
+                            <svg>
+                                <use
+                                    xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#logo-wave', extensionName:'tmpl_fidaac')}"/>
+                            </svg>
+                        </f:link.page>
+                    </div>
+                    <div class="header_text-content">
+                        <f:link.page pageUid="{IDS_HOME}">Library AAC</f:link.page>
+                    </div>
+                </div>
+            </f:else>
+        </f:if>
         <div class="header_buttons">
             <f:link.page pageUid="{IDS_HOME}">
                 <div class="header_home">
