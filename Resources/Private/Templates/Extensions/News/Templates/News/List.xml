@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
- <rss version="2.0"
+<rss version="2.0"
 	 xmlns:content="http://purl.org/rss/1.0/modules/content/"
 	 xmlns:atom="http://www.w3.org/2005/Atom"
 	 xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
@@ -27,7 +27,7 @@
 						<title>{newsItem.title -> f:format.htmlspecialchars()}</title>
 						<link><f:format.htmlentities><n:link newsItem="{newsItem}" settings="{settings}" uriOnly="1" /></f:format.htmlentities></link>
 						<description>{newsItem.teaser -> f:format.stripTags() -> f:format.htmlspecialchars()}</description>
-						<f:if condition="{newsItem.firstFalImagePreview}"><enclosure url="{f:uri.image(image:'{newsItem.firstFalImagePreview}',absolute:1) -> f:format.htmlentities()}" length="{newsItem.firstFalImagePreview.originalResource.size}" type="{newsItem.firstFalImagePreview.originalResource.mimeType}" /></f:if>
+						<f:if condition="{newsItem.firstPreview}"><enclosure url="{f:uri.image(image:'{newsItem.firstPreview}',absolute:1) -> f:format.htmlentities()}" length="{newsItem.firstPreview.originalResource.size}" type="{newsItem.firstPreview.originalResource.mimeType}" /></f:if>
 						<content:encoded><f:format.cdata><f:format.html>{newsItem.bodytext}</f:format.html></f:format.cdata></content:encoded>
 						<f:if condition="{newsItem.categories}">
 							<f:for each="{newsItem.categories}" as="newsItemCategory">
