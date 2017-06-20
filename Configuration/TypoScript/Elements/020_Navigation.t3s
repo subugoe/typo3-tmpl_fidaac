@@ -4,13 +4,28 @@ lib.navLevel1 {
     1 = TMENU
     1 {
         NO = 1
-        NO.allWrap = <div class="-item">|</div>
+        NO.allWrap = <div class="navigation_firstLevel-item -no">|</div>
+
+        IFSUB < .NO
+        IFSUB.allWrap = <div class="navigation_firstLevel-item -sub">|</div>
+        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+
 
         CUR < .NO
-        CUR.ATagParams = class="strong"
+        CUR.allWrap = <div class="navigation_firstLevel-item -cur">|</div>
+
+        CURIFSUB < .CUR
+        CURIFSUB.allWrap = <div class="navigation_firstLevel-item -curIfSub">|</div>
+        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>
+
 
         ACT < .NO
+        ACT.allWrap = <div class="navigation_firstLevel-item -act">|</div>
         ACT.ATagParams = class="strong"
+
+        ACTIFSUB < .ACT
+        ACTIFSUB.allWrap = <div class="navigation_firstLevel-item -actSub">|</div>
+        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>
     }
 }
 
@@ -21,14 +36,30 @@ lib.navLevel2 {
     1 = TMENU
     1 {
         special = rootline
+
         NO = 1
-        NO.allWrap = <div class="-item">|</div>
+        NO.allWrap = <div class="navigation_subLevel-item -no">|</div>
+
+        IFSUB < .NO
+        IFSUB.allWrap = <div class="navigation_subLevel-item -sub">|</div>
+        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+
 
         CUR < .NO
-        CUR.ATagParams = class="strong"
+        CUR.allWrap = <div class="navigation_subLevel-item -cur">|</div>
+
+        CURIFSUB < .CUR
+        CURIFSUB.allWrap = <div class="navigation_subLevel-item -curIfSub">|</div>
+        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+
 
         ACT < .NO
+        ACT.allWrap = <div class="navigation_subLevel-item -act">|</div>
         ACT.ATagParams = class="strong"
+
+        ACTIFSUB < .ACT
+        ACTIFSUB.allWrap = <div class="navigation_subLevel-item -actSub">|</div>
+        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
     }
 }
 
@@ -38,19 +69,102 @@ lib.navLevel3 {
 
     1 = TMENU
     1 {
-        expAll = 0
         special = rootline
+
         NO = 1
-        NO.allWrap = <div class="-item">|</div>
+        NO.allWrap = <div class="navigation_subLevel-item -no">|</div>
+
+        IFSUB < .NO
+        IFSUB.allWrap = <div class="navigation_subLevel-item -sub">|</div>
+        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+
 
         CUR < .NO
-        CUR.ATagParams = class="strong"
+        CUR.allWrap = <div class="navigation_subLevel-item -cur">|</div>
+
+        CURIFSUB < .CUR
+        CURIFSUB.allWrap = <div class="navigation_subLevel-item -curIfSub">|</div>
+        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+
 
         ACT < .NO
+        ACT.allWrap = <div class="navigation_subLevel-item -act">|</div>
         ACT.ATagParams = class="strong"
+
+        ACTIFSUB < .ACT
+        ACTIFSUB.allWrap = <div class="navigation_subLevel-item -actSub">|</div>
+        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
     }
-    2 < .1
 }
+
+lib.navLevel4 = HMENU
+lib.navLevel4 {
+    entryLevel = 3
+
+    1 = TMENU
+    1 {
+        special = rootline
+
+        NO = 1
+        NO.allWrap = <div class="navigation_subLevel-item -no">|</div>
+
+        IFSUB < .NO
+        IFSUB.allWrap = <div class="navigation_subLevel-item -sub">|</div>
+        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+
+
+        CUR < .NO
+        CUR.allWrap = <div class="navigation_subLevel-item -cur">|</div>
+
+        CURIFSUB < .CUR
+        CURIFSUB.allWrap = <div class="navigation_subLevel-item -curIfSub">|</div>
+        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+
+
+        ACT < .NO
+        ACT.allWrap = <div class="navigation_subLevel-item -act">|</div>
+        ACT.ATagParams = class="strong"
+
+        ACTIFSUB < .ACT
+        ACTIFSUB.allWrap = <div class="navigation_subLevel-item -actSub">|</div>
+        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+    }
+}
+
+lib.navLevel5 = HMENU
+lib.navLevel5 {
+    entryLevel = 4
+
+    1 = TMENU
+    1 {
+        special = rootline
+
+        NO = 1
+        NO.allWrap = <div class="navigation_subLevel-item -no">|</div>
+
+        IFSUB < .NO
+        IFSUB.allWrap = <div class="navigation_subLevel-item -sub">|</div>
+        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+
+
+        CUR < .NO
+        CUR.allWrap = <div class="navigation_subLevel-item -cur">|</div>
+
+        CURIFSUB < .CUR
+        CURIFSUB.allWrap = <div class="navigation_subLevel-item -curIfSub">|</div>
+        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+
+
+        ACT < .NO
+        ACT.allWrap = <div class="navigation_subLevel-item -act">|</div>
+        ACT.ATagParams = class="strong"
+
+        ACTIFSUB < .ACT
+        ACTIFSUB.allWrap = <div class="navigation_subLevel-item -actSub">|</div>
+        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+    }
+}
+
 
 lib.breadCrumbs = HMENU
 lib.breadCrumbs {
@@ -59,7 +173,7 @@ lib.breadCrumbs {
 
     1 = TMENU
     1.NO {
-        linkWrap = ||*| <i class="fa fa-caret-right" aria-hidden="true"></i>|
+        linkWrap = ||*| <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>|
     }
 }
 
@@ -71,7 +185,7 @@ lib.footer {
 
         NO = 1
         NO {
-            beforeWrap = <div class="footer_fullLevel"><div class="footer_firstLevel">
+            beforeWrap = <div class="footer_firstLevel"><div class="footer_firstLevel">
             afterWrap = </div></div>
             stdWrap.htmlSpecialChars = 1
         }
@@ -105,11 +219,14 @@ lib.footer {
             beforeWrap =
             afterWrap =
         }
+
         ACTIFSUB < .IFSUB
+        ACTIFSUB.ATagParams = class="strong"
         CURIFSUB < .IFSUB
-        CUR < .CURIFSUB
-        ACT < .ACTIFSUB
+        CURIFSUB.ATagParams = class="strong"
+        CUR < .NO
         CUR.ATagParams = class="strong"
+        ACT < .NO
         ACT.ATagParams = class="strong"
     }
 }

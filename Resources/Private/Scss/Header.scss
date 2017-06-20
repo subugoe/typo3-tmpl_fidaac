@@ -177,6 +177,7 @@ header {
 
 .header_buttons {
     @include flex-right;
+    align-items: center;
 
     svg {
         margin-right: 6px;
