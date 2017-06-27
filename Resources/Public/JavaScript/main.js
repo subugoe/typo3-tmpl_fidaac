@@ -72,7 +72,8 @@ $(function() {
      * When menuButton is clicked, switch back to full menu
      */
     $('.menuButton').on('click',function() {
-        $(".navigation_breadCrumbs").addClass("removed").removeClass("inserted");
+        $(".navigation_default").removeClass("removed").addClass("inserted");
+        $(".navigation_breadCrumbs").removeClass("inserted").addClass("removed");
     });
 
 
