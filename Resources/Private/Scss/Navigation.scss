@@ -67,34 +67,60 @@ navigation {
     align-items: center;
 
     @include media-l {
-        @include span-l-6;
+        @include span-l-12;
     }
     @include media-m {
-        @include span-m-6;
+        @include span-m-12;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+}
+
+.navigation_breadCrumbs .crumbs {
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 16px;
+
+    @include media-l {
+        @include span-l-10;
+    }
+    @include media-m {
+        @include span-m-10;
     }
     @include media-s {
         @include span-s-6;
     }
 
-    i {
-        padding: 0 $g/2;
-    }
-
-    .crumbs {
-        padding-left: 16px;
-        align-items: center;
+    svg {
+        fill: $shadeDarkest;
+        margin: 0px 8px;
     }
 }
 
 .moreButton,
 .menuButton {
     @include flex-center;
+    display: flex;
     background: $brand;
     cursor: pointer;
     color: $white;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+
+    @include media-l {
+        @include span-l-2;
+    }
+    @include media-m {
+        @include span-m-2;
+    }
+    @include media-s {
+        @include span-s-2;
+    }
 
     svg {
-        padding-right: 4px;
+        margin-right: 4px;
     }
 }
 
