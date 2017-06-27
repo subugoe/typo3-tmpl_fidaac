@@ -30,5 +30,13 @@ page.10 {
     variables {
         IDS_HOME = TEXT
         IDS_HOME.value = {$ids.home}
+        IDS_CONTACT = TEXT
+        IDS_CONTACT.value = {$ids.contact}
+        IDS_IMPRINT = TEXT
+        IDS_IMPRINT.value = {$ids.imprint}
+        IDS_PRIVACYPOLICY = TEXT
+        IDS_PRIVACYPOLICY.value = {$ids.privacyPolicy}
+        IDS_LICENSE = TEXT
+        IDS_LICENSE.value = {$ids.license}
     }
 }
