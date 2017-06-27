@@ -1,26 +1,37 @@
 <navigation class="navigation">
-        <div class="navigation_default inserted">
-            <div class="span-12 -firstLevel">
-                <f:cObject typoscriptObjectPath="lib.navLevel1"/>
-            </div>
-            <div class="span-12 -secondLevel">
-                <f:cObject typoscriptObjectPath="lib.navLevel2"/>
-            </div>
-            <div class="span-12 -thirdLevel">
-                <f:cObject typoscriptObjectPath="lib.navLevel3"/>
+    <div class="navigation_default inserted">
+        <div class="navigation_default-firstLevel">
+            <f:cObject typoscriptObjectPath="lib.navLevel1"/>
+        </div>
+        <div class="navigation_default-subLevelContainerFull">
+            <div class="navigation_default-subLevelContainerSmall">
+                <div class="navigation_default-subLevel">
+                    <f:cObject typoscriptObjectPath="lib.navLevel2"/>
+                </div>
+                <div class="navigation_default-subLevel">
+                    <f:cObject typoscriptObjectPath="lib.navLevel3"/>
+                </div>
+                <div class="navigation_default-subLevel">
+                    <f:cObject typoscriptObjectPath="lib.navLevel4"/>
+                </div>
+                <div class="navigation_default-subLevel">
+                    <f:cObject typoscriptObjectPath="lib.navLevel5"/>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="navigation_breadCrumbs removed">
-            <div class="span-2 menuButton">
-                <svg>
-                    <use
-                        xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-bars', extensionName:'tmpl_fidaac')}"/>
-                </svg>
-                Menu</div>
-            <div class="span-10 crumbs">
-                <f:cObject typoscriptObjectPath="lib.breadCrumbs"/>
-            </div>
+    <div class="navigation_breadCrumbs removed">
+        <div class="navigation_menuButton">
+            <svg>
+                <use
+                    xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-bars', extensionName:'tmpl_fidaac')}"/>
+            </svg>
+            Menu
         </div>
+        <div class="navigation_crumbs">
+            <f:cObject typoscriptObjectPath="lib.breadCrumbs"/>
+        </div>
+    </div>
     </div>
 </navigation>

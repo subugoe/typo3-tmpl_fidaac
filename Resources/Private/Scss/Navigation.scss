@@ -13,39 +13,40 @@ navigation {
 
     svg {
         fill: $white;
-        height: 1em;
-        width: 1em;
-    }
-
-    .-firstLevel,
-    .-secondLevel,
-    .-thirdLevel {
-        display: flex;
-        flex-flow: row wrap;
-    }
-
-    .-firstLevel {
-        font-size: 24px;
-        flex-direction: row;
-        align-content: center;
-    }
-
-    .-secondLevel {
-        font-size: 18px;
-    }
-
-    .-thirdLevel {
-        font-size: 14px;
-    }
-
-    .-item {
-        padding-right: 16px;
+        height: 20px;
+        width: 20px;
     }
 }
 
 .navigation_default {
-    @include flex-center;
-    flex-flow: row wrap;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include media-l {
+        font-size: 20px;
+        line-height: 40px;
+    }
+    @include media-m {
+        font-size: 20px;
+        line-height: 40px;
+    }
+    @include media-s {
+    }
+
+    svg {
+        fill: $shadeDarkest;
+        padding-left: 2px;
+    }
+}
+
+.navigation_default-firstLevel {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    padding: 0;
 
     @include media-l {
         @include span-l-12;
@@ -58,6 +59,88 @@ navigation {
     }
 }
 
+.navigation_firstLevel-item {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;;
+
+    @include media-l {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    @include media-m {
+    }
+    @include media-s {
+    }
+
+    &.-actSub,
+    &.-curIfSub,
+    &.-actIfSub,
+    &.-cur {
+        background-color: $shadeLighter;
+        font-weight: bold;
+    }
+}
+
+.navigation_default-subLevel {
+    display: flex;
+    flex-flow: column;
+
+    @include media-l {
+        font-size: 16px;
+        font-height: 24px;
+    }
+    @include media-m {
+        font-size: 16px;
+        font-height: 24px;
+    }
+    @include media-s {
+    }
+}
+
+.navigation_default-subLevelContainerFull {
+    display: flex;
+    width: 100%;
+    background-color: $shadeLighter;
+    justify-content: center;
+}
+
+.navigation_default-subLevelContainerSmall {
+    display: flex;
+    align-items: flex-start;
+
+    @include media-l {
+        @include span-l-12;
+    }
+    @include media-m {
+        @include span-m-12;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+    flex-wrap: nowrap !important;
+}
+
+.navigation_subLevel-item {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin-right: 28px;
+
+    svg {
+        margin-left: 8px;
+    }
+
+    &.-actSub,
+    &.-curIfSub,
+    &.-actIfSub,
+    &.-cur {
+        font-weight: bold;
+    }
+}
+
 .navigation_breadCrumbs {
     @include flex-center;
     flex-flow: row wrap;
@@ -67,70 +150,66 @@ navigation {
     align-items: center;
 
     @include media-l {
-        @include span-l-6;
+        @include span-l-12;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
     @include media-m {
-        @include span-m-6;
+        @include span-m-12;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
     @include media-s {
         @include span-s-6;
     }
 
-    i {
-        padding: 0 $g/2;
-    }
-
-    .crumbs {
-        padding-left: 16px;
-        align-items: center;
+    svg {
+        fill: $shadeDarkest;
+        margin-right: 4px;
+        margin-left: 4px;
     }
 }
 
-.moreButton,
-.menuButton {
-    @include flex-center;
+.navigation_crumbs {
+    padding-left: 16px;
+    align-items: center;
+
+    @include media-l {
+        @include span-l-10;
+    }
+    @include media-m {
+        @include span-m-10;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+}
+
+.navigation_moreButton,
+.navigation_menuButton {
+    display: flex;
+    align-items: center;
     background: $brand;
     cursor: pointer;
     color: $white;
+    justify-content: center;
+
+    @include media-l {
+        @include span-l-2;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    @include media-m {
+        @include span-m-2;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    @include media-s {
+        @include span-s-2;
+    }
 
     svg {
+        fill: $white;
         padding-right: 4px;
-    }
-}
-
-@media (min-width: 768px) {
-    navigation {
-        .-firstLevel,
-        .moreButton {
-            margin-top: ($g * 2 / 3);
-        }
-        .menuButton {
-            margin: ($g / 2) 0;
-            max-width: 144px;
-        }
-        .-secondLevel {
-            margin-top: ($g / 4);
-        }
-        .-thirdLevel {
-            margin-top: ($g / 4);
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    navigation {
-        .-firstLevel,
-        .moreButton {
-            margin-top: ($g * 2 / 3);
-        }
-        .menuButton {
-            margin: ($g / 2) 0;
-        }
-        .-secondLevel {
-            margin-top: ($g / 4);
-        }
-        .-thirdLevel {
-            margin-top: ($g / 4);
-        }
     }
 }

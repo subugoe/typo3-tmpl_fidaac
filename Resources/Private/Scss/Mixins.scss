@@ -1,9 +1,5 @@
 @mixin span {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
 }
 
 @mixin span-l-12 {
