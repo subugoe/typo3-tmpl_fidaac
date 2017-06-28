@@ -37,7 +37,6 @@ footer {
 
 .footer_fullLevel {
     @include flex-left;
-    padding-bottom: 7px;
 
     @include media-l {
         @include span-l-12;

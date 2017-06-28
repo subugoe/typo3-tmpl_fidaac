@@ -79,6 +79,7 @@ lib.footer {
         NO {
             beforeWrap = <div class="footer_fullLevel"><div class="footer_firstLevel">
             afterWrap = </div></div>
+            NO.ATagParams =
             stdWrap.htmlSpecialChars = 1
         }
 
