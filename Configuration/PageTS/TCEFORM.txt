@@ -19,11 +19,14 @@ TCEFORM {
 
 // Layout for content elements
 TCEFORM.tt_content {
-        layout {
-            altLabels {
-                0 = Default
-                1 = Doppelspaltig
-            }
-            removeItems = 2,3,4,5,6,7,8,9,10
+    layout {
+        altLabels {
+            0 = Default
+            1 = Doppelspaltig
         }
+    removeItems = 2,3,4,5,6,7,8,9,10
     }
+}
+
+// Show thumbnails in News list mode by default
+TCAdefaults.sys_file_reference.showinpreview = 1
