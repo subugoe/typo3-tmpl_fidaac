@@ -26,11 +26,14 @@
                     border-radius: 4px;
                     padding: 0.1*$g 0.5*$g;
                     margin-right: 0.5*$g;
+                    white-space: nowrap;
                 }
-
-                .-by {
-                    font-style: italic;
-                }
+            }
+            .-by {
+                font-style: italic;
+                padding-right: 0.4em;
+                padding-left: 0.3em;
+                font-weight: 300;
             }
         }
     }
@@ -51,6 +54,6 @@
     }
 
     .page-navigation a:after {
-                content: "";
+        content: "";
     }
 }
