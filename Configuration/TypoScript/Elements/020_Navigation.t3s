@@ -113,11 +113,11 @@ lib.footer {
             afterWrap =
         }
         ACTIFSUB < .IFSUB
+        ACTIFSUB.ATagParams = class="strong"
         CURIFSUB < .IFSUB
+        CURIFSUB.ATagParams = class="strong"
         CUR < .CURIFSUB
         ACT < .ACTIFSUB
-        CUR.ATagParams = class="strong"
-        ACT.ATagParams = class="strong"
     }
 }
 
