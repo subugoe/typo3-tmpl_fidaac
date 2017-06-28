@@ -15,14 +15,15 @@ footer {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    padding-top: 23px;
     padding-bottom: 16px;
 
     @include media-l {
         @include span-l-12;
+        padding-top: 8px;
     }
     @include media-m {
         @include span-m-12;
+        padding-top: 8px;
     }
     @include media-s {
         @include span-s-6;
@@ -54,18 +55,20 @@ footer {
     display: flex;
     font-weight: normal;
     text-align: right;
-    padding-bottom: 7px;
     padding-right: 16px;
 
     @include media-l {
         @include span-l-2;
+        padding-top: 8px;
     }
     @include media-m {
         @include span-m-3;
+        padding-top: 8px;
     }
     @include media-s {
         @include span-s-6;
         @include flex-left;
+        padding-top: 16px;
     }
 }
 
@@ -74,19 +77,22 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding-bottom: 7px;
 
     @include media-l {
         @include span-l-10;
+        padding-top: 8px;
     }
     @include media-m {
         @include span-m-9;
+        padding-top: 8px;
     }
     @include media-s {
         @include span-s-6;
+        padding-top: 4px;
     }
 
     a {
         padding-right: 16px;
+        padding-bottom: 4px;
     }
 }
