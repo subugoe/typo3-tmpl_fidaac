@@ -1,124 +1,135 @@
 lib.navLevel1 = HMENU
 lib.navLevel1 {
-
     1 = TMENU
     1 {
+        expAll = 1
         NO = 1
-        NO.allWrap = <div class="-item">|</div>
+        NO.allWrap = <div class="navigation_default-firstLevelItem -no">|</div>
+
+        IFSUB < .NO
+        IFSUB.allWrap = <div class="navigation_default-firstLevelItem -sub">|</div>
+        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
 
         CUR < .NO
-        CUR.ATagParams = class="strong"
+        CUR.allWrap = <div class="navigation_default-firstLevelItem -cur">|</div>
+
+        CURIFSUB < .CUR
+        CURIFSUB.allWrap = <div class="navigation_default-firstLevelItem -curIfSub">|</div>
+        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>
 
         ACT < .NO
+        ACT.allWrap = <div class="navigation_default-firstLevelItem -act">|</div>
         ACT.ATagParams = class="strong"
+
+        ACTIFSUB < .ACT
+        ACTIFSUB.allWrap = <div class="navigation_default-firstLevelItem -actSub">|</div>
+        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>
     }
-}
 
-lib.navLevel2 = HMENU
-lib.navLevel2 {
-    entryLevel = 1
-
-    1 = TMENU
-    1 {
+    2 = TMENU
+    2 {
+        expAll = 1
         special = rootline
+        wrap = <div class="navigation_default-subLevelContainerSmall removed"><div class="navigation_default-subLevel">|</div></div>
+
         NO = 1
-        NO.allWrap = <div class="-item">|</div>
+        NO.allWrap = <div class="navigation_default-subLevelItem -no">|</div>
+
+        IFSUB < .NO
+        IFSUB.allWrap = <div class="navigation_default-subLevelItem -sub">|</div>
+        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
 
         CUR < .NO
-        CUR.ATagParams = class="strong"
+        CUR.allWrap = <div class="navigation_default-subLevelItem -cur">|</div>
+
+        CURIFSUB < .CUR
+        CURIFSUB.allWrap = <div class="navigation_default-subLevelItem -curIfSub">|</div>
+        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
 
         ACT < .NO
+        ACT.allWrap = <div class="navigation_default-subLevelItem -act">|</div>
         ACT.ATagParams = class="strong"
+
+        ACTIFSUB < .ACT
+        ACTIFSUB.allWrap = <div class="navigation_default-subLevelItem -actSub">|</div>
+        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
     }
+
+    3 < .2
+    4 < .2
+    5 < .2
 }
 
-lib.navLevel3 = HMENU
-lib.navLevel3 {
-    entryLevel = 2
 
-    1 = TMENU
-    1 {
-        expAll = 0
-        special = rootline
-        NO = 1
-        NO.allWrap = <div class="-item">|</div>
-
-        CUR < .NO
-        CUR.ATagParams = class="strong"
-
-        ACT < .NO
-        ACT.ATagParams = class="strong"
-    }
-    2 < .1
-}
 
 lib.breadCrumbs = HMENU
 lib.breadCrumbs {
-    special = rootline
-    special.range = 1|-1
+special = rootline
+special.range = 1|-1
 
-    1 = TMENU
-    1 {
+1 = TMENU
+1 {
 
-        NO = 1
-        CUR = 1
-        CUR.afterWrap =
-        IFSUB = 1
-        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-chevron-right"/></svg>
-    }
+NO = 1
+CUR = 1
+CUR.afterWrap =
+IFSUB = 1
+IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-chevron-right"/></svg>
+}
 
 }
 
 lib.footer = HMENU
 lib.footer {
-    1 = TMENU
-    1 {
-        expAll = 1
+1 = TMENU
+1 {
+expAll = 1
 
-        NO = 1
-        NO {
-            beforeWrap = <div class="footer_fullLevel"><div class="footer_firstLevel">
-            afterWrap = </div></div>
-            NO.ATagParams =
-            stdWrap.htmlSpecialChars = 1
-        }
+NO = 1
+NO {
+beforeWrap = <div class="footer_fullLevel"><div class="footer_firstLevel">
+afterWrap = </div></div>
+NO.ATagParams =
+stdWrap.htmlSpecialChars = 1
+}
 
-        IFSUB < .NO
-        IFSUB {
-            beforeWrap = <div class="footer_firstLevel">
-            afterWrap = </div>
-        }
+IFSUB < .NO
+IFSUB {
+beforeWrap = <div class="footer_firstLevel">
+afterWrap = </div>
+}
 
-        ACTIFSUB < .IFSUB
-        ACTIFSUB.ATagParams = class="strong"
-        CURIFSUB < .IFSUB
-        CURIFSUB.ATagParams = class="strong"
-        CUR < .NO
-        CUR.ATagParams = class="strong"
-        ACT < .NO
-        ACT.ATagParams = class="strong"
-    }
+ACTIFSUB < .IFSUB
+ACTIFSUB.ATagParams = class="strong"
+CURIFSUB < .IFSUB
+CURIFSUB.ATagParams = class="strong"
+CUR < .NO
+CUR.ATagParams = class="strong"
+ACT < .NO
+ACT.ATagParams = class="strong"
+}
 
-    2 < .1
-    2 {
-        wrap = <div class="footer_secondLevel">|</div>
+2 < .1
+2 {
+wrap = <div class="footer_secondLevel">|</div>
 
-        NO {
-            beforeWrap =
-            afterWrap =
-        }
+NO {
+beforeWrap =
+afterWrap =
+}
 
-        IFSUB {
-            beforeWrap =
-            afterWrap =
-        }
-        ACTIFSUB < .IFSUB
-        ACTIFSUB.ATagParams = class="strong"
-        CURIFSUB < .IFSUB
-        CURIFSUB.ATagParams = class="strong"
-        CUR < .CURIFSUB
-        ACT < .ACTIFSUB
-    }
+IFSUB {
+beforeWrap =
+afterWrap =
+}
+
+ACTIFSUB < .IFSUB
+ACTIFSUB.ATagParams = class="strong"
+CURIFSUB < .IFSUB
+CURIFSUB.ATagParams = class="strong"
+CUR < .CURIFSUB
+ACT < .ACTIFSUB
+}
 }
 
 

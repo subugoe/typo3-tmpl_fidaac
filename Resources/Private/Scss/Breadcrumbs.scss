@@ -1,0 +1,68 @@
+.navigation_breadCrumbs {
+    @include flex-center;
+    flex-flow: row wrap;
+    font-size: 16px;
+    line-height: 24px;
+    align-self: center;
+    align-items: center;
+
+    @include media-l {
+        @include span-l-12;
+    }
+    @include media-m {
+        @include span-m-12;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+}
+
+.navigation_crumbs {
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 16px;
+
+    @include media-l {
+        @include span-l-10;
+    }
+    @include media-m {
+        @include span-m-10;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+
+    svg {
+        fill: $shadeDarkest;
+        margin: 0px 8px;
+        height: 0.9em;
+    }
+}
+
+.navigation_menuButton {
+    display: flex;
+    background: $brand;
+    cursor: pointer;
+    color: $white;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    margin: 8px 0;
+
+    @include media-l {
+        @include span-l-2;
+    }
+    @include media-m {
+        @include span-m-2;
+    }
+    @include media-s {
+        @include span-s-2;
+    }
+
+    svg {
+        margin-right: 4px;
+        fill: $white;
+        height: 20px;
+        width: 20px;
+    }
+}
