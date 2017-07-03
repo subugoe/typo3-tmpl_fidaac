@@ -12,40 +12,43 @@ navigation {
     }
 
     svg {
-        fill: $white;
         height: 1em;
         width: 1em;
-    }
-
-    .-firstLevel,
-    .-secondLevel,
-    .-thirdLevel {
-        display: flex;
-        flex-flow: row wrap;
-    }
-
-    .-firstLevel {
-        font-size: 24px;
-        flex-direction: row;
-        align-content: center;
-    }
-
-    .-secondLevel {
-        font-size: 18px;
-    }
-
-    .-thirdLevel {
-        font-size: 14px;
-    }
-
-    .-item {
-        padding-right: 16px;
     }
 }
 
 .navigation_default {
-    @include flex-center;
-    flex-flow: row wrap;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include media-l {
+        font-size: 20px;
+        line-height: 40px;
+    }
+    @include media-m {
+        font-size: 20px;
+        line-height: 40px;
+    }
+    @include media-s {
+    }
+
+    svg {
+        fill: $shadeDarkest;
+        padding-left: 2px;
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+    }
+}
+
+.navigation_default-firstLevel {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    padding: 0;
 
     @include media-l {
         @include span-l-12;
@@ -58,9 +61,96 @@ navigation {
     }
 }
 
+.navigation_default-firstLevelItem {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;;
+
+    @include media-l {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    @include media-m {
+    }
+    @include media-s {
+    }
+
+    &.-actSub,
+    &.-curIfSub,
+    &.-actIfSub,
+    &.-cur {
+        background-color: $shadeLighter;
+        font-weight: bold;
+    }
+}
+
+.navigation_default-subLevel {
+    display: flex;
+    flex-flow: column;
+
+    @include media-l {
+        font-size: 16px;
+        font-height: 24px;
+    }
+    @include media-m {
+        font-size: 16px;
+        font-height: 24px;
+    }
+    @include media-s {
+    }
+}
+
+.navigation_default-subLevelContainerFull {
+    display: flex;
+    width: 100%;
+    background-color: $shadeLighter;
+    justify-content: center;
+}
+
+.navigation_default-subLevelContainer {
+    display: flex;
+
+    @include media-l {
+        @include span-l-12;
+    }
+    @include media-m {
+        @include span-m-12;
+    }
+    @include media-s {
+        @include span-s-6;
+    }
+}
+
+.navigation_default-subLevelContainerSmall {
+    display: flex;
+    align-items: flex-start;
+}
+
+.navigation_default-subLevelItem {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin-right: 28px;
+
+    svg {
+        margin-left: 8px;
+    }
+
+    &.-actSub,
+    &.-curIfSub,
+    &.-actIfSub,
+    &.-cur {
+        font-weight: bold;
+    }
+}
+
+
 .navigation_breadCrumbs {
     @include flex-center;
-    flex-flow: row wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     font-size: 16px;
     line-height: 24px;
     align-self: center;
@@ -77,10 +167,10 @@ navigation {
     }
 }
 
-.navigation_breadCrumbs .crumbs {
+.navigation_breadCrumbs-crumbs {
     align-items: center;
     justify-content: flex-start;
-    margin-left: 16px;
+    padding-left: 16px;
 
     @include media-l {
         @include span-l-10;
@@ -95,68 +185,5 @@ navigation {
     svg {
         fill: $shadeDarkest;
         margin: 0px 8px;
-    }
-}
-
-.moreButton,
-.menuButton {
-    @include flex-center;
-    display: flex;
-    background: $brand;
-    cursor: pointer;
-    color: $white;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 0px;
-
-    @include media-l {
-        @include span-l-2;
-    }
-    @include media-m {
-        @include span-m-2;
-    }
-    @include media-s {
-        @include span-s-2;
-    }
-
-    svg {
-        margin-right: 4px;
-    }
-}
-
-@media (min-width: 768px) {
-    navigation {
-        .-firstLevel,
-        .moreButton {
-            margin-top: ($g * 2 / 3);
-        }
-        .menuButton {
-            margin: ($g / 2) 0;
-            max-width: 144px;
-        }
-        .-secondLevel {
-            margin-top: ($g / 4);
-        }
-        .-thirdLevel {
-            margin-top: ($g / 4);
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    navigation {
-        .-firstLevel,
-        .moreButton {
-            margin-top: ($g * 2 / 3);
-        }
-        .menuButton {
-            margin: ($g / 2) 0;
-        }
-        .-secondLevel {
-            margin-top: ($g / 4);
-        }
-        .-thirdLevel {
-            margin-top: ($g / 4);
-        }
     }
 }
