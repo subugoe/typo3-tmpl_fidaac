@@ -51,17 +51,19 @@
                     </span>
                 </div>
             </f:link.page>
-            <div class="header_search">
-                <span class="header_search-icon">
-                    <svg>
-                        <use
-                            xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-search', extensionName:'tmpl_fidaac')}"/>
-                    </svg>
-                </span>
-                <span class="header_search-text">
-                    Search
-                </span>
-            </div>
+            <f:link.page pageUid="{IDS_SEARCH}">
+                <div class="header_search">
+                    <span class="header_search-icon">
+                        <svg>
+                            <use
+                                xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-search', extensionName:'tmpl_fidaac')}"/>
+                        </svg>
+                    </span>
+                    <span class="header_search-text">
+                        Search
+                    </span>
+                </div>
+            </f:link.page>
             <div class="header_language">
                 <span class="header_language-icon">
                     <svg>
