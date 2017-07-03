@@ -120,15 +120,16 @@ header {
 
     @include media-l {
         @include span-l-6;
+        align-items: flex-start !important;
     }
     @include media-m {
         @include span-m-6;
+        align-items: flex-start !important;
     }
     @include media-s {
         @include span-s-6;
+        align-items: center;
     }
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
 }
 
 .header_image-home {
@@ -153,12 +154,13 @@ header {
         font-size: 20px;
     }
     @include media-s {
-        @include span-s-3;
+        @include span-s-6;
     }
 }
 
 .header_text-homeShort {
     @include flex-left;
+    font-weight: 600;
 
     @include media-l {
         font-size: 24px;

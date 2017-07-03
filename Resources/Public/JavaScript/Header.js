@@ -49,5 +49,6 @@ $(document).ready(function () {
     $(window).resize(function() {
         changeHeader();
     });
+    changeHeader();
 
 });

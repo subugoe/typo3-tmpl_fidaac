@@ -20,15 +20,10 @@ casper.test.begin('Test header', 4, function(test) {
 
     then(function() {
         casper.echo('Check availability of all elements');
-        test.assertVisible('.header_image img', 'Logo image visible');
-        test.assertVisible('.header_home svg', 'Home svg visible');
-        test.assertVisible('.header_search svg', 'Search svg visible');
-        test.assertVisible('.header_language svg', 'Globe svg visible');
-    }).
-
-    then(function() {
-        require('utils').dump(this.getElementInfo('.header_home svg').y);
-        require('utils').dump(this.getElementInfo('.header_search svg').y);
+        test.assertVisible('.header_image-home svg', 'Logo image visible');
+        test.assertVisible('.header_home-icon svg', 'Home svg visible');
+        test.assertVisible('.header_search-icon svg', 'Search svg visible');
+        test.assertVisible('.header_language-icon svg', 'Globe svg visible');
     }).
 
     run(function () {
