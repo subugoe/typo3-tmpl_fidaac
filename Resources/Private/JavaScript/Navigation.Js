@@ -5,31 +5,17 @@
  * while clicking on an arrow opens and closes the submenu
  */
 
-$(function () {
-
+$(document).ready(() => {
     /**
-     * Manage javascript menu
      * Clone and inject menulevels into dom container
+     * First, Remove all menu levels below
      */
-
-    // Remove all menu levels below
-    var removeSubLevelMenu = function (el) {
+    const removeSubLevelMenu = (el) => {
         $(el).parents('.navigation_default-subLevelContainerSmall').nextAll('.navigation_default-subLevelContainerSmall').remove();
         return false;
-    }
+    };
 
-
-    $('.navigation_default-firstLevel svg').on('click', function () {
-        var navelement = $(this).parent('.navigation_default-firstLevelItem').next('.navigation_default-subLevelContainerSmall');
-        $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(function () {
-            var clonenav = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
-            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(clonenav);
-            addSubLevelClicks();
-        });
-        return false;
-    });
-
-    var addSubLevelClicks = function () {
+    const addSubLevelClicks = () => {
         // remove all preexisting bindings
         $('.navigation_default-subLevel svg').off();
         // add new binding
@@ -45,6 +31,16 @@ $(function () {
             return false;
         });
     };
+
+    $('.navigation_default-firstLevel svg').on('click', function () {
+        var navelement = $(this).parent('.navigation_default-firstLevelItem').next('.navigation_default-subLevelContainerSmall');
+        $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(function () {
+            var clonenav = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
+            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(clonenav);
+            addSubLevelClicks();
+        });
+        return false;
+    });
 
 
     /**
