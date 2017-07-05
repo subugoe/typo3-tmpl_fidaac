@@ -7,4 +7,7 @@ tests/images/
 .idea
 npm-debug.log
 
-Resources/Public/Css/main.css
+# Ignore all compiled css and javascript
+Resources/Public/Css/Main.css
+Resources/Public/Css/output.css
+Resources/Public/JavaScript/output.js

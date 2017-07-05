@@ -1,3 +1,9 @@
+/**
+ * Header.js
+ *
+ * functions to change the header for different screen sizes
+ */
+
 $(document).ready(function () {
 
     /**
