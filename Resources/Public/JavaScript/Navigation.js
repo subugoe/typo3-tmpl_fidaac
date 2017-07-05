@@ -1,3 +1,10 @@
+/**
+ * Navigation.js
+ *
+ * Change the menu, so that clicking on a link leads to the page
+ * while clicking on an arrow opens and closes the submenu
+ */
+
 $(function () {
 
     /**

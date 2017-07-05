@@ -2,15 +2,13 @@ page = PAGE
 page {
     typeNum = 0
 
-    includeCSS.file100 = EXT:tmpl_fidaac/Resources/Public/Css/main.css
+    includeCSS.file100 = EXT:tmpl_fidaac/Resources/Public/Css/output.css
     includeCss.file300 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css
     includeCSS.file400 = https://fonts.googleapis.com/css?family=Open+Sans:300
 
     includeJS.file100 = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
     includeJS.file200 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
-    includeJS.file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/Header.js
-    includeJS.file400 = EXT:tmpl_fidaac/Resources/Public/JavaScript/Navigation.js
-    includeJS.file700 = EXT:tmpl_fidaac/Resources/Public/JavaScript/Main.js
+    includeJS.file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/output.js
 
     meta.viewport  = width=device-width, initial-scale=1.0
 }

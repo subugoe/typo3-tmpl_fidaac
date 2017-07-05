@@ -1,3 +1,9 @@
+/**
+ * Main.js
+ *
+ * Show the website after all javascript is done
+ */
+
 $(function() {
 
 
