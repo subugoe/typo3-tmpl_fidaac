@@ -4,9 +4,31 @@
 // Configuration RTE
 
 RTE.default {
+toolbarOrder (
+          formatblock,
+          fontsize,
+          textstyle,
+          textstylelabel,
+          blockstyle,
+          blockstylelabel,
+          linebreak,
+          bold,
+          italic,
+          subscript,
+          superscript,
+          orderedlist,
+          unorderedlist,
+          link,
+          image,
+          findreplace,
+          insertcharacter,
+          indent,
+          definitionlist,
+          removeformat,
+          chMode
+    )
+
     hideButtons (
-        blockstylelabel,
-        blockstyle,
         textstylelabel,
         textstyle,
         tableproperties,
@@ -43,6 +65,7 @@ RTE.default {
             nav,
             header,
             p,
+            h1,
             h5,
             h6,
             pre,
@@ -53,5 +76,27 @@ RTE.default {
     # allow definition lists
     showButtons := addToList(definitionlist)
     proc.allowTags := addToList(dl,dt,dd)
+
+    # add custom block style for literature lists
+    proc.allowedClasses >
+    proc.allowedClasses = literature
+    buttons.blockstyle.tags.p.allowedClasses = literature
+    contentCSS >
+    contentCSS = typo3conf/ext/tmpl_fidaac/Resources/Public/Css/rte.css
+    showTagFreeClasses = 0
+    enableWordClean = 1
+    useCSS = 0
 }
 
+RTE.classes >
+RTE.classes {
+    literature {
+        name = Literature
+        value = literature
+    }
+}
+
+RTE.default.FE < RTE.default
+RTE.default.FE.FE >
+
+RTE.config.tt_content.bodytext.proc.allowedClasses = literature
