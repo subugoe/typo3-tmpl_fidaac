@@ -1,6 +1,6 @@
 # Ignore results from testing
 node_modules
-Tests/images/
+tests/images/
 
 # Ignore others
 .history
@@ -8,7 +8,6 @@ Tests/images/
 npm-debug.log
 
 # Ignore all compiled css and javascript
-Resources/Public/Css/concatenated.css
-Resources/Public/Css/minified.css
-Resources/Public/JavaScript/concatenated.js
-Resources/Public/JavaScript/minified.js
+Resources/Public/Css/Main.css
+Resources/Public/Css/output.css
+Resources/Public/JavaScript/output.js
