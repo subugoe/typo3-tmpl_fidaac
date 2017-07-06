@@ -5,17 +5,31 @@
  * while clicking on an arrow opens and closes the submenu
  */
 
-$(document).ready(() => {
+$(function () {
+
     /**
+     * Manage javascript menu
      * Clone and inject menulevels into dom container
-     * First, Remove all menu levels below
      */
-    const removeSubLevelMenu = (el) => {
+
+    // Remove all menu levels below
+    var removeSubLevelMenu = function (el) {
         $(el).parents('.navigation_default-subLevelContainerSmall').nextAll('.navigation_default-subLevelContainerSmall').remove();
         return false;
-    };
+    }
 
-    const addSubLevelClicks = () => {
+
+    $('.navigation_default-firstLevel svg').on('click', function () {
+        var navelement = $(this).parent('.navigation_default-firstLevelItem').next('.navigation_default-subLevelContainerSmall');
+        $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(function () {
+            var clonenav = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
+            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(clonenav);
+            addSubLevelClicks();
+        });
+        return false;
+    });
+
+    var addSubLevelClicks = function () {
         // remove all preexisting bindings
         $('.navigation_default-subLevel svg').off();
         // add new binding
@@ -31,16 +45,6 @@ $(document).ready(() => {
             return false;
         });
     };
-
-    $('.navigation_default-firstLevel svg').on('click', function () {
-        var navelement = $(this).parent('.navigation_default-firstLevelItem').next('.navigation_default-subLevelContainerSmall');
-        $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(function () {
-            var clonenav = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
-            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(clonenav);
-            addSubLevelClicks();
-        });
-        return false;
-    });
 
 
     /**

@@ -20,12 +20,6 @@ main {
 .main {
     flex-wrap: wrap;
     justify-content: center;
-
-    // Fixes text to header
-    // TODO: change name of element
-    .span-12.center {
-        margin-top: 0;
-    }
 }
 
 .content {
