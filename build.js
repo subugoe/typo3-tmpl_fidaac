@@ -2,11 +2,10 @@ var buildify = require('buildify');
 
 buildify()
     .concat([
-        'Resources/Public/JavaScript/Header.js',
-        'Resources/Public/JavaScript/Navigation.js',
-        'Resources/Public/JavaScript/Main.js'])
-    .uglify()
-    .save('Resources/Public/JavaScript/output.js')
-    .load('Resources/Public/Css/Main.css')
+        'Resources/Private/JavaScript/Header.Js',
+        'Resources/Private/JavaScript/Navigation.Js',
+        'Resources/Private/JavaScript/Main.Js'])
+    .save('Resources/Public/JavaScript/concatenated.js')
+    .load('Resources/Public/Css/concatenated.css')
     .cssmin()
-    .save('Resources/Public/Css/output.css');
+    .save('Resources/Public/Css/minified.css');

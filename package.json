@@ -1,28 +1,37 @@
 {
-  "name": "fid-aac",
-  "version": "0.0.1",
-  "description": "Template for FID AAC",
-  "private": true,
-  "scripts": {
-    "testLocal": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://fidaac.dev'",
-    "testDev": "node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://aacdev.sub.uni-goettingen.de'",
-    "buildCss": "node_modules/.bin/node-sass Resources/Private/Scss/App.scss Resources/Public/Css/Main.css; node build.js",
-    "watchCss": "nodemon -e scss -x \"npm run buildCss\""
-  },
-  "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
-  "author": "",
-  "license": "AGPL-3.0",
-  "devDependencies": {
-    "buildify": "^0.4.0",
-    "casperjs": "^1.1.3",
-    "eslint": "^3.13.1",
-    "eslint-config-airbnb-base": "^11.0.1",
-    "eslint-plugin-import": "^2.2.0",
-    "node-sass": "^4.5.0",
-    "nodemon": "^1.11.0",
-    "phantomjs-prebuilt": "^2.1.7"
-  },
-  "dependencies": {
-    "jquery": "^3.1.1"
-  }
+    "name": "fid-aac",
+    "version": "0.0.1",
+    "description": "Template for FID AAC",
+    "private": true,
+    "scripts": {
+        "testLocal": "node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://fidaac.dev'",
+        "testDev": "node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://aacdev.sub.uni-goettingen.de'",
+        "uglifyjs": "./node_modules/.bin/uglifyjs Resources/Public/JavaScript/concatenated.js -o Resources/Public/JavaScript/minified.js",
+        "buildAll": "node_modules/.bin/node-sass Resources/Private/Scss/App.scss Resources/Public/Css/concatenated.css; node build.js;npm run uglifyjs",
+        "watchAll": "nodemon -e scss,Js -x \"npm run buildAll\""
+    },
+    "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
+    "author": "",
+    "license": "AGPL-3.0",
+    "devDependencies": {
+        "buildify": "^0.4.0",
+        "casperjs": "^1.1.3",
+        "eslint": "^3.19.0",
+        "eslint-config-airbnb": "^15.0.2",
+        "eslint-config-airbnb-base": "^11.0.1",
+        "eslint-config-standard": "^10.2.1",
+        "eslint-plugin-import": "^2.6.1",
+        "eslint-plugin-jsx-a11y": "^5.1.1",
+        "eslint-plugin-node": "^5.1.0",
+        "eslint-plugin-promise": "^3.5.0",
+        "eslint-plugin-react": "^7.1.0",
+        "eslint-plugin-standard": "^3.0.1",
+        "node-sass": "^4.5.0",
+        "nodemon": "^1.11.0",
+        "phantomjs-prebuilt": "^2.1.7",
+        "uglify-es": "^3.0.23"
+    },
+    "dependencies": {
+        "jquery": "^3.1.1"
+    }
 }
