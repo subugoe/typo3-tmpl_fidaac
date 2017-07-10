@@ -5,12 +5,12 @@
   "private": true,
   "scripts": {
     "testLocal": "./node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://fidaac.dev'",
-      "testDev": "./node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://aacdev.sub.uni-goettingen.de'",
-      "babel": "./node_modules/.bin/babel Resources/Public/JavaScript/concatenated.js -o Resources/Public/JavaScript/babel.js",
-      "lintJs": "./node_modules/.bin/eslint Resources/Private/JavaScript/*.Js",
-      "createCss": "./node_modules/.bin/node-sass Resources/Private/Scss/App.scss Resources/Public/Css/concatenated.css",
-      "uglifyjs": "./node_modules/.bin/uglifyjs Resources/Public/JavaScript/babel.js -o Resources/Public/JavaScript/minified.js",
-      "buildAll": "npm run lintJs; npm run createCss; node build.js; npm run babel; npm run uglifyjs",
+    "testDev": "./node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://aacdev.sub.uni-goettingen.de'",
+    "babel": "./node_modules/.bin/babel Resources/Public/JavaScript/concatenated.js -o Resources/Public/JavaScript/babel.js",
+    "lintJs": "./node_modules/.bin/eslint Resources/Private/JavaScript/*.Js",
+    "createCss": "./node_modules/.bin/node-sass Resources/Private/Scss/App.scss Resources/Public/Css/concatenated.css",
+    "uglifyjs": "./node_modules/.bin/uglifyjs Resources/Public/JavaScript/babel.js -o Resources/Public/JavaScript/minified.js",
+    "buildAll": "npm run lintJs; npm run createCss; node build.js; npm run babel; npm run uglifyjs",
     "watchAll": "nodemon -e scss,Js -x \"npm run buildAll\""
   },
   "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
