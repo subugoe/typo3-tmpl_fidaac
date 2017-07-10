@@ -63,7 +63,7 @@ $(document).ready(() => {
     /**
      * When menuButton is clicked, switch back to full menu
      */
-    $('.navigation_menuButton').on('click', (event) => {
+    $('.navigation_menuButton').on('click', () => {
         $('.scrolled').animate({scrollTop: 0}, 'fast');
         $('.navigation_breadCrumbs').addClass('removed').removeClass('inserted');
     });
