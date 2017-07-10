@@ -10,4 +10,4 @@ npm-debug.log
 # Ignore all compiled css and javascript
 Resources/Public/Css/concatenated.css
 Resources/Public/Css/minified.css
-Resources/Public/Javascript/*
+Resources/Public/JavaScript/*
