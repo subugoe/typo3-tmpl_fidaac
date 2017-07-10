@@ -2,14 +2,25 @@ page = PAGE
 page {
     typeNum = 0
 
-    includeCSS.file100 = EXT:tmpl_fidaac/Resources/Public/Css/minified.css
-    includeCss.file300 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css
-    includeCSS.file400 = https://fonts.googleapis.com/css?family=Open+Sans:300
+    includeCSS {
+        file100 = EXT:tmpl_fidaac/Resources/Public/Css/minified.css
+        file100.title = Template CSS
+        file100.media = screen
 
-    includeJS.file100 = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
-    includeJS.file200 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
-    includeJS.file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/minified.js
+        file300 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css
+        file300.media = screen
 
+        file400 = https://fonts.googleapis.com/css?family=Open+Sans:300
+        file400.media = screen
+
+        file500 = EXT:news/Resources/Public/Css/news-basic.css
+        file500.media = screen
+    }
+    includeJS {
+        file100 = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+        file200 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
+        file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/minified.js
+    }
     meta.viewport  = width=device-width, initial-scale=1.0
 }
 
