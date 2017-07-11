@@ -15,7 +15,7 @@ lib.navLevel1 {
 
         CURIFSUB < .CUR
         CURIFSUB.allWrap = <div class="navigation_default-firstLevelItem -curIfSub">|</div>
-        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>
+        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
 
         ACT < .NO
         ACT.allWrap = <div class="navigation_default-firstLevelItem -act">|</div>
@@ -23,7 +23,7 @@ lib.navLevel1 {
 
         ACTIFSUB < .ACT
         ACTIFSUB.allWrap = <div class="navigation_default-firstLevelItem -actSub">|</div>
-        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>
+        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
     }
 
     2 = TMENU
