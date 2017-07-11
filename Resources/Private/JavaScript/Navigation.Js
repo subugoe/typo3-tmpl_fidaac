@@ -39,8 +39,15 @@ $(document).ready(() => {
         });
     };
 
-    $('.navigation_default-firstLevel svg').on('click', (event) => {
+    const hideSubLevels = () => {
+        $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
+            // switch back colors and arrows
+            $('.navigation_default-firstLevelItem svg').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
+            $('.navigation_default-firstLevelItem').removeClass('active').removeClass('inactive');
+        });
+    };
 
+    $('.navigation_default-firstLevel svg').on('click', (event) => {
 
         if ($(event.currentTarget).html().match('right')) {
             // show sublevels after removing old ones
@@ -60,13 +67,12 @@ $(document).ready(() => {
             });
 
         } else {
-            // hide sublevels
-            $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
-                $(event.currentTarget).html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
-                // switch colors back
-                $('.navigation_default-firstLevelItem').removeClass('active').removeClass('inactive');
-            });
+            hideSubLevels();
         }
+
+        $('.scrolled').on('click', () => {
+            hideSubLevels();
+        });
 
         return false;
     });
