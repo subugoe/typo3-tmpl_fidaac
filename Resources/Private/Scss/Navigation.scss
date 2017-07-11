@@ -133,6 +133,17 @@ navigation {
     flex-grow: 1;
     justify-content: space-between;
     margin-right: 28px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+
+    &:first-child {
+        margin-top: 16px;
+    }
+
+    &:last-child {
+        margin-bottom: 16px;
+    }
 
     svg {
         margin-left: 8px;
@@ -145,7 +156,6 @@ navigation {
         font-weight: bold;
     }
 }
-
 
 .navigation_breadCrumbs {
     @include flex-center;
