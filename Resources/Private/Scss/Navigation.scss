@@ -78,10 +78,17 @@ navigation {
 
     &.-actSub,
     &.-curIfSub,
-    &.-actIfSub,
     &.-cur {
         background-color: $shadeLighter;
         font-weight: bold;
+    }
+
+    &.active {
+        background-color: $shadeLighter;
+    }
+
+    &.inactive {
+        background-color: $shadeLightest;
     }
 }
 
@@ -154,6 +161,14 @@ navigation {
     &.-actIfSub,
     &.-cur {
         font-weight: bold;
+    }
+
+    &.active {
+        font-weight: bold;
+    }
+
+    &.inactive {
+        font-weight: normal;
     }
 }
 

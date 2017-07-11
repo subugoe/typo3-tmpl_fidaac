@@ -18,38 +18,53 @@ $(document).ready(() => {
     const addSubLevelClicks = () => {
         // remove all preexisting bindings
         $('.navigation_default-subLevel svg').off();
+
         // add new binding
         $('.navigation_default-subLevelContainerFull svg').on('click', (event) => {
-            // remove all preexisting subMenulevels below
+            // remove all preexisting subMenulevels below and all bold font
             removeSubLevelMenu($(event.currentTarget));
+
             // clone sublevel element and append to sublevel menu
-            const subelement = $(event.currentTarget).parent('.navigation_default-subLevelItem').next('.navigation_default-subLevelContainerSmall').first();
-            const clonesub = subelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
-            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(clonesub);
+            const parelement = $(event.currentTarget).parent('.navigation_default-subLevelItem');
+            const subelement = parelement.next('.navigation_default-subLevelContainerSmall').first();
+            const cloneelement = subelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
+            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
             // create bindings again
             addSubLevelClicks();
+
+            // switch font weight
+            parelement.siblings('.navigation_default-subLevelItem').removeClass('active').addClass('inactive');
+            parelement.removeClass('inactive').addClass('active');
             return false;
         });
     };
 
     $('.navigation_default-firstLevel svg').on('click', (event) => {
 
+
         if ($(event.currentTarget).html().match('right')) {
             // show sublevels after removing old ones
             $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
-                const navelement = $(event.currentTarget).parent('.navigation_default-firstLevelItem').next('.navigation_default-subLevelContainerSmall');
-                const clonenav = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
-                $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(clonenav);
+                const parelement = $(event.currentTarget).parent('.navigation_default-firstLevelItem');
+                const navelement = parelement.next('.navigation_default-subLevelContainerSmall');
+                const cloneelement = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
+                $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
                 addSubLevelClicks();
+
                 // switch svg arrows
                 $('.navigation_default-firstLevelItem svg').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
                 $(event.currentTarget).html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>');
+                // switch colors
+                $('.navigation_default-firstLevelItem').removeClass('active').addClass('inactive');
+                parelement.removeClass('inactive').addClass('active');
             });
 
         } else {
             // hide sublevels
             $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
                 $(event.currentTarget).html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
+                // switch colors back
+                $('.navigation_default-firstLevelItem').removeClass('active').removeClass('inactive');
             });
         }
 

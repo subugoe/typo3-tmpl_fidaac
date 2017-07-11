@@ -48,7 +48,6 @@ lib.navLevel1 {
 
         ACT < .NO
         ACT.allWrap = <div class="navigation_default-subLevelItem -act">|</div>
-        ACT.ATagParams = class="strong"
 
         ACTIFSUB < .ACT
         ACTIFSUB.allWrap = <div class="navigation_default-subLevelItem -actSub">|</div>
