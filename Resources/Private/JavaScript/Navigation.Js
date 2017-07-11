@@ -33,12 +33,26 @@ $(document).ready(() => {
     };
 
     $('.navigation_default-firstLevel svg').on('click', (event) => {
-        const navelement = $(event.currentTarget).parent('.navigation_default-firstLevelItem').next('.navigation_default-subLevelContainerSmall');
-        $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
-            const clonenav = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
-            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(clonenav);
-            addSubLevelClicks();
-        });
+
+        if ($(event.currentTarget).html().match('right')) {
+            // show sublevels after removing old ones
+            $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
+                const navelement = $(event.currentTarget).parent('.navigation_default-firstLevelItem').next('.navigation_default-subLevelContainerSmall');
+                const clonenav = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
+                $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(clonenav);
+                addSubLevelClicks();
+                // switch svg arrows
+                $('.navigation_default-firstLevelItem svg').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
+                $(event.currentTarget).html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>');
+            });
+
+        } else {
+            // hide sublevels
+            $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
+                $(event.currentTarget).html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
+            });
+        }
+
         return false;
     });
 
