@@ -8,6 +8,5 @@ Tests/images/
 npm-debug.log
 
 # Ignore all compiled css and javascript
-Resources/Public/Css/concatenated.css
-Resources/Public/Css/minified.css
+Resources/Public/Css/*
 Resources/Public/JavaScript/*
