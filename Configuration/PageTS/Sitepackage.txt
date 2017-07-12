@@ -3,5 +3,5 @@
 ###
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/RTE.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/TCEFORM.txt">
-#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/TCEMAIN.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/TCEMAIN.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/BackendLayouts.t3s">

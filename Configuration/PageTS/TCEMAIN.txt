@@ -1,3 +1,8 @@
 TCEMAIN {
-
+    permissions {
+        # Default group for all pages, 1 = Fachreferenten
+        groupid = 1
+        # All members of the group can see, edit, and delete the page
+        group = show,edit,new,editcontent,delete
+    }
 }
