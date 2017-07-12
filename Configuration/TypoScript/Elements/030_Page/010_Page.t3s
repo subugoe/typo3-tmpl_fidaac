@@ -11,7 +11,7 @@ page {
         file300.media = screen
 
         file400 = https://fonts.googleapis.com/css?family=Open+Sans:300
-        file400.media = screen
+        file400.media = all
 
         file500 = EXT:news/Resources/Public/Css/news-basic.css
         file500.media = screen
