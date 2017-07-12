@@ -1,0 +1,2 @@
+// Remove default styling for frontend login
+plugin.tx_felogin_pi1._CSS_DEFAULT_STYLE >
