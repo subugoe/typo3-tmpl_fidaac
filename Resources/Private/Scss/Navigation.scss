@@ -18,22 +18,20 @@ navigation {
 }
 
 .navigation_default {
+    @include media-l {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    @include media-m {
+        font-size: 20px;
+        line-height: 40px;
+    }
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-
-    @include media-l {
-        font-size: 20px;
-        line-height: 40px;
-    }
-    @include media-m {
-        font-size: 20px;
-        line-height: 40px;
-    }
-    @include media-s {
-    }
 
     svg {
         fill: $shadeDarkest;
@@ -45,36 +43,32 @@ navigation {
 }
 
 .navigation_default-firstLevel {
+    @include media-l {
+        @include span-l-12;
+    }
+
+    @include media-m {
+        @include span-m-12;
+    }
+
+    @include media-s {
+        @include span-s-6;
+    }
     display: flex;
     flex-direction: row;
     justify-content: stretch;
     padding: 0;
-
-    @include media-l {
-        @include span-l-12;
-    }
-    @include media-m {
-        @include span-m-12;
-    }
-    @include media-s {
-        @include span-s-6;
-    }
 }
 
 .navigation_default-firstLevelItem {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: center;;
-
     @include media-l {
         padding-top: 8px;
         padding-bottom: 8px;
     }
-    @include media-m {
-    }
-    @include media-s {
-    }
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
 
     &.-actSub,
     &.-curIfSub,
@@ -93,19 +87,17 @@ navigation {
 }
 
 .navigation_default-subLevel {
-    display: flex;
-    flex-flow: column;
-
     @include media-l {
         font-size: 16px;
         font-height: 24px;
     }
+
     @include media-m {
         font-size: 16px;
         font-height: 24px;
     }
-    @include media-s {
-    }
+    display: flex;
+    flex-flow: column;
 }
 
 .navigation_default-subLevelContainerFull {
@@ -116,17 +108,18 @@ navigation {
 }
 
 .navigation_default-subLevelContainer {
-    display: flex;
-
     @include media-l {
         @include span-l-12;
     }
+
     @include media-m {
         @include span-m-12;
     }
+
     @include media-s {
         @include span-s-6;
     }
+    display: flex;
 }
 
 .navigation_default-subLevelContainerSmall {
@@ -174,41 +167,44 @@ navigation {
 
 .navigation_breadCrumbs {
     @include flex-center;
+
+    @include media-l {
+        @include span-l-12;
+    }
+
+    @include media-m {
+        @include span-m-12;
+    }
+
+    @include media-s {
+        @include span-s-6;
+    }
     flex-direction: row;
     flex-wrap: nowrap;
     font-size: 16px;
     line-height: 24px;
     align-self: center;
     align-items: center;
-
-    @include media-l {
-        @include span-l-12;
-    }
-    @include media-m {
-        @include span-m-12;
-    }
-    @include media-s {
-        @include span-s-6;
-    }
 }
 
 .navigation_breadCrumbs-crumbs {
+    @include media-l {
+        @include span-l-10;
+    }
+
+    @include media-m {
+        @include span-m-10;
+    }
+
+    @include media-s {
+        @include span-s-6;
+    }
     align-items: center;
     justify-content: flex-start;
     padding-left: 16px;
 
-    @include media-l {
-        @include span-l-10;
-    }
-    @include media-m {
-        @include span-m-10;
-    }
-    @include media-s {
-        @include span-s-6;
-    }
-
     svg {
         fill: $shadeDarkest;
-        margin: 0px 8px;
+        margin: 0 8px;
     }
 }
