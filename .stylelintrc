@@ -1,21 +1,26 @@
 {
-  "extends": "stylelint-config-standard",
-  "plugins": ["stylelint-order"],
-  "rules": {
-      "order/order": [
-        {
-            type: "at-rule",
-            name: "include"
-        },
-        "declarations",
-        "rules",
-        {
-            type: "at-rule",
-            name: "media"
-        }
-      ],
-    "declaration-empty-line-before": null,
-    "max-empty-lines": 3,
-    "indentation": 4
-  }
- }
+    "extends": "stylelint-config-standard",
+    "plugins": ["stylelint-order"],
+    "rules": {
+        "selector-type-no-unknown": [
+            true, {
+                "ignoreTypes": ["navigation","last"]
+            }
+        ],
+        "order/order": [
+            {
+                "type": "at-rule",
+                "name": "include"
+            },
+            "declarations",
+            "rules",
+            {
+                "type": "at-rule",
+                "name": "media"
+            }
+        ],
+        "declaration-empty-line-before": null,
+        "max-empty-lines": 3,
+        "indentation": 4
+    }
+}
