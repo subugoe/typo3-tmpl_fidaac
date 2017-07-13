@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "open Sans";
+    font-size: 12pt;
+    font-weight: 400;
+    color: #191919;
+}
+
+a {
+    color: #191919;
+}
+
+.header,
+.navigation,
+.footer,
+.last {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a::after {
+    content: " (" attr(href) ") ";
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 600;
+}
+
+ul {
+    margin-left: 16px;
+}
+
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 5px;
+}
+
+h1 {
+    padding-top: 15px;
+}
+
+h2 {
+    padding-top: 10px;
+}
+
+h3 {
+    padding-top: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.printTitle {
+    font-size: 24pt;
+    font-weight: 600;
+    padding: 0 48px 24px 0;
+}

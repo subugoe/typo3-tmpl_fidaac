@@ -15,6 +15,9 @@ page {
 
         file500 = EXT:news/Resources/Public/Css/news-basic.css
         file500.media = screen
+
+        file600 = EXT:tmpl_fidaac/Resources/Public/Css/print.css
+        file600.media = print
     }
     includeJS {
         file100 = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
@@ -25,6 +28,9 @@ page {
 }
 
 lib.content < styles.content.get
+
+lib.pagetitle = TEXT
+lib.pagetitle.data = page : title
 
 lib.pageid = TEXT
 lib.pageid.data = page:uid
