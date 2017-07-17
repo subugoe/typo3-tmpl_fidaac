@@ -17,7 +17,11 @@ a {
 .header,
 .navigation,
 .footer,
-.last {
+.last,
+video,
+audio,
+embed,
+object {
     display: none;
 }
 
