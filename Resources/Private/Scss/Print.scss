@@ -27,10 +27,16 @@ object {
 
 a {
     text-decoration: none;
+    word-wrap: break-word;
 }
 
-a::after {
+a[href^="http://"]::after,
+a[href^="https://"]::after {
     content: " (" attr(href) ") ";
+}
+
+a[href^="#"]::after {
+    display: none;
 }
 
 h1,
