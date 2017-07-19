@@ -30,11 +30,12 @@
                 .-item {
                     background: $accent;
                     border-radius: 4px;
-                    padding: 0.1*$g 0.5*$g;
-                    margin-right: 0.5*$g;
+                    padding: 0.1 * $g 0.5 * $g;
+                    margin-right: 0.5 * $g;
                     white-space: nowrap;
                 }
             }
+
             .-by {
                 font-style: italic;
                 padding-right: 0.4em;
@@ -45,7 +46,6 @@
     }
 
     .-img-wrap {
-
         a {
             border: none;
             padding: 0;
@@ -59,7 +59,7 @@
         }
     }
 
-    .page-navigation a:after {
+    .page-navigation a::after {
         content: "";
     }
 }

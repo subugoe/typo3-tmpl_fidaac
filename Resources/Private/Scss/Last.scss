@@ -15,50 +15,53 @@ last {
 }
 
 .last {
-    justify-content: center;
-    padding: 8px 0;
-
     @include media-l {
         @include span-l-12;
     }
+
     @include media-m {
         @include span-m-12;
     }
+
     @include media-s {
         @include span-s-6;
     }
+    justify-content: center;
+    padding: 8px 0;
     margin: 0;
 }
 
 .last_information {
-    display: flex;
-
     @include media-l {
         @include span-l-9;
     }
+
     @include media-m {
         @include span-m-9;
     }
+
     @include media-s {
         @include span-s-6;
     }
+    display: flex;
 
     a {
-        padding-right: 16px;
         @include media-s {
             @include span-s-6;
         }
+        padding-right: 16px;
     }
 }
 
 .last_licence {
-
     @include media-l {
         @include span-l-3;
     }
+
     @include media-m {
         @include span-m-3;
     }
+
     @include media-s {
         @include span-s-6;
         text-align: left !important;

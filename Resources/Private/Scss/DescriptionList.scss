@@ -1,17 +1,18 @@
 dl {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-
     @include media-l {
         @include span-l-10;
     }
+
     @include media-m {
         @include span-m-10;
     }
+
     @include media-s {
         @include span-s-6;
     }
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
     justify-content: stretch !important;
     align-items: stretch !important;
 
@@ -21,10 +22,6 @@ dl {
 }
 
 dt {
-    display: flex;
-    margin: 0;
-    font-weight: normal;
-
     @include media-l {
         @include span-l-1;
         padding-bottom: 16px;
@@ -32,6 +29,7 @@ dt {
         align-items: flex-end !important;
         text-align: right;
     }
+
     @include media-m {
         @include span-m-1;
         padding-bottom: 16px;
@@ -39,12 +37,16 @@ dt {
         align-items: flex-end !important;
         text-align: right;
     }
+
     @include media-s {
         @include span-s-1;
         padding-bottom: 4px;
         align-items: flex-start !important;
         text-align: left;
     }
+    display: flex;
+    margin: 0;
+    font-weight: normal;
     justify-content: flex-start !important;
     align-items: center !important;
     text-align: right;
@@ -52,23 +54,24 @@ dt {
 }
 
 dd {
-    display: flex;
-    margin: 0;
-
     @include media-l {
         @include span-l-9;
         padding-bottom: 16px;
         padding-left: 8px;
     }
+
     @include media-m {
         @include span-m-9;
         padding-bottom: 16px;
         padding-left: 8px;
     }
+
     @include media-s {
         @include span-s-5;
         padding-bottom: 4px;
     }
+    display: flex;
+    margin: 0;
     justify-content: flex-start !important;
     align-items: flex-start !important;
 }

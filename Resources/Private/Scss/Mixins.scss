@@ -8,46 +8,57 @@
     @include span;
     flex-basis: 960px;
 }
+
 @mixin span-l-11 {
     @include span;
     flex-basis: 880px;
 }
+
 @mixin span-l-10 {
     @include span;
     flex-basis: 800px;
 }
+
 @mixin span-l-9 {
     @include span;
     flex-basis: 720px;
 }
+
 @mixin span-l-8 {
     @include span;
     flex-basis: 640px;
 }
+
 @mixin span-l-7 {
     @include span;
     flex-basis: 560px;
 }
+
 @mixin span-l-6 {
     @include span;
     flex-basis: 480px;
 }
+
 @mixin span-l-5 {
     @include span;
     flex-basis: 400px;
 }
+
 @mixin span-l-4 {
     @include span;
     flex-basis: 320px;
 }
+
 @mixin span-l-3 {
     @include span;
     flex-basis: 240px;
 }
+
 @mixin span-l-2 {
     @include span;
     flex-basis: 160px;
 }
+
 @mixin span-l-1 {
     @include span;
     flex-basis: 80px;
@@ -57,46 +68,57 @@
     @include span;
     flex-basis: 768px;
 }
+
 @mixin span-m-11 {
     @include span;
     flex-basis: 704px;
 }
+
 @mixin span-m-10 {
     @include span;
     flex-basis: 640px;
 }
+
 @mixin span-m-9 {
     @include span;
     flex-basis: 576px;
 }
+
 @mixin span-m-8 {
     @include span;
     flex-basis: 512px;
 }
+
 @mixin span-m-7 {
     @include span;
     flex-basis: 448px;
 }
+
 @mixin span-m-6 {
     @include span;
     flex-basis: 384px;
 }
+
 @mixin span-m-5 {
     @include span;
     flex-basis: 320px;
 }
+
 @mixin span-m-4 {
     @include span;
     flex-basis: 256px;
 }
+
 @mixin span-m-3 {
     @include span;
     flex-basis: 192px;
 }
+
 @mixin span-m-2 {
     @include span;
     flex-basis: 128px;
 }
+
 @mixin span-m-1 {
     @include span;
     flex-basis: 64px;
@@ -105,24 +127,28 @@
 @mixin span-s-6 {
     @include span;
     flex-basis: 320px;
-
 }
+
 @mixin span-s-5 {
     @include span;
     flex-basis: 206.66px;
 }
+
 @mixin span-s-4 {
     @include span;
     flex-basis: 213.33px;
 }
+
 @mixin span-s-3 {
     @include span;
     flex-basis: 159.99px;
 }
+
 @mixin span-s-2 {
     @include span;
     flex-basis: 106.66px;
 }
+
 @mixin span-s-1 {
     @include span;
     flex-basis: 53.33px;
@@ -132,14 +158,16 @@
     @media (min-width: 960px) {
         $c: 64px;
         $g: 16px;
+
         @content;
     }
 }
 
 @mixin media-m {
-    @media (min-width: 768px) and (max-width: 960px){
+    @media (min-width: 768px) and (max-width: 960px) {
         $c: 48px;
         $g: 16px;
+
         @content;
     }
 }
@@ -148,6 +176,7 @@
     @media (max-width: 768px) {
         $c: 45px;
         $g: 8px;
+
         @content;
     }
 }
