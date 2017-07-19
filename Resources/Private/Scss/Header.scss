@@ -18,8 +18,6 @@ header {
 }
 
 .header {
-    padding: $g 0;
-
     @include media-l {
         @include span-l-12;
         padding: $g 0;
@@ -29,6 +27,7 @@ header {
             width: 24px;
         }
     }
+
     @include media-m {
         @include span-m-12;
 
@@ -37,6 +36,7 @@ header {
             width: 24px;
         }
     }
+
     @include media-s {
         @include span-s-6;
         font-size: 20px;
@@ -46,6 +46,7 @@ header {
             width: 20px;
         }
     }
+    padding: $g 0;
 }
 
 .header_bildText-content {
@@ -55,18 +56,19 @@ header {
     @include media-l {
         @include span-l-6;
     }
+
     @include media-m {
         @include span-m-6;
     }
+
     @include media-s {
-        align-items: stretch;
         @include span-s-6;
+        align-items: stretch;
     }
 }
 
 .header_image-content {
     @include flex-left;
-    margin: 0;
 
     @include media-l {
         @include span-l-3;
@@ -76,6 +78,7 @@ header {
             height: 41px;
         }
     }
+
     @include media-m {
         @include span-m-3;
 
@@ -84,6 +87,7 @@ header {
             height: 40px;
         }
     }
+
     @include media-s {
         flex-basis: 144px;
         padding-left: 16px;
@@ -93,19 +97,21 @@ header {
             height: 32px;
         }
     }
+    margin: 0;
 }
 
 .header_text-content {
     @include flex-left;
-    margin: 0;
 
     @include media-l {
         @include span-l-3;
     }
+
     @include media-m {
         @include span-m-3;
         padding-left: 16px;
     }
+
     @include media-s {
         @include flex-right;
         flex-basis: 144px;
@@ -113,23 +119,25 @@ header {
 
         text-align: right;
     }
+    margin: 0;
 }
 
 .header_bildText-home {
-    display: flex;
-
     @include media-l {
         @include span-l-6;
         align-items: flex-start !important;
     }
+
     @include media-m {
         @include span-m-6;
         align-items: flex-start !important;
     }
+
     @include media-s {
         @include span-s-6;
         align-items: center;
     }
+    display: flex;
 }
 
 .header_image-home {
@@ -143,34 +151,38 @@ header {
 
 .header_text-homeLong {
     @include flex-left;
-    padding-bottom: 8px;
 
     @include media-l {
         @include span-l-6;
         font-size: 20px;
     }
+
     @include media-m {
         @include span-m-6;
         font-size: 20px;
     }
+
     @include media-s {
         @include span-s-6;
     }
+    padding-bottom: 8px;
 }
 
 .header_text-homeShort {
     @include flex-left;
-    font-weight: 600;
 
     @include media-l {
         font-size: 24px;
     }
+
     @include media-m {
         font-size: 24px;
     }
+
     @include media-s {
         @include span-s-2;
     }
+    font-weight: 600;
 }
 
 .header_text-strong {
@@ -179,23 +191,23 @@ header {
 
 .header_buttons {
     @include flex-right;
-    align-items: center;
-
-    svg {
-        margin-right: 6px;
-    }
-
-    @include flex-right;
 
     @include media-l {
         @include span-l-6;
     }
+
     @include media-m {
         @include span-m-6;
     }
+
     @include media-s {
         @include span-s-6;
         @include flex-left;
+    }
+    align-items: center;
+
+    svg {
+        margin-right: 6px;
     }
 }
 
@@ -209,17 +221,18 @@ header {
 }
 
 .header_search {
-    display: flex;
-
     @include media-l {
         padding-left: 60px;
     }
+
     @include media-m {
         padding-left: 40px;
     }
+
     @include media-s {
         padding-left: 40px;
     }
+    display: flex;
 }
 
 .header_search-icon {
@@ -228,17 +241,18 @@ header {
 }
 
 .header_language {
-    display: flex;
-
     @include media-l {
         padding-left: 60px;
     }
+
     @include media-m {
         padding-left: 40px;
     }
+
     @include media-s {
         padding-left: 40px;
     }
+    display: flex;
 }
 
 .header_language-icon {
