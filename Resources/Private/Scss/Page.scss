@@ -133,7 +133,7 @@ p,
 ul {
     a {
         color: $brand;
-        font-weight: bold;
+        font-weight: 400;
 
         &::after {
             content: "+";
@@ -144,13 +144,13 @@ ul {
 }
 
 p {
-    font-weight: lighter;
+    font-weight: 300;
     margin-top: 0;
     margin-bottom: 8px;
 }
 
 ul {
-    font-weight: lighter;
+    font-weight: 300;
     list-style: none;
     padding: 0.25em 0 0.45em;
     margin: 0;
