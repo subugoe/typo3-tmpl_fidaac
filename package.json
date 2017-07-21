@@ -17,7 +17,9 @@
     "uglifyjs": "./node_modules/.bin/uglifyjs Resources/Public/JavaScript/babel.js -o Resources/Public/JavaScript/minified.js",
     "buildAll": "npm run lintJs; npm run createCss; node build.js; npm run babel; npm run uglifyjs",
     "devAll": "npm run lintJs; npm run devCss; node build.js; npm run babel; npm run uglifyjs",
-    "watchAll": "nodemon -e scss,Js -x \"npm run devAll\""
+    "watchAll": "nodemon -e scss,Js -x \"npm run devAll\"",
+    "browsersync": "browser-sync start -c bs-config.js",
+    "devBrowser": "concurrently --kill-others --prefix \"[{name}]\" --names \"SCSS & JS,BROWER SYNC\" \"npm run watchAll\" \"npm run browsersync\""
   },
   "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
   "author": "",
@@ -25,8 +27,10 @@
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-cli": "^6.24.1",
+    "browser-sync": "^2.18.13",
     "buildify": "^0.4.0",
     "casperjs": "^1.1.3",
+    "concurrently": "^3.5.0",
     "cssnano": "^3.10.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",
