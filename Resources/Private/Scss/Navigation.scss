@@ -1,9 +1,9 @@
-navigation {
+.navigation_outer {
     background-color: $shadeLightest;
     list-style-type: none;
     width: 100%;
 
-    display: flex;
+    display: block;
     flex: 0 0 auto;
     justify-content: center;
 
@@ -14,6 +14,23 @@ navigation {
     svg {
         height: 1em;
         width: 1em;
+    }
+}
+
+.navigation_inner {
+    @include media-l {
+        @include span-l-12;
+        align-items: center;
+    }
+
+    @include media-m {
+        @include span-m-12;
+        align-items: center;
+    }
+
+    @include media-s {
+        @include span-s-6;
+        align-items: stretch;
     }
 }
 
@@ -89,12 +106,12 @@ navigation {
 .navigation_default-subLevel {
     @include media-l {
         font-size: 16px;
-        font-height: 24px;
+        line-height: 24px;
     }
 
     @include media-m {
         font-size: 16px;
-        font-height: 24px;
+        line-height: 24px;
     }
     display: flex;
     flex-flow: column;

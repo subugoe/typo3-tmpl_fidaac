@@ -1,4 +1,4 @@
-last {
+.last_outer {
     display: flex;
     flex: 0 0 auto;
     justify-content: center;
@@ -14,7 +14,7 @@ last {
     }
 }
 
-.last {
+.last_inner {
     @include media-l {
         @include span-l-12;
     }

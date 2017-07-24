@@ -1,4 +1,4 @@
-header {
+.header_outer {
     background-color: $brand;
     width: 100%;
     color: $white;
@@ -17,7 +17,7 @@ header {
     }
 }
 
-.header {
+.header_inner {
     @include media-l {
         @include span-l-12;
         padding: $g 0;
@@ -50,21 +50,21 @@ header {
 }
 
 .header_bildText-content {
-    align-items: center;
-    margin: 0;
-
     @include media-l {
         @include span-l-6;
+        align-items: center;
     }
 
     @include media-m {
         @include span-m-6;
+        align-items: center;
     }
 
     @include media-s {
         @include span-s-6;
         align-items: stretch;
     }
+    margin: 0;
 }
 
 .header_image-content {

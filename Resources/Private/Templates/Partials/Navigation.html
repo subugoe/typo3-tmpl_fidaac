@@ -1,23 +1,24 @@
-<navigation class="navigation">
-    <div class="navigation_default inserted">
-        <div class="navigation_default-firstLevel">
-            <f:cObject typoscriptObjectPath="lib.navLevel1"/>
+<div class="navigation_outer">
+    <div class="navigation_inner">
+        <div class="navigation_default inserted">
+            <div class="navigation_default-firstLevel">
+                <f:cObject typoscriptObjectPath="lib.navLevel1"/>
+            </div>
+            <div class="navigation_default-subLevelContainerFull">
+                <div class="navigation_default-subLevelContainer"></div>
+            </div>
         </div>
-        <div class="navigation_default-subLevelContainerFull">
-            <div class="navigation_default-subLevelContainer"></div>
-        </div>
-    </div>
         <div class="navigation_breadCrumbs removed">
             <div class="navigation_menuButton">
                 <svg>
                     <use
                         xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-bars', extensionName:'tmpl_fidaac')}"/>
                 </svg>
-                Menu</div>
+                Menu
+            </div>
             <div class="navigation_breadCrumbs-crumbs">
                 <f:cObject typoscriptObjectPath="lib.breadCrumbs"/>
             </div>
         </div>
     </div>
-    </div>
-</navigation>
+</div>
