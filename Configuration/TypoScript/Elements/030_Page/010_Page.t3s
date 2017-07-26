@@ -10,6 +10,9 @@ page {
         file300 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css
         file300.media = screen
 
+        file400 = https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i
+        file400.media = all
+
         file500 = EXT:news/Resources/Public/Css/news-basic.css
         file500.media = screen
 
