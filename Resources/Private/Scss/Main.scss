@@ -1,3 +1,32 @@
+.main_outer {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    min-height: 1em;
+}
+
+.main_inner {
+    @include media-l {
+        @include span-l-12;
+    }
+
+    @include media-m {
+        @include span-m-12;
+    }
+
+    @include media-s {
+        @include span-s-6;
+    }
+
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
 .overlay {
     flex: 1 100%;
     height: 50px;
