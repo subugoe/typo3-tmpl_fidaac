@@ -20,7 +20,7 @@ page {
         file600.media = print
     }
     includeJS {
-        file100 = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+        file100 = EXT:tmpl_fidaac/Resources/Public/JavaScript/jquery.min.js
         file200 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
         file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/minified.js
     }
