@@ -1,4 +1,4 @@
-footer {
+.footer_outer {
     background-color: $shadeLightest;
     width: 100%;
     display: flex;
@@ -10,7 +10,7 @@ footer {
     font-weight: lighter;
 }
 
-.footer {
+.footer_inner {
     @include media-l {
         @include span-l-12;
         padding-top: 8px;
