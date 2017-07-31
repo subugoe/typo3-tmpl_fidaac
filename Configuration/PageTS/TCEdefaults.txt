@@ -1,0 +1,8 @@
+TCAdefaults {
+
+    // Show thumbnails in News list mode by default
+    sys_file_reference.showinpreview = 1
+
+    // Change default value for "Number of Columns" in "Appearance"-tab
+    tt_content.imagecols = 10
+}
