@@ -1,4 +1,56 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@font-face {
+    font-family: 'Open Sans';
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.eot?v=1.1.0");
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.svg?v=1.1.0#Light") format("svg");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.eot?v=1.1.0");
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.svg?v=1.1.0#LightItalic") format("svg");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.eot?v=1.1.0");
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.svg?v=1.1.0#Regular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.eot?v=1.1.0");
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.svg?v=1.1.0#Italic") format("svg");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.eot?v=1.1.0");
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.svg?v=1.1.0#Semibold") format("svg");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.eot?v=1.1.0");
+    src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.svg?v=1.1.0#SemiboldItalic") format("svg");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
 
 * {
     box-sizing: border-box;
@@ -13,7 +65,7 @@ body {
     font-size: 22px;
     margin: 0;
     padding: 0;
-    font-family: Open Sans;
+    font-family: "Open Sans", sans-serif;
     overflow: hidden;
     height: 100%;
 
