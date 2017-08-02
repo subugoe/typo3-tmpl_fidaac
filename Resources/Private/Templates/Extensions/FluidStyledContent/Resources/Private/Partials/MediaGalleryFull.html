@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{gallery.rows}">
+    <figure class="image-full">
+        <f:for each="{gallery.rows}" as="row">
+            <f:for each="{row.columns}" as="column">
+                <f:if condition="{column.media}">
+                    <f:if condition="{column.media.description}">
+                        <f:comment>No description shown</f:comment>
+                    </f:if>
+                    <f:if condition="{column.media.type} == 2">
+                        <f:render section="imageType" arguments="{_all}"/>
+                    </f:if>
+                </f:if>
+            </f:for>
+        </f:for>
+    </figure>
+</f:if>
+
+<f:section name="imageType">
+    <f:render section="media"
+              arguments="{column: column, isImage: 1, columnCount: gallery.count.columns, verticalPosition: gallery.position.vertical, col: data.colPos}"/>
+</f:section>
+
+<f:section name="media">
+    <f:media
+        file="{column.media}"
+        width="{column.dimensions.width}"
+        height="{column.dimensions.height}"
+        alt="{column.media.alternative}"
+        title="{column.media.title}"
+    />
+</f:section>
+</html>
