@@ -1,10 +1,7 @@
-#################
-#### TCEFORM ####
-#################
-
-// Remove layouts (header type) and call them heading. Default is heading 1
 TCEFORM {
     tt_content {
+
+        // Remove layouts (header type) and call them heading. Default is heading 1
         header_layout {
             removeItems = 0,5,6
             altLabels {
@@ -14,19 +11,36 @@ TCEFORM {
                 4 = Heading 4
             }
         }
-    }
-}
 
-// Layout for content elements
-TCEFORM.tt_content {
-    layout {
-        altLabels {
-            0 = Default
-            1 = Doppelspaltig
+        // Add layout for double column content
+        layout {
+            altLabels {
+                0 = Default
+                1 = Double column
+            }
+            removeItems = 2,3,4,5,6,7,8,9,10
         }
-    removeItems = 2,3,4,5,6,7,8,9,10
+
+        // change icons for image positioning
+        imageorient {
+            removeItems = 0,1,2,3,4,5,6,7,8,9,10,17,18,--div--,25,26
+            addItems {
+                100 = One image
+                100.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-single.gif
+                110 = Multiple images
+                110.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-double.gif
+                120 = Full browser width
+                120.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-full.gif
+            }
+        }
+
+        // adjust columns
+        imagecols {
+            removeItems = 1,2,3,7
+            addItems {
+                10 = 10
+                12 = 12
+            }
+        }
     }
 }
-
-// Show thumbnails in News list mode by default
-TCAdefaults.sys_file_reference.showinpreview = 1
