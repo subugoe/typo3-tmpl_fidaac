@@ -4,7 +4,7 @@
 // Configuration RTE
 
 RTE.default {
-toolbarOrder (
+    toolbarOrder (
           formatblock,
           fontsize,
           textstyle,
