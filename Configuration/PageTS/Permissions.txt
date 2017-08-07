@@ -2,7 +2,7 @@
 [usergroup = 1]
 
     // hide unwanted modules and submodules
-    options.hideModules = view, func help, tools, system
+    options.hideModules = view, func, help, tools, system
     options.hideModules.web := addToList(ViewpageView,func,ts,RealurlRealurl)
 
    // hide unwanted selection of doctypes for page

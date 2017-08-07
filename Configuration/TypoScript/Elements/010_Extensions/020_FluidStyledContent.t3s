@@ -1,5 +1,5 @@
 lib.fluidContent {
-    layoutRootPath.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Resources/Private/Layouts
-    partialRootPath.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Resources/Private/Partials/
+    layoutRootPaths.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Resources/Private/Layouts
+    partialRootPaths.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Resources/Private/Partials/
     templateRootPaths.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Resources/Private/Templates/
 }

@@ -7,151 +7,331 @@
 @mixin span-l-12 {
     @include span;
     flex-basis: 960px;
+
+    @content;
+}
+
+@mixin width-l-12 {
+    width: 960px;
 }
 
 @mixin span-l-11 {
     @include span;
     flex-basis: 880px;
+
+    @content;
+}
+
+@mixin width-l-11 {
+    width: 880px;
 }
 
 @mixin span-l-10 {
     @include span;
     flex-basis: 800px;
+
+    @content;
+}
+
+@mixin width-l-10 {
+    width: 800px;
 }
 
 @mixin span-l-9 {
     @include span;
     flex-basis: 720px;
+
+    @content;
+}
+
+@mixin width-l-9 {
+    width: 720px;
 }
 
 @mixin span-l-8 {
     @include span;
     flex-basis: 640px;
+
+    @content;
+}
+
+@mixin width-l-8 {
+    width: 640px;
 }
 
 @mixin span-l-7 {
     @include span;
     flex-basis: 560px;
+
+    @content;
+}
+
+@mixi width-l-7 {
+    width: 560px;
 }
 
 @mixin span-l-6 {
     @include span;
     flex-basis: 480px;
+
+    @content;
+}
+
+@mixin width-l-6 {
+    width: 480px;
 }
 
 @mixin span-l-5 {
     @include span;
     flex-basis: 400px;
+
+    @content;
+}
+
+@mixin width-l-5 {
+    width: 400px;
 }
 
 @mixin span-l-4 {
     @include span;
     flex-basis: 320px;
+
+    @content;
+}
+
+@mixin width-l-4 {
+    width: 320px;
 }
 
 @mixin span-l-3 {
     @include span;
     flex-basis: 240px;
+
+    @content;
+}
+
+@mixin width-l-3 {
+    width: 240px;
 }
 
 @mixin span-l-2 {
     @include span;
     flex-basis: 160px;
+
+    @content;
+}
+
+@mixin width-l-2 {
+    width: 160px;
 }
 
 @mixin span-l-1 {
     @include span;
     flex-basis: 80px;
+
+    @content;
+}
+
+@mixin width-l-1 {
+    width: 80px;
 }
 
 @mixin span-m-12 {
     @include span;
     flex-basis: 768px;
+
+    @content;
+}
+
+@mixin width-m-12 {
+    width: 768px;
 }
 
 @mixin span-m-11 {
     @include span;
     flex-basis: 704px;
+
+    @content;
+}
+
+@mixin width-m-11 {
+    width: 704px;
 }
 
 @mixin span-m-10 {
     @include span;
     flex-basis: 640px;
+
+    @content;
+}
+
+@mixin width-m-10 {
+    width: 640px;
 }
 
 @mixin span-m-9 {
     @include span;
     flex-basis: 576px;
+
+    @content;
+}
+
+@mixin width-m-9 {
+    width: 576px;
 }
 
 @mixin span-m-8 {
     @include span;
     flex-basis: 512px;
+
+    @content;
+}
+
+@mixin width-m-8 {
+    width: 512px;
 }
 
 @mixin span-m-7 {
     @include span;
     flex-basis: 448px;
+
+    @content;
+}
+
+@mixin width-m-7 {
+    width: 448px;
 }
 
 @mixin span-m-6 {
     @include span;
     flex-basis: 384px;
+
+    @content;
+}
+
+@mixin width-m-6 {
+    width: 384px;
 }
 
 @mixin span-m-5 {
     @include span;
     flex-basis: 320px;
+
+    @content;
+}
+
+@mixin width-m-5 {
+    width: 320px;
 }
 
 @mixin span-m-4 {
     @include span;
     flex-basis: 256px;
+
+    @content;
+}
+
+@mixin width-m-4 {
+    width: 256px;
 }
 
 @mixin span-m-3 {
     @include span;
     flex-basis: 192px;
+
+    @content;
+}
+
+@mixin width-m-3 {
+    width: 192px;
 }
 
 @mixin span-m-2 {
     @include span;
     flex-basis: 128px;
+
+    @content;
+}
+
+@mixin width-m-2 {
+    width: 128px;
 }
 
 @mixin span-m-1 {
     @include span;
     flex-basis: 64px;
+
+    @content;
+}
+
+@mixin width-m-1 {
+    width: 64px;
 }
 
 @mixin span-s-6 {
     @include span;
     flex-basis: 320px;
+
+    @content;
+}
+
+@mixin width-s-6 {
+    width: 320px;
 }
 
 @mixin span-s-5 {
     @include span;
     flex-basis: 206.66px;
+
+    @content;
+}
+
+@mixin width-s-5 {
+    width: 206.66px;
 }
 
 @mixin span-s-4 {
     @include span;
     flex-basis: 213.33px;
+
+    @content;
+}
+
+@mixin width-s-4 {
+    width: 213.33px;
 }
 
 @mixin span-s-3 {
     @include span;
     flex-basis: 159.99px;
+
+    @content;
+}
+
+@mixin width-s-3 {
+    width: 159.99px;
 }
 
 @mixin span-s-2 {
     @include span;
     flex-basis: 106.66px;
+
+    @content;
+}
+
+@mixin width-s-2 {
+    width: 106.66px;
 }
 
 @mixin span-s-1 {
     @include span;
     flex-basis: 53.33px;
+
+    @content;
+}
+
+@mixin width-s-1 {
+    width: 53.33px;
 }
 
 @mixin media-l {
