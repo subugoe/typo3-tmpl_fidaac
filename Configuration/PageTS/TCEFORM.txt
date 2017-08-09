@@ -28,7 +28,9 @@ TCEFORM {
                 100 = Above, center
                 100.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-single.gif
                 110 = In text, left
-                110.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-float.gif
+                110.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-intext-left.gif
+                120 = In text, right
+                120.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-intext-right.gif
             }
         }
 
