@@ -25,12 +25,10 @@ TCEFORM {
         imageorient {
             removeItems = 0,1,2,3,4,5,6,7,8,9,10,17,18,--div--,25,26
             addItems {
-                100 = One image
+                100 = Above, center
                 100.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-single.gif
-                110 = Multiple images
-                110.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-double.gif
-                120 = Full browser width
-                120.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-full.gif
+                110 = In text, left
+                110.icon = EXT:tmpl_fidaac/Resources/Public/Images/imageorient-float.gif
             }
         }
 
@@ -39,7 +37,6 @@ TCEFORM {
             removeItems = 1,2,3,7
             addItems {
                 10 = 10
-                12 = 12
             }
         }
     }

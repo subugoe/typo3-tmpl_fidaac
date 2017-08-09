@@ -1,0 +1,20 @@
+figure {
+    margin: 0;
+    display: table;
+    padding-bottom: 12px;
+    margin-right: 16px;
+}
+
+.figure-single {
+    @include flex-center;
+}
+
+.figure-float {
+    float: left;
+}
+
+.figure-single-caption {
+    text-align: right;
+    line-height: 24px;
+    font-weight: 300;
+}

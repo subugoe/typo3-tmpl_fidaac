@@ -1,0 +1,12 @@
+tt_content.textmedia.20 {
+    dataProcessing {
+
+        # Calculate gallery info
+        20 = TYPO3\CMS\Frontend\DataProcessing\GalleryProcessor
+        20 {
+
+            # numberOfColumns :: Number of columns (default: data.imagecols) + stdWrap
+            numberOfColumns.field = imagecols
+        }
+    }
+}
