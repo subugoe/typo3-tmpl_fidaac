@@ -4,33 +4,37 @@
     <f:for each="{gallery.rows}" as="row">
         <f:for each="{row.columns}" as="column">
             <f:if condition="{column.media}">
-                <f:if condition="{data.imageorient} == 100">
-                    <f:then>
-                        <figure class="figure-single">
-                    </f:then>
-                    <f:else>
-                        <figure class="figure-float">
-                    </f:else>
-                </f:if>
-                    <f:switch expression="{column.media.type}">
-                        <f:case value="3">
-                            <f:render section="audioType" arguments="{_all}"/>
-                        </f:case>
-                        <f:case value="4">
-                            <f:render section="videoType" arguments="{_all}"/>
-                        </f:case>
-                        <f:case default="TRUE">
-                            <f:render section="imageType" arguments="{_all}"/>
-                        </f:case>
-                    </f:switch>
 
-                    <f:if condition="{column.media.description}">
-                        <f:then>
-                            <figcaption class="figure-single-caption">
-                                {column.media.description}
-                            </figcaption>
-                        </f:then>
-                    </f:if>
+                <f:if condition="{data.imageorient} == 100">
+                    <figure class="figure-single">
+                </f:if>
+                <f:if condition="{data.imageorient} == 110">
+                    <figure class="figure-float-left">
+                </f:if>
+                <f:if condition="{data.imageorient} == 120">
+                    <figure class="figure-float-right">
+                </f:if>
+
+                <f:switch expression="{column.media.type}">
+                    <f:case value="3">
+                        <f:render section="audioType" arguments="{_all}"/>
+                    </f:case>
+                    <f:case value="4">
+                        <f:render section="videoType" arguments="{_all}"/>
+                    </f:case>
+                    <f:case default="TRUE">
+                        <f:render section="imageType" arguments="{_all}"/>
+                    </f:case>
+                </f:switch>
+
+                <f:if condition="{column.media.description}">
+                    <f:then>
+                        <figcaption class="figure-caption">
+                            {column.media.description}
+                        </figcaption>
+                    </f:then>
+                </f:if>
+
                 </figure>
 
             </f:if>
