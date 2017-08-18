@@ -1,8 +1,8 @@
 /**
  * Navigation.js
  *
- * Change the menu, so that clicking on a link leads to the page
- * while clicking on an arrow opens and closes the submenu
+ * Change the menu, so that hovering over or clicking on a link leads to the page
+ * which opens and closes the submenu
  */
 
 $(document).ready(() => {
@@ -39,7 +39,7 @@ $(document).ready(() => {
         $('.navigation_default-subLevel svg').off();
 
         // add new binding
-        $('.navigation_default-subLevelContainerFull svg').on('click', (event) => {
+        $('.navigation_default-subLevelContainerFull svg').mouseenter((event) => {
             const el = $(event.currentTarget);
             // clone sublevel element and append to sublevel menu
             const parelement = el.parent('.navigation_default-subLevelItem');
@@ -67,35 +67,43 @@ $(document).ready(() => {
         }
     };
 
-    // show submenus when clicked on first level item
-    $('.navigation_default-firstLevel svg').on('click', (event) => {
-        if ($(event.currentTarget).html().match('right')) {
-            // show sublevels after removing old ones
-            $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
-                const parelement = $(event.currentTarget).parent('.navigation_default-firstLevelItem');
-                const navelement = parelement.next('.navigation_default-subLevelContainerSmall');
-                const cloneelement = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
-                $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
-                addSubLevelClicks();
-                showActiveLevels(cloneelement);
+    // show sublevels after removing old ones
+    const showSubmenus = (event) => {
+        $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
+            const parelement = $(event.currentTarget).parent('.navigation_default-firstLevelItem');
+            const navelement = parelement.next('.navigation_default-subLevelContainerSmall');
+            const cloneelement = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
+            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
+            addSubLevelClicks();
+            showActiveLevels(cloneelement);
 
-                // switch svg arrows
-                $('.navigation_default-firstLevelItem svg').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
-                $(event.currentTarget).html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>');
-                // switch colors
-                $('.navigation_default-firstLevelItem').removeClass('active').addClass('inactive');
-                parelement.removeClass('inactive').addClass('active');
-            });
-
-        } else {
-            hideMenu();
-        }
+            // switch svg arrows
+            $('.navigation_default-firstLevelItem svg').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
+            $(event.currentTarget).html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>');
+            // switch colors
+            $('.navigation_default-firstLevelItem').removeClass('active').addClass('inactive');
+            parelement.removeClass('inactive').addClass('active');
+        });
 
         $('.scrolled').on('click', () => {
             hideMenu();
         });
 
         return false;
+    };
+
+    // show submenus when hovered on first level item
+    $('.navigation_default-firstLevel svg').mouseenter((event) => {
+        showSubmenus(event);
+    });
+
+    // show submenus when hovered on first level item
+    $('.navigation_default-firstLevel svg').click((event) => {
+        showSubmenus(event);
+    });
+
+    $('.navigation_default-subLevelContainerFull').mouseleave(() => {
+        hideMenu();
     });
 
 

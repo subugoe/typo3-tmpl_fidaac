@@ -145,6 +145,17 @@
 }
 
 .navigation_default-subLevelItem {
+    @include media-l {
+        @include width-l-4;
+    }
+
+    @include media-m {
+        @include width-m-4;
+    }
+
+    @include media-s {
+        @include width-s-6;
+    }
     display: flex;
     align-items: center;
     flex-grow: 1;
