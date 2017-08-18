@@ -5,7 +5,6 @@
  */
 
 $(document).ready(() => {
-    console.log('HALLO');
 
     const adjustFigureWidth = () => {
         $('[class^=cols]').each((el, is) => {

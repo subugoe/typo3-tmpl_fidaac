@@ -256,6 +256,21 @@ li {
     display: flex;
     overflow-y: auto;
     flex-flow: column;
+    position: relative;
+}
+
+.toTop {
+    @include width-l-3;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: $brand;
+    font-size: 24px;
+    color: $white;
+    height: 36px;
+    cursor: pointer;
 }
 
 .strong {

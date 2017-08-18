@@ -10,13 +10,13 @@ $(document).ready(() => {
     /**
      * everything related to menu
      */
-    // clone and show sub levels of element
+        // clone and show sub levels of element
     const showSubLevels = (el) => {
-        const parelement = el.parent('.navigation_default-subLevelItem');
-        const subelement = parelement.next('.navigation_default-subLevelContainerSmall').first();
-        const cloneelement = subelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
-        $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
-    };
+            const parelement = el.parent('.navigation_default-subLevelItem');
+            const subelement = parelement.next('.navigation_default-subLevelContainerSmall').first();
+            const cloneelement = subelement.clone().addClass('clone').show();
+            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
+        };
 
     // empty dom element and switch back classes of sublevels
     const hideMenu = () => {
@@ -72,7 +72,7 @@ $(document).ready(() => {
         $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
             const parelement = $(event.currentTarget).parent('.navigation_default-firstLevelItem');
             const navelement = parelement.next('.navigation_default-subLevelContainerSmall');
-            const cloneelement = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
+            const cloneelement = navelement.clone().addClass('clone').show();
             $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
             addSubLevelClicks();
             showActiveLevels(cloneelement);
@@ -106,31 +106,29 @@ $(document).ready(() => {
         hideMenu();
     });
 
-
-    /**
-     * everything related to breadcrumbs for scrolled content
-     */
-    // Reduce header and add transparent gradient to text
+    // Reduce header, show breadCrumbs, and add transparent gradient to text
     $('.scrolled').on('scroll', (event) => {
-        $('.overlay').removeClass('removed').addClass('inserted');
-        $('.navigation_default').removeClass('inserted').addClass('removed');
-        $('.navigation_breadCrumbs').removeClass('removed').addClass('inserted');
 
         // when scrolled up show default header
         if ($(event.currentTarget).scrollTop() === 0) {
-            $('.overlay').removeClass('inserted').addClass('removed');
-            $('.navigation_default').removeClass('removed').addClass('inserted');
-            $('.navigation_breadCrumbs').removeClass('inserted').addClass('removed');
+            $('.overlay').hide();
+            $('.navigation_default').show();
+            $('.navigation_breadCrumbs').hide();
+            $('.toTop').hide();
+        } else if ($('.toTop').css('display') === 'none') {
+            $('.overlay').show();
+            $('.navigation_default').hide();
+            $('.navigation_breadCrumbs').show();
+            $('.toTop').show();
         }
     });
 
     /**
-     * When menuButton is clicked, switch back to full menu
+     * When menuButton or page-up-button is clicked, switch back to full menu
      */
-    $('.navigation_menuButton').on('click', () => {
+    $('.navigation_menuButton, .toTop').on('click', () => {
         $('.scrolled').animate({scrollTop: 0}, 'fast');
-        $('.navigation_breadCrumbs').addClass('removed').removeClass('inserted');
+        $('.navigation_breadCrumbs').hide();
     });
-
 
 });
