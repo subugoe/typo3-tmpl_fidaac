@@ -30,7 +30,7 @@ lib.navLevel1 {
     2 {
         expAll = 1
         special = rootline
-        wrap = <div class="navigation_default-subLevelContainerSmall removed"><div class="navigation_default-subLevel">|</div></div>
+        wrap = <div class="navigation_default-subLevelContainerSmall"><div class="navigation_default-subLevel">|</div></div>
 
         NO = 1
         NO.allWrap = <div class="navigation_default-subLevelItem -no">|</div>

@@ -12,9 +12,9 @@ $(document).ready(() => {
      */
     // clone and show sub levels of element
     const showSubLevels = (el) => {
-        const parelement = el.parent('.navigation_default-subLevelItem');
+        const parelement = el;
         const subelement = parelement.next('.navigation_default-subLevelContainerSmall').first();
-        const cloneelement = subelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
+        const cloneelement = subelement.clone().addClass('clone').show();
         $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
     };
 
@@ -39,28 +39,28 @@ $(document).ready(() => {
         $('.navigation_default-subLevel svg').off();
 
         // add new binding
-        $('.navigation_default-subLevelContainerFull svg').mouseenter((event) => {
+        $('.navigation_default-subLevelContainerFull .navigation_default-subLevelItem').mouseenter((event) => {
             const el = $(event.currentTarget);
-            // clone sublevel element and append to sublevel menu
-            const parelement = el.parent('.navigation_default-subLevelItem');
-            // remove all preexisting subMenulevels below
-            removeSubLevelMenu(el);
-            // show all levels of active pate
-            showSubLevels(el);
-            // create bindings again
-            addSubLevelClicks();
+            if ($(el).children('svg').length !== 0) {
+                // clone sublevel element and append to sublevel menu
+                const parelement = $(event.currentTarget);
+                // remove all preexisting subMenulevels below
+                removeSubLevelMenu(el);
+                // show all levels of active pate
+                showSubLevels(el);
+                // create bindings again
+                addSubLevelClicks();
 
-            // switch font weight
-            parelement.siblings('.navigation_default-subLevelItem').removeClass('active').addClass('inactive');
-            parelement.removeClass('inactive').addClass('active');
-            return false;
+                // switch font weight
+                parelement.siblings('.navigation_default-subLevelItem').removeClass('active').addClass('inactive');
+                parelement.removeClass('inactive').addClass('active');
+            }
         });
     };
 
     // if the acutal site is in a lower level, the complete path should be visible
     const showActiveLevels = (el) => {
         const actSubElement = el.children('.navigation_default-subLevel').children('.-actSub');
-        console.log(el.children('.navigation_default-subLevel').children('.-actSub').length);
         if (actSubElement.length > 0) {
             // show all levels of active pate
             showSubLevels(actSubElement.children('svg'));
@@ -70,16 +70,16 @@ $(document).ready(() => {
     // show sublevels after removing old ones
     const showSubmenus = (event) => {
         $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
-            const parelement = $(event.currentTarget).parent('.navigation_default-firstLevelItem');
+            const parelement = $(event.currentTarget);
             const navelement = parelement.next('.navigation_default-subLevelContainerSmall');
-            const cloneelement = navelement.clone().addClass('clone').removeClass('removed').addClass('inserted');
+            const cloneelement = navelement.clone().addClass('clone').show();
             $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
             addSubLevelClicks();
             showActiveLevels(cloneelement);
 
             // switch svg arrows
             $('.navigation_default-firstLevelItem svg').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
-            $(event.currentTarget).html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>');
+            $(event.currentTarget).children('svg').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>');
             // switch colors
             $('.navigation_default-firstLevelItem').removeClass('active').addClass('inactive');
             parelement.removeClass('inactive').addClass('active');
@@ -93,18 +93,18 @@ $(document).ready(() => {
     };
 
     // show submenus when hovered on first level item
-    $('.navigation_default-firstLevel svg').mouseenter((event) => {
-        showSubmenus(event);
-    });
-
-    // show submenus when hovered on first level item
-    $('.navigation_default-firstLevel svg').click((event) => {
+    $('.navigation_default-firstLevelItem').mouseenter((event) => {
         showSubmenus(event);
     });
 
     $('.navigation_default-subLevelContainerFull').mouseleave(() => {
         hideMenu();
     });
+
+    /**
+     * first, hide all sublevels
+     */
+    $('.navigation_default-subLevelContainerSmall').hide();
 
 
     /**
