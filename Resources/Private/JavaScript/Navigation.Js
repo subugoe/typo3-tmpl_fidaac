@@ -92,6 +92,12 @@ $(document).ready(() => {
         return false;
     };
 
+    // set toTop-Button to correct right
+    const setToTopToRight = () => {
+        const right = ($(window).width() - $('.header_inner').width()) / 2;
+        $('.toTop').hide().css('right', right);
+    };
+
     // show submenus when hovered on first level item
     $('.navigation_default-firstLevel svg').mouseenter((event) => {
         showSubmenus(event);
@@ -121,6 +127,12 @@ $(document).ready(() => {
             $('.navigation_breadCrumbs').show();
             $('.toTop').show();
         }
+    });
+
+    // Make sure, toTop is always on the correct place
+    setToTopToRight();
+    $(window).resize(() => {
+        setToTopToRight();
     });
 
     /**

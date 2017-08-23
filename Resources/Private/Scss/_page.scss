@@ -260,7 +260,17 @@ li {
 }
 
 .toTop {
-    @include width-l-3;
+    @include media-l {
+        @include width-l-1;
+    }
+
+    @include media-m {
+        @include width-m-1;
+    }
+
+    @include media-s {
+        @include width-s-1;
+    }
     display: flex;
     justify-content: center;
     position: fixed;
@@ -271,6 +281,10 @@ li {
     color: $white;
     height: 36px;
     cursor: pointer;
+
+    svg {
+        fill: $white;
+    }
 }
 
 .strong {
