@@ -95,6 +95,7 @@ $(document).ready(() => {
     // set toTop-Button to correct right
     const setToTopToRight = () => {
         const right = ($(window).width() - $('.header_inner').width()) / 2;
+        console.log(right);
         $('.toTop').hide().css('right', right);
     };
 
@@ -125,12 +126,12 @@ $(document).ready(() => {
             $('.overlay').show();
             $('.navigation_default').hide();
             $('.navigation_breadCrumbs').show();
+            setToTopToRight();
             $('.toTop').show();
         }
     });
 
     // Make sure, toTop is always on the correct place
-    setToTopToRight();
     $(window).resize(() => {
         setToTopToRight();
     });
