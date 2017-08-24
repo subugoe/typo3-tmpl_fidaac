@@ -3,104 +3,89 @@
  *
  * Change the menu, so that hovering over or clicking on a link leads to the page
  * which opens and closes the submenu
+ *
+ * Submenu levels in L and S are taken out of their regular dom element and moved into submenuContainer,
+ * because they don't take up any space between their parents, but the height of the menu depends on their height.
+ * This behaviour is not possible with position:fixed. Therefore, submenus are moved with jQuery.
  */
 
 $(document).ready(() => {
 
-    /**
-     * everything related to menu
-     */
-        // clone and show sub levels of element
-    const showSubLevels = (el) => {
-
-        const parelement = el;
-        const subelement = parelement.next('.navigation_default-subLevelContainerSmall').first();
-        const cloneelement = subelement.clone().addClass('clone').show();
-        $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
+    const cleanSubmenuContainer = (target) => {
+        if ($(target).parents().hasClass('navigation_default-submenu')) {
+            // remove maybe leftover classes
+            $(target).parent('.navigation_default-submenu').nextAll('.navigation_default-submenu').remove();
+        } else {
+            $('.navigation_default-submenuContainer-inner').empty();
+        }
+        return true;
     };
 
-    // empty dom element and switch back classes of sublevels
-    const hideMenu = () => {
-        $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
-            // switch back colors and arrows
-            $('.navigation_default-firstLevelItem svg').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
-            $('.navigation_default-firstLevelItem').removeClass('active').removeClass('inactive');
+    const hoverSubmenuItem = (el) => {
+        $(el).addClass('hover');
+        $(el).siblings().removeClass('hover');
+        $(el).parent('.navigation_default-submenu').prevAll('.navigation_default-submenu').each((index, element) => {
+            $(element).find('.-actSub').first().addClass('hover');
         });
     };
 
-    // remove existing subsublevels in dom container
-    const removeSubLevelMenu = (el) => {
-        $(el).parents('.navigation_default-subLevelContainerSmall').nextAll('.navigation_default-subLevelContainerSmall').remove();
-        return false;
-    };
+    // show submenus after removing old ones
+    const showSubmenu = (target) => {
+        $.when(cleanSubmenuContainer(target)).done(() => {
+            const submenu = $(target).find('.navigation_default-submenu').first();
+            const clonemenu = submenu.clone();
+            setTimeout(() => {
+                $('.navigation_default-submenuContainer-inner').append(clonemenu);
+                $(clonemenu).animate('height', 'fast').fadeIn('slow');
+            }, 'slow');
 
-    // if sublevel is shown, the svgs have to be clickable
-    const addSubLevelClicks = () => {
-        // remove all preexisting bindings
-        $('.navigation_default-subLevel svg').off();
-
-        // add new binding
-        $('.navigation_default-subLevelContainerFull .navigation_default-subLevelItem').mouseenter((event) => {
-            const el = $(event.currentTarget);
-            if ($(el).children('svg').length !== 0) {
-                // clone sublevel element and append to sublevel menu
-                const parelement = $(event.currentTarget);
-                // remove all preexisting subMenulevels below
-                removeSubLevelMenu(el);
-                // show all levels of active pate
-                showSubLevels(el);
-                // create bindings again
-                addSubLevelClicks();
-
-                // switch font weight
-                parelement.siblings('.navigation_default-subLevelItem').removeClass('active').addClass('inactive');
-                parelement.removeClass('inactive').addClass('active');
-            }
+            $(clonemenu).children('.navigation_default-submenuItem').mouseenter((event) => {
+                const subtarget = $(event.currentTarget);
+                showSubmenu(subtarget);
+                hoverSubmenuItem(subtarget);
+            });
         });
     };
 
-    // if the acutal site is in a lower level, the complete path should be visible
-    const showActiveLevels = (el) => {
-        const actSubElement = el.children('.navigation_default-subLevel').children('.-actSub');
-        if (actSubElement.length > 0) {
-            // show all levels of active pate
-            showSubLevels(actSubElement.children('svg'));
+    const exposePath = (el) => {
+        const closest = $(el).find('.-actSub');
+        if ($(closest).length > 0) {
+            showSubmenu($(closest));
+            exposePath($(closest));
         }
     };
 
-    // show sublevels after removing old ones
-    const showSubmenus = (event) => {
-        $.when($('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').empty()).done(() => {
-            const parelement = $(event.currentTarget);
-            const navelement = parelement.next('.navigation_default-subLevelContainerSmall');
-            const cloneelement = navelement.clone().addClass('clone').show();
-            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
-            addSubLevelClicks();
-            showActiveLevels(cloneelement);
-
-            // switch svg arrows
-            $('.navigation_default-firstLevelItem svg').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>');
-            $(event.currentTarget).children('svg').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-down"/></svg>');
-            // switch colors
-            $('.navigation_default-firstLevelItem').removeClass('active').addClass('inactive');
-            parelement.removeClass('inactive').addClass('active');
-        });
-
-        $('.scrolled').on('click', () => {
-            hideMenu();
-        });
-
-        return false;
+    const hoverMenuItem = (el) => {
+        // set colors explicitly, as it is overriding color of loaded page
+        $(el).addClass('hover').css('background-color', '#e5e5e5');
+        $(el).siblings().removeClass('hover').css('background-color', '#f2f2f2');
+        showSubmenu($(el));
+        setTimeout(() => {
+            exposePath(el);
+        }, 'slow');
     };
 
-    // show submenus when hovered on first level item
-    $('.navigation_default-firstLevelItem').mouseenter((event) => {
-        showSubmenus(event);
+    const cleanupMenuItems = () => {
+        $('.navigation_default-menuItem').removeClass('hover').css('background-color', '#f2f2f2');
+        $('.navigation_default-menuItem.-actSub, .navigation_default-menuItem.-cur, .navigation_default-menuItem.-curIfSub').css('background-color', '#e5e5e5');
+    };
+
+    const hideSubmenu = () => {
+        cleanSubmenuContainer('.navigation_default-menuItem');
+    };
+
+    $('.navigation_default-menuItem').mouseenter((event) => {
+        const target = event.currentTarget;
+        hoverMenuItem(target);
     });
 
-    $('.navigation_default-subLevelContainerFull').mouseleave(() => {
-        hideMenu();
+    $('.navigation_default').mouseleave(() => {
+        setTimeout(() => {
+            cleanupMenuItems();
+            hideSubmenu();
+        }, 'slow');
     });
+
 
     /**
      * everything related to breadcrumbs for scrolled content
