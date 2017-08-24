@@ -56,6 +56,9 @@
 }
 
 .toTop_inner {
+    @include media-s {
+        display: none;
+    }
     display: flex;
     justify-content: center;
     background-color: $brand;
