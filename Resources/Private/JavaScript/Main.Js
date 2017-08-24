@@ -14,4 +14,6 @@ $(document).ready(() => {
     $('.navigation_breadCrumbs').hide();
     $('.navigation_default-subLevelContainerSmall').hide();
     $('.toTop_outer').hide();
+    $('.navigation_default-subLevelContainerSmall').hide();
+
 });
