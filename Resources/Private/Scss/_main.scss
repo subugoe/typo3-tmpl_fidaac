@@ -46,11 +46,46 @@
         @include width-s-6;
     }
 
-    justify-content: flex-start !important;
+    justify-content: flex-start;
 }
 
 .literature {
     padding-left: 16px;
     text-indent: -16px;
     font-size: 14px;
+}
+
+.toTop_inner {
+    display: flex;
+    justify-content: center;
+    background-color: $brand;
+    font-size: 24px;
+    color: $white;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    z-index: 100;
+
+    svg {
+        fill: $white;
+    }
+}
+
+.toTop_outer {
+    @include media-l {
+        @include width-l-12;
+    }
+
+    @include media-m {
+        @include width-m-12;
+    }
+
+    @include media-s {
+        display: none;
+    }
+    display: flex;
+    z-index: -1;
+    position: sticky;
+    bottom: 16px;
+    justify-content: flex-end;
 }

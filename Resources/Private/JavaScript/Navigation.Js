@@ -92,13 +92,6 @@ $(document).ready(() => {
         return false;
     };
 
-    // set toTop-Button to correct right
-    const setToTopToRight = () => {
-        const right = ($(window).width() - $('.header_inner').width()) / 2;
-        console.log(right);
-        $('.toTop').hide().css('right', right);
-    };
-
     // show submenus when hovered on first level item
     $('.navigation_default-firstLevel svg').mouseenter((event) => {
         showSubmenus(event);
@@ -121,19 +114,13 @@ $(document).ready(() => {
             $('.overlay').hide();
             $('.navigation_default').show();
             $('.navigation_breadCrumbs').hide();
-            $('.toTop').hide();
-        } else if ($('.toTop').css('display') === 'none') {
+            $('.toTop_outer').fadeOut();
+        } else if ($('.toTop_outer').css('display') === 'none') {
             $('.overlay').show();
             $('.navigation_default').hide();
             $('.navigation_breadCrumbs').show();
-            setToTopToRight();
-            $('.toTop').show();
+            $('.toTop_outer').fadeIn();
         }
-    });
-
-    // Make sure, toTop is always on the correct place
-    $(window).resize(() => {
-        setToTopToRight();
     });
 
     /**
