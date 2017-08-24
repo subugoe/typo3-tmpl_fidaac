@@ -1,57 +1,57 @@
-lib.navLevel1 = HMENU
-lib.navLevel1 {
+lib.navMenu = HMENU
+lib.navMenu {
     1 = TMENU
     1 {
         expAll = 1
         NO = 1
-        NO.allWrap = <div class="navigation_default-firstLevelItem -no">|</div>
+        NO.wrapItemAndSub = <li class="navigation_default-menuItem -no">|</li>
 
         IFSUB < .NO
-        IFSUB.allWrap = <div class="navigation_default-firstLevelItem -sub">|</div>
-        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+        IFSUB.wrapItemAndSub = <li class="navigation_default-menuItem -sub">|</li>
+        IFSUB.afterWrap = <svg class="svg-right"><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
 
         CUR < .NO
-        CUR.allWrap = <div class="navigation_default-firstLevelItem -cur">|</div>
+        CUR.wrapItemAndSub = <li class="navigation_default-menuItem -cur">|</li>
 
         CURIFSUB < .CUR
-        CURIFSUB.allWrap = <div class="navigation_default-firstLevelItem -curIfSub">|</div>
-        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+        CURIFSUB.wrapItemAndSub = <li class="navigation_default-menuItem -curIfSub">|</li>
+        CURIFSUB.afterWrap = <svg class="svg-right"><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
 
         ACT < .NO
-        ACT.allWrap = <div class="navigation_default-firstLevelItem -act">|</div>
+        ACT.wrapItemAndSub = <li class="navigation_default-menuItem -act">|</li>
         ACT.ATagParams = class="strong"
 
         ACTIFSUB < .ACT
-        ACTIFSUB.allWrap = <div class="navigation_default-firstLevelItem -actSub">|</div>
-        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+        ACTIFSUB.wrapItemAndSub = <li class="navigation_default-menuItem -actSub">|</li>
+        ACTIFSUB.afterWrap = <svg class="svg-right"><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
     }
 
     2 = TMENU
     2 {
         expAll = 1
         special = rootline
-        wrap = <div class="navigation_default-subLevelContainerSmall"><div class="navigation_default-subLevel">|</div></div>
+        wrap = <ul class="navigation_default-submenu">|</ul>
 
         NO = 1
-        NO.allWrap = <div class="navigation_default-subLevelItem -no">|</div>
+        NO.wrapItemAndSub  = <li class="navigation_default-submenuItem -no">|</li>
 
         IFSUB < .NO
-        IFSUB.allWrap = <div class="navigation_default-subLevelItem -sub">|</div>
-        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+        IFSUB.wrapItemAndSub = <li class="navigation_default-submenuItem -sub">|</li>
+        IFSUB.afterWrap = <svg class="svg-right"><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
 
         CUR < .NO
-        CUR.allWrap = <div class="navigation_default-subLevelItem -cur">|</div>
+        CUR.wrapItemAndSub = <li class="navigation_default-submenuItem -cur">|</li>
 
         CURIFSUB < .CUR
-        CURIFSUB.allWrap = <div class="navigation_default-subLevelItem -curIfSub">|</div>
-        CURIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+        CURIFSUB.wrapItemAndSub  = <li class="navigation_default-submenuItem -curIfSub">|</li>
+        CURIFSUB.afterWrap = <svg class="svg-right"><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
 
         ACT < .NO
-        ACT.allWrap = <div class="navigation_default-subLevelItem -act">|</div>
+        ACT.wrapItemAndSub  = <li class="navigation_default-submenuItem -act">|</li>
 
         ACTIFSUB < .ACT
-        ACTIFSUB.allWrap = <div class="navigation_default-subLevelItem -actSub">|</div>
-        ACTIFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
+        ACTIFSUB.wrapItemAndSub = <li class="navigation_default-submenuItem -actSub">|</li>
+        ACTIFSUB.afterWrap = <svg class="svg-right"><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-caret-right"/></svg>
     }
 
     3 < .2

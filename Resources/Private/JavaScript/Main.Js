@@ -12,8 +12,7 @@ $(document).ready(() => {
      */
     $('body').show();
     $('.navigation_breadCrumbs').hide();
-    $('.navigation_default-subLevelContainerSmall').hide();
     $('.toTop_inner').hide();
-    $('.navigation_default-subLevelContainerSmall').hide();
+    $('.navigation_default-submenu').hide();
 
 });
