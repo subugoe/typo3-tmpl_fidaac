@@ -74,7 +74,8 @@
     color: $white;
     height: 36px;
     cursor: pointer;
-    z-index: 100;
+    z-index: 999999;
+    pointer-events: all;
 
     svg {
         fill: $white;
@@ -97,7 +98,7 @@
         bottom: 0;
     }
     display: flex;
-    z-index: -1;
     position: sticky;
     justify-content: flex-end;
+    pointer-events: none;
 }

@@ -125,7 +125,7 @@ $(document).ready(() => {
     /**
      * When menuButton or page-up-button is clicked, switch back to full menu
      */
-    $('.navigation_menuButton, .toTop').on('click', () => {
+    $('.navigation_menuButton, .toTop_inner').on('click', () => {
         $('.scrolled').animate({scrollTop: 0}, 'fast');
         $('.navigation_breadCrumbs').hide();
     });
