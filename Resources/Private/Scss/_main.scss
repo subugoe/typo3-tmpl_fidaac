@@ -46,11 +46,59 @@
         @include width-s-6;
     }
 
-    justify-content: flex-start !important;
+    justify-content: flex-start;
 }
 
 .literature {
     padding-left: 16px;
     text-indent: -16px;
     font-size: 14px;
+}
+
+.toTop_inner {
+    @include media-l {
+        width: 36px;
+    }
+
+    @include media-m {
+        width: 36px;
+    }
+
+    @include media-s {
+        @include width-m-6;
+    }
+    display: flex;
+    justify-content: center;
+    background-color: $brand;
+    font-size: 24px;
+    color: $white;
+    height: 36px;
+    cursor: pointer;
+    z-index: 999999;
+    pointer-events: all;
+
+    svg {
+        fill: $white;
+    }
+}
+
+.toTop_outer {
+    @include media-l {
+        @include width-l-12;
+        bottom: 16px;
+    }
+
+    @include media-m {
+        @include width-m-12;
+        bottom: 16px;
+    }
+
+    @include media-s {
+        @include width-m-6;
+        bottom: 0;
+    }
+    display: flex;
+    position: sticky;
+    justify-content: flex-end;
+    pointer-events: none;
 }

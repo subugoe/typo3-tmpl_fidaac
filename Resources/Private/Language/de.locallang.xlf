@@ -26,6 +26,10 @@
                 <source>Menu</source>
                 <target>Menü</target>
             </trans-unit>
+            <trans-unit id="Page Up">
+                <source>Page Up</source>
+                <target>Nach oben</target>
+            </trans-unit>
             <trans-unit id="Privacy policy">
                 <source>Privacy policy</source>
                 <target>Datenschutzbestimmungen</target>

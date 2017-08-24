@@ -11,4 +11,9 @@ $(document).ready(() => {
      * This removes jumping elements
      */
     $('body').show();
+    $('.navigation_breadCrumbs').hide();
+    $('.navigation_default-subLevelContainerSmall').hide();
+    $('.toTop_inner').hide();
+    $('.navigation_default-subLevelContainerSmall').hide();
+
 });
