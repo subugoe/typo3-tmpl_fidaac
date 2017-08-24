@@ -12,19 +12,12 @@ $(document).ready(() => {
      */
         // clone and show sub levels of element
     const showSubLevels = (el) => {
-<<<<<<< HEAD
-            const parelement = el.parent('.navigation_default-subLevelItem');
-            const subelement = parelement.next('.navigation_default-subLevelContainerSmall').first();
-            const cloneelement = subelement.clone().addClass('clone').show();
-            $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
-        };
-=======
+
         const parelement = el;
         const subelement = parelement.next('.navigation_default-subLevelContainerSmall').first();
         const cloneelement = subelement.clone().addClass('clone').show();
         $('.navigation_default-subLevelContainerFull .navigation_default-subLevelContainer').append(cloneelement);
     };
->>>>>>> develop
 
     // empty dom element and switch back classes of sublevels
     const hideMenu = () => {
@@ -120,12 +113,12 @@ $(document).ready(() => {
             $('.overlay').hide();
             $('.navigation_default').show();
             $('.navigation_breadCrumbs').hide();
-            $('.toTop_outer').fadeOut();
-        } else if ($('.toTop_outer').css('display') === 'none') {
+            $('.toTop_inner').fadeOut();
+        } else if ($('.toTop_inner').css('display') === 'none') {
             $('.overlay').show();
             $('.navigation_default').hide();
             $('.navigation_breadCrumbs').show();
-            $('.toTop_outer').fadeIn();
+            $('.toTop_inner').fadeIn();
         }
     });
 

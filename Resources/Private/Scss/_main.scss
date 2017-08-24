@@ -56,8 +56,16 @@
 }
 
 .toTop_inner {
+    @include media-l {
+        width: 36px;
+    }
+
+    @include media-m {
+        width: 36px;
+    }
+
     @include media-s {
-        display: none;
+        @include width-m-6;
     }
     display: flex;
     justify-content: center;
@@ -65,7 +73,6 @@
     font-size: 24px;
     color: $white;
     height: 36px;
-    width: 36px;
     cursor: pointer;
     z-index: 100;
 
@@ -77,18 +84,20 @@
 .toTop_outer {
     @include media-l {
         @include width-l-12;
+        bottom: 16px;
     }
 
     @include media-m {
         @include width-m-12;
+        bottom: 16px;
     }
 
     @include media-s {
-        display: none;
+        @include width-m-6;
+        bottom: 0;
     }
     display: flex;
     z-index: -1;
     position: sticky;
-    bottom: 16px;
     justify-content: flex-end;
 }
