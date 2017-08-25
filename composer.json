@@ -1,0 +1,12 @@
+{
+    "name": "subugoe/tmpl-fidaac",
+    "description": "FID AAC Website template",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Ingo Pfennigstorf",
+            "email": "i.pfennigstorf@gmail.com"
+        }
+    ]
+}

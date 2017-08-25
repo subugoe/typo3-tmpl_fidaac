@@ -10,3 +10,5 @@ npm-debug.log
 # Ignore all compiled css and javascript
 Resources/Public/Css/*
 Resources/Public/JavaScript/*
+
+/vendor/
