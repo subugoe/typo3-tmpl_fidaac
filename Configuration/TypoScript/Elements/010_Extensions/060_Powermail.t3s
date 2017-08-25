@@ -1,4 +1,4 @@
 plugin.tx_powermail {
-        _LOCAL_LANG.default.confirmation_next = Send
-        _LOCAL_LANG.de.confirmation_next = Senden
+    _LOCAL_LANG.default.confirmation_next = Send
+    _LOCAL_LANG.de.confirmation_next = Senden
 }

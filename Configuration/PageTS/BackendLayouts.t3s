@@ -1,49 +1,50 @@
 mod {
-	web_layout {
-		BackendLayouts {
-			Default {
-				title = Content
-				config {
-					backend_layout {
-						colCount = 1
-						rowCount = 1
-						rows {
-							1 {
-								columns {
-									1 {
-										name = Content
-										colPos = 0
-									}
-								}
-							}
-						}
-					}
-				}
-			}
+    web_layout {
+        BackendLayouts {
+            Default {
+                title = Content
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Content
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
-			News {
-				title = News archive
-				config {
-					backend_layout {
-						colCount = 2
-						rowCount = 1
-						rows {
-							1 {
-								columns {
-									1 {
-										name = News
-										colPos = 0
-									}
-									2 {
-										name = Date list
-										colPos = 2
-									}
-								}
-							}
-						}
-					}
-				}
-			}
+            News {
+                title = News archive
+                config {
+                    backend_layout {
+                        colCount = 2
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = News
+                                        colPos = 0
+                                    }
+
+                                    2 {
+                                        name = Date list
+                                        colPos = 2
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
             TwoColums {
                 title = Two column content
@@ -64,7 +65,6 @@ mod {
                     }
                 }
             }
-
-		}
-	}
+        }
+    }
 }
