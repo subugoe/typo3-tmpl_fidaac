@@ -1,5 +1,5 @@
 {
-    "name": "goettingen-state-and-university-library-germany/typo3-tmpl-fidaac",
+    "name": "subugoe/tmpl-fidaac",
     "type": "typo3-cms-extension",
     "description": "Base extension for project tmpl_fidaac",
     "homepage": "https://www.sub.uni-goettingen.de",
