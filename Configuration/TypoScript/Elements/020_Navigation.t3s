@@ -59,76 +59,72 @@ lib.navLevel1 {
     5 < .2
 }
 
-
-
 lib.breadCrumbs = HMENU
 lib.breadCrumbs {
-special = rootline
-special.range = 1|-1
+    special = rootline
+    special.range = 1|-1
 
-1 = TMENU
-1 {
-
-NO = 1
-CUR = 1
-CUR.afterWrap =
-IFSUB = 1
-IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-chevron-right"/></svg>
-}
-
+    1 = TMENU
+    1 {
+        NO = 1
+        CUR = 1
+        CUR.afterWrap =
+        IFSUB = 1
+        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-chevron-right"/></svg>
+    }
 }
 
 lib.footer = HMENU
 lib.footer {
-1 = TMENU
-1 {
-expAll = 1
+    1 = TMENU
+    1 {
+        expAll = 1
 
-NO = 1
-NO {
-beforeWrap = <div class="footer_fullLevel"><div class="footer_firstLevel">
-afterWrap = </div></div>
-NO.ATagParams =
-stdWrap.htmlSpecialChars = 1
-}
+        NO = 1
+        NO {
+            beforeWrap = <div class="footer_fullLevel"><div class="footer_firstLevel">
+            afterWrap = </div></div>
+            NO.ATagParams =
+            stdWrap.htmlSpecialChars = 1
+        }
 
-IFSUB < .NO
-IFSUB {
-beforeWrap = <div class="footer_firstLevel">
-afterWrap = </div>
-}
+        IFSUB < .NO
+        IFSUB {
+            beforeWrap = <div class="footer_firstLevel">
+            afterWrap = </div>
+        }
 
-ACTIFSUB < .IFSUB
-ACTIFSUB.ATagParams = class="strong"
-CURIFSUB < .IFSUB
-CURIFSUB.ATagParams = class="strong"
-CUR < .NO
-CUR.ATagParams = class="strong"
-ACT < .NO
-ACT.ATagParams = class="strong"
-}
+        ACTIFSUB < .IFSUB
+        ACTIFSUB.ATagParams = class="strong"
+        CURIFSUB < .IFSUB
+        CURIFSUB.ATagParams = class="strong"
+        CUR < .NO
+        CUR.ATagParams = class="strong"
+        ACT < .NO
+        ACT.ATagParams = class="strong"
+    }
 
-2 < .1
-2 {
-wrap = <div class="footer_secondLevel">|</div>
+    2 < .1
+    2 {
+        wrap = <div class="footer_secondLevel">|</div>
 
-NO {
-beforeWrap =
-afterWrap =
-}
+        NO {
+            beforeWrap =
+            afterWrap =
+        }
 
-IFSUB {
-beforeWrap =
-afterWrap =
-}
+        IFSUB {
+            beforeWrap =
+            afterWrap =
+        }
 
-ACTIFSUB < .IFSUB
-ACTIFSUB.ATagParams = class="strong"
-CURIFSUB < .IFSUB
-CURIFSUB.ATagParams = class="strong"
-CUR < .CURIFSUB
-ACT < .ACTIFSUB
-}
+        ACTIFSUB < .IFSUB
+        ACTIFSUB.ATagParams = class="strong"
+        CURIFSUB < .IFSUB
+        CURIFSUB.ATagParams = class="strong"
+        CUR < .CURIFSUB
+        ACT < .ACTIFSUB
+    }
 }
 
 
