@@ -8,8 +8,8 @@ casper.on("resource.error", function(resourceError){
     this.exit();
 });
 
-var baseurl = casper.cli.get("url");
-var url = baseurl+'/index.php?id=9';
+const baseurl = casper.cli.get('url');
+const url = baseurl+'/index.php?id=9';
 
 casper.test.begin('Test pazpar2', 6, function(test) {
     casper.start(url, function () {
