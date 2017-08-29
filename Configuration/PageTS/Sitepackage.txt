@@ -1,6 +1,0 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/TCEFORM.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/TCEMAIN.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/TCEdefaults.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/BackendLayouts.t3s">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/Permissions.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_fidaac/Configuration/PageTS/RTE.txt">

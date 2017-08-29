@@ -8,5 +8,8 @@
             "name": "Ingo Pfennigstorf",
             "email": "i.pfennigstorf@gmail.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.5"
+    }
 }
