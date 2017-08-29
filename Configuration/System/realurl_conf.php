@@ -3,7 +3,7 @@
 $rootPageUid = 1;
 $rssFeedPageType = 6890; // pageType of the RSS feed page (tx_news)
 
-#include the IDs of pages as arrays at the end of the news configuration in fixedPostVars
+//include the IDs of pages as arrays at the end of the news configuration in fixedPostVars
 $path = __DIR__ . '/../../../../realurl_NewsPageIds.php';
 include_once $path;
 

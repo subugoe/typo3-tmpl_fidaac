@@ -1,5 +1,4 @@
 TCAdefaults {
-
     // Show thumbnails in News list mode by default
     sys_file_reference.showinpreview = 1
 

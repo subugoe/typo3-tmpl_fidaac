@@ -1,4 +1,4 @@
-# Typo3 Layout Optionen Content-Elemente
+# TYPO3 Layout Optionen Content-Elemente
 tt_content.stdWrap.innerWrap.cObject = CASE
 tt_content.stdWrap.innerWrap.cObject {
     key.field = layout

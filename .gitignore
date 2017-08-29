@@ -12,3 +12,4 @@ Resources/Public/Css/*
 Resources/Public/JavaScript/*
 .php_cs.cache
 /vendor/
+/composer.lock
