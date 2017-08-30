@@ -1,0 +1,9 @@
+plugin {
+    metaseo {
+        pageTitle {
+            sitetitleGlue = -
+            sitetitle = Lib AAC
+            sitetitleGlueSpaceBefore = 1
+        }
+    }
+}
