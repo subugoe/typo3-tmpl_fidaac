@@ -13,4 +13,5 @@ buildify()
 
 buildify()
     .load('node_modules/jquery/dist/jquery.min.js')
-    .save('Resources/Public/JavaScript/jquery.min.js');
+    .concat('node_modules/lightbox2/dist/js/lightbox.min.js')
+    .save('Resources/Public/JavaScript/vendor.js');

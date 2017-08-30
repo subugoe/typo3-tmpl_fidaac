@@ -7,3 +7,6 @@
 
 styles.content.links.allowTags := addToList(abbr, acronym)
 lib.fluidContent.data.date = 0
+
+styles.content.textmedia.linkWrap.lightboxEnabled = 1
+styles.content.textmedia.linkWrap.lightboxCssClass = lightboxer

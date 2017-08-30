@@ -18,7 +18,7 @@ page {
     }
 
     includeJS {
-        file100 = EXT:tmpl_fidaac/Resources/Public/JavaScript/jquery.min.js
+        file100 = EXT:tmpl_fidaac/Resources/Public/JavaScript/vendor.js
         file200 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
         file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/minified.js
     }
