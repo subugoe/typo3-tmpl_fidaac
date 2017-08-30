@@ -23,7 +23,11 @@ page {
         file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/minified.js
     }
 
-    meta.viewport = width=device-width, initial-scale=1.0
+    meta {
+        keywords.field = keywords
+        description.field = description
+        viewport = width=device-width, initial-scale=1.0
+    }
 }
 
 lib.content < styles.content.get
