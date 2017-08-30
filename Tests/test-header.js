@@ -8,8 +8,8 @@ casper.on("resource.error", function(resourceError){
     this.exit();
 });
 
-var baseurl = casper.cli.get("url");
-var url = baseurl;
+const baseurl = casper.cli.get('url');
+const url = baseurl;
 
 casper.test.begin('Test header', 4, function(test) {
     casper.start(url, function () {
