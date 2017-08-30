@@ -1,0 +1,10 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:metaseo/Configuration/TypoScript/setup.txt">
+plugin {
+    metaseo {
+        pageTitle {
+            sitetitleGlue = -
+            sitetitle = Lib AAC
+            sitetitleGlueSpaceBefore = 1
+        }
+    }
+}
