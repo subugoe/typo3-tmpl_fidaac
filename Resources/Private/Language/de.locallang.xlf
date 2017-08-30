@@ -2,10 +2,10 @@
 <xliff version="1.0">
     <file source-language="en" datatype="plaintext" original="messages" date="2015-06-23T11:36:30Z">
         <header>
-			<authorName>Joëlle Blache</authorName>
-			<authorEmail>blache@sub.uni-goettingen.de</authorEmail>
-		</header>
-		<body>
+            <authorName>Joëlle Blache</authorName>
+            <authorEmail>blache@sub.uni-goettingen.de</authorEmail>
+        </header>
+        <body>
             <trans-unit id="Contact">
                 <source>Contact</source>
                 <target>Kontakt</target>
@@ -47,7 +47,7 @@
                 <target>Fachinformationsdienst Anglo-American Culture</target>
             </trans-unit>
 
-        <!-- news extension -->
+            <!-- news extension -->
             <trans-unit id="search-text" xml:space="preserve">
                 <source>There are %1$s results for &quot;%2$s&quot;.</source>
                 <target>%1$s Ergebnisse für &quot;%2$s&quot;.</target>
@@ -216,6 +216,24 @@
                 <source>No categories available.</source>
                 <target>Keine Kategorien vorhanden</target>
             </trans-unit>
-		</body>
-	</file>
+
+            <!-- search -->
+            <trans-unit id="search_library" xml:space="preserve">
+                <source>Library</source>
+                <target>Bibliothek</target>
+            </trans-unit>
+            <trans-unit id="search_website" xml:space="preserve">
+                <source>Website</source>
+                <target>Website</target>
+            </trans-unit>
+            <trans-unit id="search_start" xml:space="preserve">
+                <source>Search</source>
+                <target>Suchen</target>
+            </trans-unit>
+            <trans-unit id="search_search" xml:space="preserve">
+                <source>Search</source>
+                <target>Suche</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

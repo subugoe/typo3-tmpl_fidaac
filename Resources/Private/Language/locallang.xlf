@@ -2,10 +2,10 @@
 <xliff version="1.0">
     <file source-language="en" datatype="plaintext" original="messages" date="2015-06-23T11:36:30Z">
         <header>
-			<authorName>Joëlle Blache</authorName>
-			<authorEmail>blache@sub.uni-goettingen.de</authorEmail>
-		</header>
-		<body>
+            <authorName>Joëlle Blache</authorName>
+            <authorEmail>blache@sub.uni-goettingen.de</authorEmail>
+        </header>
+        <body>
             <trans-unit id="Contact">
                 <source>Contact</source>
             </trans-unit>
@@ -165,9 +165,6 @@
             <trans-unit id="list_nocategoriesfound" xml:space="preserve">
                 <source>No categories available.</source>
             </trans-unit>
-
-
-
-		</body>
-	</file>
+        </body>
+    </file>
 </xliff>
