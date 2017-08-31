@@ -4,14 +4,14 @@
   "rules": {
       "order/order": [
         {
-            type: "at-rule",
-            name: "include"
+            "type": "at-rule",
+            "name": "include"
         },
         "declarations",
         "rules",
         {
-            type: "at-rule",
-            name: "media"
+            "type": "at-rule",
+            "name": "media"
         }
       ],
     "declaration-empty-line-before": null,
