@@ -5,7 +5,7 @@
 ### Requirements:
 
 * PHP >= 5.5
-* npm 6
+* Node 8 and npm 5
 * other TYPO3 extensions, used by this extension:
   * pazpar2
   * vhs
