@@ -25,6 +25,26 @@ plugin {
     }
 }
 
+## Ext tx_news: dynamic page title for the news category list page
+[globalVar = GP:tx_news_pi1|overwriteDemand|categories > 0]
+	config.noPageTitle = 2
+	lib.categoryTitle = RECORDS
+	lib.categoryTitle {
+		dontCheckPid = 1
+		tables = sys_category
+		source.data = GP:tx_news_pi1|overwriteDemand|categories
+		source.intval = 1
+		conf.sys_category = TEXT
+		conf.sys_category {
+			field = title
+			htmlSpecialChars = 1
+		}
+		wrap = <title>Lib AAC - &nbsp;|</title>
+	}
+	page.headerData.100 >
+	page.headerData.100 < lib.categoryTitle
+[global]
+
 [globalVar = TSFE:type = 6890]
     config {
         # deactivate Standard-Header
