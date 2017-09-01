@@ -31,7 +31,6 @@
 
     Promise.all([font_a.load(), font_b.load(), font_c.load(), font_d.load(), font_e.load(), font_f.load()]).then(function () {
         document.documentElement.className += " fonts-loaded";
-        console.log('font loaded');
         sessionStorage.foutFontsLoaded = true;
     });
 })();
