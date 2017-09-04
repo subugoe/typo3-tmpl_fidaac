@@ -1,0 +1,97 @@
+@function width($string) {
+    @if $string == "l-1" {
+        @return 80px;
+    }
+
+    @else if $string == "l-2" {
+        @return 160px;
+    }
+
+    @else if $string == "l-3" {
+        @return 240px;
+    }
+
+    @else if $string == "l-4" {
+        @return 320px;
+    }
+
+    @else if $string == "l-5" {
+        @return 400px;
+    }
+
+    @else if $string == "l-6" {
+        @return 480px;
+    }
+
+    @else if $string == "l-7" {
+        @return 560px;
+    }
+
+    @else if $string == "l-8" {
+        @return 640px;
+    }
+
+    @else if $string == "l-9" {
+        @return 720px;
+    }
+
+    @else if $string == "l-10" {
+        @return 800px;
+    }
+
+    @else if $string == "l-11" {
+        @return 880px;
+    }
+
+    @else if $string == "l-12" {
+        @return 960px;
+    }
+
+    @else if $string == "m-1" {
+        @return 64px;
+    }
+
+    @else if $string == "m-2" {
+        @return 128px;
+    }
+
+    @else if $string == "m-3" {
+        @return 192px;
+    }
+
+    @else if $string == "m-4" {
+        @return 256px;
+    }
+
+    @else if $string == "m-5" {
+        @return 320px;
+    }
+
+    @else if $string == "m-6" {
+        @return 384px;
+    }
+
+    @else if $string == "m-7" {
+        @return 448px;
+    }
+
+    @else if $string == "m-8" {
+        @return 512px;
+    }
+
+    @else if $string == "m-9" {
+        @return 576px;
+    }
+
+    @else if $string == "m-10" {
+        @return 640px;
+    }
+
+    @else if $string == "m-11" {
+        @return 704px;
+    }
+
+    @else if $string == "l-12" {
+        @return 768px;
+    }
+}
