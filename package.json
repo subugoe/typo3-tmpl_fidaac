@@ -6,17 +6,17 @@
   "scripts": {
     "testLocal": "./node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://fidaac.dev'",
     "testDev": "./node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://aacdev.sub.uni-goettingen.de'",
-    "babel": "./node_modules/.bin/babel Resources/Public/JavaScript/concatenated.js -o Resources/Public/JavaScript/babel.js",
+    "babel": "./node_modules/.bin/babel Build/JavaScript/concatenated.js -o Build/JavaScript/app.js",
     "lintScss": "stylelint 'Resources/Private/Scss/*.scss'",
     "precommit": "npm run lintScss",
     "lintJs": "./node_modules/.bin/eslint Resources/Private/JavaScript/*.Js",
-    "createMainCss": "./node_modules/.bin/node-sass Resources/Private/Scss/App.scss | ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' --use cssnano > Resources/Public/Css/minified.css",
+    "createMainCss": "./node_modules/.bin/node-sass Resources/Private/Scss/App.scss | ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' --use cssnano > Resources/Public/Css/app.min.css",
     "createPrintCss": "./node_modules/.bin/node-sass Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' --use cssnano > Resources/Public/Css/print.css",
     "createCss": "npm run createMainCss; npm run createPrintCss",
-    "devMainCss": "./node_modules/.bin/node-sass --source-map true Resources/Private/Scss/App.scss Resources/Public/Css/minified.css; ./node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' Resources/Public/Css/minified.css -o Resources/Public/Css/minified.css",
+    "devMainCss": "./node_modules/.bin/node-sass --source-map true Resources/Private/Scss/App.scss Resources/Public/Css/app.min.css; ./node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' Resources/Public/Css/app.min.css -o Resources/Public/Css/app.min.css",
     "devPrintCss": "./node_modules/.bin/node-sass --output-style expanded --source-comments --source-map-embed Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' > Resources/Public/Css/print.css",
     "devCss": "npm run devMainCss; npm run devPrintCss",
-    "uglifyjs": "./node_modules/.bin/uglifyjs Resources/Public/JavaScript/babel.js -o Resources/Public/JavaScript/minified.js",
+    "uglifyjs": "./node_modules/.bin/uglifyjs Build/JavaScript/app.js -o Resources/Public/JavaScript/app.min.js",
     "buildAll": "npm run lintJs; npm run createCss; node build.js; npm run babel; npm run uglifyjs",
     "devAll": "npm run lintJs; npm run devCss; node build.js; npm run babel; npm run uglifyjs",
     "watchAll": "nodemon -e scss,Js -x \"npm run devAll\"",
@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "jquery": "^3.2.1",
+    "jquery-ui-dist": "^1.12.1",
     "lightbox2": "^2.9.0"
   }
 }

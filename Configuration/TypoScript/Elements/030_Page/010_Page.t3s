@@ -3,12 +3,9 @@ page {
     typeNum = 0
     shortcutIcon = EXT:tmpl_fidaac/Resources/Public/Icons/favicon.ico
     includeCSS {
-        file100 = EXT:tmpl_fidaac/Resources/Public/Css/minified.css
+        file100 = EXT:tmpl_fidaac/Resources/Public/Css/app.min.css
         file100.title = Template CSS
         file100.media = screen
-
-        file300 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css
-        file300.media = screen
 
         file500 = EXT:news/Resources/Public/Css/news-basic.css
         file500.media = screen
@@ -18,9 +15,8 @@ page {
     }
 
     includeJS {
-        file100 = EXT:tmpl_fidaac/Resources/Public/JavaScript/vendor.js
-        file200 = https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
-        file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/minified.js
+        file100 = EXT:tmpl_fidaac/Resources/Public/JavaScript/vendor.min.js
+        file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/app.min.js
     }
 
     meta {

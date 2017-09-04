@@ -13,3 +13,4 @@ Resources/Public/JavaScript/*
 .php_cs.cache
 /vendor/
 /composer.lock
+Build/JavaScript/*
