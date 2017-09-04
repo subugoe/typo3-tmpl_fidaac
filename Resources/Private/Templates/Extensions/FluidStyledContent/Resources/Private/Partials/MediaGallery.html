@@ -81,18 +81,7 @@
         file="{column.media}"
         alt="{column.media.alternative}"
         title="{column.media.title}"
-        class="img-{data.uid}"
+        class="img-{data.uid} cols-{data.imagecols}"
     />
-    <script>
-        $(document).ready(() => {
-            var cols =<f:format.raw >{data.imagecols}</f:format.raw >;
-            // take width of inner header, because it has 12 rows
-            // ... or 6 in S, but the rows still apply
-            // TODO: What to do with images in S
-            var sw = $('.header_inner').width() / 12;
-            var iw = sw * cols + 'px';
-            $('.img-{data.uid}').css({'width': iw, 'height': 'auto'});
-        });
-    </script>
 </f:section>
 </html>
