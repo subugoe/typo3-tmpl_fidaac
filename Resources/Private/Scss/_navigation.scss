@@ -49,6 +49,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
 
     svg {
         fill: $shadeDarkest;
@@ -75,6 +76,8 @@
     flex-direction: row;
     justify-content: stretch;
     padding: 0;
+    position: relative;
+    z-index: 20;
 }
 
 .navigation_default-menuItem {
@@ -103,72 +106,69 @@
         margin: 0;
     }
 
-    &.-actSub,
-    &.-curIfSub,
-    &.-cur {
+    &.-actSub:first-child,
+    &.-curIfSub:first-child,
+    &.-cur:first-child {
         background-color: $shadeLighter;
-
-        a {
-            font-weight: bold;
-        }
     }
 
     &.hover {
         background-color: $shadeLighter;
 
-        &:not(.-actSub) {
-            svg {
-                transform: rotate(90deg);
-            }
+        &:not(.-actSub) > svg {
+            transform: rotate(90deg);
         }
     }
 
-    &.-actSub,
-    &.-curIfSub {
-        svg {
-            transform: rotate(90deg);
-        }
+    &.-actSub > svg,
+    &.-curIfSub > svg {
+        transform: rotate(90deg);
     }
 }
 
 .navigation_default-submenu {
     @include media-l {
+        @include width-l-4;
         font-size: 16px;
         line-height: 24px;
     }
 
     @include media-m {
+        @include width-m-4;
         font-size: 16px;
         line-height: 24px;
+    }
+
+    @include media-s {
+        @include width-s-6;
     }
     list-style-type: none;
     display: flex;
     flex-flow: column;
-    margin-bottom: 16px;
-    margin-top: 8px;
+    padding-bottom: 16px;
+    padding-top: 8px;
     align-items: stretch;
+
+    &.absolute {
+        @include width-l-3;
+        position: absolute;
+        background: $shadeLighter;
+        z-index: 100;
+        margin: 0;
+    }
 }
 
 .navigation_default-submenuContainer-outer {
-    display: flex;
+    flex: 1 0 100vh;
+    height: 50px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 136px;
     width: 100%;
-    background-color: $shadeLighter;
-    justify-content: center;
-}
-
-.navigation_default-submenuContainer-inner {
-    @include media-l {
-        @include span-l-12;
-    }
-
-    @include media-m {
-        @include span-m-12;
-    }
-
-    @include media-s {
-        @include span-s-6;
-    }
-    display: flex;
+    background: $shadeLighter;
+    z-index: 10;
+    display: none;
 }
 
 .navigation_default-submenuItem {
@@ -201,62 +201,14 @@
         padding: 2px;
     }
 
-    &.-actSub,
-    &.-curIfSub,
-    &.-actIfSub,
-    &.-cur {
-        a {
-            font-weight: bold;
-        }
+    &.-actSub > a,
+    &.-curIfSub > a,
+    &.-actIfSub > a,
+    &.-cur > a {
+        font-weight: bold;
     }
 
-    &.hover {
-        a {
-            background-color: $shadeLight;
-        }
-    }
-}
-
-.navigation_breadCrumbs {
-    @include flex-center;
-
-    @include media-l {
-        @include span-l-12;
-    }
-
-    @include media-m {
-        @include span-m-12;
-    }
-
-    @include media-s {
-        @include span-s-6;
-    }
-    flex-direction: row;
-    flex-wrap: nowrap;
-    font-size: 16px;
-    line-height: 24px;
-    align-self: center;
-    align-items: center;
-}
-
-.navigation_breadCrumbs-crumbs {
-    @include media-l {
-        @include span-l-10;
-    }
-
-    @include media-m {
-        @include span-m-10;
-    }
-
-    @include media-s {
-        @include span-s-6;
-    }
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 16px;
-
-    svg {
-        fill: $shadeDarkest;
-        margin: 0 8px;
+    &.hover > a {
+        background-color: $shadeLight;
     }
 }
