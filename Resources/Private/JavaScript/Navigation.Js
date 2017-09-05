@@ -11,35 +11,53 @@
 
 $(document).ready(() => {
 
-    const cleanSubmenuContainer = (target) => {
-        if ($(target).parents().hasClass('navigation_default-submenu')) {
-            // remove maybe leftover classes
-            $(target).parent('.navigation_default-submenu').nextAll('.navigation_default-submenu').remove();
-        } else {
-            $('.navigation_default-submenuContainer-inner').empty();
-        }
-        return true;
+    const setMenuContainerHeight = () => {
+        const outermenu = $('.navigation_default-submenuContainer-outer');
+        outermenu.css('height', '0px');
+        // firefox positions elements with "position: fixed" relativ to body
+        const firetop = $('.navigation_default').position().top + $('.navigation_default').height();
+        $('.navigation_default-submenuContainer-outer').css('top', firetop);
+        $('.navigation_default-submenu.absolute').each((index, element) => {
+            if ($(element).css('display') !== 'none') {
+                if ($(outermenu).height() < $(element).height()) {
+                    outermenu.css('height', $(element).css('height'));
+                }
+            }
+        });
     };
 
-    const hoverSubmenuItem = (el) => {
-        $(el).addClass('hover');
-        $(el).siblings().removeClass('hover');
-        $(el).parent('.navigation_default-submenu').prevAll('.navigation_default-submenu').each((index, element) => {
-            $(element).find('.-actSub').first().addClass('hover');
+    const cleanSubmenuContainer = (target) => {
+        $.when($(target).siblings().find('.navigation_default-submenu').fadeOut('fast')).done(() => {
+            setMenuContainerHeight();
+            return true;
         });
+    };
+
+    const hoverSubmenuItem = (target) => {
+        $(target).addClass('hover');
+        $(target).siblings().removeClass('hover');
     };
 
     // show submenus after removing old ones
     const showSubmenu = (target) => {
         $.when(cleanSubmenuContainer(target)).done(() => {
             const submenu = $(target).find('.navigation_default-submenu').first();
-            const clonemenu = submenu.clone();
-            setTimeout(() => {
-                $('.navigation_default-submenuContainer-inner').append(clonemenu);
-                $(clonemenu).animate('height', 'fast').fadeIn('slow');
-            }, 'slow');
+            const parent = $(submenu).parents('.navigation_default-submenu');
+            let top = $('.navigation_default-menu').height();
+            let left = 0;
+            if (parent.length > 0) {
+                left = $(parent).position().left + $(parent).width();
+                top = 0;
+            }
+            submenu.addClass('absolute').css({
+                'left': `${left}px`,
+                'top': `${top}px`
+            }).fadeIn('slow');
+            setMenuContainerHeight();
 
-            $(clonemenu).children('.navigation_default-submenuItem').mouseenter((event) => {
+            $('.navigation_default-submenuContainer-outer').fadeIn('fast');
+
+            $(submenu).children('.navigation_default-submenuItem').mouseenter((event) => {
                 const subtarget = $(event.currentTarget);
                 showSubmenu(subtarget);
                 hoverSubmenuItem(subtarget);
@@ -47,31 +65,29 @@ $(document).ready(() => {
         });
     };
 
-    const exposePath = (el) => {
-        const closest = $(el).find('.-actSub');
+    const exposePath = (target) => {
+        const closest = $(target).find('.-actSub');
         if ($(closest).length > 0) {
             showSubmenu($(closest));
             exposePath($(closest));
         }
     };
 
-    const hoverMenuItem = (el) => {
+    const hoverMenuItem = (target) => {
         // set colors explicitly, as it is overriding color of loaded page
-        $(el).addClass('hover').css('background-color', '#e5e5e5');
-        $(el).siblings().removeClass('hover').css('background-color', '#f2f2f2');
-        showSubmenu($(el));
+        $(target).addClass('hover').css('background-color', '#e5e5e5');
+        $(target).siblings().removeClass('hover').css('background-color', '#f2f2f2');
+        showSubmenu($(target));
         setTimeout(() => {
-            exposePath(el);
+            exposePath(target);
+            setMenuContainerHeight();
         }, 'slow');
     };
 
-    const cleanupMenuItems = () => {
-        $('.navigation_default-menuItem').removeClass('hover').css('background-color', '#f2f2f2');
-        $('.navigation_default-menuItem.-actSub, .navigation_default-menuItem.-cur, .navigation_default-menuItem.-curIfSub').css('background-color', '#e5e5e5');
-    };
-
     const hideSubmenu = () => {
-        cleanSubmenuContainer('.navigation_default-menuItem');
+        $('.navigation_default-submenu.absolute').fadeOut('slow', () => {
+            setMenuContainerHeight();
+        });
     };
 
     $('.navigation_default-menuItem').mouseenter((event) => {
@@ -81,7 +97,6 @@ $(document).ready(() => {
 
     $('.navigation_default').mouseleave(() => {
         setTimeout(() => {
-            cleanupMenuItems();
             hideSubmenu();
         }, 'slow');
     });
