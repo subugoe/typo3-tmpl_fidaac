@@ -106,10 +106,4 @@
     TCEFORM.tt_content {
         categories.disabled = 1
     }
-
-    // show ohly wanted aspect ratios for image manipulation
-    // setting a default value only possible with typo3 8
-    TCEFORM.sys_file_reference.crop.config.ratios {
-        1\.7777777777777777 = 16:9
-    }
 [end]
