@@ -62,12 +62,6 @@ form {
     .pz2-submitButton {
         @include form-button;
     }
-
-    .nolabel {
-        label {
-            visibility: hidden;
-        }
-    }
 }
 
 .tx-solr-search-form {
@@ -77,4 +71,26 @@ form {
 
 .pz2-months {
     font-size: $font-size !important;
+}
+
+.powermail_form.nolabel {
+    > h3 {
+        display: none;
+    }
+}
+
+.powermail_fieldset.nolabel {
+    > legend {
+        display: none;
+    }
+}
+
+.powermail_fieldwrap.nolabel {
+    > label {
+        display: none;
+    }
+
+    > fieldset > legend {
+        display: none;
+    }
 }
