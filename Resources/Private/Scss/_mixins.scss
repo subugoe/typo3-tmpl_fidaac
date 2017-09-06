@@ -376,3 +376,21 @@
 @mixin flex-right {
     justify-content: flex-end !important;
 }
+
+@mixin form-button {
+    font-size: $font-size;
+    padding: 0.5em;
+    background: $white;
+    border: 1px solid $brand;
+    background-image: none !important;
+    border-radius: 0;
+    height: auto !important;
+}
+
+@mixin form-input-text {
+    border-bottom: 1px solid $brand;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background: $white !important;
+}
