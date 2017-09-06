@@ -1,4 +1,4 @@
-var buildify = require('buildify');
+const buildify = require('buildify');
 
 buildify()
     .concat([
@@ -9,9 +9,12 @@ buildify()
         'Resources/Private/JavaScript/Images.Js',
         'Resources/Private/JavaScript/Fontfaceobserver.Js'
     ])
-    .save('Resources/Public/JavaScript/concatenated.js');
+    .save('Build/JavaScript/concatenated.js');
 
 buildify()
-    .load('node_modules/jquery/dist/jquery.min.js')
-    .concat('node_modules/lightbox2/dist/js/lightbox.min.js')
-    .save('Resources/Public/JavaScript/vendor.js');
+    .concat([
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/lightbox2/dist/js/lightbox.min.js',
+        'node_modules/jquery-ui-dist/jquery-ui.min.js',
+    ])
+    .save('Resources/Public/JavaScript/vendor.min.js');

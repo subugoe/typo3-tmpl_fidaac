@@ -5,8 +5,7 @@
  */
 
 $(document).ready(() => {
-  const lightboxId = Math.ceil(Math.random() * 100);
+    const lightboxId = Math.ceil(Math.random() * 100);
 
-  $('a[href$=".jpg" i], a[href$=".png" i]').attr('rel', `lightbox[${lightboxId}]`);
-
+    $('a[href$=".jpg" i], a[href$=".png" i]').attr('rel', `lightbox[${lightboxId}]`);
 });
