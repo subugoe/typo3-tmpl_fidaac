@@ -234,8 +234,8 @@
                 <source>Search</source>
                 <target>Suche</target>
             </trans-unit>
-            <trans-unit id="search_start" xml:space="preserve">
-                <source>Search</source>
+            <trans-unit id="search_placeholder" xml:space="preserve">
+                <source>Your search terms</source>
                 <target>Ihre Suchbegriffe</target>
             </trans-unit>
             <trans-unit id="search_tips" xml:space="preserve">
