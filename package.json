@@ -18,7 +18,7 @@
     "devCss": "npm run devMainCss; npm run devPrintCss",
     "uglifyjs": "./node_modules/.bin/uglifyjs Build/JavaScript/app.js -o Resources/Public/JavaScript/app.min.js",
     "buildAll": "npm run lintJs; npm run createCss; node build.js; npm run babel; npm run uglifyjs",
-    "devAll": "npm run lintJs; npm run devCss; node build.js; npm run babel; npm run uglifyjs",
+    "devAll": "npm run lintJs && npm run devCss && node build.js && npm run babel && cp ./Build/JavaScript/app.js ./Resources/Public/JavaScript/",
     "watchAll": "nodemon -e scss,Js -x \"npm run devAll\"",
     "browsersync": "browser-sync start -c bs-config.js",
     "devBrowser": "concurrently --kill-others --prefix \"[{name}]\" --names \"SCSS & JS,BROWER SYNC\" \"npm run watchAll\" \"npm run browsersync\""
@@ -51,6 +51,7 @@
     "phantomjs-prebuilt": "^2.1.7",
     "postcss": "^6.0.6",
     "postcss-cli": "^4.1.0",
+    "stylelint": "^7.8.0",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-order": "^0.5.0",
     "uglify-es": "^3.0.23"

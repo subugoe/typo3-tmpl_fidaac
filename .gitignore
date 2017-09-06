@@ -7,9 +7,6 @@ Tests/images/
 .idea
 npm-debug.log
 
-# Ignore all compiled css and javascript
-Resources/Public/Css/*
-Resources/Public/JavaScript/*
 .php_cs.cache
 /vendor/
 /composer.lock

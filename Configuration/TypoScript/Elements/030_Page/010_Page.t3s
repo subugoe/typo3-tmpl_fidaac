@@ -16,7 +16,7 @@ page {
 
     includeJS {
         file100 = EXT:tmpl_fidaac/Resources/Public/JavaScript/vendor.min.js
-        file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/app.min.js
+        file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/app.js
     }
 
     meta {
