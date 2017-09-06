@@ -1,3 +1,5 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:powermail/Configuration/TypoScript/Main/setup.txt">
+
 plugin.tx_powermail {
     _LOCAL_LANG.default.confirmation_next = Send
     _LOCAL_LANG.de.confirmation_next = Senden

@@ -251,15 +251,15 @@ $(document).ready(() => {
 });
 
 /**
- * Header.js
+ * Images.js
  *
- * functions to change the header for different screen sizes
+ * Image manipulations
  */
 
 $(document).ready(() => {
     const lightboxId = Math.ceil(Math.random() * 100);
 
-    $('a[href$=".jpg"], a[href$=".png"]').attr('rel', `lightbox[${lightboxId}]`);
+    $('a[href$=".jpg" i], a[href$=".png" i]').attr('rel', `lightbox[${lightboxId}]`);
 });
 
 (function () {
