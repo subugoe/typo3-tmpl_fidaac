@@ -7,4 +7,16 @@
 .search-bar_inner {
     margin: 0 auto;
     width: 960px;
+
+    .search-tips {
+        display: inline;
+    }
+}
+
+.search-form-label_search {
+    display: none;
+}
+
+.search-form {
+    display: inline;
 }
