@@ -8,6 +8,7 @@ form {
 
         legend {
             padding-left: 0;
+            font-weight: bold;
         }
     }
 
@@ -60,6 +61,12 @@ form {
     input[type=submit],
     .pz2-submitButton {
         @include form-button;
+    }
+
+    .nolabel {
+        label {
+            visibility: hidden;
+        }
     }
 }
 
