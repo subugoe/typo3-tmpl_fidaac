@@ -5,8 +5,16 @@
     "license": "GPL-2.0",
     "authors": [
         {
+            "name": "Sibylle Nägle",
+            "email": "naegle@sub.uni-goettingen.de"
+        },
+        {
+            "name": "Joëlle Blache",
+            "email": "blache@sub.uni-goettingen.de"
+        },
+        {
             "name": "Ingo Pfennigstorf",
-            "email": "i.pfennigstorf@gmail.com"
+            "email": "pfennigstorf@sub.uni-goettingen.de"
         }
     ],
     "require-dev": {
