@@ -1,0 +1,84 @@
+.misc-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: $width;
+    margin: 0 auto;
+}
+
+.misc-column {
+    &.-contact {
+        .fa {
+            color: $brand;
+        }
+
+        .misc-contact_address {
+            display: grid;
+            grid-template-columns: 1fr 10fr;
+        }
+    }
+
+    &.-funding {
+        img {
+            max-width: 15 * $font-size;
+            height: 100%;
+        }
+
+        a {
+            &::after {
+                content: '';
+            }
+        }
+
+        .misc-column-header {
+            display: none;
+        }
+
+        .misc-funding-logos {
+            height: 100%;
+            display: grid;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            align-content: stretch;
+        }
+
+        .misc-funding-logo {
+            display: block;
+            margin: 0.5em 0;
+
+            &::before {
+                padding-left: 0;
+                content: '';
+            }
+        }
+    }
+}
+
+li {
+    &.shariff-button {
+        min-width: 8 * $font-size !important;
+        max-width: 8 * $font-size !important;
+
+        &::before {
+            content: '';
+        }
+
+        a {
+            background-color: $brand !important;
+            padding-left: $font-size / 2;
+        }
+    }
+}
+
+.shariff {
+    a {
+        &::after {
+            content: '';
+        }
+    }
+
+    .share_count {
+        color: $white !important;
+        background-color: $brand !important;
+    }
+}
