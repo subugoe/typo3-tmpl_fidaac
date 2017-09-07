@@ -2,7 +2,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     max-width: $width;
-    margin: 0 auto;
+    margin: $font-size auto;
+}
+
+.misc-column-header {
+    display: none;
 }
 
 .misc-column {
@@ -27,10 +31,6 @@
             &::after {
                 content: '';
             }
-        }
-
-        .misc-column-header {
-            display: none;
         }
 
         .misc-funding-logos {
