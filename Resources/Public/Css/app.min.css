@@ -2172,7 +2172,10 @@ li {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 960px;
-  margin: 0 auto; }
+  margin: 16px auto; }
+
+.misc-column-header {
+  display: none; }
 
 .misc-column.-contact .fa {
   color: #183267; }
@@ -2187,9 +2190,6 @@ li {
 
 .misc-column.-funding a::after {
   content: ''; }
-
-.misc-column.-funding .misc-column-header {
-  display: none; }
 
 .misc-column.-funding .misc-funding-logos {
   height: 100%;
