@@ -153,9 +153,6 @@ $(document).ready(() => {
     const hoverSubmenuItem = target => {
         $(target).addClass('hover');
         $(target).siblings().removeClass('hover');
-        // $(target).parent('.navigation_default-submenu').prevAll('.navigation_default-submenu').each((index, element) => {
-        //    $(element).find('.-actSub').first().addClass('hover').css('left', $(target).width());
-        // });
     };
 
     // show submenus after removing old ones
@@ -203,12 +200,7 @@ $(document).ready(() => {
             setMenuContainerHeight();
         }, 'slow');
     };
-    /*
-    const cleanupMenuItems = () => {
-        $('.navigation_default-menuItem').removeClass('hover').css('background-color', '#f2f2f2');
-        $('.navigation_default-menuItem.-actSub, .navigation_default-menuItem.-cur, .navigation_default-menuItem.-curIfSub').css('background-color', '#e5e5e5');
-    };
-    */
+
     const hideSubmenu = () => {
         $('.navigation_default-submenu.absolute').fadeOut('slow', () => {
             setMenuContainerHeight();
