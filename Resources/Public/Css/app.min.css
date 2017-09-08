@@ -2168,7 +2168,10 @@ li {
 .search-form {
   display: inline; }
 
-.misc-wrapper {
+.misc-wrapper_outer {
+  background: #f2f2f2; }
+
+.misc-wrapper_inner {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 960px;

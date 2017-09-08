@@ -1,4 +1,8 @@
-.misc-wrapper {
+.misc-wrapper_outer {
+    background: $shadeLightest;
+}
+
+.misc-wrapper_inner {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     max-width: $width;
