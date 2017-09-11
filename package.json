@@ -50,14 +50,15 @@
     "npmrc": "^1.1.1",
     "phantomjs-prebuilt": "^2.1.7",
     "postcss": "^6.0.11",
-    "postcss-cli": "^4.1.0",
+    "postcss-cli": "^4.1.1",
     "stylelint": "^7.8.0",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-order": "^0.5.0",
-    "uglify-es": "^3.0.23"
+    "uglify-es": "^3.1.0"
   },
   "dependencies": {
     "jquery": "^3.2.1",
+    "jquery-hoverintent": "^1.9.0",
     "jquery-ui-dist": "^1.12.1",
     "lightbox2": "^2.9.0"
   }

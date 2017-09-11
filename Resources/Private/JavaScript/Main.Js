@@ -13,6 +13,6 @@ $(document).ready(() => {
     $('body').show();
     $('.navigation_breadCrumbs').hide();
     $('.toTop_inner').hide();
-    $('.navigation_default-submenu').hide();
+    $('.navigation_default-submenuContainer-outer').hide();
 
 });

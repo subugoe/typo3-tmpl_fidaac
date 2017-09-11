@@ -11,94 +11,124 @@
 
 $(document).ready(() => {
 
-    const setMenuContainerHeight = () => {
-        const outermenu = $('.navigation_default-submenuContainer-outer');
-        outermenu.css('height', '0px');
-        // firefox positions elements with "position: fixed" relativ to body
-        const firetop = $('.navigation_default').position().top + $('.navigation_default').height();
-        $('.navigation_default-submenuContainer-outer').css('top', firetop);
-        $('.navigation_default-submenu.absolute').each((index, element) => {
-            if ($(element).css('display') !== 'none') {
-                if ($(outermenu).height() < $(element).height()) {
-                    outermenu.css('height', $(element).css('height'));
-                }
+    const cleanupMenuItem = (target) => {
+        $(target).siblings().find('.navigation_default-submenuContainer-outer').hide();
+        $(target).siblings().find('.navigation_default-submenu').addClass('visible-hidden');
+        $(target).siblings().find('.clone').remove();
+        $(target).siblings().removeClass('hover').removeClass('cloned');
+        const submenu = $(target).find('.navigation_default-submenu');
+        $(submenu).find('.navigation_default-submenu').removeClass('visible-shown').addClass('visible-hidden');
+        $(target).removeClass('cloned');
+    };
+
+    const cleanupSubmenuItem = (target) => {
+        $(target).siblings().find('.navigation_default-submenu').addClass('visible-hidden');
+        $(target).siblings().removeClass('hover').removeClass('cloned');
+
+        const parent = $(target).parent();
+        const next = parent.nextAll('.clone');
+        next.remove();
+        $(target).removeClass('cloned');
+    };
+
+    /**
+     * One function to show menu, so that it can be invoked recursivly
+     * Subsubmenus are cloned, so that they are independent of the DOM, and can be positioned absolutely
+     */
+    const showMenu = (target) => {
+        const submenu = $(target).find('.navigation_default-submenu').first();
+        let container = '';
+
+        if ($(target).hasClass('navigation_default-submenuItem')) {
+            // subsubmenu
+
+            container = $(target).parents('.navigation_default-submenuContainer-outer').first();
+            const clonemenu = submenu.clone().addClass('clone');
+            if (clonemenu.length > 0) {
+                $(target).addClass('cloned');
+
+                $(container).find('.navigation_default-submenuContainer-inner').append(clonemenu);
+                $(clonemenu).removeClass('visible-hidden').addClass('visible-shown');
+
+                // add bindings to newly created elements
+                $(clonemenu).find('.navigation_default-submenuItem').hoverIntent({
+                    over: (event) => {
+                        const subTarget = event.currentTarget;
+                        cleanupSubmenuItem(subTarget);
+                        $('.cloned').addClass('hover');
+                        showMenu(subTarget);
+                    },
+                    out: () => {
+                        $('.cloned').removeClass('hover');
+                    },
+                    // increased timeout necessary for FF (default = 0)
+                    timeout: 250
+                });
             }
-        });
-    };
+        } else {
+            // submenu
 
-    const cleanSubmenuContainer = (target) => {
-        $.when($(target).siblings().find('.navigation_default-submenu').fadeOut('fast')).done(() => {
-            setMenuContainerHeight();
-            return true;
-        });
-    };
-
-    const hoverSubmenuItem = (target) => {
-        $(target).addClass('hover');
-        $(target).siblings().removeClass('hover');
-    };
-
-    // show submenus after removing old ones
-    const showSubmenu = (target) => {
-        $.when(cleanSubmenuContainer(target)).done(() => {
-            const submenu = $(target).find('.navigation_default-submenu').first();
-            const parent = $(submenu).parents('.navigation_default-submenu');
-            let top = $('.navigation_default-menu').height();
-            let left = 0;
-            if (parent.length > 0) {
-                left = $(parent).position().left + $(parent).width();
-                top = 0;
-            }
-            submenu.addClass('absolute').css({
-                'left': `${left}px`,
-                'top': `${top}px`
-            }).fadeIn('slow');
-            setMenuContainerHeight();
-
-            $('.navigation_default-submenuContainer-outer').fadeIn('fast');
-
-            $(submenu).children('.navigation_default-submenuItem').mouseenter((event) => {
-                const subtarget = $(event.currentTarget);
-                showSubmenu(subtarget);
-                hoverSubmenuItem(subtarget);
-            });
-        });
+            container = $(target).find('.navigation_default-submenuContainer-outer').first();
+            $(container).show();
+            $(submenu).removeClass('visible-hidden').addClass('visible-shown');
+        }
+        // Height of header is different on start or content page
+        $(container).css('top', $('.navigation_default').position().top + $('.navigation_default').height());
     };
 
     const exposePath = (target) => {
-        const closest = $(target).find('.-actSub');
-        if ($(closest).length > 0) {
-            showSubmenu($(closest));
-            exposePath($(closest));
+        const subTarget = $(target).find('.-actSub, .-cur, .-act, .-curSub').first();
+        if ($(subTarget).length > 0) {
+            showMenu($(subTarget));
+            exposePath($(subTarget));
         }
     };
 
-    const hoverMenuItem = (target) => {
-        // set colors explicitly, as it is overriding color of loaded page
-        $(target).addClass('hover').css('background-color', '#e5e5e5');
-        $(target).siblings().removeClass('hover').css('background-color', '#f2f2f2');
-        showSubmenu($(target));
-        setTimeout(() => {
-            exposePath(target);
-            setMenuContainerHeight();
-        }, 'slow');
-    };
-
-    const hideSubmenu = () => {
-        $('.navigation_default-submenu.absolute').fadeOut('slow', () => {
-            setMenuContainerHeight();
-        });
-    };
-
-    $('.navigation_default-menuItem').mouseenter((event) => {
-        const target = event.currentTarget;
-        hoverMenuItem(target);
+    $('.navigation_default-menuItem').hoverIntent({
+        over: (event) => {
+            const target = event.currentTarget;
+            cleanupMenuItem(target);
+            if ($(target).find('.-curSub, .-cur, .-actSub, .-act').length > 0) {
+                showMenu(target);
+                exposePath(target);
+            } else {
+                showMenu(target);
+            }
+        },
+        out: () => {
+            // nothing to do
+        },
+        timeout: 250
     });
 
-    $('.navigation_default').mouseleave(() => {
-        setTimeout(() => {
-            hideSubmenu();
-        }, 'slow');
+    $('.navigation_default-submenuItem').hoverIntent({
+        over: (event) => {
+            const target = event.currentTarget;
+            cleanupSubmenuItem(target);
+            $(target).addClass('hover');
+            showMenu(target);
+        },
+        out: (event) => {
+            const target = event.currentTarget;
+            $(target).removeClass('hover');
+        },
+        timeout: 250
+    });
+
+    /**
+     * Remove whole menu when mouse is outside
+     */
+    $('.navigation_default').hoverIntent({
+        over: () => {
+            // nothing to do
+        },
+        out: () => {
+            $('.navigation_default-submenuContainer-outer').hide();
+            $('.navigation_default-submenuItems').removeClass('hover');
+            $('.clone').remove();
+            $('.cloned').removeClass('cloned');
+        },
+        timeout: 250
     });
 
 
