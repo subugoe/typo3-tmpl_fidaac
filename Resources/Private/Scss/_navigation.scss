@@ -89,6 +89,7 @@
     align-items: center;
     flex-grow: 1;
     justify-content: center;
+    background-color: $shadeLightest;
 
     svg {
         display: flex;
@@ -112,17 +113,12 @@
         background-color: $shadeLighter;
     }
 
-    &.hover {
+    &:hover {
         background-color: $shadeLighter;
 
-        &:not(.-actSub) > svg {
+        & > svg {
             transform: rotate(90deg);
         }
-    }
-
-    &.-actSub > svg,
-    &.-curIfSub > svg {
-        transform: rotate(90deg);
     }
 }
 
@@ -148,27 +144,33 @@
     padding-bottom: 16px;
     padding-top: 8px;
     align-items: stretch;
-
-    &.absolute {
-        @include width-l-3;
-        position: absolute;
-        background: $shadeLighter;
-        z-index: 100;
-        margin: 0;
-    }
 }
 
 .navigation_default-submenuContainer-outer {
+    display: flex;
     flex: 1 0 100vh;
-    height: 50px;
     position: fixed;
     right: 0;
     left: 0;
-    top: 136px;
+    top: 197px;
     width: 100%;
     background: $shadeLighter;
     z-index: 10;
-    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation_default-submenuContainer-inner {
+    @include media-l {
+        @include width-l-12;
+    }
+
+    @include media-m {
+        @include width-m-12;
+    }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .navigation_default-submenuItem {
@@ -180,6 +182,7 @@
     margin: 4px 12px;
     justify-content: flex-start;
     align-items: center;
+    z-index: 20;
 
     svg {
         margin-left: 8px;
@@ -208,7 +211,13 @@
         font-weight: bold;
     }
 
-    &.hover > a {
+    &:hover {
+        & > a {
+            background-color: $shadeLight;
+        }
+    }
+
+    &.hover a {
         background-color: $shadeLight;
     }
 }

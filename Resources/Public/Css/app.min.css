@@ -1,14 +1,53 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.eot?v=1.1.0");
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.svg?v=1.1.0#Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.eot?v=1.1.0");
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.svg?v=1.1.0#LightItalic") format("svg");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.eot?v=1.1.0");
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.svg?v=1.1.0#Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.eot?v=1.1.0");
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.svg?v=1.1.0#Italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.eot?v=1.1.0");
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.svg?v=1.1.0#Semibold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.eot?v=1.1.0");
+  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.svg?v=1.1.0#SemiboldItalic") format("svg");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap; }
+
 @mixi width-l-7 {
   width: 560px; }
-
-.visible-hidden {
-  position: absolute;
-  top: 0;
-  left: -999px;
-  height: 1px;
-  width: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap; }
 
 .navigation_breadCrumbs {
   -ms-flex-item-align: center;
@@ -1732,7 +1771,8 @@ figure {
           flex-grow: 1;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  background-color: #f2f2f2; }
   @media (min-width: 960px) {
     .navigation_default-menuItem {
       padding: 8px 0; } }
@@ -1750,15 +1790,11 @@ figure {
     margin: 0; }
   .navigation_default-menuItem.-actSub:first-child, .navigation_default-menuItem.-curIfSub:first-child, .navigation_default-menuItem.-cur:first-child {
     background-color: #e5e5e5; }
-  .navigation_default-menuItem.hover {
+  .navigation_default-menuItem:hover {
     background-color: #e5e5e5; }
-    .navigation_default-menuItem.hover:not(.-actSub) > svg {
+    .navigation_default-menuItem:hover > svg {
       -webkit-transform: rotate(90deg);
               transform: rotate(90deg); }
-  .navigation_default-menuItem.-actSub > svg,
-  .navigation_default-menuItem.-curIfSub > svg {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg); }
 
 .navigation_default-submenu {
   list-style-type: none;
@@ -1787,26 +1823,44 @@ figure {
   @media (max-width: 768px) {
     .navigation_default-submenu {
       width: 320px; } }
-  .navigation_default-submenu.absolute {
-    width: 240px;
-    position: absolute;
-    background: #e5e5e5;
-    z-index: 100;
-    margin: 0; }
 
 .navigation_default-submenuContainer-outer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 100vh;
           flex: 1 0 100vh;
-  height: 50px;
   position: fixed;
   right: 0;
   left: 0;
-  top: 136px;
+  top: 197px;
   width: 100%;
   background: #e5e5e5;
   z-index: 10;
-  display: none; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.navigation_default-submenuContainer-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  @media (min-width: 960px) {
+    .navigation_default-submenuContainer-inner {
+      width: 960px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    .navigation_default-submenuContainer-inner {
+      width: 768px; } }
 
 .navigation_default-submenuItem {
   display: -webkit-box;
@@ -1824,7 +1878,8 @@ figure {
           justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  z-index: 20; }
   .navigation_default-submenuItem svg {
     margin-left: 8px; }
   .navigation_default-submenuItem::before {
@@ -1842,7 +1897,9 @@ figure {
   .navigation_default-submenuItem.-actIfSub > a,
   .navigation_default-submenuItem.-cur > a {
     font-weight: bold; }
-  .navigation_default-submenuItem.hover > a {
+  .navigation_default-submenuItem:hover > a {
+    background-color: #a8a8a8; }
+  .navigation_default-submenuItem.hover a {
     background-color: #a8a8a8; }
 
 .news .article {
@@ -1899,54 +1956,6 @@ figure {
 
 .news .page-navigation a::after {
   content: ""; }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.eot?v=1.1.0");
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Light.svg?v=1.1.0#Light") format("svg");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.eot?v=1.1.0");
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-LightItalic.svg?v=1.1.0#LightItalic") format("svg");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.eot?v=1.1.0");
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Regular.svg?v=1.1.0#Regular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.eot?v=1.1.0");
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Italic.svg?v=1.1.0#Italic") format("svg");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.eot?v=1.1.0");
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-Semibold.svg?v=1.1.0#Semibold") format("svg");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.eot?v=1.1.0");
-  src: url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.woff2?v=1.1.0") format("woff2"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.woff?v=1.1.0") format("woff"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.ttf?v=1.1.0") format("truetype"), url("/typo3conf/ext/tmpl_fidaac/Resources/Public/Fonts/OpenSans-SemiboldItalic.svg?v=1.1.0#SemiboldItalic") format("svg");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -2150,6 +2159,24 @@ li {
 
 .printHeader {
   display: none; }
+
+.hidden {
+  display: none !important; }
+
+.visible-hidden {
+  position: absolute;
+  top: 0;
+  left: -999px;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; }
+
+.visible-shown {
+  position: static;
+  height: auto;
+  width: auto;
+  clip: auto; }
 
 .search-bar_outer {
   background: #f4d64a;
