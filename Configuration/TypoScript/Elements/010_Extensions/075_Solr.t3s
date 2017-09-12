@@ -1,0 +1,8 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:solr/Configuration/TypoScript/Solr/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:solr/Configuration/TypoScript/Examples/IndexQueueNews/setup.txt">
+
+plugin.tx_solr {
+    solr {
+        host = solr
+    }
+}
