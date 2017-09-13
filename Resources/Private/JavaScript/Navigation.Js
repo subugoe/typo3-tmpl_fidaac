@@ -143,12 +143,12 @@ $(document).ready(() => {
             $('.overlay').hide();
             $('.navigation_default').show();
             $('.navigation_breadCrumbs').hide();
-            $('.toTop_inner').fadeOut();
+            $('.toTop_inner').slideUp();
         } else if ($('.toTop_inner').css('display') === 'none') {
             $('.overlay').show();
             $('.navigation_default').hide();
             $('.navigation_breadCrumbs').show();
-            $('.toTop_inner').fadeIn();
+            $('.toTop_inner').slideDown();
         }
     });
 
