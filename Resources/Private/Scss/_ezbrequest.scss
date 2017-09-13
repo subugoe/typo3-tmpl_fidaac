@@ -1,0 +1,30 @@
+.tx-ezbrequest-pi1 {
+
+    span {
+        &.ampel {
+            position: relative !important;
+
+            a {
+                &::after {
+                    content: '';
+                }
+            }
+        }
+    }
+
+    #journalList,
+    .alphabetMenu {
+        li {
+            &::before {
+                padding-left: 0;
+                content: '';
+            }
+
+            a {
+                &::after {
+                    content: '';
+                }
+            }
+        }
+    }
+}
