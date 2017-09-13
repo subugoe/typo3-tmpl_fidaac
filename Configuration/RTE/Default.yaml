@@ -9,6 +9,7 @@ editor:
       contentsCss: ['EXT:rte_ckeditor/Resources/Public/Css/contents.css', 'EXT:tmpl_fidaac/Resources/Public/Css/rte.css']
       stylesSet:
         - { name: 'DefinitionList', element: 'p', attributes: {'class': 'literature'} }
+        - { name: 'Default style', element: 'p', attributes: {'class': 'default'} }
       toolbarGroups:
         - { name: 'styles', groups: [ 'styles' ] }
         - '/'
