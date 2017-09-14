@@ -1,0 +1,28 @@
+imports:
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Processing.yaml' }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml' }
+
+editor:
+   config:
+      format_tags: 'p;h1;h2;h3;pre'
+      contentsCss: ['EXT:rte_ckeditor/Resources/Public/Css/contents.css', 'EXT:tmpl_fidaac/Resources/Public/Css/rte.css']
+      stylesSet:
+        - { name: 'DefinitionList', element: 'p', attributes: {'class': 'literature'} }
+        - { name: 'Default style', element: 'p', attributes: {'class': 'default'} }
+      toolbarGroups:
+        - { name: 'styles', groups: [ 'styles' ] }
+        - '/'
+        - { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }
+        - { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] }
+        - { name: 'links', groups: [ 'links' ] }
+        - { name: 'insert', groups: [ 'insert' ] }
+        - { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] }
+        - { name: 'document', groups: [ 'mode', 'document', 'doctools' ] }
+        - { name: 'clipboard', groups: [ 'clipboard', 'undo' ] }
+        - { name: 'forms', groups: [ 'forms' ] }
+        - { name: 'colors', groups: [ 'colors' ] }
+        - { name: 'tools', groups: [ 'tools' ] }
+        - { name: 'others', groups: [ 'others' ] }
+        - { name: 'about', groups: [ 'about' ] }
+      removeButtons: 'Iframe,PageBreak,Smiley,HorizontalRule,Flash,Image,Anchor,Scayt,Cut,Undo,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Blockquote,CreateDiv,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,BidiLtr,BidiRtl,Language,Underline,Strike,Font,FontSize,Save,NewPage,Preview,Print,Templates,Copy,Redo,Paste,PasteText,PasteFromWord,TextColor,BGColor,Maximize,ShowBlocks,About'
