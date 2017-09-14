@@ -1651,8 +1651,8 @@ figure {
     content: "";
     padding: 0;
     margin: 0; }
-  .navigation_default-menuItem.-actSub:first-child, .navigation_default-menuItem.-curIfSub:first-child, .navigation_default-menuItem.-cur:first-child {
-    background-color: #e5e5e5; }
+  .navigation_default-menuItem.-actSub > a, .navigation_default-menuItem.-curIfSub > a, .navigation_default-menuItem.-cur > a {
+    font-weight: bold; }
   .navigation_default-menuItem:hover {
     background-color: #e5e5e5; }
     .navigation_default-menuItem:hover > svg {
@@ -4067,6 +4067,7 @@ a.ui-button:active,
 .ui-widget-shadow {
   -webkit-box-shadow: -8px -8px 8px #aaaaaa;
   box-shadow: -8px -8px 8px #aaaaaa; }
+
 .tx-ezbrequest-pi1 span.ampel {
   position: relative !important; }
   .tx-ezbrequest-pi1 span.ampel a::after {
