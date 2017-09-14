@@ -1,10 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<div id="c{data.uid}">
-    <f:render partial="Header" arguments="{_all}"/>
+<f:layout name="Default" />
+
+<f:section name="Header">
+    <f:render partial="Header/All" arguments="{_all}"/>
+</f:section>
+
+<f:section name="Main">
     <div class="content">
-        <f:render partial="MediaGallery" arguments="{_all}"/>
+        <f:render partial="Media/Gallery" arguments="{_all}"/>
         <f:format.html>{data.bodytext}</f:format.html>
     </div>
-    <f:render partial="Footer" arguments="{_all}"/>
-</div>
+</f:section>
 </html>
