@@ -156,8 +156,18 @@ $(document).ready(() => {
      * When menuButton or page-up-button is clicked, switch back to full menu
      */
     $('.navigation_menuButton, .toTop_inner').on('click', () => {
-        $('.scrolled').animate({scrollTop: 0}, 'fast');
-        $('.navigation_breadCrumbs').hide();
+        $.when($('.scrolled').animate({scrollTop: 0}, 'fast')).done(() => {
+            $.when($('.navigation_breadCrumbs').hide()).done(() => {
+                const target = $('.-actSub, .curSub').first();
+                cleanupMenuItem(target);
+                if ($(target).find('.-curSub, .-cur, .-actSub, .-act').length > 0) {
+                    showMenu(target);
+                    exposePath(target);
+                } else {
+                    showMenu(target);
+                }
+            });
+        });
     });
 
 });
