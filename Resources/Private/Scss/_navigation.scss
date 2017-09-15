@@ -107,10 +107,12 @@
         margin: 0;
     }
 
-    &.-actSub:first-child,
-    &.-curIfSub:first-child,
-    &.-cur:first-child {
-        background-color: $shadeLighter;
+    &.-actSub,
+    &.-curIfSub,
+    &.-cur {
+        & > a {
+            font-weight: bold;
+        }
     }
 
     &:hover {
