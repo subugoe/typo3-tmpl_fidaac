@@ -11,3 +11,4 @@ npm-debug.log
 /vendor/
 /composer.lock
 Build/JavaScript/*
+app.min.css.map
