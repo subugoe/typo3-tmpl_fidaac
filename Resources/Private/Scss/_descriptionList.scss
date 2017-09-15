@@ -24,23 +24,23 @@ dl {
 dt {
     @include media-l {
         @include span-l-1;
-        padding-bottom: 16px;
-        padding-left: 8px;
+        padding-bottom: $base-font-size;
+        padding-left: $base-font-size/2;
         align-items: flex-end !important;
         text-align: right;
     }
 
     @include media-m {
         @include span-m-1;
-        padding-bottom: 16px;
-        padding-left: 8px;
+        padding-bottom: $base-font-size;
+        padding-left: $base-font-size/2;
         align-items: flex-end !important;
         text-align: right;
     }
 
     @include media-s {
         @include span-s-1;
-        padding-bottom: 4px;
+        padding-bottom: $base-font-size/4;
         align-items: flex-start !important;
         text-align: left;
     }
@@ -62,13 +62,13 @@ dd {
 
     @include media-m {
         @include span-m-9;
-        padding-bottom: 16px;
-        padding-left: 8px;
+        padding-bottom: $base-font-size;
+        padding-left: $base-font-size/2;
     }
 
     @include media-s {
         @include span-s-5;
-        padding-bottom: 4px;
+        padding-bottom: $base-font-size/4;
     }
     display: flex;
     margin: 0;

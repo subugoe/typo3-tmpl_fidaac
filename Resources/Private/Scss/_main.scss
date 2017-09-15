@@ -27,9 +27,9 @@
 
 .doubleColumn {
     .content {
-        font-size: 16px;
+        font-size: $base-font-size;
         column-count: 2;
-        column-gap: 15px;
+        column-gap: $gutter - 1;
     }
 }
 
@@ -50,20 +50,20 @@
 }
 
 .literature {
-    padding-left: 16px;
-    text-indent: -16px;
-    font-size: 14px;
+    padding-left: $gutter;
+    text-indent: -$gutter;
+    font-size: $base-font-size - 1;
 }
 
 .toTop_outer {
     @include media-l {
         @include width-l-12;
-        bottom: 16px;
+        bottom: $gutter;
     }
 
     @include media-m {
         @include width-m-12;
-        bottom: 16px;
+        bottom: $gutter;
     }
 
     @include media-s {
@@ -79,11 +79,11 @@
 
 .toTop_inner {
     @include media-l {
-        width: 36px;
+        width: ($gutter * 2) + 4;
     }
 
     @include media-m {
-        width: 36px;
+        width: ($gutter * 2) + 4;
     }
 
     @include media-s {
@@ -94,7 +94,7 @@
     background-color: $brand;
     font-size: 24px;
     color: $white;
-    height: 36px;
+    height: ($gutter * 2) + 4;
     cursor: pointer;
     z-index: 999999;
     pointer-events: all;

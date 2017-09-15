@@ -7,9 +7,16 @@ $shadeLighter: #e5e5e5;
 $shadeLightest: #f2f2f2;
 $white: #fff;
 
-$font-size: 16px;
+$small-font-size: 15px;
+$base-font-size: 16px;
+$large-font-size: 24px;
+$huge-font-size: 32px;
+
+$base-line-height: 24px;
+$large-line-height: 32px;
+$huge-line-height: 40px;
 
 $width: 960px;
 
-$c: 64px;
-$g: 16px;
+$column: 64px;
+$gutter: 16px;
