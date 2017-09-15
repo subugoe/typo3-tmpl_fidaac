@@ -173,10 +173,8 @@ $(document).ready(() => {
                         const subTarget = event.currentTarget;
                         cleanupSubmenuItem(subTarget);
                         $('.cloned').addClass('hover');
+                        $(target).parents('.-sub').addClass('hover');
                         showMenu(subTarget);
-                    },
-                    out: () => {
-                        $('.cloned').removeClass('hover');
                     },
                     // increased timeout necessary for FF (default = 0)
                     timeout: 250
@@ -223,11 +221,8 @@ $(document).ready(() => {
             const target = event.currentTarget;
             cleanupSubmenuItem(target);
             $(target).addClass('hover');
+            $(target).parents('.-sub').addClass('hover');
             showMenu(target);
-        },
-        out: event => {
-            const target = event.currentTarget;
-            $(target).removeClass('hover');
         },
         timeout: 250
     });

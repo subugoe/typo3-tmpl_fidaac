@@ -13,7 +13,7 @@
     "createMainCss": "./node_modules/.bin/node-sass Resources/Private/Scss/App.scss | ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' --use cssnano > Resources/Public/Css/app.min.css",
     "createPrintCss": "./node_modules/.bin/node-sass Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' --use cssnano > Resources/Public/Css/print.css",
     "createCss": "npm run createMainCss; npm run createPrintCss",
-    "devMainCss": "./node_modules/.bin/node-sass Resources/Private/Scss/App.scss Resources/Public/Css/app.min.css; ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' Resources/Public/Css/app.min.css -o Resources/Public/Css/app.min.css",
+    "devMainCss": "./node_modules/.bin/node-sass --source-map true Resources/Private/Scss/App.scss Resources/Public/Css/app.min.css; ./node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' Resources/Public/Css/app.min.css -o Resources/Public/Css/app.min.css",
     "devPrintCss": "./node_modules/.bin/node-sass --output-style expanded --source-comments Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --no-map --use autoprefixer -b 'last 2 versions' > Resources/Public/Css/print.css",
     "devCss": "npm run devMainCss; npm run devPrintCss",
     "uglifyjs": "./node_modules/.bin/uglifyjs Build/JavaScript/app.js -o Resources/Public/JavaScript/app.min.js",
