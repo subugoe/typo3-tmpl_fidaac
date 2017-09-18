@@ -3,7 +3,7 @@
 
     .categories_link {
         background: $accent;
-        border-radius: 4px;
-        padding: $c/34 $c/8;
+        border-radius: $gutter / 4;
+        padding: $gutter/8 $gutter/8;
     }
 }

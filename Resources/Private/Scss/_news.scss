@@ -8,16 +8,10 @@
             color: $shadeDarkest;
         }
 
-        .header {
-            font-size: 24px;
-            font-weight: bold;
-            line-height: 32px;
-        }
-
         .meta {
             color: $shadeDarkest;
-            font-size: 16px;
-            line-height: 24px;
+            font-size: $base-font-size;
+            line-height: $base-line-height;
 
             .news_list-category {
                 display: flex;
@@ -29,9 +23,9 @@
 
                 .-item {
                     background: $accent;
-                    border-radius: 4px;
-                    padding: 0.1 * $g 0.5 * $g;
-                    margin-right: 0.5 * $g;
+                    border-radius: $base-font-size/4;
+                    padding: $base-font-size/8 $base-font-size/2;
+                    margin: $base-font-size/2 0;
                     white-space: nowrap;
                 }
             }
@@ -46,6 +40,18 @@
     }
 
     .-img-wrap {
+        @include media-l {
+            @include span-l-2;
+        }
+
+        @include media-m {
+            @include span-m-2;
+        }
+
+        @include media-s {
+            @include span-s-2;
+        }
+
         a {
             border: none;
             padding: 0;
@@ -53,13 +59,60 @@
 
         img {
             box-sizing: border-box;
-            width: (2 * $c);
+            width: (2 * $column);
             height: auto;
             border: 0.5px solid $shadeLight;
+            // margin: 0 $base-font-size/2 $base-font-size/2 0;
+        }
+    }
+
+    .teaser-text {
+        @include media-l {
+            @include span-l-10;
+        }
+
+        @include media-m {
+            @include span-m-10;
+        }
+
+        @include media-s {
+            @include span-s-6;
         }
     }
 
     .page-navigation a::after {
         content: "";
+    }
+}
+
+.news_header {
+    @include media-l {
+        @include span-l-8;
+    }
+
+    @include media-m {
+        @include span-m-8;
+    }
+
+    @include media-s {
+        @include span-s-6;
+    }
+    font-size: $large-font-size;
+    line-height: $large-line-height;
+    font-weight: bold;
+    align-content: flex-start;
+
+    .title {
+        @include media-l {
+            @include span-l-8;
+        }
+
+        @include media-m {
+            @include span-m-8;
+        }
+
+        @include media-s {
+            @include span-s-6;
+        }
     }
 }
