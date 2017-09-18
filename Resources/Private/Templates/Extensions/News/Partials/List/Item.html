@@ -1,16 +1,16 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-	  data-namespace-typo3-fluid="true">
+    xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+    data-namespace-typo3-fluid="true">
 <!--
-	=====================
-		Partials/List/Item.html
+    =====================
+        Partials/List/Item.html
 -->
 <div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
-	<n:excludeDisplayedNews newsItem="{newsItem}"/>
+    <n:excludeDisplayedNews newsItem="{newsItem}"/>
 
-	<f:if condition="{newsItem.falMedia}">
-		<!-- fal media preview element -->
-		<div class="-img-wrap">
+    <f:if condition="{newsItem.falMedia}">
+        <!-- fal media preview element -->
+        <div class="-img-wrap">
             <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
                 <f:if condition="{newsItem.falMediaPreviews}">
                     <f:then>
@@ -36,13 +36,13 @@
                     </f:then>
                     <f:else>
                         <f:if condition="{settings.displayDummyIfNoMedia}">
-						<span class="no-media-element">
-							<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-								<f:image src="{settings.list.media.dummyImage}" title="" alt=""
+                        <span class="no-media-element">
+                            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                                <f:image src="{settings.list.media.dummyImage}" title="" alt=""
                                          maxWidth="{settings.list.media.image.maxWidth}"
                                          maxHeight="{settings.list.media.image.maxHeight}"/>
-							</n:link>
-						</span>
+                            </n:link>
+                        </span>
                         </f:if>
                     </f:else>
                 </f:if>
@@ -63,12 +63,12 @@
                 <!-- date -->
                 <time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
                     <f:format.date format="{f:translate(key:'LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:dateFormat')}">{newsItem.datetime}</f:format.date>
-					<meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}"/>
+                    <meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}"/>
                 </time>
 
                 <!-- author -->
                 <f:if condition="{newsItem.author}">
-				<span class="-by">
+                <span class="-by">
                     <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:author_simple" />
                 </span>
                     {newsItem.author}
@@ -83,27 +83,27 @@
                 <f:if condition="{newsItem.tags}">
                     <!-- Tags -->
                     <span class="news-list-tags" itemprop="keywords">
-					<f:for each="{newsItem.tags}" as="tag">
-						{tag.title}
-					</f:for>
-				</span>
+                    <f:for each="{newsItem.tags}" as="tag">
+                    {tag.title}
+                    </f:for>
+                </span>
                 </f:if>
             </div>
         </div>
     </div>
 
-	<!-- teaser -->
-	<div class="teaser-text">
+    <!-- teaser -->
+    <div class="teaser-text">
         <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
         <f:if condition="{newsItem.teaser}">
-			<f:then>
-				<div itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
-			</f:then>
-			<f:else>
-				<div itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
-			</f:else>
-		</f:if>
+            <f:then>
+                <div itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+            </f:then>
+            <f:else>
+                <div itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+            </f:else>
+        </f:if>
         </n:link>
-	</div>
+    </div>
 </div>
 </html>
