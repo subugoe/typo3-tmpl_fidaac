@@ -143,12 +143,12 @@ $(document).ready(() => {
             $('.overlay').hide();
             $('.navigation_default').show();
             $('.navigation_breadCrumbs').hide();
-            $('.toTop_inner').slideUp();
-        } else if ($('.toTop_inner').css('display') === 'none') {
+            $('.toTop_inner').css('visibility', 'hidden');
+        } else if ($('.toTop_inner').css('visibility') === 'hidden') {
             $('.overlay').show();
             $('.navigation_default').hide();
             $('.navigation_breadCrumbs').show();
-            $('.toTop_inner').slideDown();
+            $('.toTop_inner').css('visibility', 'visible');
         }
     });
 
