@@ -1420,6 +1420,30 @@ figure {
   text-indent: -16px;
   font-size: 14px; }
 
+.toTop_outer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  pointer-events: none;
+  margin-top: -36px; }
+  @media (min-width: 960px) {
+    .toTop_outer {
+      width: 960px;
+      bottom: 16px; } }
+  @media (min-width: 768px) and (max-width: 960px) {
+    .toTop_outer {
+      width: 768px;
+      bottom: 16px; } }
+  @media (max-width: 768px) {
+    .toTop_outer {
+      width: 384px;
+      bottom: 0; } }
+
 .toTop_inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1445,29 +1469,6 @@ figure {
       width: 384px; } }
   .toTop_inner svg {
     fill: #fff; }
-
-.toTop_outer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: -webkit-sticky;
-  position: sticky;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  pointer-events: none; }
-  @media (min-width: 960px) {
-    .toTop_outer {
-      width: 960px;
-      bottom: 16px; } }
-  @media (min-width: 768px) and (max-width: 960px) {
-    .toTop_outer {
-      width: 768px;
-      bottom: 16px; } }
-  @media (max-width: 768px) {
-    .toTop_outer {
-      width: 384px;
-      bottom: 0; } }
 
 .navigation_outer {
   background-color: #f2f2f2;
