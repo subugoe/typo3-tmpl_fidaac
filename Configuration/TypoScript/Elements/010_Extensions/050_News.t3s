@@ -1,9 +1,9 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TypoScript/setup.txt">
 plugin {
     tx_news {
         view {
-            templateRootPaths = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Templates
-            partialRootPaths = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Partials
-            layoutRootPaths = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Layouts
+            templateRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Templates/
+            partialRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Partials/
         }
 
         settings {
