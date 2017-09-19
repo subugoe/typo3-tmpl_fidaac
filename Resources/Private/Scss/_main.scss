@@ -27,9 +27,9 @@
 
 .doubleColumn {
     .content {
-        font-size: $base-font-size;
+        font-size: $base-font-size-l;
         column-count: 2;
-        column-gap: $gutter - 1;
+        column-gap: $magic-l - 1;
     }
 }
 
@@ -50,20 +50,20 @@
 }
 
 .literature {
-    padding-left: $gutter;
-    text-indent: -$gutter;
-    font-size: $base-font-size - 1;
+    padding-left: $magic-l;
+    text-indent: -$magic-l;
+    font-size: $base-font-size-l - 1;
 }
 
 .toTop_outer {
     @include media-l {
         @include width-l-12;
-        bottom: $gutter;
+        bottom: $magic-l;
     }
 
     @include media-m {
         @include width-m-12;
-        bottom: $gutter;
+        bottom: $magic-l;
     }
 
     @include media-s {
@@ -79,11 +79,11 @@
 
 .toTop_inner {
     @include media-l {
-        width: ($gutter * 2) + 4;
+        width: ($magic-l * 2) + 4;
     }
 
     @include media-m {
-        width: ($gutter * 2) + 4;
+        width: ($magic-l * 2) + 4;
     }
 
     @include media-s {
@@ -94,7 +94,7 @@
     background-color: $brand;
     font-size: 24px;
     color: $white;
-    height: ($gutter * 2) + 4;
+    height: ($magic-l * 2) + 4;
     cursor: pointer;
     z-index: 999999;
     pointer-events: all;

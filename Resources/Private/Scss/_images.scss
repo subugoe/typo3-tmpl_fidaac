@@ -1,8 +1,8 @@
 figure {
     margin: 0;
     display: table;
-    margin-bottom: $base-line-height/2;
-    margin-top: $small-line-height/4;
+    margin-bottom: $magic-l/2;
+    margin-top: $magic-l/4;
 
     img {
         margin-bottom: -4px;
@@ -24,8 +24,8 @@ figure {
     .image-caption {
         text-align: right;
         font-weight: 300;
-        font-size: $small-font-size;
-        line-height: $small-line-height;
+        font-size: $small-font-size-l;
+        line-height: $small-line-height-l;
         display: table-caption;
         caption-side: bottom;
     }
@@ -44,11 +44,11 @@ figure {
     float: left;
 
     img {
-        padding-right: $base-font-size;
+        padding-right: $magic-l;
     }
 
     .image-caption {
-        padding-right: $base-font-size;
+        padding-right: $magic-l;
     }
 }
 
@@ -56,10 +56,10 @@ figure {
     float: right;
 
     img {
-        padding-left: $base-font-size;
+        padding-left: $magic-l;
     }
 
     .image-caption {
-        padding-left: $base-font-size;
+        padding-left: $magic-l;
     }
 }

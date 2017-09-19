@@ -5,29 +5,32 @@
     flex: 0 0 auto;
     justify-content: center;
     list-style-type: none;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
+    font-size: $base-font-size-l;
+    line-height: $base-line-height-l;
     font-weight: lighter;
 }
 
 .footer_inner {
     @include media-l {
         @include span-l-12;
-        padding-top: $base-font-size/2;
+        padding-top: $magic-l/2;
+        padding-bottom: $magic-l;
     }
 
     @include media-m {
         @include span-m-12;
-        padding-top: $base-font-size/2;
+        padding-top: $magic-m/2;
+        padding-bottom: $magic-m;
     }
 
     @include media-s {
         @include span-s-6;
+        padding-top: $magic-s/2;
+        padding-bottom: $magic-s;
     }
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    padding-bottom: $base-font-size;
     justify-content: flex-start !important;
     align-items: flex-start !important;
 
@@ -57,23 +60,25 @@
 
     @include media-l {
         @include span-l-2;
-        padding-top: $base-font-size/2;
+        padding-top: $magic-l/2;
+        padding-right: $magic-l;
     }
 
     @include media-m {
         @include span-m-3;
-        padding-top: $base-font-size/2;
+        padding-top: $magic-m/2;
+        padding-right: $magic-m;
     }
 
     @include media-s {
         @include span-s-6;
         @include flex-left;
-        padding-top: $base-font-size;
+        padding-top: $magic-s;
+        padding-right: $magic-s;
     }
     display: flex;
     font-weight: normal;
     text-align: right;
-    padding-right: $base-font-size;
 }
 
 .footer_secondLevel {
@@ -81,24 +86,24 @@
 
     @include media-l {
         @include span-l-10;
-        padding-top: $base-font-size/2;
+        padding-top: $magic-l/2;
     }
 
     @include media-m {
         @include span-m-9;
-        padding-top: $base-font-size/2;
+        padding-top: $magic-m/2;
     }
 
     @include media-s {
         @include span-s-6;
-        padding-top: $base-font-size/4;
+        padding-top: $magic-s;
     }
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 
     a {
-        padding-right: $base-font-size;
-        padding-bottom: $base-font-size/4;
+        padding-right: $magic-l;
+        padding-bottom: $magic-l/4;
     }
 }

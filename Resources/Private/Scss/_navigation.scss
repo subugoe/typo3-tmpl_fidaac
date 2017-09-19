@@ -36,13 +36,13 @@
 
 .navigation_default {
     @include media-l {
-        font-size: $base-font-size+4;
-        line-height: $huge-line-height;
+        font-size: $base-font-size-l+4;
+        line-height: $huge-line-height-l;
     }
 
     @include media-m {
-        font-size: $base-font-size+4;
-        line-height: $huge-line-height;
+        font-size: $base-font-size-l+4;
+        line-height: $huge-line-height-l;
     }
     display: flex;
     width: 100%;
@@ -81,9 +81,7 @@
 }
 
 .navigation_default-menuItem {
-    @include media-l {
-        padding: $base-font-size/2 0;
-    }
+    padding: $magic-l/2 0;
     margin: 0;
     display: flex;
     align-items: center;
@@ -127,24 +125,26 @@
 .navigation_default-submenu {
     @include media-l {
         @include width-l-4;
-        font-size: $base-font-size;
-        line-height: $base-line-height;
+        font-size: $base-font-size-l;
+        line-height: $base-line-height-l;
     }
 
     @include media-m {
         @include width-m-4;
-        font-size: $base-font-size;
-        line-height: $base-line-height;
+        font-size: $base-font-size-m;
+        line-height: $base-line-height-m;
     }
 
     @include media-s {
         @include width-s-6;
+        font-size: $base-font-size-s;
+        line-height: $base-line-height-s;
     }
     list-style-type: none;
     display: flex;
     flex-flow: column;
-    padding-bottom: $base-font-size;
-    padding-top: $base-font-size/2;
+    padding-bottom: $magic-l;
+    padding-top: $magic-l/2;
     align-items: stretch;
 }
 
@@ -178,16 +178,16 @@
 .navigation_default-submenuItem {
     display: flex;
     flex-grow: 0;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
+    font-size: $base-font-size-l;
+    line-height: $base-line-height-l;
     padding: 0;
-    margin: $base-font-size/4 $base-line-height/2;
+    margin: $magic-l/4 $magic-l/2;
     justify-content: flex-start;
     align-items: center;
     z-index: 20;
 
     svg {
-        margin-left: $base-font-size/2;
+        margin-left: $magic-l/2;
     }
 
     &::before {

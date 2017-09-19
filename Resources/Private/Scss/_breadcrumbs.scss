@@ -3,13 +3,13 @@
 
     @include media-l {
         @include span-l-12;
-        font-size: $base-font-size+4;
+        font-size: $base-font-size-l+4; // 20
         line-height: 40px;
     }
 
     @include media-m {
         @include span-m-12;
-        font-size: $base-font-size+4;
+        font-size: $base-font-size-m+4; // 20
         line-height: 40px;
     }
 
@@ -40,7 +40,7 @@
 
     svg {
         fill: $shadeDarkest;
-        margin: 0 $gutter/2;
+        margin: 0 $magic-l/2;
         height: 0.9em;
     }
 }
@@ -64,10 +64,10 @@
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin: $gutter/2 0;
+    margin: $magic-l/2 0;
 
     svg {
-        margin-right: $gutter/4;
+        margin-right: $magic-l/4;
         fill: $white;
         height: 1em;
         width: 1em;
