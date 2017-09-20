@@ -1,16 +1,16 @@
 $grid-s-width: 312px;
 $grid-m-width: 768px;
 $grid-l-width: 960px;
-$grid-xl-width: 1152px;
 
 $media-s: "(max-width: 767px)";
 $media-m: "(min-width: 768px)";
 $media-l: "(min-width: 1024px)";
-$media-xl: "(min-width: 1200px)";
 
 $grid-l-col: 64px;
 $grid-l-gutter: 16px;
-$grid-l-padding: 8px;
+
+$grid-m-col: 48px;
+$grid-m-gutter: 16px;
 
 
 
@@ -19,26 +19,42 @@ $grid-l-padding: 8px;
     max-width: 100%;
 }
 
+
 @mixin wrap--inner {
     margin: 0 auto;
     padding: 0 8px;
-    width: $grid-l-width;
 
-    @media #{$media-xl} {
-        width: $grid-xl-width;
+    @media #{$media-m} {
+        width: $grid-m-width;
+    }
+
+    @media #{$media-l} {
+        width: $grid-l-width;
+    }
+}
+
+
+@mixin cols($value) {
+    @media #{$media-m} {
+        width: ($grid-m-col * $value) + ($grid-m-gutter * ($value - 1));
+    }
+
+    @media #{$media-l} {
+        width: ($grid-l-col * $value) + ($grid-l-gutter * ($value - 1));
     }
 }
 
 
 
 .search-bar {
-    // display: none;
+    display: none;
 }
 
 
 
 .search-bar-title {
     @include wrap--outer;
+
     background-color: $accent;
 }
 
@@ -75,8 +91,7 @@ $grid-l-padding: 8px;
 }
 
 .search-bar-form__content div {
-    background-color: green;
-    width: ($grid-l-col * 4) + ($grid-l-gutter * 3);
+    @include cols(4);
 }
 
 
