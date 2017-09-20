@@ -78,7 +78,8 @@ $(document).ready(() => {
     };
 
     $('.header_search').click(() => {
-        $('.search-bar_outer').slideToggle(250);
+        // $('.search-bar_outer').slideToggle(250);
+        $('.js-search-bar').slideToggle(250);
         initializeSearchForm();
 
         return false;
