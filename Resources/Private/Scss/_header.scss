@@ -2,7 +2,7 @@
     background-color: $brand;
     width: 100%;
     color: $white;
-    font-size: $large-font-size;
+    font-size: $large-font-size-l;
 
     display: flex;
     flex: 0 0 auto;
@@ -20,7 +20,7 @@
 .header_inner {
     @include media-l {
         @include span-l-12;
-        padding: $gutter 0;
+        padding: $magic-l 0;
 
         svg {
             height: 1em;
@@ -30,6 +30,7 @@
 
     @include media-m {
         @include span-m-12;
+        padding: $magic-m 0;
 
         svg {
             height: 1em;
@@ -39,14 +40,14 @@
 
     @include media-s {
         @include span-s-6;
-        font-size: $large-font-size - 4;
+        font-size: $large-font-size-s - 4;
+        padding: $magic-s 0;
 
         svg {
             height: 1em;
             width: 1em;
         }
     }
-    padding: $gutter 0;
 }
 
 .header_bildText-content {
@@ -105,18 +106,18 @@
 
     @include media-l {
         @include span-l-3;
+        padding-left: $magic-l;
     }
 
     @include media-m {
         @include span-m-3;
-        padding-left: $base-font-size;
+        padding-left: $magic-m;
     }
 
     @include media-s {
         @include flex-right;
         flex-basis: 144px;
-        padding-right: $base-font-size;
-
+        padding-right: $magic-s;
         text-align: right;
     }
     margin: 0;
@@ -141,7 +142,7 @@
 }
 
 .header_image-home {
-    margin-right: $base-font-size;
+    margin-right: $magic-l;
 
     svg {
         width: 188px;
@@ -154,33 +155,33 @@
 
     @include media-l {
         @include span-l-6;
-        font-size: $base-font-size + 4;
+        font-size: $base-font-size-l + 4;
     }
 
     @include media-m {
         @include span-m-6;
-        font-size: $base-font-size + 4;
+        font-size: $base-font-size-m + 4;
     }
 
     @include media-s {
         @include span-s-6;
     }
-    padding-bottom: $base-font-size/2;
 }
 
 .header_text-homeShort {
     @include flex-left;
 
     @include media-l {
-        font-size: $large-font-size;
+        font-size: $large-font-size-l;
     }
 
     @include media-m {
-        font-size: $large-font-size;
+        font-size: $large-font-size-m;
     }
 
     @include media-s {
         @include span-s-2;
+        font-size: $large-font-size-s;
     }
     font-weight: 600;
 }
@@ -207,7 +208,7 @@
     align-items: center;
 
     svg {
-        margin-right: $large-font-size/4;
+        margin-right: $large-font-size-l/4;
     }
 }
 
