@@ -1,0 +1,59 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:find/Configuration/TypoScript/setup.txt">
+
+plugin.tx_find {
+    settings {
+        connections {
+            default {
+                options {
+                    host = solr-harvest.tc.sub.uni-goettingen.de
+                    port = 80
+                    path = /solr/jfk-institut-zeitungen/
+                }
+            }
+        }
+
+        queryFields {
+
+        }
+
+        additionalFilters {
+
+        }
+
+        sort {
+            1 {
+                id = default
+                sortCriteria = title_sort asc
+            }
+        }
+
+        standardFields {
+            title = title
+            snippet = publisher
+        }
+
+        facets {
+            10 {
+                id = buchstabe
+                field = title_facet
+                sortOrder = index
+                type = Tabs
+                excludeOwnFilter = 1
+                hidden = 1
+                selectedByDefault {
+                    0 = 1
+                }
+            }
+        }
+
+        JSPaths.50 = EXT:tmpl_fidaac/Resources/Public/JavaScript/Extensions/find.js
+
+        languageRootPath = EXT:tmpl_fidaac/Resources/Private/Language/Find/
+    }
+
+    view {
+        templateRootPaths {
+            20 = EXT:tmpl_fidaac/Resource/Private/Templates/Extensions/Find/Templates/
+        }
+    }
+}
