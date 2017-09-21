@@ -1,0 +1,66 @@
+.search-bar {
+    display: none;
+}
+
+
+
+.search-bar-title {
+    @include wrap--outer;
+
+    background-color: $accent;
+}
+
+.search-bar-title__content {
+    @include wrap--inner;
+
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+
+
+
+.search-bar-form {
+    @include wrap--outer;
+}
+
+.search-bar-form__content {
+    @include wrap--inner;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 16px inherit;
+
+    form {
+        display: inline-flex;
+    }
+}
+
+
+.search-bar-select {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.search-bar-form__content div {
+    @include cols(4);
+}
+
+
+
+.search-bar-input {
+    input {
+        width: 100%;
+    }
+}
+
+
+
+.search-bar-misc {
+    display: flex;
+    flex-flow: column nowrap;
+
+    button {
+        width: 100%;
+    }
+}

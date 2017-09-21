@@ -57,18 +57,23 @@
     @include media-s {
         @include span-s-2;
     }
-    display: flex;
-    background: $brand;
-    cursor: pointer;
-    color: $white;
-    justify-content: center;
-    align-items: center;
+
+    @include button;
+    @include button-color--brand;
+
+    // display: flex;
+
+    // background: $brand;
+    // cursor: pointer;
+    // color: $white;
+    // justify-content: center;
+    // align-items: center;
     padding: 0;
     margin: $magic-l/2 0;
 
     svg {
         margin-right: $magic-l/4;
-        fill: $white;
+        // fill: $white;
         height: 1em;
         width: 1em;
     }

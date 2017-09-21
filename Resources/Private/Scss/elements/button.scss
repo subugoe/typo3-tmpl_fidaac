@@ -1,0 +1,23 @@
+@mixin button() {
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin button-color--brand() {
+    background-color: $brand;
+
+    svg {
+        fill: $white;
+    }
+}
+
+@mixin button-color--transparent() {
+    background-color: transparent;
+}
+
+@mixin button-color--custom($value) {
+    background-color: $value;
+}
