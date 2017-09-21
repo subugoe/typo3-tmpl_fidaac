@@ -8,6 +8,7 @@
 
 @mixin button-color--brand() {
     background-color: $brand;
+    color: $white;
 
     svg {
         fill: $white;
