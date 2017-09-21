@@ -334,33 +334,6 @@
     width: 53.33px;
 }
 
-@mixin media-l {
-    @media (min-width: 960px) {
-        $column: 64px;
-        $gutter: 16px;
-
-        @content;
-    }
-}
-
-@mixin media-m {
-    @media (min-width: 768px) and (max-width: 960px) {
-        $column: 48px;
-        $gutter: 16px;
-
-        @content;
-    }
-}
-
-@mixin media-s {
-    @media (max-width: 768px) {
-        $column: 45px;
-        $gutter: 8px;
-
-        @content;
-    }
-}
-
 @mixin flex-center {
     align-self: center;
     align-items: center;
@@ -378,7 +351,7 @@
 }
 
 @mixin form-button {
-    font-size: $base-font-size;
+    font-size: $base-font-size-l;
     padding: 0.5em;
     background: $white;
     border: 1px solid $brand;
@@ -393,5 +366,5 @@
     border-left: 0;
     border-right: 0;
     background: $white !important;
-    font-size: $base-font-size;
+    font-size: $base-font-size-l;
 }

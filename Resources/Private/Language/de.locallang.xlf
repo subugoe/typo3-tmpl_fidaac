@@ -242,6 +242,14 @@
                 <source>Search Tips</source>
                 <target>Recherchetipps</target>
             </trans-unit>
+            <trans-unit id="search_bar_title" xml:space="preserve">
+                <source>Search</source>
+                <target>Suche</target>
+            </trans-unit>
+            <trans-unit id="search_bar_subtitle" xml:space="preserve">
+                <source>Lorem ipsum dolor sit amut. (en)</source>
+                <target>Lorem ipsum dolor sit amut. (de)</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

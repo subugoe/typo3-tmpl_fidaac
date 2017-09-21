@@ -1,14 +1,24 @@
-<div class="search-bar_outer" xmlns="http://www.w3.org/1999/html">
-<div class="search-bar_inner">
-    <form action="" id="search-form" class="search-form">
-        <label class="search-form-label_search" for="search"><f:translate extensionName="TmplFidaac" key="search_search">Search</f:translate></label>
-        <input name="q" type="text" id="search" placeholder="{f:translate(key: 'search_placeholder', extensionName: 'TmplFidaac', default: 'Your search terms')}">
-
-        <input type="radio" name="search-choice" value="pazpar2" id="choice-pazpar2" checked/><label for="choice-pazpar2"><f:translate extensionName="TmplFidaac" key="search_library">Library</f:translate></label>
-        <input type="radio" name="search-choice" value="website" id="choice-website"/><label for="choice-website"><f:translate extensionName="TmplFidaac" key="search_website">Website</f:translate></label>
-
-        <button class="search-form_submit" id="search-form_submit"><f:translate extensionName="TmplFidaac" key="search_start">Search</f:translate></button>
-    </form>
-    <p class="search-tips"><f:link.page pageUid="17"><f:translate key="search_tips" extensionName="TmplFidaac" default="Search Tips" /></f:link.page></p>
-</div>
+<div class="search-bar js-search-bar">
+    <div class="search-bar-title">
+        <div class="search-bar-title__content">
+            <span class="search-bar-title__text-title"><f:translate extensionName="TmplFidaac" key="search_bar_title">Search</f:translate></span>
+            <span class="search-bar-title__text-subtitle"><f:translate extensionName="TmplFidaac" key="search_bar_subtitle">Lorem ipsum dolor sit amut.</f:translate></span>
+        </div>
+    </div>
+    <div class="search-bar-form">
+        <form action="" id="search-form" class="search-bar-form__content">
+            <div class="search-bar-input">
+                <label class="search-form-label_search" for="search"><f:translate extensionName="TmplFidaac" key="search_search">Search</f:translate></label>
+                <input name="q" type="text" id="search" placeholder="{f:translate(key: 'search_placeholder', extensionName: 'TmplFidaac', default: 'Your search terms')}">
+            </div>
+            <div class="search-bar-select">
+                <label for="choice-pazpar2"><input type="radio" name="search-choice" value="pazpar2" id="choice-pazpar2" checked/><f:translate extensionName="TmplFidaac" key="search_library">Library</f:translate></label>
+                <label for="choice-website"><input type="radio" name="search-choice" value="website" id="choice-website"/><f:translate extensionName="TmplFidaac" key="search_website">Website</f:translate></label>
+            </div>
+            <div class="search-bar-misc">
+                <button class="search-form_submit" id="search-form_submit"><f:translate extensionName="TmplFidaac" key="search_start">Search</f:translate></button>
+                <p class="search-tips"><f:link.page pageUid="17"><f:translate key="search_tips" extensionName="TmplFidaac" default="Search Tips" /></f:link.page></p>
+            </div>
+        </form>
+    </div>
 </div>
