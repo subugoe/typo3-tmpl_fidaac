@@ -10,8 +10,8 @@
 
         .meta {
             color: $shadeDarkest;
-            font-size: $base-font-size;
-            line-height: $base-line-height;
+            font-size: $base-font-size-l;
+            line-height: $base-line-height-l;
 
             .news_list-category {
                 display: flex;
@@ -23,9 +23,9 @@
 
                 .-item {
                     background: $accent;
-                    border-radius: $base-font-size/4;
-                    padding: $base-font-size/8 $base-font-size/2;
-                    margin: $base-font-size/2 0;
+                    border-radius: $magic-l/4;
+                    padding: $magic-l/8 $magic-l/2;
+                    margin: $magic-l/2 0;
                     white-space: nowrap;
                 }
             }
@@ -59,7 +59,7 @@
 
         img {
             box-sizing: border-box;
-            width: (2 * $column);
+            width: (2 * $column-l);
             height: auto;
             border: 0.5px solid $shadeLight;
             // margin: 0 $base-font-size/2 $base-font-size/2 0;
@@ -97,8 +97,8 @@
     @include media-s {
         @include span-s-6;
     }
-    font-size: $large-font-size;
-    line-height: $large-line-height;
+    font-size: $large-font-size-l;
+    line-height: $large-line-height-l;
     font-weight: bold;
     align-content: flex-start;
 

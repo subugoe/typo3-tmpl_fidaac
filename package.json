@@ -10,7 +10,7 @@
     "lintScss": "stylelint 'Resources/Private/Scss/*.scss'",
     "precommit": "npm run lintScss",
     "lintJs": "./node_modules/.bin/eslint Resources/Private/JavaScript/*.Js",
-    "createMainCss": "./node_modules/.bin/node-sass Resources/Private/Scss/App.scss | ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' --use cssnano > Resources/Public/Css/app.min.css",
+    "createMainCss": "./node_modules/.bin/node-sass --output-style compressed Resources/Private/Scss/App.scss Resources/Public/Css/app.min.css; ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' Resources/Public/Css/app.min.css -o Resources/Public/Css/app.min.css",
     "createPrintCss": "./node_modules/.bin/node-sass Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' --use cssnano > Resources/Public/Css/print.css",
     "createCss": "npm run createMainCss; npm run createPrintCss",
     "devMainCss": "./node_modules/.bin/node-sass --source-map true Resources/Private/Scss/App.scss Resources/Public/Css/app.min.css; ./node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' Resources/Public/Css/app.min.css -o Resources/Public/Css/app.min.css",

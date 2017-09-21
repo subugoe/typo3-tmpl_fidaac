@@ -8,15 +8,15 @@ html {
 
 body {
     @include media-l {
-        font-size: $base-font-size + 2;
+        font-size: $base-font-size-l + 2;
     }
 
     @include media-m {
-        font-size: $base-font-size + 2;
+        font-size: $base-font-size-m + 2;
     }
 
     @include media-s {
-        font-size: $base-font-size;
+        font-size: $base-font-size-s;
     }
     color: $shadeDarkest;
     margin: 0;
@@ -30,24 +30,24 @@ body {
 
 h1 {
     @include media-l {
-        font-size: $huge-font-size - 1;
-        line-height: $huge-line-height + 10;
-        padding-top: $base-font-size;
-        padding-bottom: $base-font-size/2;
+        font-size: $huge-font-size-l - 1;
+        line-height: $huge-line-height-l + 10;
+        padding-top: $magic-l;
+        padding-bottom: $magic-l/2;
     }
 
     @include media-m {
-        font-size: $huge-font-size - 1;
-        line-height: $huge-line-height + 10;
-        padding-top: $base-font-size/2;
-        padding-bottom: $base-font-size/4;
+        font-size: $huge-font-size-m - 1;
+        line-height: $huge-line-height-m + 10;
+        padding-top: $magic-m/2;
+        padding-bottom: $magic-m/4;
     }
 
     @include media-s {
-        font-size: $large-font-size+2;
-        line-height: $large-line-height+2;
-        padding-top: $base-font-size/2;
-        padding-bottom: $base-font-size/4;
+        font-size: $large-font-size-s+2;
+        line-height: $large-line-height-s+2;
+        padding-top: $magic-s + 2;
+        padding-bottom: $magic-s - 2;
     }
     font-weight: 600;
     margin: 0;
@@ -55,24 +55,24 @@ h1 {
 
 h2 {
     @include media-l {
-        font-size: $huge-font-size - 4;
-        line-height: $huge-line-height;
-        padding-top: $base-font-size;
-        padding-bottom: $base-font-size/2;
+        font-size: $huge-font-size-l - 4;
+        line-height: $huge-line-height-l;
+        padding-top: $magic-l;
+        padding-bottom: $magic-l/2;
     }
 
     @include media-m {
-        font-size: $huge-font-size - 4;
-        line-height: $huge-line-height;
-        padding-top: $base-font-size;
-        padding-bottom: $base-font-size/2;
+        font-size: $huge-font-size-m - 4;
+        line-height: $huge-line-height-m;
+        padding-top: $magic-m;
+        padding-bottom: $magic-m/2;
     }
 
     @include media-s {
-        font-size: $large-font-size - 1;
-        line-height: $large-line-height - 2;
-        padding-top: $base-font-size/2;
-        padding-bottom: $base-font-size/4;
+        font-size: $large-font-size-s - 1;
+        line-height: $large-line-height-s - 2;
+        padding-top: $magic-s + 2;
+        padding-bottom: $magic-s - 2;
     }
     font-weight: 600;
     margin: 0;
@@ -80,24 +80,24 @@ h2 {
 
 h3 {
     @include media-l {
-        font-size: $large-font-size + 1;
-        line-height: $large-line-height + 4;
-        padding-top: $base-font-size;
-        padding-bottom: $base-font-size/2;
+        font-size: $large-font-size-l + 1;
+        line-height: $large-line-height-l + 4;
+        padding-top: $magic-l;
+        padding-bottom: $magic-l/2;
     }
 
     @include media-m {
-        font-size: $large-font-size + 1;
-        line-height: $large-line-height + 4;
-        padding-top: $base-font-size;
-        padding-bottom: $base-font-size/2;
+        font-size: $large-font-size-m + 1;
+        line-height: $large-line-height-m + 4;
+        padding-top: $magic-m;
+        padding-bottom: $magic-m/2;
     }
 
     @include media-s {
-        font-size: $large-font-size - 1;
-        line-height: $large-line-height - 2;
-        padding-top: $base-font-size/2;
-        padding-bottom: $base-font-size/4;
+        font-size: $large-font-size-s - 1;
+        line-height: $large-line-height-s - 2;
+        padding-top: $magic-s + 2;
+        padding-bottom: $magic-s - 2;
     }
     font-weight: 600;
     margin: 0;
@@ -105,24 +105,24 @@ h3 {
 
 h4 {
     @include media-l {
-        font-size: $base-font-size + 6;
-        line-height: $base-line-height + 8;
-        padding-top: $base-font-size;
-        padding-bottom: $base-font-size/2;
+        font-size: $base-font-size-l + 6;
+        line-height: $base-line-height-l + 8;
+        padding-top: $magic-l;
+        padding-bottom: $magic-l/2;
     }
 
     @include media-m {
-        font-size: $base-font-size + 4;
-        line-height: $base-line-height;
-        padding-top: $base-font-size;
-        padding-bottom: $base-font-size/2;
+        font-size: $base-font-size-m + 4;
+        line-height: $base-line-height-m;
+        padding-top: $magic-m;
+        padding-bottom: $magic-m/2;
     }
 
     @include media-s {
-        font-size: $base-font-size + 4;
-        line-height: $base-line-height;
-        padding-top: $base-font-size/2;
-        padding-bottom: $base-font-size/4;
+        font-size: $base-font-size-s + 4;
+        line-height: $base-line-height-s;
+        padding-top: $magic-s + 2;
+        padding-bottom: $magic-s - 2;
     }
     font-weight: 600;
     margin: 0;
@@ -154,7 +154,7 @@ ul {
 p {
     font-weight: 300;
     margin-top: 0;
-    margin-bottom: $base-font-size/2;
+    margin-bottom: $magic-l/2;
 }
 
 ul {
@@ -173,8 +173,8 @@ li {
         position: relative;
         font-weight: 600;
         display: table-cell;
-        padding-right: $base-font-size/2 + 1;
-        padding-left: $base-font-size/2 + 1;
+        padding-right: $magic-l/2 + 1;
+        padding-left: $magic-l/2 + 1;
     }
 }
 
@@ -186,7 +186,7 @@ li {
 
 .overlay {
     flex: 1 0 100vh;
-    height: $huge-line-height + 10;
+    height: $huge-line-height-l + 10;
     position: fixed;
     right: 0;
     left: 0;
@@ -242,4 +242,3 @@ li {
     width: auto;
     clip: auto;
 }
-

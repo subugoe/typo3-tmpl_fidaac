@@ -7,16 +7,43 @@ $shadeLighter: #e5e5e5;
 $shadeLightest: #f2f2f2;
 $white: #fff;
 
-$small-font-size: 15px;
-$base-font-size: 16px;
-$large-font-size: 24px;
-$huge-font-size: 32px;
+// screen-size dependent variables can't be defined in media queries
+// hence they get a media identifier here
+// l
+$magic-l: 16px;
+$column-l: $magic-l*4;
+$base-font-size-l: $magic-l; // 16
+$small-font-size-l: $base-font-size-l - 1; // 15
+$large-font-size-l: $base-font-size-l + 8; // 24
+$huge-font-size-l: $base-font-size-l * 2; // 32
+$base-line-height-l: $base-font-size-l + 8; // 24
+$small-line-height-l: $base-line-height-l - 2; // 22
+$large-line-height-l: $base-line-height-l + 8; // 32
+$huge-line-height-l: $base-line-height-l + 16; // 40
+$width-l: 960px;
 
-$base-line-height: 24px;
-$large-line-height: 32px;
-$huge-line-height: 40px;
+// m
+$magic-m: 16px;
+$column-m: $magic-m*3;
+$base-font-size-m: $magic-m; // 16
+$small-font-size-m: $base-font-size-m - 1; // 15
+$large-font-size-m: $base-font-size-m + 8; // 24
+$huge-font-size-m: $base-font-size-m * 2; // 32
+$base-line-height-m: $base-font-size-m + 8; // 24
+$small-line-height-m: $base-line-height-m - 2; // 22
+$large-line-height-m: $base-line-height-m + 8; // 32
+$huge-line-height-m: $base-line-height-m + 16; // 40
+$width-m: 960px;
 
-$width: 960px;
-
-$column: 64px;
-$gutter: 16px;
+// s
+$magic-s: 6px;
+$column-s: $magic-s*7.5;
+$base-font-size-s: 16px; // 16
+$small-font-size-s: $base-font-size-s - 1; // 15
+$large-font-size-s: $base-font-size-s + 8; // 24
+$huge-font-size-s: $base-font-size-s * 2; // 32
+$base-line-height-s: $base-font-size-s + 8; // 24
+$small-line-height-s: $base-line-height-s - 2; // 22
+$large-line-height-s: $base-line-height-s + 8; // 32
+$huge-line-height-s: $base-line-height-s + 16; // 40
+$width-s: 960px;
