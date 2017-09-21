@@ -70,10 +70,19 @@ lib.breadCrumbs {
     1 = TMENU
     1 {
         NO = 1
+        NO.ATagParams = class="-no"
         CUR = 1
+        CUR.ATagParams = class="-cur"
         CUR.afterWrap =
         IFSUB = 1
+        IFSUB.ATagParams = class="-sub"
         IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-chevron-right"/></svg>
+        CURIFSUB < .IFSUB
+        CURIFSUB.ATagParams = class="-curSub"
+        ACT = 1
+        ACT.ATagParams = class="-actSub"
+        ACTIFSUB < .IFSUB
+        ACTIFSUB.ATagParams = class="-actSub"
     }
 }
 
