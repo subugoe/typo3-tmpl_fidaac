@@ -14,7 +14,7 @@
                                 <use
                                     xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#logo-wave', extensionName:'tmpl_fidaac')}"/>
                             </svg>
-                            <span class="visible-hidden">Home</span>
+                            <span class="visible-hidden"><f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Home"/></span>
                         </f:link.page>
                     </div>
                     <div class="header_text-homeShort">
@@ -30,6 +30,9 @@
                                 <use
                                     xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#logo-wave', extensionName:'tmpl_fidaac')}"/>
                             </svg>
+                            <span class="visible-hidden">
+                                <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:logo"/>
+                            </span>
                         </f:link.page>
                     </div>
                     <div class="header_text-content">
@@ -47,8 +50,11 @@
                                 xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-home', extensionName:'tmpl_fidaac')}"/>
                         </svg>
                     </span>
+                    <span class="visible-hidden">
+                        <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Home"/>
+                    </span>
                     <span class="header_home-text">
-                        Home
+                        <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Home"/>
                     </span>
                 </div>
             </f:link.page>
@@ -59,9 +65,12 @@
                             <use
                                 xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-search', extensionName:'tmpl_fidaac')}"/>
                         </svg>
+                        <span class="visible-hidden">
+                            <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:search_search"/>
+                        </span>
                     </span>
                     <span class="header_search-text">
-                        Search
+                        <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:search_search"/>
                     </span>
                 </div>
             </f:link.page>
@@ -71,6 +80,9 @@
                         <use
                             xlink:href="{f:uri.resource(path:'Images/symbol-defs.svg#icon-globe', extensionName:'tmpl_fidaac')}"/>
                     </svg>
+                    <span class="visible-hidden">
+                        <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Switch language"/>
+                    </span>
                 </span>
                 <span class="header_language-text">
                     <f:cObject typoscriptObjectPath="lib.language"/>
