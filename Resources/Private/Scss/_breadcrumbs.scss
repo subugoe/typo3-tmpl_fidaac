@@ -20,6 +20,7 @@
     align-self: center;
     align-items: center;
     flex-wrap: nowrap;
+    padding-top: $magic;
 }
 
 .navigation_breadCrumbs-crumbs {
@@ -36,7 +37,7 @@
     }
     align-items: center;
     justify-content: flex-start;
-    padding: 8px;
+    padding: 0 8px 8px;
 
     svg {
         fill: $shadeDarkest;
@@ -46,30 +47,8 @@
 }
 
 .navigation_menuButton {
-    @include media-l {
-        @include span-l-2;
-    }
-
-    @include media-m {
-        @include span-m-2;
-    }
-
-    @include media-s {
-        @include span-s-2;
-    }
-    display: flex;
-    background: $brand;
-    cursor: pointer;
-    color: $white;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: $magic-l/2 0;
-
-    svg {
-        margin-right: $magic-l/4;
-        fill: $white;
-        height: 1em;
-        width: 1em;
-    }
+    @include cols(2);
+    @include button;
+    @include button-color--brand;
+    @include button--in-breadcrumb;
 }

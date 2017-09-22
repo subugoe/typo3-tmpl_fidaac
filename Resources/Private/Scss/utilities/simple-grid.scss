@@ -1,0 +1,29 @@
+@mixin wrap--outer {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+@mixin wrap--inner {
+    margin: 0 auto;
+    padding: 0 8px;
+
+    @media #{$media-m} {
+        width: $grid-m-width;
+    }
+
+    @media #{$media-l} {
+        width: $grid-l-width;
+    }
+}
+
+
+@mixin cols($value) {
+    @media #{$media-m} {
+        width: ($grid-m-col * $value) + ($grid-m-gutter * ($value - 1));
+    }
+
+    @media #{$media-l} {
+        width: ($grid-l-col * $value) + ($grid-l-gutter * ($value - 1));
+    }
+}

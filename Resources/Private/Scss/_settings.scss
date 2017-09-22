@@ -7,6 +7,10 @@ $shadeLighter: #e5e5e5;
 $shadeLightest: #f2f2f2;
 $white: #fff;
 
+// MAGIC
+$magic: 8px;
+$magic--half: ($magic / 2);
+
 // screen-size dependent variables can't be defined in media queries
 // hence they get a media identifier here
 // l
@@ -47,3 +51,23 @@ $small-line-height-s: $base-line-height-s - 2; // 22
 $large-line-height-s: $base-line-height-s + 8; // 32
 $huge-line-height-s: $base-line-height-s + 16; // 40
 $width-s: 960px;
+
+
+
+// SIMPLE GRID SETTINGS
+
+/* Reference for utilities/simple-grid.scss */
+
+$grid-s-width: 312px;
+$grid-m-width: 768px;
+$grid-l-width: 960px;
+
+$media-s: "(max-width: 767px)";
+$media-m: "(min-width: 768px)";
+$media-l: "(min-width: 960px)";
+
+$grid-l-col: 64px;
+$grid-l-gutter: 16px;
+
+$grid-m-col: 48px;
+$grid-m-gutter: 16px;
