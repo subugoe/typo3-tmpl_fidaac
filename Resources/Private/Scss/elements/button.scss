@@ -22,3 +22,14 @@
 @mixin button-color--custom($value) {
     background-color: $value;
 }
+
+@mixin button--in-breadcrumb() {
+    padding: 0;
+    margin-bottom: $magic;
+
+    svg {
+        margin-right: $magic--half;
+        height: 1em;
+        width: 1em;
+    }
+}
