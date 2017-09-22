@@ -1,12 +1,10 @@
 .tx-ezbrequest-pi1 {
-    span {
-        &.ampel {
-            position: relative !important;
+    span.ampel {
+        position: relative !important;
 
-            a {
-                &::after {
-                    content: '';
-                }
+        a {
+            &::after {
+                content: '';
             }
         }
     }

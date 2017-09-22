@@ -5,6 +5,7 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:ezbrequest/Configuration/TypoScript/constants.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TypoScript/constants.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:pazpar2/Configuration/TypoScript/constants.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:find/Configuration/TypoScript/constants.txt">
 
 #################
 ### Variables ###
