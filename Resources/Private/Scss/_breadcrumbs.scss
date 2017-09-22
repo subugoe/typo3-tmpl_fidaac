@@ -20,6 +20,7 @@
     align-self: center;
     align-items: center;
     flex-wrap: nowrap;
+    padding-top: $magic;
 }
 
 .navigation_breadCrumbs-crumbs {
@@ -36,7 +37,7 @@
     }
     align-items: center;
     justify-content: flex-start;
-    padding: 8px;
+    padding: 0 8px 8px;
 
     svg {
         fill: $shadeDarkest;
