@@ -228,7 +228,8 @@
                 <source>To top</source>
                 <target>Zum Seitenanfang</target>
             </trans-unit>
-            <!-- search -->
+
+            <!-- search bar -->
             <trans-unit id="search_library" xml:space="preserve">
                 <source>Library</source>
                 <target>Bibliothek</target>
