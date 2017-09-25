@@ -6,6 +6,12 @@
             <authorEmail>blache@sub.uni-goettingen.de</authorEmail>
         </header>
         <body>
+            <trans-unit id="Logo">
+                <source>Logo</source>
+            </trans-unit>
+            <trans-unit id="Home">
+                <source>Home</source>
+            </trans-unit>
             <trans-unit id="Contact">
                 <source>Contact</source>
             </trans-unit>
@@ -164,6 +170,40 @@
             </trans-unit>
             <trans-unit id="list_nocategoriesfound" xml:space="preserve">
                 <source>No categories available.</source>
+            </trans-unit>
+
+            <!-- search bar -->
+            <trans-unit id="search_library" xml:space="preserve">
+                <source>Library</source>
+            </trans-unit>
+            <trans-unit id="search_website" xml:space="preserve">
+                <source>Website</source>
+                <target>Website</target>
+            </trans-unit>
+            <trans-unit id="search_start" xml:space="preserve">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="search_search" xml:space="preserve">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="search_placeholder" xml:space="preserve">
+                <source>Your search terms</source>
+            </trans-unit>
+            <trans-unit id="search_tips" xml:space="preserve">
+                <source>Search Tips</source>
+            </trans-unit>
+            <trans-unit id="search_bar_title" xml:space="preserve">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="search_bar_subtitle" xml:space="preserve">
+                <source>Lorem ipsum dolor sit amut. (en)</source>
+            </trans-unit>
+
+            <trans-unit id="caret_right" xml:space="preserve">
+                <source>Caret Right</source>
+            </trans-unit>
+            <trans-unit id="chevron_right" xml:space="preserve">
+                <source>Chevron Right</source>
             </trans-unit>
         </body>
     </file>
