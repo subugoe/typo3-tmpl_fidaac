@@ -4,6 +4,7 @@ plugin {
         view {
             templateRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Templates/
             partialRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Partials/
+            layoutRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Layouts/
         }
 
         settings {
@@ -11,15 +12,23 @@ plugin {
                 skipControllerAndAction = 1
             }
 
-            list.rss.channel {
-                title = Library AAC
-                description = RSS Feed Library AAC
-                link = {$plugin.tx_news.rss.channel.link}
-                language = en_EN
-                copyright = SUB Göttingen
-                generator = TYPO3 EXT:news
-            }
 
+
+            list {
+                media.image {
+                    maxWidth =
+                    maxHeight =
+                }
+                rss.channel {
+                    title = Library AAC
+                    description = RSS Feed Library AAC
+                    link = {$plugin.tx_news.rss.channel.link}
+                    language = en_EN
+                    copyright = SUB Göttingen
+                    generator = TYPO3 EXT:news
+                }
+                hidePagination = 1
+            }
             cssFile >
         }
     }

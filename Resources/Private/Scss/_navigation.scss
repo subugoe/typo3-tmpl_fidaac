@@ -124,19 +124,19 @@
 
 .navigation_default-submenu {
     @include media-l {
-        @include width-l-4;
+        width: width(l-4);
         font-size: $base-font-size-l;
         line-height: $base-line-height-l;
     }
 
     @include media-m {
-        @include width-m-4;
+        width: width(m-4);
         font-size: $base-font-size-m;
         line-height: $base-line-height-m;
     }
 
     @include media-s {
-        @include width-s-6;
+        width: width(s-6);
         font-size: $base-font-size-s;
         line-height: $base-line-height-s;
     }

@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-    xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-    data-namespace-typo3-fluid="true">
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 <!--
     =====================
         Partials/List/Item.html
@@ -11,7 +11,7 @@
 
     <f:if condition="{newsItem.falMedia}">
         <!-- fal media preview element -->
-        <div class="img-wrap">
+        <div class="-img-wrap">
             <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
                 <f:if condition="{newsItem.falMediaPreviews}">
                     <f:then>
@@ -52,12 +52,12 @@
     </f:if>
 
     <!-- header -->
-        <div class="news_header">
-            <div class="title">
-                <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-                    <span itemprop="headline">{newsItem.title}</span>
-                </n:link>
-            </div>
+    <div class="news_header">
+        <div class="title">
+            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                <span itemprop="headline">{newsItem.title}</span>
+            </n:link>
+        </div>
 
         <div class="meta">
             <div class="-list-dateNAuthor">
@@ -75,7 +75,7 @@
                     {newsItem.author}
                 </f:if>
             </div>
-            <div class="list-category">
+            <div class="-list-category">
                 <f:if condition="{newsItem.firstCategory}">
                     <!-- first category -->
                     <f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}"/>
@@ -96,15 +96,15 @@
     <!-- teaser -->
     <div class="teaser-text">
         <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-        <f:if condition="{newsItem.teaser}">
-            <f:then>
-                <div itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
-            </f:then>
-            <f:else>
-                <div itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
-            </f:else>
-        </f:if>
+            <f:if condition="{newsItem.teaser}">
+                <f:then>
+                    <div itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+                </f:then>
+                <f:else>
+                    <div itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+                </f:else>
+            </f:if>
         </n:link>
     </div>
-    </div>
+</div>
 </html>

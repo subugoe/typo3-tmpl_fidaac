@@ -1,0 +1,4 @@
+tx_news.templateLayouts {
+    50 = Featurebox
+    60 = News Slider
+}

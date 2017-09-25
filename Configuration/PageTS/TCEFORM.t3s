@@ -11,14 +11,15 @@ TCEFORM {
             }
         }
 
-        // Add layout for double column content
+        // Add layouts for double column content and featurebox
         layout {
             altLabels {
                 0 = Default
                 1 = Double column
+                2 = Featurebox and slider
             }
 
-            removeItems = 2,3,4,5,6,7,8,9,10
+            removeItems = 3,4,5,6,7,8,9,10
         }
 
         // change icons for image positioning

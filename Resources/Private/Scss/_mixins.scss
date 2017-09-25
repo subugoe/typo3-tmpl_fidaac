@@ -6,79 +6,79 @@
 
 @mixin span-l-12 {
     @include span;
-    flex-basis: 960px;
+    flex-basis: width(l-12);
 
     @content;
 }
 
 @mixin width-l-12 {
-    width: 960px;
+    width: width(l-12);
 }
 
 @mixin span-l-11 {
     @include span;
-    flex-basis: 880px;
+    flex-basis: width(l-11);
 
     @content;
 }
 
 @mixin width-l-11 {
-    width: 880px;
+    width: width(l-11);
 }
 
 @mixin span-l-10 {
     @include span;
-    flex-basis: 800px;
+    flex-basis: width(l-10);
 
     @content;
 }
 
 @mixin width-l-10 {
-    width: 800px;
+    width: width(l-10);
 }
 
 @mixin span-l-9 {
     @include span;
-    flex-basis: 720px;
+    flex-basis: width(l-9);
 
     @content;
 }
 
 @mixin width-l-9 {
-    width: 720px;
+    width: width(l-9);
 }
 
 @mixin span-l-8 {
     @include span;
-    flex-basis: 640px;
+    flex-basis: width(l-8);
 
     @content;
 }
 
 @mixin width-l-8 {
-    width: 640px;
+    width: width(l-8);
 }
 
 @mixin span-l-7 {
     @include span;
-    flex-basis: 560px;
+    flex-basis: width(l-7);
 
     @content;
 }
 
-@mixi width-l-7 {
-    width: 560px;
+@mixin width-l-7 {
+    width: width(l-7);
 }
 
 @mixin span-l-6 {
     @include span;
-    flex-basis: 480px;
+    flex-basis: width(l-6);
 
     @content;
 }
 
 @mixin width-l-6 {
-    width: 480px;
+    width: width(l-6);
 }
 
 @mixin span-l-5 {

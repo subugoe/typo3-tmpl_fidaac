@@ -1,0 +1,112 @@
+.featureSlider {
+    @include media-l {
+        width: width(l-12);
+        padding-bottom: $magic-l;
+    }
+
+    @include media-m {
+        width: width(m-12);
+        padding-bottom: $magic-m;
+    }
+
+    @include media-s {
+        width: width(s-6);
+    }
+    justify-content: flex-start;
+}
+
+.news-featurebox-view {
+    @include media-l {
+        flex-basis: width(l-12);
+    }
+
+    @include media-m {
+        flex-basis: width(m-12);
+    }
+
+    @include media-s {
+        flex-basis: width(s-6);
+    }
+    justify-content: flex-start;
+
+    .article {
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            .img-wrap {
+                padding-left: $magic-l/2;
+            }
+
+            .news_info {
+                padding-right: $magic-l/2;
+            }
+        }
+
+        &:nth-child(odd) {
+            flex-direction: row;
+
+            .img-wrap {
+                padding-right: $magic-l/2;
+            }
+
+            .news_info {
+                padding-left: $magic-l/2;
+            }
+        }
+
+        .img-wrap {
+            @include media-l {
+                flex-basis: width(l-6);
+                width: width(l-6);
+                height: width(l-6) / 16 * 9;
+            }
+
+            @include media-m {
+                flex-basis: width(m-6);
+            }
+
+            @include media-s {
+                flex-basis: width(s-6);
+            }
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+
+            img {
+                border: 0.2px solid $shadeLighter;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .news_info {
+            @include media-l {
+                @include span-l-6;
+            }
+
+            @include media-m {
+                @include span-m-6;
+            }
+
+            @include media-s {
+                @include span-s-6;
+            }
+            flex-direction: column;
+            align-content: space-between;
+        }
+
+        .feature_button {
+            @include cols(3);
+            @include button;
+            @include button-color--brand;
+            @include button-size--default;
+
+            svg {
+                margin-right: $magic--half;
+                height: 1em;
+                width: 1em;
+            }
+        }
+    }
+}
