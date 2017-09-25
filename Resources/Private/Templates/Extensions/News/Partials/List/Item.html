@@ -5,12 +5,13 @@
     =====================
         Partials/List/Item.html
 -->
+
 <div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
     <n:excludeDisplayedNews newsItem="{newsItem}"/>
 
     <f:if condition="{newsItem.falMedia}">
         <!-- fal media preview element -->
-        <div class="-img-wrap">
+        <div class="img-wrap">
             <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
                 <f:if condition="{newsItem.falMediaPreviews}">
                     <f:then>
@@ -74,7 +75,7 @@
                     {newsItem.author}
                 </f:if>
             </div>
-            <div class="-list-category">
+            <div class="list-category">
                 <f:if condition="{newsItem.firstCategory}">
                     <!-- first category -->
                     <f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}"/>
@@ -105,5 +106,5 @@
         </f:if>
         </n:link>
     </div>
-</div>
+    </div>
 </html>

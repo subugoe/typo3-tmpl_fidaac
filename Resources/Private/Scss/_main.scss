@@ -1,5 +1,3 @@
-@import "mixins";
-
 .content-main {
     display: flex;
     flex-grow: 1;
@@ -13,15 +11,15 @@
 
 .doubleColumn {
     @include media-l {
-        @include width-l-12;
+        width: width(l-12);
     }
 
     @include media-m {
-        @include width-m-12;
+        width: width(m-12);
     }
 
     @include media-s {
-        @include width-s-6;
+        width: width(s-6);
     }
 }
 
@@ -35,15 +33,15 @@
 
 .singleColumn {
     @include media-l {
-        @include width-l-10;
+        width: width(l-10);
     }
 
     @include media-m {
-        @include width-m-10;
+        width: width(m-10);
     }
 
     @include media-s {
-        @include width-s-6;
+        width: width(s-6);
     }
 
     justify-content: flex-start;
@@ -57,17 +55,17 @@
 
 .toTop_outer {
     @include media-l {
-        @include width-l-12;
+        width: width(l-12);
         bottom: $magic-l;
     }
 
     @include media-m {
-        @include width-m-12;
+        width: width(m-12);
         bottom: $magic-l;
     }
 
     @include media-s {
-        @include width-m-6;
+        width: width(m-6);
         bottom: 0;
     }
     display: flex;

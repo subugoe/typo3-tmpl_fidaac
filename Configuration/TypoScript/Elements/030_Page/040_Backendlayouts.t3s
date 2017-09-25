@@ -1,4 +1,4 @@
-# TYPO3 Layout Optionen Content-Elemente
+# TYPO3 layout options for content elements
 tt_content.stdWrap.innerWrap.cObject = CASE
 tt_content.stdWrap.innerWrap.cObject {
     key.field = layout
@@ -8,4 +8,7 @@ tt_content.stdWrap.innerWrap.cObject {
 
     1 = TEXT
     1.value = <article class="doubleColumn">|</article>
+
+    2 = TEXT
+    2.value = <article class="featureSlider">|</article>
 }

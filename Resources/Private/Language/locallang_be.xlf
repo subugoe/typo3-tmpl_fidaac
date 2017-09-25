@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-06-23T11:36:30Z">
+        <header>
+            <authorName>Joëlle Blache</authorName>
+            <authorEmail>blache@sub.uni-goettingen.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="featurebox_title" xml:space="preserve">
+                <source>Featurebox</source>
+            </trans-unit>
+            <trans-unit id="featurebox_wiz_description" xml:space="preserve">
+                <source>Element with image and teaser text. May link to other content</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -91,7 +91,31 @@
         @return 704px;
     }
 
-    @else if $string == "l-12" {
+    @else if $string == "m-12" {
         @return 768px;
+    }
+
+    @else if $string == "s-1" {
+        @return $column-s;
+    }
+
+    @else if $string == "s-2" {
+        @return $column-s * 2;
+    }
+
+    @else if $string == "s-3" {
+        @return $column-s * 3;
+    }
+
+    @else if $string == "s-4" {
+        @return $column-s * 4;
+    }
+
+    @else if $string == "s-5" {
+        @return $column-s * 5;
+    }
+
+    @else if $string == "s-6" {
+        @return $column-s * 6;
     }
 }

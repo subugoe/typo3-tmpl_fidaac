@@ -1,5 +1,5 @@
 lib.contentElement {
-    layoutRootPaths.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Resources/Private/Layouts
-    partialRootPaths.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Resources/Private/Partials/
-    templateRootPaths.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Resources/Private/Templates/
+    layoutRootPaths.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Layouts/
+    partialRootPaths.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Partials/
+    templateRootPaths.20 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/FluidStyledContent/Templates/
 }
