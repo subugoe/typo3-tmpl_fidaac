@@ -1,17 +1,18 @@
 .featureSlider {
     @include media-l {
         width: width(l-12);
+        padding-bottom: $magic-l;
     }
 
     @include media-m {
         width: width(m-12);
+        padding-bottom: $magic-m;
     }
 
     @include media-s {
         width: width(s-6);
     }
     justify-content: flex-start;
-    padding-bottom: $grid-l-gutter;
 }
 
 .news-featurebox-view {

@@ -3,6 +3,8 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        padding-bottom: $magic-l / 2 !important;
+        margin-bottom: $magic-l / 2 !important;
 
         a {
             color: $shadeDarkest;
