@@ -360,11 +360,11 @@
     height: auto !important;
 }
 
-@mixin form-input-text {
-    border-bottom: 1px solid $brand;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    background: $white !important;
-    font-size: $base-font-size-l;
-}
+// @mixin form-input-text {
+//     border-bottom: 1px solid $brand;
+//     border-top: 0;
+//     border-left: 0;
+//     border-right: 0;
+//     background: $white !important;
+//     font-size: $base-font-size-l;
+// }

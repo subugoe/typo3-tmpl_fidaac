@@ -1,0 +1,9 @@
+@mixin form-input-text {
+    border: none;
+    border-bottom: 1px solid $shadeDarkest;
+    padding: $magic;
+}
+
+@mixin form-input-text--font-size-large() {
+    font-size: ($magic * 2.75);
+}

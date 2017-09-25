@@ -8,16 +8,22 @@
     <div class="search-bar-form">
         <form action="" id="search-form" class="search-bar-form__content">
             <div class="search-bar-input">
-                <label class="search-form-label_search" for="search"><f:translate extensionName="TmplFidaac" key="search_search">Search</f:translate></label>
+                <label class="search-form-label_search visible-hidden" for="search"><f:translate extensionName="TmplFidaac" key="search_search">Search</f:translate></label>
                 <input name="q" type="text" id="search" placeholder="{f:translate(key: 'search_placeholder', extensionName: 'TmplFidaac', default: 'Your search terms')}">
             </div>
             <div class="search-bar-select">
-                <label for="choice-pazpar2"><input type="radio" name="search-choice" value="pazpar2" id="choice-pazpar2" checked/><f:translate extensionName="TmplFidaac" key="search_library">Library</f:translate></label>
-                <label for="choice-website"><input type="radio" name="search-choice" value="website" id="choice-website"/><f:translate extensionName="TmplFidaac" key="search_website">Website</f:translate></label>
+                <div class="search-bar-select-item">
+                    <input type="radio" name="search-choice" value="pazpar2" id="choice-pazpar2" checked/>
+                    <label for="choice-pazpar2"><f:translate extensionName="TmplFidaac" key="search_library">Library</f:translate></label>
+                </div>
+                <div class="search-bar-select-item">
+                    <input type="radio" name="search-choice" value="website" id="choice-website"/>
+                    <label for="choice-website"><f:translate extensionName="TmplFidaac" key="search_website">Website</f:translate></label>
+                </div>
             </div>
             <div class="search-bar-misc">
                 <button class="search-form_submit" id="search-form_submit"><f:translate extensionName="TmplFidaac" key="search_start">Search</f:translate></button>
-                <p class="search-tips"><f:link.page pageUid="17"><f:translate key="search_tips" extensionName="TmplFidaac" default="Search Tips" /></f:link.page></p>
+                <span class="search-tips"><f:link.page pageUid="17"><f:translate key="search_tips" extensionName="TmplFidaac" default="Search Tips" /></f:link.page></span>
             </div>
         </form>
     </div>

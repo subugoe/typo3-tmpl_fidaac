@@ -21,6 +21,8 @@
 
 .search-bar-form {
     @include wrap--outer;
+    margin-bottom: ($magic * 2);
+    padding-top: (1.5 * $magic);
 }
 
 .search-bar-form__content {
@@ -42,6 +44,17 @@
     flex-flow: column nowrap;
 }
 
+.search-bar-select-item {
+    @include form-radio;
+    @include cols(4);
+
+    padding-top: ($magic / 2);
+
+    label {
+        font-size: 22px;
+    }
+}
+
 .search-bar-form__content div {
     @include cols(4);
 }
@@ -50,7 +63,9 @@
 
 .search-bar-input {
     input {
-        width: 100%;
+        @include form-input-text;
+        @include form-input-text--font-size-large;
+        @include cols(4);
     }
 }
 
@@ -61,6 +76,8 @@
     flex-flow: column nowrap;
 
     button {
-        width: 100%;
+        @include button;
+        @include button-color--brand;
+        @include button-size--default;
     }
 }

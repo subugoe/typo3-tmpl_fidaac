@@ -40,7 +40,7 @@ form {
     }
 
     .powermail_input,
-    input[type=text],
+    // input[type=text],
     .pz2-searchField {
         @include form-input-text;
     }
