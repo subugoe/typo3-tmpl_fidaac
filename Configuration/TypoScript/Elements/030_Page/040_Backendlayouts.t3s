@@ -10,5 +10,5 @@ tt_content.stdWrap.innerWrap.cObject {
     1.value = <article class="doubleColumn">|</article>
 
     2 = TEXT
-    2.value = <article class="featureSlider">|</article>
+    2.value = <article class="newsStairsSlider">|</article>
 }

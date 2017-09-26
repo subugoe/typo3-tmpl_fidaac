@@ -1,0 +1,118 @@
+.news-slider-view {
+    overflow: hidden;
+    position: relative;
+
+    .news-rel-slider {
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: row;
+        position: relative;
+        left: 0;
+    }
+
+    .news-slide {
+        @include media-l {
+            @include span-l-5;
+            width: width(l-5);
+            margin: $magic-l/2;
+        }
+
+        @include media-m {
+            @include span-m-5;
+        }
+
+        @include media-s {
+            @include span-s-6;
+        }
+        display: flex;
+        align-content: flex-start;
+    }
+
+    .news-info {
+        flex-direction: column;
+        align-content: space-between;
+    }
+
+    .img-wrap {
+        @include media-l {
+            padding: 0;
+            width: width(l-5);
+            height: width(l-5) / 16 * 9;
+            margin: $magic-l / 2 0;
+        }
+
+        @include media-m {
+            height: width(l-5) / 16 * 9;
+        }
+
+        @include media-s {
+            height: width(l-6) / 16 * 9;
+        }
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+
+        img {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .news-info {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+    }
+
+    .teaser-text {
+        @include media-l {
+            @include span-l-5;
+        }
+
+        @include media-m {
+            @include span-m-5;
+        }
+
+        @include media-s {
+            @include span-s-6;
+        }
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    .news-overlay {
+        position: absolute;
+        height: 100%;
+        width: 150px;
+        top: 0;
+        z-index: 0;
+        cursor: pointer;
+
+        &.-left {
+            background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            left: 0;
+            z-index: 10;
+        }
+
+        &.-right {
+            background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            left: auto;
+            right: 0;
+        }
+    }
+
+    .slider-button {
+        @include cols(3);
+        @include button;
+        @include button-color--brand;
+        @include button-size--default;
+
+        svg {
+            margin-right: $magic--half;
+            height: 1em;
+            width: 1em;
+        }
+    }
+}

@@ -258,12 +258,12 @@ $(document).ready(() => {
 
         // when scrolled up show default header
         if ($(event.currentTarget).scrollTop() === 0) {
-            $('.overlay').hide();
+            $('.scrolled-overlay').hide();
             $('.navigation_default').show();
             $('.navigation_breadCrumbs').hide();
             $('.toTop_inner').css('visibility', 'hidden');
         } else if ($('.toTop_inner').css('visibility') === 'hidden') {
-            $('.overlay').show();
+            $('.scrolled-overlay').show();
             $('.navigation_default').hide();
             $('.navigation_breadCrumbs').show();
             $('.toTop_inner').css('visibility', 'visible');
@@ -293,10 +293,41 @@ $(document).ready(() => {
      */
     $('body').show();
     $('.navigation_breadCrumbs').hide();
-    $('.overlay').hide();
+    $('.scrolled-overlay').hide();
     $('.navigation_default-submenuContainer-outer').hide();
     // hide, so that space is preserved
     $('.toTop_inner').css('visibility', 'hidden');
+});
+
+$(document).ready(() => {
+
+    $('.news-overlay.-left').hide();
+
+    $('.news-overlay.-right').on('click', () => {
+        const relleft = $('.news-rel-slider').position().left;
+        const relwidth = $('.news-rel-slider').width();
+        const fixleft = $('.news-slider-view').position().left;
+        const fixwidth = $('.news-slider-view').width();
+        console.log(relleft + relwidth);
+        console.log(fixleft + fixwidth);
+        $('.news-rel-slider').animate({ 'left': '-=416px' });
+        $('.news-overlay.-left').show();
+        if (relleft + relwidth < 400) {
+            $('.news-overlay.-right').hide();
+        }
+    });
+
+    $('.news-overlay.-left').on('click', () => {
+        const relleft = $('.news-rel-slider').position().left;
+        const fixleft = $('.news-slider-view').position().left;
+        console.log(relleft);
+        console.log(fixleft);
+        $('.news-rel-slider').animate({ 'left': '+=416px' });
+        $('.news-overlay.-right').show();
+        if (relleft > -416) {
+            $('.news-overlay.-left').hide();
+        }
+    });
 });
 
 /**

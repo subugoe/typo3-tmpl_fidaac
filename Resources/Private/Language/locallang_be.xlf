@@ -6,12 +6,6 @@
             <authorEmail>blache@sub.uni-goettingen.de</authorEmail>
         </header>
         <body>
-            <trans-unit id="featurebox_title" xml:space="preserve">
-                <source>Featurebox</source>
-            </trans-unit>
-            <trans-unit id="featurebox_wiz_description" xml:space="preserve">
-                <source>Element with image and teaser text. May link to other content</source>
-            </trans-unit>
         </body>
     </file>
 </xliff>

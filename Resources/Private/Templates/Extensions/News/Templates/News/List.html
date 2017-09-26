@@ -15,17 +15,17 @@
             <f:comment>Switch between different layouts for start page</f:comment>
             <f:switch expression="{settings.templateLayout}">
                 <f:case value="50">
-                    <div class="news-featurebox-view" id="news-container-{contentObjectData.uid}">
-                        <f:if condition="{settings.hidePagination}">
+                    <div class="news-stairs-view" id="news-container-{contentObjectData.uid}">
+                        <f:if condition="{settingps.hidePagination}">
                             <f:then>
                                 <f:for each="{news}" as="newsItem" iteration="iterator">
-                                    <f:render partial="List/Custom/Featurebox" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    <f:render partial="List/Custom/Stairs" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
                                 </f:for>
                             </f:then>
                             <f:else>
                                 <n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
                                     <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
-                                        <f:render partial="List/Custom/Featurebox" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                        <f:render partial="List/Custom/Stairs" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
                                     </f:for>
                                 </n:widget.paginate>
                             </f:else>
@@ -34,10 +34,12 @@
                 </f:case>
                 <f:case value="60">
                     <div class="news-slider-view" id="news-container-{contentObjectData.uid}">
+                        <div class="news-overlay -left"></div>
+                        <div class="news-rel-slider">
                         <f:if condition="{settings.hidePagination}">
                             <f:then>
                                 <f:for each="{news}" as="newsItem" iteration="iterator">
-                                    <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    <f:render partial="List/Custom/Slider" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
                                 </f:for>
                             </f:then>
                             <f:else>
@@ -48,6 +50,8 @@
                                 </n:widget.paginate>
                             </f:else>
                         </f:if>
+                        </div>
+                            <div class="news-overlay -right"></div>
                     </div>
                 </f:case>
                 <f:defaultCase>
