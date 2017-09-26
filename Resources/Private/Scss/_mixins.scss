@@ -359,3 +359,11 @@
     border-radius: 0;
     height: auto !important;
 }
+
+@mixin link-marker {
+    a::after {
+        content: "+";
+        position: relative;
+        top: -10px;
+    }
+}
