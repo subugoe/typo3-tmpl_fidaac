@@ -5,11 +5,13 @@ imports:
 
 editor:
    config:
-      format_tags: 'p;h1;h2;h3;pre'
+      format_tags: 'p;h1;h2;h3;h4'
       contentsCss: ['EXT:rte_ckeditor/Resources/Public/Css/contents.css', 'EXT:tmpl_fidaac/Resources/Public/Css/rte.css']
+      extraAllowedContent: 'dl dt dd'
       stylesSet:
-        - { name: 'DefinitionList', element: 'p', attributes: {'class': 'literature'} }
+        - { name: 'Literature', element: 'p', attributes: {'class': 'literature'} }
         - { name: 'Default style', element: 'p', attributes: {'class': 'default'} }
+
       toolbarGroups:
         - { name: 'styles', groups: [ 'styles' ] }
         - '/'
@@ -25,4 +27,4 @@ editor:
         - { name: 'tools', groups: [ 'tools' ] }
         - { name: 'others', groups: [ 'others' ] }
         - { name: 'about', groups: [ 'about' ] }
-      removeButtons: 'Iframe,PageBreak,Smiley,HorizontalRule,Flash,Image,Anchor,Scayt,Cut,Undo,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Blockquote,CreateDiv,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,BidiLtr,BidiRtl,Language,Underline,Strike,Font,FontSize,Save,NewPage,Preview,Print,Templates,Copy,Redo,Paste,PasteText,PasteFromWord,TextColor,BGColor,Maximize,ShowBlocks,About'
+      removeButtons: 'Font,FontSize,Save,NewPage,Preview,Print,Templates,About,Maximize,TextColor,Cut,Undo,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,ImageButton,Button,HiddenField,Redo,Copy,Paste,PasteText,PasteFromWord,Strike,CreateDiv,Blockquote,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,BidiLtr,BidiRtl,Language,Anchor,Image,Flash,Table,HorizontalRule,Smiley,PageBreak,Iframe,ShowBlocks,BGColor'
