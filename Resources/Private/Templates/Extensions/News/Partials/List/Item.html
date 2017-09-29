@@ -52,7 +52,7 @@
     </f:if>
 
     <!-- header -->
-        <div class="news_header">
+        <div class="news-header">
             <div class="title">
                 <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
                     <span itemprop="headline">{newsItem.title}</span>
@@ -60,7 +60,7 @@
             </div>
 
         <div class="meta">
-            <div class="-list-dateNAuthor">
+            <div class="list-dateNAuthor">
                 <!-- date -->
                 <time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
                     <f:format.date format="{f:translate(key:'LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:dateFormat')}">{newsItem.datetime}</f:format.date>
@@ -75,23 +75,21 @@
                     {newsItem.author}
                 </f:if>
             </div>
-            <div class="list-category">
-                <f:if condition="{newsItem.firstCategory}">
-                    <!-- first category -->
-                    <f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}"/>
-                </f:if>
+            <f:if condition="{newsItem.firstCategory}">
+                <!-- first category -->
+                <f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}"/>
+            </f:if>
 
-                <f:if condition="{newsItem.tags}">
-                    <!-- Tags -->
-                    <span class="news-list-tags" itemprop="keywords">
+            <f:if condition="{newsItem.tags}">
+                <!-- Tags -->
+                <span class="news-list-tags" itemprop="keywords">
                     <f:for each="{newsItem.tags}" as="tag">
                     {tag.title}
                     </f:for>
                 </span>
-                </f:if>
-            </div>
+            </f:if>
         </div>
-    </div>
+        </div>
 
     <!-- teaser -->
     <div class="teaser-text">

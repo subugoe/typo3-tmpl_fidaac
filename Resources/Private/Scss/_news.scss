@@ -14,30 +14,39 @@
             color: $shadeDarkest;
             font-size: $base-font-size-l;
             line-height: $base-line-height-l;
+            font-weight: normal;
+            display: flex;
+            flex-direction: column;
+        }
 
-            .news_list-category {
+        .list-dateNAuthor {
+            display: flex;
+        }
+
+        .news-list-category {
+            color: $shadeDarkest;
+            font-size: $base-font-size-l;
+            line-height: $base-line-height-l;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+
+            .-item {
+                background: $accent;
+                border-radius: $magic-l/4;
+                padding: $magic-l/8 $magic-l/2;
+                margin: $magic-l/4 $magic-l/2 $magic-l/4 0;
+                white-space: nowrap;
                 display: flex;
+                flex-grow: 0;
             }
+        }
 
-            .list-category {
-                font-size: 12px;
-                display: flex;
-
-                .-item {
-                    background: $accent;
-                    border-radius: $magic-l/4;
-                    padding: $magic-l/8 $magic-l/2;
-                    margin: $magic-l/2 0;
-                    white-space: nowrap;
-                }
-            }
-
-            .-by {
-                font-style: italic;
-                padding-right: 0.4em;
-                padding-left: 0.3em;
-                font-weight: 300;
-            }
+        .-by {
+            font-style: italic;
+            padding-right: 0.4em;
+            padding-left: 0.3em;
+            font-weight: 300;
         }
     }
 
@@ -72,31 +81,19 @@
         }
     }
 
-    .news_info {
-        @include media-l {
-            @include span-l-10;
-        }
-
-        @include media-m {
-            @include span-m-10;
-        }
-
-        @include media-s {
-            @include span-s-6;
-        }
-    }
-
     .page-navigation a::after {
         content: "";
     }
 
-    .news_header {
+    .news-header {
         @include media-l {
             @include span-l-8;
+            padding-left: $magic-l / 2;
         }
 
         @include media-m {
             @include span-m-8;
+            padding-left: $magic-m / 2;
         }
 
         @include media-s {

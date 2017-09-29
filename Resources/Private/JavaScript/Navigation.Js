@@ -142,12 +142,12 @@ $(document).ready(() => {
 
         // when scrolled up show default header
         if ($(event.currentTarget).scrollTop() === 0) {
-            $('.overlay').hide();
+            $('.scrolled-overlay').hide();
             $('.navigation_default').show();
             $('.navigation_breadCrumbs').hide();
             $('.toTop_inner').css('visibility', 'hidden');
         } else if ($('.toTop_inner').css('visibility') === 'hidden') {
-            $('.overlay').show();
+            $('.scrolled-overlay').show();
             $('.navigation_default').hide();
             $('.navigation_breadCrumbs').show();
             $('.toTop_inner').css('visibility', 'visible');

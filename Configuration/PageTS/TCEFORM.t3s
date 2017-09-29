@@ -11,12 +11,12 @@ TCEFORM {
             }
         }
 
-        // Add layouts for double column content and featurebox
+        // Add layouts for double column content and custom news
         layout {
             altLabels {
                 0 = Default
                 1 = Double column
-                2 = Featurebox and slider
+                2 = News stairs and slider
             }
 
             removeItems = 3,4,5,6,7,8,9,10

@@ -12,7 +12,7 @@ $(document).ready(() => {
      */
     $('body').show();
     $('.navigation_breadCrumbs').hide();
-    $('.overlay').hide();
+    $('.scrolled-overlay').hide();
     $('.navigation_default-submenuContainer-outer').hide();
     // hide, so that space is preserved
     $('.toTop_inner').css('visibility', 'hidden');

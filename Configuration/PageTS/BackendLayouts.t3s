@@ -66,8 +66,8 @@ mod {
                 }
             }
 
-            FeatureBox {
-                title = Featurebox and slider for news
+            NewsStairs {
+                title = News stairs and slider
                 config {
                     backend_layout {
                         colCount = 1
