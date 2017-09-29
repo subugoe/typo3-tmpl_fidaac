@@ -12,8 +12,6 @@ plugin {
                 skipControllerAndAction = 1
             }
 
-
-
             list {
                 media.image {
                     maxWidth =
