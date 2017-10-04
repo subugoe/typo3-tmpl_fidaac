@@ -54,7 +54,11 @@
 
             .news-list-category {
                 justify-content: flex-end;
-            };
+
+                .-item:last-of-type {
+                    margin-right: 0;
+                }
+            }
 
             .teaser-text {
                 text-align: right;
