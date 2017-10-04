@@ -13,6 +13,9 @@
         width: width(s-6);
     }
     justify-content: flex-start;
+
+    // no header is shown for stairs and slider, so there must be top padding
+    padding-top: $magic * 3;
 }
 
 .news-stairs-view {
@@ -33,6 +36,32 @@
             .infos-wrap {
                 padding-right: $magic-l/2;
                 padding-left: 0;
+                justify-content: flex-end;
+            }
+
+            // when text is left, everything is right-aligned
+            .news-header {
+                justify-content: flex-end;
+            }
+
+            .title {
+                text-align: right;
+            }
+
+            .list-dateNAuthor {
+                justify-content: flex-end;
+            }
+
+            .news-list-category {
+                justify-content: flex-end;
+
+                .-item:last-of-type {
+                    margin-right: 0;
+                }
+            }
+
+            .teaser-text {
+                text-align: right;
             }
         }
 
@@ -50,8 +79,16 @@
             }
         }
 
+        .news-infos {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         .news-header {
             display: flex;
+            padding-left: 0;
+            flex-wrap: wrap;
+            width: 100%;
         }
 
         .img-wrap {
@@ -64,20 +101,25 @@
 
             @include media-m {
                 flex-basis: width(m-6);
+                width: width(m-6);
+                max-width: width(m-6);
+                height: width(m-6) / 16 * 9;
             }
 
             @include media-s {
                 flex-basis: width(s-6);
+                width: width(s-6);
+                max-width: width(s-6);
+                height: width(s-6) / 16 * 9;
             }
             display: flex;
             overflow: hidden;
             align-items: center;
+            flex-direction: column;
+            align-content: flex-start;
 
-            img {
-                border: 0.2px solid $shadeLighter;
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
+            a {
+                display: flex;
             }
         }
 
@@ -97,6 +139,12 @@
             display: flex;
             flex-direction: column;
             align-content: space-between;
+        }
+
+        .news-list-category {
+            @include media-m {
+                display: none;
+            }
         }
 
         .stairs-button {

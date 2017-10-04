@@ -7,9 +7,6 @@ page {
         file100.title = Template CSS
         file100.media = screen
 
-        file500 = EXT:news/Resources/Public/Css/news-basic.css
-        file500.media = screen
-
         file600 = EXT:tmpl_fidaac/Resources/Public/Css/print.css
         file600.media = print
     }

@@ -1,36 +1,33 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TypoScript/setup.txt">
-plugin {
-    tx_news {
-        view {
-            templateRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Templates/
-            partialRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Partials/
-            layoutRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Layouts/
+plugin.tx_news {
+    view {
+        templateRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Templates/
+        partialRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Partials/
+        layoutRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/News/Layouts/
+    }
+
+    settings {
+        link {
+            skipControllerAndAction = 1
         }
 
-        settings {
-            link {
-                skipControllerAndAction = 1
+        list {
+            media.image {
+                maxWidth =
+                maxHeight =
             }
 
-
-
-            list {
-                media.image {
-                    maxWidth =
-                    maxHeight =
-                }
-                rss.channel {
-                    title = Library AAC
-                    description = RSS Feed Library AAC
-                    link = {$plugin.tx_news.rss.channel.link}
-                    language = en_EN
-                    copyright = SUB Göttingen
-                    generator = TYPO3 EXT:news
-                }
-                hidePagination = 1
+            rss.channel {
+                title = Library AAC
+                description = RSS Feed Library AAC
+                link = {$plugin.tx_news.rss.channel.link}
+                language = en_EN
+                copyright = SUB Göttingen
+                generator = TYPO3 EXT:news
             }
-            cssFile >
         }
+
+        cssFile =
     }
 }
 
