@@ -16,20 +16,11 @@
             <f:switch expression="{settings.templateLayout}">
                 <f:case value="50">
                     <div class="news-stairs-view" id="news-container-{contentObjectData.uid}">
-                        <f:if condition="{settingps.hidePagination}">
-                            <f:then>
-                                <f:for each="{news}" as="newsItem" iteration="iterator">
-                                    <f:render partial="List/Custom/Stairs" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
-                                </f:for>
-                            </f:then>
-                            <f:else>
-                                <n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
-                                    <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
-                                        <f:render partial="List/Custom/Stairs" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
-                                    </f:for>
-                                </n:widget.paginate>
-                            </f:else>
-                        </f:if>
+                        <!-- no pagination -->
+                        <f:for each="{news}" as="newsItem" iteration="iterator">
+                            <f:render partial="List/Custom/Stairs"
+                                      arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                        </f:for>
                     </div>
                 </f:case>
                 <f:case value="60">
@@ -56,20 +47,11 @@
                 </f:case>
                 <f:defaultCase>
                     <div class="news-list-view" id="news-container-{contentObjectData.uid}">
-                        <f:if condition="{settings.hidePagination}">
-                            <f:then>
-                                <f:for each="{news}" as="newsItem" iteration="iterator">
-                                    <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
-                                </f:for>
-                            </f:then>
-                            <f:else>
-                                <n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
-                                    <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
-                                        <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
-                                    </f:for>
-                                </n:widget.paginate>
-                            </f:else>
-                        </f:if>
+                        <!-- no pagination -->
+                        <f:for each="{news}" as="newsItem" iteration="iterator">
+                            <f:render partial="List/Item"
+                                      arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                        </f:for>
                     </div>
                 </f:defaultCase>
             </f:switch>

@@ -18,19 +18,19 @@
         @include media-l {
             @include span-l-5;
             width: width(l-5);
-            margin: $magic-l/2 $magic-l $magic-l/2 0;
+            margin: 0 $magic-l 0 0;
         }
 
         @include media-m {
             @include span-m-5;
             width: width(m-5);
-            margin: $magic-m/2 $magic-m $magic-m/2 0;
+            margin: 0 $magic-m 0 0;
         }
 
         @include media-s {
             @include span-s-6;
             width: width(s-6);
-            margin: $magic-s/2;
+            margin: 0;
         }
         display: flex;
         align-content: flex-start;
@@ -40,6 +40,13 @@
         flex-direction: column;
         align-content: space-between;
         display: flex;
+    }
+
+    .news-header {
+        display: flex;
+        padding-left: 0;
+        flex-wrap: wrap;
+        width: 100%;
     }
 
     .img-wrap {

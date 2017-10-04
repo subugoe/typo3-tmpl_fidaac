@@ -4,7 +4,7 @@ $(document).ready(() => {
      * Implement handles for slider view of news
      */
     $('.news-overlay.-left').hide();
-    if ($('.news-rel-slider').position().left + $('.news-rel-slider').width() <= 960) {
+    if ($('.news-slide').length < 3) {
         $('.news-overlay.-right').hide();
     }
 

@@ -90,17 +90,17 @@
 
     .news-header {
         @include media-l {
-            @include span-l-8;
+            width: width(l-8);
             padding-left: $magic-l / 2;
         }
 
         @include media-m {
-            @include span-m-8;
+            width: width(m-8);
             padding-left: $magic-m / 2;
         }
 
         @include media-s {
-            @include span-s-6;
+            width: width(s-6);
         }
         font-size: $large-font-size-l;
         line-height: $large-line-height-l;
@@ -124,7 +124,7 @@
 
     .teaser-text {
         padding: 0;
-        margin: 0 !important;
+        margin-bottom: 0;
         overflow: hidden;
         display: flex;
 
