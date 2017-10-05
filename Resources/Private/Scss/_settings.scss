@@ -62,9 +62,12 @@ $grid-s-width: 312px;
 $grid-m-width: 768px;
 $grid-l-width: 960px;
 
-$media-s: "(max-width: 767px)";
-$media-m: "(min-width: 768px)";
-$media-l: "(min-width: 960px)";
+// $media-s: "(max-width: 767px)";
+$media-s: "(max-width: 1px)";
+// $media-m: "(min-width: 768px)";
+$media-m: "(max-width: 1px)";
+// $media-l: "(min-width: 960px)";
+$media-l: "(min-width: 3px)";
 
 $grid-l-col: 64px;
 $grid-l-gutter: 16px;
