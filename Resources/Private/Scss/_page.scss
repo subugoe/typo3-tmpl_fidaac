@@ -24,7 +24,6 @@ body {
     font-family: "Open Sans", sans-serif;
     overflow: hidden;
     height: 100%;
-
     display: none;
 }
 
@@ -156,13 +155,13 @@ ul {
 }
 
 p {
-    font-weight: 300;
+    font-weight: normal;
     margin-top: 0;
     margin-bottom: $magic-l/2;
 }
 
 ul {
-    font-weight: 300;
+    font-weight: normal;
     list-style: none;
     padding: 0.25em 0 0.45em;
     margin: 0;

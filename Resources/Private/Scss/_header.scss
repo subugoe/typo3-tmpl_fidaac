@@ -156,6 +156,7 @@
     @include media-l {
         @include span-l-6;
         font-size: $base-font-size-l + 4;
+        margin-bottom: $magic;
     }
 
     @include media-m {
@@ -219,6 +220,12 @@
 .header_home-icon {
     display: flex;
     align-items: center;
+
+    svg {
+        height: 24px;
+        width: 24px;
+        margin-bottom: -3px;
+    }
 }
 
 .header_search {
@@ -239,6 +246,11 @@
 .header_search-icon {
     display: flex;
     align-items: center;
+
+    svg {
+        height: 22px;
+        width: 22px;
+    }
 }
 
 .header_language {
@@ -259,4 +271,10 @@
 .header_language-icon {
     display: flex;
     align-items: center;
+
+    svg {
+        height: 22px;
+        width: 22px;
+        margin-bottom: -2px;
+    }
 }
