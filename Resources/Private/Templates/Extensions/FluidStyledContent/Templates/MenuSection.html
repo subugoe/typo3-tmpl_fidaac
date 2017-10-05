@@ -7,13 +7,13 @@
 			<f:for each="{menu}" as="page">
 				<f:if condition="{page.content}">
 					<f:for each="{page.content}" as="element">
-						<f:if condition="{element.data.header}">
-						<li>
-							<a href="{page.link}#c{element.data.uid}" target="{page.target}" title="{element.data.header}">
-								<span>{element.data.header}</span>
-							</a>
-						</li>
-						</f:if>
+                        <f:if condition="{element.data.header}">
+                            <li>
+                                <a href="{page.link}#c{element.data.uid}" target="{page.target}" title="{element.data.header}">
+                                    <span>{element.data.header}</span>
+                                </a>
+                            </li>
+                        </f:if>
 					</f:for>
 				</f:if>
 			</f:for>
