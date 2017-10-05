@@ -19,7 +19,7 @@ page {
     meta {
         keywords.field = keywords
         description.field = description
-        viewport = width=device-width, initial-scale=1.0
+        viewport = width=device-width, initial-scale=1
     }
 }
 

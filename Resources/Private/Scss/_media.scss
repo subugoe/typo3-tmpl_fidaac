@@ -1,17 +1,17 @@
 @mixin media-l {
-    @media (min-width: 960px) {
+    @media (min-width: 3px) {
         @content;
     }
 }
 
 @mixin media-m {
-    @media (min-width: 768px) and (max-width: 960px) {
+    @media (max-width: 1px) {
         @content;
     }
 }
 
 @mixin media-s {
-    @media (max-width: 767px) {
+    @media (max-width: 1px) {
         @content;
     }
 }
