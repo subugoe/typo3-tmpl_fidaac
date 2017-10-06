@@ -231,8 +231,8 @@
 
             <!-- search bar -->
             <trans-unit id="search_library" xml:space="preserve">
-                <source>Library</source>
-                <target>Bibliothek</target>
+                <source>Catalogues and Collections</source>
+                <target>Kataloge und Sammlungen</target>
             </trans-unit>
             <trans-unit id="search_website" xml:space="preserve">
                 <source>Website</source>
@@ -258,11 +258,6 @@
                 <source>Search</source>
                 <target>Suche</target>
             </trans-unit>
-            <trans-unit id="search_bar_subtitle" xml:space="preserve">
-                <source>Lorem ipsum dolor sit amut. (en)</source>
-                <target>Lorem ipsum dolor sit amut. (de)</target>
-            </trans-unit>
-
             <trans-unit id="caret_right" xml:space="preserve">
                 <source>Caret Right</source>
                 <target>Caret Right</target>
