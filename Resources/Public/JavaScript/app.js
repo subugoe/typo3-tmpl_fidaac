@@ -313,11 +313,10 @@ $(document).ready(() => {
         const relleft = $('.news-rel-slider').position().left;
         const relwidth = $('.news-rel-slider').width();
 
-        // TODO: make dependent of media
         $('.news-rel-slider').animate({ 'left': '-=416px' });
         $('.news-overlay.-left').show();
         // show handles only, if there is still something to scroll
-        if (relleft + relwidth <= 416) {
+        if (relleft + relwidth <= 960) {
             $('.news-overlay.-right').hide();
         }
     });
