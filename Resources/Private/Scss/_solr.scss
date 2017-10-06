@@ -4,18 +4,32 @@
         flex-basis: 100%;
         width: 100%;
         flex-wrap: wrap;
-        margin-bottom: $magic;
+        margin-bottom: $magic-l;
     }
 
     #results-per-page {
+        margin-bottom: $magic-l;
+
         select {
             @include form-select;
         }
     }
 
+    .button-read-more {
+        @include cols(3);
+        @include button;
+        @include button-color--brand;
+        @include button-size--default;
+
+        svg {
+            margin-right: $magic--half;
+            height: 1em;
+            width: 1em;
+        }
+    }
 
     .results-list {
-        padding-left: $magic;
+        padding-left: 0;
 
         li::before {
             content: "";
@@ -30,6 +44,11 @@
                 content: "";
             }
         }
+    }
+
+    .results-entry::before {
+        bottom: 0;
+        padding: 0;
     }
 
     .results-topic {
@@ -55,6 +74,41 @@
 
     .relevance-bar {
         display: none;
+    }
+
+    .pagination {
+        display: flex;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: $magic-l * 2;
+            width: $magic-l * 2;
+            margin: 0 $magic;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &::before {
+                content: "";
+                padding: 0;
+            }
+
+            &.active {
+                background-color: $brand;
+                color: $white;
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
+
+        a {
+            @include link-empty();
+        }
     }
 
     .tx-solr-search-form {
@@ -86,18 +140,5 @@
         @include form-input-text--font-size-large();
         width: width(l-7);
         margin-right: $magic;
-    }
-
-    .button-read-more {
-        @include cols(3);
-        @include button;
-        @include button-color--brand;
-        @include button-size--default;
-
-        svg {
-            margin-right: $magic--half;
-            height: 1em;
-            width: 1em;
-        }
     }
 }
