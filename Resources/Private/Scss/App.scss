@@ -8,6 +8,8 @@
 @import 'elements/form-input';
 @import 'elements/form-radio';
 @import 'elements/form-select';
+@import 'elements/link';
+@import 'page';
 @import 'breadcrumbs';
 @import 'categories';
 @import 'descriptionList';
@@ -19,7 +21,6 @@
 @import 'main';
 @import 'navigation';
 @import 'news';
-@import 'page';
 @import 'search';
 @import 'misc';
 @import 'forms';
@@ -29,4 +30,5 @@
 @import 'find';
 @import 'blocks/news-stairs';
 @import 'blocks/news-slider';
+@import 'blocks/news-single';
 @import 'blocks/search-bar';
