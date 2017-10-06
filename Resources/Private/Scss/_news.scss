@@ -32,6 +32,7 @@
             align-content: flex-start;
             margin-top: $magic;
 
+
             .-item {
                 background: $accent;
                 border-radius: $magic / 2;
@@ -41,6 +42,10 @@
                 white-space: nowrap;
                 display: flex;
                 flex-grow: 0;
+
+                &::after {
+                    content: "";
+                }
             }
         }
 

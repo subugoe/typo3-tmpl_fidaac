@@ -3,6 +3,7 @@
 @import 'media';
 @import 'functions';
 @import 'mixins';
+@import 'page';
 @import 'utilities/simple-grid';
 @import 'elements/button';
 @import 'elements/form-input';
@@ -19,7 +20,6 @@
 @import 'main';
 @import 'navigation';
 @import 'news';
-@import 'page';
 @import 'search';
 @import 'misc';
 @import 'forms';
@@ -29,4 +29,5 @@
 @import 'find';
 @import 'blocks/news-stairs';
 @import 'blocks/news-slider';
+@import 'blocks/news-single';
 @import 'blocks/search-bar';
