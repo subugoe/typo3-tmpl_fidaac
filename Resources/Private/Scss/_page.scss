@@ -142,14 +142,7 @@ a {
 p,
 ul {
     a {
-        color: $brand;
-        font-weight: 400;
-
-        &::after {
-            content: "+";
-            position: relative;
-            top: -6px;
-        }
+        @include link-plus();
     }
 }
 

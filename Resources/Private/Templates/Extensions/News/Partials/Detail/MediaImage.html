@@ -25,7 +25,7 @@
 </div>
 <f:if condition="{mediaElement.description}">
 	<p class="news-img-caption">
-		{mediaElement.description}
+        <f:format.htmlentitiesDecode>{mediaElement.description}</f:format.htmlentitiesDecode>
 	</p>
 </f:if>
 </html>

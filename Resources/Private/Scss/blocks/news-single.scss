@@ -17,11 +17,21 @@
         }
     }
 
+    .news-text-wrap {
+        a {
+            @include link-plus();
+        }
+    }
+
     .news-img-caption {
         font-size: $small-font-size-l;
         line-height: $small-line-height-l;
         text-align: end;
         margin-bottom: 0;
+
+        a {
+            @include link-plus();
+        }
     }
 
     .news-backlink-wrap {

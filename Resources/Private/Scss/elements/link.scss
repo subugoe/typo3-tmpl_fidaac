@@ -1,0 +1,11 @@
+@mixin link-plus() {
+    color: $brand;
+    font-weight: 400;
+    text-decoration: none;
+
+    &::after {
+        content: "+";
+        position: relative;
+        top: -6px;
+    }
+}
