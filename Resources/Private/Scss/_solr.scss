@@ -1,0 +1,103 @@
+.tx_solr {
+    #tx-solr-search-form-pi-results {
+        display: flex;
+        flex-basis: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: $magic;
+    }
+
+    #results-per-page {
+        select {
+            @include form-select;
+        }
+    }
+
+
+    .results-list {
+        padding-left: $magic;
+
+        li::before {
+            content: "";
+        }
+    }
+
+    .result-content {
+        a {
+            color: inherit;
+
+            &::after {
+                content: "";
+            }
+        }
+    }
+
+    .results-topic {
+        a {
+            color: inherit;
+        }
+    }
+
+    .results-teaser {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .relevance {
+        display: flex;
+        width: 100%;
+    }
+
+    .relevance-label {
+        margin-right: $magic;
+    }
+
+    .relevance-bar {
+        display: none;
+    }
+
+    .tx-solr-search-form {
+        display: flex;
+        flex-basis: 100%;
+        flex-wrap: wrap;
+
+        br {
+            display: none;
+        }
+    }
+
+    .tx-solr-submit {
+        @include cols(3);
+        @include button;
+        @include button-color--brand;
+        @include button-size--default;
+        margin-left: $magic;
+
+        svg {
+            margin-right: $magic--half;
+            height: 1em;
+            width: 1em;
+        }
+    }
+
+    .tx-solr-q {
+        @include form-input-text;
+        @include form-input-text--font-size-large();
+        width: width(l-7);
+        margin-right: $magic;
+    }
+
+    .button-read-more {
+        @include cols(3);
+        @include button;
+        @include button-color--brand;
+        @include button-size--default;
+
+        svg {
+            margin-right: $magic--half;
+            height: 1em;
+            width: 1em;
+        }
+    }
+}
