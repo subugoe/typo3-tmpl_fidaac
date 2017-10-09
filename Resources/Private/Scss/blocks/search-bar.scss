@@ -5,8 +5,11 @@
 
 
 .search-bar-title__text-title {
-    font-size: 40px;
-    font-weight: 700;
+    font-size: $huge-font-size-l - 1;
+    font-weight: 600;
+    line-height: $huge-line-height-l + 10;
+    padding-top: $magic-l;
+    padding-bottom: $magic-l/2;
     padding-right: ($magic * 2);
 }
 
