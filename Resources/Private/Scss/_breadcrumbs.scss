@@ -16,6 +16,8 @@
     @include media-s {
         @include span-s-6;
     }
+
+    display: none !important;
     flex-flow: row wrap;
     align-self: center;
     align-items: center;
