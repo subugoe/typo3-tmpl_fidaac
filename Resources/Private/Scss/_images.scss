@@ -31,7 +31,7 @@ figure {
         padding-top: $magic;
 
         a {
-            color: $brand;
+            @include link-plus();
         }
     }
 }
