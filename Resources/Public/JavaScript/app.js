@@ -57,6 +57,9 @@ $(document).ready(() => {
         window.location = getQuery(id) + $('#search').val();
         return false;
     });
+
+    $('.pagination .previous a').html('<svg><use xlink:href="typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#backward"/></svg>');
+    $('.pagination .last.next a').html('<svg><use xlink:href="typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#forward"/></svg>');
 });
 
 /**
