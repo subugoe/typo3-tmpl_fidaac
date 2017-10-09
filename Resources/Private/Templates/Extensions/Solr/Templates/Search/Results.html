@@ -38,7 +38,7 @@
 
 		<f:if condition="{resultSet.usedSearch.numberOfResults}">
 			<span class="result-found">
-				<s:translate key="results_found" arguments="{0:resultSet.usedSearch.numberOfResults, 1: resultSet.usedSearch.queryTime}">Found %d results in %d seconds</s:translate>
+                <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:numberOfResults" arguments="{0:'{resultSet.usedSearch.numberOfResults}'}"/>
 			</span>
 
 			<span class="result-range">
