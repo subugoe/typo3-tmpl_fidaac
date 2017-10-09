@@ -29,6 +29,10 @@ figure {
         display: table-caption;
         caption-side: bottom;
         padding-top: $magic;
+
+        a {
+            @include link-plus();
+        }
     }
 }
 
