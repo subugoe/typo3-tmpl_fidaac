@@ -3,7 +3,7 @@
 	<f:if condition="{file.link}">
 		<f:then>
 			<f:link.typolink parameter="{file.link}" title="{file.title}">
-				<f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}" />
+				<f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings, cols: data.imagecols}" />
 			</f:link.typolink>
 		</f:then>
 		<f:else>
