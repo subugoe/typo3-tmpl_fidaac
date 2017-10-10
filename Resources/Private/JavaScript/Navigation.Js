@@ -78,7 +78,7 @@ $(document).ready(() => {
             $(submenu).removeClass('visible-hidden').addClass('visible-shown');
         }
         // Height of header is different on start or content page
-        $(container).css('top', $('.navigation_default').position().top + $('.navigation_default').height());
+        $(container).css('top', $('.navigation_default').position().top + $('.navigation_default').height() - $(window).scrollTop());
     };
 
     const exposePath = (target) => {
