@@ -9,3 +9,13 @@
         top: -6px;
     }
 }
+
+@mixin link-empty() {
+    color: $brand;
+    font-weight: 400;
+    text-decoration: none;
+
+    &::after {
+        content: "";
+    }
+}

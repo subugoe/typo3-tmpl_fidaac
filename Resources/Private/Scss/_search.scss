@@ -18,3 +18,11 @@
         color: $brand;
     }
 }
+
+.pagination {
+    svg {
+        fill: $brand;
+        width: 1.6em;
+        height: 1em;
+    }
+}
