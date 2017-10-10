@@ -5,4 +5,9 @@ plugin.tx_solr {
     solr {
         host = solr
     }
+    view {
+        templateRootPaths.10 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/Solr/Templates/
+        partialRootPaths.10 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/Solr/Partials/
+        layoutRootPaths.10 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/Solr/Layouts/
+    }
 }

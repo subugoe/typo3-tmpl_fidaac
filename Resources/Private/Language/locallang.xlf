@@ -44,6 +44,11 @@
                 <source>Specialised Information Service Anglo-American Culture</source>
             </trans-unit>
 
+            <!-- solr -->
+            <trans-unit id="numberOfResults" xml:space="preserve">
+                <source>Found %1$s results.</source>
+            </trans-unit>
+
             <!-- news extension -->
             <trans-unit id="search-text" xml:space="preserve">
                 <source>There are %1$s results for &quot;%2$s&quot;.</source>

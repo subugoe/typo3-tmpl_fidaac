@@ -1,0 +1,144 @@
+.tx_solr {
+    #tx-solr-search-form-pi-results {
+        display: flex;
+        flex-basis: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: $magic-l;
+    }
+
+    #results-per-page {
+        margin-bottom: $magic-l;
+
+        select {
+            @include form-select;
+        }
+    }
+
+    .button-read-more {
+        @include cols(3);
+        @include button;
+        @include button-color--brand;
+        @include button-size--default;
+
+        svg {
+            margin-right: $magic--half;
+            height: 1em;
+            width: 1em;
+        }
+    }
+
+    .results-list {
+        padding-left: 0;
+
+        li::before {
+            content: "";
+        }
+    }
+
+    .result-content {
+        a {
+            color: inherit;
+
+            &::after {
+                content: "";
+            }
+        }
+    }
+
+    .results-entry::before {
+        bottom: 0;
+        padding: 0;
+    }
+
+    .results-topic {
+        a {
+            color: inherit;
+        }
+    }
+
+    .results-teaser {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .relevance {
+        display: flex;
+        width: 100%;
+    }
+
+    .relevance-label {
+        margin-right: $magic;
+    }
+
+    .relevance-bar {
+        display: none;
+    }
+
+    .pagination {
+        display: flex;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: $magic-l * 2;
+            width: $magic-l * 2;
+            margin: 0 $magic;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &::before {
+                content: "";
+                padding: 0;
+            }
+
+            &.active {
+                background-color: $brand;
+                color: $white;
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
+
+        a {
+            @include link-empty();
+        }
+    }
+
+    .tx-solr-search-form {
+        display: flex;
+        flex-basis: 100%;
+        flex-wrap: wrap;
+
+        br {
+            display: none;
+        }
+    }
+
+    .tx-solr-submit {
+        @include cols(3);
+        @include button;
+        @include button-color--brand;
+        @include button-size--default;
+        margin-left: $magic;
+
+        svg {
+            margin-right: $magic--half;
+            height: 1em;
+            width: 1em;
+        }
+    }
+
+    .tx-solr-q {
+        @include form-input-text;
+        @include form-input-text--font-size-large();
+        width: width(l-7);
+        margin-right: $magic;
+    }
+}
