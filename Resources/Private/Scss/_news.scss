@@ -46,6 +46,10 @@
                 &::after {
                     content: "";
                 }
+
+                a::after {
+                    content: "";
+                }
             }
         }
 

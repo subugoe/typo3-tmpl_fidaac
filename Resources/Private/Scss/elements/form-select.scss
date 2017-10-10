@@ -1,7 +1,9 @@
 @mixin form-select {
     padding: 0;
+    margin: $magic;
     border: 1px solid $shadeDarkest;
     font-size: inherit;
     font-family: inherit;
     line-height: inherit;
+    border-radius: 0;
 }
