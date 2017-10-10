@@ -133,4 +133,22 @@ $(document).ready(() => {
         timeout: 250
     });
 
+
+    /**
+     * Stuff related to scrolling and page up button
+     */
+    $(window).on('scroll', (event) => {
+
+        if ($(event.currentTarget).scrollTop() === 0) {
+            $('.toTop_inner').css('visibility', 'hidden');
+        } else if ($('.toTop_inner').css('visibility') === 'hidden') {
+            $('.navigation_default-submenuContainer-outer').hide();
+            $('.toTop_inner').css('visibility', 'visible');
+        }
+    });
+
+    $('.toTop_inner').on('click', () => {
+        $('html').animate({scrollTop: 0}, 'fast');
+    });
+
 });
