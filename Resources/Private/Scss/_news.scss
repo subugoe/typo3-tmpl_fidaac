@@ -63,8 +63,8 @@
 
     .img-wrap {
         @include media-l {
-            width: width(l-2);
-            height: width(l-2) / 16 * 9;
+            width: width(l-3);
+            height: width(l-3) / 16 * 9;
             padding-right: $magic-l / 2;
         }
 
@@ -99,7 +99,7 @@
 
     .news-header {
         @include media-l {
-            width: width(l-8);
+            width: width(l-7);
             padding-left: $magic-l / 2;
         }
 
