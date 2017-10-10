@@ -62,21 +62,6 @@ lib.navMenu {
     5 < .4
 }
 
-lib.breadCrumbs = HMENU
-lib.breadCrumbs {
-    special = rootline
-    special.range = 1|-1
-
-    1 = TMENU
-    1 {
-        NO = 1
-        CUR = 1
-        CUR.afterWrap =
-        IFSUB = 1
-        IFSUB.afterWrap = <svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#icon-chevron-right"/></svg>
-    }
-}
-
 lib.footer = HMENU
 lib.footer {
     1 = TMENU
@@ -129,5 +114,3 @@ lib.footer {
         ACT < .ACTIFSUB
     }
 }
-
-

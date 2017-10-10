@@ -133,33 +133,4 @@ $(document).ready(() => {
         timeout: 250
     });
 
-
-    /**
-     * everything related to breadcrumbs for scrolled content
-     */
-    // Reduce header and add transparent gradient to text
-    $('.scrolled').on('scroll', (event) => {
-
-        // when scrolled up show default header
-        if ($(event.currentTarget).scrollTop() === 0) {
-            $('.scrolled-overlay').hide();
-            $('.navigation_default').show();
-            $('.navigation_breadCrumbs').hide();
-            $('.toTop_inner').css('visibility', 'hidden');
-        } else if ($('.toTop_inner').css('visibility') === 'hidden') {
-            $('.scrolled-overlay').show();
-            $('.navigation_default').hide();
-            $('.navigation_breadCrumbs').show();
-            $('.toTop_inner').css('visibility', 'visible');
-        }
-    });
-
-    /**
-     * When menuButton or page-up-button is clicked, switch back to full menu
-     */
-    $('.navigation_menuButton, .toTop_inner').on('click', () => {
-        $('.scrolled').animate({scrollTop: 0}, 'fast');
-        $('.navigation_breadCrumbs').hide();
-    });
-
 });

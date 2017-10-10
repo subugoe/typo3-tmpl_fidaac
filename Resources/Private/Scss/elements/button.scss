@@ -24,16 +24,6 @@
     background-color: $value;
 }
 
-@mixin button--in-breadcrumb() {
-    margin-bottom: $magic;
-
-    svg {
-        margin-right: $magic--half;
-        height: 1em;
-        width: 1em;
-    }
-}
-
 @mixin button-size--default {
     font-size: 22px;
     padding: $magic;
