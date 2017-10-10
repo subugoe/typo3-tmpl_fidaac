@@ -55,24 +55,13 @@
 }
 
 .toTop_outer {
-    @include media-l {
-        width: width(l-12);
-        bottom: $magic-l;
-    }
-
-    @include media-m {
-        width: width(m-12);
-        bottom: $magic-l;
-    }
-
-    @include media-s {
-        width: width(m-6);
-        bottom: 0;
-    }
+    width: width(l-12);
+    bottom: $magic-l;
     display: flex;
     position: sticky;
     justify-content: flex-end;
     pointer-events: none;
+    visibility: hidden;
 }
 
 .toTop_inner {
