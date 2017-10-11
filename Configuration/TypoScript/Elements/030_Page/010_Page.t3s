@@ -13,13 +13,7 @@ page {
 
     includeJS {
         file100 = EXT:tmpl_fidaac/Resources/Public/JavaScript/vendor.min.js
-        file100 {
-            async = 1
-        }
         file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/app.js
-        file300 {
-            async = 1
-        }
     }
 
     meta {
