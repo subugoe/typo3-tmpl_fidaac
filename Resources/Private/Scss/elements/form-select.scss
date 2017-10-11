@@ -1,9 +1,14 @@
 @mixin form-select {
     padding: 0;
-    margin: $magic;
+    margin: 0;
     border: 1px solid $shadeDarkest;
     font-size: inherit;
     font-family: inherit;
     line-height: inherit;
     border-radius: 0;
+}
+
+@mixin form-select--large {
+    @include form-select;
+    padding: $magic/2;
 }

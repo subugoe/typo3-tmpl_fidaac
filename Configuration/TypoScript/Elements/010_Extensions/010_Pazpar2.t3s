@@ -5,6 +5,8 @@
 ####################################
 plugin.tx_pazpar2 {
     settings {
+        # resultsPerPage seem not to be working
+        resultsPerPage = 10
         fulltextSearch = 2
         journalTitleOnlySearch = 1
         exportFormats {
@@ -23,6 +25,12 @@ plugin.tx_pazpar2 {
             4.fieldName = title-number-section
             4.direction = ascending
         }
+    }
+}
+
+plugin.tx_pazpar2_pazpar2neuerwerbungen {
+    settings {
+        pz2-neuerwerbungenCSSPath =
     }
 }
 
