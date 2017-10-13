@@ -1,0 +1,53 @@
+@mixin form-checkbox() {
+    input:checked,
+    input:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+
+    input:checked + label,
+    input:not(:checked) + label {
+        position: relative;
+        padding-left: 24px;
+        cursor: pointer;
+        line-height: 16px;
+        display: inline-block;
+        color: $shadeDarkest;
+    }
+
+    input:checked + label::before,
+    input:not(:checked) + label::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border: 1px solid black;
+        border-radius: 0;
+        background: #fff;
+    }
+
+    input:checked + label::after,
+    input:not(:checked) + label::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: $shadeDarkest;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        border-radius: 0;
+        transition: all 0.2s ease;
+    }
+
+    input:not(:checked) + label::after {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    input:checked + label::after {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
