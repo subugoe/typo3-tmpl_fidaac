@@ -22,9 +22,9 @@
                 <source>Imprint</source>
                 <target>Impressum</target>
             </trans-unit>
-            <trans-unit id="Information about Lib AAC">
-                <source>Information about Lib AAC</source>
-                <target>Informationen zur Lib AAC</target>
+            <trans-unit id="RSS">
+                <source>RSS about Lib AAC</source>
+                <target>RSS zur Lib AAC</target>
             </trans-unit>
             <trans-unit id="Jump to main content">
                 <source>Jump to main content</source>
@@ -237,7 +237,7 @@
 
             <!-- search bar -->
             <trans-unit id="search_library" xml:space="preserve">
-                <source>Catalogues and Collections</source>
+                <source>Catalogues <![CDATA[&]]> Collections</source>
                 <target>Kataloge und Sammlungen</target>
             </trans-unit>
             <trans-unit id="search_website" xml:space="preserve">

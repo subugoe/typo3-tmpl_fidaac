@@ -18,8 +18,8 @@
             <trans-unit id="Imprint">
                 <source>Imprint</source>
             </trans-unit>
-            <trans-unit id="Information about Lib AAC">
-                <source>Information about Lib AAC</source>
+            <trans-unit id="RSS">
+                <source>RSS about Lib AAC</source>
             </trans-unit>
             <trans-unit id="Jump to main content">
                 <source>Jump to main content</source>
@@ -179,7 +179,7 @@
 
             <!-- search bar -->
             <trans-unit id="search_library" xml:space="preserve">
-                <source>Catalogues and Collections</source>
+                <source>Catalogues <![CDATA[&]]> Collections</source>
             </trans-unit>
             <trans-unit id="search_website" xml:space="preserve">
                 <source>Website</source>
