@@ -22,10 +22,6 @@
                 <source>Imprint</source>
                 <target>Impressum</target>
             </trans-unit>
-            <trans-unit id="RSS">
-                <source>RSS about Lib AAC</source>
-                <target>RSS zur Lib AAC</target>
-            </trans-unit>
             <trans-unit id="Jump to main content">
                 <source>Jump to main content</source>
                 <target>Zum Seiteninhalt springen</target>
