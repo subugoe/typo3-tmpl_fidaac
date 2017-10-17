@@ -22,6 +22,10 @@
                 <source>Imprint</source>
                 <target>Impressum</target>
             </trans-unit>
+            <trans-unit id="rss-fid">
+                <source>RSS Lib AAC</source>
+                <target>RSS Lib AAC</target>
+            </trans-unit>
             <trans-unit id="Information about Lib AAC">
                 <source>Information about Lib AAC</source>
                 <target>Informationen zur Lib AAC</target>

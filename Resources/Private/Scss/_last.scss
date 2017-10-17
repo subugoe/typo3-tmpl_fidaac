@@ -52,6 +52,12 @@
         }
         padding-right: $magic-l;
     }
+
+    svg {
+        fill: $white;
+        height: 1em;
+        width: 1em;
+    }
 }
 
 .last_licence {

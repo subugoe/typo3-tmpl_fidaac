@@ -124,7 +124,7 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl']['_DEFAULT'] = [
         'defaultToHTMLsuffixOnPrev' => 0,
         'acceptHTMLsuffix' => 1,
         'index' => [
-            'fidaac.rss' => [
+            'libaac.rss' => [
                 'keyValues' => [
                     'type' => $rssFeedPageType
                 ],
