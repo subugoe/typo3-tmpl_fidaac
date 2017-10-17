@@ -1,2 +1,3 @@
 // Configuration RTE
-RTE.config.tt_content.bodytext.preset = fidaac
+RTE.default.preset = fidaac
+
