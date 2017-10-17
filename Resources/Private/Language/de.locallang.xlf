@@ -22,10 +22,6 @@
                 <source>Imprint</source>
                 <target>Impressum</target>
             </trans-unit>
-            <trans-unit id="Information about Lib AAC">
-                <source>Information about Lib AAC</source>
-                <target>Informationen zur Lib AAC</target>
-            </trans-unit>
             <trans-unit id="Jump to main content">
                 <source>Jump to main content</source>
                 <target>Zum Seiteninhalt springen</target>
@@ -53,6 +49,10 @@
             <trans-unit id="Specialised Information Service Anglo-American Culture">
                 <source>Specialised Information Service Anglo-American Culture</source>
                 <target>Fachinformationsdienst Anglo-American Culture</target>
+            </trans-unit>
+            <trans-unit id="RSS">
+                <source>RSS Feed for Library of Anglo-American Culture <![CDATA[&]]> History</source>
+                <target>RSS Feed für die Library of Anglo-American Culture <![CDATA[&]]> History</target>
             </trans-unit>
 
             <!-- solr -->
@@ -237,7 +237,7 @@
 
             <!-- search bar -->
             <trans-unit id="search_library" xml:space="preserve">
-                <source>Catalogues and Collections</source>
+                <source>Catalogues <![CDATA[&]]> Collections</source>
                 <target>Kataloge und Sammlungen</target>
             </trans-unit>
             <trans-unit id="search_website" xml:space="preserve">

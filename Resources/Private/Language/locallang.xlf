@@ -18,9 +18,6 @@
             <trans-unit id="Imprint">
                 <source>Imprint</source>
             </trans-unit>
-            <trans-unit id="Information about Lib AAC">
-                <source>Information about Lib AAC</source>
-            </trans-unit>
             <trans-unit id="Jump to main content">
                 <source>Jump to main content</source>
             </trans-unit>
@@ -42,6 +39,9 @@
             </trans-unit>
             <trans-unit id="Specialised Information Service Anglo-American Culture">
                 <source>Specialised Information Service Anglo-American Culture</source>
+            </trans-unit>
+            <trans-unit id="RSS">
+                <source>RSS Feed for Library of Anglo-American Culture <![CDATA[&]]> History</source>
             </trans-unit>
 
             <!-- solr -->
@@ -179,7 +179,7 @@
 
             <!-- search bar -->
             <trans-unit id="search_library" xml:space="preserve">
-                <source>Catalogues and Collections</source>
+                <source>Catalogues <![CDATA[&]]> Collections</source>
             </trans-unit>
             <trans-unit id="search_website" xml:space="preserve">
                 <source>Website</source>

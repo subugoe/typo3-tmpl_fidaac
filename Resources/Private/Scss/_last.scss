@@ -51,6 +51,15 @@
             @include span-s-6;
         }
         padding-right: $magic-l;
+        display: flex;
+        align-items: center;
+    }
+
+    svg {
+        fill: $white;
+        height: 1em;
+        width: 1em;
+        padding-left: $magic/2;
     }
 }
 

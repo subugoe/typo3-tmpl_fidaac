@@ -51,6 +51,8 @@ page.10 {
         IDS_CONTACT.value = {$ids.contact}
         IDS_IMPRINT = TEXT
         IDS_IMPRINT.value = {$ids.imprint}
+        IDS_RSS = TEXT
+        IDS_RSS.value = {$ids.rss}
         IDS_PRIVACYPOLICY = TEXT
         IDS_PRIVACYPOLICY.value = {$ids.privacyPolicy}
         IDS_LICENSE = TEXT
