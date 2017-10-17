@@ -18,9 +18,6 @@
             <trans-unit id="Imprint">
                 <source>Imprint</source>
             </trans-unit>
-            <trans-unit id="rss-fid">
-                <source>RSS Lib AAC</source>
-            </trans-unit>
             <trans-unit id="Information about Lib AAC">
                 <source>Information about Lib AAC</source>
             </trans-unit>
