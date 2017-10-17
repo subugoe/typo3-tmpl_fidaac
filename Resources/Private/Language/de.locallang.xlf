@@ -50,6 +50,10 @@
                 <source>Specialised Information Service Anglo-American Culture</source>
                 <target>Fachinformationsdienst Anglo-American Culture</target>
             </trans-unit>
+            <trans-unit id="RSS">
+                <source>RSS Feed for Library of Anglo-American Culture <![CDATA[&]]> History</source>
+                <target>RSS Feed für die Library of Anglo-American Culture <![CDATA[&]]> History</target>
+            </trans-unit>
 
             <!-- solr -->
             <trans-unit id="numberOfResults" xml:space="preserve">
