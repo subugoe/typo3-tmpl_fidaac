@@ -7,12 +7,15 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:pazpar2/Configuration/TypoScript/constants.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:find/Configuration/TypoScript/constants.txt">
 
-#################
-### Variables ###
-#################
+styles.content {
+    links.allowTags := addToList(abbr, acronym)
+    textmedia.linkWrap {
+        lightboxEnabled = 1
+        lightboxCssClass = lightboxer
+    }
+}
 
-styles.content.links.allowTags := addToList(abbr, acronym)
 lib.fluidContent.data.date = 0
 
-styles.content.textmedia.linkWrap.lightboxEnabled = 1
-styles.content.textmedia.linkWrap.lightboxCssClass = lightboxer
+#Hides the tags of html form fields in the frontend (since powermail 3.17)
+plugin.tx_powermail.settings.misc.htmlForHtmlFields = 1
