@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2015-06-23T11:36:30Z">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-06-23T11:36:30Z">
         <header>
             <authorName>Joëlle Blache</authorName>
             <authorEmail>blache@sub.uni-goettingen.de</authorEmail>
@@ -54,6 +54,11 @@
                 <source>RSS Feed for Library of Anglo-American Culture <![CDATA[&]]> History</source>
                 <target>RSS Feed für die Library of Anglo-American Culture <![CDATA[&]]> History</target>
             </trans-unit>
+            <trans-unit id="Sitemap">
+                <source>Sitemap</source>
+                <target>Sitemap</target>
+            </trans-unit>
+
 
             <!-- solr -->
             <trans-unit id="numberOfResults" xml:space="preserve">
