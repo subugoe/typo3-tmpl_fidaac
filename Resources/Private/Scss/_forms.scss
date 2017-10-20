@@ -39,8 +39,7 @@ form {
         }
     }
 
-    .powermail_input,
-    .pz2-searchField {
+    .powermail_input {
         @include form-input-text;
     }
 
@@ -57,19 +56,9 @@ form {
 
     .powermail_submit,
     button,
-    input[type=submit],
-    .pz2-submitButton {
+    input[type=submit] {
         @include form-button;
     }
-}
-
-.tx-solr-search-form {
-    background: $white;
-    border: 0;
-}
-
-.pz2-months {
-    font-size: $base-font-size-l !important;
 }
 
 .powermail_form.nolabel {
