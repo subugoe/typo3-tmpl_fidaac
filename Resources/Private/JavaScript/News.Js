@@ -1,34 +1,5 @@
 $(document).ready(() => {
 
-    /**
-     * Implement handles for slider view of news
-     */
-    $('.news-overlay.-left').hide();
-    if ($('.news-slide').length < 3) {
-        $('.news-overlay.-right').hide();
-    }
-
-    $('.news-overlay.-right').on('click', () => {
-        const relleft = $('.news-rel-slider').position().left;
-        const relwidth = $('.news-rel-slider').width();
-
-        $('.news-rel-slider').animate({'left': '-=416px'});
-        $('.news-overlay.-left').show();
-        // show handles only, if there is still something to scroll
-        if (relleft + relwidth <= 960) {
-            $('.news-overlay.-right').hide();
-        }
-    });
-
-    $('.news-overlay.-left').on('click', () => {
-        const relleft = $('.news-rel-slider').position().left;
-        $('.news-overlay.-right').show();
-        // show handles only, if there is still something to scroll
-        $('.news-rel-slider').animate({'left': '+=416px'});
-        if (relleft >= -416) {
-            $('.news-overlay.-left').hide();
-        }
-    });
 
     /**
      * make sure, text in stairs view of news is cut according to image height
@@ -42,6 +13,39 @@ $(document).ready(() => {
         if (teaserheight + buttonheight + headerheight >= imgheight) {
             $(el).find('.teaser-text').css('height', theight - 2);
         }
+    });
+
+    /**
+     * Implement handles for slider view of news
+     */
+    $('.news-overlay.-left').hide();
+    if ($('.news-slide').length < 3) {
+        $('.news-overlay.-right').hide();
+    }
+
+    $('.news-overlay.-right').on('click', () => {
+
+        $('.news-overlay.-left').show();
+        $.when($('.news-rel-slider').animate({'left': '-=416px'}))
+            .done(() => {
+                // show handles only, if there is still something to scroll
+                const relleft = $('.news-rel-slider').children('.article').last().offset().left;
+                if (relleft <= 960) {
+                    $('.news-overlay.-right').hide();
+                }
+            });
+    });
+
+    $('.news-overlay.-left').on('click', () => {
+        $('.news-overlay.-right').show();
+        // show handles only, if there is still something to scroll
+        $.when($('.news-rel-slider').animate({'left': '+=416px'}))
+            .done(() => {
+                const relleft = $('.news-rel-slider').position().left;
+                if (relleft === 0) {
+                    $('.news-overlay.-left').hide();
+                }
+            });
     });
 
     /**
