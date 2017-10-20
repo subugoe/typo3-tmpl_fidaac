@@ -43,6 +43,9 @@
             <trans-unit id="RSS">
                 <source>RSS Feed for Library of Anglo-American Culture <![CDATA[&]]> History</source>
             </trans-unit>
+            <trans-unit id="Sitemap">
+                <source>Sitemap</source>
+            </trans-unit>
 
             <!-- solr -->
             <trans-unit id="numberOfResults" xml:space="preserve">
