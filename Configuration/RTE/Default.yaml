@@ -7,7 +7,6 @@ editor:
    config:
       format_tags: 'p;h1;h2;h3;h4'
       contentsCss: ['EXT:rte_ckeditor/Resources/Public/Css/contents.css', 'EXT:tmpl_fidaac/Resources/Public/Css/rte.css']
-      extraAllowedContent: 'dl dt dd'
       stylesSet:
         - { name: 'Literature', element: 'p', attributes: {'class': 'literature'} }
         - { name: 'Default style', element: 'p', attributes: {'class': 'default'} }
