@@ -21,7 +21,7 @@ plugin.tx_news {
                 title = Library AAC
                 description = RSS Feed Library AAC
                 link = {$plugin.tx_news.rss.channel.link}
-                language = en_gb
+                language = en-gb
                 copyright = SUB Göttingen
                 generator = TYPO3 EXT:news
             }
@@ -63,7 +63,7 @@ plugin.tx_news {
         admPanel = 0
         metaCharset = utf-8
         # you need an english locale to get correct rfc values for <lastBuildDate>, ...
-        locale_all = en_gb
+        locale_all = en-gb
         # define charset
         additionalHeaders = Content-Type:application/rss+xml;charset=utf-8
         disablePrefixComment = 1
