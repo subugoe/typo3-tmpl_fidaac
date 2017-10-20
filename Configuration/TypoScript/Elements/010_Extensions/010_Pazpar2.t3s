@@ -5,10 +5,13 @@
 ####################################
 plugin.tx_pazpar2 {
     settings {
-        # resultsPerPage seem not to be working
+        CSSPath =
+        # resultsPerPage seems not to be working
         resultsPerPage = 10
         fulltextSearch = 2
         journalTitleOnlySearch = 1
+        # hiding histogram seems not to be working
+        useHistogramForYearFacets = 0
         exportFormats {
             ris = 1
             bibtex = 1
