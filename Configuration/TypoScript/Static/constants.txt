@@ -17,5 +17,5 @@ styles.content {
 
 lib.fluidContent.data.date = 0
 
-#Hides the tags of html form fields in the frontend (since powermail 3.17)
+# Allows tags in html form fields in frontend (since powermail 3.17)
 plugin.tx_powermail.settings.misc.htmlForHtmlFields = 1
