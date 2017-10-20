@@ -315,9 +315,11 @@ $(document).ready(() => {
     });
 
     $('body').on('DOMNodeInserted', 'a.pz2-next', () => {
-        if ($('a.pz2-next').html().indexOf('svg') === -1) {
-            $('a.pz2-next').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#forward"/></svg>');
-        }
+        $('a.pz2-next').each((index, el) => {
+            if ($(el).html().indexOf('svg') === -1) {
+                $(el).html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#forward"/></svg>');
+            }
+        });
     });
 });
 

@@ -5,6 +5,10 @@
     align-items: center;
     justify-content: center;
     border: none;
+    font-family: "Open Sans";
+    font-weight: normal;
+    text-transform: none;
+    text-shadow: none;
 }
 
 @mixin button-color--brand() {
@@ -18,6 +22,7 @@
 
 @mixin button-color--transparent() {
     background-color: transparent;
+    outline: 1px solid $shadeDarkest;
 }
 
 @mixin button-color--custom($value) {

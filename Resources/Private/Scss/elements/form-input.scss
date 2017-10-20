@@ -2,6 +2,9 @@
     border: none;
     border-bottom: 1px solid $shadeDarkest;
     padding: $magic;
+    font-size: $base-font-size-l;
+    font-family: "Open Sans";
+    background-color: unset;
 }
 
 @mixin form-input-text--font-size-large() {

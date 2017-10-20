@@ -1,0 +1,921 @@
+/* MEDIA TYPE ICON FONT */
+@font-face {
+    font-family: 'subicons';
+    src: url('/typo3conf/ext/pazpar2/Resources/Public/pz2-client/sub-iconfont/SUB-Icon-Font/fonts/subicons.eot');
+    src:
+        url('/typo3conf/ext/pazpar2/Resources/Public/pz2-client/sub-iconfont/SUB-Icon-Font/fonts/subicons.eot?#iefix') format('embedded-opentype'),
+        url('/typo3conf/ext/pazpar2/Resources/Public/pz2-client/sub-iconfont/SUB-Icon-Font/fonts/subicons.woff') format('woff'),
+        url('/typo3conf/ext/pazpar2/Resources/Public/pz2-client/sub-iconfont/SUB-Icon-Font/fonts/subicons.ttf') format('truetype'),
+        url('/typo3conf/ext/pazpar2/Resources/Public/pz2-client/sub-iconfont/SUB-Icon-Font/fonts/subicons.svg#subicons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* BASIC ELEMENTS */
+#pazpar2 {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        text-decoration: none;
+        color: $shadeDarkest;
+    }
+
+    ol {
+        margin: 0;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    li::before {
+        content: "";
+        padding: 0;
+    }
+
+    legend {
+        @include form-checkbox;
+    }
+
+    select {
+        @include form-select--large;
+    }
+
+    #inner-editor {
+        @include form-input-text;
+    }
+}
+
+.pz2-clear {
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+/* FIELD SETS */
+.pz2-fieldsets {
+    display: flex;
+    width: width(l-8);
+
+    label {
+        display: flex;
+        width: 100%;
+    }
+
+    fieldset {
+        padding: 0;
+        margin-bottom: $magic-l;
+    }
+
+    br {
+        display: none;
+    }
+}
+
+.pz2-fieldset-group {
+    margin-bottom: $magic-l;
+
+    fieldset {
+        border: none;
+    }
+
+    ul {
+        margin-left: $magic-l;
+
+        li {
+            @include form-checkbox;
+            width: 100%;
+            display: flex;
+            padding-top: $magic;
+            padding-bottom: $magic;
+            padding-left: 0;
+
+            &::before {
+                content: "";
+                padding: $magic;
+            }
+        }
+    }
+}
+
+
+/* RESULTS */
+.pz2-ranking {
+    display: none;
+}
+
+#pz2-navi {
+    display: flex;
+    width: 100%;
+    margin-bottom: $magic-l;
+}
+
+#pz2-recordView {
+    width: width(l-10);
+    padding: 0;
+}
+
+.pz2-recordLink {
+    display: block;
+
+    &::after {
+        position: relative;
+        bottom: - $magic / 2;
+        font-family: subicons;
+        font-size: $large-font-size-l;
+        content: "\e054";
+    }
+}
+
+.pz2-detailsVisible .pz2-recordLink {
+    &::after {
+        display: none;
+    }
+}
+
+#pz2-results {
+    width: width(l-6);
+    margin: 0;
+
+    .pz2-extraLinksLabel {
+        display: none;
+    }
+
+    .pz2-extraLinks {
+        position: static;
+        display: flex;
+
+        a {
+            color: $shadeDarkest;
+            text-decoration: none !important;
+        }
+
+        input {
+            color: $shadeDarkest;
+            text-decoration: none !important;
+        }
+
+        ul {
+            display: flex;
+            padding: 0;
+
+            li input {
+                border: 0 none;
+                background: transparent;
+                cursor: pointer;
+
+                input,
+                a {
+                    text-decoration: none;
+                    font-weight: normal;
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
+
+.pz2-JSNote {
+    margin-bottom: 1em;
+}
+
+.pz2-accessNote {
+    align-self: flex-end;
+    margin-bottom: $magic-l;
+}
+
+#pz2-stat {
+    clear: both;
+}
+
+/* NEW AQUISITIONS */
+.pz2-submitButton {
+    @include button;
+    @include button-color--brand;
+    @include button-size--default;
+    width: width(l-5) - $magic;
+}
+
+.pz2-months {
+    @include form-select;
+}
+
+/* METASEARCH */
+.pz2-fieldContainer {
+    border: 0;
+    width: width(l-10);
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $magic-l;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pz2-textFieldLabel {
+    display: flex;
+    justify-content: flex-start;
+    width: width(l-2);
+}
+
+.pz2-basic .pz2-textFieldLabel {
+    display: none; // "All fields"
+}
+
+.pz2-searchField {
+    @include form-input-text;
+    width: width(l-10);
+    margin-bottom: $magic-l;
+}
+
+.pz2-mainForm {
+    line-height: 150%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+// hide extrafields in basic/standard search
+.pz2-checkbox {
+    @include form-checkbox;
+    display: none;
+    width: width(l-3);
+    padding-left: $magic-l;
+}
+
+.pz2-extraFields {
+    display: none;
+}
+
+.pz2-extended {
+    .pz2-extraFields,
+    .pz2-checkbox {
+        display: block;
+    }
+
+    .pz2-searchField {
+        width: width(l-5);
+    }
+}
+
+.pz2-extendedLink {
+    @include button;
+    @include button-color--transparent;
+    @include button-size--default;
+    width: width(l-5) - $magic;
+    margin: 0;
+}
+
+.pz2-formControls {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-bottom: $magic;
+    width: width(l-10);
+}
+
+/* PZ2.css */
+
+
+/* FACETS */
+#pz2-termLists {
+    width: width(l-3);
+    float: right;
+
+    h4 {
+        display: none;
+    }
+
+    h5 {
+        margin: 0;
+    }
+
+    .pz2-progressIndicator {
+        display: none;
+    }
+}
+
+.pz2-termList {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+
+    h5 {
+        text-transform: uppercase;
+        font-size: 100%;
+        font-weight: bold;
+        margin-bottom: 0.25em;
+    }
+
+    ol {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    li {
+        list-style-type: none;
+
+        a {
+            position: relative;
+            display: flex;
+            font-weight: normal;
+            justify-content: space-between;
+        }
+    }
+}
+
+.pz2-termList-author ol {
+    text-transform: capitalize;
+}
+
+.pz2-termList-medium {
+    li a span.pz2-facetName {
+        margin-left: 25px;
+        position: relative;
+        line-height: 19px;
+    }
+
+    .pz2-mediaIcon {
+        position: absolute;
+        top: -1px;
+
+        &::before,
+        &::after {
+            left: -4px;
+        }
+    }
+}
+
+.pz2-facetCount {
+    display: flex;
+    margin-left: $magic;
+}
+
+.pz2-facet-hidden {
+    display: none;
+}
+
+.pz2-facet-showAll a {
+    font-style: italic;
+}
+
+.pz2-activeFacet .pz2-facetName {
+    font-weight: bold;
+}
+
+.pz2-termList {
+    a {
+        margin-bottom: $magic / 2;
+
+        .pz2-facetCancel {
+            font-weight: bold;
+        }
+    }
+
+    span {
+        position: relative;
+    }
+}
+
+.pz2-histogramContainer {
+    margin-left: -8px;
+}
+
+#pz2-histogram-tooltip {
+    display: none;
+    position: absolute;
+    border: 1px solid $brand;
+    padding: 2px;
+    opacity: 0.8;
+    font-size: $small-font-size-l;
+    font-weight: bold;
+}
+
+
+
+/* PROGRESS INDICATOR */
+
+.pz2-progressIndicator {
+    background-color: $shadeLighter;
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* PAGER */
+
+.pz2-pager {
+    display: flex;
+    margin: 0;
+    margin-bottom: $magic-l;
+    position: relative;
+    width: width(l-10);
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+
+    &.pz2-bottom {
+        clear: both;
+        padding-bottom: 20px;
+    }
+
+    .pz2-currentPage {
+        background-color: $brand;
+        color: $white;
+    }
+
+    .pz2-progressIndicator {
+        max-width: width(l-7);
+    }
+}
+
+.pz2-pageNumbers {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-grow: 1;
+    width: width(l-7);
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+
+    li {
+        padding: 0 $magic;
+        margin: 0 $magic;
+        width: 32px;
+        height: 32px;
+
+        &::before {
+            content: "";
+            padding: 0;
+        }
+    }
+
+    .pz2-pages {
+        li:first-of-type {
+            margin-left: 0;
+        }
+    }
+
+    .pz2-prev,
+    .pz2-next {
+        display: flex;
+        align-items: center;
+        position: static;
+        top: 0;
+        width: 34px;
+        height: $base-line-height-l;
+        overflow: hidden;
+        text-indent: 0;
+        font-family: "Open Sans", sans-serif;
+
+        &::after {
+            content: "";
+            display: none;
+        }
+    }
+
+    .pz2-prev {
+        margin-right: $magic;
+    }
+
+    .pz2-next {
+        margin-left: $magic;
+    }
+
+    // the span is not clickable
+    span.pz2-prev,
+    span.pz2-next {
+        color: $shadeLight;
+        display: none;
+    }
+
+    // the anchor is clickable
+    a.pz2-prev,
+    a.pz2-next {
+        color: $shadeDarkest;
+        padding: 0;
+
+        svg {
+            width: 1.5em;
+            height: 1em;
+            fill: $brand;
+        }
+    }
+}
+
+.pz2-prev,
+.pz2-next {
+    display: inline-block;
+    position: relative;
+    top: 0.35em;
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    text-indent: -100px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.pz2-prev::after,
+.pz2-next::after {
+    position: absolute;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    font-family: subicons;
+    font-size: 14px;
+    line-height: 10px;
+}
+
+.pz2-prev::after {
+    left: 59px;
+    content: "\e051";
+}
+
+.pz2-next::after {
+    left: 50px;
+    content: "\e053";
+}
+
+.pz2-pageCount-0 {
+    visibility: hidden;
+}
+
+.pz2-pager {
+    ol {
+        padding: 0;
+        display: inline;
+    }
+
+    li {
+        display: inline;
+        list-style-type: none;
+    }
+
+    .pz2-currentPage {
+        font-weight: bold;
+        padding: 0.3em;
+    }
+}
+
+.pz2-pager a,
+.pz2-prev,
+.pz2-next,
+.pz2-pagerGap {
+    padding: 0 0.3em;
+}
+
+.pz2-recordCount {
+    display: flex;
+    width: width(l-3);
+    position: static;
+
+    &:hover {
+        font-weight: normal;
+        cursor: pointer;
+    }
+}
+
+.pz2-noJS .pz2-recordCount:hover {
+    cursor: auto;
+}
+
+.pz2-noResults {
+    font-size: 166%;
+    white-space: nowrap;
+    -webkit-transition: all 0.2s ease;
+}
+
+/* RESULT ITEMS */
+.pz2-mediaIcon {
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    font-size: 24px;
+}
+
+.pz2-resultList {
+    display: flex;
+    width: width(l-7);
+    padding: $magic 0 !important;
+    padding-right: $magic-l !important;
+    flex-direction: column;
+    padding-left: 35px;
+    float: left; /* required so we don't clear the sidebar/faceting when clearing our <li>s */
+
+
+    li {
+        padding: 0 !important;
+        margin-bottom: 0.5em;
+        padding-left: 5px;
+        position: relative;
+        clear: both;
+        list-style-type: none;
+        border-left: 1px solid transparent;
+
+        .pz2-detailsVisible {
+            border-left: 1px solid #eee;
+        }
+    }
+}
+
+.pz2-resultList .pz2-mediaIcon {
+    left: -38px;
+}
+
+.pz2-mediaIcon::before,
+.pz2-mediaIcon::after {
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    text-indent: 0;
+    font-family: subicons;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.pz2-mediaIcon::before {
+    color: $shadeLighter;
+}
+
+.pz2-mediaIcon::after {
+    color: $shadeDarkest;
+}
+
+.pz2-mediaIcon::before { content: '\e023'; }
+.pz2-mediaIcon::after { content: '\e022'; }
+
+/* .pz2-mediaIcon.article:before { content:  '\e005'; } */
+.pz2-mediaIcon.article::after { content: '\e004'; }
+.pz2-mediaIcon.audio-visual::before { content: '\e011'; }
+.pz2-mediaIcon.audio-visual::after { content: '\e010'; }
+.pz2-mediaIcon.book::before { content: '\e001'; }
+.pz2-mediaIcon.book::after { content: '\e000'; }
+.pz2-mediaIcon.data::before { content: '\e00d'; }
+.pz2-mediaIcon.data::after { content: '\e00c'; }
+.pz2-mediaIcon.electronic::before { content: '\e00b'; }
+.pz2-mediaIcon.electronic::after { content: '\e00a'; }
+.pz2-mediaIcon.image::before { content: '\e01d'; }
+.pz2-mediaIcon.image::after { content: '\e01c'; }
+.pz2-mediaIcon.journal::before { content: '\e007'; }
+.pz2-mediaIcon.journal::after { content: '\e006'; }
+.pz2-mediaIcon.letter::before { content: '\e017'; }
+.pz2-mediaIcon.letter::after { content: '\e016'; }
+.pz2-mediaIcon.map::before { content: '\e00f'; }
+.pz2-mediaIcon.map::after { content: '\e00e'; }
+.pz2-mediaIcon.manuscript::before { content: '\e019'; }
+.pz2-mediaIcon.manuscript::after { content: '\e018'; }
+.pz2-mediaIcon.microform::before { content: '\e01b'; }
+.pz2-mediaIcon.microform::after { content: '\e01a'; }
+.pz2-mediaIcon.multiple::before { content: '\e021'; }
+.pz2-mediaIcon.multiple::after { content: '\e020'; }
+.pz2-mediaIcon.multivolume::before { content: '\e003'; }
+.pz2-mediaIcon.multivolume::after { content: '\e002'; }
+.pz2-mediaIcon.music-score::before { content: '\e015'; }
+.pz2-mediaIcon.music-score::after { content: '\e014'; }
+.pz2-mediaIcon.newspaper::before { content: '\e009'; }
+.pz2-mediaIcon.newspaper::after { content: '\e008'; }
+.pz2-mediaIcon.recording::before { content: '\e013'; }
+.pz2-mediaIcon.recording::after { content: '\e012'; }
+.pz2-mediaIcon.website::before { content: '\e01f'; }
+.pz2-mediaIcon.website::after { content: '\e01e'; }
+
+/*
+	Use old-style bitmap icons for IE 7.
+*/
+*:first-child + html .pz2-mediaIcon {
+    /* background: url(pz2-media-icons.png) transparent no-repeat; */
+    background-position: 0 -40px;
+}
+
+*:first-child + html .pz2-mediaIcon.article { background-position: 0 0; }
+*:first-child + html .pz2-mediaIcon.audio-visual { background-position: -20px 0; }
+*:first-child + html .pz2-mediaIcon.book { background-position: -40px 0; }
+*:first-child + html .pz2-mediaIcon.electronic { background-position: -60px 0; }
+*:first-child + html .pz2-mediaIcon.multivolume { background-position: -80px 0; }
+*:first-child + html .pz2-mediaIcon.letter { background-position: -100px 0; }
+*:first-child + html .pz2-mediaIcon.journal { background-position: 0 -20px; }
+*:first-child + html .pz2-mediaIcon.map { background-position: -20px -20px; }
+*:first-child + html .pz2-mediaIcon.microform { background-position: -40px -20px; }
+*:first-child + html .pz2-mediaIcon.music-score { background-position: -60px -20px; }
+*:first-child + html .pz2-mediaIcon.manuscript { background-position: -80px -20px; }
+*:first-child + html .pz2-mediaIcon.recording { background-position: -20px -40px; }
+*:first-child + html .pz2-mediaIcon.website { background-position: -40px -40px; }
+*:first-child + html .pz2-mediaIcon.multiple { background-position: -60px -40px; }
+*:first-child + html .pz2-mediaIcon.image { background-position: -80px -40px; }
+
+.pz2-title-main {
+    font-weight: bold;
+}
+
+.pz2-item-multivolume-title {
+    font-style: italic;
+}
+
+.pz2-item-responsibility {
+    font-style: italic;
+}
+
+.pz2-journal-title {
+    font-weight: bold;
+}
+
+.pz2-details {
+    font-size: 85%;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+    a {
+        @include link-plus();
+        color: $brand !important;
+    }
+
+    dl {
+        display: flex;
+        margin: 0;
+        width: width(l-6);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    dt {
+        display: flex;
+        margin: 0;
+        text-align: right;
+        font-weight: bold;
+        width: width(l-2);
+        margin-bottom: $magic-l;
+    }
+
+    dd {
+        display: flex;
+        margin: 0;
+        padding-left: $magic;
+        margin-bottom: $magic-l;
+        width: width(l-4);
+    }
+
+    li {
+        clear: none; /* Cancel the clear done for list items in the main list on lists in .pz2-details. */
+        border-left: 0 none;
+        margin: 0;
+    }
+
+    ul {
+        padding-left: 1.5em;
+        margin: 0;
+    }
+}
+
+.pz2-detail-availability td a {
+    margin-bottom: 2px;
+}
+
+.pz2-detail-catalogueLink {
+    @include link-plus();
+    white-space: nowrap;
+}
+
+.pz2-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.pz2-info {
+    display: flex;
+    margin-bottom: $magic / 2;
+}
+
+.pz2-label {
+    padding-right: $magic / 2;
+}
+
+
+/* ZDB INFO */
+
+.pz2-ZDBLibraryName {
+    display: block;
+    font-style: italic;
+}
+
+a.pz2-ZDBGeneralInfo {
+    display: block;
+}
+
+
+
+/* GOOGLE BOOKS */
+.pz2-googleBooks {
+    a {
+        @include link-empty;
+    }
+}
+
+#googlePreviewContainer {
+    position: fixed;
+    left: 4em;
+    right: 4em;
+    top: 4em;
+    height: 570px; /* 550px for preview + 20px for title bar */
+}
+
+.googlePreview-titleBar {
+    margin: auto;
+    height: 20px;
+    width: 450px;
+    background: $shadeLighter;
+    text-align: right;
+    padding-right: 2px;
+}
+
+#googlePreview {
+    margin: auto;
+    top: 20px;
+    height: 550px;
+    width: 450px;
+}
+
+.pz2-highlight {
+    background: $shadeLight;
+}
+
+.pz2-mapContainer {
+    height: 200px;
+}
+
+
+
+/*
+Hide/Show elements depending on JavaScript status.
+Markup comes with a .pz2-noJS class on the #pazpar2 element.
+pz2-client.js removes this once it it loaded.
+
+                    with JS    without JS
+.pz2-JSNote         hide       show
+.pz2-switchMenu     show       hide
+*/
+#pazpar2 .pz2-JSNote {
+    display: none;
+}
+
+#pazpar2.pz2-noJS .pz2-JSNote {
+    display: block;
+}
+
+#pazpar2.pz2-noJS #pz2-switchMenu,
+#pazpar2.pz2-noJS .pz2-ranking {
+    display: none;
+}
+
+
+
+/* STATUS DISPLAY */
+
+#pz2-targetView {
+    position: absolute;
+    top: -20px;
+    right: 100px;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #eee;
+    box-shadow: 1px 1px 4px #666;
+    z-index: 100;
+    font-size: 85%;
+}
+
+#pz2-targetView td {
+    padding: 0 3px;
+    text-align: right;
+}
+
+#pz2-targetView th {
+    padding: 0 3px;
+    text-align: left;
+}
+
+#pz2-targetView thead,
+#pz2-targetView caption {
+    background: #eee;
+    font-weight: bold;
+}
+
+#pz2-targetView .pz2-target-status {
+    min-width: 120px;
+}
