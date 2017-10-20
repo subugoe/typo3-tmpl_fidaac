@@ -58,6 +58,6 @@ page.10 {
         IDS_LICENSE = TEXT
         IDS_LICENSE.value = {$ids.license}
         IDS_SITEMAP = TEXT
-        IDS_SITEMAP.value = {$ids.aacSitemap}
+        IDS_SITEMAP.value = {$ids.sitemap}
     }
 }
