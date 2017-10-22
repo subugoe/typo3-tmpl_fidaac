@@ -7,6 +7,10 @@
     background-color: unset;
 }
 
+@mixin form-input-text--boxed() {
+    border: 1px solid $shadeDarkest;
+}
+
 @mixin form-input-text--font-size-large() {
     font-size: ($magic * 2.75);
 }

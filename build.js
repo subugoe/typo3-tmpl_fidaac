@@ -8,6 +8,7 @@ buildify()
         'Resources/Private/JavaScript/Main.Js',
         'Resources/Private/JavaScript/News.Js',
         'Resources/Private/JavaScript/Images.Js',
+        'Resources/Private/JavaScript/Powermail.Js',
         'Resources/Private/JavaScript/Pazpar2.Js',
         'Resources/Private/JavaScript/Fontfaceobserver.Js'
     ])

@@ -1,0 +1,181 @@
+.powermail_fieldset {
+    border: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    legend {
+        padding-left: 0;
+        font-weight: bold;
+    }
+}
+
+.powermail_fieldwrap {
+    margin: $magic 0 0 0;
+}
+
+.powermail_fieldwrap_type_check {
+    font-size: $base-font-size-l;
+    margin-bottom: $magic;
+    display: flex;
+
+    .checkbox {
+        // Display as form-checkbox prevents events from being fired
+        // See Javascript
+        // @include form-checkbox;
+        display: flex;
+        justify-content: flex-start;
+        width: width(l-10);
+
+        .powermail_checkbox {
+            display: flex;
+            margin-left: 0;
+            flex-grow: 0;
+        }
+
+        label {
+            display: flex;
+            flex-grow: 1;
+            position: static;
+        }
+    }
+}
+
+.powermail_fieldwrap_type_input,
+.powermail_fieldwrap_type_select,
+.powermail_fieldwrap_type_check,
+.powermail_fieldwrap_type_radio {
+    display: flex;
+
+    input,
+    .powermail_field {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        font-size: $base-font-size-l;
+    }
+
+    label,
+    .powermail_label {
+        transition: all 0.2s ease-in-out;
+        position: absolute !important;
+        flex: 1 0 220px;
+        color: $shadeDark;
+    }
+}
+
+.powermail_label {
+    @include media-l {
+        font-size: $base-font-size-l;
+    }
+
+    @include media-m {
+        font-size: $base-font-size-m;
+    }
+
+    @include media-s {
+        font-size: $base-font-size-s;
+    }
+}
+
+.powermail_fieldwrap_type_check {
+    label,
+    .powermail_label {
+        position: relative !important;
+    }
+}
+
+.activeLabel {
+    transition: all 0.2s ease-in-out;
+    transform: translate3d(0, -15px, 0);
+}
+
+.powermail_fieldwrap_type_input {
+    input:focus + label,
+    input:focus + .powermail_label {
+        display: none;
+    }
+}
+
+.powermail_input {
+    @include form-input-text;
+}
+
+.powermail_textarea {
+    @include form-input-text;
+    @include form-input-text--boxed;
+    width: 100%;
+}
+
+.powermail_submit {
+    @include button;
+    @include button-color--brand;
+    @include button-size--default;
+}
+
+.powermail_form.nolabel {
+    > h3 {
+        display: none;
+    }
+}
+
+.powermail_fieldset {
+    &.nolabel {
+        > legend {
+            display: none;
+        }
+    }
+}
+
+.powermail_fieldwrap {
+    &.nolabel {
+        > label {
+            display: none;
+        }
+
+        > fieldset > legend {
+            display: none;
+        }
+    }
+}
+
+.powermail_confirmation,
+.powermail_create {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    tr {
+        display: flex;
+        flex-direction: row;
+        width: width(l-10);
+        margin-bottom: $magic;
+    }
+
+    td {
+        display: flex;
+
+        &:first-of-type {
+            width: width(l-3);
+        }
+
+        &:last-of-type {
+            width: width(l-7);
+        }
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: flex-start;
+        width: width(l-8);
+        flex-grow: 1;
+
+        form input {
+            @include button;
+            @include button-color--brand;
+            @include button-size--default;
+            width: width(l-3);
+            margin: 0;
+            margin-right: $magic;
+        }
+    }
+}
