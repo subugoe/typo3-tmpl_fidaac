@@ -2,8 +2,10 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:solr/Configuration/TypoScript/Examples/IndexQueueNews/setup.txt">
 
 plugin.tx_solr {
+    enabled = 1
     solr {
         host = solr
+        path = /solr/core_en/
     }
     view {
         templateRootPaths.10 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/Solr/Templates/
@@ -11,3 +13,10 @@ plugin.tx_solr {
         layoutRootPaths.10 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/Solr/Layouts/
     }
 }
+
+# german
+[globalVar = GP:L = 1]
+    plugin.tx_solr {
+        solr.path = /solr/core_de/
+    }
+[END]
