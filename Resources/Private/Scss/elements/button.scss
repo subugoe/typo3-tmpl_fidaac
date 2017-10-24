@@ -30,6 +30,6 @@
 }
 
 @mixin button-size--default {
-    font-size: 22px;
+    font-size: $large-font-size-l - 2; // 22px
     padding: $magic;
 }

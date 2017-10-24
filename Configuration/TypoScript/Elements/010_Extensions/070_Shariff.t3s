@@ -1,1 +1,4 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:rx_shariff/Configuration/TypoScript/NoJQueryWithFontawesome/setup.txt">
+
+
+page.includeJSFooter.tx_rxshariff_shariff = EXT:tmpl_fidaac/Resources/Public/JavaScript/Extensions/shariff.complete.js
