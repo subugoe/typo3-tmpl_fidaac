@@ -73,8 +73,14 @@ li {
         }
 
         a {
+            justify-content: flex-start;
             background-color: $brand !important;
             padding-left: $magic-l / 2;
+            display: flex;
+        }
+
+        .share_text {
+            text-indent: 0 !important;
         }
     }
 }
