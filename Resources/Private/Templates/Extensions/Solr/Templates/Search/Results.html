@@ -21,7 +21,14 @@
 			<f:else>
 				<f:if condition="{resultSet.usedQuery.keywordsCleaned}">
 					<span class="searched-for">
-						<s:translate key="results_searched_for" arguments="{0: resultSet.usedQuery.keywordsCleaned}">Searched for "%s"</s:translate>
+                        <f:if condition="{resultSet.usedSearch.numberOfResults} === 0">
+                            <f:then>
+                                <s:translate key="no_results_nothing_found" arguments="{0: resultSet.usedQuery.keywordsCleaned}">Nothing found for "%s".</s:translate>
+                            </f:then>
+                            <f:else>
+                                <s:translate key="results_searched_for" arguments="{0: resultSet.usedQuery.keywordsCleaned}">Searched for "%s"</s:translate>
+                            </f:else>
+                        </f:if>
 					</span>
 				</f:if>
 			</f:else>
