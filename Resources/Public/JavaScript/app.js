@@ -325,9 +325,9 @@ $(document).ready(() => {
     /**
      * In checkbox, the label is part of the checkbox and has to be separated in an extra label
      */
-    const but = $('.powermail_field .checkbox input:required').addClass('changedCheckbox');
-    const butLabel = `<label class="changedLabel">${$(but).attr('value')}</label>`;
-    console.log(butLabel);
+    // TODO: When changing the checkbox, the original event has to be delegated to its child
+    // const but = $('.powermail_field .checkbox input:required').addClass('changedCheckbox');
+    // const butLabel = `<label class="changedLabel">${$(but).attr('value')}</label>`;
     // const butEvent = $('.powermail_field .checkbox input:required').parent('label').getScript();
 
     // $(but).parent('label').replaceWith($(but).parent('label').children());

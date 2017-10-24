@@ -6,6 +6,7 @@
 plugin.tx_pazpar2 {
     settings {
         CSSPath =
+        pz2-clientJSPath = EXT:tmpl_fidaac/Resources/Public/JavaScript/Extensions/pz2-client.js
         # resultsPerPage seems not to be working
         resultsPerPage = 10
         fulltextSearch = 2
