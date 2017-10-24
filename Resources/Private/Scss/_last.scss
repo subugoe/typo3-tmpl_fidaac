@@ -27,7 +27,7 @@
     @include media-s {
         @include span-s-6;
     }
-    justify-content: center;
+    justify-content: flex-start;
     padding: $magic-l/2 0;
     margin: 0;
 }
