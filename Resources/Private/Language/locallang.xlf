@@ -6,6 +6,9 @@
             <authorEmail>blache@sub.uni-goettingen.de</authorEmail>
         </header>
         <body>
+            <trans-unit id="country-SUB">
+                <source>Germany</source>
+            </trans-unit>
             <trans-unit id="Logo">
                 <source>Logo</source>
             </trans-unit>
@@ -30,6 +33,9 @@
             </trans-unit>
             <trans-unit id="Privacy policy">
                 <source>Privacy policy</source>
+            </trans-unit>
+            <trans-unit id="share-social">
+                <source>We appreciate your engagement with Library AAC and encourage you to share our content on social media.</source>
             </trans-unit>
             <trans-unit id="Skip">
                 <source>Skip</source>
