@@ -58,6 +58,10 @@
                 <source>Sitemap</source>
                 <target>Sitemap</target>
             </trans-unit>
+            <trans-unit id="SUB">
+                <source>Göttingen State and University Library</source>
+                <target>Niedersächsische Staats- und Universitätsbibliothek Göttingen</target>
+            </trans-unit>
 
 
             <!-- solr -->
