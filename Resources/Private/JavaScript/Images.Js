@@ -12,7 +12,13 @@ $(document).ready(() => {
      */
     $('a[href$=".jpg" i], a[href$=".png" i]').attr('rel', `lightbox[${lightboxId}]`);
     $('a[href$=".jpg" i], a[href$=".png" i]').each((index, el) => {
-        $(el).attr('data-title', $(el).siblings('figcaption').html());
+        if ($('figcaption').length > 0) {
+            // content element
+            $(el).attr('data-title', $(el).siblings('figcaption').html());
+        } else {
+            // news
+            $(el).attr('data-title', $(el).parent().siblings('.news-img-caption').html());
+        }
     });
 
     if ($('html').attr('lang') === 'de') {
