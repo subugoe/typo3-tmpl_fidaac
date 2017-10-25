@@ -7,7 +7,7 @@
         </header>
         <body>
             <trans-unit id="country-SUB">
-                <source>Germany</source>
+                <source>, Germany</source>
             </trans-unit>
             <trans-unit id="Logo">
                 <source>Logo</source>
