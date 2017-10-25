@@ -26,4 +26,4 @@ editor:
         - { name: 'tools', groups: [ 'tools' ] }
         - { name: 'others', groups: [ 'others' ] }
         - { name: 'about', groups: [ 'about' ] }
-      removeButtons: 'Font,FontSize,Save,NewPage,Preview,Print,Templates,About,Maximize,TextColor,Cut,Undo,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,ImageButton,Button,HiddenField,Redo,Copy,Paste,PasteText,PasteFromWord,Strike,CreateDiv,Blockquote,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,BidiLtr,BidiRtl,Language,Anchor,Image,Flash,Table,HorizontalRule,Smiley,PageBreak,Iframe,ShowBlocks,BGColor'
+      removeButtons: 'Font,FontSize,Save,NewPage,Preview,Print,Templates,About,Maximize,TextColor,Cut,Undo,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,ImageButton,Button,HiddenField,Redo,Copy,Paste,PasteText,PasteFromWord,Strike,CreateDiv,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,BidiLtr,BidiRtl,Language,Anchor,Image,Flash,Table,Smiley,PageBreak,Iframe,ShowBlocks,BGColor'
