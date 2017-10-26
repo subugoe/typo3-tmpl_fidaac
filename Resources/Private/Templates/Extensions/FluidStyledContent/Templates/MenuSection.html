@@ -7,18 +7,31 @@
 			<f:for each="{menu}" as="page">
 				<f:if condition="{page.content}">
 					<f:for each="{page.content}" as="element">
-                        <f:if condition="{element.data.header}">
+                        <f:if condition="{element.data.header_layout} == 2">
                             <li>
                                 <a href="{page.link}#c{element.data.uid}" target="{page.target}" title="{element.data.header}">
-                                    <span>{element.data.header}</span>
+                                    <span class="menuSection2">{element.data.header}</span>
                                 </a>
                             </li>
                         </f:if>
-					</f:for>
-				</f:if>
-			</f:for>
-		</ul>
-	</f:if>
-
+                        <f:if condition="{element.data.header_layout} == 3">
+                            <li>
+                                <a href="{page.link}#c{element.data.uid}" target="{page.target}" title="{element.data.header}">
+                                    <span class="menuSection3">{element.data.header}</span>
+                                </a>
+                            </li>
+                        </f:if>
+                        <f:if condition="{element.data.header_layout} == 4">
+                            <li>
+                                <a href="{page.link}#c{element.data.uid}" target="{page.target}" title="{element.data.header}">
+                                    <span class="menuSection4">{element.data.header}</span>
+                                </a>
+                            </li>
+                        </f:if>
+                    </f:for>
+                </f:if>
+            </f:for>
+        </ul>
+    </f:if>
 </f:section>
 </html>
