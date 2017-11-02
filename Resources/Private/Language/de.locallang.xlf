@@ -70,6 +70,10 @@
                 <source>Göttingen State and University Library</source>
                 <target>Niedersächsische Staats- und Universitätsbibliothek Göttingen</target>
             </trans-unit>
+            <trans-unit id="twitter">
+                <source>Follow @LibraryAAC on Twitter</source>
+                <target>Folgen Sie uns auf Twitter @LibraryAAC</target>
+            </trans-unit>
 
 
             <!-- solr -->

@@ -55,6 +55,9 @@
             <trans-unit id="SUB">
                 <source>Göttingen State and University Library</source>
             </trans-unit>
+            <trans-unit id="twitter">
+                <source>Follow @LibraryAAC on Twitter</source>
+            </trans-unit>
 
             <!-- solr -->
             <trans-unit id="numberOfResults" xml:space="preserve">
