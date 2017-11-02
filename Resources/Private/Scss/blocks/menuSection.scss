@@ -1,0 +1,17 @@
+.menuSection {
+    li {
+        display: flex;
+
+        &.menuSection-level2 {
+            padding-left: 0;
+        }
+
+        &.menuSection-level3 {
+            padding-left: $magic * 3;
+        }
+
+        &.menuSection-level4 {
+            padding-left: $magic * 6;
+        }
+    }
+}

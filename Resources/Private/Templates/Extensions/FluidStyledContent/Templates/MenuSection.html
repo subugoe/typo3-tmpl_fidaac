@@ -3,22 +3,35 @@
 <f:section name="Main">
 
 	<f:if condition="{menu}">
-		<ul>
+		<ul class="menuSection">
 			<f:for each="{menu}" as="page">
 				<f:if condition="{page.content}">
 					<f:for each="{page.content}" as="element">
-                        <f:if condition="{element.data.header}">
-                            <li>
+                        <f:if condition="{element.data.header_layout} == 2">
+                            <li class="menuSection-level2">
                                 <a href="{page.link}#c{element.data.uid}" target="{page.target}" title="{element.data.header}">
-                                    <span>{element.data.header}</span>
+                                    {element.data.header}
                                 </a>
                             </li>
                         </f:if>
-					</f:for>
-				</f:if>
-			</f:for>
-		</ul>
-	</f:if>
-
+                        <f:if condition="{element.data.header_layout} == 3">
+                            <li class="menuSection-level3">
+                                <a href="{page.link}#c{element.data.uid}" target="{page.target}" title="{element.data.header}">
+                                    {element.data.header}
+                                </a>
+                            </li>
+                        </f:if>
+                        <f:if condition="{element.data.header_layout} == 4">
+                            <li class="menuSection-level4">
+                                <a href="{page.link}#c{element.data.uid}" target="{page.target}" title="{element.data.header}">
+                                    {element.data.header}
+                                </a>
+                            </li>
+                        </f:if>
+                    </f:for>
+                </f:if>
+            </f:for>
+        </ul>
+    </f:if>
 </f:section>
 </html>
