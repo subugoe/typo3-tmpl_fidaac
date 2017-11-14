@@ -214,7 +214,7 @@ var pageLanguage = undefined;
 var institutionName = undefined;
 var allTargetsActive = true;
 var curPage = 1;
-var recPerPage = 100;
+var recPerPage = 10;
 var fetchRecords = 1500;
 var curDetRecId = '';
 var curDetRecData = null;
@@ -6243,8 +6243,8 @@ var localisations = {
 		'Zugang über:': 'Access provided by:',
 		'Gastzugang': 'Guest Access',
 		// Pager
-		'Vorige Trefferseite anzeigen': 'Show next page of results',
-		'Nächste Trefferseite anzeigen': 'Show previous page of results',
+		'Vorige Trefferseite anzeigen': 'Show previous page of results',
+		'Nächste Trefferseite anzeigen': 'Show next page of results',
 		// Histogram Tooltip
 		'Treffer': 'Treffer',
 		// ZDB-JOP status labels
