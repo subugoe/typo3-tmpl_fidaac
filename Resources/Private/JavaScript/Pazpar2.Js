@@ -5,15 +5,14 @@ $(document).ready(() => {
 
     $('body').on('DOMNodeInserted', 'a.pz2-prev', () => {
         if ($('a.pz2-prev').html().indexOf('svg') === -1) {
-            console.log('Prev');
-            $('a.pz2-prev').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#backward"/></svg>');
+            $('a.pz2-prev').html('<svg><use xlink:href="#backward"/></svg>');
         }
     });
 
     $('body').on('DOMNodeInserted', 'a.pz2-next', () => {
         $('a.pz2-next').each((index, el) => {
             if ($(el).html().indexOf('svg') === -1) {
-                $(el).html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#forward"/></svg>');
+                $(el).html('<svg><use xlink:href="#forward"/></svg>');
             }
         });
     });
