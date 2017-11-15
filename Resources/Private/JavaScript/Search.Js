@@ -61,7 +61,7 @@ $(document).ready(() => {
     return false;
   });
 
-    $('.pagination .previous a').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#backward"/></svg>');
-    $('.pagination .last.next a').html('<svg><use xlink:href="/typo3conf/ext/tmpl_fidaac/Resources/Public/Images/symbol-defs.svg#forward"/></svg>');
+    $('.pagination .previous a').html('<svg><use xlink:href="#backward"/></svg>');
+    $('.pagination .last.next a').html('<svg><use xlink:href="#forward"/></svg>');
 
 });

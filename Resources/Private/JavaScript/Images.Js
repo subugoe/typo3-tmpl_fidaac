@@ -10,8 +10,8 @@ $(document).ready(() => {
     /**
      * Add caption and translate number info to image overlays
      */
-    $('a[href$=".jpg" i], a[href$=".png" i]').attr('rel', `lightbox[${lightboxId}]`);
-    $('a[href$=".jpg" i], a[href$=".png" i]').each((index, el) => {
+    $('a[href$=".jpg"], a[href$=".png"]').attr('rel', `lightbox[${lightboxId}]`);
+    $('a[href$=".jpg"], a[href$=".png"]').each((index, el) => {
         if ($('figcaption').length > 0) {
             // content element
             $(el).attr('data-title', $(el).siblings('figcaption').html());
