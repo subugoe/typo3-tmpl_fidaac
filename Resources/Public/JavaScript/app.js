@@ -1,5 +1,5 @@
 
-$(document).ready(() => {
+$(document).ready(function () {
 
     const searchForm = $('#search-form');
 
@@ -15,20 +15,20 @@ $(document).ready(() => {
         'query': '/search/website/?q='
     }];
 
-    const initializeSearchForm = () => {
+    const initializeSearchForm = function () {
         const { 0: parameters } = searchEngineSettings;
         searchForm.attr('action', parameters.action);
         searchForm.attr('name', parameters.name);
     };
 
-    $('.header_search').click(() => {
+    $('.header_search').click(function () {
         $('.js-search-bar').slideToggle(250);
         initializeSearchForm();
 
         return false;
     });
 
-    $('input[name=search-choice]').change(event => {
+    $('input[name=search-choice]').change(function (event) {
         if (event.target.id === 'choice-website') {
             const { 1: parameters } = searchEngineSettings;
 
@@ -42,7 +42,7 @@ $(document).ready(() => {
         }
     });
 
-    const getQuery = choice => {
+    const getQuery = function (choice) {
         if (choice === 'choice-website') {
             const { 1: parameters } = searchEngineSettings;
             return parameters.query;
@@ -52,7 +52,7 @@ $(document).ready(() => {
         return parameters.query;
     };
 
-    searchForm.submit(() => {
+    searchForm.submit(function () {
         const id = document.querySelector('input[name=search-choice]:checked').getAttribute('id');
         window.location = getQuery(id) + $('#search').val();
         return false;
@@ -73,15 +73,15 @@ $(document).ready(() => {
  * This behaviour is not possible with position:fixed. Therefore, submenus are moved with jQuery.
  */
 
-$(document).ready(() => {
+$(document).ready(function () {
 
     /**
      * Make sure navigation's container is always high enough (elements are positioned absolute)
      */
-    const defineHeightOfNavigation = () => {
+    const defineHeightOfNavigation = function () {
         const elements = [0];
         const heightOfElement = $('.navigation_default-submenuItem').height() + 8;
-        $('.navigation_default-submenu').each((index, el) => {
+        $('.navigation_default-submenu').each(function (index, el) {
             elements.push($(el).children().length);
         });
         const numberOfElements = Math.max(...elements);
@@ -92,21 +92,21 @@ $(document).ready(() => {
     /**
      * show complete path if menu is opened
      */
-    $('.navigation_default-menuItem').mouseenter(event => {
-        $(event.currentTarget).find('.navigation_default-submenuItem').mouseenter(eve => {
+    $('.navigation_default-menuItem').mouseenter(function (event) {
+        $(event.currentTarget).find('.navigation_default-submenuItem').mouseenter(function (eve) {
             $(eve.currentTarget).siblings().find('.navigation_default-submenu').css('visibility', 'hidden');
 
             $(eve.currentTarget).find('.navigation_default-submenu').css('visibility', 'visible');
         });
         $(event.currentTarget).find('.-cur').parent('.navigation_default-submenuItem .navigation_default-submenu').css('visibility', 'visible');
-    }).mouseleave(event => {
+    }).mouseleave(function (event) {
         $(event.currentTarget).find('.navigation_default-submenuItem .navigation_default-submenu').css('visibility', 'hidden');
     });
 
     /**
      * Stuff related to scrolling and page up button
      */
-    $(window).on('scroll', event => {
+    $(window).on('scroll', function (event) {
 
         if ($(event.currentTarget).scrollTop() === 0) {
             $('.toTop_inner').css('visibility', 'hidden');
@@ -116,7 +116,7 @@ $(document).ready(() => {
         }
     });
 
-    $('.toTop_inner').on('click', () => {
+    $('.toTop_inner').on('click', function () {
         $('html').animate({ scrollTop: 0 }, 'fast');
     });
 });
@@ -127,7 +127,7 @@ $(document).ready(() => {
  * Show the website after all javascript is done
  */
 
-$(document).ready(() => {
+$(document).ready(function () {
 
     /**
      * The body is not displayed by default, only after javascript is done it is finally displayed
@@ -137,12 +137,12 @@ $(document).ready(() => {
     $('.toTop_inner').css('visibility', 'hidden');
 });
 
-$(document).ready(() => {
+$(document).ready(function () {
 
     /**
      * make sure, text in stairs view of news is cut according to image height
      */
-    $('.news-stairs-view .article').each((index, el) => {
+    $('.news-stairs-view .article').each(function (index, el) {
         const teaserheight = $(el).find('.teaser-text').height();
         const imgheight = $(el).find('.img-wrap').height();
         const headerheight = $(el).find('.news-header').height();
@@ -161,10 +161,10 @@ $(document).ready(() => {
         $('.news-overlay.-right').hide();
     }
 
-    $('.news-overlay.-right').on('click', () => {
+    $('.news-overlay.-right').on('click', function () {
 
         $('.news-overlay.-left').show();
-        $.when($('.news-rel-slider').animate({ 'left': '-=416px' })).done(() => {
+        $.when($('.news-rel-slider').animate({ 'left': '-=416px' })).done(function () {
             // show handles only, if there is still something to scroll
             const relleft = $('.news-rel-slider').children('.article').last().offset().left;
             if (relleft <= 960) {
@@ -173,10 +173,10 @@ $(document).ready(() => {
         });
     });
 
-    $('.news-overlay.-left').on('click', () => {
+    $('.news-overlay.-left').on('click', function () {
         $('.news-overlay.-right').show();
         // show handles only, if there is still something to scroll
-        $.when($('.news-rel-slider').animate({ 'left': '+=416px' })).done(() => {
+        $.when($('.news-rel-slider').animate({ 'left': '+=416px' })).done(function () {
             const relleft = $('.news-rel-slider').position().left;
             if (relleft === 0) {
                 $('.news-overlay.-left').hide();
@@ -188,7 +188,7 @@ $(document).ready(() => {
      * make sure images in slider view are horizonally aligned
      */
     let sliderheaderheight = $('.news-slider-view .news-header').first().height();
-    $('.news-slider-view .news-header').each((index, el) => {
+    $('.news-slider-view .news-header').each(function (index, el) {
         if (sliderheaderheight < $(el).height()) {
             sliderheaderheight = $(el).height();
         }
@@ -202,14 +202,14 @@ $(document).ready(() => {
  * Image manipulations
  */
 
-$(document).ready(() => {
+$(document).ready(function () {
     const lightboxId = Math.ceil(Math.random() * 100);
 
     /**
      * Add caption and translate number info to image overlays
      */
     $('a[href$=".jpg"], a[href$=".png"]').attr('rel', `lightbox[${lightboxId}]`);
-    $('a[href$=".jpg"], a[href$=".png"]').each((index, el) => {
+    $('a[href$=".jpg"], a[href$=".png"]').each(function (index, el) {
         if ($('figcaption').length > 0) {
             // content element
             $(el).attr('data-title', $(el).siblings('figcaption').html());
@@ -220,7 +220,7 @@ $(document).ready(() => {
     });
 
     if ($('html').attr('lang') === 'de') {
-        $('body').on('DOMNodeInserted', '.lb-number', () => {
+        $('body').on('DOMNodeInserted', '.lb-number', function () {
             const lbNumberEn = $('.lb-number').text();
             let lbNumberGer = lbNumberEn.replace('Image', 'Bild');
             lbNumberGer = lbNumberGer.replace('of', 'von');
@@ -233,13 +233,13 @@ $(document).ready(() => {
  * Powermail.js
  */
 
-$(document).ready(() => {
-    $('.powermail_input').focus(event => {
+$(document).ready(function () {
+    $('.powermail_input').focus(function (event) {
         const id = $(event.target).attr('id');
         $(`.powermail_label[for=${id}]`).addClass('activeLabel');
     });
 
-    $('.powermail_input').blur(event => {
+    $('.powermail_input').blur(function (event) {
         if ($(event.target).val()) {
             return;
         }
@@ -263,16 +263,16 @@ $(document).ready(() => {
 /**
  * Javascript for Pazpar2
  */
-$(document).ready(() => {
+$(document).ready(function () {
 
-    $('body').on('DOMNodeInserted', 'a.pz2-prev', () => {
+    $('body').on('DOMNodeInserted', 'a.pz2-prev', function () {
         if ($('a.pz2-prev').html().indexOf('svg') === -1) {
             $('a.pz2-prev').html('<svg><use xlink:href="#backward"/></svg>');
         }
     });
 
-    $('body').on('DOMNodeInserted', 'a.pz2-next', () => {
-        $('a.pz2-next').each((index, el) => {
+    $('body').on('DOMNodeInserted', 'a.pz2-next', function () {
+        $('a.pz2-next').each(function (index, el) {
             if ($(el).html().indexOf('svg') === -1) {
                 $(el).html('<svg><use xlink:href="#forward"/></svg>');
             }
