@@ -63,6 +63,7 @@
         @include span-l-2;
         padding-top: $magic-l/2;
         padding-right: $magic-l;
+        max-width: width(l-2);
     }
 
     @include media-m {
@@ -106,5 +107,9 @@
     a {
         padding-right: $magic-l;
         padding-bottom: $magic-l/4;
+
+        &:last-of-type {
+            padding-right: 0;
+        }
     }
 }
