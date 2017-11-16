@@ -6,7 +6,7 @@
   "scripts": {
     "testLocal": "./node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://fidaac.dev'",
     "testDev": "./node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://aacdev.sub.uni-goettingen.de'",
-    "babel": "./node_modules/.bin/babel Build/JavaScript/concatenated.js -o Build/JavaScript/app.js",
+    "babel": "./node_modules/.bin/babel --plugins transform-es2015-arrow-functions Build/JavaScript/concatenated.js -o Build/JavaScript/app.js",
     "lintScss": "stylelint 'Resources/Private/Scss/*.scss'",
     "precommit": "npm run lintScss",
     "lintJs": "./node_modules/.bin/eslint Resources/Private/JavaScript/*.Js",
@@ -29,6 +29,7 @@
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "browser-sync": "^2.18.13",
     "buildify": "^0.4.0",
     "casperjs": "^1.1.3",
