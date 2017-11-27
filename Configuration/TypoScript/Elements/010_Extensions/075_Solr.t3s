@@ -12,9 +12,13 @@ plugin.tx_solr {
         partialRootPaths.10 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/Solr/Partials/
         layoutRootPaths.10 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/Solr/Layouts/
     }
+    index.queue.pages.initialPagesAdditionalWhereClause = nav_hide = 0
+    search.results {
+        resultsHighlighting = 1
+        siteHighlighting = 1
+    }
 }
 
-# german
 [globalVar = GP:L = 1]
     plugin.tx_solr {
         solr.path = /solr/core_de/
