@@ -3,10 +3,6 @@
 $rootPageUid = 1;
 $rssFeedPageType = 6890; // pageType of the RSS feed page (tx_news)
 
-//include the IDs of pages as arrays at the end of the news configuration in fixedPostVars
-$path = __DIR__ . '/../../../../realurl_NewsPageIds.php';
-include_once $path;
-
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl']['_DEFAULT'] = [
     'init' => [
         'appendMissingSlash' => 'ifNotFile,redirect[301]',
@@ -105,20 +101,13 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl']['_DEFAULT'] = [
                 ]
             ]
         ],
-        $newsDetailsIdHome[0] => $newsDetailsIdHome[1],
-        // Einzelansicht Aktuelles
-        $newsDetailsIdArchive[0] => $newsDetailsIdArchive[1],
-        // Einzelansicht Archiv
-        $newsCategoryId[0] => $newsCategoryId[1],
-        // Liste nach Kategorie
-        $newsDetailsIdCollectionAmerican[0] => $newsDetailsIdCollectionAmerican[1],
-        // Einzelansicht American Studies
-        $newsDetailsIdCollectionAustralian[0] => $newsDetailsIdCollectionAustralian[1],
-        // Einzelansicht Australian and New Zealand Studies
-        $newsDetailsIdCollectionCanadian[0] => $newsDetailsIdCollectionCanadian[1],
-        // Einzelansicht Canadian Studies
-        $newsDetailsIdCollectionEnglish[0] => $newsDetailsIdCollectionEnglish[1],
-        // Einzelansicht Englisch; Britisch and Irish Studies
+        '44' => 'newsDetailConfiguration', // Einzelansicht Aktuelles
+        '42' => 'newsDetailConfiguration', // Einzelansicht Archiv
+        '43' => 'newsCategoryConfiguration', // Liste nach Kategorie
+        '143' => 'newsDetailConfiguration', // Einzelansicht American Studies
+        '144' => 'newsDetailConfiguration', // Einzelansicht Australian and New Zealand Studies
+        '145' => 'newsDetailConfiguration', // Einzelansicht Canadian Studies
+        '146' => 'newsDetailConfiguration' // Einzelansicht Englisch; Britisch and Irish Studies
     ],
     'fileName' => [
         'defaultToHTMLsuffixOnPrev' => 0,
