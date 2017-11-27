@@ -1,6 +1,9 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:powermail/Configuration/TypoScript/Main/setup.txt">
 
 plugin.tx_powermail {
+    view {
+        templateRootPaths.1 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/Powermail/Templates/
+    }
 
     _LOCAL_LANG.default {
         confirmation_next = Submit request
@@ -12,4 +15,3 @@ plugin.tx_powermail {
         confirmation_prev = Ändern
     }
 }
-
