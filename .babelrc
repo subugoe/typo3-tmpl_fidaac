@@ -1,0 +1,8 @@
+{
+    "presets": ["latest"],
+    "plugins": [
+        "transform-es2015-arrow-functions",
+        "syntax-object-rest-spread"
+
+    ]
+}

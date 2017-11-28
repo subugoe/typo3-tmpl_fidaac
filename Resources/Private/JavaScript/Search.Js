@@ -2,27 +2,25 @@ $(document).ready(() => {
 
   const searchForm = $('#search-form');
 
-  const searchEngineSettings = [
-    {
+  const searchEngineSettingsMetasearch = {
       'action': '/search/metasearch-engine',
       'id': 'choice-pazpar2',
       'name': 'tx_pazpar2_pazpar2[queryString]',
       'query': '/search/metasearch-engine?tx_pazpar2_pazpar2[useJS]=yes&tx_pazpar2_pazpar2[queryString]='
-    },
-    {
-      'action': '/search/website/',
-      'id': 'choice-website',
-      'name': 'q',
-      'query': '/search/website/?q='
-    }
-  ];
+    };
+
+    const searchEngineSettingsWebsite = {
+            'action': '/search/website/',
+            'id': 'choice-website',
+            'name': 'q',
+            'query': '/search/website/?q='
+        };
 
   const initializeSearchForm = () => {
-    const {0: parameters} = searchEngineSettings;
+    const parameters = searchEngineSettingsMetasearch;
     searchForm.attr('action', parameters.action);
     searchForm.attr('name', parameters.name);
   };
-
 
   $('.header_search').click(() => {
     $('.js-search-bar').slideToggle(250);
@@ -33,12 +31,12 @@ $(document).ready(() => {
 
   $('input[name=search-choice]').change((event) => {
     if (event.target.id === 'choice-website') {
-      const {1: parameters} = searchEngineSettings;
+      const parameters = searchEngineSettingsWebsite;
 
       searchForm.attr('action', parameters.action);
       searchForm.attr('name', parameters.name);
     } else {
-      const {0: parameters} = searchEngineSettings;
+      const parameters = searchEngineSettingsMetasearch;
 
       searchForm.attr('action', parameters.action);
       searchForm.attr('name', parameters.name);
@@ -47,11 +45,11 @@ $(document).ready(() => {
 
   const getQuery = (choice) => {
     if (choice === 'choice-website') {
-      const {1: parameters} = searchEngineSettings;
+      const parameters = searchEngineSettingsWebsite;
       return parameters.query;
     }
 
-    const {0: parameters} = searchEngineSettings;
+    const parameters = searchEngineSettingsMetasearch;
     return parameters.query;
   };
 

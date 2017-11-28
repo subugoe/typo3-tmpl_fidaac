@@ -1,22 +1,25 @@
+'use strict';
 
 $(document).ready(function () {
 
-    const searchForm = $('#search-form');
+    var searchForm = $('#search-form');
 
-    const searchEngineSettings = [{
+    var searchEngineSettingsMetasearch = {
         'action': '/search/metasearch-engine',
         'id': 'choice-pazpar2',
         'name': 'tx_pazpar2_pazpar2[queryString]',
         'query': '/search/metasearch-engine?tx_pazpar2_pazpar2[useJS]=yes&tx_pazpar2_pazpar2[queryString]='
-    }, {
+    };
+
+    var searchEngineSettingsWebsite = {
         'action': '/search/website/',
         'id': 'choice-website',
         'name': 'q',
         'query': '/search/website/?q='
-    }];
+    };
 
-    const initializeSearchForm = function () {
-        const { 0: parameters } = searchEngineSettings;
+    var initializeSearchForm = function initializeSearchForm() {
+        var parameters = searchEngineSettingsMetasearch;
         searchForm.attr('action', parameters.action);
         searchForm.attr('name', parameters.name);
     };
@@ -30,30 +33,30 @@ $(document).ready(function () {
 
     $('input[name=search-choice]').change(function (event) {
         if (event.target.id === 'choice-website') {
-            const { 1: parameters } = searchEngineSettings;
+            var parameters = searchEngineSettingsWebsite;
 
             searchForm.attr('action', parameters.action);
             searchForm.attr('name', parameters.name);
         } else {
-            const { 0: parameters } = searchEngineSettings;
+            var _parameters = searchEngineSettingsMetasearch;
 
-            searchForm.attr('action', parameters.action);
-            searchForm.attr('name', parameters.name);
+            searchForm.attr('action', _parameters.action);
+            searchForm.attr('name', _parameters.name);
         }
     });
 
-    const getQuery = function (choice) {
+    var getQuery = function getQuery(choice) {
         if (choice === 'choice-website') {
-            const { 1: parameters } = searchEngineSettings;
-            return parameters.query;
+            var _parameters2 = searchEngineSettingsWebsite;
+            return _parameters2.query;
         }
 
-        const { 0: parameters } = searchEngineSettings;
+        var parameters = searchEngineSettingsMetasearch;
         return parameters.query;
     };
 
     searchForm.submit(function () {
-        const id = document.querySelector('input[name=search-choice]:checked').getAttribute('id');
+        var id = document.querySelector('input[name=search-choice]:checked').getAttribute('id');
         window.location = getQuery(id) + $('#search').val();
         return false;
     });
@@ -78,14 +81,14 @@ $(document).ready(function () {
     /**
      * Make sure navigation's container is always high enough (elements are positioned absolute)
      */
-    const defineHeightOfNavigation = function () {
-        const elements = [0];
-        const heightOfElement = $('.navigation_default-submenuItem').height() + 8;
+    var defineHeightOfNavigation = function defineHeightOfNavigation() {
+        var elements = [0];
+        var heightOfElement = $('.navigation_default-submenuItem').height() + 8;
         $('.navigation_default-submenu').each(function (index, el) {
             elements.push($(el).children().length);
         });
-        const numberOfElements = Math.max(...elements);
-        $('.navigation_default-submenuContainer-outer').css('height', `${numberOfElements * heightOfElement + 16}px`);
+        var numberOfElements = Math.max.apply(Math, elements);
+        $('.navigation_default-submenuContainer-outer').css('height', numberOfElements * heightOfElement + 16 + 'px');
     };
     defineHeightOfNavigation();
 
@@ -143,11 +146,11 @@ $(document).ready(function () {
      * make sure, text in stairs view of news is cut according to image height
      */
     $('.news-stairs-view .article').each(function (index, el) {
-        const teaserheight = $(el).find('.teaser-text').height();
-        const imgheight = $(el).find('.img-wrap').height();
-        const headerheight = $(el).find('.news-header').height();
-        const buttonheight = $(el).find('.infos-wrap').children('a').last().height();
-        const theight = imgheight - buttonheight - headerheight;
+        var teaserheight = $(el).find('.teaser-text').height();
+        var imgheight = $(el).find('.img-wrap').height();
+        var headerheight = $(el).find('.news-header').height();
+        var buttonheight = $(el).find('.infos-wrap').children('a').last().height();
+        var theight = imgheight - buttonheight - headerheight;
         if (teaserheight + buttonheight + headerheight >= imgheight) {
             $(el).find('.teaser-text').css('height', theight - 2);
         }
@@ -166,7 +169,7 @@ $(document).ready(function () {
         $('.news-overlay.-left').show();
         $.when($('.news-rel-slider').animate({ 'left': '-=416px' })).done(function () {
             // show handles only, if there is still something to scroll
-            const relleft = $('.news-rel-slider').children('.article').last().offset().left;
+            var relleft = $('.news-rel-slider').children('.article').last().offset().left;
             if (relleft <= 960) {
                 $('.news-overlay.-right').hide();
             }
@@ -177,7 +180,7 @@ $(document).ready(function () {
         $('.news-overlay.-right').show();
         // show handles only, if there is still something to scroll
         $.when($('.news-rel-slider').animate({ 'left': '+=416px' })).done(function () {
-            const relleft = $('.news-rel-slider').position().left;
+            var relleft = $('.news-rel-slider').position().left;
             if (relleft === 0) {
                 $('.news-overlay.-left').hide();
             }
@@ -187,7 +190,7 @@ $(document).ready(function () {
     /**
      * make sure images in slider view are horizonally aligned
      */
-    let sliderheaderheight = $('.news-slider-view .news-header').first().height();
+    var sliderheaderheight = $('.news-slider-view .news-header').first().height();
     $('.news-slider-view .news-header').each(function (index, el) {
         if (sliderheaderheight < $(el).height()) {
             sliderheaderheight = $(el).height();
@@ -203,12 +206,12 @@ $(document).ready(function () {
  */
 
 $(document).ready(function () {
-    const lightboxId = Math.ceil(Math.random() * 100);
+    var lightboxId = Math.ceil(Math.random() * 100);
 
     /**
      * Add caption and translate number info to image overlays
      */
-    $('a[href$=".jpg"], a[href$=".png"]').attr('rel', `lightbox[${lightboxId}]`);
+    $('a[href$=".jpg"], a[href$=".png"]').attr('rel', 'lightbox[' + lightboxId + ']');
     $('a[href$=".jpg"], a[href$=".png"]').each(function (index, el) {
         if ($('figcaption').length > 0) {
             // content element
@@ -221,8 +224,8 @@ $(document).ready(function () {
 
     if ($('html').attr('lang') === 'de') {
         $('body').on('DOMNodeInserted', '.lb-number', function () {
-            const lbNumberEn = $('.lb-number').text();
-            let lbNumberGer = lbNumberEn.replace('Image', 'Bild');
+            var lbNumberEn = $('.lb-number').text();
+            var lbNumberGer = lbNumberEn.replace('Image', 'Bild');
             lbNumberGer = lbNumberGer.replace('of', 'von');
             $('.lb-number').text(lbNumberGer);
         });
@@ -235,8 +238,8 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('.powermail_input').focus(function (event) {
-        const id = $(event.target).attr('id');
-        $(`.powermail_label[for=${id}]`).addClass('activeLabel');
+        var id = $(event.target).attr('id');
+        $('.powermail_label[for=' + id + ']').addClass('activeLabel');
     });
 
     $('.powermail_input').blur(function (event) {
@@ -244,8 +247,8 @@ $(document).ready(function () {
             return;
         }
 
-        const id = $(event.target).attr('id');
-        $(`.powermail_label[for=${id}]`).removeClass('activeLabel');
+        var id = $(event.target).attr('id');
+        $('.powermail_label[for=' + id + ']').removeClass('activeLabel');
     });
 
     /**
