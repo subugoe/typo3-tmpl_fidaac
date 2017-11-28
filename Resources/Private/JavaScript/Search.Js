@@ -1,47 +1,69 @@
 $(document).ready(() => {
 
-  const searchForm = $('#search-form');
+    const searchForm = $('#search-form');
 
-  const searchEngineSettingsMetasearch = {
-      'action': '/search/metasearch-engine',
-      'id': 'choice-pazpar2',
-      'name': 'tx_pazpar2_pazpar2[queryString]',
-      'query': '/search/metasearch-engine?tx_pazpar2_pazpar2[useJS]=yes&tx_pazpar2_pazpar2[queryString]='
+    // we use realurl, so we have different paths, depending on language
+    const getLang = () => {
+        const pathArray = window.location.pathname.split('/');
+        if (pathArray[1] === 'de') {
+            const lang = 'de';
+            return lang;
+        }
+        const lang = '';
+        return lang;
+    };
+    const getAction = (search) => {
+        if (getLang() === 'de') {
+            if (search === 'metasearch') {
+                return '/de/suche/kataloge';
+            }
+            return '/de/suche/website';
+        }
+        if (search === 'metasearch') {
+            return '/search/metasearch-engine';
+        }
+        return '/search/website';
+    };
+    const searchEngineSettingsMetasearch = {
+        'action': getAction('metasearch'),
+        'id': 'choice-pazpar2',
+        'name': 'tx_pazpar2_pazpar2[queryString]',
+        'query': `${getAction('metasearch')}?tx_pazpar2_pazpar2[useJS]=yes&tx_pazpar2_pazpar2[queryString]=`
     };
 
     const searchEngineSettingsWebsite = {
-            'action': '/search/website/',
-            'id': 'choice-website',
-            'name': 'q',
-            'query': '/search/website/?q='
-        };
+        'action': getAction('website'),
+        'id': 'choice-website',
+        'name': 'q',
+        'query': `${getAction('website')}/?q=`
+    };
 
-  const initializeSearchForm = () => {
-    const parameters = searchEngineSettingsMetasearch;
-    searchForm.attr('action', parameters.action);
-    searchForm.attr('name', parameters.name);
-  };
+    const initializeSearchForm = () => {
+        const parameters = searchEngineSettingsMetasearch;
+        searchForm.attr('action', parameters.action);
+        searchForm.attr('name', parameters.name);
+    };
 
-  $('.header_search').click(() => {
-    $('.js-search-bar').slideToggle(250);
-    initializeSearchForm();
+    $('.header_search').click(() => {
+        $('.js-search-bar').slideToggle(250);
+        initializeSearchForm();
 
-     return false;
-  });
+        return false;
+    });
 
-  $('input[name=search-choice]').change((event) => {
-    if (event.target.id === 'choice-website') {
-      const parameters = searchEngineSettingsWebsite;
+    $('input[name=search-choice]').change((event) => {
+        if (event.target.id === 'choice-website') {
+            const parameters = searchEngineSettingsWebsite;
 
-      searchForm.attr('action', parameters.action);
-      searchForm.attr('name', parameters.name);
-    } else {
-      const parameters = searchEngineSettingsMetasearch;
+            searchForm.attr('action', parameters.action);
+            searchForm.attr('name', parameters.name);
+        } else {
+            const parameters = searchEngineSettingsMetasearch;
 
-      searchForm.attr('action', parameters.action);
-      searchForm.attr('name', parameters.name);
-    }
-  });
+            searchForm.attr('action', parameters.action);
+            searchForm.attr('name', parameters.name);
+        }
+    });
 
   const getQuery = (choice) => {
     if (choice === 'choice-website') {
