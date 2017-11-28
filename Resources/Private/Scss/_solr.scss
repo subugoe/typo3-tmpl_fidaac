@@ -57,10 +57,11 @@
         }
     }
 
-    .results-teaser {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+    // Highlighting
+    .results-highlight,
+    .ce-sword {
+        background-color: $accent;
+        padding: 0 $magic / 2;
     }
 
     .relevance {
@@ -141,4 +142,11 @@
         width: width(l-7);
         margin-right: $magic;
     }
+}
+
+// Highlighting
+.results-highlight,
+.ce-sword {
+    background-color: $accent;
+    padding: 0 $magic / 2;
 }
