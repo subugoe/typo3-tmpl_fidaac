@@ -3,17 +3,9 @@ $(document).ready(() => {
     const searchForm = $('#search-form');
 
     // we use realurl, so we have different paths, depending on language
-    const getLang = () => {
-        const pathArray = window.location.pathname.split('/');
-        if (pathArray[1] === 'de') {
-            const lang = 'de';
-            return lang;
-        }
-        const lang = '';
-        return lang;
-    };
+    const lang = $('html').attr('lang');
     const getAction = (search) => {
-        if (getLang() === 'de') {
+        if (lang === 'de') {
             if (search === 'metasearch') {
                 return '/de/suche/kataloge';
             }
