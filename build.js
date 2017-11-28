@@ -21,6 +21,7 @@ buildify()
         'node_modules/jquery-ui-dist/jquery-ui.min.js',
         'node_modules/jquery-hoverintent/jquery.hoverIntent.min.js',
         'Resources/Public/JavaScript/Extensions/find.js',
-        'Resources/Public/JavaScript/Extensions/pz2-client.js'
+        'Resources/Public/JavaScript/Extensions/pz2-client.js',
+        'Resources/Public/JavaScript/Extensions/fontfaceobserver.js'
     ])
     .save('Resources/Public/JavaScript/vendor.min.js');
