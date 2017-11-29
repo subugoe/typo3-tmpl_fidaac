@@ -115,38 +115,23 @@
         }
     }
 
-    &:hover,
-    &:hover:not(.hovered),
-    &.hovered {
+    &:hover {
         background-color: $shadeLighter;
         transition: background-color 0s linear $ttime;
+
+        & > svg {
+            transform: rotate(90deg);
+            transition: rotate $ttime;
+        }
     }
 
-    &:not(.hovered) {
-        background-color: $shadeLightest;
-        transition: background-color 0s linear $ttime;
-    }
-
-    &:hover .navigation_default-menuSVG svg,
-    &:hover:not(.hovered) .navigation_default-menuSVG svg,
-    &.hovered .navigation_default-menuSVG svg {
-        transform: rotate(90deg);
-    }
-
-    &:not(.hovered) .navigation_default-menuSVG svg {
-        transform: rotate(0deg);
-    }
-
-    &:hover .navigation_default-submenuContainer-outer,
-    &:hover:not(.hovered) .navigation_default-submenuContainer-outer,
-    &.hovered .navigation_default-submenuContainer-outer {
-        visibility: visible !important;
+    &:hover .navigation_default-submenuContainer-outer {
+        visibility: visible;
         transition: visibility 0s linear $ttime;
         height: 22em;
     }
 
-    &:not(:hover) .navigation_default-submenuContainer-outer:not(:hover),
-    &:not(.hovered) .navigation_default-submenuContainer-outer:not(.hovered) {
+    &:not(:hover) .navigation_default-submenuContainer-outer:not(:hover) {
         visibility: hidden;
         transition: visibility 0s linear $ttime;
     }
@@ -253,25 +238,20 @@
     }
 
     // hide and show submenus when hovered
-    &:hover,
-    &.hovered {
+    &:hover {
         background-color: $shadeLight;
 
         .navigation_default-submenu {
-            visibility: visible !important;
+            visibility: visible;
             transition: visibility 0s linear $ttime;
         }
     }
 
-    &:not(:hover),
-    &:not(:hover):not(.hovered) {
-        background-color: $shadeLighter;
-    }
-
-    &:not(:hover) .navigation_default-submenu,
-    &:not(:hover):not(.hovered) .navigation_default-submenu {
-        visibility: hidden !important;
-        transition: visibility 0s linear $ttime;
+    &:not(:hover) {
+        .navigation_default-submenu {
+            visibility: hidden;
+            transition: visibility 0s linear $ttime;
+        }
     }
 
     &.hover a {

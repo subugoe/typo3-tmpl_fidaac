@@ -51,22 +51,11 @@ $(document).ready(() => {
             .css('visibility', 'hidden');
     });
 
-    // fake hover for touch devices
-    $('.navigation_default-menuSVG').on('click', () => {
-        $(event.currentTarget).parent('.navigation_default-menuItem').toggleClass('hovered');
-        $(event.currentTarget).parent('.navigation_default-menuItem').siblings().removeClass('hovered');
-    });
-
-    $('.navigation_default-submenuSVG').on('click', () => {
-        $(event.currentTarget).parent('.navigation_default-submenuItem').toggleClass('hovered');
-        $(event.currentTarget).parent('.navigation_default-submenuItem').siblings().removeClass('hovered');
-    });
-
     /**
      * Stuff related to scrolling and page up button
      */
     $(window).on('scroll', (event) => {
-        $('.navigation_default-menuItem, .navigation_default-submenuItem').removeClass('hovered');
+
         if ($(event.currentTarget).scrollTop() === 0) {
             $('.toTop_inner').css('visibility', 'hidden');
         } else if ($('.toTop_inner').css('visibility') === 'hidden') {
