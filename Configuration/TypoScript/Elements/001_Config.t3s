@@ -16,7 +16,6 @@ config {
     htmlTag_langKey = en
     language = en
     locale_all = en_EN.UTF-8
-    linkVars = L(0-1)
 
     prefixLocalAnchors = all
     tx_realurl_enable = 1
