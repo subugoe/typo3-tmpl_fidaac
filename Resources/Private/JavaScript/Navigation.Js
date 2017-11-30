@@ -117,6 +117,22 @@ $(document).ready(() => {
         timeout: 250
     });
 
+    /**
+     * Remove whole menu when mouse is outside
+     */
+    $('.navigation_default').hoverIntent({
+        over: () => {
+            // nothing to do
+        },
+        out: () => {
+            $('.navigation_default-submenuContainer-outer').hide();
+            $('.navigation_default-submenuItems').removeClass('hover');
+            $('.clone').remove();
+            $('.cloned').removeClass('cloned');
+        },
+        timeout: 250
+    });
+
 
     /**
      * Stuff related to scrolling and page up button
