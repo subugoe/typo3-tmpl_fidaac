@@ -4,18 +4,32 @@ $(document).ready(function () {
 
     var searchForm = $('#search-form');
 
+    // we use realurl, so we have different paths, depending on language
+    var lang = $('html').attr('lang');
+    var getAction = function getAction(search) {
+        if (lang === 'de') {
+            if (search === 'metasearch') {
+                return '/de/suche/kataloge';
+            }
+            return '/de/suche/website';
+        }
+        if (search === 'metasearch') {
+            return '/search/metasearch-engine';
+        }
+        return '/search/website';
+    };
     var searchEngineSettingsMetasearch = {
-        'action': '/search/metasearch-engine',
+        'action': getAction('metasearch'),
         'id': 'choice-pazpar2',
         'name': 'tx_pazpar2_pazpar2[queryString]',
-        'query': '/search/metasearch-engine?tx_pazpar2_pazpar2[useJS]=yes&tx_pazpar2_pazpar2[queryString]='
+        'query': getAction('metasearch') + '?tx_pazpar2_pazpar2[useJS]=yes&tx_pazpar2_pazpar2[queryString]='
     };
 
     var searchEngineSettingsWebsite = {
-        'action': '/search/website/',
+        'action': getAction('website'),
         'id': 'choice-website',
         'name': 'q',
-        'query': '/search/website/?q='
+        'query': getAction('website') + '/?q='
     };
 
     var initializeSearchForm = function initializeSearchForm() {
