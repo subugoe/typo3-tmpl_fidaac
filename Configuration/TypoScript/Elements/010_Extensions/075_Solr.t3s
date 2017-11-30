@@ -18,9 +18,3 @@ plugin.tx_solr {
         siteHighlighting = 1
     }
 }
-
-[globalVar = GP:L = 1]
-    plugin.tx_solr {
-        solr.path = /solr/core_de/
-    }
-[END]

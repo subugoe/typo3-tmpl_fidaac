@@ -2,32 +2,18 @@ $(document).ready(() => {
 
     const searchForm = $('#search-form');
 
-    // we use realurl, so we have different paths, depending on language
-    const lang = $('html').attr('lang');
-    const getAction = (search) => {
-        if (lang === 'de') {
-            if (search === 'metasearch') {
-                return '/de/suche/kataloge';
-            }
-            return '/de/suche/website';
-        }
-        if (search === 'metasearch') {
-            return '/search/metasearch-engine';
-        }
-        return '/search/website';
-    };
     const searchEngineSettingsMetasearch = {
-        'action': getAction('metasearch'),
+        'action': '/search/metasearch-engine',
         'id': 'choice-pazpar2',
         'name': 'tx_pazpar2_pazpar2[queryString]',
-        'query': `${getAction('metasearch')}?tx_pazpar2_pazpar2[useJS]=yes&tx_pazpar2_pazpar2[queryString]=`
+        'query': '/search/metasearch-engine?tx_pazpar2_pazpar2[useJS]=yes&tx_pazpar2_pazpar2[queryString]='
     };
 
     const searchEngineSettingsWebsite = {
-        'action': getAction('website'),
+        'action': '/search/website/',
         'id': 'choice-website',
         'name': 'q',
-        'query': `${getAction('website')}/?q=`
+        'query': '/search/website/?q='
     };
 
     const initializeSearchForm = () => {
