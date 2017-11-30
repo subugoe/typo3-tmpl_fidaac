@@ -12,44 +12,111 @@
 $(document).ready(() => {
 
     /**
-     * Make sure navigation's container is always high enough (elements are positioned absolute)
+     * When a menuitem is not active anymore, leftover cloned DOM-Elements and the container in which
+     * they are shown have to be cleaned up
      */
-    const defineHeightOfNavigation = () => {
-        const elements = [0];
-        const heightOfElement = $('.navigation_default-submenuItem').height() + 8;
-        $('.navigation_default-submenu').each((index, el) => {
-            elements.push($(el).children().length);
-        });
-        const numberOfElements = Math.max(...elements);
-        $('.navigation_default-submenuContainer-outer').css('height', `${numberOfElements * heightOfElement + 16}px`);
+    const cleanupMenuItem = (target) => {
+        $(target).siblings().find('.navigation_default-submenuContainer-outer').hide();
+        $(target).siblings().find('.navigation_default-submenu').addClass('visible-hidden');
+        $(target).siblings().find('.clone').remove();
+        $(target).siblings().removeClass('hover').removeClass('cloned');
+        const submenu = $(target).find('.navigation_default-submenu');
+        $(submenu).find('.navigation_default-submenu').removeClass('visible-shown').addClass('visible-hidden');
+        $(target).removeClass('cloned');
     };
-    defineHeightOfNavigation();
 
     /**
-     * show complete path if menu is opened
+     * When a submenuitem is not active anymore, leftover DOM-Elements have to be removed
      */
-    $('.navigation_default-menuItem').mouseenter((event) => {
-        $(event.currentTarget)
-            .find('.navigation_default-submenuItem')
-            .mouseenter((eve) => {
-            $(eve.currentTarget)
-                .siblings()
-                .find('.navigation_default-submenu')
-                .css('visibility', 'hidden');
+    const cleanupSubmenuItem = (target) => {
+        $(target).siblings().find('.navigation_default-submenu').addClass('visible-hidden');
+        $(target).siblings().removeClass('hover').removeClass('cloned');
 
-                $(eve.currentTarget)
-                    .find('.navigation_default-submenu')
-                    .css('visibility', 'visible');
-            });
-        $(event.currentTarget)
-            .find('.-cur')
-            .parent('.navigation_default-submenuItem .navigation_default-submenu')
-            .css('visibility', 'visible');
-    }).mouseleave((event) => {
-        $(event.currentTarget)
-            .find('.navigation_default-submenuItem .navigation_default-submenu')
-            .css('visibility', 'hidden');
+        const parent = $(target).parent();
+        const next = parent.nextAll('.clone');
+        next.remove();
+        $(target).removeClass('cloned');
+    };
+
+    /**
+     * One function to show menu, so that it can be invoked recursivly
+     * Subsubmenus are cloned, so that they are independent of the DOM, and can be positioned absolutely
+     */
+    const showMenu = (target) => {
+        const submenu = $(target).find('.navigation_default-submenu').first();
+        let container = '';
+
+        if ($(target).hasClass('navigation_default-submenuItem')) {
+            // subsubmenu
+
+            container = $(target).parents('.navigation_default-submenuContainer-outer').first();
+            const clonemenu = submenu.clone().addClass('clone');
+            if (clonemenu.length > 0) {
+                $(target).addClass('cloned');
+
+                $(container).find('.navigation_default-submenuContainer-inner').append(clonemenu);
+                $(clonemenu).removeClass('visible-hidden').addClass('visible-shown');
+
+                // add bindings to newly created elements
+                $(clonemenu).find('.navigation_default-submenuItem').hoverIntent({
+                    over: (event) => {
+                        const subTarget = event.currentTarget;
+                        cleanupSubmenuItem(subTarget);
+                        $('.cloned').addClass('hover');
+                        $(target).parents('.-sub').addClass('hover');
+                        showMenu(subTarget);
+                    },
+                    // increased timeout necessary for FF (default = 0)
+                    timeout: 250
+                });
+            }
+        } else {
+            // submenu
+
+            container = $(target).find('.navigation_default-submenuContainer-outer').first();
+            $(container).show();
+            $(submenu).removeClass('visible-hidden').addClass('visible-shown');
+        }
+        // Height of header is different on start or content page
+        $(container).css('top', $('.navigation_default').position().top + $('.navigation_default').height() - $(window).scrollTop());
+    };
+
+    const exposePath = (target) => {
+        const subTarget = $(target).find('.-actSub, .-cur, .-act, .-curSub').first();
+        if ($(subTarget).length > 0) {
+            showMenu($(subTarget));
+            exposePath($(subTarget));
+        }
+    };
+
+    $('.navigation_default-menuItem').hoverIntent({
+        over: (event) => {
+            const target = event.currentTarget;
+            cleanupMenuItem(target);
+            if ($(target).find('.-curSub, .-cur, .-actSub, .-act').length > 0) {
+                showMenu(target);
+                exposePath(target);
+            } else {
+                showMenu(target);
+            }
+        },
+        out: () => {
+            // nothing to do
+        },
+        timeout: 250
     });
+
+    $('.navigation_default-submenuItem').hoverIntent({
+        over: (event) => {
+            const target = event.currentTarget;
+            cleanupSubmenuItem(target);
+            $(target).addClass('hover');
+            $(target).parents('.-sub').addClass('hover');
+            showMenu(target);
+        },
+        timeout: 250
+    });
+
 
     /**
      * Stuff related to scrolling and page up button
@@ -59,7 +126,7 @@ $(document).ready(() => {
         if ($(event.currentTarget).scrollTop() === 0) {
             $('.toTop_inner').css('visibility', 'hidden');
         } else if ($('.toTop_inner').css('visibility') === 'hidden') {
-            $('.navigation_default-submenuContainer-outer').css('visibility', 'hidden').css('transition', 'all 0s');
+            $('.navigation_default-submenuContainer-outer').hide();
             $('.toTop_inner').css('visibility', 'visible');
         }
     });

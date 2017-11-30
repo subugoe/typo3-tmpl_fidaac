@@ -33,7 +33,6 @@
         @include span-s-6;
         align-items: stretch;
     }
-    position: relative;
 }
 
 .navigation_default {
@@ -78,6 +77,7 @@
     flex-direction: row;
     justify-content: stretch;
     padding: 0;
+    position: relative;
     z-index: 20;
 }
 
@@ -106,7 +106,6 @@
         margin: 0;
     }
 
-    // element in path is bold
     &.-actSub,
     &.-curIfSub,
     &.-cur {
@@ -117,23 +116,10 @@
 
     &:hover {
         background-color: $shadeLighter;
-        transition: background-color 0s linear $ttime;
 
         & > svg {
             transform: rotate(90deg);
-            transition: rotate $ttime;
         }
-    }
-
-    &:hover .navigation_default-submenuContainer-outer {
-        visibility: visible;
-        transition: visibility 0s linear $ttime;
-        height: 22em;
-    }
-
-    &:not(:hover) .navigation_default-submenuContainer-outer:not(:hover) {
-        visibility: hidden;
-        transition: visibility 0s linear $ttime;
     }
 }
 
@@ -157,32 +143,24 @@
     }
     list-style-type: none;
     display: flex;
-    float: left;
     flex-flow: column;
     padding-bottom: $magic-l;
     padding-top: $magic-l/2;
     align-items: stretch;
-    position: relative;
-
-    .navigation_default-submenu {
-        position: absolute;
-        left: width(l-4);
-        top: 0;
-    }
 }
 
 .navigation_default-submenuContainer-outer {
     display: flex;
     flex: 1 0 100vh;
-    position: absolute;
+    position: fixed;
     right: 0;
     left: 0;
-    top: 56px;
+    top: 197px;
     width: 100%;
     background: $shadeLighter;
     z-index: 10;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .navigation_default-submenuContainer-inner {
@@ -200,14 +178,13 @@
 
 .navigation_default-submenuItem {
     display: flex;
-    align-items: center;
-    float: left;
     flex-grow: 0;
     font-size: $base-font-size-l;
     line-height: $base-line-height-l;
-    margin: 0;
-    padding: $magic-l/4 $magic-l/2;
+    padding: 0;
+    margin: $magic-l/4 $magic-l/2;
     justify-content: flex-start;
+    align-items: center;
     z-index: 20;
 
     svg {
@@ -237,20 +214,9 @@
         font-weight: bold;
     }
 
-    // hide and show submenus when hovered
     &:hover {
-        background-color: $shadeLight;
-
-        .navigation_default-submenu {
-            visibility: visible;
-            transition: visibility 0s linear $ttime;
-        }
-    }
-
-    &:not(:hover) {
-        .navigation_default-submenu {
-            visibility: hidden;
-            transition: visibility 0s linear $ttime;
+        & > a {
+            background-color: $shadeLight;
         }
     }
 

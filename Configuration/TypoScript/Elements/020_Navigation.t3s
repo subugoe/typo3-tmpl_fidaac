@@ -30,7 +30,7 @@ lib.navMenu {
     2 {
         expAll = 1
         special = rootline
-        wrap = <div class="navigation_default-submenuContainer-outer"><div class="navigation_default-submenuContainer-inner"><ul class="navigation_default-submenu">|</ul></div></div>
+        wrap = <div class="navigation_default-submenuContainer-outer"><div class="navigation_default-submenuContainer-inner"><ul class="navigation_default-submenu visible-hidden">|</ul></div></div>
 
         NO = 1
         NO.wrapItemAndSub  = <li class="navigation_default-submenuItem -no">|</li>
@@ -56,7 +56,7 @@ lib.navMenu {
 
     3 < .2
     3 {
-        wrap = <ul class="navigation_default-submenu">|</ul>
+        wrap = <ul class="navigation_default-submenu visible-hidden">|</ul>
     }
     4 < .3
     5 < .4
