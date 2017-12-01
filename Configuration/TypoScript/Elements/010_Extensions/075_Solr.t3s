@@ -12,7 +12,15 @@ plugin.tx_solr {
         partialRootPaths.10 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/Solr/Partials/
         layoutRootPaths.10 = EXT:tmpl_fidaac/Resources/Private/Templates/Extensions/Solr/Layouts/
     }
-    index.queue.pages.initialPagesAdditionalWhereClause = nav_hide = 0
+    index.queue {
+        pages.initialPagesAdditionalWhereClause = nav_hide = 0
+        #Only index news records in the LIVE workspace
+        news = 1
+        news {
+            table = tx_news_domain_model_news
+            additionalWhereClause = t3ver_state = 0
+        }
+    }
     search.results {
         resultsHighlighting = 1
         siteHighlighting = 1
