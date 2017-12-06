@@ -57,7 +57,7 @@ module.exports = {
         "eqeqeq": "error",
         "func-call-spacing": "error",
         "func-name-matching": "error",
-        "func-names": "error",
+        "func-names": "warn",
         "func-style": [
             "error",
             "expression"
@@ -200,7 +200,7 @@ module.exports = {
         "operator-assignment": "error",
         "operator-linebreak": "error",
         "padded-blocks": "off",
-        "prefer-arrow-callback": "error",
+        "prefer-arrow-callback": "warn",
         "prefer-const": "error",
         "prefer-destructuring": "error",
         "prefer-numeric-literals": "error",

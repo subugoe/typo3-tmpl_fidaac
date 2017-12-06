@@ -8,14 +8,14 @@ lib.navMenu {
 
         IFSUB < .NO
         IFSUB.wrapItemAndSub = <li class="navigation_default-menuItem -sub">|</li>
-        IFSUB.afterWrap = <svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg>
+        IFSUB.afterWrap = <div class="-svg-menu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
 
         CUR < .NO
         CUR.wrapItemAndSub = <li class="navigation_default-menuItem -cur">|</li>
 
         CURIFSUB < .CUR
         CURIFSUB.wrapItemAndSub = <li class="navigation_default-menuItem -curIfSub">|</li>
-        CURIFSUB.afterWrap = <svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg>
+        CURIFSUB.afterWrap = <div class="-svg-menu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
 
         ACT < .NO
         ACT.wrapItemAndSub = <li class="navigation_default-menuItem -act">|</li>
@@ -23,40 +23,40 @@ lib.navMenu {
 
         ACTIFSUB < .ACT
         ACTIFSUB.wrapItemAndSub = <li class="navigation_default-menuItem -actSub">|</li>
-        ACTIFSUB.afterWrap = <svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg>
+        ACTIFSUB.afterWrap = <div class="-svg-menu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
     }
 
     2 = TMENU
     2 {
         expAll = 1
         special = rootline
-        wrap = <div class="navigation_default-submenuContainer-outer"><div class="navigation_default-submenuContainer-inner"><ul class="navigation_default-submenu visible-hidden">|</ul></div></div>
+        wrap = <div class="navigation_default-submenuContainer-outer"><div class="navigation_default-submenuContainer-inner"><ul class="navigation_default-submenu">|</ul></div></div>
 
         NO = 1
         NO.wrapItemAndSub  = <li class="navigation_default-submenuItem -no">|</li>
 
         IFSUB < .NO
         IFSUB.wrapItemAndSub = <li class="navigation_default-submenuItem -sub">|</li>
-        IFSUB.afterWrap = <svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg>
+        IFSUB.afterWrap = <div class="-svg-submenu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
 
         CUR < .NO
         CUR.wrapItemAndSub = <li class="navigation_default-submenuItem -cur">|</li>
 
         CURIFSUB < .CUR
         CURIFSUB.wrapItemAndSub  = <li class="navigation_default-submenuItem -curIfSub">|</li>
-        CURIFSUB.afterWrap = <svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg>
+        CURIFSUB.afterWrap = <div class="-svg-submenu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
 
         ACT < .NO
         ACT.wrapItemAndSub  = <li class="navigation_default-submenuItem -act">|</li>
 
         ACTIFSUB < .ACT
         ACTIFSUB.wrapItemAndSub = <li class="navigation_default-submenuItem -actSub">|</li>
-        ACTIFSUB.afterWrap = <svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg>
+        ACTIFSUB.afterWrap = <div class="-svg-submenu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
     }
 
     3 < .2
     3 {
-        wrap = <ul class="navigation_default-submenu visible-hidden">|</ul>
+        wrap = <ul class="navigation_default-submenu">|</ul>
     }
     4 < .3
     5 < .4

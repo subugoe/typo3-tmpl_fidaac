@@ -77,8 +77,6 @@
     flex-direction: row;
     justify-content: stretch;
     padding: 0;
-    position: relative;
-    z-index: 20;
 }
 
 .navigation_default-menuItem {
@@ -116,9 +114,21 @@
 
     &:hover {
         background-color: $shadeLighter;
+        transition: background-color $ttime;
 
-        & > svg {
+        & > .-svg-menu svg {
             transform: rotate(90deg);
+            transition: rotate $ttime;
+        }
+
+        .navigation_default-submenuContainer-outer {
+            visibility: visible;
+            transition: visibility 0s linear $ttime;
+        }
+
+        .navigation_default-submenu.-actSub .navigation_default-submenu {
+            visibility: visible;
+            transition: visibility 0s linear $ttime * 2;
         }
     }
 }
@@ -144,23 +154,34 @@
     list-style-type: none;
     display: flex;
     flex-flow: column;
-    padding-bottom: $magic-l;
+    padding-bottom: $magic-l/2;
     padding-top: $magic-l/2;
     align-items: stretch;
+}
+
+.navigation_default-submenu .navigation_default-submenu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: width(l-4);
+    visibility: hidden;
+    transition: visibility 0s linear $ttime;
 }
 
 .navigation_default-submenuContainer-outer {
     display: flex;
     flex: 1 0 100vh;
-    position: fixed;
+    position: absolute;
     right: 0;
     left: 0;
-    top: 197px;
+    top: 56px;
     width: 100%;
     background: $shadeLighter;
-    z-index: 10;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    z-index: 20;
+    visibility: hidden;
+    transition: visibility 0s linear $ttime;
 }
 
 .navigation_default-submenuContainer-inner {
@@ -174,6 +195,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .navigation_default-submenuItem {
@@ -181,11 +203,10 @@
     flex-grow: 0;
     font-size: $base-font-size-l;
     line-height: $base-line-height-l;
-    padding: 0;
-    margin: $magic-l/4 $magic-l/2;
+    padding: $magic/4 0;
+    margin: $magic/4 0;
     justify-content: flex-start;
     align-items: center;
-    z-index: 20;
 
     svg {
         margin-left: $magic-l/2;
@@ -215,12 +236,12 @@
     }
 
     &:hover {
-        & > a {
-            background-color: $shadeLight;
-        }
-    }
-
-    &.hover a {
         background-color: $shadeLight;
+        transition: background-color $ttime;
+
+        .navigation_default-submenu {
+            visibility: visible;
+            transition: visibility 0s linear $ttime * 2;
+        }
     }
 }
