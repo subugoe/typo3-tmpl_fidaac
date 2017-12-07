@@ -128,7 +128,7 @@
 
         .navigation_default-submenu.-actSub .navigation_default-submenu {
             visibility: visible;
-            transition: visibility 0s linear $ttime * 2;
+            transition: visibility 0s linear $ttime;
         }
     }
 }
@@ -181,7 +181,7 @@
     align-items: flex-start;
     z-index: 20;
     visibility: hidden;
-    transition: visibility 0s linear $ttime;
+    transition: visibility 0s linear $ttime, min-height 0s linear $ttime * 2;
 }
 
 .navigation_default-submenuContainer-inner {
@@ -241,7 +241,7 @@
 
         .navigation_default-submenu {
             visibility: visible;
-            transition: visibility 0s linear $ttime * 2;
+            transition: visibility 0s linear $ttime;
         }
     }
 }
