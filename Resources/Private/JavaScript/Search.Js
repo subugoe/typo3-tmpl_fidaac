@@ -59,7 +59,7 @@ $(document).ready(() => {
     return false;
   });
 
-    $('.pagination .previous a').html('<svg><use xlink:href="#backward"/></svg>');
-    $('.pagination .last.next a').html('<svg><use xlink:href="#forward"/></svg>');
+    $('.pagination .previous a').html('<svg><use xlink:href="#icon-caret-left"/></svg>');
+    $('.pagination .last.next a').html('<svg><use xlink:href="#icon-caret-right"/></svg>');
 
 });
