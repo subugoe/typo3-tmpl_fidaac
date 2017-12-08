@@ -7,7 +7,7 @@
 .search-tips {
     @include link-marker;
 
-    font-size: 22px;
+    font-size: $large-font-size-l -2px;
     padding-top: ($magic * 2);
     text-align: right;
 
@@ -20,9 +20,18 @@
 }
 
 .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
     svg {
         fill: $brand;
-        width: 1.6em;
-        height: 1em;
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    li a {
+        display: flex;
+        align-items: center;
     }
 }
