@@ -11,75 +11,70 @@
 
 $(document).ready(() => {
 
-    let timeoutHeight = '';
-
     const deflateSubmenuContainer = (target) => {
-        $(target).parents('.navigation_default-submenuContainer-outer').css('min-height', '');
+        console.log('deflate');
+        window.timeoutTarget = window.setTimeout(() => {
+            $(target).parents('.navigation_default-submenuContainer-outer').css('min-height', '');
+        }, 200);
     };
 
-    const inflateSubmenuContainer = (target) => {
-        if ($(target).hasClass('-no')) {
-            deflateSubmenuContainer(window.timeoutEvent);
+    const inflateForSubmenuContainer = (target) => {
+        if ($(target).hasClass('-no') || $(target).hasClass('-cur')) {
+            deflateSubmenuContainer(target);
         } else {
             const height = $(target).find('.navigation_default-submenu').height();
             $(target).parents('.navigation_default-submenuContainer-outer').css('min-height', height + 16);
         }
     };
 
-    const clearAll = () => {
+    const clearAll = (target) => {
+        $('.navigation_default-submenu').css({
+            'visibility': '',
+            'transition': 'visibility 0s linear 0.2s'
+        });
+        clearTimeout(target);
+    };
+
+
+    /**
+     * Make sure the current submenuContainer has always the correct height and submenus disappear quicker than the menu
+     */
+
+    $('.navigation_default-menuItem.-actSub').on('mouseenter', function () {
+        clearAll($(this));
+        // Show complete path when hovering menuItem
+        window.timeoutTarget = window.setTimeout(() => {
+            inflateForSubmenuContainer($(this).find('.-actSub'));
+            $(this).find('.-cur').parent('.navigation_default-submenu').css({
+                'visibility': 'visible',
+                'transition': 'visibility 0s linear 0.4s'
+            });
+        }, 20);
+    });
+
+    $('.navigation_default-menuItem:not(.-actSub)').on('mouseenter', () => {
+        clearAll($(this));
+        //  hide submenu quicker when no container present
         $('.navigation_default-submenu').css({
             'visibility': '',
             'transition': 'visibility 0s linear 0s'
         });
-        clearTimeout(timeoutHeight);
-    };
-
-    /**
-     * Make sure the current submenuContainer has always the correct height
-     */
-    $('.navigation_default-submenuItem, .navigation_default-menuItem').on('mouseenter', () => {
-        clearAll();
     });
-    $('.navigation_default-submenuItem, .navigation_default-menuItem').on('mouseleave', () => {
-        clearAll();
+
+    $('.navigation_default-menuItem').on('mouseleave', () => {
+        clearAll(window.timeoutTarget);
     });
     $('.navigation_default-submenuContainer-inner > .navigation_default-submenu > .navigation_default-submenuItem').on('mouseenter', function () {
-        window.timeoutEvent = $(this);
-        timeoutHeight = window.setTimeout(() => {
-            inflateSubmenuContainer(window.timeoutEvent);
+        clearAll(window.timeoutTarget);
+        window.timeoutTarget = window.setTimeout(() => {
+            inflateForSubmenuContainer($(this));
         }, 20);
     });
     $('.navigation_default-submenuContainer-inner > .navigation_default-submenu > .navigation_default-submenuItem').on('mouseleave', function () {
-        window.timeoutEvent = $(this);
-        timeoutHeight = window.setTimeout(() => {
-            deflateSubmenuContainer(window.timeoutEvent);
-        }, 400);
-    });
-
-    /**
-     * Show complete path when hovering menuItem
-     */
-    $('.navigation_default-menuItem.-actSub').on('mouseenter', function () {
-        const targets = $(this).find('.-cur, .-curIfSub');
-        targets.parents('.navigation_default-submenu').css({
-            'visibility': 'visible',
-            'transition': 'visibility 0s linear 0.4s'
-        });
-        window.timeoutEvent = $(this).find('.-actSub');
-        timeoutHeight = window.setTimeout(() => {
-            inflateSubmenuContainer(window.timeoutEvent);
+        clearAll(window.timeoutTarget);
+        window.timeoutTarget = window.setTimeout(() => {
+            deflateSubmenuContainer($(this));
         }, 20);
-    });
-
-    $('.navigation_default-menuItem a, .navigation_default-menuItem').on('mouseleave', function () {
-        $(this).parent().find('.navigation_default-submenu').css({
-            'visibility': '',
-            'transition': 'visibility 0s linear 0s'
-        });
-        window.timeoutEvent = $(event.currentTarget);
-        timeoutHeight = window.setTimeout(() => {
-            deflateSubmenuContainer(window.timeoutEvent);
-        }, 400);
     });
 
     /**

@@ -78,75 +78,79 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-    var timeoutHeight = '';
-
     var deflateSubmenuContainer = function deflateSubmenuContainer(target) {
-        $(target).parents('.navigation_default-submenuContainer-outer').css('min-height', '');
+        console.log('deflate');
+        window.timeoutTarget = window.setTimeout(function () {
+            $(target).parents('.navigation_default-submenuContainer-outer').css('min-height', '');
+        }, 200);
     };
 
-    var inflateSubmenuContainer = function inflateSubmenuContainer(target) {
-        if ($(target).hasClass('-no')) {
-            deflateSubmenuContainer(window.timeoutEvent);
+    var inflateForSubmenuContainer = function inflateForSubmenuContainer(target) {
+        if ($(target).hasClass('-no') || $(target).hasClass('-cur')) {
+            deflateSubmenuContainer(target);
         } else {
             var height = $(target).find('.navigation_default-submenu').height();
             $(target).parents('.navigation_default-submenuContainer-outer').css('min-height', height + 16);
         }
     };
 
-    var clearAll = function clearAll() {
+    var clearAll = function clearAll(target) {
+        $('.navigation_default-submenu').css({
+            'visibility': '',
+            'transition': 'visibility 0s linear 0.2s'
+        });
+        clearTimeout(target);
+    };
+
+    /**
+     * Make sure the current submenuContainer has always the correct height and submenus disappear quicker than the menu
+     */
+
+    $('.navigation_default-menuItem.-actSub').on('mouseenter', function () {
+        var _this = this;
+
+        clearAll($(this));
+        // Show complete path when hovering menuItem
+        window.timeoutTarget = window.setTimeout(function () {
+            inflateForSubmenuContainer($(_this).find('.-actSub'));
+            $(_this).find('.-cur').parent('.navigation_default-submenu').css({
+                'visibility': 'visible',
+                'transition': 'visibility 0s linear 0.4s'
+            });
+        }, 20);
+    });
+
+    $('.navigation_default-menuItem:not(.-actSub)').on('mouseenter', function () {
+        clearAll(window.timeoutTarget);
+    });
+
+    $('.navigation_default-menuItem.-no').on('mouseenter', function () {
+        clearAll(window.timeoutTarget);
+        //  hide submenu quicker when no container present
         $('.navigation_default-submenu').css({
             'visibility': '',
             'transition': 'visibility 0s linear 0s'
         });
-        clearTimeout(timeoutHeight);
-    };
-
-    /**
-     * Make sure the current submenuContainer has always the correct height
-     */
-    $('.navigation_default-submenuItem, .navigation_default-menuItem').on('mouseenter', function () {
-        clearAll();
     });
-    $('.navigation_default-submenuItem, .navigation_default-menuItem').on('mouseleave', function () {
-        clearAll();
+
+    $('.navigation_default-menuItem').on('mouseleave', function () {
+        clearAll(window.timeoutTarget);
     });
     $('.navigation_default-submenuContainer-inner > .navigation_default-submenu > .navigation_default-submenuItem').on('mouseenter', function () {
-        window.timeoutEvent = $(this);
-        timeoutHeight = window.setTimeout(function () {
-            inflateSubmenuContainer(window.timeoutEvent);
+        var _this2 = this;
+
+        clearAll(window.timeoutTarget);
+        window.timeoutTarget = window.setTimeout(function () {
+            inflateForSubmenuContainer($(_this2));
         }, 20);
     });
     $('.navigation_default-submenuContainer-inner > .navigation_default-submenu > .navigation_default-submenuItem').on('mouseleave', function () {
-        window.timeoutEvent = $(this);
-        timeoutHeight = window.setTimeout(function () {
-            deflateSubmenuContainer(window.timeoutEvent);
-        }, 400);
-    });
+        var _this3 = this;
 
-    /**
-     * Show complete path when hovering menuItem
-     */
-    $('.navigation_default-menuItem.-actSub').on('mouseenter', function () {
-        var targets = $(this).find('.-cur, .-curIfSub');
-        targets.parents('.navigation_default-submenu').css({
-            'visibility': 'visible',
-            'transition': 'visibility 0s linear 0.4s'
-        });
-        window.timeoutEvent = $(this).find('.-actSub');
-        timeoutHeight = window.setTimeout(function () {
-            inflateSubmenuContainer(window.timeoutEvent);
+        clearAll(window.timeoutTarget);
+        window.timeoutTarget = window.setTimeout(function () {
+            deflateSubmenuContainer($(_this3));
         }, 20);
-    });
-
-    $('.navigation_default-menuItem a, .navigation_default-menuItem').on('mouseleave', function () {
-        $(this).parent().find('.navigation_default-submenu').css({
-            'visibility': '',
-            'transition': 'visibility 0s linear 0s'
-        });
-        window.timeoutEvent = $(event.currentTarget);
-        timeoutHeight = window.setTimeout(function () {
-            deflateSubmenuContainer(window.timeoutEvent);
-        }, 400);
     });
 
     /**
