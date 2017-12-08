@@ -1087,7 +1087,10 @@ function updatePagers () {
 			var inBlockGap = false;
 
 			for(var pageNumber = 1; pageNumber <= pages; pageNumber++) {
-				if (pageNumber < 5 || Math.abs(pageNumber - curPage) < 3 || pages < pageNumber + 4) {
+
+                // changed pagination to not overload space
+			    // before: pageNumber < 5 || Math.abs(pageNumber - curPage) < 3 || pages < pageNumber + 4
+				if (pageNumber === 1 || pageNumber === pages || pageNumber === curPage || Math.abs(pageNumber - curPage) < 3 ) {
 					var pageItem = document.createElement('li');
 					pageList.appendChild(pageItem);
 					if(pageNumber !== curPage) {
