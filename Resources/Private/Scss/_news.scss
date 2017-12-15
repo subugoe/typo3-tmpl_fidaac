@@ -25,6 +25,7 @@
 
         .list-dateNAuthor {
             display: flex;
+            margin-bottom: $magic;
         }
 
         .news-list-category {
@@ -34,7 +35,6 @@
             display: flex;
             flex-wrap: wrap;
             align-content: flex-start;
-            margin-top: $magic;
 
 
             .-item {

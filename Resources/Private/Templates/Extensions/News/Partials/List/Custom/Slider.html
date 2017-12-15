@@ -84,22 +84,6 @@
             </div>
         </f:if>
 
-        <!-- category -->
-        <f:if condition="{newsItem.firstCategory}">
-            <!-- first category -->
-            <f:render partial="Category/Items"
-                      arguments="{categories:newsItem.categories, settings:settings}"/>
-        </f:if>
-
-        <f:if condition="{newsItem.tags}">
-            <!-- Tags -->
-            <span class="news-tags" itemprop="keywords">
-                    <f:for each="{newsItem.tags}" as="tag">
-                        {tag.title}
-                    </f:for>
-                </span>
-        </f:if>
-
         <!-- teaser -->
         <div class="teaser-text">
             <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
@@ -117,6 +101,22 @@
                 </f:if>
             </n:link>
         </div>
+
+        <!-- category -->
+        <f:if condition="{newsItem.firstCategory}">
+            <!-- first category -->
+            <f:render partial="Category/Items"
+                      arguments="{categories:newsItem.categories, settings:settings}"/>
+        </f:if>
+
+        <f:if condition="{newsItem.tags}">
+            <!-- Tags -->
+            <span class="news-tags" itemprop="keywords">
+                    <f:for each="{newsItem.tags}" as="tag">
+                        {tag.title}
+                    </f:for>
+                </span>
+        </f:if>
     </div>
     <!-- button -->
     <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">

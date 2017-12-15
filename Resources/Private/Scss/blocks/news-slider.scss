@@ -53,13 +53,13 @@
         @include media-l {
             width: width(l-5);
             height: width(l-5) / 16 * 9;
-            margin: $magic-l / 2 0 0;
+            margin: $magic-l / 2 0 $magic;
         }
 
         @include media-m {
             width: width(m-5);
             height: width(m-5) / 16 * 9;
-            margin: $magic-m / 2 0 0;
+            margin: $magic-m / 2 0 $magic;
         }
 
         @include media-s {
@@ -102,6 +102,14 @@
         display: flex;
         flex-grow: 1;
         flex-shrink: 1;
+    }
+
+    .news-list-category {
+        margin: 0 0 $magic 0;
+
+        .-item:last-of-type {
+            margin-bottom: 0;
+        }
     }
 
     .news-overlay {
