@@ -1,0 +1,56 @@
+.news {
+    .page-navigation p {
+        position: absolute;
+        top: 0;
+        left: -999px;
+        height: 1px;
+        width: 1px;
+        clip: rect(1px, 1px, 1px, 1px);
+        white-space: nowrap;
+    }
+
+    .f3-widget-paginator {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        width: width(l-7);
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0 0 $magic;
+
+        li {
+            display: flex;
+            padding: 0;
+            margin: 0 $magic;
+            width: 32px;
+            height: 32px;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                display: flex;
+            }
+
+            &::before {
+                content: "";
+                padding: 0;
+            }
+
+            &:first-of-type {
+                padding-left: 0;
+                margin-left: 0;
+            }
+
+            &.current {
+                background-color: $brand;
+                color: $white;
+            }
+        }
+
+        svg {
+            width: 1.5em;
+            height: 1.5em;
+            fill: $brand;
+        }
+    }
+}

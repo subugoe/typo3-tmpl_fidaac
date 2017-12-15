@@ -59,4 +59,9 @@ $(document).ready(() => {
     });
    $('.news-slider-view .news-header').css('height', sliderheaderheight);
 
+    /**
+     * Make sure, pagination resembles design
+     */
+    $('.news .f3-widget-paginator .previous a').html('<svg><use xlink:href="#icon-caret-left"/></svg>');
+    $('.news .f3-widget-paginator .next a').html('<svg><use xlink:href="#icon-caret-right"/></svg>');
 });
