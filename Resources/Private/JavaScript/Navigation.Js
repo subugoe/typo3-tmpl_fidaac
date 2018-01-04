@@ -11,77 +11,6 @@
 
 $(document).ready(() => {
 
-    let timeoutHeight = '';
-
-    const deflateSubmenuContainer = (target) => {
-        $(target).parents('.navigation_default-submenuContainer-outer').css('min-height', '');
-    };
-
-    const inflateSubmenuContainer = (target) => {
-        if ($(target).hasClass('-no')) {
-            deflateSubmenuContainer(window.timeoutEvent);
-        } else {
-            const height = $(target).find('.navigation_default-submenu').height();
-            $(target).parents('.navigation_default-submenuContainer-outer').css('min-height', height + 16);
-        }
-    };
-
-    const clearAll = () => {
-        $('.navigation_default-submenu').css({
-            'visibility': '',
-            'transition': 'visibility 0s linear 0s'
-        });
-        clearTimeout(timeoutHeight);
-    };
-
-    /**
-     * Make sure the current submenuContainer has always the correct height
-     */
-    $('.navigation_default-submenuItem, .navigation_default-menuItem').on('mouseenter', () => {
-        clearAll();
-    });
-    $('.navigation_default-submenuItem, .navigation_default-menuItem').on('mouseleave', () => {
-        clearAll();
-    });
-    $('.navigation_default-submenuContainer-inner > .navigation_default-submenu > .navigation_default-submenuItem').on('mouseenter', function () {
-        window.timeoutEvent = $(this);
-        timeoutHeight = window.setTimeout(() => {
-            inflateSubmenuContainer(window.timeoutEvent);
-        }, 20);
-    });
-    $('.navigation_default-submenuContainer-inner > .navigation_default-submenu > .navigation_default-submenuItem').on('mouseleave', function () {
-        window.timeoutEvent = $(this);
-        timeoutHeight = window.setTimeout(() => {
-            deflateSubmenuContainer(window.timeoutEvent);
-        }, 400);
-    });
-
-    /**
-     * Show complete path when hovering menuItem
-     */
-    $('.navigation_default-menuItem.-actSub').on('mouseenter', function () {
-        const targets = $(this).find('.-cur, .-curIfSub');
-        targets.parents('.navigation_default-submenu').css({
-            'visibility': 'visible',
-            'transition': 'visibility 0s linear 0.4s'
-        });
-        window.timeoutEvent = $(this).find('.-actSub');
-        timeoutHeight = window.setTimeout(() => {
-            inflateSubmenuContainer(window.timeoutEvent);
-        }, 20);
-    });
-
-    $('.navigation_default-menuItem a, .navigation_default-menuItem').on('mouseleave', function () {
-        $(this).parent().find('.navigation_default-submenu').css({
-            'visibility': '',
-            'transition': 'visibility 0s linear 0s'
-        });
-        window.timeoutEvent = $(event.currentTarget);
-        timeoutHeight = window.setTimeout(() => {
-            deflateSubmenuContainer(window.timeoutEvent);
-        }, 400);
-    });
-
     /**
      * Stuff related to scrolling and page up button
      */
@@ -97,4 +26,67 @@ $(document).ready(() => {
         $('html').animate({scrollTop: 0}, 'fast');
     });
 
+    /**
+     * Stuff related to ajax-menu
+     * To show navigation horizontally:
+     * + javascript is enabled -> the second level of submenus are hidden and created via ajax
+     * + javascript is not enabled -> the second level of submenus are shown via css
+     */
+    const createURLForAjax = (path) => {
+        let url = '';
+        // ie10 doesn't recognice window.location.origin...
+        if (window.location.origin) {
+            url = window.location.origin;
+        } else {
+            url = `${window.location.protocol}//${window.location.hostname}`;
+            if (window.location.port) {
+                url += `:${window.location.port}`;
+            }
+        }
+        url += path;
+        if (url.indexOf('&index.php') === '0') {
+            url += '&type=37902';
+        } else {
+            url += '?type=37902';
+        }
+        return url;
+    };
+
+    const makePathBold = function() {
+        const actUrl = window.location.pathname;
+        console.log(actUrl);
+        $(`a[href$="${actUrl}"]`).parents('.navigation_default-submenuItem').first().removeClass('-no').addClass('-cur');
+
+    };
+
+    const showPath = function () {
+        const url = createURLForAjax($('.navigation_default-submenuItem.-actSub').find('a').first().attr('href'));
+        $('.navigation_default-submenuItem.-actSub').parents('.navigation_default-submenuContainer-inner').find('.navigation_default-submenu').first().siblings().remove();
+        const menu = $('.navigation_default-submenuItem.-actSub').parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
+        $(menu).find('.navigation_default-submenu').last().load(url, (response, status) => {
+            if (status === 'error') {
+                console.log('Error loading submenu');
+            } else if (status === 'success') {
+                makePathBold();
+            }
+        });
+    };
+    showPath();
+
+    $('.navigation_default-submenuItem.-sub, .navigation_default-submenuItem.-curIfSub, .navigation_default-submenuItem.-actSub').on('mouseenter', function () {
+        const url = createURLForAjax($(this).find('a').first().attr('href'));
+        // clean up first, then refill
+        $(this).parents('.navigation_default-submenuContainer-inner').find('.navigation_default-submenu').first().siblings().remove();
+        const menu = $(this).parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
+        $(menu).find('.navigation_default-submenu').last().load(url, (response, status) => {
+            if (status === 'error') {
+                console.log('Error loading submenu');
+            }
+            makePathBold();
+        });
+    });
+
+    $('.navigation_default-submenuItem.-no').on('mouseenter', function () {
+        $(this).parents('.navigation_default-submenuContainer-inner').find('.navigation_default-submenu').first().siblings().remove();
+    });
 });
