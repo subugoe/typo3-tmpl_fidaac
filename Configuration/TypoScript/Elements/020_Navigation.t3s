@@ -62,6 +62,67 @@ lib.navMenu {
     5 < .4
 }
 
+[globalString = GP:type=37902]
+lib.ajaxMenu = HMENU
+lib.ajaxMenu {
+    entryLevel = -1
+
+    1 = TMENU
+    1 {
+        expAll = 1
+        special = rootline
+
+        NO = 1
+        NO.wrapItemAndSub  = <li class="navigation_default-submenuItem -no">|</li>
+
+        IFSUB < .NO
+        IFSUB.wrapItemAndSub = <li class="navigation_default-submenuItem -sub">|</li>
+        IFSUB.afterWrap = <div class="-svg-submenu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
+
+        CUR < .NO
+        CUR.wrapItemAndSub = <li class="navigation_default-submenuItem -cur">|</li>
+
+        CURIFSUB < .CUR
+        CURIFSUB.wrapItemAndSub  = <li class="navigation_default-submenuItem -curIfSub">|</li>
+        CURIFSUB.afterWrap = <div class="-svg-submenu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
+
+        ACT < .NO
+        ACT.wrapItemAndSub  = <li class="navigation_default-submenuItem -act">ACT|</li>
+
+        ACTIFSUB < .ACT
+        ACTIFSUB.wrapItemAndSub = <li class="navigation_default-submenuItem -actSub">|</li>
+        ACTIFSUB.afterWrap = <div class="-svg-submenu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
+    }
+
+    2 < .1
+}
+[end]
+ajax_api = PAGE
+ajax_api {
+    typeNum = 37902
+    config {
+        disableAllHeaderCode = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+        additionalHeaders = Content-type: text/plain
+        no_cache = 0
+        debug = 0
+        cors {
+            allowOrigin (
+            http://127.0.0.1:8001,
+            127.0.0.1:8001,
+            127.0.0.1,
+            http://127.0.0.1
+            )
+            # allowOrigin = http://127.0.0.1
+            allowMethods = GET, POST, PUT, DELETE
+            allowCredentials = 1
+        }
+    }
+    10 < lib.ajaxMenu
+}
+
+
 lib.footer = HMENU
 lib.footer {
     1 = TMENU

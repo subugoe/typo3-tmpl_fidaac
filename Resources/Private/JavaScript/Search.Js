@@ -43,21 +43,21 @@ $(document).ready(() => {
         }
     });
 
-  const getQuery = (choice) => {
-    if (choice === 'choice-website') {
-      const parameters = searchEngineSettingsWebsite;
-      return parameters.query;
-    }
+    const getQuery = (choice) => {
+        if (choice === 'choice-website') {
+            const parameters = searchEngineSettingsWebsite;
+            return parameters.query;
+        }
 
-    const parameters = searchEngineSettingsMetasearch;
-    return parameters.query;
-  };
+        const parameters = searchEngineSettingsMetasearch;
+        return parameters.query;
+    };
 
-  searchForm.submit(() => {
-    const id = document.querySelector('input[name=search-choice]:checked').getAttribute('id');
-    window.location = getQuery(id) + $('#search').val();
-    return false;
-  });
+    searchForm.submit(() => {
+        const id = document.querySelector('input[name=search-choice]:checked').getAttribute('id');
+        window.location = getQuery(id) + $('#search').val();
+        return false;
+    });
 
     $('.pagination .previous a').html('<svg><use xlink:href="#icon-caret-left"/></svg>');
     $('.pagination .last.next a').html('<svg><use xlink:href="#icon-caret-right"/></svg>');

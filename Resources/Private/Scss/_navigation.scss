@@ -168,6 +168,7 @@
     transition: visibility 0s linear $ttime;
 }
 
+
 .navigation_default-submenuContainer-outer {
     display: flex;
     flex: 1 0 100vh;
@@ -243,5 +244,17 @@
             visibility: visible;
             transition: visibility 0s linear $ttime * 2;
         }
+    }
+}
+
+.js {
+    .navigation_default-submenu .navigation_default-submenu {
+        display: none;
+    }
+}
+
+.no-js {
+    .navigation_default-submenuContainer-outer {
+        height: 350px;
     }
 }
