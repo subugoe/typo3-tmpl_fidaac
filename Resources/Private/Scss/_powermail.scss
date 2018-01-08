@@ -6,11 +6,13 @@
     legend {
         padding-left: 0;
         font-weight: bold;
+        margin-bottom: $magic * 2;
     }
 }
 
 .powermail_fieldwrap {
-    margin: $magic 0 0 0;
+    margin: 0;
+    margin-bottom: $magic * 6;
 }
 
 .powermail_fieldwrap_type_check {
@@ -59,22 +61,11 @@
         transition: all 0.2s ease-in-out;
         position: absolute !important;
         flex: 1 0 220px;
-        color: $shadeDark;
     }
 }
 
 .powermail_label {
-    @include media-l {
-        font-size: $base-font-size-l;
-    }
-
-    @include media-m {
-        font-size: $base-font-size-m;
-    }
-
-    @include media-s {
-        font-size: $base-font-size-s;
-    }
+    transform: translate3d(0, $magic * 3, 0);
 }
 
 .powermail_fieldwrap_type_check {
@@ -82,11 +73,6 @@
     .powermail_label {
         position: relative !important;
     }
-}
-
-.activeLabel {
-    transition: all 0.2s ease-in-out;
-    transform: translate3d(0, -15px, 0);
 }
 
 .powermail_fieldwrap_type_input {
