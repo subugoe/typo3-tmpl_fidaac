@@ -130,7 +130,6 @@ $(document).ready(function () {
 
     var showPath = function showPath() {
         var url = createURLForAjax($('.navigation_default-submenuItem.-actSub').find('a').first().attr('href'));
-        $('.navigation_default-submenuItem.-actSub').parents('.navigation_default-submenuContainer-inner').find('.navigation_default-submenu').first().siblings().remove();
         var menu = $('.navigation_default-submenuItem.-actSub').parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
         $(menu).find('.navigation_default-submenu').last().load(url, function (response, status) {
             if (status === 'error') {
@@ -144,7 +143,6 @@ $(document).ready(function () {
 
     $('.navigation_default-submenuItem.-sub, .navigation_default-submenuItem.-curIfSub, .navigation_default-submenuItem.-actSub').on('mouseenter', function () {
         var url = createURLForAjax($(this).find('a').first().attr('href'));
-        // clean up first, then refill
         removeSubsubmenus(this);
         var menu = $(this).parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
         $(menu).find('.navigation_default-submenu').last().load(url, function (response, status) {
@@ -159,8 +157,11 @@ $(document).ready(function () {
         removeSubsubmenus(this);
     });
 
-    $('.navigation_default-menuItem:not(.-actSub)').on('mouseenter', function () {
-        removeSubsubmenus($(this).find('.navigation_default-submenu').last());
+    $('.navigation_default-menuItem').on('mouseenter', function () {
+        removeSubsubmenus($(this).find('.navigation_default-submenu'));
+        if ($(this).find('.navigation_default-submenuItem.-cur').length > 0) {
+            showPath();
+        }
     });
 });
 
