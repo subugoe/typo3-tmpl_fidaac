@@ -1,3 +1,5 @@
+@import 'settings';
+
 * {
     margin: 0;
     padding: 0;
@@ -94,8 +96,15 @@ header {
     padding: 0 48px 24px 0;
 }
 
-.news .news-img-wrap img {
-    display: block;
-    width: 100%;
-    height: 100%;
+.news .news-img-wrap {
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .news-img-caption {
+        margin-bottom: $magic * 2;
+        font-size: 0.8em;
+    }
 }

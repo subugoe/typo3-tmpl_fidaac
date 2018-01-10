@@ -1,1 +1,129 @@
-*{margin:0;padding:0}html{font-family:open Sans;font-size:12pt;font-weight:400}a,html{color:#191919}.footer,.footer_outer,.header,.header_outer,.last,.last_outer,.misc-wrapper_outer,.navigation,.navigation_outer,.search-bar,.toTop_outer,audio,embed,object,video{display:none}a{text-decoration:none;word-wrap:break-word}a[href^="http://"]:after,a[href^="https://"]:after{content:" (" attr(href) ") "}a[href^="#"]:after,a button{display:none}h1,h2,h3,h4{font-weight:600}ul{margin-left:16px}h1,h2,h3,h4,ol,p,ul{margin-bottom:5px}h1{padding-top:15px}h2{padding-top:10px}h3{padding-top:5px}header{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.printTitle{font-size:24pt;font-weight:600;padding:0 48px 24px 0}.news .news-img-wrap img{display:block;width:100%;height:100%}
+/* Reference for utilities/simple-grid.scss */
+/* line 3, Resources/Private/Scss/Print.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, Resources/Private/Scss/Print.scss */
+html {
+  font-family: "open Sans";
+  font-size: 12pt;
+  font-weight: 400;
+  color: #191919;
+}
+
+/* line 15, Resources/Private/Scss/Print.scss */
+a {
+  color: #191919;
+}
+
+/* line 19, Resources/Private/Scss/Print.scss */
+.header,
+.navigation,
+.footer,
+.last,
+.header_outer,
+.navigation_outer,
+.footer_outer,
+.last_outer,
+.search-bar,
+.toTop_outer,
+.misc-wrapper_outer,
+video,
+audio,
+embed,
+object {
+  display: none;
+}
+
+/* line 37, Resources/Private/Scss/Print.scss */
+a {
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+/* line 42, Resources/Private/Scss/Print.scss */
+a[href^="http://"]::after,
+a[href^="https://"]::after {
+  content: " (" attr(href) ") ";
+}
+
+/* line 47, Resources/Private/Scss/Print.scss */
+a[href^="#"]::after {
+  display: none;
+}
+
+/* line 51, Resources/Private/Scss/Print.scss */
+a button {
+  display: none;
+}
+
+/* line 55, Resources/Private/Scss/Print.scss */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+}
+
+/* line 62, Resources/Private/Scss/Print.scss */
+ul {
+  margin-left: 16px;
+}
+
+/* line 66, Resources/Private/Scss/Print.scss */
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 5px;
+}
+
+/* line 76, Resources/Private/Scss/Print.scss */
+h1 {
+  padding-top: 15px;
+}
+
+/* line 80, Resources/Private/Scss/Print.scss */
+h2 {
+  padding-top: 10px;
+}
+
+/* line 84, Resources/Private/Scss/Print.scss */
+h3 {
+  padding-top: 5px;
+}
+
+/* line 88, Resources/Private/Scss/Print.scss */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 93, Resources/Private/Scss/Print.scss */
+.printTitle {
+  font-size: 24pt;
+  font-weight: 600;
+  padding: 0 48px 24px 0;
+}
+
+/* line 100, Resources/Private/Scss/Print.scss */
+.news .news-img-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 106, Resources/Private/Scss/Print.scss */
+.news .news-img-wrap .news-img-caption {
+  margin-bottom: 16px;
+  font-size: 0.8em;
+}
