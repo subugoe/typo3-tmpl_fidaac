@@ -20,6 +20,11 @@ config {
 
     prefixLocalAnchors = all
     tx_realurl_enable = 1
+
+    compressJs = 1
+    compressCss = 1
+    concatenateCss = 1
+    concatenateJs = 1
 }
 
 # include script in header-section
