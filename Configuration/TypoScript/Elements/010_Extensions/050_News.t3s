@@ -31,6 +31,21 @@ plugin.tx_news {
     }
 }
 
+lib.newsTitle = RECORDS
+lib.newsTitle {
+    dontCheckPid = 1
+    tables = tx_news_domain_model_news
+    source.data = GP:tx_news_pi1|news
+    source.intval = 1
+    conf.tx_news_domain_model_news = TEXT
+    conf.tx_news_domain_model_news {
+        field = title
+        htmlSpecialChars = 1
+    }
+    wrap = |
+}
+
+
 ## Ext tx_news: dynamic page title for the news category list page
 [globalVar = GP:tx_news_pi1|overwriteDemand|categories > 0]
     config.noPageTitle = 2
