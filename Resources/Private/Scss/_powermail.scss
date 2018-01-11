@@ -54,6 +54,8 @@
         flex-grow: 1;
         flex-shrink: 0;
         font-size: $base-font-size-l;
+        flex-wrap: wrap;
+        max-width: 100%;
     }
 
     label,
@@ -168,4 +170,13 @@
 
 .parsley-errors-list {
     padding: 0;
+
+    li {
+        font-weight: bold;
+
+        &::before {
+            content: "";
+            padding: 0 0 0 $magic;
+        }
+    }
 }
