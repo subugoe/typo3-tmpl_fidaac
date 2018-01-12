@@ -16,7 +16,6 @@
 }
 
 .powermail_fieldwrap_type_check {
-    font-size: $base-font-size-l;
     margin-bottom: $magic;
     display: flex;
 
@@ -27,6 +26,7 @@
         display: flex;
         justify-content: flex-start;
         width: width(l-10);
+        margin-bottom: $magic / 2;
 
         .powermail_checkbox {
             display: flex;
@@ -54,7 +54,6 @@
         display: flex;
         flex-grow: 1;
         flex-shrink: 0;
-        font-size: $base-font-size-l;
         flex-wrap: wrap;
         max-width: 100%;
     }
