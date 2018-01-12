@@ -29,8 +29,7 @@ $(document).ready(() => {
         $.when($('.news-rel-slider').animate({'left': '-=416px'}))
             .done(() => {
                 // show handles only, if there is still something to scroll
-                const relleft = $('.news-rel-slider').children('.article').last().offset().left;
-                if (relleft <= 960) {
+                if ($('.news-slider-view').prop('scrollWidth') <= 960) {
                     $('.news-overlay.-right').hide();
                 }
             });
