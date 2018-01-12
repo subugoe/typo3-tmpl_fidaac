@@ -1,8 +1,8 @@
 @mixin form-input-text {
     border: none;
     border-bottom: 1px solid $shadeDarkest;
-    padding: $magic;
-    font-size: $base-font-size-l;
+    padding: 0;
+    font-size: $base-font-size-l + 2;
     font-family: "Open Sans";
     background-color: unset;
 }
