@@ -38,6 +38,7 @@
             display: flex;
             flex-grow: 1;
             position: static;
+            align-items: flex-start;
         }
     }
 }
@@ -173,10 +174,11 @@
 
     li {
         font-weight: bold;
+        color: $error;
 
         &::before {
             content: "";
-            padding: 0 0 0 $magic;
+            padding: 0 0 0 $magic * 2;
         }
     }
 }
