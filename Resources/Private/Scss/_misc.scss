@@ -23,7 +23,6 @@
 .misc-column {
     padding-right: $magic-l;
     max-width: width(l-4);
-    height: 100%;
     flex-basis: 100%;
     display: flex;
     flex-grow: 1;
@@ -48,11 +47,9 @@
 
     &.-funding {
         display: flex;
-        flex-basis: 100%;
-        height: 100%;
 
         img {
-            width: width(l-4) - 2 * $magic-l;
+            width: 100%;
             height: 100%;
         }
 
@@ -67,19 +64,14 @@
         .misc-funding-logos {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-
-            ul {
-                display: flex;
-                flex-basis: 100%;
-                height: 100%;
-                justify-content: space-evenly;
-                align-content: stretch;
-            }
+            justify-content: space-between;
+            flex-grow: 1;
 
             li {
                 display: flex;
                 margin-bottom: $magic;
+                flex-grow: 0;
+                flex-shrink: 1;
             }
         }
 
