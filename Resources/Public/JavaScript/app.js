@@ -210,8 +210,8 @@ $(document).ready(function () {
         $('.news-overlay.-left').show();
         $.when($('.news-rel-slider').animate({ 'left': '-=416px' })).done(function () {
             // show handles only, if there is still something to scroll
-            var relleft = $('.news-rel-slider').children('.article').last().offset().left;
-            if (relleft <= 960) {
+            console.log($('.news-slider-view').prop('scrollWidth'));
+            if ($('.news-slider-view').prop('scrollWidth') <= 960) {
                 $('.news-overlay.-right').hide();
             }
         });
