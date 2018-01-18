@@ -27,6 +27,16 @@ config {
     concatenateJs = 1
 }
 
+# Allow development mode
+[globalString = IENV:HTTP_HOST = localhost:8001]
+    config {
+        compressJs = 0
+        compressCss = 0
+        concatenateCss = 0
+        concatenateJs = 0
+    }
+[global]
+
 # include script in header-section
 page.jsInline {
     # switch between html-class js or no-js
