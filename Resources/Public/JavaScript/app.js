@@ -210,7 +210,6 @@ $(document).ready(function () {
         $('.news-overlay.-left').show();
         $.when($('.news-rel-slider').animate({ 'left': '-=416px' })).done(function () {
             // show handles only, if there is still something to scroll
-            console.log($('.news-slider-view').prop('scrollWidth'));
             if ($('.news-slider-view').prop('scrollWidth') <= 960) {
                 $('.news-overlay.-right').hide();
             }
