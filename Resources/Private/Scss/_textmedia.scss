@@ -5,8 +5,6 @@ figure {
     margin-top: $magic-l/4;
 
     img {
-        margin-bottom: -4px;
-
         @each $i in '4', '5', '6', '8', '10' {
             &.cols-#{$i} {
                 @include media-l {
@@ -47,14 +45,7 @@ figure {
 
 .figure-left-intext {
     float: left;
-
-    img {
-        padding-right: $magic-l;
-    }
-
-    .image-caption {
-        padding-right: $magic-l;
-    }
+    padding-right: $magic * 2;
 }
 
 .figure-right-intext {
