@@ -10,7 +10,8 @@ buildify()
         'Resources/Private/JavaScript/Images.Js',
         'Resources/Private/JavaScript/Powermail.Js',
         'Resources/Private/JavaScript/Pazpar2.Js',
-        'Resources/Private/JavaScript/Fontfaceobserver.Js'
+        'Resources/Private/JavaScript/Fontfaceobserver.Js',
+        'Resources/Private/JavaScript/Shariff.Js'
     ])
     .save('Build/JavaScript/concatenated.js');
 
