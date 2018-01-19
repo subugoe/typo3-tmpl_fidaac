@@ -1,5 +1,10 @@
 * {
     box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    border: none;
+    outline: none;
 
     &:focus {
         outline: 1px solid $shadeLight;
