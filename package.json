@@ -3,26 +3,30 @@
   "version": "0.1.0",
   "description": "Template for FID AAC",
   "private": true,
+
   "scripts": {
-    "testLocal": "./node_modules/.bin/casperjs  --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://fidaac.dev'",
-    "testDev": "./node_modules/.bin/casperjs --ssl-protocol=any --ignore-ssl-errors=true test Tests/test-*.js --url='http://aacdev.sub.uni-goettingen.de'",
     "babel": "./node_modules/.bin/babel Build/JavaScript/concatenated.js -o Build/JavaScript/app.js",
+    "uglifyjs": "./node_modules/.bin/uglifyjs Build/JavaScript/app.js -o Resources/Public/JavaScript/app.min.js",
+
     "lintScss": "stylelint 'Resources/Private/Scss/*.scss'",
-    "precommit": "npm run lintScss",
     "lintJs": "./node_modules/.bin/eslint Resources/Private/JavaScript/*.Js",
+    "precommit": "npm run lintScss; npm run lintJs",
+
     "createMainCss": "./node_modules/.bin/node-sass --output-style compressed Resources/Private/Scss/App.scss Resources/Public/Css/app.min.css; ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' Resources/Public/Css/app.min.css -o Resources/Public/Css/app.min.css",
     "createPrintCss": "./node_modules/.bin/node-sass Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' --use cssnano > Resources/Public/Css/print.css",
     "createCss": "npm run createMainCss; npm run createPrintCss",
+
     "devMainCss": "./node_modules/.bin/node-sass --source-map true Resources/Private/Scss/App.scss Resources/Public/Css/app.min.css; ./node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' Resources/Public/Css/app.min.css -o Resources/Public/Css/app.min.css",
     "devPrintCss": "./node_modules/.bin/node-sass --output-style expanded --source-comments Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --no-map --use autoprefixer -b 'last 2 versions' > Resources/Public/Css/print.css",
     "devCss": "npm run devMainCss; npm run devPrintCss",
-    "uglifyjs": "./node_modules/.bin/uglifyjs Build/JavaScript/app.js -o Resources/Public/JavaScript/app.min.js",
-    "buildAll": "npm run lintJs; npm run createCss; node build.js; npm run babel; npm run uglifyjs",
+
+    "buildAll": "npm run precommit; npm run createCss; node build.js; npm run babel; npm run uglifyjs",
     "devAll": "npm run lintJs && npm run devCss && node build.js && npm run babel && cp ./Build/JavaScript/app.js ./Resources/Public/JavaScript/",
     "watchAll": "nodemon -e scss,Js -x \"npm run devAll\"",
     "browsersync": "browser-sync start -c bs-config.js",
     "devBrowser": "concurrently --kill-others --prefix \"[{name}]\" --names \"SCSS & JS,BROWER SYNC\" \"npm run watchAll\" \"npm run browsersync\""
   },
+
   "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
   "author": "",
   "license": "AGPL-3.0",
@@ -34,7 +38,6 @@
     "babel-preset-latest": "^6.24.1",
     "browser-sync": "^2.18.13",
     "buildify": "^0.4.0",
-    "casperjs": "^1.1.3",
     "concurrently": "^3.5.0",
     "cssnano": "^3.10.0",
     "eslint": "^3.19.0",
@@ -51,7 +54,6 @@
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "npmrc": "^1.1.1",
-    "phantomjs-prebuilt": "^2.1.7",
     "postcss": "^6.0.11",
     "postcss-cli": "^4.1.1",
     "stylelint": "^7.8.0",
