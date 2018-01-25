@@ -10,8 +10,4 @@ plugin.tx_powermail {
         confirmation_prev = Edit
     }
 
-    _LOCAL_LANG.de {
-        confirmation_next = Anfrage absenden
-        confirmation_prev = Ändern
-    }
 }

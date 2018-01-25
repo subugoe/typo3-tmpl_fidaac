@@ -16,9 +16,5 @@
         <languageKey index="default" type="array">
             <label index="facet.buchstabe.0">All</label>
         </languageKey>
-
-        <languageKey index="de" type="array">
-            <label index="facet.buchstabe.0">Alle</label>
-        </languageKey>
     </data>
 </T3locallang>

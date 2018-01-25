@@ -16,9 +16,5 @@
             <label index="zum Katalog">View in Catalogue</label>
         </languageKey>
 
-        <languageKey index="de" type="array">
-            <label index="zum Katalog">zum Katalog</label>
-        </languageKey>
-
     </data>
 </T3locallang>
