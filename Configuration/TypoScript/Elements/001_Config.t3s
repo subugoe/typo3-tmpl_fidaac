@@ -20,11 +20,12 @@ config {
 
     prefixLocalAnchors = all
     tx_realurl_enable = 1
-
-    compressJs = 1
-    compressCss = 1
-    concatenateCss = 1
-    concatenateJs = 1
+    
+    # Temporarily remove compression and concatination
+    compressJs = 0
+    compressCss = 0
+    concatenateCss = 0
+    concatenateJs = 0
 }
 
 # Allow development mode
