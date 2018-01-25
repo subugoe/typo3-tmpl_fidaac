@@ -1,0 +1,810 @@
+######################################
+### Permissions for Fachreferenten ###
+### Version TYPO3 8.7              ###
+######################################
+
+
+[usergroup = 1]
+
+options {
+    // allow backend users with restricted rights to clear the page cache 1=allow, 0=restrict
+    clearCache {
+        pages = 1
+        all = 0
+        system = 0
+    }
+    pageTree.doktypesToShowInNewPageDragArea = 1
+}
+
+#################################
+### Fileoperation permissions ###
+#################################
+permissions.file.default {
+    addFile = 1
+    readFile = 1
+    writeFile = 1
+    copyFile = 1
+    moveFile = 1
+    renameFile = 1
+    unzipFile = 0
+    deleteFile = 1
+    addFolder = 1
+    readFolder = 1
+    writeFolder = 1
+    copyFolder = 0
+    moveFolder = 1
+    renameFolder = 1
+    deleteFolder = 0
+    recursivedeleteFolder = 0
+}
+
+###############
+### Modules ###
+###############
+// hide unwanted modules and submodules
+options.hideModules = help, MetaseoMetaseo, searchbackend, system, tools
+options.hideModules.web := addToList(RecyclerRecycler,ts,RealurlRealurl, info)
+
+################
+### Doktypes ###
+################
+// hide unwanted page types/doktypes.
+TCEFORM.pages.doktype {
+    removeItems = 3,4,6,7,199,254,255
+}
+
+###################################
+### Tables (listing and modify) ###
+###################################
+// hide tables in record listings, especially in the WEB > List module
+mod.web_list.table {
+    pages.hideTable = 0
+    sys_category.hideTable =0
+    sys_collection.hideTable = 1
+    sys_file.hideTable = 0
+    sys_file_collection.hideTable = 1
+    sys_file_metadata.hideTable = 0
+    // oder die file references werden bei den News angezeigt (Liste aller Bilder, aber losgelöst von ihren dazugehörigen News)
+    sys_file_reference.hideTable = 1
+    sys_file_storage.hideTable = 0
+    backend_layout.hideTable = 1
+    fe_groups.hideTable = 1
+    fe_users.hideTable = 1
+    pages_language_overlay.hideTable = 0
+    sys_domain.hideTable = 1
+    tt_content.hideTable = 0
+    tx_news_domain_model_link.hideTable = 1
+    tx_news_domain_model_news.hideTable = 0
+    tx_news_domain_model_tag.hideTable = 1
+    tx_nkwgok_data.hideTable = 1
+    // hide the list of details of forms and emails. Details of a form are grouped in the form listing and can still be changed in opening the form
+    tx_powermail_domain_model_answer.hideTable = 1
+    tx_powermail_domain_model_field.hideTable = 1
+    tx_powermail_domain_model_form.hideTable = 0
+    tx_powermail_domain_model_mail.hideTable = 0
+    tx_powermail_domain_model_page.hideTable = 1
+}
+
+
+#######################
+### Filelist module ###
+#######################
+
+// Information about the files in filelist module
+TCEFORM.sys_file_metadata {
+// General tab
+    title.disabled = 0
+    ranking.disabled = 1
+    keywords.disabled = 0
+    # Accessibility
+    caption.disabled = 0
+    alternative.disabled = 0
+    download_name.disabled = 0
+// Metadata tab
+    creator.disabled = 0
+    creator_tool.disabled = 0
+    publisher.disabled = 1
+    source.disabled = 1
+    copyright.disabled = 0
+    # for pdf, xml and text files
+    language.disabled = 0
+    # Geo Location
+    location_country.disabled = 1
+    location_region.disabled = 1
+    location_city.disabled = 1
+    # GPS
+    latitude.disabled = 1
+    longitude.disabled = 1
+    # for pdf, xml and text files
+    pages.disabled = 0
+    # Content Date
+    content_creation_date.disabled = 0
+    content_modification_date.disabled = 1
+// Camera Data tab
+    color_space.disabled = 1
+    # Metrics
+    width.disabled = 0
+    height.disabled = 0
+    unit.disabled = 0
+// Video or Audio tab
+    duration.disabled = 1
+// Access tab
+    visible.disabled = 0
+    status.disabled = 1
+    fe_groups.disabled = 1
+// Categories tab
+    categories.disabled = 0
+}
+
+##################
+### Pages tabs ###
+##################
+
+// hide unwanted areas in General tab
+TCEFORM.pages {
+    # Page
+    doktype.disabled = 1
+    # Title
+    nav_title.disabled = 0 // alternative Navigation title
+    subtitle.disabled = 0
+    # Speaking URL
+    tx_realurl_exclude.disabled = 1
+    tx_realurl_pathsegment.disabled = 1
+    tx_realurl_pathoverride.disabled = 1
+    # Browsertitle
+    tx_metaseo_pagetitle_rel.disabled = 1
+    # # only doktype Shortcut
+    shortcut_mode.disabled = 1
+    shortcut.disabled = 1
+    # only doktype Mount Point
+    mount_pid_ol.disabled = 1
+    mount_pid.disabled = 1
+}
+
+// hide unwanted areas in Metadata tab of page
+TCEFORM.pages {
+    # Abstract
+    abstract.disabled = 0
+    # Metatags
+    keywords.disabled = 0
+    description.disabled = 0
+    # Editorial
+    author.disabled = 0
+    author_email.disabled = 1
+    lastUpdated.disabled = 1
+}
+
+// hide unwanted areas in SEO tab of page
+TCEFORM.pages {
+    # Pagetitle
+    tx_metaseo_pagetitle.disabled = 1
+    tx_metaseo_pagetitle_suffix.disabled = 1
+    tx_metaseo_pagetitle_prefix.disabled = 1
+    tx_metaseo_inheritance.disabled = 1
+    # Open Graph
+    tx_metaseo_opengraph_image.disabled = 1
+    # Geoposition
+    tx_metaseo_geo_lat.disabled = 1
+    tx_metaseo_geo_long.disabled = 1
+    tx_metaseo_geo_place.disabled = 1
+    tx_metaseo_geo_region.disabled = 1
+    # Searchengines
+    tx_metaseo_is_exclude.disabled = 1
+    tx_metaseo_canonicalurl.disabled = 1
+    # Sitemap
+    tx_metaseo_priority.disabled = 1
+    tx_metaseo_change_frequency.disabled = 1
+}
+
+// hide unwanted areas of Appearance tab of page
+TCEFORM.pages {
+    # Page Layout
+    layout.disabled = 1
+    newUntil.disabled = 1
+    backend_layout.disabled = 0
+    backend_layout_next_level.disabled = 1
+    # Replace Content
+    content_from_pid.disabled = 1
+}
+
+// hide unwanted areas of behaviour tab of page
+TCEFORM.pages {
+    # Link to this Page
+    alias.disabled = 1
+    target.disabled = 1
+    # Caching
+    cache_timeout.disabled = 1
+    cache_tags.disabled = 1
+    no_cache.disabled = 1
+    # Miscellaneous
+    is_siteroot.disabled = 1
+    no_search.disabled = 1
+    php_tree_stop.disabled = 1
+    # Use as Container
+    module.disabled = 1
+}
+
+// hide unwanted areas of resources tab of page
+TCEFORM.pages {
+    # Files
+    media.disabled = 1
+    # TypoScript Configuration
+    tsconfig_includes.disabled = 1
+    TSconfig.disabled = 1
+}
+
+// Language tab
+TCEFORM.pages {
+    l18n_cfg.disabled = 0
+}
+
+// hide unwanted areas in access tab of page
+TCEFORM.pages {
+    # Visibility
+    hidden.disabled = 0
+    nav_hide.disabled = 0
+    # Publish Dates and Access Rights
+    starttime.disabled = 0
+    endtime.disabled = 0
+    extendToSubpages.disabled = 1
+    fe_group.disabled = 1
+    fe_login_mode.disabled = 1
+    # Restrict editing by non-Admin
+    editlock.disabled = 1 s
+}
+
+// hide all areas of categories tab of page
+TCEFORM.pages {
+    categories.disabled = 1
+}
+
+###---------------------------###
+### Alternative Page Language ###
+###---------------------------###
+
+TCEFORM.pages_language_overlay {
+    // General tab
+        doktype.disabled = 1
+        nav_title.disabled = 1
+        subtitle.disabled = 1
+        tx_realurl_pathsegment.disabled = 1
+        # only doktype shortcut
+        shortcut_mode.disabled = 1
+        # only doktype 'link to external URL'
+        urltype.disabled = 1
+        url.disabled = 1
+    // Metadata tab
+        abstract.disabled = 1
+        keywords.disabled = 1
+        description.disabled = 1
+        author.disabled = 1
+        author_email.disabled = 1
+    // SEO tab
+        tx_metaseo_pagetitle.disabled = 1
+        tx_metaseo_pagetitle_rel.disabled = 1
+        tx_metaseo_pagetitle_prefix.disabled = 1
+        tx_metaseo_pagetitle_suffix.disabled = 1
+        tx_metaseo_opengraph_image.disabled = 1
+        tx_metaseo_canonicalurl.disabled = 1
+    // Resources tab
+        media.disabled = 1
+    // Access tab
+        hidden.disabled = 1
+        starttime.disabled = 1
+        endtime.disabled = 1
+}
+
+
+########################
+### Content elements ###
+########################
+
+// hide unwanted content element types in selection - complete list, # before unhidden types
+TCEFORM.tt_content.CType.removeItems (
+    ##standard ##,
+    #header,
+    text,
+    textpic,
+    image,
+    #textmedia,
+
+    ##lists##,
+    uploads,
+    #bullets,
+    table,
+
+    ##menu ##,
+    menu_abstract,
+    menu_categorized_content,
+    menu_categorized_pages,
+    #menu_pages,
+    menu_subpages,
+    menu_recently_updated,
+    menu_related_pages,
+    #menu_section,
+    menu_section_pages,
+    #menu_sitemap,
+    menu_sitemap_pages,
+
+    ##special ##,
+    shortcut,
+    #list,
+    div,
+    html,
+
+    ##forms ##,
+    login,
+)
+
+// Only show following plugins types in 'New content element' wizard
+mod.wizards.newContentElement.wizardItems.plugins.show = news,powermail
+
+// hide unwanted record types in "new record"
+mod.web_list.deniedNewTables = tx_news_domain_model_tag,tx_powermail_domain_model_answer,tx_powermail_domain_model_field,tx_powermail_domain_model_mail, tx_powermail_domain_model_page,sys_domain,sys_template,sys_file_collection,backend_layout
+
+
+##-------------------------##
+### Text & Media elements ###
+##-------------------------##
+
+// hide unwanted areas in General tab of content elements
+TCEFORM.tt_content {
+    colPos.disabled = 1 // column
+    header.disabled = 0
+    header_layout.disabled = 0
+    header_position.disabled = 0 // Alignment
+    date.disabled = 1
+    header_link.disabled = 1
+    subheader.disabled = 0
+}
+
+// hide unwanted areas in Media tab of content elements
+TCEFORM.sys_file_reference {
+    # Image metadata
+    title.disabled = 0
+    alternative.disabled = 0
+    link.disabled = 0
+    description.disabled = 0
+    crop.disabled = 0
+    # Audio metadata / Video metadata - Only for video or audio files
+    autoplay.disabled = 1
+}
+TCEFORM.tt_content {
+    # Media Adjustments
+    imageheight.disabled = 1
+    imagewidth.disabled = 1
+    imageborder.disabled = 1
+    # Galery Settings
+    imageorient.disabled = 0
+    imagecols.disabled = 0
+    # Behavior (enlarge on click)
+    image_zoom.disabled = 0
+}
+
+// hide unwanted areas in Appearance tab of content elements
+TCEFORM.tt_content {
+    # Content Element Layout
+    frame_class.disabled = 1
+    layout.disabled = 0
+    space_before_class.disabled = 1
+    space_after_class = 1
+    # Links
+    sectionIndex = 0
+    linkToTop.disabled = 1
+}
+
+// Language tab of content elements
+TCEFORM.tt_content {
+    sys_language_uid.disabled = 0
+    # tranl.Orig
+    l18n_parent.disabled = 0
+}
+
+// hide unwanted areas in Access tab of content elements
+TCEFORM.tt_content {
+    hidden.disabled = 0
+    # Publish Dates and Access Rights
+    starttime.disabled = 1
+    endtime.disabled = 1
+    fe_group.disabled = 1
+    editlock.disabled = 1
+}
+
+// hide Categories tab of content elements
+TCEFORM.tt_content.categories.disabled = 1
+
+// hide notes tab of content elements
+TCEFOM.tt_content.rowDescription.disabled = 1
+
+###-------------------------------###
+### Content element of MISC types ###
+###-------------------------------###
+
+TCEFORM.tt_content {
+    // Type File Links, tab general, Filelinks Layout
+    uploads_description.disabled = 1
+    uploads_type.disabled = 1
+    // Type Insert Plugin, tab plugin
+    recursive.disabled = 1
+    // Type Bullet List, needed for definition lists
+    bullets_type.disabled = 0
+    // Type Menu: elements with pages selection: Abstracts, Pages, Subpages, Recently updated pages, Related pages, section index, sitemaps of selected pages
+    pages.disabled = 0
+}
+
+##---------------------------------##
+### Content element of type table ###
+##---------------------------------##
+
+TCEFORM.tt_content {
+    // General tab
+        table_delimiter.disabled = 1
+        table_enclosure.disabled = 1
+        table_caption.disabled = 1
+    // Appearance tab
+        table_class.disabled = 1
+        table_header_position.disabled = 1
+        table_tfoot.disabled = 1
+}
+
+#####################
+### News elements ###
+#####################
+
+TCEFORM.tx_news_domain_model_news {
+    // General tab
+        # Transl.Orig
+        l10n_parent.disabled = 1
+        title.disabled = 0
+        istopnews.disabled = 0
+        type.disabled = 1
+        sys_language_uid.disabled = 0
+        hidden.disabled = 0
+        teaser.disabled = 0
+        # Editorial
+        author.disabled = 0
+        author_email.disabled = 0
+        datetime.disabled = 1
+        archive.disabled = 0
+    // Content Elements tab
+        content_elements.disabled = 1
+    // Access tab
+        # Publish Dates and Access Rights
+        starttime.disabled = 0
+        endtime.disabled = 0
+        fe_group.disabled = 1
+        editlock.disabled = 1
+    // Options tab
+        categories.disabled = 0
+        tags.disabled = 0
+    // Relations tab
+        fal_media.disabled = 0
+        # disable direct upload
+        setup.override.edit_docModuleUpload = 0
+        fal_related_files.disabled = 1
+        related_links.disabled = 1
+        related.disabled = 1
+        related_from.disabled = 1
+    // Metadata tab
+        # Meta Tags
+        keywords.disabled = 0
+        description.disabled = 0
+        # Alternative Title
+        alternative_title.disabled = 0
+        # speaking URL
+        path_segment.disabled = 0
+    // Notes tab
+        notes.disabled = 1
+}
+
+// 'show in list views' in Relations tab
+// Title, description etc. are defined above ('Text & Media' elements)
+TCEFORM.sys_file_reference {
+    showinpreview.disabled = 0
+}
+
+TCEFORM.tx_news_domain_model_link {
+    description.disabled = 1
+    hidden.disabled = 1
+    sys_language_uid.disabled = 1
+    l10n_parent.disabled = 1
+}
+
+TCEFORM.tx_news_domain_model_tag {
+    seo_text.disabled = 1
+    seo_title.disabled = 1
+    seo_headline.disabled = 1
+    hidden.disabled = 1
+    seo_description.disabled = 1
+}
+
+
+##########################
+### Powermail elements ###
+##########################
+
+##---------##
+### Forms ###
+##---------##
+
+TCEFORM.tx_powermail_domain_model_form {
+    // Extended tab
+        css.disabled = 0
+    // Access tab
+        sys_language_uid.disabled = 0
+        hidden.disabled = 0
+        starttime.disabled = 0
+        endtime.disabled = 0
+        # tranl.Orig
+        l10n_parent.disabled = 0
+}
+
+TCEFORM.tx_powermail_domain_model_page {
+    forms.disabled = 1
+    // Extended tab
+        css.disabled = 0
+    // Access tab
+        sys_language_uid.disabled = 0
+        hidden.disabled = 0
+        starttime.disabled = 0
+        endtime.disabled = 0
+        l10n_parent.disabled = 0
+}
+
+TCEFORM.tx_powermail_domain_model_field {
+        l10n_parent.disabled = 0
+        # related page
+        pages.disabled = 0
+        # TypoScript path
+        path.disabled = 0
+    // General tab
+        # Email or Name
+        sender_email.disabled = 0
+        sender_name.disabled = 0
+    // Extended tab (varies depending on the field type)
+        # Validation
+        mandatory.disabled = 0
+        validation.disabled = 0
+        validation_configuration.disabled = 0
+        # Prefill Field
+        prefill_value.disabled = 0
+        placeholder.disabled = 0
+        feuser_value.disabled = 1
+        create_from_typoscript.disabled = 1
+        datepicker_settings.disabled = 0
+        content_element.disabled = 1
+        # Layout
+        css.disabled = 0
+        multiselect.disabled = 0
+        description.disabled = 0
+        # Variables
+        auto_marker.disabled = 0
+        own_marker_select.disabled = 0
+    // Access tab
+        sys_language_uid.disabled = 1
+        hidden.disabled = 0
+        starttime.disabled = 1
+        endtime.disabled = 1
+}
+
+##-----------------------------##
+### powermail received emails ###
+##-----------------------------##
+
+TCEFORM.tx_powermail_domain_model_mail {
+    sys_language_uid.disabled = 1
+    l10n_parent.disabled = 1
+    uid.disabled = 1
+    // General tab
+        crdate.disabled = 0
+        receiver_mail.disabled = 0
+        sender_name.disabled = 0
+        sender_mail.disabled = 0
+        subject.disabled = 0
+        body.disabled = 0
+    // Extended tab
+        form.disabled = 0
+        answers.disabled = 0
+        feuser.disabled = 1
+        spam_factor.disabled = 0
+        time.disabled = 1
+        sender_ip.disabled = 1
+        user_agent.disabled = 1
+    // Marketing tab
+        marketing_referer_domain.disabled = 1
+        marketing_referer.disabled = 1
+        marketing_country.disabled = 1
+        marketing_mobile_device.disabled = 1
+        marketing_frontend_language.disabled = 1
+        marketing_browser_language.disabled = 1
+        marketing_page_funnel.disabled = 1
+    // Access tab
+        hidden.disabled = 1
+        starttime.disabled = 1
+        endtime.disabled = 1
+}
+
+##--------------------------------------------------##
+### powermail received answers (individual fields) ###
+##--------------------------------------------------##
+
+TCEFORM.tx_powermail_domain_model_answer {
+    value.disabled = 0
+    value_type.disabled = 0
+    field.disabled = 0
+    mail.disabled = 0
+    hidden.disabled = 1
+    sys_language_uid.disabled = 1
+    starttime.disabled = 1
+    endtime.disabled = 1
+    l10n_parent.disabled = 1
+}
+
+##-------------------------------------##
+### powermail plugin element/flexform ###
+##-------------------------------------##
+
+TCEFORM.tt_content.pi_flexform.powermail_pi1 {
+     main {
+        settings\.flexform\.main\.confirmation.disabled = 0
+        settings\.flexform\.main\.optin.disabled = 0
+        settings\.flexform\.main\.moresteps.disabled = 1
+        settings\.flexform\.main\.pid.disabled = 0
+    }
+    receiver {
+        settings\.flexform\.receiver\.name.disabled = 0
+        settings\.flexform\.receiver\.email.disabled = 0
+        settings\.flexform\.receiver\.subject.disabled = 0
+        settings\.flexform\.receiver\.body.disabled = 0
+        settings\.flexform\.receiver\.predefinedemail.disabled = 1
+        settings\.flexform\.receiver\.be_group.disabled = 1
+        settings\.flexform\.receiver\.fe_group.disabled = 1
+    }
+    sender {
+        settings\.flexform\.sender\.name.disabled = 0
+        settings\.flexform\.sender\.email.disabled = 0
+        settings\.flexform\.sender\.subject.disabled = 0
+        settings\.flexform\.sender\.body.disabled = 0
+    }
+    thx {
+        settings\.flexform\.thx\.body.disabled = 0
+        settings\.flexform\.thx\.redirect.disabled = 1
+    }
+
+}
+
+#####################################
+### solr plugin elements/flexform ###
+#####################################
+
+TCEFORM.tt_content.pi_flexform.solr_pi_results {
+    sQuery {
+        search\.initializeWithQuery.disabled = 1
+        search\.query\.sortBy.disabled = 1
+        search\.results\.resultsPerPage.disabled = 1
+        search\.query\.boostFunction.disabled = 1
+        search\.query\.boostQuery.disabled = 1
+    }
+    sOptions {
+        view\.pluginNamespace.disabled = 1
+        search\.ignoreGlobalQParameter.disabled = 1
+    }
+}
+
+// Plugin Search: Form only
+TCEFORM.tt_content.pi_flexform.solr_pi_search.sOptions.view\.pluginNamespace.disabled = 1
+
+
+######################
+### System records ###
+######################
+
+###----------###
+### Category ###
+###----------###
+
+TCEFORM.sys_category {
+// Language tab
+    sys_language_uid.disabled = 0
+    l10n_parent.disabled = 1
+// Access tab
+    hidden.disabled = 0
+    starttime.disabled = 0
+    endtime.disabled = 0
+// SEO tab
+    seo_title.disabled = 0
+    seo_description.disabled = 0
+    seo_headline.disabled = 0
+    seo_text.disabled = 0
+// Options tab
+    images.disabled = 0
+    # Single-view page for news from this category
+    single_pid.disabled = 1
+    # News category shortcut
+    shortcut.disabled = 0
+}
+
+###---------------------------###
+### Frontend users and groups ###
+###---------------------------###
+// not needed if felogin extension is deactivated
+
+TCEFORM.fe_users {
+    // General tab
+        lastlogin.disabled = 1
+    // Personal Data tab
+        company.disabled = 1
+        title.disabled = 1
+        name.disabled = 1
+        first_name.disabled = 1
+        middle_name.disabled = 1
+        last_name.disabled = 1
+        address.disabled = 1
+        zip.disabled = 1
+        city.disabled = 1
+        country.disabled = 1
+        telephone.disabled = 1
+        fax.disabled = 1
+        email.disabled = 1
+        www.disabled = 1
+        image.disabled = 1
+    // Options tab
+        lockToDomain.disabled = 1
+        TSconfig.disabled = 1
+    // Access tab
+        disable.disabled = 1
+        starttime.disabled = 1
+        endtime.disabled = 1
+    // Extended tab
+        tx_extbase_type.disabled = 1
+}
+
+TCEFORM.fe_groups {
+    // General tab
+        subgroup.disabled = 1
+    // Options tab
+        lockToDomain.disabled = 1
+        TSconfig.disabled = 1
+    // Access tab
+        hidden.disabled = 1
+    // Extended tab
+        tx_extbase_type.disabled = 1
+}
+
+###--------###
+### Domain ###
+###--------###
+
+TCEFORM.sys_domain {
+// General tab
+    redirectHttpStatusCode.disabled = 1
+    prepend_params.disabled = 1
+    forced.disabled = 1
+// Access tab
+    hidden.disabled = 1
+}
+
+###----------------###
+### Backend Layout ###
+###----------------###
+
+TCEFORM.backend_layout {
+    hidden.disabled = 1
+    icon.disabled = 1
+}
+
+###-----------------###
+### File collection ###
+###-----------------###
+
+TCEFORM.sys_file_collection {
+// Language tab
+    sys_language_uid.disabled = 0
+    # Transl.Orig
+    l10n_parent.disabled = 0
+// Access tab
+    starttime.disabled = 0
+    endtime.disabled = 0
+}
+
+[end]
