@@ -201,7 +201,7 @@ TCEFORM.pages {
     # Page Layout
     layout.disabled = 1
     newUntil.disabled = 1
-    backend_layout.disabled = 0
+    backend_layout.disabled = 1
     backend_layout_next_level.disabled = 1
     # Replace Content
     content_from_pid.disabled = 1
