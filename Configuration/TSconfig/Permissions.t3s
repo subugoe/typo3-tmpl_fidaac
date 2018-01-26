@@ -476,7 +476,7 @@ TCEFORM.tx_news_domain_model_news {
         editlock.disabled = 1
     // Options tab
         categories.disabled = 0
-        tags.disabled = 0
+        tags.disabled = 1
     // Relations tab
         fal_media.disabled = 0
         # disable direct upload
