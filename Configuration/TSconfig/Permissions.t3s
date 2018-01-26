@@ -458,7 +458,7 @@ TCEFORM.tx_news_domain_model_news {
         title.disabled = 0
         istopnews.disabled = 0
         type.disabled = 1
-        sys_language_uid.disabled = 0
+        sys_language_uid.disabled = 1
         hidden.disabled = 0
         teaser.disabled = 0
         # Editorial
