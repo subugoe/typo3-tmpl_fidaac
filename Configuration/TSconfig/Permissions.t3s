@@ -64,12 +64,12 @@ mod.web_list.table {
     sys_file.hideTable = 0
     sys_file_collection.hideTable = 1
     sys_file_metadata.hideTable = 0
-    // oder die file references werden bei den News angezeigt (Liste aller Bilder, aber losgelöst von ihren dazugehörigen News)
     sys_file_reference.hideTable = 1
     sys_file_storage.hideTable = 0
     backend_layout.hideTable = 1
     fe_groups.hideTable = 1
     fe_users.hideTable = 1
+    // keep language overlay temporarily open to enable removal of german content elements
     pages_language_overlay.hideTable = 0
     sys_domain.hideTable = 1
     tt_content.hideTable = 0
@@ -395,9 +395,9 @@ TCEFORM.tt_content {
 
 // Language tab of content elements
 TCEFORM.tt_content {
-    sys_language_uid.disabled = 0
+    sys_language_uid.disabled = 1
     # tranl.Orig
-    l18n_parent.disabled = 0
+    l18n_parent.disabled = 1
 }
 
 // hide unwanted areas in Access tab of content elements
@@ -531,7 +531,7 @@ TCEFORM.tx_powermail_domain_model_form {
     // Extended tab
         css.disabled = 0
     // Access tab
-        sys_language_uid.disabled = 0
+        sys_language_uid.disabled = 1
         hidden.disabled = 0
         starttime.disabled = 0
         endtime.disabled = 0
@@ -544,7 +544,7 @@ TCEFORM.tx_powermail_domain_model_page {
     // Extended tab
         css.disabled = 0
     // Access tab
-        sys_language_uid.disabled = 0
+        sys_language_uid.disabled = 1
         hidden.disabled = 0
         starttime.disabled = 0
         endtime.disabled = 0
@@ -705,7 +705,7 @@ TCEFORM.tt_content.pi_flexform.solr_pi_search.sOptions.view\.pluginNamespace.dis
 
 TCEFORM.sys_category {
 // Language tab
-    sys_language_uid.disabled = 0
+    sys_language_uid.disabled = 1
     l10n_parent.disabled = 1
 // Access tab
     hidden.disabled = 0
@@ -799,12 +799,12 @@ TCEFORM.backend_layout {
 
 TCEFORM.sys_file_collection {
 // Language tab
-    sys_language_uid.disabled = 0
+    sys_language_uid.disabled = 1
     # Transl.Orig
-    l10n_parent.disabled = 0
+    l10n_parent.disabled = 1
 // Access tab
-    starttime.disabled = 0
-    endtime.disabled = 0
+    starttime.disabled = 1
+    endtime.disabled = 1
 }
 
 [end]
