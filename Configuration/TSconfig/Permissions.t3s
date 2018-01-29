@@ -338,7 +338,7 @@
     mod.wizards.newContentElement.wizardItems.plugins.show = news,powermail
 
     // hide unwanted record types in "new record"
-    mod.web_list.deniedNewTables = tx_news_domain_model_tag,tx_powermail_domain_model_answer,tx_powermail_domain_model_field,tx_powermail_domain_model_mail, tx_powermail_domain_model_page,sys_domain,sys_template,sys_file_collection,backend_layout
+    mod.web_list.deniedNewTables = tx_news_domain_model_tag,tx_powermail_domain_model_answer,tx_powermail_domain_model_field,tx_powermail_domain_model_mail,tx_powermail_domain_model_page,sys_domain,sys_template,sys_file_collection,backend_layout,pages_language_overlay
 
     ##-------------------------##
     ### Text & Media elements ###
