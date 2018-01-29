@@ -37,4 +37,8 @@ TCEFORM {
             addItems.10 = 10
         }
     }
+
+    tx_powermail_domain_model_field.css.removeItems = layout1,layout2,layout3
+    tx_powermail_domain_model_page.css.removeItems = layout1,layout2,layout3
+    tx_powermail_domain_model_form.css.removeItems = layout1,layout2,layout3
 }
