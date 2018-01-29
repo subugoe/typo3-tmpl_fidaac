@@ -386,9 +386,9 @@
         frame_class.disabled = 1
         layout.disabled = 0
         space_before_class.disabled = 1
-        space_after_class = 1
+        space_after_class.disabled = 1
         # Links
-        sectionIndex = 0
+        sectionIndex.disabled = 0
         linkToTop.disabled = 1
     }
 
