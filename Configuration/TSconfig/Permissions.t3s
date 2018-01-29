@@ -575,8 +575,8 @@
         multiselect.disabled = 0
         description.disabled = 0
         # Variables
-        auto_marker.disabled = 0
-        own_marker_select.disabled = 0
+        auto_marker.disabled = 1
+        own_marker_select.disabled = 1
         // Access tab
         sys_language_uid.disabled = 1
         hidden.disabled = 0
