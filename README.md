@@ -5,7 +5,7 @@ Extension template for https://github.com/subugoe/site-aac
 
 ## Installation:
 
-* Install site-aac from Github page https://github.com/subugoe/site-aac
+* Install site-aac from Github page https://github.com/subugoe/site-aac, typo3-tmpl_fidaac is included.
 
 
 ## Software requirements:
