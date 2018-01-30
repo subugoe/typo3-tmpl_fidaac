@@ -1,20 +1,23 @@
 # TYPO3 Template for the Library of Anglo-American Culture & History
 
+Extension template for https://github.com/subugoe/site-aac
+
+
 ## Installation:
 
-### Requirements:
+* Install site-aac from Github page https://github.com/subugoe/site-aac
 
-* PHP >= 5.5
-* Node 8 and npm 5
-* other TYPO3 extensions, used by this extension:
-  * pazpar2
-  * vhs
-  * powermail
 
-### Steps:
+## Software requirements:
+* docker >= 17.05
+* docker-compose >= 1.15
+* composer >= 1.3.1
+* nvm >= 0.33 (optional)
+* npm 8
 
-```git clone https://github.com/subugoe/typo3-tmpl_fidaac.git tmpl_fidaac
-cd typo3conf/ext/tmpl_fidaac
-npm install
-npm run buildAll
-```
+
+## Other typo3 extension used:
+* pazpar2
+* vhs
+* powermail
+* nkwgok
