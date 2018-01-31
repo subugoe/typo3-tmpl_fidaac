@@ -154,8 +154,6 @@ a {
 
 p,
 ul {
-    width: 100%;
-
     a {
         @include link-plus();
     }
