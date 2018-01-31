@@ -33,7 +33,7 @@ TCEFORM {
 
         // adjust columns
         imagecols {
-            removeItems := addToList(1,2,3,7)
+            removeItems := addToList(1,7)
             addItems.10 = 10
         }
     }

@@ -1,0 +1,87 @@
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+p {
+    display: block;
+}
+
+figure {
+    margin: 0;
+    display: flex;
+    margin-top: $magic-l/3;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    > .image-caption {
+        text-align: right;
+        font-weight: normal;
+        font-size: $small-font-size-l;
+        line-height: $small-line-height-l;
+        display: flex;
+        caption-side: bottom;
+        word-break: break-all;
+        justify-content: flex-end;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        a {
+            @include link-plus();
+        }
+    }
+}
+
+.figure-single {
+    @include flex-center;
+}
+
+.figure-center-above {
+    display: flex;
+    justify-content: center;
+
+    @for $i from 1 through 5 {
+        &.cols-#{$i}:first-of-type {
+            margin-right: $magic * 2;
+        }
+    }
+}
+
+// css is only catered for one image with floating text
+.figure-left-intext {
+    float: left;
+
+    & .cols-1 {
+        margin-right: $magic;
+    }
+
+    &.cols-10 {
+        margin-right: 0;
+    }
+
+    @for $i from 2 through 9 {
+        &.cols-#{$i} {
+            margin-right: $magic * 2;
+        }
+    }
+}
+
+.figure-right-intext {
+    float: right;
+
+    & .cols-1 {
+        margin-left: $magic;
+    }
+
+    &.cols-10 {
+        margin-left: 0;
+    }
+
+    @for $i from 2 through 9 {
+        &.cols-#{$i} {
+            margin-left: $magic * 2;
+        }
+    }
+}
