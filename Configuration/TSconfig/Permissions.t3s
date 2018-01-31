@@ -679,15 +679,21 @@
     #####################################
 
     TCEFORM.tt_content.pi_flexform.solr_pi_results {
+        // Query tab
         sQuery {
+            search\.initializeWithEmptyQuery.disabled = 1
+            search\.showResultsOfInitialEmptyQuery.disabled = 1
             search\.initializeWithQuery.disabled = 1
+            search\.showResultsOfInitialQuery.disabled = 1
             search\.query\.sortBy.disabled = 1
             search\.results\.resultsPerPage.disabled = 1
             search\.query\.boostFunction.disabled = 1
             search\.query\.boostQuery.disabled = 1
+            search\.query\.filter.disabled = 1
         }
-
+        // Options tab
         sOptions {
+            view\.templateFiles\.results.disabled =1
             view\.pluginNamespace.disabled = 1
             search\.ignoreGlobalQParameter.disabled = 1
         }
