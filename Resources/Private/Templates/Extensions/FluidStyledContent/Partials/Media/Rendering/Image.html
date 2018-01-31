@@ -1,3 +1,23 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:media class="image-embed-item cols-{cols}" file="{file}" width="{dimensions.width}" height="{dimensions.height}" alt="{file.alternative}" title="{file.title}" />
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd">
+<f:if condition="{cols} == 10">
+    <f:then>
+        <f:media class="image-embed-item"
+                 file="{file}"
+                 width="{v:math.product(a:80, b:cols)}"
+                 height="auto"
+                 alt="{file.alternative}"
+                 title="{file.title}" />
+    </f:then>
+    <f:else>
+        <f:media class="image-embed-item"
+                 file="{file}"
+                 width="{v:math.product(a:80, b:cols) -> v:math.subtract(b:8)}"
+                 height="auto"
+                 alt="{file.alternative}"
+                 title="{file.title}" />
+    </f:else>
+</f:if>
 </html>

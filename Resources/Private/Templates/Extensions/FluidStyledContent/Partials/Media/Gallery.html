@@ -1,14 +1,37 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:if condition="{gallery.rows}">
-    <f:for each="{gallery.rows}" as="row">
-        <f:for each="{row.columns}" as="column">
-            <f:if condition="{column.media}">
-                <div class="figure-{gallery.position.horizontal}-{gallery.position.vertical}">
-                    <f:render partial="Media/Type"
-                              arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}"/>
-                </div>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{files.1}">
+    <f:then>
+        <div class="figures">
+            <f:if condition="{gallery.rows}">
+                <f:for each="{gallery.rows}" as="row">
+                    <f:for each="{row.columns}" as="column">
+                        <f:if condition="{column.media}">
+                            <div
+                                class="figure-{gallery.position.horizontal}-{gallery.position.vertical} cols-{data.imagecols}">
+                                <f:render partial="Media/Type"
+                                          arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}"/>
+                            </div>
+                        </f:if>
+                    </f:for>
+                </f:for>
             </f:if>
-        </f:for>
-    </f:for>
+        </div>
+    </f:then>
+    <f:else>
+        <f:if condition="{gallery.rows}">
+            <f:for each="{gallery.rows}" as="row">
+                <f:for each="{row.columns}" as="column">
+                    <f:if condition="{column.media}">
+                        <div
+                            class="figure-{gallery.position.horizontal}-{gallery.position.vertical} cols-{data.imagecols}">
+                            <f:render partial="Media/Type"
+                                      arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}"/>
+                        </div>
+                    </f:if>
+                </f:for>
+            </f:for>
+        </f:if>
+    </f:else>
 </f:if>
 </html>
