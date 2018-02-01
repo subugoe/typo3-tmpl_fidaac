@@ -36,9 +36,21 @@ TCEFORM {
             removeItems := addToList(1,7)
             addItems.10 = 10
         }
+
+        // remove unordered and ordered list from the dropdown list
+        bullets_type.removeItems = 0,1
     }
 
     tx_powermail_domain_model_field.css.removeItems = layout1,layout2,layout3
     tx_powermail_domain_model_page.css.removeItems = layout1,layout2,layout3
     tx_powermail_domain_model_form.css.removeItems = layout1,layout2,layout3
 }
+
+// remove powermail frontend and solr plugin from plugin list for Fachreferenten
+[usergroup = 1]
+    TCEFORM {
+        tt_content {
+            list_type.removeItems = powermail_pi2,solr_pi_search,solr_pi_results,solr_pi_frequentlysearched
+        }
+    }
+[end]
