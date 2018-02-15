@@ -469,8 +469,9 @@
         author_email.disabled = 0
         datetime.disabled = 1
         archive.disabled = 0
+        bodytext.disabled = 0
         // Content Elements tab
-        content_elements.disabled = 1
+        content_elements.disabled = 0
         // Access tab
         # Publish Dates and Access Rights
         starttime.disabled = 0
