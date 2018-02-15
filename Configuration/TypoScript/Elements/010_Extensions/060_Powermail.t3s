@@ -8,8 +8,8 @@ plugin.tx_powermail {
     _LOCAL_LANG.default {
         confirmation_next = Submit request
         confirmation_prev = Edit
-        validationerror_mandatory = Required field
-        validationerror_validation.1 = Invalid email address
+        validationerror_mandatory = required field
+        validationerror_validation.1 = invalid email address
     }
 
 }
