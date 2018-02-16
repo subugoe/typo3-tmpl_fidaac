@@ -521,6 +521,44 @@
         hidden.disabled = 1
         seo_description.disabled = 1
     }
+    ##-------------------------------------##
+    ### news plugin element/flexform ###
+    ##-------------------------------------##
+
+    TCEFORM.tt_content.pi_flexform.news_pi1 {
+        sDEF {
+            settings\.orderBy.disabled = 0
+            settings\.orderDirection.disabled = 0
+            settings\.categoryConjunction.disabled = 0
+            settings\.categories.disabled = 1
+            settings\.includeSubCategories.disabled = 0
+            settings\.archiveRestriction.disabled = 0
+            settings\.timeRestriction.disabled = 1
+            settings\.timeRestrictionHigh.disabled = 1
+            settings\.topNewsRestriction.disabled = 0
+            settings\.startingpoint.disabled = 1
+            settings\.recursive.disabled = 1
+        }
+        additional {
+            settings\.detailPid.disabled = 1
+            settings\.listPid.disabled = 1
+            settings\.backPid.disabled = 1
+            settings\.limit.disabled = 1
+            settings\.offset.disabled = 1
+            settings\.tags.disabled = 1
+            settings\.hidePagination.disabled = 0
+            settings\.list\.paginate\.itemsPerPage.disabled = 0
+            settings\.topNewsFirst.disabled = 0
+            settings\.excludeAlreadyDisplayedNews.disabled = 1
+            settings\.disableOverrideDemand.disabled = 1
+        }
+        template {
+            settings\.media\.maxWidth.disabled = 1
+            settings\.media\.maxHeight.disabled = 1
+            settings\.cropMaxCharacters.disabled = 1
+            settings\.templateLayout.disabled = 0
+        }
+    }
 
     ##########################
     ### Powermail elements ###
