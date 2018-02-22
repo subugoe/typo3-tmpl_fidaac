@@ -19,3 +19,11 @@ Scenario('Check two images on top', function*(I) {
     console.info('1: '+top1+', 2: '+top2);
     assert.equal(top1, top2);
 });
+
+Scenario('Check line break in image caption', function*(I) {
+    const nolinebreak = yield I.grabCssPropertyFrom('//figcaption[@class="image-caption" and contains(text(), "No line break")]', 'height');
+    const linebreak = yield I.grabCssPropertyFrom('//figcaption[@class="image-caption" and contains(text(), "line break is an absolute must")]', 'height');
+
+    console.info('Caption height without linebreak: '+nolinebreak+', with linebreak: '+linebreak);
+    assert.notEqual(nolinebreak, linebreak);
+});
