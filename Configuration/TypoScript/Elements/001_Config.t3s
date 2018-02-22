@@ -20,7 +20,7 @@ config {
 
     prefixLocalAnchors = all
     tx_realurl_enable = 1
-    
+
     # Temporarily remove compression and concatination
     compressJs = 0
     compressCss = 0

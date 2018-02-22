@@ -21,3 +21,10 @@ Extension template for https://github.com/subugoe/site-aac
 * vhs
 * powermail
 * nkwgok
+
+## Testing
+
+Testing is done with codeceptjs and webdriverio.
+* The tests are run agains extra pages which are loaded into the database with `./import-testpages.js` in the site_aac directory 
+* Use `npm run testPrepare` to start selenium server
+* Use `npm run test` to run the tests 
