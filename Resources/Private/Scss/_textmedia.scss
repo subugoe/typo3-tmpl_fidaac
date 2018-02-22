@@ -22,7 +22,7 @@ figure {
         font-weight: normal;
         font-size: $small-font-size-l;
         line-height: $small-line-height-l;
-        display: flex;
+        display: table-caption;
         caption-side: bottom;
         justify-content: flex-end;
         flex-direction: column;
