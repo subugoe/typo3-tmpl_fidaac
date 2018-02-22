@@ -1,0 +1,39 @@
+{
+    "output": "test/output",
+    "helpers": {
+        "WebDriverIO": {
+            "smartWait": 5000,
+            "restart": false,
+            "show": true,
+            "windowSize": "maximize",
+            "timeouts": {
+                "script": 80000,
+                "page load": 10000
+            },
+            "url": "http://localhost:8001",
+            "browser": "chrome",
+            "desiredCapabilities": {
+                "chromeOptions": {
+                    "args": [
+                        "--headless",
+                        "--disable-gpu",
+                        "--window-size=1200,978"
+                    ]
+                }
+            }
+        },
+        "GeneratedHelper": {
+            "require": "./test/PositionHelper.js"
+        }
+    },
+    "include": {
+        "I": "./test/libs/steps_file.js"
+    },
+    "mocha": {},
+    "bootstrap": false,
+    "teardown": null,
+    "hooks": [],
+    "tests": "test/*.test.js",
+    "timeout": 10000,
+    "name": "zivver-webapp"
+}
