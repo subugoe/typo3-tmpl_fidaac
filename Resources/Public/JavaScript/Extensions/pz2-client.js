@@ -257,6 +257,7 @@ var showKVKLink = false;
 // List of export formats we provide links for. An empty list suppresses the
 // creation of export links. Supported list items are: 'ris', 'bibtex',
 // 'ris-inline' and 'bibtex-inline'.
+var showGBVLink = true;
 var exportFormats = [];
 // Offer submenus with items for each location in the export links?
 var showExportLinksForEachLocation = false;
@@ -4346,13 +4347,78 @@ function renderDetails(recordID) {
 			return KVKItem;
 		};
 
+        var GBVItem = function (data) {
+            var KVKItem = undefined;
 
+            // Check whether there are ISBNs and use the first one we find.
+            var ISBN = undefined;
+            for (var locationIndex in data.location) {
+                var location = data.location[locationIndex];
+                if (location['md-isbn']) {
+                    ISBN = location['md-isbn'][0];
+                    // Trim parenthetical information from ISBN which may be in
+                    // Marc Field 020 $a
+                    ISBN = ISBN.replace(/(\s*\(.*\))/, '');
+                    break;
+                }
+            }
+
+            var query = '';
+            if (ISBN) {
+                // Search for ISBN if we found one.
+                query += '&TRM=' + ISBN;
+            } else {
+                // If there is no ISBN only proceed when we are dealing with a book
+                // and create a search for the title and author.
+                var wantGVBLink = false;
+                for (var mediumIndex in data['md-medium']) {
+                    var medium = data['md-medium'][mediumIndex];
+                    if (medium === 'book') {
+                        wantGVBLink = true;
+                        break;
+                    }
+                }
+
+                if (wantGVBLink) {
+                    if (data['md-title']) {
+                        query += '&TI=' + encodeURIComponent(data['md-title'][0]);
+                    }
+                    if (data['md-author']) {
+                        var authors = [];
+                        for (var authorIndex in data['md-author']) {
+                            var author = data['md-author'][authorIndex];
+                            authors.push(author.split(',')[0]);
+                        }
+                        query += '&AU=' + encodeURIComponent(authors.join(' '));
+                    }
+                }
+            }
+
+            if (query !== '') {
+                var GBVLink = document.createElement('a');
+                var GBVLinkURL = 'https://gso.gbv.de/CMD?&ACT=SRCHA&IKT=7';
+                GBVLink.href = GBVLinkURL + query;
+                var label = localise('GVK');
+                GBVLink.appendChild(document.createTextNode(label));
+                var title = localise('Im gemeinsamen Verbundkatalog suchen');
+                GBVLink.setAttribute('title', title);
+                turnIntoNewWindowLink(GBVLink);
+
+                GBVItem = document.createElement('li');
+                GBVItem.appendChild(GBVLink);
+            }
+            return GBVItem;
+        }
 
 		var extraLinkList = document.createElement('ul');
 
 		if (showKVKLink) {
 			appendInfoToContainer(KVKItem(data), extraLinkList);
 		}
+
+        if (showGBVLink) {
+            appendInfoToContainer(GBVItem(data), extraLinkList);
+        }
 
 		if (data.location.length === 1) {
 			var labelFormat = localise('download-label-format-simple');
@@ -6049,7 +6115,7 @@ var localisations = {
 		'facet-title-filterDate': 'Jahre',
 		'# weitere anzeigen': '# weitere anzeigen',
 		// Detail display
-		'Im Katalog ansehen': 'Im Katalog ansehen.',
+		'Im Katalog ansehen': 'Im Katalog der SUB Göttingen ansehen.',
 		'enthaltendes Werk im Katalog ansehen': 'Alle zugehörigen Publikationen im Katalog ansehen.',
 		'enthaltendes Werk': 'zugehörige Publikationen',
 		'detail-label-title': 'Titel',
@@ -6100,6 +6166,8 @@ var localisations = {
 		'download-label-submenu-index-format': 'Ausgabe *',
 		'download-label-ris': 'RIS',
 		'download-label-bibtex': 'BibTeX',
+        'GVK': 'Suche im GVK (ILL)',
+        'Im gemeinsamen Verbundkatalog suchen': 'Diesen Eintrag suchen im gemeinsamen Verbundkatalog GBV',
 		'KVK': 'deutschlandweit suchen',
 		'deutschlandweit im KVK suchen': 'Suche in deutschen Verbundkatalogen (KVK)',
 		'&lang=de': '&lang=de',
@@ -6173,7 +6241,7 @@ var localisations = {
 		'facet-title-filterDate': 'Years',
 		'# weitere anzeigen': 'Show # more items',
 		// Detail display
-		'Im Katalog ansehen': 'View in catalogue.',
+		'Im Katalog ansehen': 'Search for this item in the SUB Göttingen library catalogue.',
 		'enthaltendes Werk im Katalog ansehen': 'View all associated items in catalogue.',
 		'enthaltendes Werk': 'associated items',
 		'detail-label-title': 'Title',
@@ -6228,6 +6296,8 @@ var localisations = {
 		'download-label-submenu-index-format': 'Record *',
 		'download-label-ris': 'RIS',
 		'download-label-bibtex': 'BibTeX',
+        'GVK': 'Search GVK (ILL)',
+        'Im gemeinsamen Verbundkatalog suchen': 'Search for this item in the GVK union catalogue (GBV network interlibrary loan)',
 		'KVK': 'search throughout Germany',
 		'deutschlandweit im KVK suchen': 'search for this item in German union catalogues (KVK)',
 		'&lang=de': '&lang=en',
