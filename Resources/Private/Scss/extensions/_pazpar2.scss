@@ -325,6 +325,13 @@
             justify-content: space-between;
         }
     }
+
+    .pz2-mediaIcon {
+        display: block;
+        position: absolute;
+        left: 0;
+        font-size: 24px;
+    }
 }
 
 .pz2-termList-author ol {
@@ -339,13 +346,8 @@
     }
 
     .pz2-mediaIcon {
-        position: absolute;
-        top: -1px;
-
-        &::before,
-        &::after {
-            left: -4px;
-        }
+        top: -4px;
+        width: 25px;
     }
 }
 
@@ -592,15 +594,6 @@
 }
 
 /* RESULT ITEMS */
-.pz2-mediaIcon {
-    display: block;
-    position: absolute;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    font-size: 24px;
-}
-
 .pz2-resultList {
     display: flex;
     width: width(l-7);
@@ -624,18 +617,19 @@
             border-left: 1px solid #eee;
         }
     }
-}
 
-.pz2-resultList .pz2-mediaIcon {
-    left: -38px;
+    .pz2-mediaIcon {
+        position: relative;
+        display: inline-block;
+        top: 5px;
+        font-size: 24px;
+    }
 }
 
 .pz2-mediaIcon::before,
 .pz2-mediaIcon::after {
-    display: block;
-    position: absolute;
-    height: 20px;
-    width: 20px;
+    display: inline-block;
+    position: relative;
     text-indent: 0;
     font-family: subicons;
     font-weight: normal;
@@ -647,7 +641,7 @@
 }
 
 .pz2-mediaIcon::before {
-    color: $shadeLighter;
+    display: none;
 }
 
 .pz2-mediaIcon::after {
@@ -658,11 +652,18 @@
 .pz2-mediaIcon::after { content: '\e022'; }
 
 /* .pz2-mediaIcon.article:before { content:  '\e005'; } */
-.pz2-mediaIcon.article::after { content: '\e004'; }
+.pz2-mediaIcon.article::after {
+    content: '\e004';
+    left: -3px;
+    width: 19px;
+}
 .pz2-mediaIcon.audio-visual::before { content: '\e011'; }
 .pz2-mediaIcon.audio-visual::after { content: '\e010'; }
 .pz2-mediaIcon.book::before { content: '\e001'; }
-.pz2-mediaIcon.book::after { content: '\e000'; }
+.pz2-mediaIcon.book::after {
+    content: '\e000';
+    width: 26px;
+}
 .pz2-mediaIcon.data::before { content: '\e00d'; }
 .pz2-mediaIcon.data::after { content: '\e00c'; }
 .pz2-mediaIcon.electronic::before { content: '\e00b'; }
