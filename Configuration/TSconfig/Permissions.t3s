@@ -530,7 +530,7 @@
             settings\.orderBy.disabled = 0
             settings\.orderDirection.disabled = 0
             settings\.categoryConjunction.disabled = 0
-            settings\.categories.disabled = 1
+            settings\.categories.disabled = 0
             settings\.includeSubCategories.disabled = 0
             settings\.archiveRestriction.disabled = 0
             settings\.timeRestriction.disabled = 1
