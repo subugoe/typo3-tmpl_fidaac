@@ -467,8 +467,8 @@
         # Editorial
         author.disabled = 0
         author_email.disabled = 0
-        datetime.disabled = 1
-        archive.disabled = 0
+        datetime.disabled = 0
+        archive.disabled = 1
         bodytext.disabled = 0
         // Content Elements tab
         content_elements.disabled = 0
@@ -532,7 +532,7 @@
             settings\.categoryConjunction.disabled = 0
             settings\.categories.disabled = 0
             settings\.includeSubCategories.disabled = 0
-            settings\.archiveRestriction.disabled = 0
+            settings\.archiveRestriction.disabled = 1
             settings\.timeRestriction.disabled = 1
             settings\.timeRestrictionHigh.disabled = 1
             settings\.topNewsRestriction.disabled = 0
