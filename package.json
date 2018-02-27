@@ -20,7 +20,19 @@
     "watchAll": "nodemon -e scss,Js -x \"npm run devAll\"",
     "browsersync": "browser-sync start -c bs-config.js",
     "devBrowser": "concurrently --kill-others --prefix \"[{name}]\" --names \"SCSS & JS,BROWER SYNC\" \"npm run watchAll\" \"npm run browsersync\"",
-    "testPrepare": "./node_modules/.bin/selenium-standalone install && ./node_modules/.bin/selenium-standalone start",
+
+    "testPrepareSelenium": "./node_modules/.bin/selenium-standalone install && ./node_modules/.bin/selenium-standalone start",
+    "testPrepareBrowserstack": "./Tests/libs/BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY",
+
+    "testSeleniumChrome": "./node_modules/.bin/codeceptjs run --steps --config ./Tests/libs/codecept.conf-selenium-chrome.js",
+    "testSeleniumIE": "./node_modules/.bin/codeceptjs run --steps --config ./Tests/libs/codecept.conf-selenium-IE.js",
+
+    "testBrowserstackFF": "echo 'Firefox -----------' && ./node_modules/.bin/codeceptjs run --steps --config ./Tests/libs/codecept.conf-browserstack-FF.js",
+    "testBrowserstackIE": "echo 'Internet Explorer -----------' && ./node_modules/.bin/codeceptjs run --steps --config ./Tests/libs/codecept.conf-browserstack-IE.js",
+    "testBrowserstackEdge": "echo 'EDGE -----------' && ./node_modules/.bin/codeceptjs run --steps --config ./Tests/libs/codecept.conf-browserstack-Edge.js",
+    "testBrowserstackChrome": "echo 'Chrome -----------' && ./node_modules/.bin/codeceptjs run --steps --config ./Tests/libs/codecept.conf-browserstack-Chrome.js",
+
+    "testBrowserstack": "npm run testBrowserstackFF && npm run testBrowserstackIE && npm run testBrowserstackChrome",
     "test": "./node_modules/.bin/codeceptjs run --steps"
   },
   "repository": "http://github.com/subugoe/typo3-tmpl_fidaac",
@@ -48,6 +60,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
+    "extend": "^3.0.1",
     "husky": "^0.14.3",
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",

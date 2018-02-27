@@ -25,6 +25,11 @@ Extension template for https://github.com/subugoe/site-aac
 ## Testing
 
 Testing is done with codeceptjs and webdriverio.
-* The tests are run agains extra pages which are loaded into the database with `./import-testpages.js` in the site_aac directory 
-* Use `npm run testPrepare` to start selenium server
-* Use `npm run test` to run the tests 
+* Testing locally with Selenium
+  * `npm run testPrepareSelenium` to start the server
+  * `npm run testSeleniumChrome` to start the test
+* Testing in the cloud with browserstack
+  * write `export BROWSERSTACK_USERNAME="yourBrowserstackUsername` in .bashrc
+  * write `export BROWSERSTACK_ACCESS_KEY="yourBrowserstackKey"` in .bashrc
+  * `npm run testPrepareBrowserstack` to start the tunnel
+  * `npm run testBrowserstack` to start the Testsuite with Chrome, Firefox and IE
