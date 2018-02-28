@@ -4348,7 +4348,7 @@ function renderDetails(recordID) {
 		};
 
         var GBVItem = function (data) {
-            var KVKItem = undefined;
+            var GBVItem = undefined;
 
             // Check whether there are ISBNs and use the first one we find.
             var ISBN = undefined;
@@ -4411,7 +4411,6 @@ function renderDetails(recordID) {
         }
 
 		var extraLinkList = document.createElement('ul');
-
 		if (showKVKLink) {
 			appendInfoToContainer(KVKItem(data), extraLinkList);
 		}
