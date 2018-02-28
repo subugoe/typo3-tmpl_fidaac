@@ -46,7 +46,6 @@ figure {
 }
 
 .figure-center-above {
-    display: flex;
     justify-content: center;
 
     @for $i from 1 through 5 {

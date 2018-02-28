@@ -27,3 +27,10 @@ Scenario('Check line break in image caption', function*(I) {
     console.info('Caption height without linebreak: '+nolinebreak+', with linebreak: '+linebreak);
     assert.notEqual(nolinebreak, linebreak);
 });
+
+Scenario('Check same left position for image and text', function*(I) {
+    const leftImage = yield I.getPositionLeft('img[src*="csm_Collections-Liebetruth"]');
+    const leftText = yield I.getPositionLeft('//p[contains(text(), "We never saw")]');
+    console.info('Left of Image: '+leftImage+', Left of Text: '+leftText);
+    assert.equal(leftImage, leftText);
+});
