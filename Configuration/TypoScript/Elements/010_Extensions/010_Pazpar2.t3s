@@ -19,6 +19,8 @@ plugin.tx_pazpar2 {
         }
 
         showKVKLink = 1
+        showGBVLink = 1
+
         sortOrder {
             1.fieldName = date
             1.direction = descending
