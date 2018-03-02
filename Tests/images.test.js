@@ -34,3 +34,10 @@ Scenario('Check same left position for image and text', function*(I) {
     console.info('Left of Image: '+leftImage+', Left of Text: '+leftText);
     assert.equal(leftImage, leftText);
 });
+
+Scenario('Check caption aligned right', function*(I) {
+    const imgRight = yield I.getPositionRight('img[src*="csm_Collections-Liebetruth"]');
+    const capRight = yield I.getPositionRight('//figcaption[@class="image-caption" and contains(text(), "Test caption alignment")]');
+    console.info('Right of: Img: '+imgRight+', caption: '+capRight);
+    assert.equal(imgRight, capRight);
+});

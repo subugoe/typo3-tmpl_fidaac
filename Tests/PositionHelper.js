@@ -40,6 +40,17 @@ class PositionHelper extends codecept_helper {
         const left = await this.helpers['WebDriverIO'].browser.getLocation(locator, 'x');
         return left;
     }
+
+    async getPositionRight(locator) {
+        const res = await this.helpers['WebDriverIO']._locate(locator, true);
+        assertElementExists(res, locator);
+        const elem = res.value[0];
+
+        const left = await this.helpers['WebDriverIO'].browser.getLocation(locator, 'x');
+        const width = await this.helpers['WebDriverIO'].browser.getElementSize(locator, 'width');
+        const right = left + width;
+        return right;
+    }
 }
 
 module.exports = PositionHelper;

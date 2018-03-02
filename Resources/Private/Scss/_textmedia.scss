@@ -13,9 +13,6 @@ figure {
     margin: 0;
     display: block;
     margin-top: $magic-l/3;
-    flex-grow: 0;
-    flex-wrap: wrap;
-    flex-direction: column;
     padding-bottom: $magic;
 
     > .image-caption {
@@ -26,9 +23,7 @@ figure {
         display: inline-block;
         caption-side: bottom;
         justify-content: flex-end;
-        flex-direction: column;
-        flex-wrap: wrap;
-        flex-grow: 0;
+        width: 100%;
 
         a {
             @include link-plus();
@@ -53,18 +48,6 @@ figure {
             margin-right: auto;
             margin-left: auto;
             width: width(l-#{$i}) - $magic;
-        }
-
-        &.cols-#{$i}:nth-of-type(2) {
-            width: width(l-#{$i}) - $magic;
-        }
-    }
-
-    @for $i from 6 through 10 {
-        &.cols-#{$i}:first-of-type {
-            margin-right: 0;
-            width: width(l-#{$i}) - $magic;
-            float: left;
         }
     }
 }
