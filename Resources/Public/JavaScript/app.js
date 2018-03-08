@@ -139,6 +139,7 @@ $(document).ready(function () {
             }
         });
     };
+
     showPath();
 
     $('.navigation_default-submenuItem.-sub, .navigation_default-submenuItem.-curIfSub, .navigation_default-submenuItem.-actSub').on('mouseenter', function () {
@@ -158,11 +159,14 @@ $(document).ready(function () {
     });
 
     $('.navigation_default-menuItem').on('mouseenter', function () {
-        removeSubsubmenus($(this).find('.navigation_default-submenu'));
         if ($(this).find('.navigation_default-submenuItem.-cur').length > 0) {
+            removeSubsubmenus($(this).find('.navigation_default-submenu'));
             showPath();
         }
     });
+
+    // avert unnecessary mouseleaves in firefox
+    $('.navigation_default-submenuItem').children().css('pointer-events', 'none');
 });
 
 /**
