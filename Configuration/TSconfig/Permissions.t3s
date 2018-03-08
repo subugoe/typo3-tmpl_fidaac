@@ -226,7 +226,7 @@
     // hide unwanted areas of resources tab of page
     TCEFORM.pages {
         # Files
-        media.disabled = 1
+        media.disabled = 0
         # TypoScript Configuration
         tsconfig_includes.disabled = 1
         TSconfig.disabled = 1

@@ -2,6 +2,13 @@ page = PAGE
 page {
     typeNum = 0
     shortcutIcon = EXT:tmpl_fidaac/Resources/Public/Icons/favicon.ico
+    meta {
+        keywords.data = page:keywords
+        description.data = page:description
+        viewport = width=device-width
+        og:site_name = Library of Anglo-American Culture & History
+    }
+
     includeCSS {
         file100 = EXT:tmpl_fidaac/Resources/Public/Css/app.min.css
         file100.title = Template CSS
@@ -15,18 +22,57 @@ page {
         file100 = EXT:tmpl_fidaac/Resources/Public/JavaScript/vendor.min.js
         file300 = EXT:tmpl_fidaac/Resources/Public/JavaScript/app.js
     }
-
-    meta {
-        keywords.field = keywords
-        description.field = description
-        viewport = width=device-width
-    }
 }
+
+
+// Open graph Metadata for Twitter and Facebook
+#Only show OpenGraph meta tags when there are no news (tx_news has integrated it already for news pages)
+[globalVar = GP:tx_news_pi1|news < 1]
+page.headerData {
+    #og:title
+    100 = TEXT
+    100 {
+        data = page:title
+        wrap = <meta property="og:title" content="|" />
+    }
+
+    #og:type
+    110 = TEXT
+    110.value = website
+    110.wrap = <meta property="og:type" content="|" />
+
+    #og:image, media field of pages
+    120 = IMG_RESOURCE
+    120.file {
+        import.data = levelmedia:-1, slide
+        treatIdAsReference = 1
+        import.listNum = 0
+    }
+    120.stdWrap.dataWrap = <meta property="og:image" content="{getIndpEnv:TYPO3_REQUEST_HOST}/|" />
+    120.stdWrap.insertData = 1
+
+    #Canonical URL
+    130 = TEXT
+    130 {
+        typolink.parameter.data = TSFE:id
+        typolink.forceAbsoluteUrl = 1
+        typolink.returnLast = url
+        wrap = <meta property="og:url" content="|" />
+    }
+
+    140 = TEXT
+    140.if.isTrue.field = description
+    140.field = description
+    140.wrap = <meta property="og:description" content="|" />
+
+}
+[END]
+
 
 lib.content < styles.content.get
 
 lib.pagetitle = TEXT
-lib.pagetitle.data = page : title
+lib.pagetitle.data = page:title
 
 lib.pageid = TEXT
 lib.pageid.data = page:uid
