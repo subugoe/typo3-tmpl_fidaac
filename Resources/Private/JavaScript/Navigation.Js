@@ -99,7 +99,4 @@ $(document).ready(() => {
         }
     });
 
-    // avert unnecessary mouseleaves in firefox
-    $('.navigation_default-submenuItem').children().css('pointer-events', 'none');
-
 });
