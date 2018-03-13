@@ -21,7 +21,7 @@ function assertElementExists(res, locator, prefix, suffix) {
     }
 }
 
-class PositionHelper extends codecept_helper {
+class CustomHelper extends codecept_helper {
 
     async getPositionTop(locator) {
         const res = await this.helpers['WebDriverIO']._locate(locator, true);
@@ -51,6 +51,35 @@ class PositionHelper extends codecept_helper {
         const right = left + width;
         return right;
     }
+
+    async getPositionBottom(locator) {
+        const res = await this.helpers['WebDriverIO']._locate(locator, true);
+        assertElementExists(res, locator);
+        const elem = res.value[0];
+
+        const top = await this.helpers['WebDriverIO'].browser.getLocation(locator, 'y');
+        const height = await this.helpers['WebDriverIO'].browser.getElementSize(locator, 'height');
+        const bottom = top + height;
+        return bottom;
+    }
+
+    async changeViewportSize(newWidth, newHeight) {
+        this.helpers['WebDriverIO'].browser.setViewportSize({width: newWidth, height: newHeight}, false);
+    }
+
+    async getViewportSize() {
+        const viewportSize = await this.helpers['WebDriverIO'].browser.windowHandleSize();
+        console.info('Width: '+viewportSize.value.width+', Height: '+viewportSize.value.height);
+        return viewportSize;
+    }
+
+    async checkGreaterThan(fac1, fac2) {
+        if (fac1 > fac2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
-module.exports = PositionHelper;
+module.exports = CustomHelper;

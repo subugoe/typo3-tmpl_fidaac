@@ -7,7 +7,6 @@
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    min-width: 1000px;
 }
 
 .doubleColumn {
@@ -55,7 +54,20 @@
 }
 
 .toTop_outer {
-    width: width(l-12);
+    @include media-l {
+        width: width(l-12);
+        justify-content: flex-end;
+    }
+
+    @include media-m {
+        width: width(m-12);
+        justify-content: flex-end;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        justify-content: center;
+    }
     bottom: $magic-l;
     display: flex;
     position: sticky;
