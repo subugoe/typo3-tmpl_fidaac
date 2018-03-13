@@ -140,8 +140,6 @@ $(document).ready(function () {
         });
     };
 
-    showPath();
-
     $('.navigation_default-submenuItem.-sub, .navigation_default-submenuItem.-curIfSub, .navigation_default-submenuItem.-actSub').on('mouseenter', function () {
         var url = createURLForAjax($(this).find('a').first().attr('href'));
         removeSubsubmenus(this);
@@ -163,6 +161,11 @@ $(document).ready(function () {
             removeSubsubmenus($(this).find('.navigation_default-submenu'));
             showPath();
         }
+    });
+
+    $('.navigation_default-submenuItem').on('mouseenter', function () {
+        $('.navigation_default-submenuItem').css('background-color', '#e5e5e5');
+        $(this).css('background-color', '#a8a8a8');
     });
 });
 
