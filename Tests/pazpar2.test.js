@@ -11,7 +11,6 @@ Scenario('Check pazpar2 for books', function*(I) {
     I.click('//span[@class="pz2-title" and contains(text(), "One hot summer")]');
     I.waitForText('Search GVK (ILL)', 40);
     I.see('Search GVK (ILL)');
-    I.click('//span[@class="pz2-title" and contains(text(), "One hot summer")]');
 });
 
 Scenario('Check pazpar2 for articles', function*(I) {
