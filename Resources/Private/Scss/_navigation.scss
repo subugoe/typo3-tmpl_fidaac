@@ -2,7 +2,6 @@
     background-color: $shadeLightest;
     list-style-type: none;
     width: 100%;
-    min-width: 1000px;
 
     display: block;
     flex: 0 0 auto;
@@ -30,8 +29,7 @@
     }
 
     @include media-s {
-        @include span-s-6;
-        align-items: stretch;
+        display: none;
     }
 }
 

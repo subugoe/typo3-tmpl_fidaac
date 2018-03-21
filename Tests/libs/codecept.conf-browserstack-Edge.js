@@ -19,7 +19,7 @@ exports.config = {
             }
         },
         "GeneratedHelper": {
-            "require": "../PositionHelper.js"
+            "require": "../CustomHelper.js"
         }
     },
     "include": {
