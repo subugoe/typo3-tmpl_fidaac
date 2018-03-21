@@ -1,13 +1,24 @@
+#deactivate automatic <title> tag to generate it manually
+config.noPageTitle = 2
+
 page = PAGE
 page {
     typeNum = 0
     shortcutIcon = EXT:tmpl_fidaac/Resources/Public/Icons/favicon.ico
+
     meta {
         keywords.data = page:keywords
         description.data = page:description
         viewport = width=device-width
         og:site_name = Library of Anglo-American Culture & History
     }
+    headerData {
+        10 = TEXT
+        10 {
+          field = title
+          wrap = <title>|&nbsp;- Lib AAC</title>
+        }
+      }
 
     includeCSS {
         file100 = EXT:tmpl_fidaac/Resources/Public/Css/app.min.css
