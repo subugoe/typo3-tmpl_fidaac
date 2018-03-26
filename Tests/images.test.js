@@ -49,9 +49,11 @@ Scenario('Check image overlays - 885', function* (I) {
     I.seeElement('#lightbox');
     // news
     I.amOnPage('/home/all-posts/detailed-archived-news/detail/News/paradise-lost-als-lyrische-fundgrube/');
+    I.seeElement('.mediaelement img');
     I.click('.mediaelement img');
-    I.seeElement('#lightbox');
+    I.seeElement('#lightbox', 60);
     I.amOnPage('/home/all-posts/detailed-archived-news/detail/News/medieval-craft-recipe-books/');
+    I.seeElement('.mediaelement img');
     I.click('.mediaelement img');
-    I.seeElement('#lightbox');
+    I.seeElement('#lightbox', 60);
 });

@@ -28,4 +28,9 @@ Scenario('Make sure subsubmenu is visible and clickable - 895 and correctly shad
     I.click('.navigation_default-submenuItem:first-of-type a');
     I.waitForText('Searching Literature Online', 60);
 
+
+    I.moveCursorTo('.navigation_default-menuItem:nth-of-type(2)');
+    I.moveCursorTo('.navigation_default-menuItem:first-of-type');
+    I.dontSee('Other Types of Primary Sources');
+
 });
