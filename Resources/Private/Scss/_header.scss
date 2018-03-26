@@ -1,3 +1,7 @@
+.NonResponsive .header_outer {
+    min-width: 1000px;
+}
+
 .header_outer {
     background-color: $brand;
     width: 100%;
@@ -7,7 +11,6 @@
     display: flex;
     flex: 0 0 auto;
     justify-content: center;
-    min-width: 1000px;
 
     a {
         color: $white;
@@ -17,6 +20,7 @@
         fill: $white;
     }
 }
+
 
 .header_inner {
     @include media-l {

@@ -44,3 +44,11 @@ page.jsInline {
     10 = TEXT
     10.value = (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);
 }
+
+# cater for a switch for responsiveness
+page.bodyTagCObject = COA
+page.bodyTagCObject {
+    150 = TEXT
+    150.value = {$responsive}
+    150.wrap = <body class="|" >
+}
