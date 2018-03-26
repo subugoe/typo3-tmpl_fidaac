@@ -1,16 +1,16 @@
-.footer-wrapper_outer {
+.footer_outer {
     background: $shadeLightest;
     min-width: 1000px;
 }
 
-.footer-wrapper_inner {
+.footer_inner {
     display: flex;
     width: width(l-12);
     flex-direction: row;
     max-width: width(l-12);
     max-width: $width-l;
     margin: $magic-l auto $magic-l auto;
-    font-size: $small-font-size-l;
+    font-size: $base-font-size-l;
 
     img {
         outline: 0;
