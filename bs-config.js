@@ -4,7 +4,7 @@ module.exports = {
     },
     "files": ["Resources/Public/Css/*.css", "Resources/Public/JavaScript/*.js"],
     "server": false,
-    "proxy": "http://localhost:8900",
+    "proxy": "http://localhost:8001",
     "port": 3100,
     "open": false,
     "cors": true,
