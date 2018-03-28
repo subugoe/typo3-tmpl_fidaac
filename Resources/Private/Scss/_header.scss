@@ -1,12 +1,9 @@
-.NonResponsive .header_outer {
-    min-width: 1000px;
-}
-
 .header_outer {
     background-color: $brand;
     width: 100%;
     color: $white;
     font-size: $large-font-size-l;
+    min-width: 320px;
 
     display: flex;
     flex: 0 0 auto;
@@ -21,11 +18,18 @@
     }
 }
 
+.NonResponsive .header_outer {
+    min-width: 1000px;
+}
+
 
 .header_inner {
     @include media-l {
         @include span-l-12;
         padding: $magic-l 0;
+        min-width: 960px;
+        justify-content: space-between;
+        flex-grow: 0;
 
         svg {
             height: 1em;
@@ -36,6 +40,9 @@
     @include media-m {
         @include span-m-12;
         padding: $magic-m 0;
+        min-width: 786px;
+        justify-content: space-between;
+        flex-grow: 0;
 
         svg {
             height: 1em;
@@ -47,6 +54,8 @@
         @include span-s-6;
         font-size: $large-font-size-s - 4;
         padding: $magic-s 0;
+        justify-content: center;
+        flex-grow: 1;
 
         svg {
             height: 1em;
@@ -57,20 +66,30 @@
 
 .header_bildText-content {
     @include media-l {
-        @include span-l-6;
+        @include span();
+        flex-basis: span-l-6 - 2 * $magic-l;
         align-items: center;
+        justify-content: flex-start;
+        margin: 0 0 0 $magic-l;
     }
 
     @include media-m {
-        @include span-m-6;
+        @include span();
+        flex-basis: span-m-6 - 2 * $magic-m;
         align-items: center;
+        justify-content: flex-start;
+        margin: 0 0 0 $magic-m;
     }
 
     @include media-s {
-        @include span-s-6;
+        @include span();
+        flex-basis: span-s-6 - 2 * $magic-s;
         align-items: stretch;
+        justify-content: space-evenly;
+        margin: 0 0 0 $magic-s;
     }
-    margin: 0;
+    flex-grow: 1;
+    justify-content: flex-start;
 }
 
 .header_image-content {
@@ -78,6 +97,7 @@
 
     @include media-l {
         @include span-l-3;
+        margin: 0;
 
         svg {
             width: 188px;
@@ -87,6 +107,7 @@
 
     @include media-m {
         @include span-m-3;
+        margin: 0;
 
         svg {
             width: 184px;
@@ -97,52 +118,65 @@
     @include media-s {
         flex-basis: 144px;
         padding-left: 16px;
+        margin: $magic 0 $magic 0;
 
         svg {
             width: 144px;
             height: 32px;
         }
     }
-    margin: 0;
 }
 
 .header_text-content {
     @include flex-left;
 
     @include media-l {
-        @include span-l-3;
+        @include span();
+        flex-basis: span-l-3 - 2 * $magic-l;
         padding-left: $magic-l;
+        margin: 0 $magic-l 0 0;
     }
 
     @include media-m {
-        @include span-m-3;
+        @include span();
+        flex-basis: span-m-3 - 2 * $magic-m;
         padding-left: $magic-m;
+        margin: 0 $magic-m 0 0;
     }
 
     @include media-s {
         @include flex-right;
-        flex-basis: 144px;
+        @include span();
+        flex-basis: span-s-3 - 2 * $magic-s;
         padding-right: $magic-s;
         text-align: right;
+        margin: 0 $magic-s 0 0;
     }
-    margin: 0;
+
+    display: flex;
+    align-items: center;
 }
 
 .header_bildText-home {
     @include media-l {
-        @include span-l-6;
+        @include span();
+        width: width(l-6) - 2 * $magic-m;
         align-items: flex-start !important;
+        margin: 0 0 $magic-l $magic-l;
     }
 
     @include media-m {
-        @include span-m-6;
+        @include span();
+        width: width(l-6) - 2 * $magic-m;
         align-items: flex-start !important;
+        margin: 0 0 $magic-m $magic-m;
     }
 
     @include media-s {
         @include span-s-6;
         align-items: center;
     }
+    flex-direction: row;
     display: flex;
 }
 
@@ -161,7 +195,7 @@
     @include media-l {
         @include span-l-6;
         font-size: $base-font-size-l + 4;
-        margin-bottom: $magic;
+        margin: 0 0 $magic 0;
     }
 
     @include media-m {
@@ -178,10 +212,12 @@
     @include flex-left;
 
     @include media-l {
+        @include span-l-3;
         font-size: $large-font-size-l;
     }
 
     @include media-m {
+        @include span-m-3;
         font-size: $large-font-size-m;
     }
 
@@ -189,6 +225,7 @@
         @include span-s-2;
         font-size: $large-font-size-s;
     }
+    margin: 0;
     font-weight: 600;
 }
 
@@ -200,16 +237,17 @@
     @include flex-right;
 
     @include media-l {
-        @include span-l-6;
+        @include span();
+        margin: 0 $magic-l 0 0;
     }
 
     @include media-m {
-        @include span-m-6;
+        @include span();
+        margin: 0 $magic-m 0 0;
     }
 
     @include media-s {
-        @include span-s-6;
-        @include flex-left;
+        display: none;
     }
     align-items: center;
 
@@ -218,8 +256,15 @@
     }
 }
 
+.NonResponsive .header_buttons {
+    @include media-s {
+        display: flex;
+    }
+}
+
 .header_home {
     display: flex;
+    align-items: center;
 }
 
 .header_home-icon {
@@ -241,11 +286,9 @@
     @include media-m {
         padding-left: 40px;
     }
-
-    @include media-s {
-        padding-left: 40px;
-    }
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header_search-icon {
@@ -253,8 +296,8 @@
     align-items: center;
 
     svg {
-        height: 22px;
-        width: 22px;
+        height: 1em;
+        width: 1em;
     }
 }
 
@@ -278,8 +321,51 @@
     align-items: center;
 
     svg {
-        height: 22px;
-        width: 22px;
+        height: 1em;
+        width: 1em;
         margin-bottom: -2px;
     }
+}
+
+.header-s_buttons {
+    @include media-l {
+        display: none;
+    }
+
+    @include media-m {
+        display: none;
+    }
+
+    @include media-s {
+        margin-top: $magic-s;
+        min-width: 320px;
+    }
+    color: $white;
+    font-size: $large-font-size-s - 4;
+
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: stretch;
+
+    a {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        color: $white;
+        background: $brand;
+        margin: 0 $magic 0 $magic;
+        padding: $magic 0 $magic 0;
+    }
+
+    svg {
+        margin-right: $large-font-size-l/4;
+        fill: $white;
+        height: 1em;
+        width: 1em;
+    }
+}
+
+.NonResponsive .header-s_buttons {
+    display: none;
 }

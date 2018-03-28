@@ -14,12 +14,11 @@ exports.config = {
                 "browserstack.debug": "true",
                 "os": "Windows",
                 "os_version": "10",
-                "browser_version": "62.0",
-                "resolution": "1024x768"
+                "browser_version": "62.0"
             }
         },
         "GeneratedHelper": {
-            "require": "../PositionHelper.js"
+            "require": "../CustomHelper.js"
         }
     },
     "include": {

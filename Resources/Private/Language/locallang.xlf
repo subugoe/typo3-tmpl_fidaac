@@ -15,6 +15,9 @@
             <trans-unit id="Home">
                 <source>Home</source>
             </trans-unit>
+            <trans-unit id="Menu">
+                <source>Menu</source>
+            </trans-unit>
             <trans-unit id="Contact">
                 <source>Contact</source>
             </trans-unit>
