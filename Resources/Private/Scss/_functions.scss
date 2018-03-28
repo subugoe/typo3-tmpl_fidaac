@@ -96,26 +96,26 @@
     }
 
     @else if $string == "s-1" {
-        @return $column-s;
+        @return $column-s + $magic-s;
     }
 
     @else if $string == "s-2" {
-        @return $column-s * 2;
+        @return ( $column-s + $magic-s ) * 2;
     }
 
     @else if $string == "s-3" {
-        @return $column-s * 3;
+        @return ( $column-s + $magic-s ) * 3;
     }
 
     @else if $string == "s-4" {
-        @return $column-s * 4;
+        @return ( $column-s + $magic-s ) * 4;
     }
 
     @else if $string == "s-5" {
-        @return $column-s * 5;
+        @return ( $column-s + $magic-s ) * 5;
     }
 
     @else if $string == "s-6" {
-        @return $column-s * 6;
+        @return ( $column-s + $magic-s ) * 6;
     }
 }

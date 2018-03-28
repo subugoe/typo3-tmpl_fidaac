@@ -1,12 +1,11 @@
 .header_outer {
     background-color: $brand;
-    width: 100%;
     color: $white;
     font-size: $large-font-size-l;
-    min-width: 320px;
 
     display: flex;
-    flex: 0 0 auto;
+    flex-grow: 0;
+    flex-shrink: 0;
     justify-content: center;
 
     a {
@@ -18,16 +17,11 @@
     }
 }
 
-.NonResponsive .header_outer {
-    min-width: 1000px;
-}
-
-
 .header_inner {
     @include media-l {
-        @include span-l-12;
+        @include span;
         padding: $magic-l 0;
-        min-width: 960px;
+        min-width: width(l-12);
         justify-content: space-between;
         flex-grow: 0;
 
@@ -40,7 +34,7 @@
     @include media-m {
         @include span-m-12;
         padding: $magic-m 0;
-        min-width: 786px;
+        min-width: width(m-12);
         justify-content: space-between;
         flex-grow: 0;
 
@@ -54,8 +48,8 @@
         @include span-s-6;
         font-size: $large-font-size-s - 4;
         padding: $magic-s 0;
-        justify-content: center;
-        flex-grow: 1;
+        min-width: width(s-6);
+        flex-grow: 0;
 
         svg {
             height: 1em;
@@ -85,8 +79,8 @@
         @include span();
         flex-basis: span-s-6 - 2 * $magic-s;
         align-items: stretch;
-        justify-content: space-evenly;
-        margin: 0 0 0 $magic-s;
+        justify-content: space-between;
+        margin: 0;
     }
     flex-grow: 1;
     justify-content: flex-start;
@@ -117,7 +111,7 @@
 
     @include media-s {
         flex-basis: 144px;
-        padding-left: 16px;
+        padding-left: 0;
         margin: $magic 0 $magic 0;
 
         svg {
@@ -148,7 +142,7 @@
         @include flex-right;
         @include span();
         flex-basis: span-s-3 - 2 * $magic-s;
-        padding-right: $magic-s;
+        padding-right: 0;
         text-align: right;
         margin: 0 $magic-s 0 0;
     }
@@ -350,12 +344,12 @@
 
     a {
         display: flex;
-        flex-grow: 1;
         justify-content: center;
         color: $white;
         background: $brand;
         margin: 0 $magic 0 $magic;
         padding: $magic 0 $magic 0;
+        flex-grow: 1;
     }
 
     svg {
