@@ -4,6 +4,7 @@ Feature('Check homepage');
 
 Scenario('Check header', function* (I) {
     I.amOnPage('/');
+    I.changeViewportSize(1200, 978);
     I.see('Home');
     let logowidth = yield I.grabCssPropertyFrom('.header_image-home svg', 'width');
     assert.equal(logowidth, '188px');

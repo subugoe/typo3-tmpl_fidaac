@@ -91,3 +91,53 @@
         </div>
     </div>
 </header>
+
+
+<div class="header-s_buttons">
+    <f:link.page pageUid="{IDS_HOME}">
+        <div class="header_home">
+                    <span class="header_menu-icon">
+                        <svg>
+                            <use
+                                xlink:href="#icon-bars"/>
+                        </svg>
+                    </span>
+            <span class="visible-hidden">
+                        <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Menu"/>
+                    </span>
+            <span class="header_menu-text">
+                        <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Menu"/>
+                    </span>
+        </div>
+    </f:link.page>
+    <f:link.page pageUid="{IDS_SEARCH}">
+        <div class="header_search">
+                    <span class="header_search-icon">
+                        <svg>
+                            <use
+                                xlink:href="#icon-search"/>
+                        </svg>
+                        <span class="visible-hidden">
+                            <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:search_search"/>
+                        </span>
+                    </span>
+            <span class="header_search-text">
+                        <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:search_search"/>
+                    </span>
+        </div>
+    </f:link.page>
+    <div class="header_language">
+                <span class="header_language-icon">
+                    <svg>
+                        <use
+                            xlink:href="#icon-globe"/>
+                    </svg>
+                    <span class="visible-hidden">
+                        <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Switch language"/>
+                    </span>
+                </span>
+        <span class="header_language-text">
+                    <f:cObject typoscriptObjectPath="lib.language"/>
+                </span>
+    </div>
+</div>

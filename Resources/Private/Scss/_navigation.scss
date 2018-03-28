@@ -30,8 +30,15 @@
     }
 
     @include media-s {
+        display: none;
+    }
+}
+
+.NonResponsive .navigation_inner {
+    @include media-s {
         @include span-s-6;
         align-items: stretch;
+        display: flex;
     }
 }
 

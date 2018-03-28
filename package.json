@@ -14,9 +14,9 @@
         "createPrintCss": "./node_modules/.bin/node-sass Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' --use cssnano > Resources/Public/Css/print.css",
         "devPrintCss": "./node_modules/.bin/node-sass --output-style expanded --source-comments Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --no-map --use autoprefixer -b 'last 2 versions' > Resources/Public/Css/print.css",
 
-        "createMainNonResponsiveCss": "./node_modules/.bin/node-sass --output-style compressed Resources/Private/Scss/App-non-responsive.scss Resources/Public/Css/app.min.css; ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' Resources/Public/Css/app.min.css -o Resources/Public/Css/app.min.css",
+        "createMainNonResponsiveCss": "./node_modules/.bin/node-sass --output-style compressed Resources/Private/Scss/App-non-responsive.scss Resources/Public/Css/appNonResponsive.min.css; ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' Resources/Public/Css/appNonResponsive.min.css -o Resources/Public/Css/appNonResponsive.min.css",
         "createNonResponsiveCss": "npm run createMainNonResponsiveCss; npm run createPrintCss",
-        "devMainNonResponsiveCss": "./node_modules/.bin/node-sass --source-map true Resources/Private/Scss/App-non-responsive.scss Resources/Public/Css/app.min.css; ./node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' Resources/Public/Css/app.min.css -o Resources/Public/Css/app.min.css",
+        "devMainNonResponsiveCss": "./node_modules/.bin/node-sass --source-map true Resources/Private/Scss/App-non-responsive.scss Resources/Public/Css/appNonResponsive.min.css; ./node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' Resources/Public/Css/appNonResponsive.min.css -o Resources/Public/Css/appNonResponsive.min.css",
         "devNonResponsiveCss": "npm run devMainNonResponsiveCss; npm run devPrintCss",
 
         "createMainResponsiveCss": "./node_modules/.bin/node-sass --output-style compressed Resources/Private/Scss/App-responsive.scss Resources/Public/Css/appResponsive.min.css; ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' Resources/Public/Css/appResponsive.min.css -o Resources/Public/Css/appResponsive.min.css",
