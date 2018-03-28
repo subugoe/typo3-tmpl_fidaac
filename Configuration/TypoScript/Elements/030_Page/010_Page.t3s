@@ -21,7 +21,7 @@ page {
       }
 
     includeCSS {
-        file100 = EXT:tmpl_fidaac/Resources/Public/Css/app.min.css
+        file100 = EXT:tmpl_fidaac/Resources/Public/Css/app{$responsive}.min.css
         file100.title = Template CSS
         file100.media = screen
 
