@@ -2,13 +2,10 @@
     display: flex;
     flex: 0 0 auto;
     justify-content: center;
-    min-width: 1000px;
 
     background-color: $brand;
     width: 100%;
     color: $white;
-    font-size: $base-font-size-l;
-    line-height: $base-line-height-l;
 
     a {
         color: $white;
@@ -18,17 +15,24 @@
 .last_inner {
     @include media-l {
         @include span-l-12;
+        font-size: $base-font-size-l;
+        line-height: $base-line-height-l;
+        padding: $magic-l/2 0;
     }
 
     @include media-m {
         @include span-m-12;
+        font-size: $base-font-size-m;
+        line-height: $base-line-height-m;
+        padding: $magic-m/2 0;
     }
 
     @include media-s {
         @include span-s-6;
+        font-size: $base-font-size-s;
+        line-height: $base-line-height-s;
     }
     justify-content: flex-start;
-    padding: $magic-l/2 0;
     margin: 0;
 }
 

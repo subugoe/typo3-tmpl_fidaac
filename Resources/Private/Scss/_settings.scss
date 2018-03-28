@@ -30,7 +30,7 @@ $width-l: 960px;
 
 // m
 $magic-m: 16px;
-$column-m: $magic-m*3;
+$column-m: 48px;
 $base-font-size-m: $magic-m; // 16
 $small-font-size-m: $base-font-size-m - 1; // 15
 $large-font-size-m: $base-font-size-m + 8; // 24
@@ -42,8 +42,8 @@ $huge-line-height-m: $base-line-height-m + 16; // 40
 $width-m: 960px;
 
 // s
-$magic-s: 6px;
-$column-s: $magic-s*7.5;
+$magic-s: 8px;
+$column-s: 46px;
 $base-font-size-s: 16px; // 16
 $small-font-size-s: $base-font-size-s - 1; // 15
 $large-font-size-s: $base-font-size-s + 8; // 24
