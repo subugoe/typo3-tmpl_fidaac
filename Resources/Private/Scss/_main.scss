@@ -54,7 +54,17 @@
 }
 
 .toTop_outer {
-    width: width(l-12);
+    @include media-l {
+        width: width(l-12);
+    }
+
+    @include media-m {
+        width: width(m-12);
+    }
+
+    @include media-s {
+        width: width(s-6);
+    }
     bottom: $magic-l;
     display: flex;
     position: sticky;
