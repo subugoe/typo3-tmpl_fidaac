@@ -48,15 +48,47 @@ $(document).ready(() => {
     });
 
     /**
-     * make sure images in slider view are horizonally aligned
+     * Make sure images in slider view are horizonally aligned
+     * Only apply for M and L
      */
-    let sliderheaderheight = $('.news-slider-view .news-header').first().height();
-    $('.news-slider-view .news-header').each((index, el) => {
-        if (sliderheaderheight < $(el).height()) {
-            sliderheaderheight = $(el).height();
+    const setSliderHeadHeight = function () {
+        if ($(window).width() < 768) {
+            return;
         }
+        let sliderheaderheight = $('.news-slider-view .news-header').first().height();
+        $('.news-slider-view .news-header').each((index, el) => {
+            if (sliderheaderheight < $(el).height()) {
+                sliderheaderheight = $(el).height();
+            }
+        });
+        $('.news-slider-view .news-header').css('height', sliderheaderheight);
+    };
+
+    /**
+     * Make sure Title of news stairs is above Image in S
+     */
+    const putTitleOnTop = function() {
+        $('.news-stairs-view .news-header').each((index, el) => {
+            const title = $(el);
+            const newPar = $(el).parents('.article');
+            // firefox doesn't recognize window.width
+            if ($('body').width() >= 768) {
+                $(title).detach();
+                $(title).prependTo(newPar.find('.news-infos'));
+            } else {
+                $(title).detach();
+                $(title).prependTo(newPar);
+            }
+        });
+    };
+
+    $(window).resize(function () {
+        setSliderHeadHeight();
+        putTitleOnTop();
     });
-   $('.news-slider-view .news-header').css('height', sliderheaderheight);
+
+    setSliderHeadHeight();
+    putTitleOnTop();
 
     /**
      * Make sure, pagination resembles design

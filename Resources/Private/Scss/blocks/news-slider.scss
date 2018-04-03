@@ -3,14 +3,36 @@
     position: relative;
 
     .article {
+        @include media-l {
+            justify-content: flex-start;
+        }
+
+        @include media-m {
+            justify-content: flex-start;
+        }
+
+        @include media-s {
+            justify-content: flex-end;
+        }
+
         align-content: space-between;
         flex-shrink: 1;
     }
 
     .news-rel-slider {
+        @include media-l {
+            flex-flow: row;
+        }
+
+        @include media-m {
+            flex-flow: row;
+        }
+
+        @include media-s {
+            flex-flow: column;
+        }
         display: flex;
         justify-content: flex-start;
-        flex-flow: row;
         position: relative;
         left: 0;
     }
@@ -69,7 +91,7 @@
         }
 
         @include media-s {
-            width: width(s-5);
+            width: width(s-6);
             height: width(s-6) / 16 * 9;
             margin: $magic-s / 2 0;
         }
@@ -115,6 +137,9 @@
     }
 
     .news-overlay {
+        @include media-s {
+            display: none;
+        }
         position: absolute;
         height: 100%;
         width: 150px;
