@@ -236,7 +236,7 @@
         flex-grow: 1;
         align-items: center;
         justify-content: flex-start;
-        padding: 2px 2px 2px $magic-l;
+        padding: 2px 2px 2px 12px; // align with menuitem
     }
 
     &.-actSub > a,
@@ -249,7 +249,6 @@
     &.-highlight {
         background-color: $accent;
         transition: background-color $ttime;
-        border-radius: $magic-l / 4;
     }
 
     &:hover {
