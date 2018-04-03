@@ -244,20 +244,20 @@ $(document).ready(function () {
         if ($(window).width() < 768) {
             return;
         }
-        var sliderheaderheight = $('.news-slider-view .news-header').first().height();
-        $('.news-slider-view .news-header').each(function (index, el) {
+        var sliderheaderheight = $('.Responsive .news-slider-view .news-header').first().height();
+        $('.Responsive .news-slider-view .news-header').each(function (index, el) {
             if (sliderheaderheight < $(el).height()) {
                 sliderheaderheight = $(el).height();
             }
         });
-        $('.news-slider-view .news-header').css('height', sliderheaderheight);
+        $('.Responsive .news-slider-view .news-header').css('height', sliderheaderheight);
     };
 
     /**
      * Make sure Title of news stairs is above Image in S
      */
     var putTitleOnTop = function putTitleOnTop() {
-        $('.news-stairs-view .news-header').each(function (index, el) {
+        $('.Responsive .news-stairs-view .news-header').each(function (index, el) {
             var title = $(el);
             var newPar = $(el).parents('.article');
             // firefox doesn't recognize window.width
