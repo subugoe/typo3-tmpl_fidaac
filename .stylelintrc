@@ -3,10 +3,6 @@
   "plugins": ["stylelint-order"],
   "rules": {
       "order/order": [
-        {
-            "type": "at-rule",
-            "name": "include"
-        },
         "declarations",
         "rules",
         {

@@ -2,25 +2,25 @@
     @include media-l {
         width: width(l-12);
         padding-bottom: $magic-l;
+        // no header is shown for stairs and slider, so there must be top padding
+        padding-top: $magic-l * 1.5;
     }
 
     @include media-m {
         width: width(m-12);
         padding-bottom: $magic-m;
+        padding-top: $magic-m * 1.5;
     }
 
     @include media-s {
         width: width(s-6);
+        padding-top: $magic-s;
     }
     justify-content: flex-start;
 
-    // no header is shown for stairs and slider, so there must be top padding
-    padding-top: $magic * 3;
 }
 
 .news-stairs-view {
-    justify-content: flex-start;
-
     .article {
         padding: 0;
         margin: 0;
@@ -51,18 +51,58 @@
             flex-direction: row-reverse;
 
             .img-wrap {
-                padding-left: $magic-l/2;
+                @include media-l {
+                    justify-content: space-between;
+                    padding-left: $magic-l/2;
+                }
+
+                @include media-m {
+                    justify-content: space-between;
+                    padding-left: $magic-l/2;
+                }
+
+                @include media-s {
+                    padding-left: 0;
+                }
                 padding-right: 0;
             }
 
             .infos-wrap {
-                padding-right: $magic-l/2;
+                @include media-l {
+                    justify-content: space-between;
+                    text-align: right;
+                    padding-right: $magic-l/2;
+                }
+
+                @include media-m {
+                    justify-content: space-between;
+                    text-align: right;
+                    padding-right: $magic-l/2;
+                }
+
+                @include media-s {
+                    justify-content: flex-start;
+                    text-align: left;
+                    padding-right: 0;
+                }
                 padding-left: 0;
-                justify-content: flex-end;
             }
 
             .news-header {
-                justify-content: flex-end;
+                @include media-l {
+                    justify-content: flex-end;
+                    text-align: right;
+                }
+
+                @include media-m {
+                    justify-content: flex-end;
+                    text-align: right;
+                }
+
+                @include media-s {
+                    justify-content: flex-start;
+                    text-align: left;
+                }
             }
 
             .teaser-text {
@@ -71,7 +111,17 @@
             }
 
             .title {
-                text-align: right;
+                @include media-l {
+                    text-align: right;
+                }
+
+                @include media-m {
+                    text-align: right;
+                }
+
+                @include media-s {
+                    text-align: left;
+                }
             }
 
             .list-dateNAuthor {
@@ -85,21 +135,53 @@
                     margin-right: 0;
                 }
             }
+
+            a {
+                align-self: flex-end;
+            }
         }
 
         &:nth-child(odd) {
             flex-direction: row;
+            justify-content: flex-start;
 
             .img-wrap {
-                padding-right: $magic-l/2;
+                @include media-l {
+                    justify-content: space-between;
+                    padding-right: $magic-l/2;
+                }
+
+                @include media-m {
+                    justify-content: space-between;
+                    padding-right: $magic-l/2;
+                }
+
+                @include media-s {
+                    justify-content: flex-end;
+                    padding-right: 0;
+                }
                 padding-left: 0;
             }
 
             .infos-wrap {
-                padding-left: $magic-l/2;
+                @include media-l {
+                    justify-content: space-between;
+                    padding-left: $magic-l/2;
+                }
+
+                @include media-m {
+                    justify-content: space-between;
+                    padding-left: $magic-l/2;
+                }
+
+                @include media-s {
+                    justify-content: flex-end;
+                    padding-left: 0;
+                }
                 padding-right: 0;
             }
         }
+
 
         .img-wrap {
             @include media-l {
@@ -135,16 +217,16 @@
 
         .infos-wrap {
             @include media-l {
-                @include span-l-6;
+                width: width(l-6);
                 max-width: width(l-6);
             }
 
             @include media-m {
-                @include span-m-6;
+                width: width(m-6);
             }
 
             @include media-s {
-                @include span-s-6;
+                width: width(s-6);
             }
             display: flex;
             flex-direction: column;
@@ -167,6 +249,20 @@
                 margin-right: $magic--half;
                 height: 1em;
                 width: 1em;
+            }
+        }
+
+        a {
+            @include media-l {
+                align-self: flex-start;
+            }
+
+            @include media-m {
+                align-self: flex-start;
+            }
+
+            @include media-s {
+                align-self: flex-end;
             }
         }
     }
