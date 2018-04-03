@@ -3,13 +3,31 @@
 }
 
 .footer_inner {
+    @include media-l {
+        width: width(l-12);
+        max-width: width(l-12);
+        margin: $magic-l auto;
+        font-size: $base-font-size-l;
+    }
+
+    @include media-m {
+        width: width(m-12);
+        max-width: width(m-12);
+        margin: $magic-m auto;
+        font-size: $base-font-size-m;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        max-width: width(s-6);
+        margin: $magic-s auto;
+        font-size: $base-font-size-s;
+    }
+
     display: flex;
-    width: width(l-12);
-    flex-direction: row;
-    max-width: width(l-12);
-    max-width: $width-l;
-    margin: $magic-l auto $magic-l auto;
-    font-size: $base-font-size-l;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 
     img {
         outline: 0;
@@ -21,8 +39,20 @@
 }
 
 .footer-column {
-    padding-right: $magic-l;
-    max-width: width(l-4);
+    @include media-l {
+        max-width: width(l-4);
+        padding-right: $magic-l;
+    }
+
+    @include media-m {
+        max-width: width(m-6);
+        padding-right: $magic-m;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        margin-bottom: $magic-s;
+    }
     flex-basis: 100%;
     display: flex;
     flex-grow: 1;
@@ -30,63 +60,90 @@
     &:last-of-type {
         padding-right: 0;
     }
+}
 
-    &.-contact {
-        display: flex;
+.footer-column.-contact {
+    display: flex;
+    flex-direction: column;
+
+    .fa {
+        color: $brand;
+    }
+}
+
+.footer-column.-tell {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column.-funding {
+    display: flex;
+}
+
+.footer-funding-logos {
+    @include media-l {
+        width: width(l-4);
         flex-direction: column;
-
-        .fa {
-            color: $brand;
-        }
+        padding-right: $magic-l;
     }
 
-    &.-tell {
-        display: flex;
-        flex-direction: column;
+    @include media-m {
+        width: width(m-12);
+        flex-direction: row;
     }
 
-    &.-funding {
+    @include media-s {
+        width: width(s-6);
+        flex-direction: column;
+    }
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+
+    li {
+        display: flex;
+        margin-bottom: $magic;
+        flex-grow: 0;
+        flex-shrink: 1;
+        align-items: center;
+    }
+}
+
+.footer-funding-logo {
+    @include media-m {
+        width: width(m-4) - 2 * $magic-m/2;
+        max-width: width(m-12);
+    }
+
+    display: flex;
+    flex-grow: 1;
+
+    &::before {
+        padding-left: 0;
+        content: '';
+    }
+
+    img {
+        object-fit: contain;
+        display: block;
+        min-height: 1px;
+        width: 100%;
+        height: 100%;
+    }
+
+    a {
         display: flex;
 
-        img {
-            min-height: 1px;
-            width: 100%;
-            height: 100%;
-        }
-
-        a {
-            display: flex;
-
-            &::after {
-                content: '';
-            }
-        }
-
-        .footer-funding-logos {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            li {
-                display: flex;
-                margin-bottom: $magic;
-                flex-grow: 0;
-                flex-shrink: 1;
-            }
-        }
-
-        .footer-funding-logo {
-            display: block;
-
-            &::before {
-                padding-left: 0;
-                content: '';
-            }
+        &::after {
+            content: '';
         }
     }
 }
 
 .footer-contact_address {
+    @include media-s {
+        margin-bottom: $magic-s/2;
+    }
     text-indent: -14px;
     padding-left: 25px;
 
