@@ -63,6 +63,9 @@
 }
 
 .footer-column.-contact {
+    @include media-m {
+        padding-right: 0;
+    }
     display: flex;
     flex-direction: column;
 
@@ -88,7 +91,7 @@
     }
 
     @include media-m {
-        width: width(m-12);
+        min-width: width(m-12);
         flex-direction: row;
     }
 

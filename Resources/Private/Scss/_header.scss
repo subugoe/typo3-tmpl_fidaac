@@ -156,14 +156,14 @@
         @include span();
         width: width(l-6) - 2 * $magic-m;
         align-items: flex-start !important;
-        margin: 0 0 $magic-l $magic-l;
+        margin: 0 0 0 $magic-l;
     }
 
     @include media-m {
         @include span();
         width: width(l-6) - 2 * $magic-m;
         align-items: flex-start !important;
-        margin: 0 0 $magic-m $magic-m;
+        margin: 0 0 0 $magic-m;
     }
 
     @include media-s {
