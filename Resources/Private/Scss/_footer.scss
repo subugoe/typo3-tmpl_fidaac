@@ -20,7 +20,8 @@
     @include media-s {
         width: width(s-6);
         max-width: width(s-6);
-        margin: $magic-s auto;
+        margin: 0 auto;
+        padding: $magic-s * 2 0;
         font-size: $base-font-size-s;
     }
 
@@ -66,6 +67,10 @@
     @include media-m {
         padding-right: 0;
     }
+
+    @include media-s {
+        margin-bottom: $magic-s * 2;
+    }
     display: flex;
     flex-direction: column;
 
@@ -75,6 +80,9 @@
 }
 
 .footer-column.-tell {
+    @include media-s {
+        margin-bottom: $magic-s * 2;
+    }
     display: flex;
     flex-direction: column;
 }
@@ -147,11 +155,13 @@
     @include media-s {
         margin-bottom: $magic-s/2;
     }
-    text-indent: -14px;
-    padding-left: 25px;
+    display: flex;
 
     i::before {
         padding-right: 2px;
+        display: flex;
+        width: 16px;
+        justify-content: center;
     }
 }
 
@@ -192,8 +202,20 @@
         }
 
         &.shariff-button {
-            width: width(l-2) - $magic;
-            max-width: width(l-2) - 2 * $magic !important;
+            @include media-l {
+                width: width(l-2) - $magic;
+                max-width: width(l-2) - 2 * $magic !important;
+            }
+
+            @include media-m {
+                width: width(m-3) - $magic;
+                max-width: width(m-3) - 2 * $magic !important;
+            }
+
+            @include media-s {
+                width: width(s-3) - $magic;
+                max-width: width(s-3) - $magic !important;
+            }
             padding: 0;
             margin: 0 0 $magic 0;
 
