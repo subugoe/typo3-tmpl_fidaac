@@ -20,18 +20,3 @@ Scenario('Check news', function* (I) {
     let sliderNews = yield I.grabNumberOfVisibleElements('.news-slide');
     assert.equal(sliderNews, '3');
 });
-
-Scenario('Make sure subsubmenu is visible and clickable, even after back and forth with mouse - 895', function* (I) {
-    I.moveCursorTo('.navigation_default-menuItem:first-of-type');
-    I.waitForVisible('.navigation_default-submenuContainer-outer');
-    I.seeElement('.navigation_default-submenuItem:first-of-type');
-    I.moveCursorTo('.navigation_default-submenuItem:first-of-type');
-    I.waitForText('Other Types of Primary Sources', 40);
-    I.moveCursorTo('//a[contains(@href, "/search/search-tips/american-studies/")]');
-    I.moveCursorTo('.navigation_default-submenuItem:first-of-type');
-    I.waitForText('Other Types of Primary Sources', 60);
-    I.waitForText('American Studies', 60);
-    I.seeElement('.navigation_default-submenuItem:first-of-type');
-    I.click('.navigation_default-submenuItem:first-of-type a');
-    I.waitForText('Searching Literature Online', 60);
-});

@@ -79,7 +79,7 @@ $(document).ready(() => {
         const url = createURLForAjax($(this).find('a').first().attr('href'));
         removeSubsubmenus(this);
         const menu = $(this).parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
-         $(menu).find('.navigation_default-submenu').last().load(url, (response, status) => {
+        $(menu).find('.navigation_default-submenu').last().load(url, (response, status) => {
             if (status === 'error') {
                 console.log('Error loading submenu');
             }
@@ -93,6 +93,7 @@ $(document).ready(() => {
 
     $('.navigation_default-menuItem').on('mouseenter', function () {
         $('.navigation_default-submenuItem').removeClass('-highlight');
+        console.log($(this).find('.navigation_default-submenuItem.-cur').length);
         if ($(this).find('.navigation_default-submenuItem.-cur').length > 0) {
             removeSubsubmenus($(this).find('.navigation_default-submenu'));
             showPath();
@@ -102,10 +103,6 @@ $(document).ready(() => {
     $('.navigation_default-submenuItem').on('mouseenter', function () {
         $('.navigation_default-submenuItem').removeClass('-highlight');
         $(this).addClass('-highlight');
-    });
-
-    $('.header-s_buttons .header_menu').on('click', function () {
-        console.log('Show menu');
     });
 
 });
