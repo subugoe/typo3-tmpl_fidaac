@@ -31,10 +31,10 @@ config {
 # Allow development mode
 [globalString = IENV:HTTP_HOST = localhost:8001]
     config {
-        compressJs = 1
-        compressCss = 1
-        concatenateCss = 1
-        concatenateJs = 1
+        compressJs = 0
+        compressCss = 0
+        concatenateCss = 0
+        concatenateJs = 0
     }
 [global]
 

@@ -20,15 +20,24 @@
 .navigation_inner {
     @include media-l {
         @include span-l-12;
-        font-size: 0.9 * ( $base-font-size-l + 4 );
-        line-height: 0.9 * ( $huge-line-height-l);
+        font-size: 0.9 * ($base-font-size-l + 2);
+        line-height: $huge-line-height-l;
+        letter-spacing: 0.5px;
         align-items: center;
     }
 
     @include media-m {
         @include span-m-12;
-        font-size: 0.8 * ( $base-font-size-l+4 );
-        line-height: 0.8 * ( $huge-line-height-l);
+        font-size: 15.4px;
+        line-height: $huge-line-height-m;
+        align-items: center;
+        color: blue;
+    }
+
+    @include media-s {
+        @include span-m-12;
+        font-size: $base-font-size-s;
+        line-height: $huge-line-height-s;
         align-items: center;
     }
 
@@ -154,8 +163,9 @@
 
     @include media-m {
         width: width(m-4);
-        font-size: 0.9 * ( $base-font-size-m );
+        font-size: 0.9 * 15.5px;
         line-height: $base-line-height-m;
+        letter-spacing: 0.5px;
         padding-bottom: $magic-m/2;
         padding-top: $magic-m/2;
     }
@@ -171,6 +181,7 @@
     align-items: stretch;
 }
 
+
 .navigation_default-submenu:not(:first-of-type) {
     margin-left: $magic-l;
 }
@@ -181,7 +192,7 @@
     }
 
     @include media-m {
-        top: 48px;
+        top: 52px;
     }
     display: flex;
     flex: 1 0 100vh;
@@ -233,7 +244,7 @@
 
     a {
         display: flex;
-        flex-grow: 1;
+        flex-grow: 0;
         align-items: center;
         justify-content: flex-start;
         padding: 2px 2px 2px 12px; // align with menuitem
