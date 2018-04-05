@@ -22,19 +22,19 @@ config {
     tx_realurl_enable = 1
 
     # Temporarily remove compression and concatination
-    compressJs = 0
-    compressCss = 0
-    concatenateCss = 0
-    concatenateJs = 0
+    compressJs = 1
+    compressCss = 1
+    concatenateCss = 1
+    concatenateJs = 1
 }
 
 # Allow development mode
 [globalString = IENV:HTTP_HOST = localhost:8001]
     config {
-        compressJs = 0
-        compressCss = 0
-        concatenateCss = 0
-        concatenateJs = 0
+        compressJs = 1
+        compressCss = 1
+        concatenateCss = 1
+        concatenateJs = 1
     }
 [global]
 
