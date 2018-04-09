@@ -46,6 +46,10 @@ lib.navMenu {
         CURIFSUB.wrapItemAndSub  = <li class="navigation_default-submenuItem -curIfSub">|</li>
         CURIFSUB.afterWrap = <div class="-svg-submenu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
 
+        ACT < .NO
+        ACT.wrapItemAndSub = <li class="navigation_default-submenuItem -act">|</li>
+        ACT.afterWrap = <div class="-svg-submenu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
+
         ACTIFSUB < .ACT
         ACTIFSUB.wrapItemAndSub = <li class="navigation_default-submenuItem -actSub">|</li>
         ACTIFSUB.afterWrap = <div class="-svg-submenu"><svg class="svg-right"><use xlink:href="#icon-caret-right"/></svg></div>
