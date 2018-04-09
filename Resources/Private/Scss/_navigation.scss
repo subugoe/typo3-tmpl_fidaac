@@ -20,15 +20,14 @@
 .navigation_inner {
     @include media-l {
         @include span-l-12;
-        font-size: 0.9 * ($base-font-size-l + 2);
+        font-size: $base-font-size-l + 4;
         line-height: $huge-line-height-l;
-        letter-spacing: 0.5px;
         align-items: center;
     }
 
     @include media-m {
         @include span-m-12;
-        font-size: 15.4px;
+        font-size: $base-font-size-m + 2;
         line-height: $huge-line-height-m;
         align-items: center;
         color: blue;
@@ -44,9 +43,6 @@
     @include media-s {
         display: none;
     }
-
-    text-transform: uppercase;
-    letter-spacing: 0.01em;
 }
 
 .NonResponsive .navigation_inner {
@@ -155,7 +151,7 @@
 .navigation_default-submenu {
     @include media-l {
         width: width(l-4);
-        font-size: 0.9 * ( $base-font-size-l );
+        font-size: $base-font-size-l;
         line-height: $base-line-height-l;
         padding-bottom: $magic-l/2;
         padding-top: $magic-l/2;
@@ -163,9 +159,8 @@
 
     @include media-m {
         width: width(m-4);
-        font-size: 0.9 * 15.5px;
+        font-size: $base-font-size-m - 1;
         line-height: $base-line-height-m;
-        letter-spacing: 0.5px;
         padding-bottom: $magic-m/2;
         padding-top: $magic-m/2;
     }
