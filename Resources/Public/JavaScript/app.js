@@ -158,9 +158,8 @@ $(document).ready(function () {
 
     $('.navigation_default-menuItem').on('mouseenter', function () {
         $('.navigation_default-submenuItem').removeClass('-highlight');
-        console.log($(this).find('.navigation_default-submenuItem.-cur').length);
+        removeSubsubmenus($(this).find('.navigation_default-submenu'));
         if ($(this).find('.navigation_default-submenuItem.-cur').length > 0) {
-            removeSubsubmenus($(this).find('.navigation_default-submenu'));
             showPath();
         }
     });
