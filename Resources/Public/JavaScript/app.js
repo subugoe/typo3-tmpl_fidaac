@@ -197,7 +197,7 @@ $(document).ready(function () {
         var headerheight = $(el).find('.news-header').height();
         var buttonheight = $(el).find('.infos-wrap').children('a').last().height();
         var theight = imgheight - buttonheight - headerheight;
-        if (teaserheight + buttonheight + headerheight >= imgheight) {
+        if (teaserheight + buttonheight + headerheight >= imgheight && $(window).width() > 767) {
             $(el).find('.teaser-text').css('height', theight - 2);
         }
     });

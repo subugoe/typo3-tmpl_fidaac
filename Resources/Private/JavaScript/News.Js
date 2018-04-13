@@ -10,7 +10,8 @@ $(document).ready(() => {
         const headerheight = $(el).find('.news-header').height();
         const buttonheight = $(el).find('.infos-wrap').children('a').last().height();
         const theight = imgheight - buttonheight - headerheight;
-        if (teaserheight + buttonheight + headerheight >= imgheight) {
+        if (teaserheight + buttonheight + headerheight >= imgheight &&
+            $(window).width() > 767) {
             $(el).find('.teaser-text').css('height', theight - 2);
         }
     });
