@@ -58,100 +58,7 @@
     }
 }
 
-.header_bildText-content {
-    @include media-l {
-        @include span();
-        flex-basis: span-l-6 - 2 * $magic-l;
-        align-items: center;
-        justify-content: flex-start;
-        margin: 0 0 0 $magic-l;
-    }
-
-    @include media-m {
-        @include span();
-        flex-basis: span-m-6 - 2 * $magic-m;
-        align-items: center;
-        justify-content: flex-start;
-        margin: 0 0 0 $magic-m;
-    }
-
-    @include media-s {
-        @include span();
-        flex-basis: span-s-6 - 2 * $magic-s;
-        align-items: stretch;
-        justify-content: space-between;
-        margin: 0;
-    }
-    flex-grow: 1;
-    justify-content: flex-start;
-}
-
-.header_image-content {
-    @include flex-left;
-
-    @include media-l {
-        @include span-l-3;
-        margin: 0;
-
-        svg {
-            width: 188px;
-            height: 40px;
-        }
-    }
-
-    @include media-m {
-        @include span-m-3;
-        margin: 0;
-
-        svg {
-            width: 184px;
-            height: 40px;
-        }
-    }
-
-    @include media-s {
-        flex-basis: 144px;
-        padding-left: 0;
-        margin: $magic 0 $magic 0;
-
-        svg {
-            width: 144px;
-            height: 32px;
-        }
-    }
-}
-
-.header_text-content {
-    @include flex-left;
-
-    @include media-l {
-        @include span();
-        flex-basis: span-l-3 - 2 * $magic-l;
-        padding-left: $magic-l;
-        margin: 0 $magic-l 0 0;
-    }
-
-    @include media-m {
-        @include span();
-        flex-basis: span-m-3 - 2 * $magic-m;
-        padding-left: $magic-m;
-        margin: 0 $magic-m 0 0;
-    }
-
-    @include media-s {
-        @include flex-right;
-        @include span();
-        flex-basis: span-s-3 - 2 * $magic-s;
-        padding-right: 0;
-        text-align: right;
-        margin: 0 $magic-s 0 0;
-    }
-
-    display: flex;
-    align-items: center;
-}
-
-.header_bildText-home {
+.header_bildText {
     @include media-l {
         @include span();
         width: width(l-6) - 2 * $magic-m;
@@ -174,7 +81,7 @@
     display: flex;
 }
 
-.header_image-home {
+.header_image {
     margin-right: $magic-l;
 
     svg {
@@ -183,7 +90,7 @@
     }
 }
 
-.header_text-homeLong {
+.header_text-Long {
     @include flex-left;
 
     @include media-l {
@@ -202,7 +109,7 @@
     }
 }
 
-.header_text-homeShort {
+.header_text-Short {
     @include flex-left;
 
     @include media-l {
@@ -228,22 +135,22 @@
 }
 
 .header_buttons {
-    @include flex-right;
-
     @include media-l {
-        @include span();
+        @include width-l-3;
         margin: 0 $magic-l 0 0;
     }
 
     @include media-m {
-        @include span();
+        @include width-m-3;
         margin: 0 $magic-m 0 0;
     }
 
     @include media-s {
         display: none;
     }
+    display: flex;
     align-items: center;
+    justify-content: space-between;
 
     svg {
         margin-right: $large-font-size-l/4;
@@ -261,7 +168,7 @@
     align-items: center;
 }
 
-.header_home-icon {
+.header_icon {
     display: flex;
     align-items: center;
 
@@ -273,13 +180,6 @@
 }
 
 .header_search {
-    @include media-l {
-        padding-left: 60px;
-    }
-
-    @include media-m {
-        padding-left: 40px;
-    }
     display: flex;
     align-items: center;
     justify-content: center;
