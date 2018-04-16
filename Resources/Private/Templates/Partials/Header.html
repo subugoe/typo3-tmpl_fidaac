@@ -1,14 +1,12 @@
 <header class="header_outer">
     <div class="header_inner">
-        <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {IDS_HOME}">
-            <f:then>
-                <div class="header_bildText-home">
-                    <div class="header_text-homeLong">
+                <div class="header_bildText">
+                    <div class="header_text-Long">
                         <f:link.page pageUid="{IDS_HOME}">Library of <br/><span class="header_text-strong">Anglo-American</span>
                             Culture & History
                         </f:link.page>
                     </div>
-                    <div class="header_image-home">
+                    <div class="header_image">
                         <f:link.page pageUid="{IDS_HOME}">
                             <svg>
                                 <use
@@ -17,34 +15,14 @@
                             <span class="visible-hidden"><f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Home"/></span>
                         </f:link.page>
                     </div>
-                    <div class="header_text-homeShort">
+                    <div class="header_text-Short">
                         <f:link.page pageUid="{IDS_HOME}">FID AAC</f:link.page>
                     </div>
                 </div>
-            </f:then>
-            <f:else>
-                <div class="header_bildText-content">
-                    <div class="header_image-content">
-                        <f:link.page pageUid="{IDS_HOME}">
-                            <svg>
-                                <use
-                                    xlink:href="#logo-wave"/>
-                            </svg>
-                            <span class="visible-hidden">
-                                <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:logo"/>
-                            </span>
-                        </f:link.page>
-                    </div>
-                    <div class="header_text-content">
-                        <f:link.page pageUid="{IDS_HOME}">Library AAC</f:link.page>
-                    </div>
-                </div>
-            </f:else>
-        </f:if>
         <div class="header_buttons">
             <f:link.page pageUid="{IDS_HOME}">
                 <div class="header_home">
-                    <span class="header_home-icon">
+                    <span class="header_icon">
                         <svg>
                             <use
                                 xlink:href="#icon-home"/>
@@ -53,7 +31,7 @@
                     <span class="visible-hidden">
                         <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Home"/>
                     </span>
-                    <span class="header_home-text">
+                    <span class="header_text">
                         <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Home"/>
                     </span>
                 </div>
