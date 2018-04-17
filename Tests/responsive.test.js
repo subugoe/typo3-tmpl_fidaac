@@ -9,7 +9,7 @@ Scenario('Check correct buttons are shown L', function*(I) {
     yield I.getViewportSize();
     I.dontSeeElement('.header-s_buttons');
     const buttonsBottom = yield I.getPositionBottom('.header_buttons .header_home');
-    const logoBottom = yield I.getPositionBottom('.header_bildText-home');
+    const logoBottom = yield I.getPositionBottom('.header_bildText');
     const checkGreater = yield I.checkGreaterThan(logoBottom, buttonsBottom);
     assert.equal(checkGreater, true);
 });
@@ -30,4 +30,11 @@ Scenario('Check correct buttons are shown S', function*(I) {
     let buttonsSVisibility = yield I.grabCssPropertyFrom('.header-s_buttons', 'display');
     I.dontSeeElement('.header_buttons');
     I.seeElement('.header-s_buttons');
+});
+
+Scenario('Check images are shown correct in S', function*(I) {
+    I.amOnPage('/information-for/tester/images/');
+    yield I.changeViewportSize(320, 568);
+    let imagewidth = yield I.grabCssPropertyFrom('//img[@title="Single image on top."]', 'width');
+    assert.equal(imagewidth, '316px');
 });

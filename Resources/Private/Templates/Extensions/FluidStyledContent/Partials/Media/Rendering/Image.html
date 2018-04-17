@@ -4,7 +4,7 @@
       v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd">
 <f:if condition="{cols} == 10">
     <f:then>
-        <f:media class="image-embed-item"
+        <f:media class="texmedia-image cols-{cols}"
                  file="{file}"
                  width="{v:math.product(a:80, b:cols)}"
                  height="auto"
@@ -12,9 +12,9 @@
                  title="{file.title}" />
     </f:then>
     <f:else>
-        <f:media class="image-embed-item"
+        <f:media class="textmedia-image cols-{cols}"
                  file="{file}"
-                 width="{v:math.product(a:80, b:cols) -> v:math.subtract(b:8)}"
+                 width="{v:math.product(a:80, b:cols) -> v:math.subtract(b:8)}c"
                  height="auto"
                  alt="{file.alternative}"
                  title="{file.title}" />

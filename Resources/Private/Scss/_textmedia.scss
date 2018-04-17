@@ -29,6 +29,10 @@ figure {
             @include link-plus();
         }
     }
+
+    img {
+        width: 100%;
+    }
 }
 
 .figures {
@@ -45,9 +49,19 @@ figure {
 
     @for $i from 1 through 5 {
         &.cols-#{$i}:first-of-type {
+            @include media-l {
+                width: width(l-#{$i}) - $magic-l;
+            }
+
+            @include media-m {
+                width: width(m-#{$i}) - $magic-m;
+            }
+
+            @include media-s {
+                width: width(s-6) - $magic-s;
+            }
             margin-right: auto;
             margin-left: auto;
-            width: width(l-#{$i}) - $magic;
         }
     }
 }
