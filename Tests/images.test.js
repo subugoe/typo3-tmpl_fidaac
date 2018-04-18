@@ -24,21 +24,26 @@ Scenario('Check line break in image caption', function* (I) {
     const nolinebreak = yield I.grabCssPropertyFrom('//figcaption[@class="image-caption" and contains(text(), "No line break")]', 'height');
     const linebreak = yield I.grabCssPropertyFrom('//figcaption[@class="image-caption" and contains(text(), "line break is an absolute must")]', 'height');
 
-    console.info('Caption height without linebreak: ' + nolinebreak + ', with linebreak: ' + linebreak);
+    console.info(`Caption height without linebreak: ${nolinebreak}, with linebreak: ${linebreak}`);
     assert.notEqual(nolinebreak, linebreak);
 });
 
 Scenario('Check same left position for image and text', function* (I) {
     const leftImage = yield I.getPositionLeft('img[src*="csm_Collections-Liebetruth"]');
     const leftText = yield I.getPositionLeft('//p[contains(text(), "We never saw")]');
-    console.info('Left of Image: ' + leftImage + ', Left of Text: ' + leftText);
+    console.info(`Left of Image: ${leftImage}, Left of Text: ${leftText}`);
     assert.equal(leftImage, leftText);
 });
 
 Scenario('Check caption aligned right', function* (I) {
     const imgRight = yield I.getPositionRight('img[src*="csm_Collections-Liebetruth"]');
+<<<<<<< HEAD
     const capRight = yield I.getPositionRight('f, "Test caption alignment")]');
     console.info('Right of: Img: ' + imgRight + ', caption: ' + capRight);
+=======
+    const capRight = yield I.getPositionRight('//figcaption[contains(text(), "Test caption alignment")]');
+    console.info(`Right of: Img: ${imgRight}, caption: ${capRight}`);
+>>>>>>> f0c129c... Implement responsive images for news detail
     assert.equal(imgRight, capRight);
 });
 

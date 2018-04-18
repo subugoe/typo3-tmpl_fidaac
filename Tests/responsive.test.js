@@ -1,4 +1,4 @@
-var assert = require('assert');
+const assert = require('assert');
 
 Feature('Check header`s responsiveness on home');
 
@@ -25,9 +25,7 @@ Scenario('Check correct buttons are shown M', function*(I) {
 Scenario('Check correct buttons are shown S', function*(I) {
     I.amOnPage('/request-it');
     yield I.changeViewportSize(320, 568);
-    let buttonsVisibility = yield I.grabCssPropertyFrom('.header_buttons', 'display');
     yield I.getViewportSize();
-    let buttonsSVisibility = yield I.grabCssPropertyFrom('.header-s_buttons', 'display');
     I.dontSeeElement('.header_buttons');
     I.seeElement('.header-s_buttons');
 });
@@ -35,6 +33,18 @@ Scenario('Check correct buttons are shown S', function*(I) {
 Scenario('Check images are shown correct in S', function*(I) {
     I.amOnPage('/information-for/tester/images/');
     yield I.changeViewportSize(320, 568);
+<<<<<<< HEAD
     let imagewidth = yield I.grabCssPropertyFrom('//img[@title="Single image on top."]', 'width');
     assert.equal(imagewidth, '316px');
+=======
+    const imagewidth = yield I.grabCssPropertyFrom('//img[@title="Test caption alignment."]', 'width');
+    assert.equal(imagewidth, '324px');
+});
+
+Scenario('Check images are shown correct in news in S', function*(I) {
+    I.amOnPage('/collections/american-studies/recent-post/detail/News/paradise-lost-als-lyrische-fundgrube/');
+    yield I.changeViewportSize(320, 568);
+    const imagewidth = yield I.grabCssPropertyFrom('//img[@title="Ronald Johnson, Radi os"]', 'width');
+    assert.equal(imagewidth, '324px');
+>>>>>>> f0c129c... Implement responsive images for news detail
 });
