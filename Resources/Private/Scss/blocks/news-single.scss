@@ -8,12 +8,23 @@
     }
 
     .news-img-wrap {
+        @include media-l {
+            width: width(l-10);
+        }
+
+        @include media-m {
+            width: width(m-10);
+        }
+
+        @include media-s {
+            width: width(s-6);
+        }
         display: flex;
         margin-bottom: $magic;
 
         img {
-            width: width(l-10);
-            height: width(l-10) / 16 * 9;
+            max-width: 100%;
+            height: auto;
         }
     }
 

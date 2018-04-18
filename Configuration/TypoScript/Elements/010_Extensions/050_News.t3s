@@ -27,6 +27,13 @@ plugin.tx_news {
             }
         }
 
+        detail {
+            media.image {
+                maxWidth = 800
+                maxHeight =
+            }
+        }
+
         cssFile =
     }
 }
