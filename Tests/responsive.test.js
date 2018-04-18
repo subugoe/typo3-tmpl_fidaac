@@ -33,10 +33,6 @@ Scenario('Check correct buttons are shown S', function*(I) {
 Scenario('Check images are shown correct in S', function*(I) {
     I.amOnPage('/information-for/tester/images/');
     yield I.changeViewportSize(320, 568);
-<<<<<<< HEAD
-    let imagewidth = yield I.grabCssPropertyFrom('//img[@title="Single image on top."]', 'width');
-    assert.equal(imagewidth, '316px');
-=======
     const imagewidth = yield I.grabCssPropertyFrom('//img[@title="Test caption alignment."]', 'width');
     assert.equal(imagewidth, '324px');
 });
@@ -46,5 +42,4 @@ Scenario('Check images are shown correct in news in S', function*(I) {
     yield I.changeViewportSize(320, 568);
     const imagewidth = yield I.grabCssPropertyFrom('//img[@title="Ronald Johnson, Radi os"]', 'width');
     assert.equal(imagewidth, '324px');
->>>>>>> f0c129c... Implement responsive images for news detail
 });

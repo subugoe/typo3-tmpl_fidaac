@@ -37,13 +37,8 @@ Scenario('Check same left position for image and text', function* (I) {
 
 Scenario('Check caption aligned right', function* (I) {
     const imgRight = yield I.getPositionRight('img[src*="csm_Collections-Liebetruth"]');
-<<<<<<< HEAD
-    const capRight = yield I.getPositionRight('f, "Test caption alignment")]');
-    console.info('Right of: Img: ' + imgRight + ', caption: ' + capRight);
-=======
     const capRight = yield I.getPositionRight('//figcaption[contains(text(), "Test caption alignment")]');
     console.info(`Right of: Img: ${imgRight}, caption: ${capRight}`);
->>>>>>> f0c129c... Implement responsive images for news detail
     assert.equal(imgRight, capRight);
 });
 

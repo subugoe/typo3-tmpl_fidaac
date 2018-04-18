@@ -5,7 +5,7 @@ buildify()
         'Resources/Private/JavaScript/Header.Js',
         'Resources/Private/JavaScript/Search.Js',
         'Resources/Private/JavaScript/Navigation.Js',
-        'Resources/Private/JavaScript/Main.Js',
+        'Resources/Private/JavaScript/Content.Js',
         'Resources/Private/JavaScript/News.Js',
         'Resources/Private/JavaScript/Images.Js',
         'Resources/Private/JavaScript/Powermail.Js',
