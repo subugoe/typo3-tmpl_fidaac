@@ -25,7 +25,7 @@ $(document).ready(function () {
     };
 
     $('.header_search').click(function () {
-        $('.js-search-bar').slideToggle(250);
+        $('.search-bar_outer').slideToggle(250);
         initializeSearchForm();
 
         return false;

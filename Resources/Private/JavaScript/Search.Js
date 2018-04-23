@@ -23,7 +23,7 @@ $(document).ready(() => {
     };
 
     $('.header_search').click(() => {
-        $('.js-search-bar').slideToggle(250);
+        $('.search-bar_outer').slideToggle(250);
         initializeSearchForm();
 
         return false;
