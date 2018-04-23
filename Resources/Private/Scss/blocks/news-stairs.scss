@@ -106,8 +106,20 @@
             }
 
             .teaser-text {
-                justify-content: flex-start;
-                text-align: right;
+                @include media-l {
+                    justify-content: flex-start;
+                    text-align: right;
+                }
+
+                @include media-m {
+                    justify-content: flex-start;
+                    text-align: right;
+                }
+
+                @include media-s {
+                    justify-content: flex-start;
+                    text-align: left;
+                }
             }
 
             .title {
