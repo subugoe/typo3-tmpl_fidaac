@@ -1,20 +1,22 @@
 .news .page-navigation {
     @include media-l {
         flex-direction: row-reverse;
+        flex-wrap: nowrap;
     }
 
     @include media-m {
         flex-direction: row-reverse;
+        flex-wrap: nowrap;
     }
 
     @include media-s {
         flex-direction: column-reverse;
+        flex-wrap: wrap-reverse;
     }
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: $magic;
-    flex-wrap: wrap-reverse;
 }
 
 .news .page-navigation p {
