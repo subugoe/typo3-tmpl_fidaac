@@ -43,3 +43,12 @@ Scenario('Check images are shown correct in news in S', function*(I) {
     const imagewidth = yield I.grabCssPropertyFrom('//img[@title="Ronald Johnson, Radi os"]', 'width');
     assert.equal(imagewidth, '324px');
 });
+
+Scenario('Check news pagination are shown correct in news in M', function*(I) {
+    I.amOnPage('/home/all-posts');
+    yield I.changeViewportSize(800, 600);
+    const numBottom = yield I.getPositionTop('.page-navigation:first-of-type .f3-widget-paginator');
+    const pageBottom = yield I.getPositionTop('.page-navigation:first-of-type p');
+    assert.equal(numBottom, pageBottom);
+});
+
