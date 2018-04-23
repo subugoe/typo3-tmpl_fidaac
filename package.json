@@ -13,24 +13,18 @@
         "devBrowser": "concurrently --kill-others --prefix \"[{name}]\" --names \"SCSS & JS,BROWER SYNC\" \"npm run watchAll\" \"npm run browsersync\"",
         "createPrintCss": "./node_modules/.bin/node-sass Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' --use cssnano > Resources/Public/Css/print.css",
         "devPrintCss": "./node_modules/.bin/node-sass --output-style expanded --source-comments Resources/Private/Scss/Print.scss | ./node_modules/.bin/postcss --no-map --use autoprefixer -b 'last 2 versions' > Resources/Public/Css/print.css",
-
         "createMainNonResponsiveCss": "./node_modules/.bin/node-sass --output-style compressed Resources/Private/Scss/App-non-responsive.scss Resources/Public/Css/appNonResponsive.min.css; ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' Resources/Public/Css/appNonResponsive.min.css -o Resources/Public/Css/appNonResponsive.min.css",
         "createNonResponsiveCss": "npm run createMainNonResponsiveCss; npm run createPrintCss",
         "devMainNonResponsiveCss": "./node_modules/.bin/node-sass --source-map true Resources/Private/Scss/App-non-responsive.scss Resources/Public/Css/appNonResponsive.min.css; ./node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' Resources/Public/Css/appNonResponsive.min.css -o Resources/Public/Css/appNonResponsive.min.css",
         "devNonResponsiveCss": "npm run devMainNonResponsiveCss; npm run devPrintCss",
-
         "createMainResponsiveCss": "./node_modules/.bin/node-sass --output-style compressed Resources/Private/Scss/App-responsive.scss Resources/Public/Css/appResponsive.min.css; ./node_modules/.bin/postcss --use autoprefixer --no-map -b 'last 2 versions' Resources/Public/Css/appResponsive.min.css -o Resources/Public/Css/appResponsive.min.css",
         "createResponsiveCss": "npm run createMainResponsiveCss; npm run createPrintCss",
         "devMainResponsiveCss": "./node_modules/.bin/node-sass --source-map true Resources/Private/Scss/App-responsive.scss Resources/Public/Css/appResponsive.min.css; ./node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' Resources/Public/Css/appResponsive.min.css -o Resources/Public/Css/appResponsive.min.css",
         "devResponsiveCss": "npm run devMainResponsiveCss; npm run devPrintCss",
-
         "buildAll": "npm run precommit; npm run createResponsiveCss; npm run createNonResponsiveCss; npm run createPrintCss; node build.js; npm run babel; npm run uglifyjs",
         "devAll": "npm run lintJs && npm run devResponsiveCss && npm run devNonResponsiveCss && node build.js && npm run babel && cp ./Build/JavaScript/app.js ./Resources/Public/JavaScript/",
         "watchAll": "nodemon -e scss,Js -x \"npm run lintJs && npm run devResponsiveCss && npm run devNonResponsiveCss && node build.js && npm run babel && cp ./Build/JavaScript/app.js ./Resources/Public/JavaScript/\"",
-        "devBrowser": "concurrently --kill-others --prefix \"[{name}]\" --names \"SCSS & JS,BROWER SYNC\" \"npm run watchAll\" \"npm run browsersync\"",
-
         "importTestpages": "./../../../../import-testpages.sh typo3conf/ext/tmpl_fidaac/Tests/T3D_testpages.t3d 8",
-
         "testPrepareSelenium": "./node_modules/.bin/selenium-standalone install && ./node_modules/.bin/selenium-standalone start",
         "testPrepareBrowserstack": "./Tests/libs/BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY",
         "testSeleniumChrome": "./node_modules/.bin/codeceptjs run --steps --config ./Tests/libs/codecept.conf-selenium-chrome.js",
