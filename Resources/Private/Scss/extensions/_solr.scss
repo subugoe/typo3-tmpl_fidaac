@@ -105,6 +105,17 @@
                     color: inherit;
                 }
             }
+
+            a {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        svg {
+            fill: $brand;
+            width: 1.5em;
+            height: 1.5em;
         }
 
         a {
@@ -137,6 +148,14 @@
     }
 
     .tx-solr-q {
+        @include media-m {
+            margin-bottom: $magic;
+        }
+
+        @include media-s {
+            margin-bottom: $magic;
+        }
+
         @include form-input-text;
         @include form-input-text--font-size-large();
         width: width(l-7);
