@@ -47,8 +47,7 @@ Scenario('Check images are shown correct in news in S', function*(I) {
 Scenario('Check news pagination are shown correct in news in M', function*(I) {
     I.amOnPage('/home/all-posts');
     yield I.changeViewportSize(800, 600);
-    const numBottom = yield I.getPositionTop('.page-navigation:first-of-type .f3-widget-paginator');
-    const pageBottom = yield I.getPositionTop('.page-navigation:first-of-type p');
-    assert.equal(numBottom, pageBottom);
+    const numBottom = yield I.grabCssPropertyFrom('.page-navigation:first-of-type .f3-widget-paginator', 'height');
+    assert.equal(numBottom, '32px');
 });
 
