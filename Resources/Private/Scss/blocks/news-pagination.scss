@@ -20,29 +20,17 @@
 }
 
 .news .page-navigation p {
-    @include media-l {
-        width: width(l-3);
-        text-align: right;
-    }
-
-    @include media-m {
-        width: width(m-3);
-        text-align: right;
-    }
-
-    @include media-s {
-        width: width(s-6);
-    }
+    display: none;
 }
 
 .news .f3-widget-paginator {
     @include media-l {
-        width: width(l-7);
+        width: width(l-10);
         margin: 0 0 $magic;
     }
 
     @include media-m {
-        width: width(m-7);
+        width: width(m-10);
         margin: 0 0 $magic;
     }
 
