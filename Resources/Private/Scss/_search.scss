@@ -13,29 +13,32 @@
 }
 
 .search-bar_inner {
+    @include media-s {
+        min-height: 400px;
+        height: 100%;
+        position: relative;
+        justify-content: flex-start;
+    }
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-    min-height: 390px;
-    position: relative;
 }
 
 .search-tips {
     @include link-marker;
 
     @include media-l {
-        font-size: $large-font-size-l -2px;
-        padding-top: ($magic-l);
+        font-size: $base-font-size-l + 2px;
+        padding-top: ($magic-l / 2);
     }
 
     @include media-m {
-        font-size: $large-font-size-m -2px;
-        padding-top: ($magic-m);
+        font-size: $base-font-size-m + 2px;
+        padding-top: ($magic-m / 2);
     }
 
     @include media-s {
-        font-size: $large-font-size-s -2px;
+        font-size: $base-font-size-s + 2px;
         padding-top: ($magic-s);
     }
 
