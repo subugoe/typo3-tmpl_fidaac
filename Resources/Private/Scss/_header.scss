@@ -231,7 +231,7 @@
     }
 
     @include media-s {
-        margin-top: $magic-s;
+        margin: $magic-s 0;
         min-width: 320px;
     }
     color: $white;

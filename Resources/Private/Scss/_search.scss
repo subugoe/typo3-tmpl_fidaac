@@ -12,8 +12,21 @@
 .search-tips {
     @include link-marker;
 
-    font-size: $large-font-size-l -2px;
-    padding-top: ($magic * 2);
+    @include media-l {
+        font-size: $large-font-size-l -2px;
+        padding-top: ($magic-l);
+    }
+
+    @include media-m {
+        font-size: $large-font-size-m -2px;
+        padding-top: ($magic-m);
+    }
+
+    @include media-s {
+        font-size: $large-font-size-s -2px;
+        padding-top: ($magic-s);
+    }
+
     text-align: right;
 
     a,
@@ -34,21 +47,22 @@
 .search-bar-title__text-title {
     @include media-l {
         margin-left: $magic-l;
+        font-size: $huge-font-size-l - 1;
+        padding: $magic-l 0;
     }
 
     @include media-m {
         margin-left: $magic-m;
+        font-size: $huge-font-size-m - 1;
+        padding: $magic-m 0;
     }
 
     @include media-s {
         margin-left: $magic-s;
+        font-size: $huge-font-size-s - 1;
+        padding: $magic-s 0;
     }
-    font-size: $huge-font-size-l - 1;
     font-weight: 600;
-    line-height: $huge-line-height-l + 10;
-    padding-top: $magic-l;
-    padding-bottom: $magic-l/2;
-    padding-right: ($magic * 2);
 }
 
 .search-bar-title__text-subtitle {
@@ -58,20 +72,18 @@
 
 .search-bar-title__content {
     @include media-l {
-        @include span-l-12;
+        width: width(l-12);
     }
 
     @include media-m {
-        @include span-m-12;
+        width: width(m-12);
     }
 
     @include media-s {
-        @include span-s-6;
+        width: width(s-6);
     }
     display: flex;
     flex-grow: 0;
-    padding-bottom: ($magic * 1.5);
-    padding-top: ($magic * 1.5);
 }
 
 
@@ -113,6 +125,7 @@
     display: flex;
     justify-content: space-between;
     padding: 16px inherit;
+    width: 100%;
 
     form {
         display: inline-flex;
@@ -122,15 +135,16 @@
 
 .search-bar-select {
     @include media-l {
-        width: width(l-4);
+        width: width(l-4) - 2 * $magic-l;
     }
 
     @include media-m {
-        width: width(m-4);
+        width: width(m-4) - 2 * $magic-m;
     }
 
     @include media-s {
         width: width(s-6);
+        margin-bottom: $magic-s * 2;
     }
     display: flex;
     flex-flow: column nowrap;
@@ -164,21 +178,27 @@
 
 .search-bar-input {
     @include media-l {
-        flex-basis: width(l-4);
+        width: width(l-4) - 2 * $magic-l;
+        margin-left: $magic-l;
     }
 
     @include media-m {
-        flex-basis: width(m-4);
+        width: width(m-4) - $magic-m * 2;
+        margin-left: $magic-m;
     }
 
     @include media-s {
-        flex-basis: width(s-6);
+        width: width(s-6);
+        margin-bottom: $magic-s * 2;
     }
     display: flex;
+    align-items: center;
 
     input {
         @include form-input-text;
         @include form-input-text--font-size-large;
+        padding: $magic $magic;
+        width: 100%;
     }
 }
 
@@ -186,11 +206,13 @@
 
 .search-bar-misc {
     @include media-l {
-        width: width(l-4);
+        width: width(l-4) - 2 * $magic-l;
+        margin-right: $magic-l;
     }
 
     @include media-m {
-        width: width(m-4);
+        width: width(m-4) - 2 * $magic-m;
+        margin-right: $magic-m;
     }
 
     @include media-s {
