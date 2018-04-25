@@ -1,14 +1,44 @@
-.search-bar_inner {
-    .search-tips {
-        display: inline;
+.search-bar_outer {
+    @include media-s {
+        position: absolute;
+        flex: auto;
+        margin: 0;
+        top: 117px;
+        bottom: 0;
+        width: 100%;
+        background: $white;
+        z-index: 500;
     }
+    display: none;
+}
+
+.search-bar_inner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 390px;
+    position: relative;
 }
 
 .search-tips {
     @include link-marker;
 
-    font-size: $large-font-size-l -2px;
-    padding-top: ($magic * 2);
+    @include media-l {
+        font-size: $large-font-size-l -2px;
+        padding-top: ($magic-l);
+    }
+
+    @include media-m {
+        font-size: $large-font-size-m -2px;
+        padding-top: ($magic-m);
+    }
+
+    @include media-s {
+        font-size: $large-font-size-s -2px;
+        padding-top: ($magic-s);
+    }
+
     text-align: right;
 
     a,
@@ -19,19 +49,217 @@
     }
 }
 
-.pagination {
+.search-bar-title {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    width: 100%;
+    background-color: $accent;
+    justify-content: center;
+}
 
-    svg {
-        fill: $brand;
-        width: 1.5em;
-        height: 1.5em;
+.search-bar-title__text-title {
+    @include media-l {
+        margin-left: $magic-l;
+        font-size: $huge-font-size-l - 1;
+        padding: $magic-l 0;
     }
 
-    li a {
-        display: flex;
-        align-items: center;
+    @include media-m {
+        margin-left: $magic-m;
+        font-size: $huge-font-size-m - 1;
+        padding: $magic-m 0;
+    }
+
+    @include media-s {
+        margin-left: $magic-s;
+        font-size: $huge-font-size-s - 1;
+        padding: $magic-s 0;
+    }
+    font-weight: 600;
+}
+
+.search-bar-title__text-subtitle {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.search-bar-title__content {
+    @include media-l {
+        width: width(l-12);
+    }
+
+    @include media-m {
+        width: width(m-12);
+    }
+
+    @include media-s {
+        width: width(s-6);
+    }
+    display: flex;
+    flex-grow: 0;
+}
+
+
+
+.search-bar-form {
+    @include media-l {
+        width: width(l-12);
+        flex-wrap: nowrap;
+        padding: $magic-l 0;
+    }
+
+    @include media-m {
+        width: width(m-12);
+        flex-wrap: nowrap;
+        padding: $magic-m 0;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        flex-wrap: wrap;
+        padding: $magic-s 0;
+        margin-bottom: $magic-s * 4;
+    }
+
+    @include wrap--outer;
+    display: flex;
+}
+
+.search-bar-form__content {
+    @include media-l {
+        flex-flow: row nowrap;
+    }
+
+    @include media-m {
+        flex-flow: row nowrap;
+    }
+
+    @include media-s {
+        flex-flow: column wrap;
+    }
+    display: flex;
+    justify-content: space-between;
+    padding: 16px inherit;
+    width: 100%;
+
+    form {
+        display: inline-flex;
+    }
+}
+
+
+.search-bar-input {
+    @include media-l {
+        width: width(l-4) - 2 * $magic-l;
+        margin-left: $magic-l;
+    }
+
+    @include media-m {
+        width: width(m-4) - $magic-m * 2;
+        margin-left: $magic-m;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        margin-bottom: $magic-s * 4;
+    }
+    display: flex;
+    align-items: center;
+
+    input {
+        @include form-input-text;
+        @include form-input-text--font-size-large;
+        padding: $magic $magic;
+        width: 100%;
+    }
+}
+
+.search-bar-select {
+    @include media-l {
+        width: width(l-4) - 2 * $magic-l;
+    }
+
+    @include media-m {
+        width: width(m-4) - 2 * $magic-m;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        margin-bottom: $magic-s * 4;
+    }
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.search-bar-select-item {
+    @include form-radio;
+
+    @include media-l {
+        width: width(l-4);
+    }
+
+    @include media-m {
+        width: 100%;
+    }
+
+    @include media-s {
+        width: width(s-6);
+    }
+
+    padding-top: ($magic / 2);
+
+    label {
+        font-size: 22px;
+        line-height: normal !important;
+    }
+}
+
+.search-bar-misc {
+    @include media-l {
+        width: width(l-4) - 2 * $magic-l;
+        margin-right: $magic-l;
+    }
+
+    @include media-m {
+        width: width(m-4) - 2 * $magic-m;
+        margin-right: $magic-m;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        margin-bottom: $magic-s * 4;
+    }
+    display: flex;
+    flex-flow: column nowrap;
+
+    button {
+        @include button;
+        @include button-color--brand;
+        @include button-size--default;
+    }
+}
+
+#search-bar-close {
+    @include media-l {
+        display: none;
+    }
+
+    @include media-m {
+        display: none;
+    }
+
+    @include media-s {
+        @include button;
+        @include button-color--brand;
+        @include button-size--small;
+        width: width(s-4);
+        position: absolute;
+        bottom: $magic-s * 4;
+    }
+
+    svg {
+        height: 1em;
+        width: 1em;
+        margin-right: 0.25em;
     }
 }

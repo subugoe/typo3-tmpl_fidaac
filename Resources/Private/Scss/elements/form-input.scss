@@ -1,8 +1,18 @@
 @mixin form-input-text {
+    @include media-l {
+        font-size: $base-font-size-l + 2;
+    }
+
+    @include media-m {
+        font-size: $base-font-size-m + 2;
+    }
+
+    @include media-s {
+        font-size: $base-font-size-s;
+    }
     border: none;
     border-bottom: 1px solid $shadeDarkest;
     padding: 0;
-    font-size: $base-font-size-l + 2;
     font-family: "Open Sans";
     background-color: unset;
 }

@@ -30,6 +30,35 @@
 }
 
 @mixin button-size--default {
-    font-size: $large-font-size-l - 2; // 22px
-    padding: $magic;
+    @include media-l {
+        font-size: $large-font-size-l - 2; // 22px
+        padding: $magic;
+    }
+
+    @include media-m {
+        font-size: $large-font-size-m - 2;
+        padding: $magic-m / 2;
+    }
+
+    @include media-s {
+        font-size: $large-font-size-s;
+        padding: $magic-s / 2;
+    }
+}
+
+@mixin button-size--small {
+    @include media-l {
+        font-size: $base-font-size-l - 2; // 22px
+        padding: $magic;
+    }
+
+    @include media-m {
+        font-size: $base-font-size-m - 2;
+        padding: $magic-m / 2;
+    }
+
+    @include media-s {
+        font-size: $base-font-size-s;
+        padding: $magic-s;
+    }
 }

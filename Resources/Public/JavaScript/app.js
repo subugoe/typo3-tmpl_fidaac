@@ -24,13 +24,6 @@ $(document).ready(function () {
         searchForm.attr('name', parameters.name);
     };
 
-    $('.header_search').click(function () {
-        $('.js-search-bar').slideToggle(250);
-        initializeSearchForm();
-
-        return false;
-    });
-
     $('input[name=search-choice]').change(function (event) {
         if (event.target.id === 'choice-website') {
             var parameters = searchEngineSettingsWebsite;
@@ -63,6 +56,34 @@ $(document).ready(function () {
 
     $('.pagination .previous a').html('<svg><use xlink:href="#icon-caret-left"/></svg>');
     $('.pagination .last.next a').html('<svg><use xlink:href="#icon-caret-right"/></svg>');
+
+    /**
+     * make sure search bar is displayed correctly for all screen widths
+     */
+    $('.header_search').click(function () {
+        if ($(window).innerWidth() < 768) {
+            $('.search-bar_outer').show();
+            $('.page').css('overflow', 'hidden');
+        } else {
+            $('.search-bar_outer').slideToggle(250);
+        }
+        initializeSearchForm();
+
+        return false;
+    });
+
+    $('#search-bar-close').click(function () {
+        $('.search-bar_outer').hide();
+        $('.page').css('overflow', 'visible');
+    });
+
+    window.addEventListener('resize', function () {
+        if ($('#search-bar-close').css('display') === 'flex') {
+            $('.page').css('overflow', 'hidden');
+        } else {
+            $('.page').css('overflow', 'visible');
+        }
+    });
 });
 
 /**
@@ -184,6 +205,10 @@ $(document).ready(function () {
      */
     // hide, so that space is preserved
     $('.toTop_inner').css('visibility', 'hidden');
+
+    document.getElementById('search-bar-close').addEventListener('visibilitychange', function () {
+        console.log('resize');
+    });
 });
 
 $(document).ready(function () {
