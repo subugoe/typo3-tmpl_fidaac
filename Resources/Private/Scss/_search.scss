@@ -1,4 +1,14 @@
 .search-bar_outer {
+    @include media-s {
+        position: absolute;
+        flex: auto;
+        margin: 0;
+        top: 117px;
+        width: 100%;
+        background: $white;
+        z-index: 500;
+        height: 100%;
+    }
     display: none;
 }
 
