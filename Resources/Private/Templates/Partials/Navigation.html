@@ -1,9 +1,25 @@
 <div class="navigation_outer">
     <div class="navigation_inner">
+        <div class="navigation-title">
+            <div class="navigation-title_content">
+                <span class="navigation-title_text-title">
+                    <f:translate extensionName="TmplFidaac" key="menu">Menu</f:translate>
+                </span>
+            </div>
+        </div>
         <div class="navigation_default">
             <ul class="navigation_default-menu">
                 <f:cObject typoscriptObjectPath="lib.navMenu"/>
             </ul>
+        </div>
+        <div id="navigation-close">
+            <svg>
+                <use xlink:href="#icon-close"/>
+                <span class="visible-hidden">
+                    <f:translate key="close" extensionName="TmplFidaac" />
+                 </span>
+            </svg>
+            <f:translate extensionName="TmplFidaac" key="close">Close</f:translate>
         </div>
     </div>
 </div>
