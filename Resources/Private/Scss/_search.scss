@@ -210,10 +210,55 @@
     }
 
     padding-top: ($magic / 2);
+    align-items: center;
 
     label {
         font-size: 22px;
         line-height: normal !important;
+    }
+
+    &:first-child input {
+        &:checked + label::before,
+        &:not(:checked) + label::before {
+            @include media-l {
+                top: 8px;
+            }
+
+            @include media-m {
+                top: 20px;
+            }
+
+            @include media-s {
+                top: 8px;
+            }
+        }
+
+        &:checked + label::after,
+        &:not(:checked) + label::after {
+            @include media-l {
+                top: 12px;
+            }
+
+            @include media-m {
+                top: 24px;
+            }
+
+            @include media-s {
+                top: 12px;
+            }
+        }
+    }
+
+    &:nth-of-type(2) input {
+        &:checked + label::before,
+        &:not(:checked) + label::before {
+            top: 8px;
+        }
+
+        &:checked + label::after,
+        &:not(:checked) + label::after {
+            top: 12px;
+        }
     }
 }
 
