@@ -1,167 +1,183 @@
-.tx_solr {
-    #tx-solr-search-form-pi-results {
-        display: flex;
-        flex-basis: 100%;
-        width: 100%;
-        flex-wrap: wrap;
-        margin-bottom: $magic-l;
-        justify-content: center;
+
+.tx_solr #tx-solr-search-form-pi-results {
+    display: flex;
+    flex-basis: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: $magic-l;
+    justify-content: center;
+}
+
+.tx_solr #results-per-page {
+    margin-bottom: $magic-l;
+
+    select {
+        @include form-select;
     }
+}
 
-    #results-per-page {
-        margin-bottom: $magic-l;
+.tx_solr .button-read-more {
+    @include cols(3);
+    @include button;
+    @include button-color--brand;
+    @include button-size--default;
 
-        select {
-            @include form-select;
-        }
+    svg {
+        margin-right: $magic--half;
+        height: 1em;
+        width: 1em;
     }
+}
 
-    .button-read-more {
-        @include cols(3);
-        @include button;
-        @include button-color--brand;
-        @include button-size--default;
+.tx_solr .results-list {
+    padding-left: 0;
 
-        svg {
-            margin-right: $magic--half;
-            height: 1em;
-            width: 1em;
-        }
+    li::before {
+        content: "";
     }
+}
 
-    .results-list {
-        padding-left: 0;
+.tx_solr .result-content {
+    a {
+        color: inherit;
 
-        li::before {
+        &::after {
             content: "";
         }
     }
+}
 
-    .result-content {
-        a {
-            color: inherit;
+.tx_solr .results-entry::before {
+    bottom: 0;
+    padding: 0;
+}
 
-            &::after {
-                content: "";
-            }
-        }
+.tx_solr .results-topic {
+    a {
+        color: inherit;
     }
+}
 
-    .results-entry::before {
-        bottom: 0;
-        padding: 0;
-    }
+// Highlighting
+.tx_solr .results-highlight,
+.tx_solr .ce-sword {
+    background-color: $accent;
+    padding: 0 $magic / 2;
+}
 
-    .results-topic {
-        a {
-            color: inherit;
-        }
-    }
+.tx_solr .relevance {
+    display: flex;
+    width: 100%;
+}
 
-    // Highlighting
-    .results-highlight,
-    .ce-sword {
-        background-color: $accent;
-        padding: 0 $magic / 2;
-    }
+.tx_solr .relevance-label {
+    margin-right: $magic;
+}
 
-    .relevance {
+.tx_solr .relevance-bar {
+    display: none;
+}
+
+.tx_solr .pagination {
+    display: flex;
+
+    li {
         display: flex;
-        width: 100%;
-    }
+        align-items: center;
+        justify-content: center;
+        height: $magic-l * 2;
+        width: $magic-l * 2;
+        margin: 0 $magic;
 
-    .relevance-label {
-        margin-right: $magic;
-    }
+        &:first-of-type {
+            margin-left: 0;
+        }
 
-    .relevance-bar {
-        display: none;
-    }
+        &::before {
+            content: "";
+            padding: 0;
+        }
 
-    .pagination {
-        display: flex;
-
-        li {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: $magic-l * 2;
-            width: $magic-l * 2;
-            margin: 0 $magic;
-
-            &:first-of-type {
-                margin-left: 0;
-            }
-
-            &::before {
-                content: "";
-                padding: 0;
-            }
-
-            &.active {
-                background-color: $brand;
-                color: $white;
-
-                a {
-                    color: inherit;
-                }
-            }
+        &.active {
+            background-color: $brand;
+            color: $white;
 
             a {
-                display: flex;
-                align-items: center;
+                color: inherit;
             }
         }
 
-        svg {
-            fill: $brand;
-            width: 1.5em;
-            height: 1.5em;
-        }
-
         a {
-            @include link-empty();
+            display: flex;
+            align-items: center;
         }
     }
 
-    .tx-solr-search-form {
-        display: flex;
-        flex-basis: 100%;
-        flex-wrap: wrap;
-
-        br {
-            display: none;
-        }
+    svg {
+        fill: $brand;
+        width: 1.5em;
+        height: 1.5em;
     }
 
-    .tx-solr-submit {
-        @include cols(3);
-        @include button;
-        @include button-color--brand;
-        @include button-size--default;
+    a {
+        @include link-empty();
+    }
+}
+
+.tx_solr .tx-solr-search-form {
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+
+    br {
+        display: none;
+    }
+}
+
+.tx_solr .tx-solr-submit {
+    @include media-l {
+        width: width(l-3) - $magic;
         margin-left: $magic;
-
-        svg {
-            margin-right: $magic--half;
-            height: 1em;
-            width: 1em;
-        }
     }
 
-    .tx-solr-q {
-        @include media-m {
-            margin-bottom: $magic;
-        }
+    @include media-m {
+        width: width(m-3) - $magic;
+        margin-left: $magic;
+    }
 
-        @include media-s {
-            margin-bottom: $magic;
-        }
+    @include media-s {
+        width: width(s-3);
+    }
 
-        @include form-input-text;
-        @include form-input-text--font-size-large();
-        width: width(l-7);
+    @include button;
+    @include button-color--brand;
+    @include button-size--default;
+
+    svg {
+        margin-right: $magic--half;
+        height: 1em;
+        width: 1em;
+    }
+}
+
+.tx_solr .tx-solr-q {
+    @include media-l {
+        width: width(l-7) - $magic;
         margin-right: $magic;
     }
+
+    @include media-m {
+        width: width(m-7) - $magic;
+        margin-right: $magic;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        margin-bottom: $magic;
+    }
+
+    @include form-input-text;
+    @include form-input-text--font-size-large();
 }
 
 // Highlighting
