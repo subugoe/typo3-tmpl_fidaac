@@ -45,7 +45,7 @@ Scenario('Check caption aligned right', function* (I) {
 Scenario('Check image overlays - 885', function* (I) {
     // content element
     I.amOnPage('/request-it/');
-    I.click('figure img');
+    I.click('.content figure img');
     I.seeElement('#lightbox');
     // news
     I.amOnPage('/home/all-posts/detailed-archived-news/detail/News/paradise-lost-als-lyrische-fundgrube/');
