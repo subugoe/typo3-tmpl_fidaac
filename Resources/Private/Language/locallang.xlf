@@ -6,6 +6,9 @@
             <authorEmail>blache@sub.uni-goettingen.de</authorEmail>
         </header>
         <body>
+            <trans-unit id="close" xml:space="preserve">
+                <source>Close</source>
+            </trans-unit>
             <trans-unit id="country-SUB">
                 <source>, Germany</source>
             </trans-unit>
@@ -198,9 +201,6 @@
             <!-- search bar -->
             <trans-unit id="search_library" xml:space="preserve">
                 <source>Catalogues <![CDATA[&]]> Collections</source>
-            </trans-unit>
-            <trans-unit id="search_close" xml:space="preserve">
-                <source>Close</source>
             </trans-unit>
             <trans-unit id="search_website" xml:space="preserve">
                 <source>Website</source>
