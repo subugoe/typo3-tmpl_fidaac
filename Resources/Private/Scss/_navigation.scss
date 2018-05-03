@@ -10,9 +10,7 @@
     }
 
     @include media-s {
-        display: none;
         position: absolute;
-        flex: auto;
         margin: 0;
         top: 117px;
         bottom: 0;
@@ -23,8 +21,6 @@
     }
     list-style-type: none;
     width: 100%;
-    flex: 0 0 auto;
-    justify-content: center;
 
     a {
         color: $shadeDarkest;
@@ -55,9 +51,7 @@
     @include media-s {
         @include span-m-12;
         font-size: $large-font-size-s - 2;
-        display: flex;
         align-items: center;
-        position: relative;
         justify-content: flex-start;
         flex-direction: column;
     }
@@ -180,38 +174,42 @@
     @include media-l {
         @include span-l-12;
         flex-direction: row;
+        padding: 0;
     }
 
     @include media-m {
         @include span-m-12;
         flex-direction: row;
+        padding: 0;
     }
 
     @include media-s {
         @include span-s-6;
         flex-direction: column;
+        padding: 0;
     }
     display: flex;
     justify-content: stretch;
-    padding: 0;
 }
 
 .navigation_default-menuItem {
     @include media-l {
         align-items: center;
         background-color: $shadeLightest;
+        padding: $magic-l/2 0;
     }
 
     @include media-m {
         align-items: center;
         background-color: $shadeLightest;
+        padding: $magic-l/2 0;
     }
 
     @include media-s {
         align-items: stretch;
         background-color: $white;
+        padding: $magic/2 0;
     }
-    padding: $magic-l/2 0;
     margin: 0;
     display: flex;
     align-items: center;
@@ -300,6 +298,29 @@
     }
 }
 
+.navigation_default-additional {
+    @include media-s {
+        width: width(s-6);
+        display: flex;
+        flex-direction: column;
+        padding: $magic 0 0 0;
+        justify-content: stretch;
+        align-items: center;
+    }
+
+    li {
+        list-style-type: none;
+
+        &::before {
+            content: "";
+        }
+    }
+
+    li svg {
+        padding-right: $magic;
+    }
+}
+
 .navigation_default-submenu {
     @include media-l {
         width: width(l-4);
@@ -329,7 +350,6 @@
         left: 0;
         bottom: 0;
         background: $white;
-        display: block;
     }
     list-style-type: none;
     flex-flow: column;
@@ -354,6 +374,7 @@
 
 .navigation_default-submenuContainer-outer {
     @include media-l {
+        display: flex;
         background: $shadeLighter;
         top: 52px;
         visibility: hidden;
@@ -361,6 +382,7 @@
     }
 
     @include media-m {
+        display: flex;
         background: $shadeLighter;
         top: 52px;
         visibility: hidden;
@@ -369,11 +391,9 @@
 
     @include media-s {
         background: $white;
-        top: 0;
+        top: 36px;
         bottom: 0;
-        display: none;
     }
-    display: flex;
     flex: 1 0 100vh;
     position: absolute;
     right: 0;
@@ -393,7 +413,7 @@
         width: width(m-12);
     }
 
-    @include media-m {
+    @include media-s {
         width: width(s-6);
     }
     display: flex;
@@ -405,22 +425,25 @@
     @include media-l {
         justify-content: flex-start;
         flex-grow: 0;
+        padding: $magic/4 0;
+        margin: $magic/4 0;
     }
 
     @include media-m {
         justify-content: flex-start;
         flex-grow: 0;
+        padding: $magic/4 0;
+        margin: $magic/4 0;
     }
 
     @include media-s {
         justify-content: space-between;
         align-self: stretch;
         flex-grow: 1;
+        padding: $magic/2 0;
     }
     display: flex;
     align-items: center;
-    padding: $magic/4 0;
-    margin: $magic/4 0;
 
     &::before {
         content: "";
@@ -496,12 +519,6 @@
     }
 
     @include media-m {
-        .navigation_default-submenu .navigation_default-submenu {
-            display: none;
-        }
-    }
-
-    @include media-s {
         .navigation_default-submenu .navigation_default-submenu {
             display: none;
         }

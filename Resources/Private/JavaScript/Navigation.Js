@@ -32,8 +32,7 @@ $(document).ready(() => {
      * + javascript is enabled -> the second level of submenus are hidden and created via ajax
      * + javascript is not enabled -> the second level of submenus are shown via css
      */
-    if ($(window).innerWidth() > 767) {
-        const createURLForAjax = (path) => {
+        const createURLForAjaxInML = (path) => {
             let url = '';
             // ie10 doesn't recognice window.location.origin...
             if (window.location.origin) {
@@ -53,91 +52,136 @@ $(document).ready(() => {
             return url;
         };
 
-        const makePathBold = function () {
+        const makePathBoldInML = function () {
             const actUrl = window.location.pathname;
             $(`a[href$="${actUrl}"]`).parents('.navigation_default-submenuItem').first().removeClass('-no').addClass('-cur');
 
         };
 
-        const removeSubsubmenus = function (subsubmenu) {
+        const removeSubsubmenusInML = function (subsubmenu) {
             $(subsubmenu).parents('.navigation_default-submenuContainer-inner').find('.navigation_default-submenu').first().siblings().remove();
         };
 
-        const showPath = function () {
-            const url = createURLForAjax($('.navigation_default-submenuItem.-actSub').find('a').first().attr('href'));
+        const showPathInML = function () {
+            const url = createURLForAjaxInML($('.navigation_default-submenuItem.-actSub').find('a').first().attr('href'));
             const menu = $('.navigation_default-submenuItem.-actSub').parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
             $(menu).find('.navigation_default-submenu').last().load(url, (response, status) => {
                 if (status === 'error') {
                     console.log('Error loading submenu');
                 } else if (status === 'success') {
-                    makePathBold();
+                    makePathBoldInML();
                 }
             });
         };
 
 
         $('.navigation_default-submenuItem.-sub, .navigation_default-submenuItem.-curIfSub, .navigation_default-submenuItem.-actSub').on('mouseenter', function () {
-            const url = createURLForAjax($(this).find('a').first().attr('href'));
-            removeSubsubmenus(this);
+            if (window.innerWidth < 768) {
+                return false;
+            }
+            const url = createURLForAjaxInML($(this).find('a').first().attr('href'));
+            removeSubsubmenusInML(this);
             const menu = $(this).parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
             $(menu).find('.navigation_default-submenu').last().load(url, (response, status) => {
                 if (status === 'error') {
                     console.log('Error loading submenu');
                 }
-                makePathBold();
+                makePathBoldInML();
             });
+            return true;
         });
 
         $('.navigation_default-submenuItem.-no').on('mouseenter', function () {
-            removeSubsubmenus(this);
+            if (window.innerWidth < 768) {
+                return false;
+            }
+            removeSubsubmenusInML(this);
+            return true;
         });
 
         $('.navigation_default-menuItem').on('mouseenter', function () {
-            $('.navigation_default-submenuItem').removeClass('-highlight');
-            removeSubsubmenus($(this).find('.navigation_default-submenu'));
-            if ($(this).find('.navigation_default-submenuItem.-cur').length > 0) {
-                showPath();
+            if (window.innerWidth < 768) {
+                return false;
             }
+            $('.navigation_default-submenuItem').removeClass('-highlight');
+            removeSubsubmenusInML($(this).find('.navigation_default-submenu'));
+            if ($(this).find('.navigation_default-submenuItem.-cur').length > 0) {
+                showPathInML();
+            }
+            return true;
         });
 
         $('.navigation_default-submenuItem').on('mouseenter', function () {
+            if (window.innerWidth > 767) {
+                return false;
+            }
             $('.navigation_default-submenuItem').removeClass('-highlight');
             $(this).addClass('-highlight');
+            return true;
         });
-    }
+
 
     /**
      * make sure navigation is displayed correctly in S
      */
-    const showSubmenu = (el) => {
-        const text = $(el).siblings('a').html();
-        $('.navigation-title_text-title').html(text);
-        $(el).siblings('.navigation_default-submenuContainer-outer').show();
+    const addNavigationLinkInS = () => {
+        if ($('.navigation_default-additional').length === 1) {
+            return false;
+        }
+        const text = '<ul class="navigation_default-additional"><li></ul>';
+        $('.navigation_default').prepend(text);
+        return true;
+    };
 
-        $('.navigation-title_text-title').off('click');
-        $('.navigation-title_text-title').on('click', () => {
-            $(el).siblings('.navigation_default-submenuContainer-outer').hide();
+    const removeNavigationLinkInS = () => {
+        $('.navigation_default-additional').remove();
+    };
+
+    const fillInAdditionalLink = (text) => {
+        if (text === '') {
+            $('.navigation_default-additional li').html('');
+        } else {
+            $('.navigation_default-additional li').html(`<svg class="svg-left"><use xlink:href="#icon-caret-left"/></svg>${text}`);
+        }
+    };
+
+    const showSubmenuInS = (el) => {
+        const parent = $(el).siblings('a').html();
+        const container = $(el).siblings('.navigation_default-submenuContainer-outer');
+        $('.navigation-title_text-title').html(parent);
+        $(container).removeClass('-hide');
+        $(container).find('.navigation_default-submenu:first-child').removeClass('-hide');
+        $(el).parents('.navigation_default-submenu').find('.navigation_default-submenu').removeClass('-hide');
+        fillInAdditionalLink('Menu');
+
+        $('.navigation_default-additional, .navigation-title_text-title').off('click');
+        $('.navigation_default-additional, .navigation-title_text-title').on('click', () => {
+            $(el).siblings('.navigation_default-submenuContainer-outer').addClass('-hide');
             $('.navigation-title_text-title').html('Menu');
+            fillInAdditionalLink('');
         });
     };
 
-    const showSubsubmenu = (el) => {
-        const text = $(el).siblings('a').html();
-        $('.navigation-title_text-title').html(text);
-        $(el).siblings('.navigation_default-submenu').show();
-        $(el).parents('.navigation_default-submenu').find('.navigation_default-submenu').siblings('.navigation_default-submenu').hide();
+    const showSubsubmenuInS = (el) => {
+        const parent = $(el).siblings('a').html();
+        $('.navigation-title_text-title').html(parent);
+        const grandparent = $(el).parents('.navigation_default-menu').find('a').first().text();
+        fillInAdditionalLink(grandparent);
+        $(el).siblings('.navigation_default-submenu').removeClass('-hide');
+        $(el).parents('.navigation_default-submenu').find('.navigation_default-submenu').siblings('.navigation_default-submenu').addClass('-hide');
 
-        $('.navigation-title_text-title').off('click');
-        $('.navigation-title_text-title').on('click', () => {
-            showSubmenu($(el).parents('.navigation_default-menuItem').find('.-svg-menu'));
-            $(el).parents('.navigation_default-submenu').first().find('.navigation_default-submenu').hide();
+        $('.navigation_default-additional, .navigation-title_text-title').off('click');
+        $('.navigation_default-additional, .navigation-title_text-title').on('click', () => {
+            showSubmenuInS($(el).parents('.navigation_default-menuItem').find('.-svg-menu'));
+            $(el).parents('.navigation_default-submenu').first().find('.navigation_default-submenu').addClass('-hide');
         });
     };
 
     $('.header_menu').click(() => {
-        if ($(window).innerWidth() < 768) {
-            $('.navigation_outer').show();
+        if (window.innerWidth < 768) {
+            $('.navigation_outer').removeClass('-hide');
             $('.page').css('overflow', 'hidden');
+            $('.navigation_default-submenuContainer-inner > .navigation_default-submenu').first().removeClass('-hide');
             $('.navigation-title_text-title').html('Menu');
         } else {
             $('.navigation_outer').slideToggle(250);
@@ -147,27 +191,40 @@ $(document).ready(() => {
     });
 
     $('.navigation_default-menuItem .-svg-menu').on('click', function () {
-        showSubmenu($(this));
+        showSubmenuInS($(this));
     });
 
     $('.navigation_default-submenuItem .-svg-submenu').on('click', function () {
-        showSubsubmenu($(this));
+        showSubsubmenuInS($(this));
     });
 
     $('#navigation-close').click(() => {
-        $('.navigation_outer').hide();
+        $('.navigation_outer').addClass('-hide');
+        $('.navigation_default-submenuContainer-outer').addClass('-hide');
+        $('.navigation_default-submenu').addClass('-hide');
         $('.page').css('overflow', 'visible');
-        $('.navigation_default-submenuContainer-outer').hide();
         return false;
     });
 
+    if (window.innerWidth < 768) {
+        $('.navigation_default-submenuContainer-outer').addClass('-hide');
+        $('.navigation_outer').addClass('-hide');
+        $('.navigation_default-submenu').addClass('-hide');
+        addNavigationLinkInS();
+    }
+
     window.addEventListener('resize', function () {
-        if ($('#navigation-close').css('display') === 'flex') {
-            $('.page').css('overflow', 'hidden');
-            $('.navigation_outer').hide();
-        } else {
+
+        if (window.innerWidth < 768) {
+            $('.navigation_outer').addClass('-hide');
+            $('.navigation_default-submenuContainer-outer').addClass('-hide');
+            $('.navigation_default-submenu').addClass('-hide');
             $('.page').css('overflow', 'visible');
-            $('.navigation_outer').show();
+            addNavigationLinkInS();
+        } else {
+            $('.-hide').removeClass('-hide');
+            $('.page').css('overflow', 'visible');
+            removeNavigationLinkInS();
         }
     });
 
