@@ -305,14 +305,17 @@
         flex-direction: column;
         padding: $magic 0 0 0;
         justify-content: stretch;
-        align-items: center;
+        align-items: flex-start;
     }
 
     li {
+        display: flex;
         list-style-type: none;
+        align-items: center;
 
         &::before {
             content: "";
+            padding: 0;
         }
     }
 
