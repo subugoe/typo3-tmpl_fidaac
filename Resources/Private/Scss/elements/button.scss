@@ -32,16 +32,19 @@
 @mixin button-size--default {
     @include media-l {
         font-size: $large-font-size-l - 2; // 22px
+        line-height: $large-line-height-l - 2;
         padding: $magic;
     }
 
     @include media-m {
         font-size: $large-font-size-m - 2;
+        line-height: $large-line-height-m - 2;
         padding: $magic-m / 2;
     }
 
     @include media-s {
-        font-size: $large-font-size-s;
+        font-size: $large-font-size-s - 2;
+        line-height: $large-line-height-s - 2;
         padding: $magic-s / 2;
     }
 }

@@ -47,7 +47,7 @@ mod {
             }
 
             TwoColums {
-                title = Two column content
+                title = Full width content
                 config {
                     backend_layout {
                         colCount = 1

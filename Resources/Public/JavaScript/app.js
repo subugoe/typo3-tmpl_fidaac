@@ -499,6 +499,40 @@ $(document).ready(function () {
  */
 $(document).ready(function () {
 
+    /**
+     * Insert button for filters in S
+     */
+    $('body').on('DOMNodeInserted', '.pz2-resultList', function () {
+        if (window.innerWidth < 768) {
+            if ($('.pz2-filterButton').length === 0) {
+                var buttonText = '<div class="pz2-filterButton">Filters</div>';
+                $(buttonText).insertBefore('#pz2-results');
+            }
+        }
+    });
+
+    /**
+     * Pagination is different in S versus M and L
+     * Make sure it is updated correctly and timely
+     */
+    window.addEventListener('resize', function () {
+
+        /* global updatePagers */
+        // pagination:
+        updatePagers();
+        $('.pz2-histogramContainer, .flot-overlay').css('width', $('#pz2-termLists').css('width'));
+
+        if (window.innerWidth < 768) {
+            $('#pz2-termLists').addClass('-hide');
+        } else {
+            $('#pz2-termLists').removeClass('-hide');
+        }
+    });
+
+    if (window.innerWidth < 768) {
+        $('#pz2-termLists').addClass('-hide');
+    }
+
     $('body').on('DOMNodeInserted', 'a.pz2-prev', function () {
         $('a.pz2-prev').each(function (index, el) {
             if ($(el).html().indexOf('svg') === -1) {
