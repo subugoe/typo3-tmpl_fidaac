@@ -15,7 +15,7 @@ TCEFORM {
         layout {
             altLabels {
                 0 = Default
-                1 = Double column
+                1 = Full width
                 2 = News stairs and slider
             }
 

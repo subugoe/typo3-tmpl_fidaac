@@ -15,8 +15,25 @@
 
 /* BASIC ELEMENTS */
 #pazpar2 {
+    @include media-l {
+        padding: 0;
+        margin: 0 $magic-l;
+        width: width(l-12);
+    }
+
+    @include media-m {
+        padding: 0;
+        margin: auto;
+        width: width(m-12);
+    }
+
+    @include media-s {
+        width: width(s-6);
+        margin: 0;
+    }
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     a {
         text-decoration: none;
@@ -108,14 +125,15 @@
 }
 
 #pz2-navi {
-    display: flex;
+    display: none;
     width: 100%;
     margin-bottom: $magic-l;
 }
 
 #pz2-recordView {
-    width: width(l-10);
     padding: 0;
+    width: 100%;
+    display: block;
 }
 
 .pz2-recordLink {
@@ -139,47 +157,48 @@
 #pz2-results {
     width: width(l-6);
     margin: 0;
+}
 
-    .pz2-extraLinksLabel {
-        display: none;
+#pz2-results .pz2-extraLinksLabel {
+    display: none;
+}
+
+#pz2-results .pz2-extraLinks {
+    position: static;
+    display: flex;
+
+    a {
+        color: $shadeDarkest;
+        text-decoration: none !important;
     }
 
-    .pz2-extraLinks {
-        position: static;
+    input {
+        color: $shadeDarkest;
+        text-decoration: none !important;
+    }
+
+    ul {
         display: flex;
+        flex-direction: column;
+        padding: 0;
 
-        a {
-            color: $shadeDarkest;
-            text-decoration: none !important;
-        }
-
-        input {
-            color: $shadeDarkest;
-            text-decoration: none !important;
-        }
-
-        ul {
+        li input {
+            border: 0 none;
+            background: transparent;
+            cursor: pointer;
             display: flex;
-            flex-direction: column;
             padding: 0;
 
-            li input {
-                border: 0 none;
-                background: transparent;
-                cursor: pointer;
-                display: flex;
-                padding: 0;
-
-                input,
-                a {
-                    text-decoration: none;
-                    font-weight: normal;
-                    font-size: 1em;
-                }
+            input,
+            a {
+                text-decoration: none;
+                font-weight: normal;
+                font-size: 1em;
             }
         }
     }
 }
+
 
 .pz2-JSNote {
     margin-bottom: 1em;
@@ -199,7 +218,19 @@
     @include button;
     @include button-color--brand;
     @include button-size--default;
-    width: width(l-5) - $magic;
+
+    @include media-l {
+        width: width(l-4) - $magic-l / 2;
+    }
+
+    @include media-m {
+        width: width(m-4) - $magic-m / 2;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        margin-bottom: $magic-s * 2;
+    }
 }
 
 .pz2-months {
@@ -208,8 +239,18 @@
 
 /* METASEARCH */
 .pz2-fieldContainer {
+    @include media-l {
+        width: width(l-8);
+    }
+
+    @include media-m {
+        width: width(m-8);
+    }
+
+    @include media-s {
+        width: width(s-6);
+    }
     border: 0;
-    width: width(l-10);
     display: flex;
     flex-wrap: wrap;
     margin-bottom: $magic-l;
@@ -229,8 +270,21 @@
 
 .pz2-searchField {
     @include form-input-text;
-    width: width(l-10);
-    margin-bottom: $magic-l;
+
+    @include media-l {
+        margin-bottom: $magic-l / 2;
+    }
+
+    @include media-m {
+        margin-bottom: $magic-m / 2;
+    }
+
+    @include media-s {
+        margin-bottom: $magic-s / 2;
+    }
+    display: flex;
+    flex-basis: 100%;
+    width: 100%;
 }
 
 .pz2-mainForm {
@@ -243,9 +297,23 @@
 // hide extrafields in basic/standard search
 .pz2-checkbox {
     @include form-checkbox;
+
+    @include media-l {
+        width: width(l-3);
+    }
+
+    @include media-m {
+        width: width(m-3);
+    }
+
+    @include media-s {
+        width: width(s-6);
+    }
     display: none;
-    width: width(l-3);
-    padding-left: $magic-l;
+}
+
+.pz2-checkbox.pz2-fulltext {
+    width: 100%;
 }
 
 .pz2-extraFields {
@@ -267,16 +335,39 @@
     @include button;
     @include button-color--transparent;
     @include button-size--default;
-    width: width(l-5) - $magic;
+
+    @include media-l {
+        width: width(l-4) - $magic-l / 2;
+    }
+
+    @include media-m {
+        width: width(m-4) - $magic-m / 2;
+    }
+
+    @include media-s {
+        width: width(s-6);
+    }
     margin: 0;
 }
 
 .pz2-formControls {
+    @include media-l {
+        width: width(l-8);
+    }
+
+    @include media-m {
+        width: width(m-8);
+    }
+
+    @include media-s {
+        width: width(s-6);
+        flex-wrap: wrap;
+    }
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
+    padding-top: $magic;
     margin-bottom: $magic;
-    width: width(l-10);
 }
 
 /* PZ2.css */
@@ -284,8 +375,27 @@
 
 /* FACETS */
 #pz2-termLists {
-    width: width(l-3);
-    float: right;
+    @include media-l {
+        width: width(l-4) - $magic-l;
+        float: right;
+    }
+
+    @include media-m {
+        width: width(m-4) - $magic-m;
+        float: right;
+    }
+
+    @include media-s {
+        position: absolute;
+        padding: 0 $magic * 2;
+        top: 117px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $white;
+        z-index: 500;
+        min-height: 400px;
+    }
 
     h4 {
         display: none;
@@ -327,6 +437,18 @@
             font-weight: normal;
             justify-content: space-between;
         }
+    }
+
+    a {
+        margin-bottom: $magic / 2;
+
+        .pz2-facetCancel {
+            font-weight: bold;
+        }
+    }
+
+    span {
+        position: relative;
     }
 
     .pz2-mediaIcon {
@@ -371,20 +493,6 @@
     font-weight: bold;
 }
 
-.pz2-termList {
-    a {
-        margin-bottom: $magic / 2;
-
-        .pz2-facetCancel {
-            font-weight: bold;
-        }
-    }
-
-    span {
-        position: relative;
-    }
-}
-
 .pz2-histogramContainer {
     margin-left: -8px;
 }
@@ -399,7 +507,24 @@
     font-weight: bold;
 }
 
+.pz2-filterButton {
+    @include media-l {
+        display: none;
+    }
 
+    @include media-m {
+        display: none;
+    }
+
+    @include media-s {
+        @include button;
+        @include button-color--brand;
+        @include button-size--default;
+        width: width(s-6);
+        bottom: $magic-s * 4;
+        margin: auto;
+    }
+}
 
 /* PROGRESS INDICATOR */
 
@@ -415,18 +540,18 @@
 /* PAGER */
 
 .pz2-pager {
+    width: 100%;
     display: flex;
     margin: 0;
     margin-bottom: $magic-l;
     position: relative;
-    width: width(l-10);
     align-items: center;
     justify-content: flex-start;
     padding: 0;
+    flex-wrap: wrap;
 
     &.pz2-bottom {
         clear: both;
-        padding-bottom: 20px;
     }
 
     .pz2-currentPage {
@@ -435,82 +560,105 @@
     }
 
     .pz2-progressIndicator {
-        max-width: width(l-7);
+        @include media-l {
+            max-width: width(l-7);
+        }
+
+        @include media-m {
+            max-width: width(m-7);
+        }
+
+        @include media-s {
+            max-width: width(s-6);
+        }
     }
 }
 
 .pz2-pageNumbers {
+    @include media-l {
+        justify-content: flex-start;
+        width: width(l-7) - $magic-l * 2;
+    }
+
+    @include media-m {
+        justify-content: flex-start;
+        width: width(m-7) - $magic-m * 2;
+    }
+
+    @include media-s {
+        justify-content: center;
+        margin-bottom: $magic;
+        width: width(s-6);
+    }
     position: relative;
     text-align: center;
     display: flex;
     flex-grow: 1;
-    width: width(l-7);
     align-items: center;
-    justify-content: flex-start;
     margin: 0;
+}
 
-    li {
-        padding: 0 $magic;
-        margin: 0 $magic;
-        width: 32px;
-        height: 32px;
+.pz2-pageNumbers li {
+    padding: 0 $magic;
+    margin: 0 $magic;
+    width: 32px;
+    height: 32px;
 
-        &::before {
-            content: "";
-            padding: 0;
-        }
+    &::before {
+        content: "";
+        padding: 0;
     }
+}
 
-    .pz2-pages {
-        li:first-of-type {
-            margin-left: 0;
-        }
+.pz2-pageNumbers .pz2-pages {
+    li:first-of-type {
+        margin-left: 0;
     }
+}
 
-    .pz2-prev,
-    .pz2-next {
-        display: flex;
-        align-items: center;
-        position: static;
-        top: 0;
-        width: 34px;
-        height: $base-line-height-l;
-        overflow: hidden;
-        text-indent: 0;
-        font-family: "Open Sans", sans-serif;
+.pz2-pageNumbers .pz2-prev,
+.pz2-pageNumbers .pz2-next {
+    display: flex;
+    align-items: center;
+    position: static;
+    top: 0;
+    width: 34px;
+    height: $base-line-height-l;
+    overflow: hidden;
+    text-indent: 0;
+    font-family: "Open Sans", sans-serif;
 
-        &::after {
-            content: "";
-            display: none;
-        }
-    }
-
-    .pz2-prev {
-        margin-right: $magic;
-    }
-
-    .pz2-next {
-        margin-left: $magic;
-    }
-
-    // the span is not clickable
-    span.pz2-prev,
-    span.pz2-next {
-        color: $shadeLight;
+    &::after {
+        content: "";
         display: none;
     }
+}
 
-    // the anchor is clickable
-    a.pz2-prev,
-    a.pz2-next {
-        color: $shadeDarkest;
-        padding: 0;
+.pz2-pageNumbers .pz2-prev {
+    margin-right: $magic;
+}
 
-        svg {
-            width: 1.5em;
-            height: 1.5em;
-            fill: $brand;
-        }
+.pz2-pageNumbers .pz2-next {
+    margin-left: $magic;
+}
+
+// the span is not clickable
+.pz2-pageNumbers span.pz2-prev,
+.pz2-pageNumbers span.pz2-next {
+    color: $shadeLight;
+    display: none;
+}
+
+// the anchor is clickable
+.pz2-pageNumbers a.pz2-prev,
+.pz2-pageNumbers a.pz2-next {
+    color: $shadeDarkest;
+    padding: 0;
+
+    svg {
+        width: 1.5em;
+        height: 1.5em;
+        fill: $brand;
     }
 }
 
@@ -576,9 +724,22 @@
 }
 
 .pz2-recordCount {
+    @include media-l {
+        width: width(l-3);
+        justify-content: flex-end;
+    }
+
+    @include media-m {
+        width: width(m-3);
+        justify-content: flex-end;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        justify-content: center;
+    }
     display: flex;
-    width: width(l-3);
-    position: static;
+    position: relative;
 
     &:hover {
         font-weight: normal;
@@ -598,12 +759,24 @@
 
 /* RESULT ITEMS */
 .pz2-resultList {
+    @include media-l {
+        width: width(l-8) - $magic-l * 2;
+        padding: $magic-l 0 !important;
+        padding-left: 35px;
+    }
+
+    @include media-m {
+        width: width(m-8) - $magic-m * 2;
+        padding: $magic-m 0 !important;
+        padding-left: 35px;
+    }
+
+    @include media-s {
+        width: width(s-6);
+        padding: 0;
+    }
     display: flex;
-    width: width(l-7);
-    padding: $magic 0 !important;
-    padding-right: $magic-l !important;
     flex-direction: column;
-    padding-left: 35px;
     float: left; /* required so we don't clear the sidebar/faceting when clearing our <li>s */
 
 

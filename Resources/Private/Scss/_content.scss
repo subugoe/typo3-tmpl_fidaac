@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.doubleColumn {
+.fullWidth {
     @include media-l {
         width: width(l-12);
     }
@@ -21,6 +21,21 @@
     @include media-s {
         width: width(s-6);
     }
+}
+
+.fullWidth header {
+    @include media-l {
+        width: width(l-10);
+    }
+
+    @include media-m {
+        width: width(m-10);
+    }
+
+    @include media-s {
+        width: width(s-6);
+    }
+    margin: auto;
 }
 
 .doubleColumn {

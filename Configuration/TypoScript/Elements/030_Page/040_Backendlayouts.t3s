@@ -7,7 +7,7 @@ tt_content.stdWrap.innerWrap.cObject {
     0.value = <article class="singleColumn">|</article>
 
     1 = TEXT
-    1.value = <article class="doubleColumn">|</article>
+    1.value = <article class="fullWidth">|</article>
 
     2 = TEXT
     2.value = <article class="newsStairsSlider">|</article>
