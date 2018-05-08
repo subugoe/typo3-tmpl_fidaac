@@ -109,3 +109,34 @@ header {
 .news .stairs-button {
     display: none;
 }
+
+fieldset {
+    border: 0;
+}
+
+.tx-powermail .powermail_input {
+    width: 97vw;
+    padding: 0.33rem;
+    font-size: 100%;
+    font-weight: lighter;
+    margin-bottom: 0.5rem;
+}
+
+.tx-powermail .powermail_legend {
+    font-size: 120%;
+    font-weight: normal;
+    margin-bottom: 0.33rem;
+}
+
+.tx-powermail h3 {
+    display: none;
+}
+
+.tx-powermail .powermail_textarea {
+    width: 97vw;
+    height: 30vh;
+    font-size: 100%;
+    font-weight: lighter;
+    padding: 0.33rem;
+    border-style: inset;
+}
