@@ -62,6 +62,46 @@
     justify-content: flex-start;
 }
 
+// definition lists
+.ce-bullets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    dt {
+        @include media-l {
+            width: width(l-2);
+        }
+
+        @include media-m {
+            width: width(m-2);
+        }
+
+        @include media-s {
+            width: width(s-6);
+        }
+        padding: 0;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    dd {
+        @include media-l {
+            width: width(l-8);
+        }
+
+        @include media-m {
+            width: width(m-8);
+        }
+
+        @include media-s {
+            width: width(s-6);
+        }
+        padding: 0;
+        margin: 0;
+    }
+}
+
 .literature {
     padding-left: $magic-l;
     text-indent: -$magic-l;
