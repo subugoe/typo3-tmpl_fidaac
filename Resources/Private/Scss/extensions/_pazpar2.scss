@@ -16,14 +16,14 @@
 /* BASIC ELEMENTS */
 #pazpar2 {
     @include media-l {
-        padding: 0;
-        margin: 0 $magic-l;
+        padding: 0 $magic-l;
+        margin: auto;
         width: width(l-12);
     }
 
     @include media-m {
-        padding: 0;
         margin: auto;
+        padding: 0 $magic-m;
         width: width(m-12);
     }
 
@@ -331,10 +331,10 @@
     }
 }
 
-.pz2-extendedLink {
+a.pz2-extendedLink {
     @include button;
     @include button-color--transparent;
-    @include button-size--default;
+    @include button-size--transparent;
 
     @include media-l {
         width: width(l-4) - $magic-l / 2;
@@ -365,6 +365,7 @@
     }
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-grow: 1;
     padding-top: $magic;
     margin-bottom: $magic;
