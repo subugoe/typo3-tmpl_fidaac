@@ -38,14 +38,6 @@
     margin: auto;
 }
 
-.doubleColumn {
-    .content {
-        font-size: $base-font-size-l;
-        column-count: 2;
-        column-gap: $magic-l - 1;
-    }
-}
-
 .singleColumn {
     @include media-l {
         width: width(l-10);
