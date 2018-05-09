@@ -216,10 +216,6 @@
     flex-grow: 1;
     justify-content: center;
 
-    svg {
-        display: flex;
-    }
-
     &::before {
         content: "";
         padding: 0;
@@ -240,12 +236,24 @@
         }
         display: flex;
         align-items: center;
+        margin-right: $magic-l;
 
         &::after {
             content: "";
             padding: 0;
             margin: 0;
         }
+    }
+
+    svg {
+        display: flex;
+    }
+
+    .-svg-menu {
+        padding-left: $magic-l;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
     }
 
     &.-actSub,
@@ -302,10 +310,11 @@
     @include media-s {
         width: width(s-6);
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         padding: $magic 0 0 0;
         justify-content: stretch;
-        align-items: flex-start;
+        align-items: center;
+        cursor: pointer;
     }
 
     li {
@@ -319,8 +328,11 @@
         }
     }
 
-    li svg {
-        padding-right: $magic;
+    .svg-left {
+        padding: 0 $magic 0 0;
+        display: flex;
+        justify-content: flex-start;
+        width: 18px;
     }
 }
 
@@ -477,6 +489,13 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+    }
+
+    .-svg-submenu {
+        padding-left: $magic-l;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
     }
 
     &.-actSub > a,
