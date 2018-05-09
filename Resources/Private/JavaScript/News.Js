@@ -4,17 +4,19 @@ $(document).ready(() => {
     /**
      * make sure, text in stairs view of news is cut according to image height
      */
-    $('.news-stairs-view .article').each((index, el) => {
-        const teaserheight = $(el).find('.teaser-text').height();
-        const imgheight = $(el).find('.img-wrap').height();
-        const headerheight = $(el).find('.news-header').height();
-        const buttonheight = $(el).find('.infos-wrap').children('a').last().height();
-        const theight = imgheight - buttonheight - headerheight;
-        if (teaserheight + buttonheight + headerheight >= imgheight &&
-            $(window).width() > 767) {
-            $(el).find('.teaser-text').css('height', theight - 2);
-        }
-    });
+    if (window.innerWidth > 959) {
+        $('.news-stairs-view .article').each((index, el) => {
+            const teaserheight = $(el).find('.teaser-text').height();
+            const imgheight = $(el).find('.img-wrap').height();
+            const headerheight = $(el).find('.news-header').height();
+            const buttonheight = $(el).find('.infos-wrap').children('a').last().height();
+            const theight = imgheight - buttonheight - headerheight;
+            if (teaserheight + buttonheight + headerheight >= imgheight &&
+                $(window).width() > 767) {
+                $(el).find('.teaser-text').css('height', theight - 2);
+            }
+        });
+    }
 
     /**
      * Implement handles for slider view of news
