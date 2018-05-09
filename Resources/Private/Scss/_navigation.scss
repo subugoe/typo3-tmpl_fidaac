@@ -167,6 +167,7 @@
         height: 1em;
         width: 1em;
         cursor: pointer;
+        display: flex;
     }
 }
 
@@ -209,6 +210,13 @@
         align-items: stretch;
         background-color: $white;
         padding: $magic/2 0;
+
+        .-svg-menu {
+            padding-left: $magic-l;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
     }
     margin: 0;
     display: flex;
@@ -233,27 +241,16 @@
 
         @include media-s {
             flex-grow: 1;
+            margin-right: $magic-l;
         }
         display: flex;
         align-items: center;
-        margin-right: $magic-l;
 
         &::after {
             content: "";
             padding: 0;
             margin: 0;
         }
-    }
-
-    svg {
-        display: flex;
-    }
-
-    .-svg-menu {
-        padding-left: $magic-l;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
     }
 
     &.-actSub,
@@ -456,6 +453,13 @@
         align-self: stretch;
         flex-grow: 1;
         padding: $magic/2 0;
+
+        .-svg-submenu {
+            padding-left: $magic-l;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
     }
     display: flex;
     align-items: center;
@@ -489,13 +493,6 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-    }
-
-    .-svg-submenu {
-        padding-left: $magic-l;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
     }
 
     &.-actSub > a,
