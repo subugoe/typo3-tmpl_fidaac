@@ -22,7 +22,8 @@
 
 @mixin button-color--transparent() {
     background-color: transparent;
-    outline: 1px solid $shadeDarkest;
+    color: $brand !important;
+    outline: 1px solid $brand;
 }
 
 @mixin button-color--custom($value) {
@@ -46,6 +47,22 @@
         font-size: $large-font-size-s - 2;
         line-height: $large-line-height-s - 2;
         padding: $magic-s / 2;
+    }
+}
+
+@mixin button-size--transparent {
+    @include button-size--default;
+
+    @include media-l {
+        line-height: $large-line-height-l - 4;
+    }
+
+    @include media-m {
+        line-height: $large-line-height-m - 4;
+    }
+
+    @include media-s {
+        line-height: $large-line-height-s - 4;
     }
 }
 
