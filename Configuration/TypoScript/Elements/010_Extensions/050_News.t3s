@@ -53,6 +53,26 @@ lib.newsTitle {
 }
 
 
+## Ext tx_news: dynamic page title for the single news
+[globalVar = GP:tx_news_pi1|news > 0]
+    config.noPageTitle = 2
+    lib.newsTitle = RECORDS
+    lib.newsTitle {
+        dontCheckPid = 1
+        tables = tx_news_domain_model_news
+        source.data = GP:tx_news_pi1|news
+        source.intval = 1
+        conf.tx_news_domain_model_news = TEXT
+        conf.tx_news_domain_model_news {
+            field = title
+            htmlSpecialChars = 1
+        }
+        wrap = <title>|&nbsp;- Lib AAC</title>
+    }
+    page.headerData.1 >
+    page.headerData.1 < lib.newsTitle
+[global]
+
 ## Ext tx_news: dynamic page title for the news category list page
 [globalVar = GP:tx_news_pi1|overwriteDemand|categories > 0]
     config.noPageTitle = 2
@@ -67,12 +87,10 @@ lib.newsTitle {
             field = title
             htmlSpecialChars = 1
         }
-
-        wrap = <title>Lib AAC - &nbsp;|</title>
+        wrap = <title>|&nbsp;- Lib AAC</title>
     }
-
-    page.headerData.100 >
-    page.headerData.100 < lib.categoryTitle
+    page.headerData.10 >
+    page.headerData.10 < lib.categoryTitle
 [global]
 
 ## RSS page on the fly
