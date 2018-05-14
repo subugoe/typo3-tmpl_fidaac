@@ -1,0 +1,99 @@
+.breadcrumb_outer {
+    @include media-l {
+        font-size: $base-font-size-l;
+        line-height: $base-line-height-l;
+    }
+
+    @include media-m {
+        font-size: $base-font-size-m;
+        line-height: $base-line-height-m;
+    }
+
+    @include media-s {
+        font-size: $base-font-size-s;
+        line-height: $base-line-height-s;
+    }
+    color: $shadeDark;
+    background-color: $white;
+    text-transform: uppercase;
+
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: 0;
+
+    a {
+        color: $shadeDark;
+    }
+
+    svg {
+        fill: $shadeDark;
+    }
+}
+
+.breadcrumb_inner {
+    @include media-l {
+        width: width(l-12);
+        justify-content: flex-start;
+        flex-grow: 0;
+        padding: $magic-l / 2 $magic-l;
+
+        svg {
+            height: 1em;
+            width: 1em;
+        }
+    }
+
+    @include media-m {
+        width: width(m-12);
+        justify-content: flex-start;
+        flex-grow: 0;
+        padding: $magic-m / 2 $magic-m;
+        flex-wrap: wrap;
+
+        svg {
+            height: 1em;
+            width: 1em;
+        }
+    }
+
+    @include media-s {
+        width: width(s-6) - $magic;
+        font-size: $large-font-size-s - 4;
+        padding: $magic-s 0;
+        flex-grow: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        svg {
+            height: 1em;
+            width: 1em;
+        }
+    }
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-space::after {
+    content: "/";
+    padding-left: $magic;
+    padding-right: $magic;
+}
+
+.-sticky {
+    position: fixed;
+    background-color: $brand;
+    top: 0;
+    width: 100%;
+    color: $white;
+    transition: all 0.2s ease;
+
+    a {
+        color: $white;
+    }
+
+    svg {
+        fill: $white;
+    }
+}

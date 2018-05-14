@@ -185,7 +185,6 @@ li {
     &::before {
         content: ".";
         bottom: 0.25em;
-        position: relative;
         font-weight: 600;
         display: table-cell;
         padding-right: $magic-l/2 + 1;
