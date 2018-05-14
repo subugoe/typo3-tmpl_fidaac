@@ -122,3 +122,15 @@ ajax_api {
     }
     10 < lib.ajaxMenu
 }
+
+lib.breadCrumb = HMENU
+lib.breadCrumb {
+    special = rootline
+    special.range = 0|-1
+
+    1 = TMENU
+    1 {
+        NO = 1
+        NO.linkWrap = <span class="breadcrumb-page">|</span><span class="breadcrumb-space"></span>|*||*| <span class="breadcrumb-page">|</span>
+    }
+}
