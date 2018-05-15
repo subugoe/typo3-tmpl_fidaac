@@ -24,6 +24,8 @@
 
     a {
         color: $shadeDark;
+        display: flex;
+        align-items: center;
     }
 
     svg {
@@ -98,5 +100,17 @@
 
     svg {
         fill: $white;
+    }
+}
+
+.breadcrumb-page:not(:nth-last-child(3)) {
+    @include media-s {
+        display: none;
+    }
+}
+
+.breadcrumb-space {
+    @include media-s {
+        display: none;
     }
 }
