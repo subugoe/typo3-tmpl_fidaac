@@ -69,13 +69,33 @@ figure {
 .figures .figure-center-above {
     @for $i from 1 through 5 {
         &.cols-#{$i}:first-of-type {
+            @include media-l {
+                width: width(l-#{$i}) - $magic-l;
+            }
+
+            @include media-m {
+                width: width(m-#{$i}) - $magic-m;
+            }
+
+            @include media-s {
+                width: width(s-6) - $magic-s;
+            }
             margin-right: $magic * 2;
             margin-left: 0;
-            width: width(l-#{$i}) - $magic;
         }
 
         &.cols-#{$i}:nth-of-type(2) {
-            width: width(l-#{$i}) - $magic;
+            @include media-l {
+                width: width(l-#{$i}) - $magic-l;
+            }
+
+            @include media-m {
+                width: width(m-#{$i}) - $magic-m;
+            }
+
+            @include media-s {
+                width: width(s-6) - $magic-s;
+            }
         }
     }
 }
@@ -86,8 +106,18 @@ figure {
     float: left;
 
     &.cols-1 {
+        @include media-l {
+            width: width(l-1) - $magic-l;
+        }
+
+        @include media-m {
+            width: width(m-1) - $magic-m;
+        }
+
+        @include media-s {
+            width: width(s-6) - $magic-s;
+        }
         margin-right: $magic;
-        width: width(l-1) - $magic;
     }
 
     &.cols-10 {
@@ -96,8 +126,18 @@ figure {
 
     @for $i from 2 through 9 {
         &.cols-#{$i} {
+            @include media-l {
+                width: width(l-#{$i}) - $magic-l;
+            }
+
+            @include media-m {
+                width: width(m-#{$i}) - $magic-m;
+            }
+
+            @include media-s {
+                width: width(s-6) - $magic-s;
+            }
             margin-right: $magic * 2;
-            width: width(l-#{$i}) - $magic;
         }
     }
 }
@@ -107,8 +147,18 @@ figure {
     float: right;
 
     &.cols-1 {
+        @include media-l {
+            width: width(l-1) - $magic-l;
+        }
+
+        @include media-m {
+            width: width(m-1) - $magic-m;
+        }
+
+        @include media-s {
+            width: width(s-6) - $magic-s;
+        }
         margin-left: $magic;
-        width: width(l-1) - $magic;
     }
 
     &.cols-10 {
@@ -117,8 +167,18 @@ figure {
 
     @for $i from 2 through 9 {
         &.cols-#{$i} {
+            @include media-l {
+                width: width(l-#{$i}) - $magic-l;
+            }
+
+            @include media-m {
+                width: width(m-#{$i}) - $magic-m;
+            }
+
+            @include media-s {
+                width: width(s-6) - $magic-s;
+            }
             margin-left: $magic * 2;
-            width: width(l-#{$i}) - $magic;
         }
     }
 }
