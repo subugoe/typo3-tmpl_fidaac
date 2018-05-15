@@ -171,6 +171,21 @@ $(document).ready(() => {
         });
     };
 
+    /**
+     * breadcrumbs in S behave differently
+     * only upper page is shown, together with icon
+     */
+    const showIconInSMenu = () => {
+        if ($('.breadcrumb-page:nth-last-child(3) svg').length === 1) {
+            return false;
+        }
+        const parent = $('.breadcrumb-page:nth-last-child(3) a');
+        const parentText = $(parent).text();
+        const icon = '<svg class="svg-left"><use xlink:href="#icon-caret-left"/></svg>';
+        $(parent).html(`${icon} ${parentText}`);
+        return true;
+    };
+
     $('.header_menu').click(() => {
         if (window.innerWidth < 768) {
             $('.navigation_outer').removeClass('-hide');
@@ -204,6 +219,7 @@ $(document).ready(() => {
         $('.navigation_default-submenuContainer-outer').addClass('-hide');
         $('.navigation_outer').addClass('-hide');
         $('.navigation_default-submenu').addClass('-hide');
+        showIconInSMenu();
     }
 
     window.addEventListener('resize', function () {
@@ -213,11 +229,11 @@ $(document).ready(() => {
             $('.navigation_default-submenuContainer-outer').addClass('-hide');
             $('.navigation_default-submenu').addClass('-hide');
             $('.page').css('overflow', 'visible');
+            showIconInSMenu();
         } else {
             $('.-hide').removeClass('-hide');
             $('.page').css('overflow', 'visible');
             removeNavigationLinkInS();
         }
     });
-
 });
