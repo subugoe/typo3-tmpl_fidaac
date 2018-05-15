@@ -103,8 +103,20 @@
     }
 }
 
-.breadcrumb-page:not(:nth-last-child(3)) {
-    @include media-s {
+.breadcrumb-page {
+    &:not(:nth-last-child(3)) {
+        @include media-s {
+            display: none;
+        }
+    }
+}
+
+.breadcrumb-page svg {
+    @include media-l {
+        display: none;
+    }
+
+    @include media-m {
         display: none;
     }
 }

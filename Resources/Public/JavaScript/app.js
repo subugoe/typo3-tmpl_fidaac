@@ -219,7 +219,7 @@ $(document).ready(function () {
     };
 
     var removeNavigationLinkInS = function removeNavigationLinkInS() {
-        $('.navigation_default-additional').remove();
+        $('.breadcrumb-page svg').remove();
     };
 
     var showSubmenuInS = function showSubmenuInS(el) {
@@ -310,12 +310,14 @@ $(document).ready(function () {
     window.addEventListener('resize', function () {
 
         if (window.innerWidth < 768) {
+            console.log('if');
             $('.navigation_outer').addClass('-hide');
             $('.navigation_default-submenuContainer-outer').addClass('-hide');
             $('.navigation_default-submenu').addClass('-hide');
             $('.page').css('overflow', 'visible');
             showIconInSMenu();
         } else {
+            console.log('else');
             $('.-hide').removeClass('-hide');
             $('.page').css('overflow', 'visible');
             removeNavigationLinkInS();
