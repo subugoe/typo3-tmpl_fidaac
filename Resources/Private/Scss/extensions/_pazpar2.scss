@@ -72,53 +72,6 @@
     clear: both;
 }
 
-/* FIELD SETS */
-.pz2-fieldsets {
-    display: flex;
-    width: width(l-8);
-
-    label {
-        display: flex;
-        width: 100%;
-    }
-
-    fieldset {
-        padding: 0;
-        margin-bottom: $magic-l;
-    }
-
-    br {
-        display: none;
-    }
-}
-
-.pz2-fieldset-group {
-    margin-bottom: $magic-l;
-
-    fieldset {
-        border: none;
-    }
-
-    ul {
-        margin-left: $magic-l;
-
-        li {
-            @include form-checkbox;
-            width: 100%;
-            display: flex;
-            padding-top: $magic;
-            padding-bottom: $magic;
-            padding-left: 0;
-
-            &::before {
-                content: "";
-                padding: $magic;
-            }
-        }
-    }
-}
-
-
 /* RESULTS */
 .pz2-ranking {
     display: none;
@@ -152,11 +105,6 @@
     &::after {
         display: none;
     }
-}
-
-#pz2-results {
-    width: width(l-6);
-    margin: 0;
 }
 
 #pz2-results .pz2-extraLinksLabel {
@@ -261,7 +209,6 @@
 .pz2-textFieldLabel {
     display: flex;
     justify-content: flex-start;
-    width: width(l-2);
 }
 
 .pz2-basic .pz2-textFieldLabel {
@@ -292,6 +239,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
 }
 
 // hide extrafields in basic/standard search
@@ -324,10 +272,6 @@
     .pz2-extraFields,
     .pz2-checkbox {
         display: block;
-    }
-
-    .pz2-searchField {
-        width: width(l-5);
     }
 }
 
@@ -370,8 +314,6 @@ a.pz2-extendedLink {
     padding-top: $magic;
     margin-bottom: $magic;
 }
-
-/* PZ2.css */
 
 
 /* FACETS */
@@ -763,13 +705,11 @@ a.pz2-extendedLink {
     @include media-l {
         width: width(l-8) - $magic-l * 2;
         padding: $magic-l 0 !important;
-        padding-left: 35px;
     }
 
     @include media-m {
         width: width(m-8) - $magic-m * 2;
         padding: $magic-m 0 !important;
-        padding-left: 35px;
     }
 
     @include media-s {
@@ -1100,4 +1040,73 @@ pz2-client.js removes this once it it loaded.
 
 #pz2-targetView .pz2-target-status {
     min-width: 120px;
+}
+
+
+/**
+ * New accquisitions
+ */
+.pz2-neuerwerbungenForm {
+    width: 100%;
+}
+
+.pz2-mainForm > p {
+    @include media-l {
+        width: width(l-10);
+    }
+
+    @include media-m {
+        width: width(m-10);
+    }
+}
+
+.pz2-fieldsets {
+    @include media-l {
+        width: width(l-10);
+    }
+
+    @include media-m {
+        width: width(m-10);
+    }
+    display: flex;
+
+    label {
+        display: flex;
+        width: 100%;
+    }
+
+    fieldset {
+        padding: 0;
+        margin-bottom: $magic-l;
+    }
+
+    br {
+        display: none;
+    }
+}
+
+.pz2-fieldset-group {
+    margin-bottom: $magic-l;
+
+    fieldset {
+        border: none;
+    }
+
+    ul {
+        margin-left: $magic-l;
+
+        li {
+            @include form-checkbox;
+            width: 100%;
+            display: flex;
+            padding-top: $magic;
+            padding-bottom: $magic;
+            padding-left: 0;
+
+            &::before {
+                content: "";
+                padding: $magic;
+            }
+        }
+    }
 }
