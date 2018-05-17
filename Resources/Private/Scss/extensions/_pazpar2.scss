@@ -384,10 +384,6 @@ a.pz2-extendedLink {
 
     a {
         margin-bottom: $magic / 2;
-
-        .pz2-facetCancel {
-            font-weight: bold;
-        }
     }
 
     span {
@@ -422,6 +418,14 @@ a.pz2-extendedLink {
 .pz2-facetCount {
     display: flex;
     margin-left: $magic;
+}
+
+a.pz2-facetCancel {
+    @include button;
+    @include button-color--transparent;
+    @include button-size--transparent;
+    justify-content: center !important;
+    margin: $magic 0;
 }
 
 .pz2-facet-hidden {
