@@ -19,16 +19,19 @@ html {
 body {
     @include media-l {
         font-size: $base-font-size-l + 2;
+        line-height: $base-line-height-l + 2;
         min-width: width(l-12);
     }
 
     @include media-m {
         font-size: $base-font-size-m + 2;
+        line-height: $base-line-height-m + 2;
         min-width: width(m-12);
     }
 
     @include media-s {
         font-size: $base-font-size-s;
+        line-height: $base-line-height-s;
         min-width: width(s-6);
     }
     color: $shadeDarkest;
