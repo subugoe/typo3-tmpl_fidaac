@@ -723,32 +723,31 @@ a.pz2-facetCancel {
     display: flex;
     flex-direction: column;
     float: left; /* required so we don't clear the sidebar/faceting when clearing our <li>s */
+}
 
+.pz2-resultList li {
+    padding: 0 !important;
+    margin-bottom: 0.5em;
+    list-style-type: none;
+    border-left: 1px solid transparent;
+    text-indent: -26px;
+    margin-left: 26px;
 
-    li {
-        padding: 0 !important;
-        margin-bottom: 0.5em;
-        list-style-type: none;
-        border-left: 1px solid transparent;
-        text-indent: -26px;
-        margin-left: 26px;
-
-        .pz2-detailsVisible {
-            border-left: 1px solid #eee;
-        }
-
-        .pz2-title {
-            left: 20px;
-        }
+    .pz2-detailsVisible {
+        border-left: 1px solid #eee;
     }
 
-    .pz2-mediaIcon {
-        position: relative;
-        display: inline-block;
-        top: 5px;
-        font-size: 25px;
-        width: 26px;
+    .pz2-title {
+        left: 20px;
     }
+}
+
+.pz2-resultList .pz2-mediaIcon {
+    position: relative;
+    display: inline-block;
+    top: 5px;
+    font-size: 25px;
+    width: 26px;
 }
 
 .pz2-mediaIcon::before,
@@ -842,20 +841,34 @@ a.pz2-facetCancel {
 *:first-child + html .pz2-mediaIcon.multiple { background-position: -60px -40px; }
 *:first-child + html .pz2-mediaIcon.image { background-position: -80px -40px; }
 
-.pz2-title-main {
-    font-weight: bold;
-}
-
 .pz2-item-multivolume-title {
     font-style: italic;
 }
 
-.pz2-item-responsibility {
+.pz2-item-responsibility,
+.pz2-date,
+.pz2-journal-title,
+.pz2-journal {
+    @include media-l {
+        font-size: $base-font-size-l;
+        line-height: $base-line-height-l;
+    }
+
+    @include media-m {
+        font-size: $base-font-size-m;
+        line-height: $base-line-height-m;
+    }
+
+    @include media-s {
+        font-size: $base-font-size-s;
+        line-height: $base-line-height-s;
+    }
     font-style: italic;
 }
 
-.pz2-journal-title {
-    font-weight: bold;
+.pz2-item-responsibility::before {
+    content: "\a";
+    white-space: pre;
 }
 
 .pz2-details {
