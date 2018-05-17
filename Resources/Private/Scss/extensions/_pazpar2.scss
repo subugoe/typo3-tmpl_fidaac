@@ -1110,3 +1110,47 @@ pz2-client.js removes this once it it loaded.
         }
     }
 }
+
+/**
+ * Display of extended search fields
+ */
+.pz2-fieldContainer.-extra {
+    align-items: flex-start;
+
+    &:first-child {
+        margin-bottom: 0;
+    }
+
+    &:last-of-type {
+        margin-bottom: 16px;
+    }
+}
+
+.pz2-checkbox.-extra {
+    width: 100%;
+    font-size: 15px;
+    text-align: right;
+
+    &::before {
+        height: 15px;
+    }
+}
+
+.pz2-mainForm.-extra {
+    padding-bottom: $magic-l;
+}
+
+.pz2-searchField.-extra {
+    margin-bottom: 0;
+}
+
+.pz2-textFieldLabel.-extra {
+    position: relative;
+    top: 50px;
+    font-size: 15px;
+}
+
+.pz2-formControls.-extra {
+    position: relative;
+    top: 26px;
+}
