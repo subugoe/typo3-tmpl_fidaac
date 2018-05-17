@@ -2185,7 +2185,7 @@ function addExtendedSearch (event, dontTrack) {
 	jQuery('.pz2-fieldContainer:last', jFormContainer).append(jControls);
 
 	// switch the link to a simple search link
-	jQuery('.pz2-extendedLink', jFormContainer).unbind().click(removeExtendedSearch).empty().text(localise('einfache Suche'));
+	jQuery('.pz2-extendedLink', jFormContainer).unbind('click', removeExtendedSearch).click(removeExtendedSearch).empty().text(localise('einfache Suche'));
 	jQuery('.pz2-extraFields', jFormContainer).show();
 
 	if (dontTrack !== true) {
@@ -2216,7 +2216,7 @@ function removeExtendedSearch (event, dontTrack) {
 	jQuery('#pz2-field-all').after(jControls);
 
 	// switch the link to an extended search link
-	jQuery('.pz2-extendedLink', jFormContainer).unbind().click(addExtendedSearch).empty().text(localise('erweiterte Suche'));
+	jQuery('.pz2-extendedLink', jFormContainer).unbind('click', addExtendedSearch).click(addExtendedSearch).empty().text(localise('erweiterte Suche'));
 
 	// remove extended search fields
 	jQuery('.pz2-extraFields', jFormContainer).hide();

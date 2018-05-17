@@ -574,6 +574,21 @@ $(document).ready(function () {
             }
         });
     });
+
+    /**
+     * Displaing extended Forms
+     */
+    /* eslint no-use-before-define: 0 */
+    var morphExtended = function morphExtended() {
+        $('.pz2-extendedLink').unbind('click', morphExtended).on('click', morphBasic);
+        $('.pz2-fieldContainer, .pz2-checkbox, .pz2-mainForm, .pz2-searchField, .pz2-textFieldLabel, .pz2-formControls').addClass('-extra');
+    };
+
+    var morphBasic = function morphBasic() {
+        $('.pz2-extendedLink').unbind('click', morphBasic).on('click', morphExtended);
+        $('.-extra').removeClass('-extra');
+    };
+    morphBasic();
 });
 
 (function () {
