@@ -12,9 +12,4 @@ $(document).ready(() => {
      */
     // hide, so that space is preserved
     $('.toTop_inner').css('visibility', 'hidden');
-
-    document.getElementById('search-bar-close').addEventListener('visibilitychange', function() {
-        console.log('resize');
-    });
-
 });

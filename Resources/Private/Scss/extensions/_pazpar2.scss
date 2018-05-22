@@ -91,14 +91,8 @@
 
 .pz2-recordLink {
     display: block;
-
-    &::after {
-        position: relative;
-        bottom: - $magic / 2;
-        font-family: subicons;
-        font-size: $large-font-size-l;
-        content: "\e054";
-    }
+    text-indent: -26px;
+    margin-left: 26px;
 }
 
 .pz2-detailsVisible .pz2-recordLink {
@@ -112,38 +106,24 @@
 }
 
 #pz2-results .pz2-extraLinks {
-    position: static;
-    display: flex;
-
     a {
         color: $shadeDarkest;
         text-decoration: none !important;
     }
 
     input {
-        color: $shadeDarkest;
-        text-decoration: none !important;
+        @include link-plus();
+        background-color: white;
+        font-size: $small-font-size-l;
+    }
+
+    li {
+        padding: 0 $magic;
     }
 
     ul {
         display: flex;
-        flex-direction: column;
-        padding: 0;
-
-        li input {
-            border: 0 none;
-            background: transparent;
-            cursor: pointer;
-            display: flex;
-            padding: 0;
-
-            input,
-            a {
-                text-decoration: none;
-                font-weight: normal;
-                font-size: 1em;
-            }
-        }
+        justify-content: flex-end;
     }
 }
 
@@ -722,16 +702,13 @@ a.pz2-facetCancel {
     }
     display: flex;
     flex-direction: column;
-    float: left; /* required so we don't clear the sidebar/faceting when clearing our <li>s */
 }
 
 .pz2-resultList li {
-    padding: 0 !important;
+    padding: 0;
     margin-bottom: 0.5em;
     list-style-type: none;
     border-left: 1px solid transparent;
-    text-indent: -26px;
-    margin-left: 26px;
 
     .pz2-detailsVisible {
         border-left: 1px solid #eee;
@@ -739,6 +716,7 @@ a.pz2-facetCancel {
 
     .pz2-title {
         left: 20px;
+        text-indent: 3em;
     }
 }
 
@@ -872,10 +850,21 @@ a.pz2-facetCancel {
 }
 
 .pz2-details {
-    font-size: 85%;
+    @include media-l {
+        font-size: $small-font-size-l;
+    }
+
+    @include media-m {
+        font-size: $small-font-size-m;
+    }
+
+    @include media-s {
+        font-size: $small-font-size-s;
+    }
     padding: 0;
     padding-top: 10px;
     padding-bottom: 20px;
+    margin-left: 26px;
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -888,26 +877,37 @@ a.pz2-facetCancel {
     dl {
         display: flex;
         margin: 0;
-        width: width(l-6);
+        width: 100%;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     dt {
         display: flex;
         margin: 0;
-        text-align: right;
         font-weight: bold;
         width: width(l-2);
         margin-bottom: $magic-l;
+        justify-content: flex-end;
     }
 
     dd {
+        @include media-l {
+            width: width(l-5);
+        }
+
+        @include media-m {
+            width: width(m-5);
+        }
+
+        @include media-s {
+            width: width(s-6);
+        }
         display: flex;
         margin: 0;
-        padding-left: $magic;
         margin-bottom: $magic-l;
-        width: width(l-4);
+        justify-content: flex-start;
     }
 
     li {

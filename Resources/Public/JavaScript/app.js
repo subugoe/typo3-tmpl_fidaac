@@ -310,14 +310,12 @@ $(document).ready(function () {
     window.addEventListener('resize', function () {
 
         if (window.innerWidth < 768) {
-            console.log('if');
             $('.navigation_outer').addClass('-hide');
             $('.navigation_default-submenuContainer-outer').addClass('-hide');
             $('.navigation_default-submenu').addClass('-hide');
             $('.page').css('overflow', 'visible');
             showIconInSMenu();
         } else {
-            console.log('else');
             $('.-hide').removeClass('-hide');
             $('.page').css('overflow', 'visible');
             removeNavigationLinkInS();
@@ -352,10 +350,6 @@ $(document).ready(function () {
      */
     // hide, so that space is preserved
     $('.toTop_inner').css('visibility', 'hidden');
-
-    document.getElementById('search-bar-close').addEventListener('visibilitychange', function () {
-        console.log('resize');
-    });
 });
 
 $(document).ready(function () {
