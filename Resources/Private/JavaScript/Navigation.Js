@@ -225,14 +225,12 @@ $(document).ready(() => {
     window.addEventListener('resize', function () {
 
         if (window.innerWidth < 768) {
-            console.log('if');
             $('.navigation_outer').addClass('-hide');
             $('.navigation_default-submenuContainer-outer').addClass('-hide');
             $('.navigation_default-submenu').addClass('-hide');
             $('.page').css('overflow', 'visible');
             showIconInSMenu();
         } else {
-            console.log('else');
             $('.-hide').removeClass('-hide');
             $('.page').css('overflow', 'visible');
             removeNavigationLinkInS();
