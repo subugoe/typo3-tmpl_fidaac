@@ -14,7 +14,8 @@
         ],
         "declaration-empty-line-before": null,
         "max-empty-lines": 3,
-        "indentation": 4
+        "indentation": 4,
+        "shorthand-property-no-redundant-values": null
     }
 }
 
