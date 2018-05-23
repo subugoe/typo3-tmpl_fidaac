@@ -115,15 +115,20 @@
         @include link-plus();
         background-color: white;
         font-size: $small-font-size-l;
+        padding-left: 0;
     }
 
     li {
-        padding: 0 $magic;
+        padding: 0 $magic 0 0;
     }
 
     ul {
+        @include media-l {
+            justify-content: flex-end;
+        }
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 }
 
@@ -852,18 +857,18 @@ a.pz2-facetCancel {
 .pz2-details {
     @include media-l {
         font-size: $small-font-size-l;
+        padding: 10px 0 20px 0;
     }
 
     @include media-m {
         font-size: $small-font-size-m;
+        padding: 10px 0 20px 0;
     }
 
     @include media-s {
         font-size: $small-font-size-s;
+        padding: 10px 0 20px 0;
     }
-    padding: 0;
-    padding-top: 10px;
-    padding-bottom: 20px;
     margin-left: 26px;
     display: flex;
     flex-direction: column;
@@ -884,29 +889,43 @@ a.pz2-facetCancel {
     }
 
     dt {
+        @include media-l {
+            width: width(l-2);
+            justify-content: flex-end;
+            margin-bottom: $magic-l;
+        }
+
+        @include media-m {
+            width: width(m-8);
+            justify-content: flex-start;
+        }
+
+        @include media-s {
+            width: width(s-6);
+            justify-content: flex-start;
+        }
         display: flex;
         margin: 0;
         font-weight: bold;
-        width: width(l-2);
-        margin-bottom: $magic-l;
-        justify-content: flex-end;
     }
 
     dd {
         @include media-l {
             width: width(l-5);
+            margin-bottom: $magic-l;
         }
 
         @include media-m {
-            width: width(m-5);
+            width: width(m-8);
+            margin-bottom: $magic-m;
         }
 
         @include media-s {
             width: width(s-6);
+            margin-bottom: $magic-s;
         }
         display: flex;
         margin: 0;
-        margin-bottom: $magic-l;
         justify-content: flex-start;
     }
 
