@@ -63,16 +63,20 @@
     dt {
         @include media-l {
             width: width(l-2);
+            padding: 0 $magic-l 0 0;
         }
 
         @include media-m {
             width: width(m-2);
+            padding: 0 $magic-m 0 0;
         }
 
         @include media-s {
             width: width(s-6);
+            padding: 0 $magic-s 0 0;
         }
-        padding: 0;
+        display: flex;
+        justify-content: flex-end;
         margin: 0;
         font-weight: 600;
     }
