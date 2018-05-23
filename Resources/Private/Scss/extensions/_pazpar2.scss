@@ -122,6 +122,10 @@
         padding: 0 $magic 0 0;
     }
 
+    li:last-of-type {
+        padding: 0;
+    }
+
     ul {
         @include media-l {
             justify-content: flex-end;
@@ -917,12 +921,12 @@ a.pz2-facetCancel {
 
         @include media-m {
             width: width(m-8);
-            margin-bottom: $magic-m;
+            margin-bottom: $magic-m / 4;
         }
 
         @include media-s {
             width: width(s-6);
-            margin-bottom: $magic-s;
+            margin-bottom: $magic-s / 4;
         }
         display: flex;
         margin: 0;
@@ -958,7 +962,7 @@ a.pz2-facetCancel {
 
 .pz2-info {
     display: flex;
-    margin-bottom: $magic / 2;
+    margin-bottom: 0;
 }
 
 .pz2-label {
@@ -981,6 +985,9 @@ a.pz2-ZDBGeneralInfo {
 
 /* GOOGLE BOOKS */
 .pz2-googleBooks {
+    justify-content: flex-end !important;
+    margin-bottom: $magic !important;
+
     a {
         @include link-empty;
     }
