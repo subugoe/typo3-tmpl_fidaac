@@ -916,17 +916,14 @@ a.pz2-facetCancel {
     dd {
         @include media-l {
             width: width(l-5);
-            margin-bottom: $magic-l;
         }
 
         @include media-m {
             width: width(m-8);
-            margin-bottom: $magic-m / 4;
         }
 
         @include media-s {
             width: width(s-6);
-            margin-bottom: $magic-s / 4;
         }
         display: flex;
         margin: 0;
