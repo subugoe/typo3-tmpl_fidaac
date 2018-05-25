@@ -5,7 +5,7 @@
         width: width(l-8) - $magic-l * 2 - 26px;
         max-width: width(l-8) - $magic-l * 2;
         font-size: $small-font-size-l;
-        padding: 10px 0 20px 0;
+        padding: 10px 0 20px 26px;
     }
 
     @include media-m {
@@ -53,10 +53,15 @@
 
     dt {
         @include media-l {
-            width: width(l-2);
-            max-width: width(l-2);
+            width: width(l-2) - $magic-l * 2 - 26px;
+            max-width: width(l-2) - $magic-l * 2 - 26px;
             justify-content: flex-end;
-            margin-bottom: $magic-l;
+            text-align: right;
+            padding-top: $magic;
+
+            &:first-of-type {
+                padding-top: 0;
+            }
         }
 
         @include media-m {
@@ -77,8 +82,13 @@
 
     dd {
         @include media-l {
-            width: width(l-5);
-            max-width: width(l-5);
+            width: width(l-6) - $magic-l;
+            max-width: width(l-6) - $magic-l;
+            padding-top: $magic;
+
+            &:first-of-type {
+                padding-top: 0;
+            }
         }
 
         @include media-m {
@@ -166,14 +176,20 @@
     margin-bottom: 0;
 }
 
-#pz2-results .pz2-extraLinksLabel {
-    display: none;
-}
-
 #pz2-results .pz2-extraLinks {
+    @include media-l {
+        padding-left: 0;
+    }
+
+    @include media-m {
+        padding-left: 0;
+    }
+
+    @include media-s {
+        padding-left: 0;
+    }
     display: flex;
-    padding-left: 26px;
-    justify-content: flex-end;
+    justify-content: flex-start;
 
     a {
         color: $shadeDarkest;
@@ -192,14 +208,16 @@
         padding: 0 $magic 0 0;
     }
 
+    li::before {
+        content: "" !important;
+        padding: 0 !important;
+    }
+
     li:last-of-type {
         padding: 0;
     }
 
     ul {
-        @include media-l {
-            justify-content: flex-end;
-        }
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -214,21 +232,18 @@ dt.pz2-googleBooks {
         width: 100%;
         max-width: 100%;
         justify-content: flex-start !important;
-        padding-left: 26px;
+        padding: $magic 0 0 120px !important;
     }
 
     @include media-m {
         width: 100%;
         max-width: 100%;
-        justify-content: flex-end !important;
     }
 
     @include media-s {
         width: width(s-6);
         max-width: width(s-6);
-        justify-content: flex-end !important;
     }
-    margin-bottom: $magic !important;
 
     a {
         @include link-empty;
@@ -236,6 +251,9 @@ dt.pz2-googleBooks {
 }
 
 dt.pz2-googleBooks {
+    @include media-l {
+        padding-top: 0;
+    }
     padding-top: $magic;
 }
 
