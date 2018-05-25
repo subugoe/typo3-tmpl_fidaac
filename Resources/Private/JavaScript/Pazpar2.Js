@@ -68,4 +68,18 @@ $(document).ready(() => {
         $('.-extra').removeClass('-extra');
     };
     morphBasic();
+
+
+    const switchPlaceForInputExample = () => {
+        const elements = [['.pz2-field-person'], ['.pz2-field-date']];
+
+        $.each(elements, function(index, el) {
+            const placeholder = $(`${el} input`).attr('placeholder');
+            $(`${el} input`).removeAttr('placeholder');
+            const text = $(`${el} label`).text();
+            $(`${el} label`).text(`${text} (${placeholder})`);
+        });
+    };
+    switchPlaceForInputExample();
+
 });
