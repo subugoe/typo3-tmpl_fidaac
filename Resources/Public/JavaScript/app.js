@@ -583,6 +583,20 @@ $(document).ready(function () {
         $('.-extra').removeClass('-extra');
     };
     morphBasic();
+
+    var switchPlaceForInputExample = function switchPlaceForInputExample() {
+        var elements = [['.pz2-field-person'], ['.pz2-field-date']];
+
+        $.each(elements, function (index, el) {
+            console.log('Ind: ' + index + ', EL: ' + el);
+            var placeholder = $(el + ' input').attr('placeholder');
+            console.log(placeholder);
+            $(el + ' input').removeAttr('placeholder');
+            var text = $(el + ' label').text();
+            $(el + ' label').text(text + ' (' + placeholder + ')');
+        });
+    };
+    switchPlaceForInputExample();
 });
 
 (function () {
