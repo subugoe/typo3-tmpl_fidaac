@@ -257,6 +257,17 @@ $(document).ready(function () {
     };
 
     /**
+     * remove trailing arrow in navigation when displaying news in hidden folder
+     */
+    var removeArrowForHiddenFolders = function removeArrowForHiddenFolders() {
+        console.log($('.navigation_default-submenuItem.-act').parent('.navigation_default-submenu').siblings().length);
+        if ($('.navigation_default-submenuItem.-act').parent('.navigation_default-submenu').siblings().length === 0) {
+            $('.navigation_default-submenuItem.-act').find('.-svg-submenu').empty();
+        }
+    };
+    removeArrowForHiddenFolders();
+
+    /**
      * breadcrumbs in S behave differently
      * only upper page is shown, together with icon
      */
