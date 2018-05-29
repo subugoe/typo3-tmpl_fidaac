@@ -148,13 +148,13 @@
         cursor: pointer;
 
         &.-left {
-            background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            background: url(../Images/prev.png) left 225px no-repeat, linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
             left: 0;
             z-index: 10;
         }
 
         &.-right {
-            background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            background: url(../Images/next.png) right 225px no-repeat, linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
             left: auto;
             right: 0;
         }
