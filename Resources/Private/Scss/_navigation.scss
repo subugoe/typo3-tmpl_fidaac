@@ -16,7 +16,7 @@
         bottom: 0;
         width: 100%;
         background-color: $white;
-        z-index: 500;
+        z-index: 600;
         min-height: 400px;
     }
     list-style-type: none;
@@ -413,7 +413,7 @@
     width: 100%;
     justify-content: center;
     align-items: flex-start;
-    z-index: 20;
+    z-index: 500;
 }
 
 .navigation_default-submenuContainer-inner {
