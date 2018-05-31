@@ -21,6 +21,7 @@
     }
     list-style-type: none;
     width: 100%;
+    z-index: 600;
 
     a {
         color: $shadeDarkest;
@@ -423,7 +424,7 @@
     width: 100%;
     justify-content: center;
     align-items: flex-start;
-    z-index: 10;
+    z-index: 600;
 }
 
 .navigation_default-submenuContainer-inner {
