@@ -12,21 +12,6 @@
 $(document).ready(() => {
 
     /**
-     * Stuff related to scrolling and page up button
-     */
-    $(window).on('scroll', function () {
-        if ($(this).scrollTop() === 0) {
-            $('.toTop_inner').css('visibility', 'hidden');
-        } else if ($('.toTop_inner').css('visibility') === 'hidden') {
-            $('.toTop_inner').css('visibility', 'visible');
-        }
-    });
-
-    $('.toTop_inner').on('click', () => {
-        $('html').animate({scrollTop: 0}, 'fast');
-    });
-
-    /**
      * Stuff related to ajax-menu
      * To show navigation horizontally:
      * + javascript is enabled -> the second level of submenus are hidden and created via ajax
@@ -175,7 +160,6 @@ $(document).ready(() => {
      * remove trailing arrow in navigation when displaying news in hidden folder
      */
     const removeArrowForHiddenFolders = () => {
-        console.log($('.navigation_default-submenuItem.-act').parent('.navigation_default-submenu').siblings().length);
         if ($('.navigation_default-submenuItem.-act').parent('.navigation_default-submenu').siblings().length === 0) {
             $('.navigation_default-submenuItem.-act').find('.-svg-submenu').empty();
         }

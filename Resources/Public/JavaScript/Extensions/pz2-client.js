@@ -6294,7 +6294,7 @@ var localisations = {
 		'In': 'In',
 		'et al.': 'et al.',
 		// Download/Extra Links
-		'mehr Links': 'Additional Links:',
+		'mehr Links': 'Links:',
 		'download-label-format-simple': 'Load bibliographic data for this result as *',
 		'download-label-format-all': 'Load all Editions as *',
 		'download-label-submenu-format': 'Load as *',

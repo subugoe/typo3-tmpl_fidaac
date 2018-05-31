@@ -86,7 +86,10 @@
 #pz2-recordView {
     padding: 0;
     width: 100%;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 .pz2-recordLink {
@@ -266,164 +269,6 @@ a.pz2-extendedLink {
     flex-grow: 1;
     padding-top: $magic;
     margin-bottom: $magic;
-}
-
-
-/* FACETS */
-#pz2-termLists {
-    @include media-l {
-        width: width(l-4) - $magic-l;
-        float: right;
-    }
-
-    @include media-m {
-        width: width(m-4) - $magic-m;
-        float: right;
-    }
-
-    @include media-s {
-        position: absolute;
-        padding: 0 $magic * 2;
-        top: 117px;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: $white;
-        z-index: 500;
-        min-height: 400px;
-    }
-
-    h4 {
-        display: none;
-    }
-
-    h5 {
-        margin: 0;
-    }
-
-    .pz2-progressIndicator {
-        display: none;
-    }
-}
-
-.pz2-termList {
-    margin-bottom: 1em;
-    display: flex;
-    flex-direction: column;
-
-    h5 {
-        text-transform: uppercase;
-        font-size: 100%;
-        font-weight: bold;
-        margin-bottom: 0.25em;
-    }
-
-    ol {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    li {
-        list-style-type: none;
-
-        a {
-            position: relative;
-            display: flex;
-            font-weight: normal;
-            justify-content: space-between;
-        }
-    }
-
-    a {
-        margin-bottom: $magic / 2;
-    }
-
-    span {
-        position: relative;
-    }
-
-    .pz2-mediaIcon {
-        display: block;
-        position: absolute;
-        left: 0;
-        font-size: 24px;
-    }
-}
-
-.pz2-termList-author ol {
-    text-transform: capitalize;
-}
-
-.pz2-termList-medium {
-    li a span.pz2-facetName {
-        margin-left: 25px;
-        position: relative;
-        line-height: 19px;
-    }
-
-    .pz2-mediaIcon {
-        top: -4px;
-        width: 25px;
-    }
-}
-
-.pz2-facetCount {
-    display: flex;
-    margin-left: $magic;
-}
-
-a.pz2-facetCancel {
-    @include button;
-    @include button-color--transparent;
-    @include button-size--transparent;
-    justify-content: center !important;
-    margin: $magic 0;
-}
-
-.pz2-facet-hidden {
-    display: none;
-}
-
-.pz2-facet-showAll a {
-    font-style: italic;
-}
-
-.pz2-activeFacet .pz2-facetName {
-    font-weight: bold;
-}
-
-.pz2-histogramContainer {
-    margin-left: -8px;
-}
-
-#pz2-histogram-tooltip {
-    display: none;
-    position: absolute;
-    border: 1px solid $brand;
-    padding: 2px;
-    opacity: 0.8;
-    font-size: $small-font-size-l;
-    font-weight: bold;
-}
-
-.pz2-filterButton {
-    @include media-l {
-        display: none;
-    }
-
-    @include media-m {
-        display: none;
-    }
-
-    @include media-s {
-        @include button;
-        @include button-color--brand;
-        @include button-size--default;
-        width: width(s-6);
-        bottom: $magic-s * 4;
-        margin: auto;
-    }
 }
 
 /* PROGRESS INDICATOR */

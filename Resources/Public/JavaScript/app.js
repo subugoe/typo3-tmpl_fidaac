@@ -100,21 +100,6 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     /**
-     * Stuff related to scrolling and page up button
-     */
-    $(window).on('scroll', function () {
-        if ($(this).scrollTop() === 0) {
-            $('.toTop_inner').css('visibility', 'hidden');
-        } else if ($('.toTop_inner').css('visibility') === 'hidden') {
-            $('.toTop_inner').css('visibility', 'visible');
-        }
-    });
-
-    $('.toTop_inner').on('click', function () {
-        $('html').animate({ scrollTop: 0 }, 'fast');
-    });
-
-    /**
      * Stuff related to ajax-menu
      * To show navigation horizontally:
      * + javascript is enabled -> the second level of submenus are hidden and created via ajax
@@ -260,7 +245,6 @@ $(document).ready(function () {
      * remove trailing arrow in navigation when displaying news in hidden folder
      */
     var removeArrowForHiddenFolders = function removeArrowForHiddenFolders() {
-        console.log($('.navigation_default-submenuItem.-act').parent('.navigation_default-submenu').siblings().length);
         if ($('.navigation_default-submenuItem.-act').parent('.navigation_default-submenu').siblings().length === 0) {
             $('.navigation_default-submenuItem.-act').find('.-svg-submenu').empty();
         }
@@ -356,9 +340,20 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     /**
-     * The body is not displayed by default, only after javascript is done it is finally displayed
-     * This removes jumping elements
+     * Stuff related to scrolling and page up button
      */
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() === 0) {
+            $('.toTop_inner').css('visibility', 'hidden');
+        } else if ($('.toTop_inner').css('visibility') === 'hidden') {
+            $('.toTop_inner').css('visibility', 'visible');
+        }
+    });
+
+    $('.toTop_inner').on('click', function () {
+        $('html').animate({ scrollTop: 0 }, 'fast');
+    });
+
     // hide, so that space is preserved
     $('.toTop_inner').css('visibility', 'hidden');
 });
@@ -533,36 +528,69 @@ $(document).ready(function () {
     /**
      * Insert button for filters in S
      */
+    var insertFilterButtonInS = function insertFilterButtonInS() {
+        if ($('#pz2-filterButton').length === 0) {
+            var buttonText = '<div id="pz2-filterButton">Filters</div>';
+            $(buttonText).insertBefore('#pz2-results');
+        }
+    };
+    var removeFilterButtonsInS = function removeFilterButtonsInS() {
+        $('#pz2-filterButton').remove();
+        $('#pz2-overlay-info').remove();
+    };
+
     $('body').on('DOMNodeInserted', '.pz2-resultList', function () {
         if (window.innerWidth < 768) {
-            if ($('.pz2-filterButton').length === 0) {
-                var buttonText = '<div class="pz2-filterButton">Filters</div>';
-                $(buttonText).insertBefore('#pz2-results');
-            }
+            insertFilterButtonInS();
         }
     });
 
     /**
-     * Pagination is different in S versus M and L
-     * Make sure it is updated correctly and timely
+     * Handle filters in S
      */
-    window.addEventListener('resize', function () {
-
-        /* global updatePagers */
-        // pagination:
-        updatePagers();
-        $('.pz2-histogramContainer, .flot-overlay').css('width', $('#pz2-termLists').css('width'));
-
+    var hideFiltersInS = function hideFiltersInS() {
         if (window.innerWidth < 768) {
+            $('#pz2-termLists').unwrap('.pz2-facetsInS');
+            $('#pz2-overlay-close').remove();
+            $('#pz2-overlay-info').remove();
             $('#pz2-termLists').addClass('-hide');
         } else {
             $('#pz2-termLists').removeClass('-hide');
         }
-    });
+    };
+    hideFiltersInS();
 
-    if (window.innerWidth < 768) {
-        $('#pz2-termLists').addClass('-hide');
-    }
+    var showFilters = function showFilters() {
+        // Jump to top
+        $('#pz2-termLists').removeClass('-hide');
+
+        if (window.innerWidth < 768) {
+            $('html').animate({ scrollTop: 0 }, 'fast');
+            if ($('.pz2-facetsInS').length === 0) {
+                // wrap and add close-button and info-button
+                $('#pz2-termLists').wrap('<div class="pz2-facetsInS"></div>');
+                $('.pz2-facetsInS').height($('.content-main').height());
+
+                var closeButton = '<div id="pz2-overlay-close">' + '<svg>' + '<use xlink:href="#icon-close"/>' + '<span class="visible-hidden">' + 'Close' + '</span>' + '</svg>' + 'Close' + '</div>';
+                $('.pz2-facetsInS').append(closeButton);
+                $('#pz2-overlay-close').on('click', function () {
+                    hideFiltersInS();
+                });
+
+                var infoLabel = '<div id="pz2-overlay-info">' + 'Filters' + '</div>';
+                $('.pz2-facetsInS').prepend(infoLabel);
+            }
+            $('.pz2-facetsInS').show(200);
+        } else {
+            $('#pz2-termLists').unwrap('.pz2-facetsInS');
+        }
+    };
+
+    $('body').on('DOMNodeInserted', '#pz2-filterButton', function () {
+        $('#pz2-filterButton').on('click', function () {
+            showFilters();
+        });
+    });
 
     $('body').on('DOMNodeInserted', 'a.pz2-prev', function () {
         $('a.pz2-prev').each(function (index, el) {
@@ -606,6 +634,21 @@ $(document).ready(function () {
         });
     };
     switchPlaceForInputExample();
+
+    window.addEventListener('resize', function () {
+        /* global updatePagers */
+        // pagination:
+        updatePagers();
+        $('.pz2-histogramContainer, .flot-overlay').css('width', $('#pz2-termLists').css('width'));
+
+        if (window.innerWidth < 768) {
+            insertFilterButtonInS();
+            hideFiltersInS();
+        } else {
+            removeFilterButtonsInS();
+            showFilters();
+        }
+    });
 });
 
 (function () {
