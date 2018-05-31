@@ -356,6 +356,13 @@ $(document).ready(function () {
 
     // hide, so that space is preserved
     $('.toTop_inner').css('visibility', 'hidden');
+
+    // Add scrolling, so that anchors are not hidden behind breadcrumb
+    $(window).bind('hashchange', function () {
+        if (window.location.href.indexOf('/#') > -1) {
+            window.scrollTo(window.scrollX, window.scrollY - 66);
+        }
+    });
 });
 
 $(document).ready(function () {
