@@ -119,7 +119,7 @@ $(document).ready(() => {
     };
 
     const removeNavigationLinkInS = () => {
-        $('.breadcrumb-page svg').remove();
+        $('.navigation_default-additional').remove();
     };
 
     const showSubmenuInS = (el) => {

@@ -315,9 +315,19 @@
     }
 
     li {
-        display: flex;
-        list-style-type: none;
-        align-items: center;
+        @include media-l {
+            display: none;
+        }
+
+        @include media-m {
+            display: none;
+        }
+
+        @include media-m {
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+        }
 
         &::before {
             content: "";
