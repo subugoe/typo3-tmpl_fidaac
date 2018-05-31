@@ -204,7 +204,7 @@ $(document).ready(function () {
     };
 
     var removeNavigationLinkInS = function removeNavigationLinkInS() {
-        $('.breadcrumb-page svg').remove();
+        $('.navigation_default-additional').remove();
     };
 
     var showSubmenuInS = function showSubmenuInS(el) {
