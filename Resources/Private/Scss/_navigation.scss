@@ -10,7 +10,7 @@
     }
 
     @include media-s {
-        position: absolute;
+        position: fixed;
         margin: 0;
         top: 117px;
         bottom: 0;

@@ -1,0 +1,220 @@
+.pz2-facetsInS {
+    @include media-s {
+        align-items: center;
+        background-color: $white;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        justify-content: flex-start;
+        height: 100%;
+        margin-top: 8px;
+        min-height: 400px;
+        position: absolute;
+        right: 0;
+        top: 110px;
+        z-index: 500;
+    }
+}
+
+#pz2-termLists {
+    @include media-l {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: width(l-4) - $magic-l;
+    }
+
+    @include media-m {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: width(m-4) - $magic-m;
+    }
+
+    @include media-s {
+        display: flex;
+        padding: $magic-s * 2 $magic-s * 2 0 $magic-s * 2;
+        width: width(s-5);
+        flex-wrap: wrap;
+    }
+
+    h4 {
+        display: none;
+    }
+
+    .pz2-progressIndicator {
+        display: none;
+    }
+}
+
+.pz2-termList {
+    @include media-l {
+        flex-direction: column;
+    }
+
+    @include media-m {
+        flex-direction: column;
+    }
+
+    @include media-s {
+        width: width(s-6) - 2 * $magic-s;
+        flex-direction: column;
+    }
+
+    margin-bottom: 1em;
+    display: flex;
+
+    h5 {
+        @include media-s {
+            font-size: $large-font-size-s;
+            margin: 0 0 8px 0;
+        }
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0 0 0.25em 0;
+    }
+
+    ol {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    li {
+        list-style-type: none;
+
+        a {
+            position: relative;
+            display: flex;
+            font-weight: normal;
+            justify-content: space-between;
+        }
+    }
+
+    a {
+        margin-bottom: $magic / 2;
+    }
+
+    span {
+        position: relative;
+    }
+
+    .pz2-mediaIcon {
+        display: block;
+        position: absolute;
+        left: 0;
+        font-size: 24px;
+    }
+}
+
+.pz2-termList-author ol {
+    text-transform: capitalize;
+}
+
+.pz2-termList-medium {
+    li a span.pz2-facetName {
+        margin-left: 25px;
+        position: relative;
+        line-height: 19px;
+    }
+
+    .pz2-mediaIcon {
+        top: -4px;
+        width: 25px;
+    }
+}
+
+.pz2-facetCount {
+    display: flex;
+    margin-left: $magic;
+}
+
+a.pz2-facetCancel {
+    @include button;
+    @include button-color--transparent;
+    @include button-size--transparent;
+    justify-content: center !important;
+    margin: $magic 0;
+}
+
+.pz2-facet-hidden {
+    display: none;
+}
+
+.pz2-facet-showAll a {
+    font-style: italic;
+}
+
+.pz2-activeFacet .pz2-facetName {
+    font-weight: bold;
+}
+
+.pz2-histogramContainer {
+    margin-left: -8px;
+}
+
+#pz2-histogram-tooltip {
+    display: none;
+    position: absolute;
+    border: 1px solid $brand;
+    padding: 2px;
+    opacity: 0.8;
+    font-size: $small-font-size-l;
+    font-weight: bold;
+}
+
+#pz2-filterButton {
+    @include media-l {
+        display: none;
+    }
+
+    @include media-m {
+        display: none;
+    }
+
+    @include media-s {
+        @include button;
+        @include button-color--brand;
+        @include button-size--default;
+        width: width(s-6);
+        bottom: $magic-s * 4;
+        margin: auto;
+    }
+}
+
+#pz2-overlay-close {
+    @include media-l {
+        display: none;
+    }
+
+    @include media-m {
+        display: none;
+    }
+
+    @include media-s {
+        @include button;
+        @include button-color--brand;
+        @include button-size--small;
+        width: width(s-4);
+        position: fixed;
+        bottom: $magic-s * 4;
+        z-index: 1000;
+    }
+
+    svg {
+        height: 1em;
+        width: 1em;
+        margin-right: 0.25em;
+    }
+}
+
+#pz2-overlay-info {
+    display: flex;
+    width: 100%;
+    background-color: $accent;
+    justify-content: center;
+    font-size: $huge-font-size-s - 1;
+    padding: $magic-s 0;
+    font-weight: 600;
+}
