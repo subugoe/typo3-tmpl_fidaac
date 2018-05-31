@@ -182,12 +182,3 @@ figure {
         }
     }
 }
-
-// Make sure, anchors jump correctly, despite fixed header
-div[id*="c"]::before {
-    display: block;
-    content: ' ';
-    margin-top: -68px;
-    height: 68px;
-    visibility: hidden;
-}
