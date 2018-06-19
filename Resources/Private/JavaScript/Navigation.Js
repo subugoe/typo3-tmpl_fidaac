@@ -17,93 +17,93 @@ $(document).ready(() => {
      * + javascript is enabled -> the second level of submenus are hidden and created via ajax
      * + javascript is not enabled -> the second level of submenus are shown via css
      */
-        const createURLForAjaxInML = (path) => {
-            let url = '';
-            // ie10 doesn't recognice window.location.origin...
-            if (window.location.origin) {
-                url = window.location.origin;
-            } else {
-                url = `${window.location.protocol}//${window.location.hostname}`;
-                if (window.location.port) {
-                    url += `:${window.location.port}`;
-                }
+    const createURLForAjaxInML = (path) => {
+        let url = '';
+        // ie10 doesn't recognice window.location.origin...
+        if (window.location.origin) {
+            url = window.location.origin;
+        } else {
+            url = `${window.location.protocol}//${window.location.hostname}`;
+            if (window.location.port) {
+                url += `:${window.location.port}`;
             }
-            url += path;
-            if (url.indexOf('&index.php') === '0') {
-                url += '&type=37902';
-            } else {
-                url += '?type=37902';
-            }
-            return url;
-        };
+        }
+        url += path;
+        if (url.indexOf('&index.php') === '0') {
+            url += '&type=37902';
+        } else {
+            url += '?type=37902';
+        }
+        return url;
+    };
 
-        const makePathBoldInML = function () {
-            const actUrl = window.location.pathname;
-            $(`a[href$="${actUrl}"]`).parents('.navigation_default-submenuItem').first().removeClass('-no').addClass('-cur');
+    const makePathBoldInML = function () {
+        const actUrl = window.location.pathname;
+        $(`a[href$="${actUrl}"]`).parents('.navigation_default-submenuItem').first().removeClass('-no').addClass('-cur');
 
-        };
+    };
 
-        const removeSubsubmenusInML = function (subsubmenu) {
-            $(subsubmenu).parents('.navigation_default-submenuContainer-inner').find('.navigation_default-submenu').first().siblings().remove();
-        };
+    const removeSubsubmenusInML = function (subsubmenu) {
+        $(subsubmenu).parents('.navigation_default-submenuContainer-inner').find('.navigation_default-submenu').first().siblings().remove();
+    };
 
-        const showPathInML = function () {
-            const url = createURLForAjaxInML($('.navigation_default-submenuItem.-actSub').find('a').first().attr('href'));
-            const menu = $('.navigation_default-submenuItem.-actSub').parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
-            $(menu).find('.navigation_default-submenu').last().load(url, (response, status) => {
-                if (status === 'error') {
-                    console.log('Error loading submenu');
-                } else if (status === 'success') {
-                    makePathBoldInML();
-                }
-            });
-        };
-
-
-        $('.navigation_default-submenuItem.-sub, .navigation_default-submenuItem.-curIfSub, .navigation_default-submenuItem.-actSub').on('mouseenter', function () {
-            if (window.innerWidth < 768) {
-                return false;
-            }
-            const url = createURLForAjaxInML($(this).find('a').first().attr('href'));
-            removeSubsubmenusInML(this);
-            const menu = $(this).parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
-            $(menu).find('.navigation_default-submenu').last().load(url, (response, status) => {
-                if (status === 'error') {
-                    console.log('Error loading submenu');
-                }
+    const showPathInML = function () {
+        const url = createURLForAjaxInML($('.navigation_default-submenuItem.-actSub').find('a').first().attr('href'));
+        const menu = $('.navigation_default-submenuItem.-actSub').parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
+        $(menu).find('.navigation_default-submenu').last().load(url, (response, status) => {
+            if (status === 'error') {
+                console.log('Error loading submenu');
+            } else if (status === 'success') {
                 makePathBoldInML();
-            });
-            return true;
+            }
         });
+    };
 
-        $('.navigation_default-submenuItem.-no').on('mouseenter', function () {
-            if (window.innerWidth < 768) {
-                return false;
-            }
-            removeSubsubmenusInML(this);
-            return true;
-        });
 
-        $('.navigation_default-menuItem').on('mouseenter', function () {
-            if (window.innerWidth < 768) {
-                return false;
+    $('.navigation_default-submenuItem.-sub, .navigation_default-submenuItem.-curIfSub, .navigation_default-submenuItem.-actSub').on('mouseenter', function () {
+        if (window.innerWidth < 768) {
+            return false;
+        }
+        const url = createURLForAjaxInML($(this).find('a').first().attr('href'));
+        removeSubsubmenusInML(this);
+        const menu = $(this).parents('.navigation_default-submenuContainer-inner').append('<ul class="navigation_default-submenu"></ul>');
+        $(menu).find('.navigation_default-submenu').last().load(url, (response, status) => {
+            if (status === 'error') {
+                console.log('Error loading submenu');
             }
-            $('.navigation_default-submenuItem').removeClass('-highlight');
-            removeSubsubmenusInML($(this).find('.navigation_default-submenu'));
-            if ($(this).find('.navigation_default-submenuItem.-cur').length > 0) {
-                showPathInML();
-            }
-            return true;
+            makePathBoldInML();
         });
+        return true;
+    });
 
-        $('.navigation_default-submenuItem').on('mouseenter', function () {
-            if (window.innerWidth > 767) {
-                return false;
-            }
-            $('.navigation_default-submenuItem').removeClass('-highlight');
-            $(this).addClass('-highlight');
-            return true;
-        });
+    $('.navigation_default-submenuItem.-no').on('mouseenter', function () {
+        if (window.innerWidth < 768) {
+            return false;
+        }
+        removeSubsubmenusInML(this);
+        return true;
+    });
+
+    $('.navigation_default-menuItem').on('mouseenter', function () {
+        if (window.innerWidth < 768) {
+            return false;
+        }
+        $('.navigation_default-submenuItem').removeClass('-highlight');
+        removeSubsubmenusInML($(this).find('.navigation_default-submenu'));
+        if ($(this).find('.navigation_default-submenuItem.-cur').length > 0) {
+            showPathInML();
+        }
+        return true;
+    });
+
+    $('.navigation_default-submenuItem').on('mouseenter', function () {
+        if (window.innerWidth > 767) {
+            return false;
+        }
+        $('.navigation_default-submenuItem').removeClass('-highlight');
+        $(this).addClass('-highlight');
+        return true;
+    });
 
 
     /**
@@ -231,4 +231,13 @@ $(document).ready(() => {
             removeNavigationLinkInS();
         }
     });
+
+    /**
+     * Cater for iPad not being able to listen to click instead of hover
+     * which causes the menu to not hide again
+     */
+    document.body.addEventListener('touchstart', function() {
+        console.log('added');
+        $('*').css('cursor', 'pointer');
+    }, false);
 });

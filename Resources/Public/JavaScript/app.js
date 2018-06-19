@@ -316,6 +316,15 @@ $(document).ready(function () {
             removeNavigationLinkInS();
         }
     });
+
+    /**
+     * Cater for iPad not being able to listen to click instead of hover
+     * which causes the menu to not hide again
+     */
+    document.body.addEventListener('touchstart', function () {
+        console.log('added');
+        $('*').css('cursor', 'pointer');
+    }, false);
 });
 
 $(document).ready(function () {
