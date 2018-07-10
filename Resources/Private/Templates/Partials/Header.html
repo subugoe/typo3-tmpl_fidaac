@@ -11,8 +11,7 @@
                     <div class="header_image-home">
                         <f:link.page pageUid="{IDS_HOME}">
                             <svg>
-                                <use
-                                    xlink:href="#logo-wave"/>
+                                <use xlink:href="#logo-wave" aria-labelledby="logo-wave-title"/>
                             </svg>
                             <span class="visible-hidden"><f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Home"/></span>
                         </f:link.page>
@@ -27,11 +26,10 @@
                     <div class="header_image-content">
                         <f:link.page pageUid="{IDS_HOME}">
                             <svg>
-                                <use
-                                    xlink:href="#logo-wave"/>
+                                <use xlink:href="#logo-wave" aria-labelledby="logo-wave-title"/>
                             </svg>
                             <span class="visible-hidden">
-                                <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:logo"/>
+                                <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Logo"/>
                             </span>
                         </f:link.page>
                     </div>
@@ -46,12 +44,8 @@
                 <div class="header_home">
                     <span class="header_home-icon">
                         <svg>
-                            <use
-                                xlink:href="#icon-home"/>
+                            <use aria-hidden="true" xlink:href="#icon-home"/>
                         </svg>
-                    </span>
-                    <span class="visible-hidden">
-                        <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Home"/>
                     </span>
                     <span class="header_home-text">
                         <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Home"/>
@@ -62,32 +56,14 @@
                 <div class="header_search">
                     <span class="header_search-icon">
                         <svg>
-                            <use
-                                xlink:href="#icon-search"/>
+                            <use aria-hidden="true" xlink:href="#icon-search"/>
                         </svg>
-                        <span class="visible-hidden">
-                            <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:search_search"/>
-                        </span>
                     </span>
                     <span class="header_search-text">
                         <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:search_search"/>
                     </span>
                 </div>
             </f:link.page>
-            <div class="header_language">
-                <span class="header_language-icon">
-                    <svg>
-                        <use
-                            xlink:href="#icon-globe"/>
-                    </svg>
-                    <span class="visible-hidden">
-                        <f:translate key="LLL:typo3conf/ext/tmpl_fidaac/Resources/Private/Language/locallang.xlf:Switch language"/>
-                    </span>
-                </span>
-                <span class="header_language-text">
-                    <f:cObject typoscriptObjectPath="lib.language"/>
-                </span>
-            </div>
         </div>
     </div>
 </header>
