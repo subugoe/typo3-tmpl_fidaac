@@ -283,6 +283,13 @@ $(document).ready(function () {
         showSubmenuInS($(this));
     });
 
+    $('.navigation_default-menuItem').on('mouseover', function () {
+        $(this).addClass('-hover');
+    });
+    $('.navigation_default-menuItem').on('mouseleave', function () {
+        $(this).removeClass('-hover');
+    });
+
     $('.navigation_default-submenuItem .-svg-submenu').on('click', function () {
         showSubsubmenuInS($(this));
     });
@@ -317,12 +324,15 @@ $(document).ready(function () {
         }
     });
 
+    window.addEventListener('scroll', function () {
+        $('.navigation_default-menuItem').removeClass('-hover');
+    });
+
     /**
      * Cater for iPad not being able to listen to click instead of hover
      * which causes the menu to not hide again
      */
     document.body.addEventListener('touchstart', function () {
-        console.log('added');
         $('*').css('cursor', 'pointer');
     }, false);
 });
