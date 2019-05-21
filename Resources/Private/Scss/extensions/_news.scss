@@ -11,7 +11,11 @@
         margin-bottom: $magic-l / 2 !important;
 
         a {
-            color: $shadeDarkest;
+            @include link-plus();
+        }
+
+        figure a {
+            @include link-empty();
         }
 
         .meta {
