@@ -57,4 +57,8 @@
             width: 1em;
         }
     }
+
+    .content a {
+        @include link-plus();
+    }
 }
