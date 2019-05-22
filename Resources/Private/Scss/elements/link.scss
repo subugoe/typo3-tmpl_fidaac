@@ -20,3 +20,8 @@
         content: "";
     }
 }
+
+@mixin link-invisible() {
+    @include link-empty();
+    color: $shadeDarkest;
+}

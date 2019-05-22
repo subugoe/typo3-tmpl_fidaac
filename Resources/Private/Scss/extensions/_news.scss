@@ -10,12 +10,8 @@
         padding-bottom: $magic-l / 2 !important;
         margin-bottom: $magic-l / 2 !important;
 
-        a {
-            @include link-plus();
-        }
-
         figure a {
-            @include link-empty();
+            @include link-invisible();
         }
 
         .meta {
@@ -39,6 +35,10 @@
             display: flex;
             flex-wrap: wrap;
             align-content: flex-start;
+
+            a {
+                @include link-invisible();
+            }
 
 
             .-item {
@@ -91,7 +91,7 @@
         align-items: center;
 
         a {
-            border: none;
+            @include link-invisible();
             padding: 0;
         }
 
@@ -124,6 +124,10 @@
         font-weight: bold;
         align-content: flex-start;
 
+        a {
+            @include link-invisible();
+        }
+
         .title {
             @include media-l {
                 @include span-l-8;
@@ -149,6 +153,10 @@
             margin: 0;
             padding-bottom: $magic;
             display: flex;
+        }
+
+        a {
+            @include link-invisible();
         }
     }
 }
