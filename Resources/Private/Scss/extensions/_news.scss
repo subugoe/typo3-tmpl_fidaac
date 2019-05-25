@@ -10,8 +10,14 @@
         padding-bottom: $magic-l / 2 !important;
         margin-bottom: $magic-l / 2 !important;
 
-        figure a {
-            @include link-invisible();
+        figure {
+            a {
+                @include link-invisible();
+            }
+
+            figcaption a {
+                @include link-plus();
+            }
         }
 
         .meta {
