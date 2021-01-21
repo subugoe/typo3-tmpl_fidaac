@@ -12,6 +12,9 @@
             <trans-unit id="Logo">
                 <source>Logo of Library AAC (with link back to homepage)</source>
             </trans-unit>
+            <trans-unit id="Stacks">
+                <source>Stacks</source>
+            </trans-unit>
             <trans-unit id="Home">
                 <source>Home</source>
             </trans-unit>

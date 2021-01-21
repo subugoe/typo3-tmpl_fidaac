@@ -61,14 +61,14 @@
 .header_bildText {
     @include media-l {
         @include span();
-        width: width(l-6) - 2 * $magic-m;
+        @include width-l-7;
         align-items: flex-start !important;
         margin: 0 0 0 $magic-l;
     }
 
     @include media-m {
         @include span();
-        width: width(l-6) - 2 * $magic-m;
+        @include width-m-6;
         align-items: flex-start !important;
         margin: 0 0 0 $magic-m;
     }
@@ -136,13 +136,15 @@
 
 .header_buttons {
     @include media-l {
-        @include width-l-3;
+        @include width-l-4;
         margin: 0 $magic-l 0 0;
+        flex-grow: 1;
     }
 
     @include media-m {
-        @include width-m-4;
+        @include width-m-5;
         margin: 0 $magic-m 0 0;
+        flex-grow: 1;
     }
 
     @include media-s {
@@ -164,6 +166,11 @@
 }
 
 .header_home {
+    display: flex;
+    align-items: center;
+}
+
+.header_stacks {
     display: flex;
     align-items: center;
 }
