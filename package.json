@@ -43,7 +43,7 @@
         "babel-plugin-syntax-object-rest-spread": "^6.13.0",
         "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
         "babel-preset-latest": "^6.24.1",
-        "browser-sync": "^2.26.0",
+        "browser-sync": "^2.26.14",
         "buildify": "^0.4.0",
         "codeceptjs": "^1.4.3",
         "codeceptjs-nightmare": "^1.2.0",
